@@ -27,6 +27,7 @@ REQUIRED_RESULT_FILES = [
     "regret_analysis.csv",
     "pareto_frontier.csv",
     "rank_stability.csv",
+    "pilot_decision_scores.example.csv",
     "license_audit.csv",
     "source_check.csv",
     "all_results.json"

@@ -188,6 +188,7 @@ Generated outputs:
 | `results/regret_analysis.csv` | Score gap between each candidate and the scenario winner. |
 | `results/pareto_frontier.csv` | Candidates that are not strictly dominated across all criteria. |
 | `results/rank_stability.csv` | Cross-scenario rank stability, best/worst rank, and average Monte Carlo top-3 rate. |
+| `results/pilot_decision_scores.example.csv` | Example post-pilot scoring output generated from the example candidate summary. |
 | `results/all_results.json` | Complete machine-readable output. |
 
 ## Deterministic Results
@@ -324,6 +325,8 @@ Pilot templates are included in `templates/`: `pilot_run_log.csv` for metrics ca
 The detailed execution protocol is in `reports/pilot_protocol.md`.
 
 Candidate-specific implementation blueprints are in `reports/implementation_blueprints.md`.
+
+After a pilot, use `data/pilot_decision_model.json` and `scripts/score_pilot_results.py` to convert candidate-level pilot results into a ranked post-pilot decision table. An example input/output pair is included at `examples/pilot_candidate_summary.example.csv` and `results/pilot_decision_scores.example.csv`.
 
 | Phase | Duration | Work | Exit criteria |
 |---|---:|---|---|

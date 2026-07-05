@@ -78,6 +78,7 @@ class ReportArtifactsTest(unittest.TestCase):
     def test_pilot_templates_exist(self):
         expected_files = [
             "pilot_run_log.csv",
+            "pilot_candidate_summary.csv",
             "reviewer_scorecard.md",
             "security_gate_checklist.md"
         ]
@@ -85,6 +86,11 @@ class ReportArtifactsTest(unittest.TestCase):
             path = ROOT / "templates" / filename
             self.assertTrue(path.exists(), f"missing template file: {path}")
             self.assertGreater(path.stat().st_size, 0)
+
+    def test_examples_exist(self):
+        example = ROOT / "examples" / "pilot_candidate_summary.example.csv"
+        self.assertTrue(example.exists())
+        self.assertGreater(example.stat().st_size, 0)
 
     def test_generated_svg_assets_exist(self):
         expected_files = [

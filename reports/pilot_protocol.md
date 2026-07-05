@@ -118,6 +118,12 @@ Recommended aggregate score:
 
 Do not let benchmark pass rate override a failed safety gate.
 
+The scoring model is captured in `data/pilot_decision_model.json`. Use `scripts/score_pilot_results.py` after filling a candidate summary CSV:
+
+```powershell
+python scripts/score_pilot_results.py --input examples/pilot_candidate_summary.example.csv --output results/pilot_decision_scores.example.csv
+```
+
 ## Decision Rule
 
 Choose a candidate only if it satisfies all of the following:

@@ -23,6 +23,7 @@ Use this index to choose the right file quickly.
 | Score calibration anchors | `data/scoring_rubric.json` |
 | Scenario definitions and shortlists | `data/scenario_profiles.json` |
 | Pilot task suite | `data/pilot_tasks.json` |
+| Post-pilot decision model | `data/pilot_decision_model.json` |
 | Adoption risk register | `data/risk_register.json` |
 
 ## Generated Results
@@ -37,6 +38,7 @@ Use this index to choose the right file quickly.
 | Regret versus scenario winner | `results/regret_analysis.csv` |
 | Pareto dominance | `results/pareto_frontier.csv` |
 | Cross-scenario rank stability | `results/rank_stability.csv` |
+| Example post-pilot decision scores | `results/pilot_decision_scores.example.csv` |
 | Model weights | `results/scenario_weights.csv` |
 | Criteria definitions | `results/criteria_definitions.csv` |
 | Source/evidence table | `results/evidence_matrix.csv` |
@@ -52,6 +54,7 @@ Use this index to choose the right file quickly.
 | Capture candidate/task metrics | `templates/pilot_run_log.csv` |
 | Human code-review assessment | `templates/reviewer_scorecard.md` |
 | Security gate assessment | `templates/security_gate_checklist.md` |
+| Example post-pilot candidate summary | `examples/pilot_candidate_summary.example.csv` |
 
 ## Scripts
 
@@ -62,6 +65,7 @@ Use this index to choose the right file quickly.
 | Check external source URLs | `scripts/check_sources.py` |
 | Validate generated artifacts offline | `scripts/validate_artifacts.py` |
 | Generate report SVG charts | `scripts/generate_charts.py` |
+| Score pilot results | `scripts/score_pilot_results.py` |
 
 ## Maintenance
 
