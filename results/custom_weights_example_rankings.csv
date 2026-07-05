@@ -1,0 +1,35 @@
+scenario,rank,alternative_id,alternative,score
+security_first_custom,1,codex_cli,Codex CLI,4.235483870967743
+security_first_custom,2,openhands_sdk,OpenHands Software Agent SDK,4.199999999999999
+security_first_custom,3,cline,Cline / Cline SDK,4.187096774193549
+security_first_custom,4,open_swe,Open SWE,4.153548387096774
+security_first_custom,5,deep_agents,Deep Agents,4.116774193548387
+security_first_custom,6,omnigent,Omnigent,4.06258064516129
+security_first_custom,7,openhands_agent_canvas,OpenHands Agent Canvas,4.032903225806452
+security_first_custom,8,flue,Flue,3.9361290322580644
+security_first_custom,9,opencode,OpenCode,3.7974193548387096
+security_first_custom,10,goose,goose,3.772903225806451
+security_first_custom,11,swe_agent,SWE-agent,3.757419354838709
+security_first_custom,12,sandcastle,Sandcastle,3.6941935483870965
+security_first_custom,13,aider,Aider,3.4729032258064514
+security_first_custom,14,mini_swe_agent,mini-SWE-agent,3.28
+security_first_custom,15,omni_agent,Omni Agent,3.0954838709677417
+security_first_custom,16,omniagent,OmniAgent,2.3122580645161293
+security_first_custom,17,anchor,Anchor,1.84
+fast_local_custom,1,cline,Cline / Cline SDK,4.409448818897638
+fast_local_custom,2,openhands_sdk,OpenHands Software Agent SDK,4.216535433070866
+fast_local_custom,3,opencode,OpenCode,4.210236220472441
+fast_local_custom,4,codex_cli,Codex CLI,4.109448818897638
+fast_local_custom,5,aider,Aider,4.096850393700787
+fast_local_custom,6,goose,goose,4.096850393700787
+fast_local_custom,7,deep_agents,Deep Agents,4.060629921259843
+fast_local_custom,8,openhands_agent_canvas,OpenHands Agent Canvas,4.010236220472441
+fast_local_custom,9,flue,Flue,3.8165354330708663
+fast_local_custom,10,omnigent,Omnigent,3.8023622047244094
+fast_local_custom,11,swe_agent,SWE-agent,3.7818897637795277
+fast_local_custom,12,open_swe,Open SWE,3.769291338582677
+fast_local_custom,13,mini_swe_agent,mini-SWE-agent,3.7070866141732286
+fast_local_custom,14,sandcastle,Sandcastle,3.5858267716535432
+fast_local_custom,15,omni_agent,Omni Agent,2.8362204724409454
+fast_local_custom,16,omniagent,OmniAgent,2.646456692913386
+fast_local_custom,17,anchor,Anchor,2.3118110236220475

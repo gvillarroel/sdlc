@@ -16,6 +16,7 @@ REPORTS = ROOT / "reports"
 SCENARIO_COUNT = 5
 DETERMINISTIC_STRESS_CASE_COUNT = 8
 UNCERTAINTY_STRESS_CASE_COUNT = 5
+CUSTOM_WEIGHT_SCENARIO_COUNT = 2
 
 REQUIRED_RESULT_FILES = [
     "deterministic_rankings.csv",
@@ -29,6 +30,7 @@ REQUIRED_RESULT_FILES = [
     "alternative_scorecards.csv",
     "implementation_effort_estimates.csv",
     "evidence_gap_analysis.csv",
+    "custom_weights_example_rankings.csv",
     "regret_analysis.csv",
     "pareto_frontier.csv",
     "rank_stability.csv",
@@ -71,6 +73,7 @@ def validate_result_shapes() -> None:
     assert_true(len(read_csv(RESULTS / "pareto_frontier.csv")) == alt_count, "unexpected pareto row count")
     assert_true(len(read_csv(RESULTS / "implementation_effort_estimates.csv")) == alt_count, "unexpected implementation effort row count")
     assert_true(len(read_csv(RESULTS / "evidence_gap_analysis.csv")) == alt_count, "unexpected evidence gap row count")
+    assert_true(len(read_csv(RESULTS / "custom_weights_example_rankings.csv")) == CUSTOM_WEIGHT_SCENARIO_COUNT * alt_count, "unexpected custom weights row count")
     assert_true(len(read_csv(RESULTS / "stress_test_summary.csv")) == DETERMINISTIC_STRESS_CASE_COUNT * SCENARIO_COUNT, "unexpected stress test summary row count")
     assert_true(len(read_csv(RESULTS / "stress_test_rankings.csv")) == DETERMINISTIC_STRESS_CASE_COUNT * SCENARIO_COUNT * alt_count, "unexpected stress test rankings row count")
     assert_true(len(read_csv(RESULTS / "uncertainty_stress_summary.csv")) == UNCERTAINTY_STRESS_CASE_COUNT * SCENARIO_COUNT, "unexpected uncertainty stress summary row count")

@@ -18,6 +18,7 @@ COMMANDS = [
     [PYTHON, "scripts/stress_test_simulation.py", "--trials", "1500", "--seed", "9011"],
     [PYTHON, "scripts/estimate_implementation_effort.py"],
     [PYTHON, "scripts/analyze_evidence_gaps.py"],
+    [PYTHON, "scripts/rank_with_custom_weights.py"],
     [PYTHON, "scripts/license_audit.py"],
     [PYTHON, "scripts/generate_charts.py"],
     [

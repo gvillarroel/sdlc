@@ -217,6 +217,7 @@ Generated outputs:
 | `results/stress_test_rankings.csv` | Full deterministic rankings under each stress-test case. |
 | `results/uncertainty_stress_summary.csv` | Monte Carlo ranking stability under alternate uncertainty assumptions. |
 | `results/uncertainty_stress_details.csv` | Full Monte Carlo rows for every candidate under each uncertainty stress case. |
+| `results/custom_weights_example_rankings.csv` | Deterministic ranking generated from `examples/custom_weights.example.json`. |
 | `results/pilot_decision_scores.example.csv` | Example post-pilot scoring output generated from the example candidate summary. |
 | `results/all_results.json` | Complete machine-readable output. |
 
@@ -451,6 +452,14 @@ The deterministic stress tests changed the rank-1 candidate in 9 of 40 scenario/
 | Volatile stakeholder weights can move the Monte Carlo custom-orchestrator top candidate between OpenHands SDK and Cline. | This scenario should be piloted as a cluster, not as a single-tool decision. |
 
 These findings reinforce the recommended pilot set rather than replacing it: OpenHands SDK, Deep Agents, Cline, Codex CLI, SWE-agent, and mini-SWE-agent remain the important candidates for the relevant scenarios.
+
+For custom stakeholder priorities, edit `examples/custom_weights.example.json` and run:
+
+```powershell
+python scripts/rank_with_custom_weights.py
+```
+
+The example output is `results/custom_weights_example_rankings.csv`. In the included example, `security_first_custom` ranks Codex CLI first, followed by OpenHands SDK and Cline; `fast_local_custom` ranks Cline first, followed by OpenHands SDK and OpenCode.
 
 ## From This Simulation To A Real Evaluation
 

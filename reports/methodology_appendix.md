@@ -132,6 +132,16 @@ This produces:
 
 These outputs intentionally test model fragility, not live coding performance. They answer whether the shortlist changes when security, provider neutrality, adoption speed, research reproducibility, maturity, evidence confidence, sandbox assumptions, or uncertainty levels are stressed.
 
+## Custom Scenario Weights
+
+Custom deterministic rankings can be generated without editing the base simulation script:
+
+```powershell
+python scripts/rank_with_custom_weights.py --weights examples/custom_weights.example.json --output results/custom_weights_example_rankings.csv
+```
+
+The weights file must contain one or more named scenarios, each with every criterion from the scoring model. This is the fastest way to test stakeholder-specific priorities before changing the canonical scenario set.
+
 ## Category Scorecards
 
 Category scorecards group criteria before scenario weights are applied:

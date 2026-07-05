@@ -52,6 +52,7 @@ Use this index to choose the right file quickly.
 | Monte Carlo uncertainty stress summary | `results/uncertainty_stress_summary.csv` |
 | Monte Carlo uncertainty stress details | `results/uncertainty_stress_details.csv` |
 | Example post-pilot decision scores | `results/pilot_decision_scores.example.csv` |
+| Example custom-weight rankings | `results/custom_weights_example_rankings.csv` |
 | Model weights | `results/scenario_weights.csv` |
 | Criteria definitions | `results/criteria_definitions.csv` |
 | Source/evidence table | `results/evidence_matrix.csv` |
@@ -70,6 +71,7 @@ Use this index to choose the right file quickly.
 | Human code-review assessment | `templates/reviewer_scorecard.md` |
 | Security gate assessment | `templates/security_gate_checklist.md` |
 | Example post-pilot candidate summary | `examples/pilot_candidate_summary.example.csv` |
+| Example custom scenario weights | `examples/custom_weights.example.json` |
 
 ## Scripts
 
@@ -79,6 +81,7 @@ Use this index to choose the right file quickly.
 | Run simulation stress tests | `scripts/stress_test_simulation.py` |
 | Estimate implementation effort | `scripts/estimate_implementation_effort.py` |
 | Analyze evidence gaps | `scripts/analyze_evidence_gaps.py` |
+| Rank with custom weights | `scripts/rank_with_custom_weights.py` |
 | Regenerate license audit | `scripts/license_audit.py` |
 | Check external source URLs | `scripts/check_sources.py` |
 | Validate generated artifacts offline | `scripts/validate_artifacts.py` |
@@ -102,6 +105,7 @@ python scripts/simulate_alternatives.py --trials 5000 --seed 7331
 python scripts/stress_test_simulation.py --trials 1500 --seed 9011
 python scripts/estimate_implementation_effort.py
 python scripts/analyze_evidence_gaps.py
+python scripts/rank_with_custom_weights.py
 python scripts/license_audit.py
 python scripts/validate_artifacts.py
 ```

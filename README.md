@@ -18,6 +18,7 @@ Included artifacts:
 - `scripts/stress_test_simulation.py` - stress tests for scenario weights, maturity discounts, source confidence, sandbox assumptions, and uncertainty.
 - `scripts/estimate_implementation_effort.py` - reproducible prototype and hardening effort estimates from the scoring dataset.
 - `scripts/analyze_evidence_gaps.py` - evidence-gap review for maturity, confidence, release, traction, and freshness risks.
+- `scripts/rank_with_custom_weights.py` - deterministic ranking for user-provided scenario weights.
 - `scripts/check_sources.py` - optional live source URL checker for the report and dataset.
 - `scripts/license_audit.py` - permissive-license audit for included and excluded alternatives.
 - `scripts/validate_artifacts.py` - offline consistency validation for generated artifacts and report references.
@@ -28,6 +29,7 @@ Included artifacts:
 - `results/` - generated CSV and JSON simulation outputs, including category scorecards and a scenario shortlist.
 - `templates/` - pilot run log, reviewer scorecard, and security gate checklist templates.
 - `examples/pilot_candidate_summary.example.csv` - example input for post-pilot scoring.
+- `examples/custom_weights.example.json` - example custom scenario weights.
 - `reports/ai_orchestrator_frameworks_report.md` - final English report.
 - `reports/executive_brief.md` - short decision brief for quick review.
 - `reports/evidence_gap_analysis.md` - evidence-gap findings for low-confidence or immature candidates.
@@ -55,6 +57,7 @@ python scripts/simulate_alternatives.py --trials 5000 --seed 7331
 python scripts/stress_test_simulation.py --trials 1500 --seed 9011
 python scripts/estimate_implementation_effort.py
 python scripts/analyze_evidence_gaps.py
+python scripts/rank_with_custom_weights.py
 python scripts/license_audit.py
 python scripts/generate_charts.py
 python scripts/score_pilot_results.py --input examples/pilot_candidate_summary.example.csv --output results/pilot_decision_scores.example.csv
@@ -77,6 +80,7 @@ Generated result files:
 - `results/alternative_scorecards.csv`
 - `results/implementation_effort_estimates.csv`
 - `results/evidence_gap_analysis.csv`
+- `results/custom_weights_example_rankings.csv`
 - `results/source_check.csv`
 - `results/license_audit.csv`
 - `results/regret_analysis.csv`

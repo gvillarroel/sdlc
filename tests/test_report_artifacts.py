@@ -111,6 +111,7 @@ class ReportArtifactsTest(unittest.TestCase):
             "decision_shortlist.csv",
             "implementation_effort_estimates.csv",
             "evidence_gap_analysis.csv",
+            "custom_weights_example_rankings.csv",
             "stress_test_summary.csv",
             "uncertainty_stress_summary.csv",
             "all_results.json"
@@ -133,9 +134,14 @@ class ReportArtifactsTest(unittest.TestCase):
             self.assertGreater(path.stat().st_size, 0)
 
     def test_examples_exist(self):
-        example = ROOT / "examples" / "pilot_candidate_summary.example.csv"
-        self.assertTrue(example.exists())
-        self.assertGreater(example.stat().st_size, 0)
+        expected_files = [
+            "pilot_candidate_summary.example.csv",
+            "custom_weights.example.json",
+        ]
+        for filename in expected_files:
+            example = ROOT / "examples" / filename
+            self.assertTrue(example.exists())
+            self.assertGreater(example.stat().st_size, 0)
 
     def test_generated_svg_assets_exist(self):
         expected_files = [

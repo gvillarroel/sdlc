@@ -1,0 +1,40 @@
+{
+  "metadata": {
+    "created_at": "2026-07-05",
+    "purpose": "Example custom scenario weights for scripts/rank_with_custom_weights.py."
+  },
+  "scenarios": {
+    "security_first_custom": {
+      "implementation_ease": 0.5,
+      "maturity": 1.1,
+      "provider_portability": 0.8,
+      "sandbox_isolation": 2.0,
+      "persistence_memory": 0.7,
+      "multi_agent": 0.8,
+      "human_control": 1.4,
+      "ci_pr": 1.5,
+      "observability": 1.3,
+      "security_governance": 2.0,
+      "extensibility": 0.8,
+      "deployment_flexibility": 1.0,
+      "coding_fit": 1.2,
+      "research_reproducibility": 0.4
+    },
+    "fast_local_custom": {
+      "implementation_ease": 2.0,
+      "maturity": 1.5,
+      "provider_portability": 1.2,
+      "sandbox_isolation": 0.4,
+      "persistence_memory": 0.5,
+      "multi_agent": 0.3,
+      "human_control": 1.4,
+      "ci_pr": 0.6,
+      "observability": 0.4,
+      "security_governance": 0.6,
+      "extensibility": 0.8,
+      "deployment_flexibility": 0.9,
+      "coding_fit": 1.8,
+      "research_reproducibility": 0.3
+    }
+  }
+}
