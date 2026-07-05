@@ -18,6 +18,8 @@ DETERMINISTIC_STRESS_CASE_COUNT = 8
 UNCERTAINTY_STRESS_CASE_COUNT = 5
 CUSTOM_WEIGHT_SCENARIO_COUNT = 2
 OPERATING_PROFILE_COUNT = 3
+PILOT_SAMPLE_COMPARISON_COUNT = 2
+PILOT_SAMPLE_TASK_COUNT = 5
 
 REQUIRED_RESULT_FILES = [
     "deterministic_rankings.csv",
@@ -32,6 +34,7 @@ REQUIRED_RESULT_FILES = [
     "implementation_effort_estimates.csv",
     "operational_cost_estimates.csv",
     "operational_fit_rankings.csv",
+    "pilot_sample_size_estimates.csv",
     "evidence_gap_analysis.csv",
     "custom_weights_example_rankings.csv",
     "regret_analysis.csv",
@@ -96,6 +99,15 @@ def validate_result_shapes() -> None:
         grouped_fit_ranks.setdefault((row["scenario"], row["operating_profile"]), []).append(int(row["rank"]))
     for group, ranks in grouped_fit_ranks.items():
         assert_true(sorted(ranks) == list(range(1, alt_count + 1)), f"unexpected operational fit ranks for {group}")
+    pilot_sample_rows = read_csv(RESULTS / "pilot_sample_size_estimates.csv")
+    assert_true(
+        len(pilot_sample_rows) == SCENARIO_COUNT * PILOT_SAMPLE_COMPARISON_COUNT * PILOT_SAMPLE_TASK_COUNT,
+        "unexpected pilot sample-size row count",
+    )
+    assert_true(
+        all(0 <= float(row["top_wins_probability"]) <= 1 for row in pilot_sample_rows),
+        "pilot sample-size win probabilities must be between 0 and 1",
+    )
     assert_true(len(read_csv(RESULTS / "evidence_gap_analysis.csv")) == alt_count, "unexpected evidence gap row count")
     assert_true(len(read_csv(RESULTS / "custom_weights_example_rankings.csv")) == CUSTOM_WEIGHT_SCENARIO_COUNT * alt_count, "unexpected custom weights row count")
     assert_true(len(read_csv(RESULTS / "stress_test_summary.csv")) == DETERMINISTIC_STRESS_CASE_COUNT * SCENARIO_COUNT, "unexpected stress test summary row count")
@@ -142,6 +154,7 @@ def validate_report_references() -> None:
         assert_true(filename in report or filename in {"deterministic_rankings.csv", "monte_carlo_summary.csv", "sensitivity_summary.csv"}, f"report does not reference {filename}")
     for artifact in [
         "data/pilot_tasks.json",
+        "data/pilot_sample_size_model.json",
         "data/risk_register.json",
         "data/candidate_taxonomy.json",
         "data/operational_cost_model.json",
@@ -161,6 +174,7 @@ def validate_report_references() -> None:
         "reports/maintenance_guide.md",
         "reports/methodology_appendix.md",
         "reports/operational_cost_model.md",
+        "reports/pilot_sample_size.md",
         "reports/presentation_outline.md",
         "reports/requirements_traceability.md",
         "reports/results_data_dictionary.md",

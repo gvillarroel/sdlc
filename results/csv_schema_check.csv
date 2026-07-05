@@ -18,6 +18,7 @@ operational_cost_estimates.csv,True,,,16,16
 operational_fit_rankings.csv,True,,,13,13
 pareto_frontier.csv,True,,,5,5
 pilot_decision_scores.example.csv,True,,,12,12
+pilot_sample_size_estimates.csv,True,,,13,13
 rank_stability.csv,True,,,9,9
 regret_analysis.csv,True,,,9,9
 scenario_weights.csv,True,,,4,4

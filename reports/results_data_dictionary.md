@@ -297,6 +297,26 @@ Example post-pilot decision score output.
 | `setup_maintenance_score` |
 | `notes` |
 
+## `pilot_sample_size_estimates.csv`
+
+Pilot task-count simulation for separating close shortlist candidates.
+
+| Column |
+|---|
+| `scenario` |
+| `top_candidate` |
+| `comparison_rank` |
+| `comparison_candidate` |
+| `score_gap` |
+| `estimated_top_success_rate` |
+| `estimated_comparison_success_rate` |
+| `tasks_per_candidate` |
+| `simulation_trials` |
+| `top_wins_probability` |
+| `tie_probability` |
+| `decision_confidence_target` |
+| `recommendation` |
+
 ## `rank_stability.csv`
 
 Cross-scenario deterministic and Monte Carlo rank stability.

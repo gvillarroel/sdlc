@@ -20,6 +20,7 @@ This generated bundle concatenates the main report and key appendices for one-fi
 - `reports/residual_risks.md`
 - `reports/presentation_outline.md`
 - `reports/pilot_protocol.md`
+- `reports/pilot_sample_size.md`
 - `reports/validation_summary.md`
 - `reports/environment_prerequisites.md`
 - `reports/results_data_dictionary.md`
@@ -150,6 +151,8 @@ For evidence gaps in young or low-confidence candidates, read `reports/evidence_
 For live GitHub metadata verification, read `reports/github_metadata_check.md`.
 
 For reusable security pilot fixtures, read `reports/security_evaluation_fixtures.md`; the machine-readable catalog is `data/security_evaluation_fixtures.json`.
+
+For pilot task-count planning, read `reports/pilot_sample_size.md`; the assumptions are in `data/pilot_sample_size_model.json`.
 
 For a requirement-to-artifact coverage map, read `reports/requirements_traceability.md`; the machine-readable matrix is `data/traceability_matrix.json`.
 
@@ -354,6 +357,7 @@ Generated outputs:
 | `results/implementation_effort_estimates.csv` | Generated prototype and production-hardening complexity estimates. |
 | `results/operational_cost_estimates.csv` | Relative monthly operating effort, token pressure, latency risk, and cost-risk bands. |
 | `results/operational_fit_rankings.csv` | Scenario rankings adjusted by operating-profile friction. |
+| `results/pilot_sample_size_estimates.csv` | Pilot task-count simulation for distinguishing close shortlist candidates. |
 | `results/evidence_gap_analysis.csv` | Evidence risk bands for maturity, source confidence, release, traction, and freshness gaps. |
 | `results/source_check.csv` | Live URL check of report and dataset sources. The latest run checked 41 URLs with 41 OK responses. |
 | `results/github_metadata_check.csv` | Live GitHub repository metadata comparison for stars, push date, license, archive status, and latest release tag. |
@@ -504,6 +508,8 @@ The concrete task suite is included in `data/pilot_tasks.json`. It contains 20 t
 Pilot templates are included in `templates/`: `scenario_selection_workshop.md` for stakeholder priorities, `pilot_run_log.csv` for metrics capture, `reviewer_scorecard.md` for qualitative review, and `security_gate_checklist.md` for safety gates.
 
 The detailed execution protocol is in `reports/pilot_protocol.md`.
+
+The pilot sample-size planning appendix is `reports/pilot_sample_size.md`. Under the current assumptions, the top candidates are too close for a small two-week pilot to separate by raw pass rate alone. Use the pilot to collect comparable evidence on task success, safety gates, reviewer interventions, latency, cost, and recovery behavior; treat close score clusters as ties unless live results show a material gap.
 
 Security fixture definitions are in `data/security_evaluation_fixtures.json` and summarized in `reports/security_evaluation_fixtures.md`.
 
@@ -809,7 +815,7 @@ Recommended pilot sets:
 
 The evaluation filters the shared-discussion alternatives to permissive open-source projects under MIT or Apache-2.0. It excludes Claude Agent SDK and Codex app because they do not satisfy the requested permissive OSS filter as framed in the source discussion.
 
-The simulation is decision-support evidence, not live coding performance. It combines deterministic weighted scoring, Monte Carlo uncertainty, sensitivity analysis, stress tests, implementation effort estimates, operational cost estimates, evidence-gap analysis, source URL checks, GitHub metadata checks, and pilot planning artifacts.
+The simulation is decision-support evidence, not live coding performance. It combines deterministic weighted scoring, Monte Carlo uncertainty, sensitivity analysis, stress tests, implementation effort estimates, operational cost estimates, pilot sample-size planning, evidence-gap analysis, source URL checks, GitHub metadata checks, and pilot planning artifacts.
 
 ## Main Evidence
 
@@ -1042,6 +1048,18 @@ python scripts/estimate_operational_costs.py
 The model uses `data/operational_cost_model.json` to define three operating profiles: a controlled pilot, a team rollout, and an autonomous PR lane. It estimates review hours, administration hours, governance hours, failure-recovery buffer, relative token pressure, latency risk, and an operation-adjusted ranking.
 
 The operation-adjusted ranking starts from the same scenario simulation score, then subtracts a profile-specific penalty for operating friction. It is a tie-breaker for adoption planning, not a replacement for live pilot evidence or provider-specific cost data.
+
+## Pilot Sample-Size Model
+
+The generated task-count estimate is `results/pilot_sample_size_estimates.csv`, produced by:
+
+```powershell
+python scripts/estimate_pilot_sample_sizes.py
+```
+
+The model uses `data/pilot_sample_size_model.json` to map the 0-5 scenario simulation score into an assumed task success rate, then repeatedly simulates observed pass-rate comparisons between the scenario winner and the rank 2 and rank 3 candidates. It estimates whether the top candidate would beat a close comparison candidate at the configured confidence target for 10, 20, 30, 40, and 60 tasks per candidate.
+
+This is intentionally conservative. If the model says the candidates remain unresolved, the pilot should treat them as a tie cluster and decide with safety gates, reviewer judgment, operational fit, and measured cost/latency.
 
 ## Confidence And Evidence
 
@@ -1590,6 +1608,7 @@ Optional additions:
 Required artifacts:
 
 - `data/pilot_tasks.json`
+- `data/pilot_sample_size_model.json`
 - `templates/pilot_run_log.csv`
 - `templates/reviewer_scorecard.md`
 - `templates/security_gate_checklist.md`
@@ -1645,6 +1664,8 @@ Recommended repetition:
 - 1 trial per candidate for an initial screen
 - 3 trials per candidate for a serious selection decision
 - 5 trials per candidate for research claims
+
+The task-count planning appendix is `reports/pilot_sample_size.md`, generated from `results/pilot_sample_size_estimates.csv`. It indicates that the top simulated candidates are close enough that a small pilot should be treated as a tie-breaker and safety/operations review, not as a statistically decisive pass-rate tournament.
 
 For every run, fill `templates/pilot_run_log.csv`.
 
@@ -1725,6 +1746,48 @@ Pilot results should include:
 
 ---
 
+<!-- Source: reports/pilot_sample_size.md -->
+
+# Pilot Sample Size Estimate
+
+Date: 2026-07-05
+
+This appendix estimates how many pilot tasks per candidate are needed to distinguish close shortlist candidates. It is a planning simulation, not proof of live performance. The model maps the 0-5 scenario simulation score to an assumed task success rate, then simulates observed wins across repeated pilot task sets.
+
+Inputs: `data/pilot_sample_size_model.json` and `data/alternatives.json`. Generated output: `results/pilot_sample_size_estimates.csv`.
+
+## Assumptions
+
+| Assumption | Value |
+|---|---:|
+| Success-rate floor | 0.45 |
+| Success-rate ceiling | 0.88 |
+| Simulation trials per comparison | 5000 |
+| Decision confidence target | 0.8 |
+
+## Recommended Task Counts
+
+| Scenario | Comparison | Recommended tasks/candidate | Top win probability | Tie probability | Recommendation |
+|---|---|---:|---:|---:|---|
+| custom_orchestrator_platform | Rank 2: OpenHands Software Agent SDK | >60 | 0.456 | 0.094 | Increase tasks or treat as unresolved |
+| custom_orchestrator_platform | Rank 3: Deep Agents | >60 | 0.469 | 0.093 | Increase tasks or treat as unresolved |
+| enterprise_control_plane | Rank 2: OpenHands Software Agent SDK | >60 | 0.492 | 0.093 | Increase tasks or treat as unresolved |
+| enterprise_control_plane | Rank 3: Deep Agents | >60 | 0.497 | 0.090 | Increase tasks or treat as unresolved |
+| quick_local_coding | Rank 2: OpenHands Software Agent SDK | >60 | 0.520 | 0.084 | Increase tasks or treat as unresolved |
+| quick_local_coding | Rank 3: OpenCode | >60 | 0.568 | 0.086 | Increase tasks or treat as unresolved |
+| research_benchmarking | Rank 2: SWE-agent | >60 | 0.518 | 0.095 | Increase tasks or treat as unresolved |
+| research_benchmarking | Rank 3: OpenHands Software Agent SDK | >60 | 0.529 | 0.098 | Increase tasks or treat as unresolved |
+| secure_autonomous_prs | Rank 2: OpenHands Software Agent SDK | >60 | 0.468 | 0.097 | Increase tasks or treat as unresolved |
+| secure_autonomous_prs | Rank 3: Cline / Cline SDK | >60 | 0.468 | 0.098 | Increase tasks or treat as unresolved |
+
+## Interpretation
+
+- Close deterministic scores usually require more tasks than a two-week pilot can comfortably run. If the model recommends more than 60 tasks per candidate, treat the candidates as a tie cluster and rely on qualitative review, safety gates, and operational fit.
+- Task-count estimates assume the task suite is balanced and comparable across candidates. Reusing the same task distribution from `data/pilot_tasks.json` matters more than increasing raw volume with unrepresentative tasks.
+- Replace the score-to-success mapping with measured pilot pass rates after the first pilot wave. At that point, this model becomes a recalibration tool rather than a desk-review estimate.
+
+---
+
 <!-- Source: reports/validation_summary.md -->
 
 # Validation Summary
@@ -1739,11 +1802,11 @@ This page summarizes the current quality checks for the report repository. It is
 
 | Check | Command | Latest result |
 |---|---|---|
-| Unit tests | `python -m unittest discover -s tests` | 99 tests passed. |
+| Unit tests | `python -m unittest discover -s tests` | 104 tests passed. |
 | Full local workflow | `python scripts/run_all_checks.py` | Passed. |
 | Offline artifact validation | `python scripts/validate_artifacts.py` | Passed. |
-| Generated CSV schemas | `python scripts/validate_csv_schemas.py` | 28 CSV schemas checked, 0 failures. |
-| Local artifact references | `python scripts/check_local_artifact_references.py` | 556 local references checked, 0 missing. |
+| Generated CSV schemas | `python scripts/validate_csv_schemas.py` | 29 CSV schemas checked, 0 failures. |
+| Local artifact references | `python scripts/check_local_artifact_references.py` | 587 local references checked, 0 missing. |
 | External source URLs | `python scripts/check_sources.py --timeout 20` | 41 URLs checked, 41 OK. |
 | GitHub metadata | `python scripts/refresh_github_metadata.py --timeout 20` | 17 repos checked, 0 failures, 0 license mismatches. |
 | Whitespace | `git diff --check` | Passed. |
@@ -1759,6 +1822,7 @@ This page summarizes the current quality checks for the report repository. It is
 | Report references | `results/local_artifact_reference_check.csv` verifies README and report references to local artifacts. |
 | CSV contracts | `results/csv_schema_check.csv` verifies expected headers for generated CSV artifacts. |
 | Operational model | `results/operational_cost_estimates.csv` and `results/operational_fit_rankings.csv` verify the cost/latency tie-breaker model shape. |
+| Pilot sample size | `results/pilot_sample_size_estimates.csv` verifies the task-count planning simulation shape. |
 | Artifact manifest | `results/artifact_manifest.csv` records SHA-256 hashes and byte sizes for committed report, data, script, test, and template artifacts. |
 | Simulation reproducibility | Unit tests cover deterministic scoring, Monte Carlo reproducibility, stress tests, custom weights, effort estimation, evidence-gap analysis, risk registers, decision tree, and artifact validation. |
 
@@ -2121,6 +2185,26 @@ Example post-pilot decision score output.
 | `setup_maintenance_score` |
 | `notes` |
 
+## `pilot_sample_size_estimates.csv`
+
+Pilot task-count simulation for separating close shortlist candidates.
+
+| Column |
+|---|
+| `scenario` |
+| `top_candidate` |
+| `comparison_rank` |
+| `comparison_candidate` |
+| `score_gap` |
+| `estimated_top_success_rate` |
+| `estimated_comparison_success_rate` |
+| `tasks_per_candidate` |
+| `simulation_trials` |
+| `top_wins_probability` |
+| `tie_probability` |
+| `decision_confidence_target` |
+| `recommendation` |
+
 ## `rank_stability.csv`
 
 Cross-scenario deterministic and Monte Carlo rank stability.
@@ -2287,6 +2371,7 @@ python scripts/refresh_github_metadata.py --timeout 20
 - `data/alternatives.json`
 - `data/scoring_rubric.json`
 - `data/scenario_profiles.json`
+- `data/pilot_sample_size_model.json`
 - `data/risk_register.json`
 - `data/simulation_assumptions.json`
 - `data/operational_cost_model.json`
@@ -2310,6 +2395,7 @@ git diff --check
 - `reports/adoption_decision_record.md`
 - `reports/simulation_assumptions.md`
 - `reports/operational_cost_model.md`
+- `reports/pilot_sample_size.md`
 - `reports/evidence_gap_analysis.md`
 - `reports/validation_summary.md`
 
@@ -2395,7 +2481,7 @@ This document maps the original request to the repository artifacts that satisfy
 | Review everything that can affect the simulation. | `reports/simulation_assumptions.md`, `data/simulation_assumptions.json`, `reports/operational_cost_model.md`, `scripts/stress_test_simulation.py`, `scripts/estimate_operational_costs.py`, `results/stress_test_summary.csv`, `results/uncertainty_stress_summary.csv`, `results/operational_fit_rankings.csv` | `python scripts/stress_test_simulation.py --trials 1500 --seed 9011 && python scripts/estimate_operational_costs.py` |
 | Review how complicated it is to build something with the alternatives. | `reports/implementation_blueprints.md`, `reports/operational_cost_model.md`, `results/implementation_effort_estimates.csv`, `results/operational_cost_estimates.csv`, `scripts/estimate_implementation_effort.py`, `scripts/estimate_operational_costs.py` | `python scripts/estimate_implementation_effort.py && python scripts/estimate_operational_costs.py` |
 | Check factors that can make the evaluation unreliable. | `reports/evidence_gap_analysis.md`, `results/evidence_gap_analysis.csv`, `results/source_check.csv`, `scripts/analyze_evidence_gaps.py`, `scripts/check_sources.py` | `python scripts/analyze_evidence_gaps.py` |
-| Provide a way to move from simulated ranking to real evidence. | `reports/pilot_protocol.md`, `data/pilot_tasks.json`, `data/security_evaluation_fixtures.json`, `templates/pilot_run_log.csv`, `templates/reviewer_scorecard.md`, `templates/security_gate_checklist.md`, `examples/pilot_adapter_contract.py`, `scripts/score_pilot_results.py` | `python scripts/score_pilot_results.py --input examples/pilot_candidate_summary.example.csv --output results/pilot_decision_scores.example.csv` |
+| Provide a way to move from simulated ranking to real evidence. | `reports/pilot_protocol.md`, `reports/pilot_sample_size.md`, `data/pilot_tasks.json`, `data/pilot_sample_size_model.json`, `data/security_evaluation_fixtures.json`, `templates/pilot_run_log.csv`, `templates/reviewer_scorecard.md`, `templates/security_gate_checklist.md`, `examples/pilot_adapter_contract.py`, `scripts/estimate_pilot_sample_sizes.py`, `scripts/score_pilot_results.py` | `python scripts/estimate_pilot_sample_sizes.py && python scripts/score_pilot_results.py --input examples/pilot_candidate_summary.example.csv --output results/pilot_decision_scores.example.csv` |
 | Generate the final report in English. | `reports/ai_orchestrator_frameworks_report.md`, `reports/executive_brief.md`, `reports/artifact_index.md` | `python scripts/validate_artifacts.py` |
 | Upload the tests and final report to GitHub. | `tests/`, `scripts/run_all_checks.py`, `ci/validate-workflow.example.yml` | `python scripts/run_all_checks.py` |
 
@@ -2449,6 +2535,7 @@ Use this index to choose the right file quickly.
 | GitHub metadata verification | `reports/github_metadata_check.md` |
 | Security fixture catalog | `reports/security_evaluation_fixtures.md` |
 | Pilot execution protocol | `reports/pilot_protocol.md` |
+| Pilot sample-size planning | `reports/pilot_sample_size.md` |
 | Candidate implementation notes | `reports/implementation_blueprints.md` |
 | Stakeholder presentation outline | `reports/presentation_outline.md` |
 | Report charts | `reports/assets/rank_stability.svg`, `reports/assets/scenario_regret.svg` |
@@ -2462,6 +2549,7 @@ Use this index to choose the right file quickly.
 | Scenario definitions and shortlists | `data/scenario_profiles.json` |
 | Pilot task suite | `data/pilot_tasks.json` |
 | Post-pilot decision model | `data/pilot_decision_model.json` |
+| Pilot sample-size assumptions | `data/pilot_sample_size_model.json` |
 | Machine-readable decision tree | `data/decision_tree.json` |
 | Adoption risk register | `data/risk_register.json` |
 | Simulation assumption register | `data/simulation_assumptions.json` |
@@ -2495,6 +2583,7 @@ Use this index to choose the right file quickly.
 | Prototype and hardening effort estimates | `results/implementation_effort_estimates.csv` |
 | Relative operating-cost estimates | `results/operational_cost_estimates.csv` |
 | Operation-adjusted scenario rankings | `results/operational_fit_rankings.csv` |
+| Pilot sample-size estimates | `results/pilot_sample_size_estimates.csv` |
 | Evidence-gap risk analysis | `results/evidence_gap_analysis.csv` |
 | License audit | `results/license_audit.csv` |
 | URL health check | `results/source_check.csv` |
@@ -2524,6 +2613,7 @@ Use this index to choose the right file quickly.
 | Run simulation stress tests | `scripts/stress_test_simulation.py` |
 | Estimate implementation effort | `scripts/estimate_implementation_effort.py` |
 | Estimate operational cost and latency risk | `scripts/estimate_operational_costs.py` |
+| Estimate pilot sample sizes | `scripts/estimate_pilot_sample_sizes.py` |
 | Analyze evidence gaps | `scripts/analyze_evidence_gaps.py` |
 | Rank with custom weights | `scripts/rank_with_custom_weights.py` |
 | Regenerate license audit | `scripts/license_audit.py` |
@@ -2556,6 +2646,7 @@ python scripts/simulate_alternatives.py --trials 5000 --seed 7331
 python scripts/stress_test_simulation.py --trials 1500 --seed 9011
 python scripts/estimate_implementation_effort.py
 python scripts/estimate_operational_costs.py
+python scripts/estimate_pilot_sample_sizes.py
 python scripts/analyze_evidence_gaps.py
 python scripts/rank_with_custom_weights.py
 python scripts/license_audit.py

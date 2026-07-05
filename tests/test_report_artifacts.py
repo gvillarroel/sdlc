@@ -142,7 +142,7 @@ class ReportArtifactsTest(unittest.TestCase):
         text = summary.read_text(encoding="utf-8")
         self.assertIn("# Validation Summary", text)
         self.assertIn("python scripts/run_all_checks.py", text)
-        self.assertIn("99 tests passed", text)
+        self.assertIn("104 tests passed", text)
 
     def test_results_data_dictionary_exists(self):
         dictionary = ROOT / "reports" / "results_data_dictionary.md"
@@ -159,6 +159,14 @@ class ReportArtifactsTest(unittest.TestCase):
         self.assertIn("# Operational Cost Model", text)
         self.assertIn("results/operational_cost_estimates.csv", text)
         self.assertIn("Largest Operation-Adjusted Rank Shifts", text)
+
+    def test_pilot_sample_size_exists(self):
+        sample_size = ROOT / "reports" / "pilot_sample_size.md"
+        self.assertTrue(sample_size.exists())
+        text = sample_size.read_text(encoding="utf-8")
+        self.assertIn("# Pilot Sample Size Estimate", text)
+        self.assertIn("results/pilot_sample_size_estimates.csv", text)
+        self.assertIn("Recommended Task Counts", text)
 
     def test_maintenance_guide_exists(self):
         guide = ROOT / "reports" / "maintenance_guide.md"
@@ -225,6 +233,7 @@ class ReportArtifactsTest(unittest.TestCase):
             "implementation_effort_estimates.csv",
             "operational_cost_estimates.csv",
             "operational_fit_rankings.csv",
+            "pilot_sample_size_estimates.csv",
             "evidence_gap_analysis.csv",
             "custom_weights_example_rankings.csv",
             "local_artifact_reference_check.csv",

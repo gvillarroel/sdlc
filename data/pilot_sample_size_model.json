@@ -1,0 +1,16 @@
+{
+  "metadata": {
+    "created_at": "2026-07-05",
+    "purpose": "Planning assumptions for estimating how many pilot tasks are needed to distinguish close shortlist candidates.",
+    "interpretation": "The model maps 0-5 simulation scores to assumed task success rates for planning only. Replace these assumptions with measured pilot rates when available."
+  },
+  "score_to_success_rate": {
+    "floor": 0.45,
+    "ceiling": 0.88
+  },
+  "task_counts_per_candidate": [10, 20, 30, 40, 60],
+  "comparison_ranks": [2, 3],
+  "simulation_trials": 5000,
+  "seed": 20260705,
+  "decision_confidence_target": 0.8
+}

@@ -183,6 +183,18 @@ The model uses `data/operational_cost_model.json` to define three operating prof
 
 The operation-adjusted ranking starts from the same scenario simulation score, then subtracts a profile-specific penalty for operating friction. It is a tie-breaker for adoption planning, not a replacement for live pilot evidence or provider-specific cost data.
 
+## Pilot Sample-Size Model
+
+The generated task-count estimate is `results/pilot_sample_size_estimates.csv`, produced by:
+
+```powershell
+python scripts/estimate_pilot_sample_sizes.py
+```
+
+The model uses `data/pilot_sample_size_model.json` to map the 0-5 scenario simulation score into an assumed task success rate, then repeatedly simulates observed pass-rate comparisons between the scenario winner and the rank 2 and rank 3 candidates. It estimates whether the top candidate would beat a close comparison candidate at the configured confidence target for 10, 20, 30, 40, and 60 tasks per candidate.
+
+This is intentionally conservative. If the model says the candidates remain unresolved, the pilot should treat them as a tie cluster and decide with safety gates, reviewer judgment, operational fit, and measured cost/latency.
+
 ## Confidence And Evidence
 
 Source confidence is a manual value from 0 to 1. It reflects repository clarity, license clarity, docs, release posture, and whether the project appears canonical.

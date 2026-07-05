@@ -26,6 +26,7 @@ SOURCE_REPORTS = [
     "residual_risks.md",
     "presentation_outline.md",
     "pilot_protocol.md",
+    "pilot_sample_size.md",
     "validation_summary.md",
     "environment_prerequisites.md",
     "results_data_dictionary.md",

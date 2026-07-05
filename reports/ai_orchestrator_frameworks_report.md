@@ -56,6 +56,8 @@ For live GitHub metadata verification, read `reports/github_metadata_check.md`.
 
 For reusable security pilot fixtures, read `reports/security_evaluation_fixtures.md`; the machine-readable catalog is `data/security_evaluation_fixtures.json`.
 
+For pilot task-count planning, read `reports/pilot_sample_size.md`; the assumptions are in `data/pilot_sample_size_model.json`.
+
 For a requirement-to-artifact coverage map, read `reports/requirements_traceability.md`; the machine-readable matrix is `data/traceability_matrix.json`.
 
 For the latest validation and QA summary, read `reports/validation_summary.md`.
@@ -259,6 +261,7 @@ Generated outputs:
 | `results/implementation_effort_estimates.csv` | Generated prototype and production-hardening complexity estimates. |
 | `results/operational_cost_estimates.csv` | Relative monthly operating effort, token pressure, latency risk, and cost-risk bands. |
 | `results/operational_fit_rankings.csv` | Scenario rankings adjusted by operating-profile friction. |
+| `results/pilot_sample_size_estimates.csv` | Pilot task-count simulation for distinguishing close shortlist candidates. |
 | `results/evidence_gap_analysis.csv` | Evidence risk bands for maturity, source confidence, release, traction, and freshness gaps. |
 | `results/source_check.csv` | Live URL check of report and dataset sources. The latest run checked 41 URLs with 41 OK responses. |
 | `results/github_metadata_check.csv` | Live GitHub repository metadata comparison for stars, push date, license, archive status, and latest release tag. |
@@ -409,6 +412,8 @@ The concrete task suite is included in `data/pilot_tasks.json`. It contains 20 t
 Pilot templates are included in `templates/`: `scenario_selection_workshop.md` for stakeholder priorities, `pilot_run_log.csv` for metrics capture, `reviewer_scorecard.md` for qualitative review, and `security_gate_checklist.md` for safety gates.
 
 The detailed execution protocol is in `reports/pilot_protocol.md`.
+
+The pilot sample-size planning appendix is `reports/pilot_sample_size.md`. Under the current assumptions, the top candidates are too close for a small two-week pilot to separate by raw pass rate alone. Use the pilot to collect comparable evidence on task success, safety gates, reviewer interventions, latency, cost, and recovery behavior; treat close score clusters as ties unless live results show a material gap.
 
 Security fixture definitions are in `data/security_evaluation_fixtures.json` and summarized in `reports/security_evaluation_fixtures.md`.
 

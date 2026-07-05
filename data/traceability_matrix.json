@@ -81,15 +81,18 @@
       "requirement": "Provide a way to move from simulated ranking to real evidence.",
       "primary_artifacts": [
         "reports/pilot_protocol.md",
+        "reports/pilot_sample_size.md",
         "data/pilot_tasks.json",
+        "data/pilot_sample_size_model.json",
         "data/security_evaluation_fixtures.json",
         "templates/pilot_run_log.csv",
         "templates/reviewer_scorecard.md",
         "templates/security_gate_checklist.md",
         "examples/pilot_adapter_contract.py",
+        "scripts/estimate_pilot_sample_sizes.py",
         "scripts/score_pilot_results.py"
       ],
-      "validation": "python scripts/score_pilot_results.py --input examples/pilot_candidate_summary.example.csv --output results/pilot_decision_scores.example.csv"
+      "validation": "python scripts/estimate_pilot_sample_sizes.py && python scripts/score_pilot_results.py --input examples/pilot_candidate_summary.example.csv --output results/pilot_decision_scores.example.csv"
     },
     {
       "id": "english_final_report",

@@ -26,6 +26,7 @@ Optional additions:
 Required artifacts:
 
 - `data/pilot_tasks.json`
+- `data/pilot_sample_size_model.json`
 - `templates/pilot_run_log.csv`
 - `templates/reviewer_scorecard.md`
 - `templates/security_gate_checklist.md`
@@ -81,6 +82,8 @@ Recommended repetition:
 - 1 trial per candidate for an initial screen
 - 3 trials per candidate for a serious selection decision
 - 5 trials per candidate for research claims
+
+The task-count planning appendix is `reports/pilot_sample_size.md`, generated from `results/pilot_sample_size_estimates.csv`. It indicates that the top simulated candidates are close enough that a small pilot should be treated as a tie-breaker and safety/operations review, not as a statistically decisive pass-rate tournament.
 
 For every run, fill `templates/pilot_run_log.csv`.
 

@@ -30,6 +30,7 @@ Use this index to choose the right file quickly.
 | GitHub metadata verification | `reports/github_metadata_check.md` |
 | Security fixture catalog | `reports/security_evaluation_fixtures.md` |
 | Pilot execution protocol | `reports/pilot_protocol.md` |
+| Pilot sample-size planning | `reports/pilot_sample_size.md` |
 | Candidate implementation notes | `reports/implementation_blueprints.md` |
 | Stakeholder presentation outline | `reports/presentation_outline.md` |
 | Report charts | `reports/assets/rank_stability.svg`, `reports/assets/scenario_regret.svg` |
@@ -43,6 +44,7 @@ Use this index to choose the right file quickly.
 | Scenario definitions and shortlists | `data/scenario_profiles.json` |
 | Pilot task suite | `data/pilot_tasks.json` |
 | Post-pilot decision model | `data/pilot_decision_model.json` |
+| Pilot sample-size assumptions | `data/pilot_sample_size_model.json` |
 | Machine-readable decision tree | `data/decision_tree.json` |
 | Adoption risk register | `data/risk_register.json` |
 | Simulation assumption register | `data/simulation_assumptions.json` |
@@ -76,6 +78,7 @@ Use this index to choose the right file quickly.
 | Prototype and hardening effort estimates | `results/implementation_effort_estimates.csv` |
 | Relative operating-cost estimates | `results/operational_cost_estimates.csv` |
 | Operation-adjusted scenario rankings | `results/operational_fit_rankings.csv` |
+| Pilot sample-size estimates | `results/pilot_sample_size_estimates.csv` |
 | Evidence-gap risk analysis | `results/evidence_gap_analysis.csv` |
 | License audit | `results/license_audit.csv` |
 | URL health check | `results/source_check.csv` |
@@ -105,6 +108,7 @@ Use this index to choose the right file quickly.
 | Run simulation stress tests | `scripts/stress_test_simulation.py` |
 | Estimate implementation effort | `scripts/estimate_implementation_effort.py` |
 | Estimate operational cost and latency risk | `scripts/estimate_operational_costs.py` |
+| Estimate pilot sample sizes | `scripts/estimate_pilot_sample_sizes.py` |
 | Analyze evidence gaps | `scripts/analyze_evidence_gaps.py` |
 | Rank with custom weights | `scripts/rank_with_custom_weights.py` |
 | Regenerate license audit | `scripts/license_audit.py` |
@@ -137,6 +141,7 @@ python scripts/simulate_alternatives.py --trials 5000 --seed 7331
 python scripts/stress_test_simulation.py --trials 1500 --seed 9011
 python scripts/estimate_implementation_effort.py
 python scripts/estimate_operational_costs.py
+python scripts/estimate_pilot_sample_sizes.py
 python scripts/analyze_evidence_gaps.py
 python scripts/rank_with_custom_weights.py
 python scripts/license_audit.py

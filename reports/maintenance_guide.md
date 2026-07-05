@@ -26,6 +26,7 @@ python scripts/refresh_github_metadata.py --timeout 20
 - `data/alternatives.json`
 - `data/scoring_rubric.json`
 - `data/scenario_profiles.json`
+- `data/pilot_sample_size_model.json`
 - `data/risk_register.json`
 - `data/simulation_assumptions.json`
 - `data/operational_cost_model.json`
@@ -49,6 +50,7 @@ git diff --check
 - `reports/adoption_decision_record.md`
 - `reports/simulation_assumptions.md`
 - `reports/operational_cost_model.md`
+- `reports/pilot_sample_size.md`
 - `reports/evidence_gap_analysis.md`
 - `reports/validation_summary.md`
 

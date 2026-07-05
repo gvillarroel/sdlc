@@ -9,6 +9,7 @@ Included artifacts:
 - `data/scenario_profiles.json` - plain-English scenario definitions and intended shortlists.
 - `data/pilot_tasks.json` - 20-task pilot suite for moving from simulated ranking to execution evidence.
 - `data/pilot_decision_model.json` - post-pilot scoring weights and gates.
+- `data/pilot_sample_size_model.json` - pilot task-count planning assumptions for close-candidate comparisons.
 - `data/decision_tree.json` - machine-readable guided selection tree.
 - `data/risk_register.json` - actionable adoption risks, mitigations, and required evidence.
 - `data/simulation_assumptions.json` - structured threats to validity and mitigation coverage for the simulation.
@@ -20,6 +21,7 @@ Included artifacts:
 - `scripts/stress_test_simulation.py` - stress tests for scenario weights, maturity discounts, source confidence, sandbox assumptions, and uncertainty.
 - `scripts/estimate_implementation_effort.py` - reproducible prototype and hardening effort estimates from the scoring dataset.
 - `scripts/estimate_operational_costs.py` - relative operating-cost, token-pressure, latency-risk, and operation-adjusted ranking model.
+- `scripts/estimate_pilot_sample_sizes.py` - pilot task-count simulation for distinguishing close shortlist candidates.
 - `scripts/analyze_evidence_gaps.py` - evidence-gap review for maturity, confidence, release, traction, and freshness risks.
 - `scripts/rank_with_custom_weights.py` - deterministic ranking for user-provided scenario weights.
 - `scripts/check_local_artifact_references.py` - offline check for local artifact references in README and reports.
@@ -63,6 +65,7 @@ Included artifacts:
 - `reports/simulation_assumptions.md` - assumptions, stress tests, and interpretation of ranking fragility.
 - `reports/artifact_index.md` - navigation guide for all report, data, result, template, and script artifacts.
 - `reports/pilot_protocol.md` - step-by-step protocol for executing the recommended pilot.
+- `reports/pilot_sample_size.md` - generated task-count planning appendix for the pilot.
 - `reports/implementation_blueprints.md` - implementation notes for the main pilot candidates.
 - `reports/decision_tree.md` - guided shortlist selection tree.
 - `reports/presentation_outline.md` - stakeholder presentation outline.
@@ -88,6 +91,7 @@ python scripts/simulate_alternatives.py --trials 5000 --seed 7331
 python scripts/stress_test_simulation.py --trials 1500 --seed 9011
 python scripts/estimate_implementation_effort.py
 python scripts/estimate_operational_costs.py
+python scripts/estimate_pilot_sample_sizes.py
 python scripts/analyze_evidence_gaps.py
 python scripts/rank_with_custom_weights.py
 python scripts/license_audit.py
@@ -119,6 +123,7 @@ Generated result files:
 - `results/implementation_effort_estimates.csv`
 - `results/operational_cost_estimates.csv`
 - `results/operational_fit_rankings.csv`
+- `results/pilot_sample_size_estimates.csv`
 - `results/evidence_gap_analysis.csv`
 - `results/custom_weights_example_rankings.csv`
 - `results/local_artifact_reference_check.csv`
