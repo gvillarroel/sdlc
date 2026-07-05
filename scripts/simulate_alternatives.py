@@ -120,6 +120,37 @@ SCENARIOS: dict[str, dict[str, float]] = {
     }
 }
 
+CATEGORY_GROUPS: dict[str, list[str]] = {
+    "adoption_readiness": [
+        "implementation_ease",
+        "maturity",
+        "deployment_flexibility"
+    ],
+    "agent_architecture": [
+        "provider_portability",
+        "persistence_memory",
+        "multi_agent",
+        "extensibility",
+        "coding_fit"
+    ],
+    "execution_safety": [
+        "sandbox_isolation",
+        "human_control",
+        "security_governance"
+    ],
+    "operations": [
+        "ci_pr",
+        "observability",
+        "deployment_flexibility"
+    ],
+    "research_fit": [
+        "research_reproducibility",
+        "implementation_ease",
+        "observability",
+        "provider_portability"
+    ]
+}
+
 MATURITY_SIGMA = {
     "production": 0.25,
     "beta": 0.45,
@@ -331,9 +362,56 @@ def sensitivity_summary(
     return output
 
 
+def category_scores(alternatives: list[Alternative]) -> list[dict[str, Any]]:
+    rows = []
+    for alt in alternatives:
+        for category, criteria in CATEGORY_GROUPS.items():
+            score = statistics.fmean(alt.scores[criterion] for criterion in criteria)
+            rows.append({
+                "category": category,
+                "alternative_id": alt.id,
+                "alternative": alt.name,
+                "score": score
+            })
+    rows.sort(key=lambda row: (row["category"], -row["score"], row["alternative"]))
+    rank_by_category: dict[str, int] = {}
+    for row in rows:
+        category = row["category"]
+        rank_by_category[category] = rank_by_category.get(category, 0) + 1
+        row["rank"] = rank_by_category[category]
+    return rows
+
+
+def decision_shortlist(
+    deterministic: dict[str, list[dict[str, Any]]],
+    monte_carlo: dict[str, list[dict[str, Any]]],
+    top_n: int = 5
+) -> list[dict[str, Any]]:
+    rows = []
+    for scenario, deterministic_rows in deterministic.items():
+        mc_by_id = {
+            row["alternative_id"]: row
+            for row in monte_carlo[scenario]
+        }
+        for row in deterministic_rows[:top_n]:
+            mc_row = mc_by_id[row["alternative_id"]]
+            rows.append({
+                "scenario": scenario,
+                "deterministic_rank": row["rank"],
+                "alternative_id": row["alternative_id"],
+                "alternative": row["alternative"],
+                "deterministic_score": row["score"],
+                "monte_carlo_mean_score": mc_row["mean_score"],
+                "monte_carlo_mean_rank": mc_row["mean_rank"],
+                "win_rate": mc_row["win_rate"],
+                "top3_rate": mc_row["top3_rate"]
+            })
+    return rows
+
+
 def write_csv(path: Path, rows: list[dict[str, Any]], fieldnames: list[str]) -> None:
     with path.open("w", encoding="utf-8", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=fieldnames)
+        writer = csv.DictWriter(handle, fieldnames=fieldnames, lineterminator="\n")
         writer.writeheader()
         for row in rows:
             writer.writerow(row)
@@ -343,6 +421,8 @@ def write_outputs(
     deterministic: dict[str, list[dict[str, Any]]],
     monte_carlo: dict[str, list[dict[str, Any]]],
     sensitivity: dict[str, list[dict[str, Any]]],
+    categories: list[dict[str, Any]],
+    shortlist: list[dict[str, Any]],
     output_dir: Path = DEFAULT_RESULTS
 ) -> None:
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -397,18 +477,41 @@ def write_outputs(
             "double_weight_top3_overlap"
         ]
     )
-    (output_dir / "all_results.json").write_text(
-        json.dumps(
+    write_csv(
+        output_dir / "category_scores.csv",
+        categories,
+        ["category", "rank", "alternative_id", "alternative", "score"]
+    )
+    write_csv(
+        output_dir / "decision_shortlist.csv",
+        shortlist,
+        [
+            "scenario",
+            "deterministic_rank",
+            "alternative_id",
+            "alternative",
+            "deterministic_score",
+            "monte_carlo_mean_score",
+            "monte_carlo_mean_rank",
+            "win_rate",
+            "top3_rate"
+        ]
+    )
+    with (output_dir / "all_results.json").open("w", encoding="utf-8", newline="\n") as handle:
+        json.dump(
             {
                 "scenarios": SCENARIOS,
+                "category_groups": CATEGORY_GROUPS,
                 "deterministic_rankings": deterministic,
                 "monte_carlo_summary": monte_carlo,
-                "sensitivity_summary": sensitivity
+                "sensitivity_summary": sensitivity,
+                "category_scores": categories,
+                "decision_shortlist": shortlist
             },
+            handle,
             indent=2
-        ),
-        encoding="utf-8"
-    )
+        )
+        handle.write("\n")
 
 
 def main() -> int:
@@ -424,7 +527,9 @@ def main() -> int:
     deterministic = deterministic_rankings(alternatives)
     monte_carlo = run_monte_carlo(alternatives, trials=args.trials, seed=args.seed)
     sensitivity = sensitivity_summary(alternatives)
-    write_outputs(deterministic, monte_carlo, sensitivity, args.output_dir)
+    categories = category_scores(alternatives)
+    shortlist = decision_shortlist(deterministic, monte_carlo)
+    write_outputs(deterministic, monte_carlo, sensitivity, categories, shortlist, args.output_dir)
 
     for scenario, rows in deterministic.items():
         top = rows[0]

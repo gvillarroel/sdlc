@@ -1,9 +1,12 @@
 import unittest
 
 from scripts.simulate_alternatives import (
+    CATEGORY_GROUPS,
     CRITERIA,
     PERMISSIVE_LICENSES,
     SCENARIOS,
+    category_scores,
+    decision_shortlist,
     deterministic_rankings,
     load_data,
     run_monte_carlo,
@@ -55,6 +58,36 @@ class SimulationModelTest(unittest.TestCase):
                 self.assertLessEqual(row["win_rate"], 1)
                 self.assertGreaterEqual(row["top3_rate"], 0)
                 self.assertLessEqual(row["top3_rate"], 1)
+
+    def test_category_scores_are_ranked_and_bounded(self):
+        rows = category_scores(self.alternatives)
+        self.assertEqual(
+            len(rows),
+            len(self.alternatives) * len(CATEGORY_GROUPS)
+        )
+        for category in CATEGORY_GROUPS:
+            category_rows = [row for row in rows if row["category"] == category]
+            self.assertEqual(
+                [row["rank"] for row in category_rows],
+                list(range(1, len(self.alternatives) + 1))
+            )
+            scores = [row["score"] for row in category_rows]
+            self.assertEqual(scores, sorted(scores, reverse=True))
+            for score in scores:
+                self.assertGreaterEqual(score, 0)
+                self.assertLessEqual(score, 5)
+
+    def test_decision_shortlist_combines_deterministic_and_monte_carlo(self):
+        deterministic = deterministic_rankings(self.alternatives)
+        monte_carlo = run_monte_carlo(self.alternatives, trials=50, seed=321)
+        rows = decision_shortlist(deterministic, monte_carlo, top_n=3)
+        self.assertEqual(len(rows), len(SCENARIOS) * 3)
+        for row in rows:
+            self.assertIn(row["scenario"], SCENARIOS)
+            self.assertGreaterEqual(row["deterministic_score"], 0)
+            self.assertLessEqual(row["deterministic_score"], 5)
+            self.assertGreaterEqual(row["top3_rate"], 0)
+            self.assertLessEqual(row["top3_rate"], 1)
 
 
 if __name__ == "__main__":

@@ -1,0 +1,26 @@
+scenario,deterministic_rank,alternative_id,alternative,deterministic_score,monte_carlo_mean_score,monte_carlo_mean_rank,win_rate,top3_rate
+custom_orchestrator_platform,1,cline,Cline / Cline SDK,4.236764705882353,4.229387065942367,2.335,0.3118,0.8304
+custom_orchestrator_platform,2,openhands_sdk,OpenHands Software Agent SDK,4.236029411764706,4.232597998558428,2.2516,0.327,0.8508
+custom_orchestrator_platform,3,deep_agents,Deep Agents,4.213970588235294,4.182216365187147,3.2244,0.2306,0.617
+custom_orchestrator_platform,4,open_swe,Open SWE,4.089705882352941,4.05397910142457,5.3806,0.0432,0.2168
+custom_orchestrator_platform,5,openhands_agent_canvas,OpenHands Agent Canvas,4.058088235294117,4.026536671525487,5.8338,0.0354,0.1792
+secure_autonomous_prs,1,codex_cli,Codex CLI,4.221014492753623,4.2100876311080855,2.549,0.2844,0.7592
+secure_autonomous_prs,2,openhands_sdk,OpenHands Software Agent SDK,4.19927536231884,4.195233892249816,2.8302,0.2086,0.6894
+secure_autonomous_prs,3,cline,Cline / Cline SDK,4.1985507246376805,4.190884662496266,2.898,0.2318,0.6656
+secure_autonomous_prs,4,open_swe,Open SWE,4.142028985507246,4.102274639108296,4.4056,0.1048,0.3372
+secure_autonomous_prs,5,deep_agents,Deep Agents,4.110869565217391,4.084952704124893,4.7124,0.0858,0.2804
+quick_local_coding,1,cline,Cline / Cline SDK,4.363114754098361,4.351219100233981,1.2358,0.8194,0.9892
+quick_local_coding,2,openhands_sdk,OpenHands Software Agent SDK,4.224590163934426,4.220695646999637,2.607,0.1098,0.8166
+quick_local_coding,3,opencode,OpenCode,4.131147540983607,4.124213635440729,4.172,0.0112,0.3792
+quick_local_coding,4,deep_agents,Deep Agents,4.0983606557377055,4.076516288705569,5.2442,0.032,0.2818
+quick_local_coding,5,codex_cli,Codex CLI,4.090983606557377,4.082604956245261,5.0052,0.0066,0.2384
+research_benchmarking,1,mini_swe_agent,mini-SWE-agent,4.356034482758621,4.2688636600827135,2.4168,0.447,0.7968
+research_benchmarking,2,swe_agent,SWE-agent,4.243965517241379,4.224157417859314,2.7032,0.233,0.7566
+research_benchmarking,3,openhands_sdk,OpenHands Software Agent SDK,4.186206896551725,4.183176544964305,3.1366,0.165,0.6402
+research_benchmarking,4,aider,Aider,4.0456896551724135,4.037286366595089,5.0276,0.0262,0.2374
+research_benchmarking,5,deep_agents,Deep Agents,4.030172413793103,4.017337440511341,5.533,0.0894,0.29
+enterprise_control_plane,1,cline,Cline / Cline SDK,4.276712328767124,4.268957188335012,1.8022,0.5084,0.9236
+enterprise_control_plane,2,openhands_sdk,OpenHands Software Agent SDK,4.213013698630137,4.210253288687835,2.605,0.2012,0.7814
+enterprise_control_plane,3,deep_agents,Deep Agents,4.184246575342466,4.155558464434586,3.6032,0.1574,0.5328
+enterprise_control_plane,4,codex_cli,Codex CLI,4.08972602739726,4.082528929483326,4.7742,0.0168,0.216
+enterprise_control_plane,5,open_swe,Open SWE,4.066438356164383,4.031686405115264,5.6748,0.033,0.1696
