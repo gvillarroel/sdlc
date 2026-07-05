@@ -76,6 +76,7 @@
       "primary_artifacts": [
         "reports/pilot_protocol.md",
         "data/pilot_tasks.json",
+        "data/security_evaluation_fixtures.json",
         "templates/pilot_run_log.csv",
         "templates/reviewer_scorecard.md",
         "templates/security_gate_checklist.md",

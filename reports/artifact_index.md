@@ -15,6 +15,7 @@ Use this index to choose the right file quickly.
 | Scoring formula and assumptions | `reports/methodology_appendix.md` |
 | Simulation assumptions and stress tests | `reports/simulation_assumptions.md` |
 | Evidence-gap findings | `reports/evidence_gap_analysis.md` |
+| Security fixture catalog | `reports/security_evaluation_fixtures.md` |
 | Pilot execution protocol | `reports/pilot_protocol.md` |
 | Candidate implementation notes | `reports/implementation_blueprints.md` |
 | Report charts | `reports/assets/rank_stability.svg`, `reports/assets/scenario_regret.svg` |
@@ -31,6 +32,7 @@ Use this index to choose the right file quickly.
 | Machine-readable decision tree | `data/decision_tree.json` |
 | Adoption risk register | `data/risk_register.json` |
 | Simulation assumption register | `data/simulation_assumptions.json` |
+| Security evaluation fixtures | `data/security_evaluation_fixtures.json` |
 | Requirement traceability matrix | `data/traceability_matrix.json` |
 
 ## Generated Results

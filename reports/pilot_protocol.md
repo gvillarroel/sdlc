@@ -30,6 +30,7 @@ Required artifacts:
 - `templates/reviewer_scorecard.md`
 - `templates/security_gate_checklist.md`
 - `data/risk_register.json`
+- `data/security_evaluation_fixtures.json`
 
 Required environment controls:
 
@@ -93,6 +94,8 @@ Reviewer rules:
 ### 5. Run Security Gates
 
 For candidates considered for autonomous or semi-autonomous use, fill `templates/security_gate_checklist.md`.
+
+Use `reports/security_evaluation_fixtures.md` to select the minimum autonomous workflow fixtures and the additional enterprise control-plane fixtures.
 
 Any of these should block adoption until remediated:
 

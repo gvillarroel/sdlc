@@ -63,6 +63,14 @@ class ReportArtifactsTest(unittest.TestCase):
         self.assertIn("data/traceability_matrix.json", text)
         self.assertIn("python scripts/run_all_checks.py", text)
 
+    def test_security_evaluation_fixtures_report_exists(self):
+        security = ROOT / "reports" / "security_evaluation_fixtures.md"
+        self.assertTrue(security.exists())
+        text = security.read_text(encoding="utf-8")
+        self.assertIn("# Security Evaluation Fixtures", text)
+        self.assertIn("data/security_evaluation_fixtures.json", text)
+        self.assertIn("prompt_injection_issue", text)
+
     def test_artifact_index_exists(self):
         index = ROOT / "reports" / "artifact_index.md"
         self.assertTrue(index.exists())

@@ -38,6 +38,8 @@ For simulation assumptions, threats to validity, and stress-test results, read `
 
 For evidence gaps in young or low-confidence candidates, read `reports/evidence_gap_analysis.md`.
 
+For reusable security pilot fixtures, read `reports/security_evaluation_fixtures.md`; the machine-readable catalog is `data/security_evaluation_fixtures.json`.
+
 For a requirement-to-artifact coverage map, read `reports/requirements_traceability.md`; the machine-readable matrix is `data/traceability_matrix.json`.
 
 Use this report in three passes:
@@ -350,6 +352,8 @@ The concrete task suite is included in `data/pilot_tasks.json`. It contains 20 t
 Pilot templates are included in `templates/`: `pilot_run_log.csv` for metrics capture, `reviewer_scorecard.md` for qualitative review, and `security_gate_checklist.md` for safety gates.
 
 The detailed execution protocol is in `reports/pilot_protocol.md`.
+
+Security fixture definitions are in `data/security_evaluation_fixtures.json` and summarized in `reports/security_evaluation_fixtures.md`.
 
 Candidate-specific implementation blueprints are in `reports/implementation_blueprints.md`.
 
