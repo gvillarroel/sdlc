@@ -78,6 +78,18 @@ class ReportArtifactsTest(unittest.TestCase):
             self.assertTrue(path.exists(), f"missing template file: {path}")
             self.assertGreater(path.stat().st_size, 0)
 
+    def test_generated_svg_assets_exist(self):
+        expected_files = [
+            "rank_stability.svg",
+            "scenario_regret.svg"
+        ]
+        for filename in expected_files:
+            path = ROOT / "reports" / "assets" / filename
+            self.assertTrue(path.exists(), f"missing SVG asset: {path}")
+            text = path.read_text(encoding="utf-8")
+            self.assertIn("<svg", text)
+            self.assertIn("</svg>", text)
+
 
 if __name__ == "__main__":
     unittest.main()

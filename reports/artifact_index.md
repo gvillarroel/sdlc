@@ -12,6 +12,7 @@ Use this index to choose the right file quickly.
 | Full analysis | `reports/ai_orchestrator_frameworks_report.md` |
 | Scoring formula and assumptions | `reports/methodology_appendix.md` |
 | Pilot execution protocol | `reports/pilot_protocol.md` |
+| Report charts | `reports/assets/rank_stability.svg`, `reports/assets/scenario_regret.svg` |
 
 ## Data Inputs
 
@@ -59,6 +60,7 @@ Use this index to choose the right file quickly.
 | Regenerate license audit | `scripts/license_audit.py` |
 | Check external source URLs | `scripts/check_sources.py` |
 | Validate generated artifacts offline | `scripts/validate_artifacts.py` |
+| Generate report SVG charts | `scripts/generate_charts.py` |
 
 ## Maintenance
 

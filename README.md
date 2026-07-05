@@ -13,6 +13,7 @@ Included artifacts:
 - `scripts/check_sources.py` - optional live source URL checker for the report and dataset.
 - `scripts/license_audit.py` - permissive-license audit for included and excluded alternatives.
 - `scripts/validate_artifacts.py` - offline consistency validation for generated artifacts and report references.
+- `scripts/generate_charts.py` - SVG chart generator for report visualizations.
 - `tests/test_simulation_model.py` - validation tests for the scoring model and dataset.
 - `results/` - generated CSV and JSON simulation outputs, including category scorecards and a scenario shortlist.
 - `templates/` - pilot run log, reviewer scorecard, and security gate checklist templates.
@@ -29,6 +30,7 @@ Run the checks and simulations:
 python -m unittest discover -s tests
 python scripts/simulate_alternatives.py --trials 5000 --seed 7331
 python scripts/license_audit.py
+python scripts/generate_charts.py
 python scripts/check_sources.py --timeout 20
 python scripts/validate_artifacts.py
 ```

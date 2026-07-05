@@ -224,6 +224,10 @@ The research scenario is stable around mini-SWE-agent and SWE-agent; halving imp
 
 The additional robustness outputs change how the ranking should be read:
 
+![Rank stability](assets/rank_stability.svg)
+
+![Scenario regret](assets/scenario_regret.svg)
+
 | Finding | Evidence | Interpretation |
 |---|---|---|
 | OpenHands SDK is the most consistently strong candidate. | It ranks in the deterministic top 3 for all 5 scenarios and has the best average deterministic rank. | It is the safest default for a custom software-agent foundation. |
