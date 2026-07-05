@@ -1,0 +1,71 @@
+scenario,criterion,base_top,half_weight_top,double_weight_top,half_weight_top3_overlap,double_weight_top3_overlap
+custom_orchestrator_platform,implementation_ease,Cline / Cline SDK,OpenHands Software Agent SDK,Cline / Cline SDK,3,3
+custom_orchestrator_platform,maturity,Cline / Cline SDK,OpenHands Software Agent SDK,Cline / Cline SDK,3,3
+custom_orchestrator_platform,provider_portability,Cline / Cline SDK,Cline / Cline SDK,OpenHands Software Agent SDK,3,3
+custom_orchestrator_platform,sandbox_isolation,Cline / Cline SDK,Cline / Cline SDK,OpenHands Software Agent SDK,3,2
+custom_orchestrator_platform,persistence_memory,Cline / Cline SDK,Cline / Cline SDK,Deep Agents,3,3
+custom_orchestrator_platform,multi_agent,Cline / Cline SDK,OpenHands Software Agent SDK,Deep Agents,3,3
+custom_orchestrator_platform,human_control,Cline / Cline SDK,OpenHands Software Agent SDK,Cline / Cline SDK,3,3
+custom_orchestrator_platform,ci_pr,Cline / Cline SDK,OpenHands Software Agent SDK,Cline / Cline SDK,3,3
+custom_orchestrator_platform,observability,Cline / Cline SDK,OpenHands Software Agent SDK,Deep Agents,3,3
+custom_orchestrator_platform,security_governance,Cline / Cline SDK,Cline / Cline SDK,Cline / Cline SDK,3,3
+custom_orchestrator_platform,extensibility,Cline / Cline SDK,OpenHands Software Agent SDK,Cline / Cline SDK,3,3
+custom_orchestrator_platform,deployment_flexibility,Cline / Cline SDK,OpenHands Software Agent SDK,Cline / Cline SDK,3,3
+custom_orchestrator_platform,coding_fit,Cline / Cline SDK,OpenHands Software Agent SDK,Cline / Cline SDK,3,3
+custom_orchestrator_platform,research_reproducibility,Cline / Cline SDK,Cline / Cline SDK,OpenHands Software Agent SDK,3,3
+secure_autonomous_prs,implementation_ease,Codex CLI,Codex CLI,Codex CLI,3,3
+secure_autonomous_prs,maturity,Codex CLI,Codex CLI,Codex CLI,3,3
+secure_autonomous_prs,provider_portability,Codex CLI,Codex CLI,OpenHands Software Agent SDK,3,2
+secure_autonomous_prs,sandbox_isolation,Codex CLI,Cline / Cline SDK,Codex CLI,3,2
+secure_autonomous_prs,persistence_memory,Codex CLI,Codex CLI,OpenHands Software Agent SDK,3,3
+secure_autonomous_prs,multi_agent,Codex CLI,Codex CLI,Codex CLI,3,3
+secure_autonomous_prs,human_control,Codex CLI,Codex CLI,Cline / Cline SDK,2,3
+secure_autonomous_prs,ci_pr,Codex CLI,OpenHands Software Agent SDK,Codex CLI,3,2
+secure_autonomous_prs,observability,Codex CLI,Codex CLI,Codex CLI,3,2
+secure_autonomous_prs,security_governance,Codex CLI,OpenHands Software Agent SDK,Codex CLI,3,3
+secure_autonomous_prs,extensibility,Codex CLI,Codex CLI,Cline / Cline SDK,3,3
+secure_autonomous_prs,deployment_flexibility,Codex CLI,Codex CLI,Cline / Cline SDK,3,3
+secure_autonomous_prs,coding_fit,Codex CLI,Codex CLI,Codex CLI,3,3
+secure_autonomous_prs,research_reproducibility,Codex CLI,Codex CLI,OpenHands Software Agent SDK,3,3
+quick_local_coding,implementation_ease,Cline / Cline SDK,Cline / Cline SDK,Cline / Cline SDK,2,3
+quick_local_coding,maturity,Cline / Cline SDK,Cline / Cline SDK,Cline / Cline SDK,2,3
+quick_local_coding,provider_portability,Cline / Cline SDK,Cline / Cline SDK,Cline / Cline SDK,2,3
+quick_local_coding,sandbox_isolation,Cline / Cline SDK,Cline / Cline SDK,Cline / Cline SDK,3,2
+quick_local_coding,persistence_memory,Cline / Cline SDK,Cline / Cline SDK,Cline / Cline SDK,3,2
+quick_local_coding,multi_agent,Cline / Cline SDK,Cline / Cline SDK,Cline / Cline SDK,3,3
+quick_local_coding,human_control,Cline / Cline SDK,Cline / Cline SDK,Cline / Cline SDK,3,3
+quick_local_coding,ci_pr,Cline / Cline SDK,Cline / Cline SDK,Cline / Cline SDK,3,3
+quick_local_coding,observability,Cline / Cline SDK,Cline / Cline SDK,Cline / Cline SDK,3,2
+quick_local_coding,security_governance,Cline / Cline SDK,Cline / Cline SDK,Cline / Cline SDK,3,2
+quick_local_coding,extensibility,Cline / Cline SDK,Cline / Cline SDK,Cline / Cline SDK,3,3
+quick_local_coding,deployment_flexibility,Cline / Cline SDK,Cline / Cline SDK,Cline / Cline SDK,3,3
+quick_local_coding,coding_fit,Cline / Cline SDK,Cline / Cline SDK,Cline / Cline SDK,2,3
+quick_local_coding,research_reproducibility,Cline / Cline SDK,Cline / Cline SDK,Cline / Cline SDK,3,3
+research_benchmarking,implementation_ease,mini-SWE-agent,SWE-agent,mini-SWE-agent,3,2
+research_benchmarking,maturity,mini-SWE-agent,mini-SWE-agent,mini-SWE-agent,3,3
+research_benchmarking,provider_portability,mini-SWE-agent,mini-SWE-agent,mini-SWE-agent,3,3
+research_benchmarking,sandbox_isolation,mini-SWE-agent,mini-SWE-agent,mini-SWE-agent,3,3
+research_benchmarking,persistence_memory,mini-SWE-agent,mini-SWE-agent,mini-SWE-agent,3,3
+research_benchmarking,multi_agent,mini-SWE-agent,mini-SWE-agent,mini-SWE-agent,3,3
+research_benchmarking,human_control,mini-SWE-agent,mini-SWE-agent,mini-SWE-agent,3,3
+research_benchmarking,ci_pr,mini-SWE-agent,mini-SWE-agent,mini-SWE-agent,3,3
+research_benchmarking,observability,mini-SWE-agent,mini-SWE-agent,mini-SWE-agent,3,3
+research_benchmarking,security_governance,mini-SWE-agent,mini-SWE-agent,mini-SWE-agent,3,3
+research_benchmarking,extensibility,mini-SWE-agent,mini-SWE-agent,mini-SWE-agent,3,3
+research_benchmarking,deployment_flexibility,mini-SWE-agent,mini-SWE-agent,mini-SWE-agent,3,3
+research_benchmarking,coding_fit,mini-SWE-agent,mini-SWE-agent,mini-SWE-agent,3,3
+research_benchmarking,research_reproducibility,mini-SWE-agent,mini-SWE-agent,mini-SWE-agent,3,3
+enterprise_control_plane,implementation_ease,Cline / Cline SDK,Cline / Cline SDK,Cline / Cline SDK,3,3
+enterprise_control_plane,maturity,Cline / Cline SDK,Cline / Cline SDK,Cline / Cline SDK,3,3
+enterprise_control_plane,provider_portability,Cline / Cline SDK,Cline / Cline SDK,Cline / Cline SDK,2,3
+enterprise_control_plane,sandbox_isolation,Cline / Cline SDK,Cline / Cline SDK,OpenHands Software Agent SDK,3,3
+enterprise_control_plane,persistence_memory,Cline / Cline SDK,Cline / Cline SDK,Cline / Cline SDK,3,3
+enterprise_control_plane,multi_agent,Cline / Cline SDK,Cline / Cline SDK,Cline / Cline SDK,3,3
+enterprise_control_plane,human_control,Cline / Cline SDK,Cline / Cline SDK,Cline / Cline SDK,3,3
+enterprise_control_plane,ci_pr,Cline / Cline SDK,Cline / Cline SDK,Cline / Cline SDK,3,3
+enterprise_control_plane,observability,Cline / Cline SDK,Cline / Cline SDK,Cline / Cline SDK,3,3
+enterprise_control_plane,security_governance,Cline / Cline SDK,Cline / Cline SDK,Cline / Cline SDK,3,3
+enterprise_control_plane,extensibility,Cline / Cline SDK,Cline / Cline SDK,Cline / Cline SDK,3,3
+enterprise_control_plane,deployment_flexibility,Cline / Cline SDK,Cline / Cline SDK,Cline / Cline SDK,3,3
+enterprise_control_plane,coding_fit,Cline / Cline SDK,Cline / Cline SDK,Cline / Cline SDK,3,3
+enterprise_control_plane,research_reproducibility,Cline / Cline SDK,Cline / Cline SDK,Cline / Cline SDK,3,3

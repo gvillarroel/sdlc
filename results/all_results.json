@@ -1,0 +1,2365 @@
+{
+  "scenarios": {
+    "custom_orchestrator_platform": {
+      "implementation_ease": 0.9,
+      "maturity": 0.8,
+      "provider_portability": 1.1,
+      "sandbox_isolation": 1.1,
+      "persistence_memory": 1.0,
+      "multi_agent": 1.2,
+      "human_control": 0.6,
+      "ci_pr": 0.8,
+      "observability": 1.0,
+      "security_governance": 1.0,
+      "extensibility": 1.4,
+      "deployment_flexibility": 1.1,
+      "coding_fit": 1.0,
+      "research_reproducibility": 0.6
+    },
+    "secure_autonomous_prs": {
+      "implementation_ease": 0.6,
+      "maturity": 1.0,
+      "provider_portability": 0.6,
+      "sandbox_isolation": 1.5,
+      "persistence_memory": 0.7,
+      "multi_agent": 0.8,
+      "human_control": 1.0,
+      "ci_pr": 1.4,
+      "observability": 1.1,
+      "security_governance": 1.5,
+      "extensibility": 0.8,
+      "deployment_flexibility": 1.0,
+      "coding_fit": 1.2,
+      "research_reproducibility": 0.6
+    },
+    "quick_local_coding": {
+      "implementation_ease": 1.5,
+      "maturity": 1.2,
+      "provider_portability": 1.1,
+      "sandbox_isolation": 0.5,
+      "persistence_memory": 0.6,
+      "multi_agent": 0.4,
+      "human_control": 1.2,
+      "ci_pr": 0.7,
+      "observability": 0.5,
+      "security_governance": 0.7,
+      "extensibility": 0.9,
+      "deployment_flexibility": 0.9,
+      "coding_fit": 1.5,
+      "research_reproducibility": 0.5
+    },
+    "research_benchmarking": {
+      "implementation_ease": 2.0,
+      "maturity": 0.5,
+      "provider_portability": 0.6,
+      "sandbox_isolation": 0.4,
+      "persistence_memory": 0.1,
+      "multi_agent": 0.1,
+      "human_control": 0.1,
+      "ci_pr": 0.1,
+      "observability": 0.6,
+      "security_governance": 0.2,
+      "extensibility": 0.5,
+      "deployment_flexibility": 0.4,
+      "coding_fit": 1.0,
+      "research_reproducibility": 5.0
+    },
+    "enterprise_control_plane": {
+      "implementation_ease": 0.7,
+      "maturity": 1.2,
+      "provider_portability": 1.1,
+      "sandbox_isolation": 1.0,
+      "persistence_memory": 1.0,
+      "multi_agent": 1.2,
+      "human_control": 1.1,
+      "ci_pr": 1.0,
+      "observability": 1.2,
+      "security_governance": 1.4,
+      "extensibility": 1.1,
+      "deployment_flexibility": 1.2,
+      "coding_fit": 1.0,
+      "research_reproducibility": 0.4
+    }
+  },
+  "deterministic_rankings": {
+    "custom_orchestrator_platform": [
+      {
+        "scenario": "custom_orchestrator_platform",
+        "alternative_id": "cline",
+        "alternative": "Cline / Cline SDK",
+        "score": 4.236764705882353,
+        "rank": 1
+      },
+      {
+        "scenario": "custom_orchestrator_platform",
+        "alternative_id": "openhands_sdk",
+        "alternative": "OpenHands Software Agent SDK",
+        "score": 4.236029411764706,
+        "rank": 2
+      },
+      {
+        "scenario": "custom_orchestrator_platform",
+        "alternative_id": "deep_agents",
+        "alternative": "Deep Agents",
+        "score": 4.213970588235294,
+        "rank": 3
+      },
+      {
+        "scenario": "custom_orchestrator_platform",
+        "alternative_id": "open_swe",
+        "alternative": "Open SWE",
+        "score": 4.089705882352941,
+        "rank": 4
+      },
+      {
+        "scenario": "custom_orchestrator_platform",
+        "alternative_id": "openhands_agent_canvas",
+        "alternative": "OpenHands Agent Canvas",
+        "score": 4.058088235294117,
+        "rank": 5
+      },
+      {
+        "scenario": "custom_orchestrator_platform",
+        "alternative_id": "codex_cli",
+        "alternative": "Codex CLI",
+        "score": 4.047794117647059,
+        "rank": 6
+      },
+      {
+        "scenario": "custom_orchestrator_platform",
+        "alternative_id": "omnigent",
+        "alternative": "Omnigent",
+        "score": 4.026470588235294,
+        "rank": 7
+      },
+      {
+        "scenario": "custom_orchestrator_platform",
+        "alternative_id": "flue",
+        "alternative": "Flue",
+        "score": 4.005147058823529,
+        "rank": 8
+      },
+      {
+        "scenario": "custom_orchestrator_platform",
+        "alternative_id": "opencode",
+        "alternative": "OpenCode",
+        "score": 3.923529411764706,
+        "rank": 9
+      },
+      {
+        "scenario": "custom_orchestrator_platform",
+        "alternative_id": "goose",
+        "alternative": "goose",
+        "score": 3.8323529411764703,
+        "rank": 10
+      },
+      {
+        "scenario": "custom_orchestrator_platform",
+        "alternative_id": "swe_agent",
+        "alternative": "SWE-agent",
+        "score": 3.709558823529412,
+        "rank": 11
+      },
+      {
+        "scenario": "custom_orchestrator_platform",
+        "alternative_id": "sandcastle",
+        "alternative": "Sandcastle",
+        "score": 3.5933823529411764,
+        "rank": 12
+      },
+      {
+        "scenario": "custom_orchestrator_platform",
+        "alternative_id": "aider",
+        "alternative": "Aider",
+        "score": 3.5323529411764705,
+        "rank": 13
+      },
+      {
+        "scenario": "custom_orchestrator_platform",
+        "alternative_id": "mini_swe_agent",
+        "alternative": "mini-SWE-agent",
+        "score": 3.361764705882353,
+        "rank": 14
+      },
+      {
+        "scenario": "custom_orchestrator_platform",
+        "alternative_id": "omni_agent",
+        "alternative": "Omni Agent",
+        "score": 3.0330882352941178,
+        "rank": 15
+      },
+      {
+        "scenario": "custom_orchestrator_platform",
+        "alternative_id": "omniagent",
+        "alternative": "OmniAgent",
+        "score": 2.486029411764706,
+        "rank": 16
+      },
+      {
+        "scenario": "custom_orchestrator_platform",
+        "alternative_id": "anchor",
+        "alternative": "Anchor",
+        "score": 1.788970588235294,
+        "rank": 17
+      }
+    ],
+    "secure_autonomous_prs": [
+      {
+        "scenario": "secure_autonomous_prs",
+        "alternative_id": "codex_cli",
+        "alternative": "Codex CLI",
+        "score": 4.221014492753623,
+        "rank": 1
+      },
+      {
+        "scenario": "secure_autonomous_prs",
+        "alternative_id": "openhands_sdk",
+        "alternative": "OpenHands Software Agent SDK",
+        "score": 4.19927536231884,
+        "rank": 2
+      },
+      {
+        "scenario": "secure_autonomous_prs",
+        "alternative_id": "cline",
+        "alternative": "Cline / Cline SDK",
+        "score": 4.1985507246376805,
+        "rank": 3
+      },
+      {
+        "scenario": "secure_autonomous_prs",
+        "alternative_id": "open_swe",
+        "alternative": "Open SWE",
+        "score": 4.142028985507246,
+        "rank": 4
+      },
+      {
+        "scenario": "secure_autonomous_prs",
+        "alternative_id": "deep_agents",
+        "alternative": "Deep Agents",
+        "score": 4.110869565217391,
+        "rank": 5
+      },
+      {
+        "scenario": "secure_autonomous_prs",
+        "alternative_id": "openhands_agent_canvas",
+        "alternative": "OpenHands Agent Canvas",
+        "score": 4.015217391304347,
+        "rank": 6
+      },
+      {
+        "scenario": "secure_autonomous_prs",
+        "alternative_id": "omnigent",
+        "alternative": "Omnigent",
+        "score": 4.003623188405797,
+        "rank": 7
+      },
+      {
+        "scenario": "secure_autonomous_prs",
+        "alternative_id": "flue",
+        "alternative": "Flue",
+        "score": 3.929710144927536,
+        "rank": 8
+      },
+      {
+        "scenario": "secure_autonomous_prs",
+        "alternative_id": "opencode",
+        "alternative": "OpenCode",
+        "score": 3.8376811594202898,
+        "rank": 9
+      },
+      {
+        "scenario": "secure_autonomous_prs",
+        "alternative_id": "goose",
+        "alternative": "goose",
+        "score": 3.7804347826086957,
+        "rank": 10
+      },
+      {
+        "scenario": "secure_autonomous_prs",
+        "alternative_id": "swe_agent",
+        "alternative": "SWE-agent",
+        "score": 3.752173913043478,
+        "rank": 11
+      },
+      {
+        "scenario": "secure_autonomous_prs",
+        "alternative_id": "sandcastle",
+        "alternative": "Sandcastle",
+        "score": 3.6586956521739125,
+        "rank": 12
+      },
+      {
+        "scenario": "secure_autonomous_prs",
+        "alternative_id": "aider",
+        "alternative": "Aider",
+        "score": 3.507246376811594,
+        "rank": 13
+      },
+      {
+        "scenario": "secure_autonomous_prs",
+        "alternative_id": "mini_swe_agent",
+        "alternative": "mini-SWE-agent",
+        "score": 3.3188405797101446,
+        "rank": 14
+      },
+      {
+        "scenario": "secure_autonomous_prs",
+        "alternative_id": "omni_agent",
+        "alternative": "Omni Agent",
+        "score": 3.0355072463768114,
+        "rank": 15
+      },
+      {
+        "scenario": "secure_autonomous_prs",
+        "alternative_id": "omniagent",
+        "alternative": "OmniAgent",
+        "score": 2.300724637681159,
+        "rank": 16
+      },
+      {
+        "scenario": "secure_autonomous_prs",
+        "alternative_id": "anchor",
+        "alternative": "Anchor",
+        "score": 1.8231884057971013,
+        "rank": 17
+      }
+    ],
+    "quick_local_coding": [
+      {
+        "scenario": "quick_local_coding",
+        "alternative_id": "cline",
+        "alternative": "Cline / Cline SDK",
+        "score": 4.363114754098361,
+        "rank": 1
+      },
+      {
+        "scenario": "quick_local_coding",
+        "alternative_id": "openhands_sdk",
+        "alternative": "OpenHands Software Agent SDK",
+        "score": 4.224590163934426,
+        "rank": 2
+      },
+      {
+        "scenario": "quick_local_coding",
+        "alternative_id": "opencode",
+        "alternative": "OpenCode",
+        "score": 4.131147540983607,
+        "rank": 3
+      },
+      {
+        "scenario": "quick_local_coding",
+        "alternative_id": "deep_agents",
+        "alternative": "Deep Agents",
+        "score": 4.0983606557377055,
+        "rank": 4
+      },
+      {
+        "scenario": "quick_local_coding",
+        "alternative_id": "codex_cli",
+        "alternative": "Codex CLI",
+        "score": 4.090983606557377,
+        "rank": 5
+      },
+      {
+        "scenario": "quick_local_coding",
+        "alternative_id": "goose",
+        "alternative": "goose",
+        "score": 4.028688524590164,
+        "rank": 6
+      },
+      {
+        "scenario": "quick_local_coding",
+        "alternative_id": "openhands_agent_canvas",
+        "alternative": "OpenHands Agent Canvas",
+        "score": 4.019672131147541,
+        "rank": 7
+      },
+      {
+        "scenario": "quick_local_coding",
+        "alternative_id": "aider",
+        "alternative": "Aider",
+        "score": 3.9565573770491804,
+        "rank": 8
+      },
+      {
+        "scenario": "quick_local_coding",
+        "alternative_id": "omnigent",
+        "alternative": "Omnigent",
+        "score": 3.871311475409836,
+        "rank": 9
+      },
+      {
+        "scenario": "quick_local_coding",
+        "alternative_id": "open_swe",
+        "alternative": "Open SWE",
+        "score": 3.865573770491803,
+        "rank": 10
+      },
+      {
+        "scenario": "quick_local_coding",
+        "alternative_id": "flue",
+        "alternative": "Flue",
+        "score": 3.860655737704918,
+        "rank": 11
+      },
+      {
+        "scenario": "quick_local_coding",
+        "alternative_id": "swe_agent",
+        "alternative": "SWE-agent",
+        "score": 3.7827868852459017,
+        "rank": 12
+      },
+      {
+        "scenario": "quick_local_coding",
+        "alternative_id": "mini_swe_agent",
+        "alternative": "mini-SWE-agent",
+        "score": 3.6286885245901646,
+        "rank": 13
+      },
+      {
+        "scenario": "quick_local_coding",
+        "alternative_id": "sandcastle",
+        "alternative": "Sandcastle",
+        "score": 3.5934426229508203,
+        "rank": 14
+      },
+      {
+        "scenario": "quick_local_coding",
+        "alternative_id": "omni_agent",
+        "alternative": "Omni Agent",
+        "score": 2.892622950819672,
+        "rank": 15
+      },
+      {
+        "scenario": "quick_local_coding",
+        "alternative_id": "omniagent",
+        "alternative": "OmniAgent",
+        "score": 2.589344262295082,
+        "rank": 16
+      },
+      {
+        "scenario": "quick_local_coding",
+        "alternative_id": "anchor",
+        "alternative": "Anchor",
+        "score": 2.1688524590163936,
+        "rank": 17
+      }
+    ],
+    "research_benchmarking": [
+      {
+        "scenario": "research_benchmarking",
+        "alternative_id": "mini_swe_agent",
+        "alternative": "mini-SWE-agent",
+        "score": 4.356034482758621,
+        "rank": 1
+      },
+      {
+        "scenario": "research_benchmarking",
+        "alternative_id": "swe_agent",
+        "alternative": "SWE-agent",
+        "score": 4.243965517241379,
+        "rank": 2
+      },
+      {
+        "scenario": "research_benchmarking",
+        "alternative_id": "openhands_sdk",
+        "alternative": "OpenHands Software Agent SDK",
+        "score": 4.186206896551725,
+        "rank": 3
+      },
+      {
+        "scenario": "research_benchmarking",
+        "alternative_id": "aider",
+        "alternative": "Aider",
+        "score": 4.0456896551724135,
+        "rank": 4
+      },
+      {
+        "scenario": "research_benchmarking",
+        "alternative_id": "deep_agents",
+        "alternative": "Deep Agents",
+        "score": 4.030172413793103,
+        "rank": 5
+      },
+      {
+        "scenario": "research_benchmarking",
+        "alternative_id": "cline",
+        "alternative": "Cline / Cline SDK",
+        "score": 3.9163793103448277,
+        "rank": 6
+      },
+      {
+        "scenario": "research_benchmarking",
+        "alternative_id": "codex_cli",
+        "alternative": "Codex CLI",
+        "score": 3.887931034482759,
+        "rank": 7
+      },
+      {
+        "scenario": "research_benchmarking",
+        "alternative_id": "opencode",
+        "alternative": "OpenCode",
+        "score": 3.8724137931034486,
+        "rank": 8
+      },
+      {
+        "scenario": "research_benchmarking",
+        "alternative_id": "open_swe",
+        "alternative": "Open SWE",
+        "score": 3.84396551724138,
+        "rank": 9
+      },
+      {
+        "scenario": "research_benchmarking",
+        "alternative_id": "goose",
+        "alternative": "goose",
+        "score": 3.6974137931034483,
+        "rank": 10
+      },
+      {
+        "scenario": "research_benchmarking",
+        "alternative_id": "flue",
+        "alternative": "Flue",
+        "score": 3.594827586206897,
+        "rank": 11
+      },
+      {
+        "scenario": "research_benchmarking",
+        "alternative_id": "openhands_agent_canvas",
+        "alternative": "OpenHands Agent Canvas",
+        "score": 3.532758620689655,
+        "rank": 12
+      },
+      {
+        "scenario": "research_benchmarking",
+        "alternative_id": "omnigent",
+        "alternative": "Omnigent",
+        "score": 3.378448275862069,
+        "rank": 13
+      },
+      {
+        "scenario": "research_benchmarking",
+        "alternative_id": "sandcastle",
+        "alternative": "Sandcastle",
+        "score": 3.310344827586207,
+        "rank": 14
+      },
+      {
+        "scenario": "research_benchmarking",
+        "alternative_id": "omni_agent",
+        "alternative": "Omni Agent",
+        "score": 2.3603448275862067,
+        "rank": 15
+      },
+      {
+        "scenario": "research_benchmarking",
+        "alternative_id": "omniagent",
+        "alternative": "OmniAgent",
+        "score": 2.177586206896552,
+        "rank": 16
+      },
+      {
+        "scenario": "research_benchmarking",
+        "alternative_id": "anchor",
+        "alternative": "Anchor",
+        "score": 1.9612068965517242,
+        "rank": 17
+      }
+    ],
+    "enterprise_control_plane": [
+      {
+        "scenario": "enterprise_control_plane",
+        "alternative_id": "cline",
+        "alternative": "Cline / Cline SDK",
+        "score": 4.276712328767124,
+        "rank": 1
+      },
+      {
+        "scenario": "enterprise_control_plane",
+        "alternative_id": "openhands_sdk",
+        "alternative": "OpenHands Software Agent SDK",
+        "score": 4.213013698630137,
+        "rank": 2
+      },
+      {
+        "scenario": "enterprise_control_plane",
+        "alternative_id": "deep_agents",
+        "alternative": "Deep Agents",
+        "score": 4.184246575342466,
+        "rank": 3
+      },
+      {
+        "scenario": "enterprise_control_plane",
+        "alternative_id": "codex_cli",
+        "alternative": "Codex CLI",
+        "score": 4.08972602739726,
+        "rank": 4
+      },
+      {
+        "scenario": "enterprise_control_plane",
+        "alternative_id": "open_swe",
+        "alternative": "Open SWE",
+        "score": 4.066438356164383,
+        "rank": 5
+      },
+      {
+        "scenario": "enterprise_control_plane",
+        "alternative_id": "openhands_agent_canvas",
+        "alternative": "OpenHands Agent Canvas",
+        "score": 4.061643835616438,
+        "rank": 6
+      },
+      {
+        "scenario": "enterprise_control_plane",
+        "alternative_id": "omnigent",
+        "alternative": "Omnigent",
+        "score": 4.0253424657534245,
+        "rank": 7
+      },
+      {
+        "scenario": "enterprise_control_plane",
+        "alternative_id": "flue",
+        "alternative": "Flue",
+        "score": 3.9575342465753427,
+        "rank": 8
+      },
+      {
+        "scenario": "enterprise_control_plane",
+        "alternative_id": "opencode",
+        "alternative": "OpenCode",
+        "score": 3.9164383561643836,
+        "rank": 9
+      },
+      {
+        "scenario": "enterprise_control_plane",
+        "alternative_id": "goose",
+        "alternative": "goose",
+        "score": 3.8253424657534247,
+        "rank": 10
+      },
+      {
+        "scenario": "enterprise_control_plane",
+        "alternative_id": "swe_agent",
+        "alternative": "SWE-agent",
+        "score": 3.6815068493150687,
+        "rank": 11
+      },
+      {
+        "scenario": "enterprise_control_plane",
+        "alternative_id": "sandcastle",
+        "alternative": "Sandcastle",
+        "score": 3.5767123287671234,
+        "rank": 12
+      },
+      {
+        "scenario": "enterprise_control_plane",
+        "alternative_id": "aider",
+        "alternative": "Aider",
+        "score": 3.5404109589041095,
+        "rank": 13
+      },
+      {
+        "scenario": "enterprise_control_plane",
+        "alternative_id": "mini_swe_agent",
+        "alternative": "mini-SWE-agent",
+        "score": 3.2575342465753425,
+        "rank": 14
+      },
+      {
+        "scenario": "enterprise_control_plane",
+        "alternative_id": "omni_agent",
+        "alternative": "Omni Agent",
+        "score": 3.0397260273972604,
+        "rank": 15
+      },
+      {
+        "scenario": "enterprise_control_plane",
+        "alternative_id": "omniagent",
+        "alternative": "OmniAgent",
+        "score": 2.436301369863014,
+        "rank": 16
+      },
+      {
+        "scenario": "enterprise_control_plane",
+        "alternative_id": "anchor",
+        "alternative": "Anchor",
+        "score": 1.8061643835616439,
+        "rank": 17
+      }
+    ]
+  },
+  "monte_carlo_summary": {
+    "custom_orchestrator_platform": [
+      {
+        "scenario": "custom_orchestrator_platform",
+        "alternative_id": "openhands_sdk",
+        "alternative": "OpenHands Software Agent SDK",
+        "mean_score": 4.232597998558428,
+        "p10_score": 4.131913096510936,
+        "p90_score": 4.332315869304199,
+        "mean_rank": 2.2516,
+        "win_rate": 0.327,
+        "top3_rate": 0.8508,
+        "trials": 5000
+      },
+      {
+        "scenario": "custom_orchestrator_platform",
+        "alternative_id": "cline",
+        "alternative": "Cline / Cline SDK",
+        "mean_score": 4.229387065942367,
+        "p10_score": 4.1241746520605105,
+        "p90_score": 4.334817841459675,
+        "mean_rank": 2.335,
+        "win_rate": 0.3118,
+        "top3_rate": 0.8304,
+        "trials": 5000
+      },
+      {
+        "scenario": "custom_orchestrator_platform",
+        "alternative_id": "deep_agents",
+        "alternative": "Deep Agents",
+        "mean_score": 4.182216365187147,
+        "p10_score": 4.013716528611157,
+        "p90_score": 4.347560184992631,
+        "mean_rank": 3.2244,
+        "win_rate": 0.2306,
+        "top3_rate": 0.617,
+        "trials": 5000
+      },
+      {
+        "scenario": "custom_orchestrator_platform",
+        "alternative_id": "open_swe",
+        "alternative": "Open SWE",
+        "mean_score": 4.05397910142457,
+        "p10_score": 3.8803035653028077,
+        "p90_score": 4.225993503698233,
+        "mean_rank": 5.3806,
+        "win_rate": 0.0432,
+        "top3_rate": 0.2168,
+        "trials": 5000
+      },
+      {
+        "scenario": "custom_orchestrator_platform",
+        "alternative_id": "openhands_agent_canvas",
+        "alternative": "OpenHands Agent Canvas",
+        "mean_score": 4.026536671525487,
+        "p10_score": 3.837918125467353,
+        "p90_score": 4.210780430116899,
+        "mean_rank": 5.8338,
+        "win_rate": 0.0354,
+        "top3_rate": 0.1792,
+        "trials": 5000
+      },
+      {
+        "scenario": "custom_orchestrator_platform",
+        "alternative_id": "omnigent",
+        "alternative": "Omnigent",
+        "mean_score": 3.9091009253049784,
+        "p10_score": 3.6279507170180096,
+        "p90_score": 4.1798989069678605,
+        "mean_rank": 7.6578,
+        "win_rate": 0.0312,
+        "top3_rate": 0.112,
+        "trials": 5000
+      },
+      {
+        "scenario": "custom_orchestrator_platform",
+        "alternative_id": "flue",
+        "alternative": "Flue",
+        "mean_score": 3.991749793857742,
+        "p10_score": 3.8181109902745236,
+        "p90_score": 4.159274814508304,
+        "mean_rank": 6.4578,
+        "win_rate": 0.0146,
+        "top3_rate": 0.097,
+        "trials": 5000
+      },
+      {
+        "scenario": "custom_orchestrator_platform",
+        "alternative_id": "codex_cli",
+        "alternative": "Codex CLI",
+        "mean_score": 4.038956085086407,
+        "p10_score": 3.9303506895361418,
+        "p90_score": 4.145073032454792,
+        "mean_rank": 5.6518,
+        "win_rate": 0.0062,
+        "top3_rate": 0.0896,
+        "trials": 5000
+      },
+      {
+        "scenario": "custom_orchestrator_platform",
+        "alternative_id": "opencode",
+        "alternative": "OpenCode",
+        "mean_score": 3.9193809823945105,
+        "p10_score": 3.8072522563857736,
+        "p90_score": 4.028581306903707,
+        "mean_rank": 7.7756,
+        "win_rate": 0.0,
+        "top3_rate": 0.0066,
+        "trials": 5000
+      },
+      {
+        "scenario": "custom_orchestrator_platform",
+        "alternative_id": "goose",
+        "alternative": "goose",
+        "mean_score": 3.822900960374783,
+        "p10_score": 3.704724395883813,
+        "p90_score": 3.9371577978985126,
+        "mean_rank": 9.323,
+        "win_rate": 0.0,
+        "top3_rate": 0.0004,
+        "trials": 5000
+      },
+      {
+        "scenario": "custom_orchestrator_platform",
+        "alternative_id": "omni_agent",
+        "alternative": "Omni Agent",
+        "mean_score": 3.0075939402159273,
+        "p10_score": 2.634153341884313,
+        "p90_score": 3.3817681073979187,
+        "mean_rank": 14.8464,
+        "win_rate": 0.0,
+        "top3_rate": 0.0002,
+        "trials": 5000
+      },
+      {
+        "scenario": "custom_orchestrator_platform",
+        "alternative_id": "swe_agent",
+        "alternative": "SWE-agent",
+        "mean_score": 3.7074826939514125,
+        "p10_score": 3.5855210924230896,
+        "p90_score": 3.8309830028218395,
+        "mean_rank": 10.8098,
+        "win_rate": 0.0,
+        "top3_rate": 0.0,
+        "trials": 5000
+      },
+      {
+        "scenario": "custom_orchestrator_platform",
+        "alternative_id": "sandcastle",
+        "alternative": "Sandcastle",
+        "mean_score": 3.583728641967148,
+        "p10_score": 3.3948663500377854,
+        "p90_score": 3.771862040450082,
+        "mean_rank": 12.02,
+        "win_rate": 0.0,
+        "top3_rate": 0.0,
+        "trials": 5000
+      },
+      {
+        "scenario": "custom_orchestrator_platform",
+        "alternative_id": "aider",
+        "alternative": "Aider",
+        "mean_score": 3.5238320922734667,
+        "p10_score": 3.3983328682295117,
+        "p90_score": 3.6498040588840284,
+        "mean_rank": 12.6646,
+        "win_rate": 0.0,
+        "top3_rate": 0.0,
+        "trials": 5000
+      },
+      {
+        "scenario": "custom_orchestrator_platform",
+        "alternative_id": "mini_swe_agent",
+        "alternative": "mini-SWE-agent",
+        "mean_score": 3.341523568464883,
+        "p10_score": 3.150345185260038,
+        "p90_score": 3.5347161702407903,
+        "mean_rank": 13.8816,
+        "win_rate": 0.0,
+        "top3_rate": 0.0,
+        "trials": 5000
+      },
+      {
+        "scenario": "custom_orchestrator_platform",
+        "alternative_id": "omniagent",
+        "alternative": "OmniAgent",
+        "mean_score": 2.4919128373835373,
+        "p10_score": 2.1083633465913896,
+        "p90_score": 2.8695246765819062,
+        "mean_rank": 15.9484,
+        "win_rate": 0.0,
+        "top3_rate": 0.0,
+        "trials": 5000
+      },
+      {
+        "scenario": "custom_orchestrator_platform",
+        "alternative_id": "anchor",
+        "alternative": "Anchor",
+        "mean_score": 1.839427935061061,
+        "p10_score": 1.478438851101561,
+        "p90_score": 2.199341139313436,
+        "mean_rank": 16.9378,
+        "win_rate": 0.0,
+        "top3_rate": 0.0,
+        "trials": 5000
+      }
+    ],
+    "secure_autonomous_prs": [
+      {
+        "scenario": "secure_autonomous_prs",
+        "alternative_id": "codex_cli",
+        "alternative": "Codex CLI",
+        "mean_score": 4.2100876311080855,
+        "p10_score": 4.10767602760951,
+        "p90_score": 4.309178780701339,
+        "mean_rank": 2.549,
+        "win_rate": 0.2844,
+        "top3_rate": 0.7592,
+        "trials": 5000
+      },
+      {
+        "scenario": "secure_autonomous_prs",
+        "alternative_id": "cline",
+        "alternative": "Cline / Cline SDK",
+        "mean_score": 4.190884662496266,
+        "p10_score": 4.0773736314914055,
+        "p90_score": 4.301470861985916,
+        "mean_rank": 2.898,
+        "win_rate": 0.2318,
+        "top3_rate": 0.6656,
+        "trials": 5000
+      },
+      {
+        "scenario": "secure_autonomous_prs",
+        "alternative_id": "openhands_sdk",
+        "alternative": "OpenHands Software Agent SDK",
+        "mean_score": 4.195233892249816,
+        "p10_score": 4.092414580357512,
+        "p90_score": 4.298466067034806,
+        "mean_rank": 2.8302,
+        "win_rate": 0.2086,
+        "top3_rate": 0.6894,
+        "trials": 5000
+      },
+      {
+        "scenario": "secure_autonomous_prs",
+        "alternative_id": "open_swe",
+        "alternative": "Open SWE",
+        "mean_score": 4.102274639108296,
+        "p10_score": 3.9266867153483545,
+        "p90_score": 4.272271103239957,
+        "mean_rank": 4.4056,
+        "win_rate": 0.1048,
+        "top3_rate": 0.3372,
+        "trials": 5000
+      },
+      {
+        "scenario": "secure_autonomous_prs",
+        "alternative_id": "deep_agents",
+        "alternative": "Deep Agents",
+        "mean_score": 4.084952704124893,
+        "p10_score": 3.9141748013933384,
+        "p90_score": 4.255419868164537,
+        "mean_rank": 4.7124,
+        "win_rate": 0.0858,
+        "top3_rate": 0.2804,
+        "trials": 5000
+      },
+      {
+        "scenario": "secure_autonomous_prs",
+        "alternative_id": "omnigent",
+        "alternative": "Omnigent",
+        "mean_score": 3.8858379637395455,
+        "p10_score": 3.581615520618586,
+        "p90_score": 4.1792066479700045,
+        "mean_rank": 7.7518,
+        "win_rate": 0.0436,
+        "top3_rate": 0.1054,
+        "trials": 5000
+      },
+      {
+        "scenario": "secure_autonomous_prs",
+        "alternative_id": "openhands_agent_canvas",
+        "alternative": "OpenHands Agent Canvas",
+        "mean_score": 3.990585477240529,
+        "p10_score": 3.7857095029781824,
+        "p90_score": 4.193250051872055,
+        "mean_rank": 6.2378,
+        "win_rate": 0.0362,
+        "top3_rate": 0.1294,
+        "trials": 5000
+      },
+      {
+        "scenario": "secure_autonomous_prs",
+        "alternative_id": "flue",
+        "alternative": "Flue",
+        "mean_score": 3.9162969868822843,
+        "p10_score": 3.743892949673167,
+        "p90_score": 4.08534069269111,
+        "mean_rank": 7.4116,
+        "win_rate": 0.0046,
+        "top3_rate": 0.0318,
+        "trials": 5000
+      },
+      {
+        "scenario": "secure_autonomous_prs",
+        "alternative_id": "sandcastle",
+        "alternative": "Sandcastle",
+        "mean_score": 3.6491575059762615,
+        "p10_score": 3.450218443073869,
+        "p90_score": 3.8400368078134672,
+        "mean_rank": 11.2564,
+        "win_rate": 0.0002,
+        "top3_rate": 0.0012,
+        "trials": 5000
+      },
+      {
+        "scenario": "secure_autonomous_prs",
+        "alternative_id": "opencode",
+        "alternative": "OpenCode",
+        "mean_score": 3.837439963169539,
+        "p10_score": 3.724725461420504,
+        "p90_score": 3.952356907291287,
+        "mean_rank": 8.6618,
+        "win_rate": 0.0,
+        "top3_rate": 0.0004,
+        "trials": 5000
+      },
+      {
+        "scenario": "secure_autonomous_prs",
+        "alternative_id": "goose",
+        "alternative": "goose",
+        "mean_score": 3.7782823366621203,
+        "p10_score": 3.6642205811181214,
+        "p90_score": 3.891259483215368,
+        "mean_rank": 9.657,
+        "win_rate": 0.0,
+        "top3_rate": 0.0,
+        "trials": 5000
+      },
+      {
+        "scenario": "secure_autonomous_prs",
+        "alternative_id": "swe_agent",
+        "alternative": "SWE-agent",
+        "mean_score": 3.749083247045277,
+        "p10_score": 3.6277768644864614,
+        "p90_score": 3.8677247009257307,
+        "mean_rank": 10.0924,
+        "win_rate": 0.0,
+        "top3_rate": 0.0,
+        "trials": 5000
+      },
+      {
+        "scenario": "secure_autonomous_prs",
+        "alternative_id": "aider",
+        "alternative": "Aider",
+        "mean_score": 3.503097700282372,
+        "p10_score": 3.378250804739598,
+        "p90_score": 3.624586220446496,
+        "mean_rank": 12.8412,
+        "win_rate": 0.0,
+        "top3_rate": 0.0,
+        "trials": 5000
+      },
+      {
+        "scenario": "secure_autonomous_prs",
+        "alternative_id": "mini_swe_agent",
+        "alternative": "mini-SWE-agent",
+        "mean_score": 3.3022224511118345,
+        "p10_score": 3.1088740338159218,
+        "p90_score": 3.4935613077326395,
+        "mean_rank": 13.9974,
+        "win_rate": 0.0,
+        "top3_rate": 0.0,
+        "trials": 5000
+      },
+      {
+        "scenario": "secure_autonomous_prs",
+        "alternative_id": "omni_agent",
+        "alternative": "Omni Agent",
+        "mean_score": 3.0089826734609337,
+        "p10_score": 2.6250114591318674,
+        "p90_score": 3.3873156419450035,
+        "mean_rank": 14.7564,
+        "win_rate": 0.0,
+        "top3_rate": 0.0,
+        "trials": 5000
+      },
+      {
+        "scenario": "secure_autonomous_prs",
+        "alternative_id": "omniagent",
+        "alternative": "OmniAgent",
+        "mean_score": 2.3122955013015014,
+        "p10_score": 1.9176056905785226,
+        "p90_score": 2.7018373564604277,
+        "mean_rank": 16.0976,
+        "win_rate": 0.0,
+        "top3_rate": 0.0,
+        "trials": 5000
+      },
+      {
+        "scenario": "secure_autonomous_prs",
+        "alternative_id": "anchor",
+        "alternative": "Anchor",
+        "mean_score": 1.8748513312290827,
+        "p10_score": 1.4903320405805849,
+        "p90_score": 2.2525980797152667,
+        "mean_rank": 16.8434,
+        "win_rate": 0.0,
+        "top3_rate": 0.0,
+        "trials": 5000
+      }
+    ],
+    "quick_local_coding": [
+      {
+        "scenario": "quick_local_coding",
+        "alternative_id": "cline",
+        "alternative": "Cline / Cline SDK",
+        "mean_score": 4.351219100233981,
+        "p10_score": 4.243346453301242,
+        "p90_score": 4.454918115373943,
+        "mean_rank": 1.2358,
+        "win_rate": 0.8194,
+        "top3_rate": 0.9892,
+        "trials": 5000
+      },
+      {
+        "scenario": "quick_local_coding",
+        "alternative_id": "openhands_sdk",
+        "alternative": "OpenHands Software Agent SDK",
+        "mean_score": 4.220695646999637,
+        "p10_score": 4.11085187973055,
+        "p90_score": 4.329928677213928,
+        "mean_rank": 2.607,
+        "win_rate": 0.1098,
+        "top3_rate": 0.8166,
+        "trials": 5000
+      },
+      {
+        "scenario": "quick_local_coding",
+        "alternative_id": "deep_agents",
+        "alternative": "Deep Agents",
+        "mean_score": 4.076516288705569,
+        "p10_score": 3.897945702153528,
+        "p90_score": 4.25083696477566,
+        "mean_rank": 5.2442,
+        "win_rate": 0.032,
+        "top3_rate": 0.2818,
+        "trials": 5000
+      },
+      {
+        "scenario": "quick_local_coding",
+        "alternative_id": "openhands_agent_canvas",
+        "alternative": "OpenHands Agent Canvas",
+        "mean_score": 3.9875210609299043,
+        "p10_score": 3.785079849067791,
+        "p90_score": 4.1938371547929965,
+        "mean_rank": 6.9136,
+        "win_rate": 0.0126,
+        "top3_rate": 0.1416,
+        "trials": 5000
+      },
+      {
+        "scenario": "quick_local_coding",
+        "alternative_id": "opencode",
+        "alternative": "OpenCode",
+        "mean_score": 4.124213635440729,
+        "p10_score": 4.013798443065485,
+        "p90_score": 4.233117376649565,
+        "mean_rank": 4.172,
+        "win_rate": 0.0112,
+        "top3_rate": 0.3792,
+        "trials": 5000
+      },
+      {
+        "scenario": "quick_local_coding",
+        "alternative_id": "codex_cli",
+        "alternative": "Codex CLI",
+        "mean_score": 4.082604956245261,
+        "p10_score": 3.967547244608793,
+        "p90_score": 4.1966364815941715,
+        "mean_rank": 5.0052,
+        "win_rate": 0.0066,
+        "top3_rate": 0.2384,
+        "trials": 5000
+      },
+      {
+        "scenario": "quick_local_coding",
+        "alternative_id": "omnigent",
+        "alternative": "Omnigent",
+        "mean_score": 3.7542345268228456,
+        "p10_score": 3.4336342568607225,
+        "p90_score": 4.060056756141402,
+        "mean_rank": 10.4406,
+        "win_rate": 0.0058,
+        "top3_rate": 0.0426,
+        "trials": 5000
+      },
+      {
+        "scenario": "quick_local_coding",
+        "alternative_id": "open_swe",
+        "alternative": "Open SWE",
+        "mean_score": 3.843032286305046,
+        "p10_score": 3.64626352986331,
+        "p90_score": 4.032345983348477,
+        "mean_rank": 9.4984,
+        "win_rate": 0.001,
+        "top3_rate": 0.017,
+        "trials": 5000
+      },
+      {
+        "scenario": "quick_local_coding",
+        "alternative_id": "flue",
+        "alternative": "Flue",
+        "mean_score": 3.8478816447549287,
+        "p10_score": 3.6603208745929283,
+        "p90_score": 4.030263737589971,
+        "mean_rank": 9.45,
+        "win_rate": 0.001,
+        "top3_rate": 0.013,
+        "trials": 5000
+      },
+      {
+        "scenario": "quick_local_coding",
+        "alternative_id": "goose",
+        "alternative": "goose",
+        "mean_score": 4.021075572706954,
+        "p10_score": 3.90827640315495,
+        "p90_score": 4.131818194464453,
+        "mean_rank": 6.2772,
+        "win_rate": 0.0006,
+        "top3_rate": 0.0686,
+        "trials": 5000
+      },
+      {
+        "scenario": "quick_local_coding",
+        "alternative_id": "aider",
+        "alternative": "Aider",
+        "mean_score": 3.94462136326745,
+        "p10_score": 3.8300774554084915,
+        "p90_score": 4.059103846456874,
+        "mean_rank": 7.865,
+        "win_rate": 0.0,
+        "top3_rate": 0.0116,
+        "trials": 5000
+      },
+      {
+        "scenario": "quick_local_coding",
+        "alternative_id": "swe_agent",
+        "alternative": "SWE-agent",
+        "mean_score": 3.776531108402718,
+        "p10_score": 3.654540943088564,
+        "p90_score": 3.9005439197348153,
+        "mean_rank": 10.7802,
+        "win_rate": 0.0,
+        "top3_rate": 0.0002,
+        "trials": 5000
+      },
+      {
+        "scenario": "quick_local_coding",
+        "alternative_id": "sandcastle",
+        "alternative": "Sandcastle",
+        "mean_score": 3.586201456364349,
+        "p10_score": 3.388744686742898,
+        "p90_score": 3.782221346858064,
+        "mean_rank": 12.8336,
+        "win_rate": 0.0,
+        "top3_rate": 0.0002,
+        "trials": 5000
+      },
+      {
+        "scenario": "quick_local_coding",
+        "alternative_id": "mini_swe_agent",
+        "alternative": "mini-SWE-agent",
+        "mean_score": 3.599194922640835,
+        "p10_score": 3.4065910755147066,
+        "p90_score": 3.791694126706208,
+        "mean_rank": 12.737,
+        "win_rate": 0.0,
+        "top3_rate": 0.0,
+        "trials": 5000
+      },
+      {
+        "scenario": "quick_local_coding",
+        "alternative_id": "omni_agent",
+        "alternative": "Omni Agent",
+        "mean_score": 2.883309285295924,
+        "p10_score": 2.4803718704458513,
+        "p90_score": 3.2816864068336753,
+        "mean_rank": 15.2486,
+        "win_rate": 0.0,
+        "top3_rate": 0.0,
+        "trials": 5000
+      },
+      {
+        "scenario": "quick_local_coding",
+        "alternative_id": "omniagent",
+        "alternative": "OmniAgent",
+        "mean_score": 2.5876981553571197,
+        "p10_score": 2.1813708212023823,
+        "p90_score": 2.984881968915414,
+        "mean_rank": 15.9134,
+        "win_rate": 0.0,
+        "top3_rate": 0.0,
+        "trials": 5000
+      },
+      {
+        "scenario": "quick_local_coding",
+        "alternative_id": "anchor",
+        "alternative": "Anchor",
+        "mean_score": 2.177547519106174,
+        "p10_score": 1.7801849576799706,
+        "p90_score": 2.5645860851790605,
+        "mean_rank": 16.7782,
+        "win_rate": 0.0,
+        "top3_rate": 0.0,
+        "trials": 5000
+      }
+    ],
+    "research_benchmarking": [
+      {
+        "scenario": "research_benchmarking",
+        "alternative_id": "mini_swe_agent",
+        "alternative": "mini-SWE-agent",
+        "mean_score": 4.2688636600827135,
+        "p10_score": 4.0230891707133125,
+        "p90_score": 4.477935173921017,
+        "mean_rank": 2.4168,
+        "win_rate": 0.447,
+        "top3_rate": 0.7968,
+        "trials": 5000
+      },
+      {
+        "scenario": "research_benchmarking",
+        "alternative_id": "swe_agent",
+        "alternative": "SWE-agent",
+        "mean_score": 4.224157417859314,
+        "p10_score": 4.043650638288821,
+        "p90_score": 4.394844946110143,
+        "mean_rank": 2.7032,
+        "win_rate": 0.233,
+        "top3_rate": 0.7566,
+        "trials": 5000
+      },
+      {
+        "scenario": "research_benchmarking",
+        "alternative_id": "openhands_sdk",
+        "alternative": "OpenHands Software Agent SDK",
+        "mean_score": 4.183176544964305,
+        "p10_score": 4.009834919869448,
+        "p90_score": 4.359659141183704,
+        "mean_rank": 3.1366,
+        "win_rate": 0.165,
+        "top3_rate": 0.6402,
+        "trials": 5000
+      },
+      {
+        "scenario": "research_benchmarking",
+        "alternative_id": "deep_agents",
+        "alternative": "Deep Agents",
+        "mean_score": 4.017337440511341,
+        "p10_score": 3.7109349820159054,
+        "p90_score": 4.327703324441067,
+        "mean_rank": 5.533,
+        "win_rate": 0.0894,
+        "top3_rate": 0.29,
+        "trials": 5000
+      },
+      {
+        "scenario": "research_benchmarking",
+        "alternative_id": "aider",
+        "alternative": "Aider",
+        "mean_score": 4.037286366595089,
+        "p10_score": 3.8576602627853136,
+        "p90_score": 4.215241452644225,
+        "mean_rank": 5.0276,
+        "win_rate": 0.0262,
+        "top3_rate": 0.2374,
+        "trials": 5000
+      },
+      {
+        "scenario": "research_benchmarking",
+        "alternative_id": "open_swe",
+        "alternative": "Open SWE",
+        "mean_score": 3.8230644523427073,
+        "p10_score": 3.501410580050239,
+        "p90_score": 4.148039920820057,
+        "mean_rank": 8.0462,
+        "win_rate": 0.0148,
+        "top3_rate": 0.0934,
+        "trials": 5000
+      },
+      {
+        "scenario": "research_benchmarking",
+        "alternative_id": "omnigent",
+        "alternative": "Omnigent",
+        "mean_score": 3.3312384573516347,
+        "p10_score": 2.742432505939917,
+        "p90_score": 3.926249054929447,
+        "mean_rank": 11.9528,
+        "win_rate": 0.011,
+        "top3_rate": 0.0338,
+        "trials": 5000
+      },
+      {
+        "scenario": "research_benchmarking",
+        "alternative_id": "cline",
+        "alternative": "Cline / Cline SDK",
+        "mean_score": 3.913152402417199,
+        "p10_score": 3.7201305146176673,
+        "p90_score": 4.0967610436404325,
+        "mean_rank": 6.8544,
+        "win_rate": 0.0064,
+        "top3_rate": 0.0668,
+        "trials": 5000
+      },
+      {
+        "scenario": "research_benchmarking",
+        "alternative_id": "openhands_agent_canvas",
+        "alternative": "OpenHands Agent Canvas",
+        "mean_score": 3.527867428602114,
+        "p10_score": 3.16917909141416,
+        "p90_score": 3.871650073027895,
+        "mean_rank": 11.2142,
+        "win_rate": 0.0022,
+        "top3_rate": 0.012,
+        "trials": 5000
+      },
+      {
+        "scenario": "research_benchmarking",
+        "alternative_id": "codex_cli",
+        "alternative": "Codex CLI",
+        "mean_score": 3.88409297799389,
+        "p10_score": 3.709514221358012,
+        "p90_score": 4.056369860032159,
+        "mean_rank": 7.3434,
+        "win_rate": 0.002,
+        "top3_rate": 0.0326,
+        "trials": 5000
+      },
+      {
+        "scenario": "research_benchmarking",
+        "alternative_id": "flue",
+        "alternative": "Flue",
+        "mean_score": 3.5893567525774386,
+        "p10_score": 3.2774102148525843,
+        "p90_score": 3.8894550336666827,
+        "mean_rank": 10.791,
+        "win_rate": 0.0016,
+        "top3_rate": 0.0076,
+        "trials": 5000
+      },
+      {
+        "scenario": "research_benchmarking",
+        "alternative_id": "opencode",
+        "alternative": "OpenCode",
+        "mean_score": 3.872066202296409,
+        "p10_score": 3.692189386109648,
+        "p90_score": 4.0516464067202875,
+        "mean_rank": 7.5156,
+        "win_rate": 0.0012,
+        "top3_rate": 0.0294,
+        "trials": 5000
+      },
+      {
+        "scenario": "research_benchmarking",
+        "alternative_id": "omni_agent",
+        "alternative": "Omni Agent",
+        "mean_score": 2.3677182626404427,
+        "p10_score": 1.6875399851417046,
+        "p90_score": 3.0484377324588157,
+        "mean_rank": 15.4982,
+        "win_rate": 0.0002,
+        "top3_rate": 0.0004,
+        "trials": 5000
+      },
+      {
+        "scenario": "research_benchmarking",
+        "alternative_id": "goose",
+        "alternative": "goose",
+        "mean_score": 3.697567739080362,
+        "p10_score": 3.5025122589400786,
+        "p90_score": 3.884874532145231,
+        "mean_rank": 9.9572,
+        "win_rate": 0.0,
+        "top3_rate": 0.0026,
+        "trials": 5000
+      },
+      {
+        "scenario": "research_benchmarking",
+        "alternative_id": "sandcastle",
+        "alternative": "Sandcastle",
+        "mean_score": 3.305297578456455,
+        "p10_score": 2.967654117499995,
+        "p90_score": 3.630292989071361,
+        "mean_rank": 12.8678,
+        "win_rate": 0.0,
+        "top3_rate": 0.0004,
+        "trials": 5000
+      },
+      {
+        "scenario": "research_benchmarking",
+        "alternative_id": "omniagent",
+        "alternative": "OmniAgent",
+        "mean_score": 2.1937896708660944,
+        "p10_score": 1.5407657497329104,
+        "p90_score": 2.863310589112789,
+        "mean_rank": 15.879,
+        "win_rate": 0.0,
+        "top3_rate": 0.0,
+        "trials": 5000
+      },
+      {
+        "scenario": "research_benchmarking",
+        "alternative_id": "anchor",
+        "alternative": "Anchor",
+        "mean_score": 1.992984316018661,
+        "p10_score": 1.3435887201114969,
+        "p90_score": 2.664402486517479,
+        "mean_rank": 16.263,
+        "win_rate": 0.0,
+        "top3_rate": 0.0,
+        "trials": 5000
+      }
+    ],
+    "enterprise_control_plane": [
+      {
+        "scenario": "enterprise_control_plane",
+        "alternative_id": "cline",
+        "alternative": "Cline / Cline SDK",
+        "mean_score": 4.268957188335012,
+        "p10_score": 4.164695496391276,
+        "p90_score": 4.372403888663558,
+        "mean_rank": 1.8022,
+        "win_rate": 0.5084,
+        "top3_rate": 0.9236,
+        "trials": 5000
+      },
+      {
+        "scenario": "enterprise_control_plane",
+        "alternative_id": "openhands_sdk",
+        "alternative": "OpenHands Software Agent SDK",
+        "mean_score": 4.210253288687835,
+        "p10_score": 4.111032070626591,
+        "p90_score": 4.309649673288946,
+        "mean_rank": 2.605,
+        "win_rate": 0.2012,
+        "top3_rate": 0.7814,
+        "trials": 5000
+      },
+      {
+        "scenario": "enterprise_control_plane",
+        "alternative_id": "deep_agents",
+        "alternative": "Deep Agents",
+        "mean_score": 4.155558464434586,
+        "p10_score": 3.9923127941678924,
+        "p90_score": 4.315025782911933,
+        "mean_rank": 3.6032,
+        "win_rate": 0.1574,
+        "top3_rate": 0.5328,
+        "trials": 5000
+      },
+      {
+        "scenario": "enterprise_control_plane",
+        "alternative_id": "openhands_agent_canvas",
+        "alternative": "OpenHands Agent Canvas",
+        "mean_score": 4.03296666558864,
+        "p10_score": 3.8374829525771963,
+        "p90_score": 4.225099686651326,
+        "mean_rank": 5.6184,
+        "win_rate": 0.0442,
+        "top3_rate": 0.2086,
+        "trials": 5000
+      },
+      {
+        "scenario": "enterprise_control_plane",
+        "alternative_id": "omnigent",
+        "alternative": "Omnigent",
+        "mean_score": 3.9003905514594654,
+        "p10_score": 3.6192360935571375,
+        "p90_score": 4.184936748593025,
+        "mean_rank": 7.6468,
+        "win_rate": 0.035,
+        "top3_rate": 0.119,
+        "trials": 5000
+      },
+      {
+        "scenario": "enterprise_control_plane",
+        "alternative_id": "open_swe",
+        "alternative": "Open SWE",
+        "mean_score": 4.031686405115264,
+        "p10_score": 3.8574215186718517,
+        "p90_score": 4.205853003154797,
+        "mean_rank": 5.6748,
+        "win_rate": 0.033,
+        "top3_rate": 0.1696,
+        "trials": 5000
+      },
+      {
+        "scenario": "enterprise_control_plane",
+        "alternative_id": "codex_cli",
+        "alternative": "Codex CLI",
+        "mean_score": 4.082528929483326,
+        "p10_score": 3.9753459071646233,
+        "p90_score": 4.187365821572989,
+        "mean_rank": 4.7742,
+        "win_rate": 0.0168,
+        "top3_rate": 0.216,
+        "trials": 5000
+      },
+      {
+        "scenario": "enterprise_control_plane",
+        "alternative_id": "flue",
+        "alternative": "Flue",
+        "mean_score": 3.9410706723278186,
+        "p10_score": 3.7712231729303327,
+        "p90_score": 4.10691792668838,
+        "mean_rank": 7.1816,
+        "win_rate": 0.004,
+        "top3_rate": 0.044,
+        "trials": 5000
+      },
+      {
+        "scenario": "enterprise_control_plane",
+        "alternative_id": "opencode",
+        "alternative": "OpenCode",
+        "mean_score": 3.911831119539537,
+        "p10_score": 3.8018849122696654,
+        "p90_score": 4.0183893695659405,
+        "mean_rank": 7.7,
+        "win_rate": 0.0,
+        "top3_rate": 0.005,
+        "trials": 5000
+      },
+      {
+        "scenario": "enterprise_control_plane",
+        "alternative_id": "goose",
+        "alternative": "goose",
+        "mean_score": 3.8178706751589786,
+        "p10_score": 3.704391549937938,
+        "p90_score": 3.9291728823065677,
+        "mean_rank": 9.202,
+        "win_rate": 0.0,
+        "top3_rate": 0.0,
+        "trials": 5000
+      },
+      {
+        "scenario": "enterprise_control_plane",
+        "alternative_id": "swe_agent",
+        "alternative": "SWE-agent",
+        "mean_score": 3.682910172272278,
+        "p10_score": 3.5621076098037734,
+        "p90_score": 3.805174464272543,
+        "mean_rank": 10.9344,
+        "win_rate": 0.0,
+        "top3_rate": 0.0,
+        "trials": 5000
+      },
+      {
+        "scenario": "enterprise_control_plane",
+        "alternative_id": "sandcastle",
+        "alternative": "Sandcastle",
+        "mean_score": 3.5698709544957143,
+        "p10_score": 3.381030834660551,
+        "p90_score": 3.7547020963019455,
+        "mean_rank": 12.0134,
+        "win_rate": 0.0,
+        "top3_rate": 0.0,
+        "trials": 5000
+      },
+      {
+        "scenario": "enterprise_control_plane",
+        "alternative_id": "aider",
+        "alternative": "Aider",
+        "mean_score": 3.5341564240897,
+        "p10_score": 3.4079814511080637,
+        "p90_score": 3.658297485729358,
+        "mean_rank": 12.466,
+        "win_rate": 0.0,
+        "top3_rate": 0.0,
+        "trials": 5000
+      },
+      {
+        "scenario": "enterprise_control_plane",
+        "alternative_id": "mini_swe_agent",
+        "alternative": "mini-SWE-agent",
+        "mean_score": 3.239483401395035,
+        "p10_score": 3.04139934026081,
+        "p90_score": 3.4363286670979503,
+        "mean_rank": 14.1482,
+        "win_rate": 0.0,
+        "top3_rate": 0.0,
+        "trials": 5000
+      },
+      {
+        "scenario": "enterprise_control_plane",
+        "alternative_id": "omni_agent",
+        "alternative": "Omni Agent",
+        "mean_score": 3.018127646810873,
+        "p10_score": 2.6508846208340717,
+        "p90_score": 3.3915840389325234,
+        "mean_rank": 14.7266,
+        "win_rate": 0.0,
+        "top3_rate": 0.0,
+        "trials": 5000
+      },
+      {
+        "scenario": "enterprise_control_plane",
+        "alternative_id": "omniagent",
+        "alternative": "OmniAgent",
+        "mean_score": 2.443688820965761,
+        "p10_score": 2.0688075949144333,
+        "p90_score": 2.8201733529176867,
+        "mean_rank": 15.9738,
+        "win_rate": 0.0,
+        "top3_rate": 0.0,
+        "trials": 5000
+      },
+      {
+        "scenario": "enterprise_control_plane",
+        "alternative_id": "anchor",
+        "alternative": "Anchor",
+        "mean_score": 1.8517232953239593,
+        "p10_score": 1.4952249201092296,
+        "p90_score": 2.217096369083376,
+        "mean_rank": 16.9294,
+        "win_rate": 0.0,
+        "top3_rate": 0.0,
+        "trials": 5000
+      }
+    ]
+  },
+  "sensitivity_summary": {
+    "custom_orchestrator_platform": [
+      {
+        "scenario": "custom_orchestrator_platform",
+        "criterion": "implementation_ease",
+        "base_top": "Cline / Cline SDK",
+        "half_weight_top": "OpenHands Software Agent SDK",
+        "double_weight_top": "Cline / Cline SDK",
+        "half_weight_top3_overlap": 3,
+        "double_weight_top3_overlap": 3
+      },
+      {
+        "scenario": "custom_orchestrator_platform",
+        "criterion": "maturity",
+        "base_top": "Cline / Cline SDK",
+        "half_weight_top": "OpenHands Software Agent SDK",
+        "double_weight_top": "Cline / Cline SDK",
+        "half_weight_top3_overlap": 3,
+        "double_weight_top3_overlap": 3
+      },
+      {
+        "scenario": "custom_orchestrator_platform",
+        "criterion": "provider_portability",
+        "base_top": "Cline / Cline SDK",
+        "half_weight_top": "Cline / Cline SDK",
+        "double_weight_top": "OpenHands Software Agent SDK",
+        "half_weight_top3_overlap": 3,
+        "double_weight_top3_overlap": 3
+      },
+      {
+        "scenario": "custom_orchestrator_platform",
+        "criterion": "sandbox_isolation",
+        "base_top": "Cline / Cline SDK",
+        "half_weight_top": "Cline / Cline SDK",
+        "double_weight_top": "OpenHands Software Agent SDK",
+        "half_weight_top3_overlap": 3,
+        "double_weight_top3_overlap": 2
+      },
+      {
+        "scenario": "custom_orchestrator_platform",
+        "criterion": "persistence_memory",
+        "base_top": "Cline / Cline SDK",
+        "half_weight_top": "Cline / Cline SDK",
+        "double_weight_top": "Deep Agents",
+        "half_weight_top3_overlap": 3,
+        "double_weight_top3_overlap": 3
+      },
+      {
+        "scenario": "custom_orchestrator_platform",
+        "criterion": "multi_agent",
+        "base_top": "Cline / Cline SDK",
+        "half_weight_top": "OpenHands Software Agent SDK",
+        "double_weight_top": "Deep Agents",
+        "half_weight_top3_overlap": 3,
+        "double_weight_top3_overlap": 3
+      },
+      {
+        "scenario": "custom_orchestrator_platform",
+        "criterion": "human_control",
+        "base_top": "Cline / Cline SDK",
+        "half_weight_top": "OpenHands Software Agent SDK",
+        "double_weight_top": "Cline / Cline SDK",
+        "half_weight_top3_overlap": 3,
+        "double_weight_top3_overlap": 3
+      },
+      {
+        "scenario": "custom_orchestrator_platform",
+        "criterion": "ci_pr",
+        "base_top": "Cline / Cline SDK",
+        "half_weight_top": "OpenHands Software Agent SDK",
+        "double_weight_top": "Cline / Cline SDK",
+        "half_weight_top3_overlap": 3,
+        "double_weight_top3_overlap": 3
+      },
+      {
+        "scenario": "custom_orchestrator_platform",
+        "criterion": "observability",
+        "base_top": "Cline / Cline SDK",
+        "half_weight_top": "OpenHands Software Agent SDK",
+        "double_weight_top": "Deep Agents",
+        "half_weight_top3_overlap": 3,
+        "double_weight_top3_overlap": 3
+      },
+      {
+        "scenario": "custom_orchestrator_platform",
+        "criterion": "security_governance",
+        "base_top": "Cline / Cline SDK",
+        "half_weight_top": "Cline / Cline SDK",
+        "double_weight_top": "Cline / Cline SDK",
+        "half_weight_top3_overlap": 3,
+        "double_weight_top3_overlap": 3
+      },
+      {
+        "scenario": "custom_orchestrator_platform",
+        "criterion": "extensibility",
+        "base_top": "Cline / Cline SDK",
+        "half_weight_top": "OpenHands Software Agent SDK",
+        "double_weight_top": "Cline / Cline SDK",
+        "half_weight_top3_overlap": 3,
+        "double_weight_top3_overlap": 3
+      },
+      {
+        "scenario": "custom_orchestrator_platform",
+        "criterion": "deployment_flexibility",
+        "base_top": "Cline / Cline SDK",
+        "half_weight_top": "OpenHands Software Agent SDK",
+        "double_weight_top": "Cline / Cline SDK",
+        "half_weight_top3_overlap": 3,
+        "double_weight_top3_overlap": 3
+      },
+      {
+        "scenario": "custom_orchestrator_platform",
+        "criterion": "coding_fit",
+        "base_top": "Cline / Cline SDK",
+        "half_weight_top": "OpenHands Software Agent SDK",
+        "double_weight_top": "Cline / Cline SDK",
+        "half_weight_top3_overlap": 3,
+        "double_weight_top3_overlap": 3
+      },
+      {
+        "scenario": "custom_orchestrator_platform",
+        "criterion": "research_reproducibility",
+        "base_top": "Cline / Cline SDK",
+        "half_weight_top": "Cline / Cline SDK",
+        "double_weight_top": "OpenHands Software Agent SDK",
+        "half_weight_top3_overlap": 3,
+        "double_weight_top3_overlap": 3
+      }
+    ],
+    "secure_autonomous_prs": [
+      {
+        "scenario": "secure_autonomous_prs",
+        "criterion": "implementation_ease",
+        "base_top": "Codex CLI",
+        "half_weight_top": "Codex CLI",
+        "double_weight_top": "Codex CLI",
+        "half_weight_top3_overlap": 3,
+        "double_weight_top3_overlap": 3
+      },
+      {
+        "scenario": "secure_autonomous_prs",
+        "criterion": "maturity",
+        "base_top": "Codex CLI",
+        "half_weight_top": "Codex CLI",
+        "double_weight_top": "Codex CLI",
+        "half_weight_top3_overlap": 3,
+        "double_weight_top3_overlap": 3
+      },
+      {
+        "scenario": "secure_autonomous_prs",
+        "criterion": "provider_portability",
+        "base_top": "Codex CLI",
+        "half_weight_top": "Codex CLI",
+        "double_weight_top": "OpenHands Software Agent SDK",
+        "half_weight_top3_overlap": 3,
+        "double_weight_top3_overlap": 2
+      },
+      {
+        "scenario": "secure_autonomous_prs",
+        "criterion": "sandbox_isolation",
+        "base_top": "Codex CLI",
+        "half_weight_top": "Cline / Cline SDK",
+        "double_weight_top": "Codex CLI",
+        "half_weight_top3_overlap": 3,
+        "double_weight_top3_overlap": 2
+      },
+      {
+        "scenario": "secure_autonomous_prs",
+        "criterion": "persistence_memory",
+        "base_top": "Codex CLI",
+        "half_weight_top": "Codex CLI",
+        "double_weight_top": "OpenHands Software Agent SDK",
+        "half_weight_top3_overlap": 3,
+        "double_weight_top3_overlap": 3
+      },
+      {
+        "scenario": "secure_autonomous_prs",
+        "criterion": "multi_agent",
+        "base_top": "Codex CLI",
+        "half_weight_top": "Codex CLI",
+        "double_weight_top": "Codex CLI",
+        "half_weight_top3_overlap": 3,
+        "double_weight_top3_overlap": 3
+      },
+      {
+        "scenario": "secure_autonomous_prs",
+        "criterion": "human_control",
+        "base_top": "Codex CLI",
+        "half_weight_top": "Codex CLI",
+        "double_weight_top": "Cline / Cline SDK",
+        "half_weight_top3_overlap": 2,
+        "double_weight_top3_overlap": 3
+      },
+      {
+        "scenario": "secure_autonomous_prs",
+        "criterion": "ci_pr",
+        "base_top": "Codex CLI",
+        "half_weight_top": "OpenHands Software Agent SDK",
+        "double_weight_top": "Codex CLI",
+        "half_weight_top3_overlap": 3,
+        "double_weight_top3_overlap": 2
+      },
+      {
+        "scenario": "secure_autonomous_prs",
+        "criterion": "observability",
+        "base_top": "Codex CLI",
+        "half_weight_top": "Codex CLI",
+        "double_weight_top": "Codex CLI",
+        "half_weight_top3_overlap": 3,
+        "double_weight_top3_overlap": 2
+      },
+      {
+        "scenario": "secure_autonomous_prs",
+        "criterion": "security_governance",
+        "base_top": "Codex CLI",
+        "half_weight_top": "OpenHands Software Agent SDK",
+        "double_weight_top": "Codex CLI",
+        "half_weight_top3_overlap": 3,
+        "double_weight_top3_overlap": 3
+      },
+      {
+        "scenario": "secure_autonomous_prs",
+        "criterion": "extensibility",
+        "base_top": "Codex CLI",
+        "half_weight_top": "Codex CLI",
+        "double_weight_top": "Cline / Cline SDK",
+        "half_weight_top3_overlap": 3,
+        "double_weight_top3_overlap": 3
+      },
+      {
+        "scenario": "secure_autonomous_prs",
+        "criterion": "deployment_flexibility",
+        "base_top": "Codex CLI",
+        "half_weight_top": "Codex CLI",
+        "double_weight_top": "Cline / Cline SDK",
+        "half_weight_top3_overlap": 3,
+        "double_weight_top3_overlap": 3
+      },
+      {
+        "scenario": "secure_autonomous_prs",
+        "criterion": "coding_fit",
+        "base_top": "Codex CLI",
+        "half_weight_top": "Codex CLI",
+        "double_weight_top": "Codex CLI",
+        "half_weight_top3_overlap": 3,
+        "double_weight_top3_overlap": 3
+      },
+      {
+        "scenario": "secure_autonomous_prs",
+        "criterion": "research_reproducibility",
+        "base_top": "Codex CLI",
+        "half_weight_top": "Codex CLI",
+        "double_weight_top": "OpenHands Software Agent SDK",
+        "half_weight_top3_overlap": 3,
+        "double_weight_top3_overlap": 3
+      }
+    ],
+    "quick_local_coding": [
+      {
+        "scenario": "quick_local_coding",
+        "criterion": "implementation_ease",
+        "base_top": "Cline / Cline SDK",
+        "half_weight_top": "Cline / Cline SDK",
+        "double_weight_top": "Cline / Cline SDK",
+        "half_weight_top3_overlap": 2,
+        "double_weight_top3_overlap": 3
+      },
+      {
+        "scenario": "quick_local_coding",
+        "criterion": "maturity",
+        "base_top": "Cline / Cline SDK",
+        "half_weight_top": "Cline / Cline SDK",
+        "double_weight_top": "Cline / Cline SDK",
+        "half_weight_top3_overlap": 2,
+        "double_weight_top3_overlap": 3
+      },
+      {
+        "scenario": "quick_local_coding",
+        "criterion": "provider_portability",
+        "base_top": "Cline / Cline SDK",
+        "half_weight_top": "Cline / Cline SDK",
+        "double_weight_top": "Cline / Cline SDK",
+        "half_weight_top3_overlap": 2,
+        "double_weight_top3_overlap": 3
+      },
+      {
+        "scenario": "quick_local_coding",
+        "criterion": "sandbox_isolation",
+        "base_top": "Cline / Cline SDK",
+        "half_weight_top": "Cline / Cline SDK",
+        "double_weight_top": "Cline / Cline SDK",
+        "half_weight_top3_overlap": 3,
+        "double_weight_top3_overlap": 2
+      },
+      {
+        "scenario": "quick_local_coding",
+        "criterion": "persistence_memory",
+        "base_top": "Cline / Cline SDK",
+        "half_weight_top": "Cline / Cline SDK",
+        "double_weight_top": "Cline / Cline SDK",
+        "half_weight_top3_overlap": 3,
+        "double_weight_top3_overlap": 2
+      },
+      {
+        "scenario": "quick_local_coding",
+        "criterion": "multi_agent",
+        "base_top": "Cline / Cline SDK",
+        "half_weight_top": "Cline / Cline SDK",
+        "double_weight_top": "Cline / Cline SDK",
+        "half_weight_top3_overlap": 3,
+        "double_weight_top3_overlap": 3
+      },
+      {
+        "scenario": "quick_local_coding",
+        "criterion": "human_control",
+        "base_top": "Cline / Cline SDK",
+        "half_weight_top": "Cline / Cline SDK",
+        "double_weight_top": "Cline / Cline SDK",
+        "half_weight_top3_overlap": 3,
+        "double_weight_top3_overlap": 3
+      },
+      {
+        "scenario": "quick_local_coding",
+        "criterion": "ci_pr",
+        "base_top": "Cline / Cline SDK",
+        "half_weight_top": "Cline / Cline SDK",
+        "double_weight_top": "Cline / Cline SDK",
+        "half_weight_top3_overlap": 3,
+        "double_weight_top3_overlap": 3
+      },
+      {
+        "scenario": "quick_local_coding",
+        "criterion": "observability",
+        "base_top": "Cline / Cline SDK",
+        "half_weight_top": "Cline / Cline SDK",
+        "double_weight_top": "Cline / Cline SDK",
+        "half_weight_top3_overlap": 3,
+        "double_weight_top3_overlap": 2
+      },
+      {
+        "scenario": "quick_local_coding",
+        "criterion": "security_governance",
+        "base_top": "Cline / Cline SDK",
+        "half_weight_top": "Cline / Cline SDK",
+        "double_weight_top": "Cline / Cline SDK",
+        "half_weight_top3_overlap": 3,
+        "double_weight_top3_overlap": 2
+      },
+      {
+        "scenario": "quick_local_coding",
+        "criterion": "extensibility",
+        "base_top": "Cline / Cline SDK",
+        "half_weight_top": "Cline / Cline SDK",
+        "double_weight_top": "Cline / Cline SDK",
+        "half_weight_top3_overlap": 3,
+        "double_weight_top3_overlap": 3
+      },
+      {
+        "scenario": "quick_local_coding",
+        "criterion": "deployment_flexibility",
+        "base_top": "Cline / Cline SDK",
+        "half_weight_top": "Cline / Cline SDK",
+        "double_weight_top": "Cline / Cline SDK",
+        "half_weight_top3_overlap": 3,
+        "double_weight_top3_overlap": 3
+      },
+      {
+        "scenario": "quick_local_coding",
+        "criterion": "coding_fit",
+        "base_top": "Cline / Cline SDK",
+        "half_weight_top": "Cline / Cline SDK",
+        "double_weight_top": "Cline / Cline SDK",
+        "half_weight_top3_overlap": 2,
+        "double_weight_top3_overlap": 3
+      },
+      {
+        "scenario": "quick_local_coding",
+        "criterion": "research_reproducibility",
+        "base_top": "Cline / Cline SDK",
+        "half_weight_top": "Cline / Cline SDK",
+        "double_weight_top": "Cline / Cline SDK",
+        "half_weight_top3_overlap": 3,
+        "double_weight_top3_overlap": 3
+      }
+    ],
+    "research_benchmarking": [
+      {
+        "scenario": "research_benchmarking",
+        "criterion": "implementation_ease",
+        "base_top": "mini-SWE-agent",
+        "half_weight_top": "SWE-agent",
+        "double_weight_top": "mini-SWE-agent",
+        "half_weight_top3_overlap": 3,
+        "double_weight_top3_overlap": 2
+      },
+      {
+        "scenario": "research_benchmarking",
+        "criterion": "maturity",
+        "base_top": "mini-SWE-agent",
+        "half_weight_top": "mini-SWE-agent",
+        "double_weight_top": "mini-SWE-agent",
+        "half_weight_top3_overlap": 3,
+        "double_weight_top3_overlap": 3
+      },
+      {
+        "scenario": "research_benchmarking",
+        "criterion": "provider_portability",
+        "base_top": "mini-SWE-agent",
+        "half_weight_top": "mini-SWE-agent",
+        "double_weight_top": "mini-SWE-agent",
+        "half_weight_top3_overlap": 3,
+        "double_weight_top3_overlap": 3
+      },
+      {
+        "scenario": "research_benchmarking",
+        "criterion": "sandbox_isolation",
+        "base_top": "mini-SWE-agent",
+        "half_weight_top": "mini-SWE-agent",
+        "double_weight_top": "mini-SWE-agent",
+        "half_weight_top3_overlap": 3,
+        "double_weight_top3_overlap": 3
+      },
+      {
+        "scenario": "research_benchmarking",
+        "criterion": "persistence_memory",
+        "base_top": "mini-SWE-agent",
+        "half_weight_top": "mini-SWE-agent",
+        "double_weight_top": "mini-SWE-agent",
+        "half_weight_top3_overlap": 3,
+        "double_weight_top3_overlap": 3
+      },
+      {
+        "scenario": "research_benchmarking",
+        "criterion": "multi_agent",
+        "base_top": "mini-SWE-agent",
+        "half_weight_top": "mini-SWE-agent",
+        "double_weight_top": "mini-SWE-agent",
+        "half_weight_top3_overlap": 3,
+        "double_weight_top3_overlap": 3
+      },
+      {
+        "scenario": "research_benchmarking",
+        "criterion": "human_control",
+        "base_top": "mini-SWE-agent",
+        "half_weight_top": "mini-SWE-agent",
+        "double_weight_top": "mini-SWE-agent",
+        "half_weight_top3_overlap": 3,
+        "double_weight_top3_overlap": 3
+      },
+      {
+        "scenario": "research_benchmarking",
+        "criterion": "ci_pr",
+        "base_top": "mini-SWE-agent",
+        "half_weight_top": "mini-SWE-agent",
+        "double_weight_top": "mini-SWE-agent",
+        "half_weight_top3_overlap": 3,
+        "double_weight_top3_overlap": 3
+      },
+      {
+        "scenario": "research_benchmarking",
+        "criterion": "observability",
+        "base_top": "mini-SWE-agent",
+        "half_weight_top": "mini-SWE-agent",
+        "double_weight_top": "mini-SWE-agent",
+        "half_weight_top3_overlap": 3,
+        "double_weight_top3_overlap": 3
+      },
+      {
+        "scenario": "research_benchmarking",
+        "criterion": "security_governance",
+        "base_top": "mini-SWE-agent",
+        "half_weight_top": "mini-SWE-agent",
+        "double_weight_top": "mini-SWE-agent",
+        "half_weight_top3_overlap": 3,
+        "double_weight_top3_overlap": 3
+      },
+      {
+        "scenario": "research_benchmarking",
+        "criterion": "extensibility",
+        "base_top": "mini-SWE-agent",
+        "half_weight_top": "mini-SWE-agent",
+        "double_weight_top": "mini-SWE-agent",
+        "half_weight_top3_overlap": 3,
+        "double_weight_top3_overlap": 3
+      },
+      {
+        "scenario": "research_benchmarking",
+        "criterion": "deployment_flexibility",
+        "base_top": "mini-SWE-agent",
+        "half_weight_top": "mini-SWE-agent",
+        "double_weight_top": "mini-SWE-agent",
+        "half_weight_top3_overlap": 3,
+        "double_weight_top3_overlap": 3
+      },
+      {
+        "scenario": "research_benchmarking",
+        "criterion": "coding_fit",
+        "base_top": "mini-SWE-agent",
+        "half_weight_top": "mini-SWE-agent",
+        "double_weight_top": "mini-SWE-agent",
+        "half_weight_top3_overlap": 3,
+        "double_weight_top3_overlap": 3
+      },
+      {
+        "scenario": "research_benchmarking",
+        "criterion": "research_reproducibility",
+        "base_top": "mini-SWE-agent",
+        "half_weight_top": "mini-SWE-agent",
+        "double_weight_top": "mini-SWE-agent",
+        "half_weight_top3_overlap": 3,
+        "double_weight_top3_overlap": 3
+      }
+    ],
+    "enterprise_control_plane": [
+      {
+        "scenario": "enterprise_control_plane",
+        "criterion": "implementation_ease",
+        "base_top": "Cline / Cline SDK",
+        "half_weight_top": "Cline / Cline SDK",
+        "double_weight_top": "Cline / Cline SDK",
+        "half_weight_top3_overlap": 3,
+        "double_weight_top3_overlap": 3
+      },
+      {
+        "scenario": "enterprise_control_plane",
+        "criterion": "maturity",
+        "base_top": "Cline / Cline SDK",
+        "half_weight_top": "Cline / Cline SDK",
+        "double_weight_top": "Cline / Cline SDK",
+        "half_weight_top3_overlap": 3,
+        "double_weight_top3_overlap": 3
+      },
+      {
+        "scenario": "enterprise_control_plane",
+        "criterion": "provider_portability",
+        "base_top": "Cline / Cline SDK",
+        "half_weight_top": "Cline / Cline SDK",
+        "double_weight_top": "Cline / Cline SDK",
+        "half_weight_top3_overlap": 2,
+        "double_weight_top3_overlap": 3
+      },
+      {
+        "scenario": "enterprise_control_plane",
+        "criterion": "sandbox_isolation",
+        "base_top": "Cline / Cline SDK",
+        "half_weight_top": "Cline / Cline SDK",
+        "double_weight_top": "OpenHands Software Agent SDK",
+        "half_weight_top3_overlap": 3,
+        "double_weight_top3_overlap": 3
+      },
+      {
+        "scenario": "enterprise_control_plane",
+        "criterion": "persistence_memory",
+        "base_top": "Cline / Cline SDK",
+        "half_weight_top": "Cline / Cline SDK",
+        "double_weight_top": "Cline / Cline SDK",
+        "half_weight_top3_overlap": 3,
+        "double_weight_top3_overlap": 3
+      },
+      {
+        "scenario": "enterprise_control_plane",
+        "criterion": "multi_agent",
+        "base_top": "Cline / Cline SDK",
+        "half_weight_top": "Cline / Cline SDK",
+        "double_weight_top": "Cline / Cline SDK",
+        "half_weight_top3_overlap": 3,
+        "double_weight_top3_overlap": 3
+      },
+      {
+        "scenario": "enterprise_control_plane",
+        "criterion": "human_control",
+        "base_top": "Cline / Cline SDK",
+        "half_weight_top": "Cline / Cline SDK",
+        "double_weight_top": "Cline / Cline SDK",
+        "half_weight_top3_overlap": 3,
+        "double_weight_top3_overlap": 3
+      },
+      {
+        "scenario": "enterprise_control_plane",
+        "criterion": "ci_pr",
+        "base_top": "Cline / Cline SDK",
+        "half_weight_top": "Cline / Cline SDK",
+        "double_weight_top": "Cline / Cline SDK",
+        "half_weight_top3_overlap": 3,
+        "double_weight_top3_overlap": 3
+      },
+      {
+        "scenario": "enterprise_control_plane",
+        "criterion": "observability",
+        "base_top": "Cline / Cline SDK",
+        "half_weight_top": "Cline / Cline SDK",
+        "double_weight_top": "Cline / Cline SDK",
+        "half_weight_top3_overlap": 3,
+        "double_weight_top3_overlap": 3
+      },
+      {
+        "scenario": "enterprise_control_plane",
+        "criterion": "security_governance",
+        "base_top": "Cline / Cline SDK",
+        "half_weight_top": "Cline / Cline SDK",
+        "double_weight_top": "Cline / Cline SDK",
+        "half_weight_top3_overlap": 3,
+        "double_weight_top3_overlap": 3
+      },
+      {
+        "scenario": "enterprise_control_plane",
+        "criterion": "extensibility",
+        "base_top": "Cline / Cline SDK",
+        "half_weight_top": "Cline / Cline SDK",
+        "double_weight_top": "Cline / Cline SDK",
+        "half_weight_top3_overlap": 3,
+        "double_weight_top3_overlap": 3
+      },
+      {
+        "scenario": "enterprise_control_plane",
+        "criterion": "deployment_flexibility",
+        "base_top": "Cline / Cline SDK",
+        "half_weight_top": "Cline / Cline SDK",
+        "double_weight_top": "Cline / Cline SDK",
+        "half_weight_top3_overlap": 3,
+        "double_weight_top3_overlap": 3
+      },
+      {
+        "scenario": "enterprise_control_plane",
+        "criterion": "coding_fit",
+        "base_top": "Cline / Cline SDK",
+        "half_weight_top": "Cline / Cline SDK",
+        "double_weight_top": "Cline / Cline SDK",
+        "half_weight_top3_overlap": 3,
+        "double_weight_top3_overlap": 3
+      },
+      {
+        "scenario": "enterprise_control_plane",
+        "criterion": "research_reproducibility",
+        "base_top": "Cline / Cline SDK",
+        "half_weight_top": "Cline / Cline SDK",
+        "double_weight_top": "Cline / Cline SDK",
+        "half_weight_top3_overlap": 3,
+        "double_weight_top3_overlap": 3
+      }
+    ]
+  }
+}
