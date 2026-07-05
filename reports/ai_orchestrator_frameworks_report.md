@@ -398,6 +398,16 @@ The current Python simulation is appropriate for screening alternatives. A real 
 
 If time is limited, the minimum real benchmark should compare OpenHands SDK, Deep Agents, Flue, Codex CLI, and mini-SWE-agent on 10 tasks. That set covers framework-building, TypeScript, secure CLI/CI, and research-minimal baselines.
 
+## Maintenance And Validation
+
+The repository includes an offline validation command:
+
+```powershell
+python scripts/validate_artifacts.py
+```
+
+It checks that generated result files exist, result row counts match the dataset/scenario shape, the license audit still has 17 included and 2 excluded entries, the latest source check has all URLs marked OK, and the report references the major generated artifacts.
+
 ## Final Recommendation
 
 For a serious custom build, start with two tracks:
