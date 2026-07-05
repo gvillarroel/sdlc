@@ -31,15 +31,18 @@
         "scripts/simulate_alternatives.py",
         "scripts/analyze_score_drivers.py",
         "scripts/build_scenario_playbooks.py",
+        "scripts/build_recommendation_rationale.py",
         "results/deterministic_rankings.csv",
         "results/monte_carlo_summary.csv",
         "results/sensitivity_summary.csv",
         "results/score_driver_summary.csv",
         "results/criterion_spread_summary.csv",
         "results/scenario_playbook_summary.csv",
+        "results/recommendation_rationale.csv",
+        "reports/recommendation_rationale.md",
         "results/all_results.json"
       ],
-      "validation": "python scripts/simulate_alternatives.py --trials 5000 --seed 7331 && python scripts/analyze_score_drivers.py && python scripts/build_scenario_playbooks.py"
+      "validation": "python scripts/simulate_alternatives.py --trials 5000 --seed 7331 && python scripts/analyze_score_drivers.py && python scripts/build_scenario_playbooks.py && python scripts/build_recommendation_rationale.py"
     },
     {
       "id": "simulation_factors",
@@ -74,15 +77,19 @@
       "requirement": "Check factors that can make the evaluation unreliable.",
       "primary_artifacts": [
         "reports/evidence_gap_analysis.md",
+        "reports/github_metadata_check.md",
         "reports/risk_validation_matrix.md",
         "results/evidence_gap_analysis.csv",
+        "results/github_metadata_check.csv",
         "results/risk_validation_matrix.csv",
         "results/source_check.csv",
         "scripts/analyze_evidence_gaps.py",
+        "scripts/build_github_metadata_report.py",
         "scripts/build_risk_validation_matrix.py",
+        "scripts/refresh_github_metadata.py",
         "scripts/check_sources.py"
       ],
-      "validation": "python scripts/analyze_evidence_gaps.py && python scripts/build_risk_validation_matrix.py"
+      "validation": "python scripts/analyze_evidence_gaps.py && python scripts/build_risk_validation_matrix.py && python scripts/build_github_metadata_report.py"
     },
     {
       "id": "pilot_plan",
@@ -107,6 +114,7 @@
       "requirement": "Generate the final report in English.",
       "primary_artifacts": [
         "reports/ai_orchestrator_frameworks_report.md",
+        "reports/final_report_bundle.md",
         "reports/executive_brief.md",
         "reports/artifact_index.md"
       ],
@@ -118,6 +126,7 @@
       "primary_artifacts": [
         "tests/",
         "scripts/run_all_checks.py",
+        "results/artifact_manifest.csv",
         "ci/validate-workflow.example.yml"
       ],
       "validation": "python scripts/run_all_checks.py"

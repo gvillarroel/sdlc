@@ -40,6 +40,12 @@ class TraceabilityMatrixTest(unittest.TestCase):
         ]:
             self.assertIn(required_id, ids)
 
+    def test_declared_artifacts_exist(self):
+        for item in self.data["requirements"]:
+            for artifact in item["primary_artifacts"]:
+                path = ROOT / artifact
+                self.assertTrue(path.exists(), f"missing traceability artifact: {artifact}")
+
 
 if __name__ == "__main__":
     unittest.main()
