@@ -39,6 +39,7 @@ Included artifacts:
 - `reports/executive_brief.md` - short decision brief for quick review.
 - `reports/evidence_gap_analysis.md` - evidence-gap findings for low-confidence or immature candidates.
 - `reports/github_metadata_check.md` - live GitHub metadata verification summary.
+- `reports/glossary.md` - definitions for scoring, simulation, security, and orchestration terms.
 - `reports/security_evaluation_fixtures.md` - reusable security fixture catalog for pilot gates.
 - `reports/requirements_traceability.md` - coverage map from the original request to artifacts and validation commands.
 - `reports/validation_summary.md` - latest validation and QA summary for generated artifacts and tests.

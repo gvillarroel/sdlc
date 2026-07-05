@@ -48,6 +48,8 @@ For a requirement-to-artifact coverage map, read `reports/requirements_traceabil
 
 For the latest validation and QA summary, read `reports/validation_summary.md`.
 
+For terminology used across scoring and security sections, read `reports/glossary.md`.
+
 Use this report in three passes:
 
 1. Pick the target scenario: custom framework, secure PR automation, local coding, research benchmarking, or enterprise control plane.

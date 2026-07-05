@@ -124,6 +124,7 @@ def validate_report_references() -> None:
         "reports/adoption_decision_record.md",
         "reports/executive_brief.md",
         "reports/evidence_gap_analysis.md",
+        "reports/glossary.md",
         "reports/github_metadata_check.md",
         "reports/methodology_appendix.md",
         "reports/requirements_traceability.md",

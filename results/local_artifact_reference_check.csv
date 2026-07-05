@@ -20,6 +20,7 @@ README.md,reports/decision_tree.md,reports/decision_tree.md,True
 README.md,reports/evidence_gap_analysis.md,reports/evidence_gap_analysis.md,True
 README.md,reports/executive_brief.md,reports/executive_brief.md,True
 README.md,reports/github_metadata_check.md,reports/github_metadata_check.md,True
+README.md,reports/glossary.md,reports/glossary.md,True
 README.md,reports/implementation_blueprints.md,reports/implementation_blueprints.md,True
 README.md,reports/methodology_appendix.md,reports/methodology_appendix.md,True
 README.md,reports/pilot_protocol.md,reports/pilot_protocol.md,True
@@ -91,6 +92,7 @@ reports/ai_orchestrator_frameworks_report.md,reports/decision_tree.md,reports/de
 reports/ai_orchestrator_frameworks_report.md,reports/evidence_gap_analysis.md,reports/evidence_gap_analysis.md,True
 reports/ai_orchestrator_frameworks_report.md,reports/executive_brief.md,reports/executive_brief.md,True
 reports/ai_orchestrator_frameworks_report.md,reports/github_metadata_check.md,reports/github_metadata_check.md,True
+reports/ai_orchestrator_frameworks_report.md,reports/glossary.md,reports/glossary.md,True
 reports/ai_orchestrator_frameworks_report.md,reports/implementation_blueprints.md,reports/implementation_blueprints.md,True
 reports/ai_orchestrator_frameworks_report.md,reports/methodology_appendix.md,reports/methodology_appendix.md,True
 reports/ai_orchestrator_frameworks_report.md,reports/pilot_protocol.md,reports/pilot_protocol.md,True
@@ -153,6 +155,7 @@ reports/artifact_index.md,reports/decision_tree.md,reports/decision_tree.md,True
 reports/artifact_index.md,reports/evidence_gap_analysis.md,reports/evidence_gap_analysis.md,True
 reports/artifact_index.md,reports/executive_brief.md,reports/executive_brief.md,True
 reports/artifact_index.md,reports/github_metadata_check.md,reports/github_metadata_check.md,True
+reports/artifact_index.md,reports/glossary.md,reports/glossary.md,True
 reports/artifact_index.md,reports/implementation_blueprints.md,reports/implementation_blueprints.md,True
 reports/artifact_index.md,reports/methodology_appendix.md,reports/methodology_appendix.md,True
 reports/artifact_index.md,reports/pilot_protocol.md,reports/pilot_protocol.md,True

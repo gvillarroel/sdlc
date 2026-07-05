@@ -71,6 +71,14 @@ class ReportArtifactsTest(unittest.TestCase):
         self.assertIn("results/github_metadata_check.csv", text)
         self.assertIn("license mismatches", text)
 
+    def test_glossary_exists(self):
+        glossary = ROOT / "reports" / "glossary.md"
+        self.assertTrue(glossary.exists())
+        text = glossary.read_text(encoding="utf-8")
+        self.assertIn("# Glossary", text)
+        self.assertIn("Monte Carlo stability", text)
+        self.assertIn("Provider portability", text)
+
     def test_requirements_traceability_report_exists(self):
         traceability = ROOT / "reports" / "requirements_traceability.md"
         self.assertTrue(traceability.exists())
@@ -93,7 +101,7 @@ class ReportArtifactsTest(unittest.TestCase):
         text = summary.read_text(encoding="utf-8")
         self.assertIn("# Validation Summary", text)
         self.assertIn("python scripts/run_all_checks.py", text)
-        self.assertIn("75 tests passed", text)
+        self.assertIn("76 tests passed", text)
 
     def test_artifact_index_exists(self):
         index = ROOT / "reports" / "artifact_index.md"
