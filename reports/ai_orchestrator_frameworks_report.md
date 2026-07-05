@@ -167,6 +167,10 @@ Generated outputs:
 | `results/sensitivity_summary.csv` | How rankings change when each criterion is halved or doubled. |
 | `results/category_scores.csv` | Criteria grouped into adoption, architecture, safety, operations, and research categories. |
 | `results/decision_shortlist.csv` | Scenario shortlist combining deterministic and Monte Carlo outputs. |
+| `results/scenario_weights.csv` | Raw and normalized scenario weights for each criterion. |
+| `results/criteria_definitions.csv` | Human-readable definitions for each scoring criterion. |
+| `results/evidence_matrix.csv` | Per-alternative repository, license, confidence, summary, implementation note, risk note, and source URLs. |
+| `results/alternative_scorecards.csv` | Wide table of all per-criterion scores by alternative. |
 | `results/all_results.json` | Complete machine-readable output. |
 
 ## Deterministic Results

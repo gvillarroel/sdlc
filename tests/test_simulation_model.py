@@ -6,10 +6,14 @@ from scripts.simulate_alternatives import (
     PERMISSIVE_LICENSES,
     SCENARIOS,
     category_scores,
+    alternative_scorecard_rows,
+    criteria_definition_rows,
     decision_shortlist,
     deterministic_rankings,
+    evidence_matrix_rows,
     load_data,
     run_monte_carlo,
+    scenario_weights_rows,
     validate_data,
     weighted_score
 )
@@ -88,6 +92,32 @@ class SimulationModelTest(unittest.TestCase):
             self.assertLessEqual(row["deterministic_score"], 5)
             self.assertGreaterEqual(row["top3_rate"], 0)
             self.assertLessEqual(row["top3_rate"], 1)
+
+    def test_audit_rows_cover_model_inputs(self):
+        criteria_rows = criteria_definition_rows(self.raw)
+        self.assertEqual([row["criterion"] for row in criteria_rows], CRITERIA)
+
+        weight_rows = scenario_weights_rows()
+        self.assertEqual(len(weight_rows), len(SCENARIOS) * len(CRITERIA))
+        for scenario in SCENARIOS:
+            normalized_sum = sum(
+                row["normalized_weight"]
+                for row in weight_rows
+                if row["scenario"] == scenario
+            )
+            self.assertAlmostEqual(normalized_sum, 1.0)
+
+        evidence_rows = evidence_matrix_rows(self.raw)
+        self.assertEqual(len(evidence_rows), len(self.alternatives))
+        for row in evidence_rows:
+            self.assertIn(row["license"], PERMISSIVE_LICENSES)
+            self.assertTrue(row["evidence_urls"])
+
+        scorecard_rows = alternative_scorecard_rows(self.alternatives)
+        self.assertEqual(len(scorecard_rows), len(self.alternatives))
+        for row in scorecard_rows:
+            for criterion in CRITERIA:
+                self.assertIn(criterion, row)
 
 
 if __name__ == "__main__":

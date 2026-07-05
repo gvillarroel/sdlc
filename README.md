@@ -27,4 +27,8 @@ Generated result files:
 - `results/sensitivity_summary.csv`
 - `results/category_scores.csv`
 - `results/decision_shortlist.csv`
+- `results/scenario_weights.csv`
+- `results/criteria_definitions.csv`
+- `results/evidence_matrix.csv`
+- `results/alternative_scorecards.csv`
 - `results/all_results.json`

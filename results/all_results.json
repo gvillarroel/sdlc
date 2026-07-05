@@ -3265,5 +3265,1152 @@
       "win_rate": 0.033,
       "top3_rate": 0.1696
     }
+  ],
+  "scenario_weights": [
+    {
+      "scenario": "custom_orchestrator_platform",
+      "criterion": "implementation_ease",
+      "raw_weight": 0.9,
+      "normalized_weight": 0.0661764705882353
+    },
+    {
+      "scenario": "custom_orchestrator_platform",
+      "criterion": "maturity",
+      "raw_weight": 0.8,
+      "normalized_weight": 0.05882352941176471
+    },
+    {
+      "scenario": "custom_orchestrator_platform",
+      "criterion": "provider_portability",
+      "raw_weight": 1.1,
+      "normalized_weight": 0.08088235294117647
+    },
+    {
+      "scenario": "custom_orchestrator_platform",
+      "criterion": "sandbox_isolation",
+      "raw_weight": 1.1,
+      "normalized_weight": 0.08088235294117647
+    },
+    {
+      "scenario": "custom_orchestrator_platform",
+      "criterion": "persistence_memory",
+      "raw_weight": 1.0,
+      "normalized_weight": 0.07352941176470588
+    },
+    {
+      "scenario": "custom_orchestrator_platform",
+      "criterion": "multi_agent",
+      "raw_weight": 1.2,
+      "normalized_weight": 0.08823529411764706
+    },
+    {
+      "scenario": "custom_orchestrator_platform",
+      "criterion": "human_control",
+      "raw_weight": 0.6,
+      "normalized_weight": 0.04411764705882353
+    },
+    {
+      "scenario": "custom_orchestrator_platform",
+      "criterion": "ci_pr",
+      "raw_weight": 0.8,
+      "normalized_weight": 0.05882352941176471
+    },
+    {
+      "scenario": "custom_orchestrator_platform",
+      "criterion": "observability",
+      "raw_weight": 1.0,
+      "normalized_weight": 0.07352941176470588
+    },
+    {
+      "scenario": "custom_orchestrator_platform",
+      "criterion": "security_governance",
+      "raw_weight": 1.0,
+      "normalized_weight": 0.07352941176470588
+    },
+    {
+      "scenario": "custom_orchestrator_platform",
+      "criterion": "extensibility",
+      "raw_weight": 1.4,
+      "normalized_weight": 0.10294117647058823
+    },
+    {
+      "scenario": "custom_orchestrator_platform",
+      "criterion": "deployment_flexibility",
+      "raw_weight": 1.1,
+      "normalized_weight": 0.08088235294117647
+    },
+    {
+      "scenario": "custom_orchestrator_platform",
+      "criterion": "coding_fit",
+      "raw_weight": 1.0,
+      "normalized_weight": 0.07352941176470588
+    },
+    {
+      "scenario": "custom_orchestrator_platform",
+      "criterion": "research_reproducibility",
+      "raw_weight": 0.6,
+      "normalized_weight": 0.04411764705882353
+    },
+    {
+      "scenario": "secure_autonomous_prs",
+      "criterion": "implementation_ease",
+      "raw_weight": 0.6,
+      "normalized_weight": 0.043478260869565216
+    },
+    {
+      "scenario": "secure_autonomous_prs",
+      "criterion": "maturity",
+      "raw_weight": 1.0,
+      "normalized_weight": 0.07246376811594203
+    },
+    {
+      "scenario": "secure_autonomous_prs",
+      "criterion": "provider_portability",
+      "raw_weight": 0.6,
+      "normalized_weight": 0.043478260869565216
+    },
+    {
+      "scenario": "secure_autonomous_prs",
+      "criterion": "sandbox_isolation",
+      "raw_weight": 1.5,
+      "normalized_weight": 0.10869565217391304
+    },
+    {
+      "scenario": "secure_autonomous_prs",
+      "criterion": "persistence_memory",
+      "raw_weight": 0.7,
+      "normalized_weight": 0.05072463768115942
+    },
+    {
+      "scenario": "secure_autonomous_prs",
+      "criterion": "multi_agent",
+      "raw_weight": 0.8,
+      "normalized_weight": 0.057971014492753624
+    },
+    {
+      "scenario": "secure_autonomous_prs",
+      "criterion": "human_control",
+      "raw_weight": 1.0,
+      "normalized_weight": 0.07246376811594203
+    },
+    {
+      "scenario": "secure_autonomous_prs",
+      "criterion": "ci_pr",
+      "raw_weight": 1.4,
+      "normalized_weight": 0.10144927536231883
+    },
+    {
+      "scenario": "secure_autonomous_prs",
+      "criterion": "observability",
+      "raw_weight": 1.1,
+      "normalized_weight": 0.07971014492753624
+    },
+    {
+      "scenario": "secure_autonomous_prs",
+      "criterion": "security_governance",
+      "raw_weight": 1.5,
+      "normalized_weight": 0.10869565217391304
+    },
+    {
+      "scenario": "secure_autonomous_prs",
+      "criterion": "extensibility",
+      "raw_weight": 0.8,
+      "normalized_weight": 0.057971014492753624
+    },
+    {
+      "scenario": "secure_autonomous_prs",
+      "criterion": "deployment_flexibility",
+      "raw_weight": 1.0,
+      "normalized_weight": 0.07246376811594203
+    },
+    {
+      "scenario": "secure_autonomous_prs",
+      "criterion": "coding_fit",
+      "raw_weight": 1.2,
+      "normalized_weight": 0.08695652173913043
+    },
+    {
+      "scenario": "secure_autonomous_prs",
+      "criterion": "research_reproducibility",
+      "raw_weight": 0.6,
+      "normalized_weight": 0.043478260869565216
+    },
+    {
+      "scenario": "quick_local_coding",
+      "criterion": "implementation_ease",
+      "raw_weight": 1.5,
+      "normalized_weight": 0.12295081967213116
+    },
+    {
+      "scenario": "quick_local_coding",
+      "criterion": "maturity",
+      "raw_weight": 1.2,
+      "normalized_weight": 0.09836065573770492
+    },
+    {
+      "scenario": "quick_local_coding",
+      "criterion": "provider_portability",
+      "raw_weight": 1.1,
+      "normalized_weight": 0.09016393442622953
+    },
+    {
+      "scenario": "quick_local_coding",
+      "criterion": "sandbox_isolation",
+      "raw_weight": 0.5,
+      "normalized_weight": 0.04098360655737705
+    },
+    {
+      "scenario": "quick_local_coding",
+      "criterion": "persistence_memory",
+      "raw_weight": 0.6,
+      "normalized_weight": 0.04918032786885246
+    },
+    {
+      "scenario": "quick_local_coding",
+      "criterion": "multi_agent",
+      "raw_weight": 0.4,
+      "normalized_weight": 0.03278688524590164
+    },
+    {
+      "scenario": "quick_local_coding",
+      "criterion": "human_control",
+      "raw_weight": 1.2,
+      "normalized_weight": 0.09836065573770492
+    },
+    {
+      "scenario": "quick_local_coding",
+      "criterion": "ci_pr",
+      "raw_weight": 0.7,
+      "normalized_weight": 0.05737704918032787
+    },
+    {
+      "scenario": "quick_local_coding",
+      "criterion": "observability",
+      "raw_weight": 0.5,
+      "normalized_weight": 0.04098360655737705
+    },
+    {
+      "scenario": "quick_local_coding",
+      "criterion": "security_governance",
+      "raw_weight": 0.7,
+      "normalized_weight": 0.05737704918032787
+    },
+    {
+      "scenario": "quick_local_coding",
+      "criterion": "extensibility",
+      "raw_weight": 0.9,
+      "normalized_weight": 0.0737704918032787
+    },
+    {
+      "scenario": "quick_local_coding",
+      "criterion": "deployment_flexibility",
+      "raw_weight": 0.9,
+      "normalized_weight": 0.0737704918032787
+    },
+    {
+      "scenario": "quick_local_coding",
+      "criterion": "coding_fit",
+      "raw_weight": 1.5,
+      "normalized_weight": 0.12295081967213116
+    },
+    {
+      "scenario": "quick_local_coding",
+      "criterion": "research_reproducibility",
+      "raw_weight": 0.5,
+      "normalized_weight": 0.04098360655737705
+    },
+    {
+      "scenario": "research_benchmarking",
+      "criterion": "implementation_ease",
+      "raw_weight": 2.0,
+      "normalized_weight": 0.1724137931034483
+    },
+    {
+      "scenario": "research_benchmarking",
+      "criterion": "maturity",
+      "raw_weight": 0.5,
+      "normalized_weight": 0.04310344827586207
+    },
+    {
+      "scenario": "research_benchmarking",
+      "criterion": "provider_portability",
+      "raw_weight": 0.6,
+      "normalized_weight": 0.05172413793103448
+    },
+    {
+      "scenario": "research_benchmarking",
+      "criterion": "sandbox_isolation",
+      "raw_weight": 0.4,
+      "normalized_weight": 0.034482758620689655
+    },
+    {
+      "scenario": "research_benchmarking",
+      "criterion": "persistence_memory",
+      "raw_weight": 0.1,
+      "normalized_weight": 0.008620689655172414
+    },
+    {
+      "scenario": "research_benchmarking",
+      "criterion": "multi_agent",
+      "raw_weight": 0.1,
+      "normalized_weight": 0.008620689655172414
+    },
+    {
+      "scenario": "research_benchmarking",
+      "criterion": "human_control",
+      "raw_weight": 0.1,
+      "normalized_weight": 0.008620689655172414
+    },
+    {
+      "scenario": "research_benchmarking",
+      "criterion": "ci_pr",
+      "raw_weight": 0.1,
+      "normalized_weight": 0.008620689655172414
+    },
+    {
+      "scenario": "research_benchmarking",
+      "criterion": "observability",
+      "raw_weight": 0.6,
+      "normalized_weight": 0.05172413793103448
+    },
+    {
+      "scenario": "research_benchmarking",
+      "criterion": "security_governance",
+      "raw_weight": 0.2,
+      "normalized_weight": 0.017241379310344827
+    },
+    {
+      "scenario": "research_benchmarking",
+      "criterion": "extensibility",
+      "raw_weight": 0.5,
+      "normalized_weight": 0.04310344827586207
+    },
+    {
+      "scenario": "research_benchmarking",
+      "criterion": "deployment_flexibility",
+      "raw_weight": 0.4,
+      "normalized_weight": 0.034482758620689655
+    },
+    {
+      "scenario": "research_benchmarking",
+      "criterion": "coding_fit",
+      "raw_weight": 1.0,
+      "normalized_weight": 0.08620689655172414
+    },
+    {
+      "scenario": "research_benchmarking",
+      "criterion": "research_reproducibility",
+      "raw_weight": 5.0,
+      "normalized_weight": 0.4310344827586207
+    },
+    {
+      "scenario": "enterprise_control_plane",
+      "criterion": "implementation_ease",
+      "raw_weight": 0.7,
+      "normalized_weight": 0.04794520547945205
+    },
+    {
+      "scenario": "enterprise_control_plane",
+      "criterion": "maturity",
+      "raw_weight": 1.2,
+      "normalized_weight": 0.0821917808219178
+    },
+    {
+      "scenario": "enterprise_control_plane",
+      "criterion": "provider_portability",
+      "raw_weight": 1.1,
+      "normalized_weight": 0.07534246575342467
+    },
+    {
+      "scenario": "enterprise_control_plane",
+      "criterion": "sandbox_isolation",
+      "raw_weight": 1.0,
+      "normalized_weight": 0.0684931506849315
+    },
+    {
+      "scenario": "enterprise_control_plane",
+      "criterion": "persistence_memory",
+      "raw_weight": 1.0,
+      "normalized_weight": 0.0684931506849315
+    },
+    {
+      "scenario": "enterprise_control_plane",
+      "criterion": "multi_agent",
+      "raw_weight": 1.2,
+      "normalized_weight": 0.0821917808219178
+    },
+    {
+      "scenario": "enterprise_control_plane",
+      "criterion": "human_control",
+      "raw_weight": 1.1,
+      "normalized_weight": 0.07534246575342467
+    },
+    {
+      "scenario": "enterprise_control_plane",
+      "criterion": "ci_pr",
+      "raw_weight": 1.0,
+      "normalized_weight": 0.0684931506849315
+    },
+    {
+      "scenario": "enterprise_control_plane",
+      "criterion": "observability",
+      "raw_weight": 1.2,
+      "normalized_weight": 0.0821917808219178
+    },
+    {
+      "scenario": "enterprise_control_plane",
+      "criterion": "security_governance",
+      "raw_weight": 1.4,
+      "normalized_weight": 0.0958904109589041
+    },
+    {
+      "scenario": "enterprise_control_plane",
+      "criterion": "extensibility",
+      "raw_weight": 1.1,
+      "normalized_weight": 0.07534246575342467
+    },
+    {
+      "scenario": "enterprise_control_plane",
+      "criterion": "deployment_flexibility",
+      "raw_weight": 1.2,
+      "normalized_weight": 0.0821917808219178
+    },
+    {
+      "scenario": "enterprise_control_plane",
+      "criterion": "coding_fit",
+      "raw_weight": 1.0,
+      "normalized_weight": 0.0684931506849315
+    },
+    {
+      "scenario": "enterprise_control_plane",
+      "criterion": "research_reproducibility",
+      "raw_weight": 0.4,
+      "normalized_weight": 0.027397260273972605
+    }
+  ],
+  "criteria_definitions": [
+    {
+      "criterion": "implementation_ease",
+      "definition": "Setup effort, cognitive load, amount of glue code, and operational complexity for a practical prototype."
+    },
+    {
+      "criterion": "maturity",
+      "definition": "Release history, ecosystem traction, project age, and production posture."
+    },
+    {
+      "criterion": "provider_portability",
+      "definition": "Ability to use multiple model providers or local/open-weight models without a hard platform lock-in."
+    },
+    {
+      "criterion": "sandbox_isolation",
+      "definition": "Strength and clarity of execution isolation for agent-written commands and untrusted code."
+    },
+    {
+      "criterion": "persistence_memory",
+      "definition": "Native support for sessions, memory, durable state, context offloading, or resumability."
+    },
+    {
+      "criterion": "multi_agent",
+      "definition": "Support for subagents, parallel agents, supervisors, or orchestration across workstreams."
+    },
+    {
+      "criterion": "human_control",
+      "definition": "Human-in-the-loop approvals, review loops, steering, and interruptibility."
+    },
+    {
+      "criterion": "ci_pr",
+      "definition": "CI, GitHub, issue, branch, and pull-request automation fit."
+    },
+    {
+      "criterion": "observability",
+      "definition": "Logs, traces, telemetry, replayability, and debugging support."
+    },
+    {
+      "criterion": "security_governance",
+      "definition": "Permissions, policies, approval boundaries, or governance controls beyond basic sandboxing."
+    },
+    {
+      "criterion": "extensibility",
+      "definition": "Plugins, MCP, hooks, custom tools, skills, or framework-level extension points."
+    },
+    {
+      "criterion": "deployment_flexibility",
+      "definition": "Viability across local, self-hosted, cloud, CI, container, or remote execution targets."
+    },
+    {
+      "criterion": "coding_fit",
+      "definition": "Fit for software engineering tasks rather than generic chat only."
+    },
+    {
+      "criterion": "research_reproducibility",
+      "definition": "Usefulness for benchmarks, ablations, deterministic experiments, and explainable scaffolds."
+    }
+  ],
+  "evidence_matrix": [
+    {
+      "alternative_id": "aider",
+      "alternative": "Aider",
+      "repo": "Aider-AI/aider",
+      "url": "https://github.com/Aider-AI/aider",
+      "license": "Apache-2.0",
+      "primary_language": "Python",
+      "maturity_level": "production",
+      "source_confidence": 0.96,
+      "stars": 47082,
+      "created_at": "2023-05-09",
+      "last_pushed_at": "2026-05-22",
+      "latest_release": "v0.86.0",
+      "summary": "Terminal pair-programming agent focused on Git-based code edits, repo maps, and broad model support.",
+      "implementation_notes": "Best quick path for local pair programming and lightweight automation. Very easy to trial.",
+      "risk_notes": "Not designed as a full multi-agent governance platform. Sandboxing and policy controls are mostly external.",
+      "evidence_urls": "https://github.com/Aider-AI/aider; https://aider.chat/docs/; https://aider.chat/docs/repomap.html"
+    },
+    {
+      "alternative_id": "anchor",
+      "alternative": "Anchor",
+      "repo": "mjenkinsx9/anchor",
+      "url": "https://github.com/mjenkinsx9/anchor",
+      "license": "MIT",
+      "primary_language": "JavaScript",
+      "maturity_level": "alpha",
+      "source_confidence": 0.55,
+      "stars": 0,
+      "created_at": "2026-06-10",
+      "last_pushed_at": "2026-06-17",
+      "latest_release": "v0.3.0",
+      "summary": "Narrow review-harness/plugin style project centered on Claude Code workflows.",
+      "implementation_notes": "Small surface area can be useful for a deterministic review loop, not for a full orchestrator.",
+      "risk_notes": "Very low traction, narrow vendor focus, and no strong sandbox or orchestration layer of its own.",
+      "evidence_urls": "https://github.com/mjenkinsx9/anchor"
+    },
+    {
+      "alternative_id": "cline",
+      "alternative": "Cline / Cline SDK",
+      "repo": "cline/cline",
+      "url": "https://github.com/cline/cline",
+      "license": "Apache-2.0",
+      "primary_language": "TypeScript",
+      "maturity_level": "production",
+      "source_confidence": 0.96,
+      "stars": 64315,
+      "created_at": "2024-07-06",
+      "last_pushed_at": "2026-07-05",
+      "latest_release": "cli-v3.0.37",
+      "summary": "Autonomous coding agent delivered as SDK, IDE extension, CLI, and automation surface.",
+      "implementation_notes": "Strong practical DX and human approval model. Good when the product needs editor/CLI/SDK surfaces together.",
+      "risk_notes": "Sandboxing is more approval/checkpoint oriented than hard isolation. Enterprise controls must be configured deliberately.",
+      "evidence_urls": "https://github.com/cline/cline; https://docs.cline.bot/cline-overview; https://cline.bot/"
+    },
+    {
+      "alternative_id": "codex_cli",
+      "alternative": "Codex CLI",
+      "repo": "openai/codex",
+      "url": "https://github.com/openai/codex",
+      "license": "Apache-2.0",
+      "primary_language": "Rust",
+      "maturity_level": "production",
+      "source_confidence": 0.98,
+      "stars": 95651,
+      "created_at": "2025-04-13",
+      "last_pushed_at": "2026-07-05",
+      "latest_release": "rust-v0.142.5",
+      "summary": "OpenAI terminal coding agent with OS-level sandboxing, approvals, subagents, skills, hooks, and GitHub Action integration.",
+      "implementation_notes": "Excellent secure local/CI runner if OpenAI dependence is acceptable. Less suitable as a fully provider-neutral framework.",
+      "risk_notes": "Provider center of gravity is OpenAI. Some extension and multi-agent surfaces may still evolve quickly.",
+      "evidence_urls": "https://developers.openai.com/codex/cli; https://developers.openai.com/codex/agent-approvals-security; https://github.com/openai/codex"
+    },
+    {
+      "alternative_id": "deep_agents",
+      "alternative": "Deep Agents",
+      "repo": "langchain-ai/deepagents",
+      "url": "https://github.com/langchain-ai/deepagents",
+      "license": "MIT",
+      "primary_language": "Python",
+      "maturity_level": "beta",
+      "source_confidence": 0.95,
+      "stars": 25715,
+      "created_at": "2025-07-27",
+      "last_pushed_at": "2026-07-05",
+      "latest_release": "deepagents==0.6.12",
+      "summary": "Batteries-included agent harness with tools, filesystem, permissions, code execution, memory, subagents, and human-in-the-loop controls.",
+      "implementation_notes": "One of the strongest foundations for a custom Python orchestrator, especially when LangGraph/LangSmith integration matters.",
+      "risk_notes": "Not a turnkey coding product by itself. Production use requires designing tools, permissions, sandbox backends, and evaluation loops.",
+      "evidence_urls": "https://github.com/langchain-ai/deepagents; https://docs.langchain.com/oss/python/deepagents/overview; https://docs.langchain.com/oss/python/deepagents/subagents"
+    },
+    {
+      "alternative_id": "flue",
+      "alternative": "Flue",
+      "repo": "withastro/flue",
+      "url": "https://github.com/withastro/flue",
+      "license": "Apache-2.0",
+      "primary_language": "TypeScript",
+      "maturity_level": "beta",
+      "source_confidence": 0.95,
+      "stars": 7104,
+      "created_at": "2026-02-07",
+      "last_pushed_at": "2026-07-04",
+      "latest_release": "",
+      "summary": "Programmable TypeScript agent harness with sessions, tools, skills, sandboxing, deployment targets, and observability adapters.",
+      "implementation_notes": "Strong candidate for building a product-specific orchestrator in TypeScript. It has a clearer framework shape than a CLI wrapper.",
+      "risk_notes": "Beta API surface and Node.js >=22.19.0 requirement. Durable persistence requires choosing and operating a backing store.",
+      "evidence_urls": "https://github.com/withastro/flue; https://flueframework.com/; https://flueframework.com/docs/getting-started/quickstart/"
+    },
+    {
+      "alternative_id": "goose",
+      "alternative": "goose",
+      "repo": "aaif-goose/goose",
+      "url": "https://github.com/aaif-goose/goose",
+      "license": "Apache-2.0",
+      "primary_language": "Rust",
+      "maturity_level": "production",
+      "source_confidence": 0.95,
+      "stars": 50679,
+      "created_at": "2024-08-23",
+      "last_pushed_at": "2026-07-05",
+      "latest_release": "v1.41.0",
+      "summary": "General-purpose local AI agent with desktop, CLI, API, MCP extensions, and broad provider support.",
+      "implementation_notes": "Good local automation substrate when tasks extend beyond code and MCP extension breadth matters.",
+      "risk_notes": "Native observability and coding-specific orchestration are lighter than specialized coding frameworks.",
+      "evidence_urls": "https://github.com/aaif-goose/goose; https://goose-docs.ai/"
+    },
+    {
+      "alternative_id": "mini_swe_agent",
+      "alternative": "mini-SWE-agent",
+      "repo": "SWE-agent/mini-swe-agent",
+      "url": "https://github.com/SWE-agent/mini-swe-agent",
+      "license": "MIT",
+      "primary_language": "Python",
+      "maturity_level": "beta",
+      "source_confidence": 0.93,
+      "stars": 5578,
+      "created_at": "2025-06-28",
+      "last_pushed_at": "2026-07-02",
+      "latest_release": "v2.4.4",
+      "summary": "Minimal Python SWE agent for solving GitHub issues or command-line tasks, optimized for simplicity and benchmark reproducibility.",
+      "implementation_notes": "Best scaffold for learning, ablations, and small research experiments. Very easy to reason about.",
+      "risk_notes": "Minimal platform features by design: weak native governance, persistence, multi-agent, and observability compared with larger frameworks.",
+      "evidence_urls": "https://github.com/SWE-agent/mini-swe-agent; https://www.swebench.com/"
+    },
+    {
+      "alternative_id": "omni_agent",
+      "alternative": "Omni Agent",
+      "repo": "2830500285/omni-agent",
+      "url": "https://github.com/2830500285/omni-agent",
+      "license": "MIT",
+      "primary_language": "TypeScript",
+      "maturity_level": "alpha",
+      "source_confidence": 0.55,
+      "stars": 1,
+      "created_at": "2026-04-27",
+      "last_pushed_at": "2026-05-16",
+      "latest_release": "",
+      "summary": "Verification-native local coding-agent runtime with eval gates, memory, subagents, and model profiles.",
+      "implementation_notes": "Interesting claims for verification-first design, but evidence and traction are too thin for a primary adoption bet.",
+      "risk_notes": "Minimal traction and no release at retrieval time. Treat as a reference idea, not a dependable platform.",
+      "evidence_urls": "https://github.com/2830500285/omni-agent"
+    },
+    {
+      "alternative_id": "omniagent",
+      "alternative": "OmniAgent",
+      "repo": "xianyu-sheng/omniagent",
+      "url": "https://github.com/xianyu-sheng/omniagent",
+      "license": "MIT",
+      "primary_language": "Python",
+      "maturity_level": "alpha",
+      "source_confidence": 0.55,
+      "stars": 0,
+      "created_at": "2026-06-03",
+      "last_pushed_at": "2026-06-29",
+      "latest_release": "v0.1.0",
+      "summary": "Local multi-model AI coding agent CLI with ReAct, Plan-Execute, MCP, memory, and TUI concepts.",
+      "implementation_notes": "Potentially hackable Python CLI, but not a strong base for governed orchestration yet.",
+      "risk_notes": "No stars at retrieval time, early release, and weak evidence for sandboxing, CI, observability, or enterprise controls.",
+      "evidence_urls": "https://github.com/xianyu-sheng/omniagent"
+    },
+    {
+      "alternative_id": "omnigent",
+      "alternative": "Omnigent",
+      "repo": "omnigent-ai/omnigent",
+      "url": "https://github.com/omnigent-ai/omnigent",
+      "license": "Apache-2.0",
+      "primary_language": "Python",
+      "maturity_level": "alpha",
+      "source_confidence": 0.75,
+      "stars": 6304,
+      "created_at": "2026-06-11",
+      "last_pushed_at": "2026-07-05",
+      "latest_release": "v0.4.0",
+      "summary": "Meta-harness for orchestrating multiple coding-agent backends with policies, sandboxing, and collaboration.",
+      "implementation_notes": "Compelling for a control-plane strategy where multiple agent harnesses must be swapped or combined.",
+      "risk_notes": "Alpha status and broad scope make it riskier than narrower libraries. Operational complexity can be high.",
+      "evidence_urls": "https://github.com/omnigent-ai/omnigent"
+    },
+    {
+      "alternative_id": "open_swe",
+      "alternative": "Open SWE",
+      "repo": "langchain-ai/open-swe",
+      "url": "https://github.com/langchain-ai/open-swe",
+      "license": "MIT",
+      "primary_language": "Python",
+      "maturity_level": "beta",
+      "source_confidence": 0.92,
+      "stars": 10107,
+      "created_at": "2025-05-21",
+      "last_pushed_at": "2026-07-05",
+      "latest_release": "",
+      "summary": "Open-source asynchronous coding-agent framework built on Deep Agents and LangGraph, with cloud sandbox providers and automatic PR creation.",
+      "implementation_notes": "Strong fit for internal async coding-agent platforms. It is more platform starter than simple CLI.",
+      "risk_notes": "Requires operating sandbox providers and integration surfaces. Hosted examples have historically leaned Anthropic, so model portability should be verified for the target stack.",
+      "evidence_urls": "https://github.com/langchain-ai/open-swe; https://www.langchain.com/blog/open-swe-an-open-source-framework-for-internal-coding-agents"
+    },
+    {
+      "alternative_id": "opencode",
+      "alternative": "OpenCode",
+      "repo": "anomalyco/opencode",
+      "url": "https://github.com/anomalyco/opencode",
+      "license": "MIT",
+      "primary_language": "TypeScript",
+      "maturity_level": "production",
+      "source_confidence": 0.97,
+      "stars": 182587,
+      "created_at": "2025-04-30",
+      "last_pushed_at": "2026-07-05",
+      "latest_release": "v1.17.13",
+      "summary": "Open-source coding agent for terminal, desktop, and IDE workflows with broad provider support.",
+      "implementation_notes": "Very strong for local developer experience and model portability. Less policy-first than sandbox-oriented frameworks.",
+      "risk_notes": "Native sandbox/governance is lighter than Codex, Sandcastle, Open SWE, or OpenHands SDK; isolation often depends on the surrounding environment.",
+      "evidence_urls": "https://github.com/anomalyco/opencode; https://opencode.ai/docs/"
+    },
+    {
+      "alternative_id": "openhands_agent_canvas",
+      "alternative": "OpenHands Agent Canvas",
+      "repo": "OpenHands/agent-canvas",
+      "url": "https://github.com/OpenHands/agent-canvas",
+      "license": "MIT",
+      "primary_language": "TypeScript",
+      "maturity_level": "beta",
+      "source_confidence": 0.85,
+      "stars": 141,
+      "created_at": "2026-04-24",
+      "last_pushed_at": "2026-07-05",
+      "latest_release": "v1.1.0",
+      "summary": "Self-hosted developer control center for running coding agents and automations locally or in the cloud.",
+      "implementation_notes": "Best evaluated as a control plane/UI layer, not as the core agent algorithm. It can run OpenHands, Codex, Claude Code, Gemini, or ACP-compatible backends.",
+      "risk_notes": "Young project with low star count. The actual security boundary is determined by backend selection and deployment topology.",
+      "evidence_urls": "https://github.com/OpenHands/agent-canvas; https://docs.openhands.dev/openhands/usage/agent-canvas/overview"
+    },
+    {
+      "alternative_id": "openhands_sdk",
+      "alternative": "OpenHands Software Agent SDK",
+      "repo": "OpenHands/software-agent-sdk",
+      "url": "https://github.com/OpenHands/software-agent-sdk",
+      "license": "MIT",
+      "primary_language": "Python",
+      "maturity_level": "production",
+      "source_confidence": 0.96,
+      "stars": 865,
+      "created_at": "2025-08-23",
+      "last_pushed_at": "2026-07-05",
+      "latest_release": "v1.31.0",
+      "summary": "Composable Python and REST SDK for building software-engineering agents with local or ephemeral workspaces.",
+      "implementation_notes": "A strong Python base for building custom software agents where coding-specific tools, workspaces, and benchmark orientation matter.",
+      "risk_notes": "Less minimal than Aider or mini-SWE-agent. Teams must still define policies, toolsets, and deployment boundaries.",
+      "evidence_urls": "https://github.com/OpenHands/software-agent-sdk; https://docs.openhands.dev/sdk"
+    },
+    {
+      "alternative_id": "sandcastle",
+      "alternative": "Sandcastle",
+      "repo": "mattpocock/sandcastle",
+      "url": "https://github.com/mattpocock/sandcastle",
+      "license": "MIT",
+      "primary_language": "TypeScript",
+      "maturity_level": "beta",
+      "source_confidence": 0.9,
+      "stars": 6638,
+      "created_at": "2026-03-17",
+      "last_pushed_at": "2026-06-29",
+      "latest_release": "v0.12.0",
+      "summary": "TypeScript library for orchestrating coding agents in isolated sandboxes with branch/worktree strategies.",
+      "implementation_notes": "Best when the target is a programmable TypeScript runner around existing coding agents. Docker, Podman, Vercel, and no-sandbox modes make the isolation model explicit.",
+      "risk_notes": "Young beta project. Examples are strongly tied to Claude Code, and security depends on the chosen sandbox provider, mounts, and network policy.",
+      "evidence_urls": "https://github.com/mattpocock/sandcastle"
+    },
+    {
+      "alternative_id": "swe_agent",
+      "alternative": "SWE-agent",
+      "repo": "SWE-agent/SWE-agent",
+      "url": "https://github.com/SWE-agent/SWE-agent",
+      "license": "MIT",
+      "primary_language": "Python",
+      "maturity_level": "production",
+      "source_confidence": 0.94,
+      "stars": 19705,
+      "created_at": "2024-04-02",
+      "last_pushed_at": "2026-07-01",
+      "latest_release": "v1.1.0",
+      "summary": "Research-grade and practical harness for solving real GitHub issues with a model of choice.",
+      "implementation_notes": "Strong when benchmarkability, issue-resolution tasks, and trajectory logs matter more than polished product UX.",
+      "risk_notes": "Research-first developer experience. Less suitable as a low-friction daily coding assistant or enterprise control plane.",
+      "evidence_urls": "https://github.com/SWE-agent/SWE-agent; https://swe-agent.com/latest/"
+    }
+  ],
+  "alternative_scorecards": [
+    {
+      "alternative_id": "aider",
+      "alternative": "Aider",
+      "license": "Apache-2.0",
+      "maturity_level": "production",
+      "source_confidence": 0.96,
+      "implementation_ease": 4.7,
+      "maturity": 4.5,
+      "provider_portability": 4.7,
+      "sandbox_isolation": 2.4,
+      "persistence_memory": 2.8,
+      "multi_agent": 1.8,
+      "human_control": 4.5,
+      "ci_pr": 3.3,
+      "observability": 2.4,
+      "security_governance": 3.0,
+      "extensibility": 3.8,
+      "deployment_flexibility": 3.8,
+      "coding_fit": 4.8,
+      "research_reproducibility": 4.0
+    },
+    {
+      "alternative_id": "anchor",
+      "alternative": "Anchor",
+      "license": "MIT",
+      "maturity_level": "alpha",
+      "source_confidence": 0.55,
+      "implementation_ease": 4.0,
+      "maturity": 1.0,
+      "provider_portability": 1.5,
+      "sandbox_isolation": 1.4,
+      "persistence_memory": 1.2,
+      "multi_agent": 0.5,
+      "human_control": 4.0,
+      "ci_pr": 1.2,
+      "observability": 1.0,
+      "security_governance": 2.0,
+      "extensibility": 2.0,
+      "deployment_flexibility": 2.0,
+      "coding_fit": 2.8,
+      "research_reproducibility": 1.3
+    },
+    {
+      "alternative_id": "cline",
+      "alternative": "Cline / Cline SDK",
+      "license": "Apache-2.0",
+      "maturity_level": "production",
+      "source_confidence": 0.96,
+      "implementation_ease": 4.2,
+      "maturity": 4.5,
+      "provider_portability": 4.7,
+      "sandbox_isolation": 2.8,
+      "persistence_memory": 4.0,
+      "multi_agent": 4.2,
+      "human_control": 4.8,
+      "ci_pr": 4.5,
+      "observability": 4.0,
+      "security_governance": 4.2,
+      "extensibility": 4.7,
+      "deployment_flexibility": 4.5,
+      "coding_fit": 4.7,
+      "research_reproducibility": 3.4
+    },
+    {
+      "alternative_id": "codex_cli",
+      "alternative": "Codex CLI",
+      "license": "Apache-2.0",
+      "maturity_level": "production",
+      "source_confidence": 0.98,
+      "implementation_ease": 4.2,
+      "maturity": 4.5,
+      "provider_portability": 2.0,
+      "sandbox_isolation": 4.7,
+      "persistence_memory": 3.4,
+      "multi_agent": 4.0,
+      "human_control": 4.3,
+      "ci_pr": 4.6,
+      "observability": 3.8,
+      "security_governance": 4.8,
+      "extensibility": 4.2,
+      "deployment_flexibility": 4.0,
+      "coding_fit": 4.8,
+      "research_reproducibility": 3.6
+    },
+    {
+      "alternative_id": "deep_agents",
+      "alternative": "Deep Agents",
+      "license": "MIT",
+      "maturity_level": "beta",
+      "source_confidence": 0.95,
+      "implementation_ease": 3.6,
+      "maturity": 3.5,
+      "provider_portability": 4.7,
+      "sandbox_isolation": 4.0,
+      "persistence_memory": 4.6,
+      "multi_agent": 4.6,
+      "human_control": 4.1,
+      "ci_pr": 3.4,
+      "observability": 4.6,
+      "security_governance": 4.1,
+      "extensibility": 4.7,
+      "deployment_flexibility": 4.2,
+      "coding_fit": 4.1,
+      "research_reproducibility": 4.0
+    },
+    {
+      "alternative_id": "flue",
+      "alternative": "Flue",
+      "license": "Apache-2.0",
+      "maturity_level": "beta",
+      "source_confidence": 0.95,
+      "implementation_ease": 3.4,
+      "maturity": 3.0,
+      "provider_portability": 4.6,
+      "sandbox_isolation": 4.2,
+      "persistence_memory": 4.0,
+      "multi_agent": 4.0,
+      "human_control": 3.2,
+      "ci_pr": 4.0,
+      "observability": 4.3,
+      "security_governance": 3.8,
+      "extensibility": 4.6,
+      "deployment_flexibility": 4.5,
+      "coding_fit": 4.0,
+      "research_reproducibility": 3.2
+    },
+    {
+      "alternative_id": "goose",
+      "alternative": "goose",
+      "license": "Apache-2.0",
+      "maturity_level": "production",
+      "source_confidence": 0.95,
+      "implementation_ease": 4.3,
+      "maturity": 4.2,
+      "provider_portability": 4.8,
+      "sandbox_isolation": 3.2,
+      "persistence_memory": 3.4,
+      "multi_agent": 2.6,
+      "human_control": 4.2,
+      "ci_pr": 4.1,
+      "observability": 2.8,
+      "security_governance": 3.5,
+      "extensibility": 4.8,
+      "deployment_flexibility": 4.3,
+      "coding_fit": 4.1,
+      "research_reproducibility": 3.2
+    },
+    {
+      "alternative_id": "mini_swe_agent",
+      "alternative": "mini-SWE-agent",
+      "license": "MIT",
+      "maturity_level": "beta",
+      "source_confidence": 0.93,
+      "implementation_ease": 4.6,
+      "maturity": 3.4,
+      "provider_portability": 4.7,
+      "sandbox_isolation": 3.8,
+      "persistence_memory": 1.8,
+      "multi_agent": 1.0,
+      "human_control": 2.7,
+      "ci_pr": 2.8,
+      "observability": 2.2,
+      "security_governance": 3.0,
+      "extensibility": 4.0,
+      "deployment_flexibility": 4.1,
+      "coding_fit": 4.4,
+      "research_reproducibility": 4.9
+    },
+    {
+      "alternative_id": "omni_agent",
+      "alternative": "Omni Agent",
+      "license": "MIT",
+      "maturity_level": "alpha",
+      "source_confidence": 0.55,
+      "implementation_ease": 2.4,
+      "maturity": 1.0,
+      "provider_portability": 3.5,
+      "sandbox_isolation": 3.1,
+      "persistence_memory": 3.2,
+      "multi_agent": 3.5,
+      "human_control": 3.5,
+      "ci_pr": 3.4,
+      "observability": 3.0,
+      "security_governance": 4.0,
+      "extensibility": 3.4,
+      "deployment_flexibility": 2.7,
+      "coding_fit": 3.0,
+      "research_reproducibility": 1.8
+    },
+    {
+      "alternative_id": "omniagent",
+      "alternative": "OmniAgent",
+      "license": "MIT",
+      "maturity_level": "alpha",
+      "source_confidence": 0.55,
+      "implementation_ease": 3.2,
+      "maturity": 0.8,
+      "provider_portability": 4.0,
+      "sandbox_isolation": 1.7,
+      "persistence_memory": 2.6,
+      "multi_agent": 3.0,
+      "human_control": 3.7,
+      "ci_pr": 1.5,
+      "observability": 1.5,
+      "security_governance": 2.1,
+      "extensibility": 3.2,
+      "deployment_flexibility": 2.2,
+      "coding_fit": 3.0,
+      "research_reproducibility": 1.5
+    },
+    {
+      "alternative_id": "omnigent",
+      "alternative": "Omnigent",
+      "license": "Apache-2.0",
+      "maturity_level": "alpha",
+      "source_confidence": 0.75,
+      "implementation_ease": 2.8,
+      "maturity": 2.0,
+      "provider_portability": 4.8,
+      "sandbox_isolation": 4.2,
+      "persistence_memory": 4.0,
+      "multi_agent": 4.5,
+      "human_control": 4.7,
+      "ci_pr": 4.1,
+      "observability": 4.0,
+      "security_governance": 4.5,
+      "extensibility": 4.6,
+      "deployment_flexibility": 4.0,
+      "coding_fit": 4.1,
+      "research_reproducibility": 3.0
+    },
+    {
+      "alternative_id": "open_swe",
+      "alternative": "Open SWE",
+      "license": "MIT",
+      "maturity_level": "beta",
+      "source_confidence": 0.92,
+      "implementation_ease": 2.7,
+      "maturity": 3.0,
+      "provider_portability": 3.8,
+      "sandbox_isolation": 4.7,
+      "persistence_memory": 4.1,
+      "multi_agent": 4.6,
+      "human_control": 3.2,
+      "ci_pr": 4.8,
+      "observability": 4.6,
+      "security_governance": 4.4,
+      "extensibility": 4.2,
+      "deployment_flexibility": 3.8,
+      "coding_fit": 4.6,
+      "research_reproducibility": 4.0
+    },
+    {
+      "alternative_id": "opencode",
+      "alternative": "OpenCode",
+      "license": "MIT",
+      "maturity_level": "production",
+      "source_confidence": 0.97,
+      "implementation_ease": 4.4,
+      "maturity": 4.3,
+      "provider_portability": 4.8,
+      "sandbox_isolation": 2.6,
+      "persistence_memory": 3.5,
+      "multi_agent": 3.8,
+      "human_control": 4.3,
+      "ci_pr": 4.2,
+      "observability": 2.8,
+      "security_governance": 3.3,
+      "extensibility": 4.5,
+      "deployment_flexibility": 4.2,
+      "coding_fit": 4.7,
+      "research_reproducibility": 3.5
+    },
+    {
+      "alternative_id": "openhands_agent_canvas",
+      "alternative": "OpenHands Agent Canvas",
+      "license": "MIT",
+      "maturity_level": "beta",
+      "source_confidence": 0.85,
+      "implementation_ease": 3.6,
+      "maturity": 3.0,
+      "provider_portability": 4.7,
+      "sandbox_isolation": 3.8,
+      "persistence_memory": 4.2,
+      "multi_agent": 4.5,
+      "human_control": 4.4,
+      "ci_pr": 4.2,
+      "observability": 3.7,
+      "security_governance": 4.0,
+      "extensibility": 4.1,
+      "deployment_flexibility": 4.6,
+      "coding_fit": 4.3,
+      "research_reproducibility": 3.0
+    },
+    {
+      "alternative_id": "openhands_sdk",
+      "alternative": "OpenHands Software Agent SDK",
+      "license": "MIT",
+      "maturity_level": "production",
+      "source_confidence": 0.96,
+      "implementation_ease": 3.8,
+      "maturity": 4.0,
+      "provider_portability": 4.8,
+      "sandbox_isolation": 4.3,
+      "persistence_memory": 4.2,
+      "multi_agent": 4.1,
+      "human_control": 4.0,
+      "ci_pr": 4.0,
+      "observability": 3.8,
+      "security_governance": 4.2,
+      "extensibility": 4.5,
+      "deployment_flexibility": 4.4,
+      "coding_fit": 4.6,
+      "research_reproducibility": 4.2
+    },
+    {
+      "alternative_id": "sandcastle",
+      "alternative": "Sandcastle",
+      "license": "MIT",
+      "maturity_level": "beta",
+      "source_confidence": 0.9,
+      "implementation_ease": 3.2,
+      "maturity": 2.8,
+      "provider_portability": 3.7,
+      "sandbox_isolation": 4.6,
+      "persistence_memory": 2.8,
+      "multi_agent": 3.2,
+      "human_control": 3.8,
+      "ci_pr": 4.1,
+      "observability": 2.7,
+      "security_governance": 3.8,
+      "extensibility": 4.1,
+      "deployment_flexibility": 3.8,
+      "coding_fit": 4.2,
+      "research_reproducibility": 3.0
+    },
+    {
+      "alternative_id": "swe_agent",
+      "alternative": "SWE-agent",
+      "license": "MIT",
+      "maturity_level": "production",
+      "source_confidence": 0.94,
+      "implementation_ease": 3.2,
+      "maturity": 4.0,
+      "provider_portability": 4.6,
+      "sandbox_isolation": 4.3,
+      "persistence_memory": 2.5,
+      "multi_agent": 2.0,
+      "human_control": 3.1,
+      "ci_pr": 3.3,
+      "observability": 4.0,
+      "security_governance": 3.8,
+      "extensibility": 4.0,
+      "deployment_flexibility": 4.0,
+      "coding_fit": 4.5,
+      "research_reproducibility": 4.8
+    }
   ]
 }

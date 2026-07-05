@@ -417,7 +417,74 @@ def write_csv(path: Path, rows: list[dict[str, Any]], fieldnames: list[str]) -> 
             writer.writerow(row)
 
 
+def scenario_weights_rows() -> list[dict[str, Any]]:
+    rows = []
+    for scenario, weights in SCENARIOS.items():
+        total = sum(weights.values())
+        for criterion, weight in weights.items():
+            rows.append({
+                "scenario": scenario,
+                "criterion": criterion,
+                "raw_weight": weight,
+                "normalized_weight": weight / total
+            })
+    return rows
+
+
+def criteria_definition_rows(raw_data: dict[str, Any]) -> list[dict[str, str]]:
+    return [
+        {
+            "criterion": criterion,
+            "definition": raw_data["criteria"][criterion]
+        }
+        for criterion in CRITERIA
+    ]
+
+
+def evidence_matrix_rows(raw_data: dict[str, Any]) -> list[dict[str, Any]]:
+    rows = []
+    for item in raw_data["alternatives"]:
+        rows.append({
+            "alternative_id": item["id"],
+            "alternative": item["name"],
+            "repo": item["repo"],
+            "url": item["url"],
+            "license": item["license"],
+            "primary_language": item["primary_language"],
+            "maturity_level": item["maturity_level"],
+            "source_confidence": item["source_confidence"],
+            "stars": item["stars"],
+            "created_at": item["created_at"],
+            "last_pushed_at": item["last_pushed_at"],
+            "latest_release": item["latest_release"],
+            "summary": item["summary"],
+            "implementation_notes": item["implementation_notes"],
+            "risk_notes": item["risk_notes"],
+            "evidence_urls": "; ".join(item["evidence_urls"])
+        })
+    rows.sort(key=lambda row: row["alternative"].lower())
+    return rows
+
+
+def alternative_scorecard_rows(alternatives: list[Alternative]) -> list[dict[str, Any]]:
+    rows = []
+    for alt in alternatives:
+        row: dict[str, Any] = {
+            "alternative_id": alt.id,
+            "alternative": alt.name,
+            "license": alt.license,
+            "maturity_level": alt.maturity_level,
+            "source_confidence": alt.source_confidence
+        }
+        row.update({criterion: alt.scores[criterion] for criterion in CRITERIA})
+        rows.append(row)
+    rows.sort(key=lambda row: row["alternative"].lower())
+    return rows
+
+
 def write_outputs(
+    raw_data: dict[str, Any],
+    alternatives: list[Alternative],
     deterministic: dict[str, list[dict[str, Any]]],
     monte_carlo: dict[str, list[dict[str, Any]]],
     sensitivity: dict[str, list[dict[str, Any]]],
@@ -497,6 +564,50 @@ def write_outputs(
             "top3_rate"
         ]
     )
+    write_csv(
+        output_dir / "scenario_weights.csv",
+        scenario_weights_rows(),
+        ["scenario", "criterion", "raw_weight", "normalized_weight"]
+    )
+    write_csv(
+        output_dir / "criteria_definitions.csv",
+        criteria_definition_rows(raw_data),
+        ["criterion", "definition"]
+    )
+    write_csv(
+        output_dir / "evidence_matrix.csv",
+        evidence_matrix_rows(raw_data),
+        [
+            "alternative_id",
+            "alternative",
+            "repo",
+            "url",
+            "license",
+            "primary_language",
+            "maturity_level",
+            "source_confidence",
+            "stars",
+            "created_at",
+            "last_pushed_at",
+            "latest_release",
+            "summary",
+            "implementation_notes",
+            "risk_notes",
+            "evidence_urls"
+        ]
+    )
+    write_csv(
+        output_dir / "alternative_scorecards.csv",
+        alternative_scorecard_rows(alternatives),
+        [
+            "alternative_id",
+            "alternative",
+            "license",
+            "maturity_level",
+            "source_confidence",
+            *CRITERIA
+        ]
+    )
     with (output_dir / "all_results.json").open("w", encoding="utf-8", newline="\n") as handle:
         json.dump(
             {
@@ -506,7 +617,11 @@ def write_outputs(
                 "monte_carlo_summary": monte_carlo,
                 "sensitivity_summary": sensitivity,
                 "category_scores": categories,
-                "decision_shortlist": shortlist
+                "decision_shortlist": shortlist,
+                "scenario_weights": scenario_weights_rows(),
+                "criteria_definitions": criteria_definition_rows(raw_data),
+                "evidence_matrix": evidence_matrix_rows(raw_data),
+                "alternative_scorecards": alternative_scorecard_rows(alternatives)
             },
             handle,
             indent=2
@@ -522,14 +637,23 @@ def main() -> int:
     parser.add_argument("--seed", type=int, default=7331)
     args = parser.parse_args()
 
-    _raw, alternatives = load_data(args.data)
+    raw_data, alternatives = load_data(args.data)
     validate_data(alternatives)
     deterministic = deterministic_rankings(alternatives)
     monte_carlo = run_monte_carlo(alternatives, trials=args.trials, seed=args.seed)
     sensitivity = sensitivity_summary(alternatives)
     categories = category_scores(alternatives)
     shortlist = decision_shortlist(deterministic, monte_carlo)
-    write_outputs(deterministic, monte_carlo, sensitivity, categories, shortlist, args.output_dir)
+    write_outputs(
+        raw_data,
+        alternatives,
+        deterministic,
+        monte_carlo,
+        sensitivity,
+        categories,
+        shortlist,
+        args.output_dir
+    )
 
     for scenario, rows in deterministic.items():
         top = rows[0]

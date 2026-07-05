@@ -1,0 +1,15 @@
+criterion,definition
+implementation_ease,"Setup effort, cognitive load, amount of glue code, and operational complexity for a practical prototype."
+maturity,"Release history, ecosystem traction, project age, and production posture."
+provider_portability,Ability to use multiple model providers or local/open-weight models without a hard platform lock-in.
+sandbox_isolation,Strength and clarity of execution isolation for agent-written commands and untrusted code.
+persistence_memory,"Native support for sessions, memory, durable state, context offloading, or resumability."
+multi_agent,"Support for subagents, parallel agents, supervisors, or orchestration across workstreams."
+human_control,"Human-in-the-loop approvals, review loops, steering, and interruptibility."
+ci_pr,"CI, GitHub, issue, branch, and pull-request automation fit."
+observability,"Logs, traces, telemetry, replayability, and debugging support."
+security_governance,"Permissions, policies, approval boundaries, or governance controls beyond basic sandboxing."
+extensibility,"Plugins, MCP, hooks, custom tools, skills, or framework-level extension points."
+deployment_flexibility,"Viability across local, self-hosted, cloud, CI, container, or remote execution targets."
+coding_fit,Fit for software engineering tasks rather than generic chat only.
+research_reproducibility,"Usefulness for benchmarks, ablations, deterministic experiments, and explainable scaffolds."
