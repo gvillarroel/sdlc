@@ -13,6 +13,7 @@ README.md,data/traceability_matrix.json,data/traceability_matrix.json,True
 README.md,examples/custom_weights.example.json,examples/custom_weights.example.json,True
 README.md,examples/pilot_adapter_contract.py,examples/pilot_adapter_contract.py,True
 README.md,examples/pilot_candidate_summary.example.csv,examples/pilot_candidate_summary.example.csv,True
+README.md,reports/adoption_decision_record.md,reports/adoption_decision_record.md,True
 README.md,reports/ai_orchestrator_frameworks_report.md,reports/ai_orchestrator_frameworks_report.md,True
 README.md,reports/artifact_index.md,reports/artifact_index.md,True
 README.md,reports/decision_tree.md,reports/decision_tree.md,True
@@ -67,6 +68,8 @@ README.md,scripts/stress_test_simulation.py,scripts/stress_test_simulation.py,Tr
 README.md,scripts/validate_artifacts.py,scripts/validate_artifacts.py,True
 README.md,scripts/validate_csv_schemas.py,scripts/validate_csv_schemas.py,True
 README.md,tests/test_simulation_model.py,tests/test_simulation_model.py,True
+reports/adoption_decision_record.md,data/pilot_decision_model.json,data/pilot_decision_model.json,True
+reports/adoption_decision_record.md,scripts/score_pilot_results.py,scripts/score_pilot_results.py,True
 reports/ai_orchestrator_frameworks_report.md,assets/rank_stability.svg,reports/assets/rank_stability.svg,True
 reports/ai_orchestrator_frameworks_report.md,assets/scenario_regret.svg,reports/assets/scenario_regret.svg,True
 reports/ai_orchestrator_frameworks_report.md,ci/validate-workflow.example.yml,ci/validate-workflow.example.yml,True
@@ -82,6 +85,7 @@ reports/ai_orchestrator_frameworks_report.md,data/traceability_matrix.json,data/
 reports/ai_orchestrator_frameworks_report.md,examples/custom_weights.example.json,examples/custom_weights.example.json,True
 reports/ai_orchestrator_frameworks_report.md,examples/pilot_adapter_contract.py,examples/pilot_adapter_contract.py,True
 reports/ai_orchestrator_frameworks_report.md,examples/pilot_candidate_summary.example.csv,examples/pilot_candidate_summary.example.csv,True
+reports/ai_orchestrator_frameworks_report.md,reports/adoption_decision_record.md,reports/adoption_decision_record.md,True
 reports/ai_orchestrator_frameworks_report.md,reports/artifact_index.md,reports/artifact_index.md,True
 reports/ai_orchestrator_frameworks_report.md,reports/decision_tree.md,reports/decision_tree.md,True
 reports/ai_orchestrator_frameworks_report.md,reports/evidence_gap_analysis.md,reports/evidence_gap_analysis.md,True
@@ -141,6 +145,7 @@ reports/artifact_index.md,data/traceability_matrix.json,data/traceability_matrix
 reports/artifact_index.md,examples/custom_weights.example.json,examples/custom_weights.example.json,True
 reports/artifact_index.md,examples/pilot_adapter_contract.py,examples/pilot_adapter_contract.py,True
 reports/artifact_index.md,examples/pilot_candidate_summary.example.csv,examples/pilot_candidate_summary.example.csv,True
+reports/artifact_index.md,reports/adoption_decision_record.md,reports/adoption_decision_record.md,True
 reports/artifact_index.md,reports/ai_orchestrator_frameworks_report.md,reports/ai_orchestrator_frameworks_report.md,True
 reports/artifact_index.md,reports/assets/rank_stability.svg,reports/assets/rank_stability.svg,True
 reports/artifact_index.md,reports/assets/scenario_regret.svg,reports/assets/scenario_regret.svg,True

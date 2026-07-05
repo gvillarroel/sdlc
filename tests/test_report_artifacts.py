@@ -30,6 +30,14 @@ class ReportArtifactsTest(unittest.TestCase):
         self.assertIn("# Executive Brief", text)
         self.assertIn("Recommended Next Step", text)
 
+    def test_adoption_decision_record_exists(self):
+        adr = ROOT / "reports" / "adoption_decision_record.md"
+        self.assertTrue(adr.exists())
+        text = adr.read_text(encoding="utf-8")
+        self.assertIn("# Adoption Decision Record", text)
+        self.assertIn("No-Go Conditions", text)
+        self.assertIn("Status: Proposed", text)
+
     def test_methodology_appendix_exists(self):
         appendix = ROOT / "reports" / "methodology_appendix.md"
         self.assertTrue(appendix.exists())
@@ -85,7 +93,7 @@ class ReportArtifactsTest(unittest.TestCase):
         text = summary.read_text(encoding="utf-8")
         self.assertIn("# Validation Summary", text)
         self.assertIn("python scripts/run_all_checks.py", text)
-        self.assertIn("74 tests passed", text)
+        self.assertIn("75 tests passed", text)
 
     def test_artifact_index_exists(self):
         index = ROOT / "reports" / "artifact_index.md"

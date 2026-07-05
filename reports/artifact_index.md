@@ -9,6 +9,7 @@ Use this index to choose the right file quickly.
 | Need | Artifact |
 |---|---|
 | Quick decision summary | `reports/executive_brief.md` |
+| Proposed adoption decision record | `reports/adoption_decision_record.md` |
 | Guided shortlist selection | `reports/decision_tree.md` |
 | Full analysis | `reports/ai_orchestrator_frameworks_report.md` |
 | Requirement coverage | `reports/requirements_traceability.md` |

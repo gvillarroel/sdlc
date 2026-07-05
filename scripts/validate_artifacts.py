@@ -121,6 +121,7 @@ def validate_report_references() -> None:
         "data/security_evaluation_fixtures.json",
         "data/simulation_assumptions.json",
         "data/traceability_matrix.json",
+        "reports/adoption_decision_record.md",
         "reports/executive_brief.md",
         "reports/evidence_gap_analysis.md",
         "reports/github_metadata_check.md",
