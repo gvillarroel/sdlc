@@ -1,6 +1,7 @@
 source_file,reference,resolved_path,exists
 README.md,ci/validate-workflow.example.yml,ci/validate-workflow.example.yml,True
 README.md,data/alternatives.json,data/alternatives.json,True
+README.md,data/candidate_taxonomy.json,data/candidate_taxonomy.json,True
 README.md,data/decision_tree.json,data/decision_tree.json,True
 README.md,data/pilot_decision_model.json,data/pilot_decision_model.json,True
 README.md,data/pilot_tasks.json,data/pilot_tasks.json,True
@@ -16,6 +17,7 @@ README.md,examples/pilot_candidate_summary.example.csv,examples/pilot_candidate_
 README.md,reports/adoption_decision_record.md,reports/adoption_decision_record.md,True
 README.md,reports/ai_orchestrator_frameworks_report.md,reports/ai_orchestrator_frameworks_report.md,True
 README.md,reports/artifact_index.md,reports/artifact_index.md,True
+README.md,reports/candidate_taxonomy.md,reports/candidate_taxonomy.md,True
 README.md,reports/decision_tree.md,reports/decision_tree.md,True
 README.md,reports/evidence_gap_analysis.md,reports/evidence_gap_analysis.md,True
 README.md,reports/executive_brief.md,reports/executive_brief.md,True
@@ -82,6 +84,7 @@ reports/ai_orchestrator_frameworks_report.md,assets/rank_stability.svg,reports/a
 reports/ai_orchestrator_frameworks_report.md,assets/scenario_regret.svg,reports/assets/scenario_regret.svg,True
 reports/ai_orchestrator_frameworks_report.md,ci/validate-workflow.example.yml,ci/validate-workflow.example.yml,True
 reports/ai_orchestrator_frameworks_report.md,data/alternatives.json,data/alternatives.json,True
+reports/ai_orchestrator_frameworks_report.md,data/candidate_taxonomy.json,data/candidate_taxonomy.json,True
 reports/ai_orchestrator_frameworks_report.md,data/pilot_decision_model.json,data/pilot_decision_model.json,True
 reports/ai_orchestrator_frameworks_report.md,data/pilot_tasks.json,data/pilot_tasks.json,True
 reports/ai_orchestrator_frameworks_report.md,data/risk_register.json,data/risk_register.json,True
@@ -95,6 +98,7 @@ reports/ai_orchestrator_frameworks_report.md,examples/pilot_adapter_contract.py,
 reports/ai_orchestrator_frameworks_report.md,examples/pilot_candidate_summary.example.csv,examples/pilot_candidate_summary.example.csv,True
 reports/ai_orchestrator_frameworks_report.md,reports/adoption_decision_record.md,reports/adoption_decision_record.md,True
 reports/ai_orchestrator_frameworks_report.md,reports/artifact_index.md,reports/artifact_index.md,True
+reports/ai_orchestrator_frameworks_report.md,reports/candidate_taxonomy.md,reports/candidate_taxonomy.md,True
 reports/ai_orchestrator_frameworks_report.md,reports/decision_tree.md,reports/decision_tree.md,True
 reports/ai_orchestrator_frameworks_report.md,reports/evidence_gap_analysis.md,reports/evidence_gap_analysis.md,True
 reports/ai_orchestrator_frameworks_report.md,reports/executive_brief.md,reports/executive_brief.md,True
@@ -146,6 +150,7 @@ reports/ai_orchestrator_frameworks_report.md,scripts/stress_test_simulation.py,s
 reports/ai_orchestrator_frameworks_report.md,scripts/validate_artifacts.py,scripts/validate_artifacts.py,True
 reports/ai_orchestrator_frameworks_report.md,scripts/validate_csv_schemas.py,scripts/validate_csv_schemas.py,True
 reports/artifact_index.md,data/alternatives.json,data/alternatives.json,True
+reports/artifact_index.md,data/candidate_taxonomy.json,data/candidate_taxonomy.json,True
 reports/artifact_index.md,data/decision_tree.json,data/decision_tree.json,True
 reports/artifact_index.md,data/pilot_decision_model.json,data/pilot_decision_model.json,True
 reports/artifact_index.md,data/pilot_tasks.json,data/pilot_tasks.json,True
@@ -162,6 +167,7 @@ reports/artifact_index.md,reports/adoption_decision_record.md,reports/adoption_d
 reports/artifact_index.md,reports/ai_orchestrator_frameworks_report.md,reports/ai_orchestrator_frameworks_report.md,True
 reports/artifact_index.md,reports/assets/rank_stability.svg,reports/assets/rank_stability.svg,True
 reports/artifact_index.md,reports/assets/scenario_regret.svg,reports/assets/scenario_regret.svg,True
+reports/artifact_index.md,reports/candidate_taxonomy.md,reports/candidate_taxonomy.md,True
 reports/artifact_index.md,reports/decision_tree.md,reports/decision_tree.md,True
 reports/artifact_index.md,reports/evidence_gap_analysis.md,reports/evidence_gap_analysis.md,True
 reports/artifact_index.md,reports/executive_brief.md,reports/executive_brief.md,True
@@ -225,6 +231,7 @@ reports/artifact_index.md,templates/pilot_run_log.csv,templates/pilot_run_log.cs
 reports/artifact_index.md,templates/reviewer_scorecard.md,templates/reviewer_scorecard.md,True
 reports/artifact_index.md,templates/scenario_selection_workshop.md,templates/scenario_selection_workshop.md,True
 reports/artifact_index.md,templates/security_gate_checklist.md,templates/security_gate_checklist.md,True
+reports/candidate_taxonomy.md,data/candidate_taxonomy.json,data/candidate_taxonomy.json,True
 reports/decision_tree.md,data/decision_tree.json,data/decision_tree.json,True
 reports/evidence_gap_analysis.md,results/evidence_gap_analysis.csv,results/evidence_gap_analysis.csv,True
 reports/evidence_gap_analysis.md,scripts/analyze_evidence_gaps.py,scripts/analyze_evidence_gaps.py,True
@@ -250,6 +257,7 @@ reports/final_report_bundle.md,assets/rank_stability.svg,reports/assets/rank_sta
 reports/final_report_bundle.md,assets/scenario_regret.svg,reports/assets/scenario_regret.svg,True
 reports/final_report_bundle.md,ci/validate-workflow.example.yml,ci/validate-workflow.example.yml,True
 reports/final_report_bundle.md,data/alternatives.json,data/alternatives.json,True
+reports/final_report_bundle.md,data/candidate_taxonomy.json,data/candidate_taxonomy.json,True
 reports/final_report_bundle.md,data/decision_tree.json,data/decision_tree.json,True
 reports/final_report_bundle.md,data/pilot_decision_model.json,data/pilot_decision_model.json,True
 reports/final_report_bundle.md,data/pilot_tasks.json,data/pilot_tasks.json,True
@@ -267,6 +275,7 @@ reports/final_report_bundle.md,reports/ai_orchestrator_frameworks_report.md,repo
 reports/final_report_bundle.md,reports/artifact_index.md,reports/artifact_index.md,True
 reports/final_report_bundle.md,reports/assets/rank_stability.svg,reports/assets/rank_stability.svg,True
 reports/final_report_bundle.md,reports/assets/scenario_regret.svg,reports/assets/scenario_regret.svg,True
+reports/final_report_bundle.md,reports/candidate_taxonomy.md,reports/candidate_taxonomy.md,True
 reports/final_report_bundle.md,reports/decision_tree.md,reports/decision_tree.md,True
 reports/final_report_bundle.md,reports/evidence_gap_analysis.md,reports/evidence_gap_analysis.md,True
 reports/final_report_bundle.md,reports/executive_brief.md,reports/executive_brief.md,True

@@ -11,6 +11,7 @@ Use this index to choose the right file quickly.
 | Quick decision summary | `reports/executive_brief.md` |
 | Common questions | `reports/faq.md` |
 | Proposed adoption decision record | `reports/adoption_decision_record.md` |
+| Candidate taxonomy | `reports/candidate_taxonomy.md` |
 | Guided shortlist selection | `reports/decision_tree.md` |
 | Full analysis | `reports/ai_orchestrator_frameworks_report.md` |
 | One-file report bundle | `reports/final_report_bundle.md` |
@@ -41,6 +42,7 @@ Use this index to choose the right file quickly.
 | Adoption risk register | `data/risk_register.json` |
 | Simulation assumption register | `data/simulation_assumptions.json` |
 | Security evaluation fixtures | `data/security_evaluation_fixtures.json` |
+| Candidate taxonomy data | `data/candidate_taxonomy.json` |
 | Requirement traceability matrix | `data/traceability_matrix.json` |
 
 ## Generated Results

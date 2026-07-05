@@ -118,10 +118,12 @@ def validate_report_references() -> None:
     for artifact in [
         "data/pilot_tasks.json",
         "data/risk_register.json",
+        "data/candidate_taxonomy.json",
         "data/security_evaluation_fixtures.json",
         "data/simulation_assumptions.json",
         "data/traceability_matrix.json",
         "reports/adoption_decision_record.md",
+        "reports/candidate_taxonomy.md",
         "reports/executive_brief.md",
         "reports/evidence_gap_analysis.md",
         "reports/faq.md",

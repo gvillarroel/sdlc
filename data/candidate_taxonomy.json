@@ -1,0 +1,50 @@
+{
+  "metadata": {
+    "created_at": "2026-07-05",
+    "purpose": "Group candidates by adoption shape so rankings are interpreted within comparable tool classes."
+  },
+  "groups": [
+    {
+      "id": "programmable_sdk_framework",
+      "name": "Programmable SDK or framework",
+      "candidates": ["OpenHands Software Agent SDK", "Deep Agents", "Flue", "Sandcastle"],
+      "use_when": "The goal is to build a product-specific orchestrator or agent workflow.",
+      "watch_for": "The team must still design policy, tools, telemetry, deployment, and failure handling."
+    },
+    {
+      "id": "local_developer_cli",
+      "name": "Local developer CLI or assistant",
+      "candidates": ["Cline / Cline SDK", "OpenCode", "Aider", "goose", "Codex CLI"],
+      "use_when": "The goal is quick developer productivity, local workflow, or lightweight automation.",
+      "watch_for": "Local convenience does not automatically provide autonomous-execution safety."
+    },
+    {
+      "id": "secure_pr_automation",
+      "name": "Secure PR automation",
+      "candidates": ["Codex CLI", "Open SWE", "OpenHands Software Agent SDK", "Cline / Cline SDK"],
+      "use_when": "The goal is controlled autonomous or semi-autonomous issue-to-PR work.",
+      "watch_for": "Sandboxing, network policy, credentials, branch protection, and review artifacts are mandatory."
+    },
+    {
+      "id": "research_harness",
+      "name": "Research harness",
+      "candidates": ["mini-SWE-agent", "SWE-agent", "OpenHands Software Agent SDK"],
+      "use_when": "The goal is reproducible experiments, ablations, or SWE-bench-style evaluations.",
+      "watch_for": "Benchmark fit is not the same as enterprise workflow fit."
+    },
+    {
+      "id": "control_plane",
+      "name": "Control plane or multi-backend layer",
+      "candidates": ["OpenHands Agent Canvas", "Open SWE", "Omnigent"],
+      "use_when": "The goal is to coordinate multiple backends, users, queues, policies, and artifacts.",
+      "watch_for": "Operational ownership and integration scope can dominate framework selection."
+    },
+    {
+      "id": "experimental_reference",
+      "name": "Experimental reference",
+      "candidates": ["Anchor", "OmniAgent", "Omni Agent", "Omnigent"],
+      "use_when": "The goal is to track design ideas or run exploratory spikes.",
+      "watch_for": "High evidence risk or alpha maturity prevents first-phase production adoption."
+    }
+  ]
+}

@@ -8,6 +8,7 @@ This generated bundle concatenates the main report and key appendices for one-fi
 
 - `reports/executive_brief.md`
 - `reports/ai_orchestrator_frameworks_report.md`
+- `reports/candidate_taxonomy.md`
 - `reports/adoption_decision_record.md`
 - `reports/methodology_appendix.md`
 - `reports/simulation_assumptions.md`
@@ -120,6 +121,8 @@ My practical recommendation is:
 For a short decision-oriented version, read `reports/executive_brief.md`.
 
 For common scope, exclusion, weighting, and pilot questions, read `reports/faq.md`.
+
+For candidate grouping by adoption shape, read `reports/candidate_taxonomy.md`; the machine-readable taxonomy is `data/candidate_taxonomy.json`.
 
 For the proposed adoption decision record, read `reports/adoption_decision_record.md`.
 
@@ -652,6 +655,42 @@ The strongest next action is not another desk review. It is a controlled pilot w
 - SWE-agent docs: https://swe-agent.com/latest/
 - mini-SWE-agent: https://github.com/SWE-agent/mini-swe-agent
 - SWE-bench: https://www.swebench.com/
+
+---
+
+<!-- Source: reports/candidate_taxonomy.md -->
+
+# Candidate Taxonomy
+
+Date: 2026-07-05
+
+## Purpose
+
+The report compares tools that are not identical product categories. This taxonomy explains the adoption shape of each group so the rankings are read within the right context.
+
+The machine-readable taxonomy is `data/candidate_taxonomy.json`.
+
+## Groups
+
+| Group | Candidates | Use when | Watch for |
+|---|---|---|---|
+| Programmable SDK or framework | OpenHands SDK, Deep Agents, Flue, Sandcastle | Building a product-specific orchestrator or agent workflow. | The team must still design policy, tools, telemetry, deployment, and failure handling. |
+| Local developer CLI or assistant | Cline, OpenCode, Aider, goose, Codex CLI | Fast developer productivity, local workflow, or lightweight automation. | Local convenience does not automatically provide autonomous-execution safety. |
+| Secure PR automation | Codex CLI, Open SWE, OpenHands SDK, Cline | Controlled autonomous or semi-autonomous issue-to-PR work. | Sandboxing, network policy, credentials, branch protection, and review artifacts are mandatory. |
+| Research harness | mini-SWE-agent, SWE-agent, OpenHands SDK | Reproducible experiments, ablations, or SWE-bench-style evaluations. | Benchmark fit is not the same as enterprise workflow fit. |
+| Control plane or multi-backend layer | OpenHands Agent Canvas, Open SWE, Omnigent | Coordinating multiple backends, users, queues, policies, and artifacts. | Operational ownership and integration scope can dominate framework selection. |
+| Experimental reference | Anchor, OmniAgent, Omni Agent, Omnigent | Tracking design ideas or running exploratory spikes. | High evidence risk or alpha maturity prevents first-phase production adoption. |
+
+## How To Use This Taxonomy
+
+Use the taxonomy before reading the ranking tables:
+
+1. Pick the group that matches the target workflow.
+2. Compare candidates inside that group first.
+3. Use cross-group comparison only when the adoption path is genuinely open.
+4. Treat candidates in the experimental-reference group as second-phase unless fresh evidence changes their risk profile.
+
+This prevents a common mistake: choosing a polished local assistant when the actual need is a governed platform, or choosing a platform starter when the actual need is a quick local coding tool.
 
 ---
 
@@ -1405,7 +1444,7 @@ This page summarizes the current quality checks for the report repository. It is
 
 | Check | Command | Latest result |
 |---|---|---|
-| Unit tests | `python -m unittest discover -s tests` | 85 tests passed. |
+| Unit tests | `python -m unittest discover -s tests` | 88 tests passed. |
 | Full local workflow | `python scripts/run_all_checks.py` | Passed. |
 | Offline artifact validation | `python scripts/validate_artifacts.py` | Passed. |
 | Generated CSV schemas | `python scripts/validate_csv_schemas.py` | 25 CSV schemas checked, 0 failures. |
@@ -1990,6 +2029,7 @@ Use this index to choose the right file quickly.
 | Quick decision summary | `reports/executive_brief.md` |
 | Common questions | `reports/faq.md` |
 | Proposed adoption decision record | `reports/adoption_decision_record.md` |
+| Candidate taxonomy | `reports/candidate_taxonomy.md` |
 | Guided shortlist selection | `reports/decision_tree.md` |
 | Full analysis | `reports/ai_orchestrator_frameworks_report.md` |
 | One-file report bundle | `reports/final_report_bundle.md` |
@@ -2020,6 +2060,7 @@ Use this index to choose the right file quickly.
 | Adoption risk register | `data/risk_register.json` |
 | Simulation assumption register | `data/simulation_assumptions.json` |
 | Security evaluation fixtures | `data/security_evaluation_fixtures.json` |
+| Candidate taxonomy data | `data/candidate_taxonomy.json` |
 | Requirement traceability matrix | `data/traceability_matrix.json` |
 
 ## Generated Results

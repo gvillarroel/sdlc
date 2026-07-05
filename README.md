@@ -13,6 +13,7 @@ Included artifacts:
 - `data/risk_register.json` - actionable adoption risks, mitigations, and required evidence.
 - `data/simulation_assumptions.json` - structured threats to validity and mitigation coverage for the simulation.
 - `data/security_evaluation_fixtures.json` - security fixtures for sandbox, secret, network, prompt-injection, and approval testing.
+- `data/candidate_taxonomy.json` - candidate groups by adoption shape.
 - `data/traceability_matrix.json` - requirement-to-artifact traceability map.
 - `scripts/simulate_alternatives.py` - deterministic weighted ranking, Monte Carlo uncertainty simulation, and sensitivity analysis.
 - `scripts/stress_test_simulation.py` - stress tests for scenario weights, maturity discounts, source confidence, sandbox assumptions, and uncertainty.
@@ -41,6 +42,7 @@ Included artifacts:
 - `reports/final_report_bundle.md` - generated one-file bundle of the main report and key appendices.
 - `reports/adoption_decision_record.md` - proposed adoption decision record and no-go conditions.
 - `reports/executive_brief.md` - short decision brief for quick review.
+- `reports/candidate_taxonomy.md` - grouping of candidates by adoption shape and workflow fit.
 - `reports/faq.md` - answers to common scope, weighting, exclusion, and pilot questions.
 - `reports/evidence_gap_analysis.md` - evidence-gap findings for low-confidence or immature candidates.
 - `reports/github_metadata_check.md` - live GitHub metadata verification summary.

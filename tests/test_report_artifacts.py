@@ -54,6 +54,14 @@ class ReportArtifactsTest(unittest.TestCase):
         self.assertIn("Why is there no single winner?", text)
         self.assertIn("rank_with_custom_weights.py", text)
 
+    def test_candidate_taxonomy_report_exists(self):
+        taxonomy = ROOT / "reports" / "candidate_taxonomy.md"
+        self.assertTrue(taxonomy.exists())
+        text = taxonomy.read_text(encoding="utf-8")
+        self.assertIn("# Candidate Taxonomy", text)
+        self.assertIn("data/candidate_taxonomy.json", text)
+        self.assertIn("Programmable SDK or framework", text)
+
     def test_methodology_appendix_exists(self):
         appendix = ROOT / "reports" / "methodology_appendix.md"
         self.assertTrue(appendix.exists())
@@ -117,7 +125,7 @@ class ReportArtifactsTest(unittest.TestCase):
         text = summary.read_text(encoding="utf-8")
         self.assertIn("# Validation Summary", text)
         self.assertIn("python scripts/run_all_checks.py", text)
-        self.assertIn("85 tests passed", text)
+        self.assertIn("88 tests passed", text)
 
     def test_results_data_dictionary_exists(self):
         dictionary = ROOT / "reports" / "results_data_dictionary.md"
