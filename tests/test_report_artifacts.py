@@ -122,6 +122,7 @@ class ReportArtifactsTest(unittest.TestCase):
             "custom_weights_example_rankings.csv",
             "local_artifact_reference_check.csv",
             "github_metadata_check.csv",
+            "csv_schema_check.csv",
             "stress_test_summary.csv",
             "uncertainty_stress_summary.csv",
             "all_results.json"

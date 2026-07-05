@@ -30,6 +30,7 @@ COMMANDS = [
         "--output",
         "results/pilot_decision_scores.example.csv",
     ],
+    [PYTHON, "scripts/validate_csv_schemas.py"],
     [PYTHON, "scripts/validate_artifacts.py"],
 ]
 

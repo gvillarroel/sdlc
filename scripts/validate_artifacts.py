@@ -43,6 +43,7 @@ REQUIRED_RESULT_FILES = [
     "source_check.csv",
     "local_artifact_reference_check.csv",
     "github_metadata_check.csv",
+    "csv_schema_check.csv",
     "all_results.json"
 ]
 
@@ -104,6 +105,10 @@ def validate_license_and_sources() -> None:
     assert_true(all(row["ok"] == "True" for row in github_rows), "one or more GitHub metadata checks failed")
     assert_true(all(row["license_matches"] == "True" for row in github_rows), "one or more GitHub licenses no longer match dataset")
     assert_true(all(row["archived"] == "False" for row in github_rows), "one or more GitHub repositories are archived")
+
+    schema_rows = read_csv(RESULTS / "csv_schema_check.csv")
+    assert_true(schema_rows, "CSV schema check is empty")
+    assert_true(all(row["ok"] == "True" for row in schema_rows), "one or more generated CSV schemas changed")
 
 
 def validate_report_references() -> None:

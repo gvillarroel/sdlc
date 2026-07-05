@@ -212,6 +212,7 @@ Generated outputs:
 | `results/evidence_gap_analysis.csv` | Evidence risk bands for maturity, source confidence, release, traction, and freshness gaps. |
 | `results/source_check.csv` | Live URL check of report and dataset sources. The latest run checked 41 URLs with 41 OK responses. |
 | `results/github_metadata_check.csv` | Live GitHub repository metadata comparison for stars, push date, license, archive status, and latest release tag. |
+| `results/csv_schema_check.csv` | Header/schema validation for generated CSV artifacts. |
 | `results/license_audit.csv` | Explicit permissive-license audit for included and excluded entries. |
 | `results/local_artifact_reference_check.csv` | Offline check that local artifact references in README and reports resolve to existing files. |
 | `results/regret_analysis.csv` | Score gap between each candidate and the scenario winner. |
@@ -498,6 +499,14 @@ python scripts/check_local_artifact_references.py
 ```
 
 It writes `results/local_artifact_reference_check.csv` and fails if README or report files mention a missing local artifact.
+
+The generated CSV schema checker is:
+
+```powershell
+python scripts/validate_csv_schemas.py
+```
+
+It writes `results/csv_schema_check.csv` and fails if a generated CSV drops an expected column.
 
 The full local regeneration and validation path is:
 

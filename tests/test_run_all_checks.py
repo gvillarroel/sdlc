@@ -16,6 +16,7 @@ class RunAllChecksTest(unittest.TestCase):
             "license_audit.py",
             "generate_charts.py",
             "check_local_artifact_references.py",
+            "validate_csv_schemas.py",
             "score_pilot_results.py",
             "validate_artifacts.py"
         ]
