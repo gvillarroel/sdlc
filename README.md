@@ -12,6 +12,7 @@ Included artifacts:
 - `data/decision_tree.json` - machine-readable guided selection tree.
 - `data/risk_register.json` - actionable adoption risks, mitigations, and required evidence.
 - `data/simulation_assumptions.json` - structured threats to validity and mitigation coverage for the simulation.
+- `data/traceability_matrix.json` - requirement-to-artifact traceability map.
 - `scripts/simulate_alternatives.py` - deterministic weighted ranking, Monte Carlo uncertainty simulation, and sensitivity analysis.
 - `scripts/stress_test_simulation.py` - stress tests for scenario weights, maturity discounts, source confidence, sandbox assumptions, and uncertainty.
 - `scripts/estimate_implementation_effort.py` - reproducible prototype and hardening effort estimates from the scoring dataset.
@@ -29,6 +30,7 @@ Included artifacts:
 - `reports/ai_orchestrator_frameworks_report.md` - final English report.
 - `reports/executive_brief.md` - short decision brief for quick review.
 - `reports/evidence_gap_analysis.md` - evidence-gap findings for low-confidence or immature candidates.
+- `reports/requirements_traceability.md` - coverage map from the original request to artifacts and validation commands.
 - `reports/methodology_appendix.md` - scoring formulas, Monte Carlo assumptions, and customization notes.
 - `reports/simulation_assumptions.md` - assumptions, stress tests, and interpretation of ranking fragility.
 - `reports/artifact_index.md` - navigation guide for all report, data, result, template, and script artifacts.

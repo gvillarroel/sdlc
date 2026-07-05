@@ -1,0 +1,107 @@
+{
+  "metadata": {
+    "created_at": "2026-07-05",
+    "purpose": "Map the original user requirements to repository artifacts and validation evidence."
+  },
+  "requirements": [
+    {
+      "id": "study_shared_conversation",
+      "requirement": "Study the shared ChatGPT conversation and evaluate the listed alternatives.",
+      "primary_artifacts": [
+        "reports/ai_orchestrator_frameworks_report.md",
+        "data/alternatives.json",
+        "results/evidence_matrix.csv"
+      ],
+      "validation": "python scripts/validate_artifacts.py"
+    },
+    {
+      "id": "filter_permissive_open_source",
+      "requirement": "Review the alternatives that are not copyleft and are open source.",
+      "primary_artifacts": [
+        "results/license_audit.csv",
+        "scripts/license_audit.py",
+        "data/alternatives.json"
+      ],
+      "validation": "python scripts/license_audit.py && python scripts/validate_artifacts.py"
+    },
+    {
+      "id": "python_simulations",
+      "requirement": "Evaluate alternatives with Python simulations.",
+      "primary_artifacts": [
+        "scripts/simulate_alternatives.py",
+        "results/deterministic_rankings.csv",
+        "results/monte_carlo_summary.csv",
+        "results/sensitivity_summary.csv",
+        "results/all_results.json"
+      ],
+      "validation": "python scripts/simulate_alternatives.py --trials 5000 --seed 7331"
+    },
+    {
+      "id": "simulation_factors",
+      "requirement": "Review everything that can affect the simulation.",
+      "primary_artifacts": [
+        "reports/simulation_assumptions.md",
+        "data/simulation_assumptions.json",
+        "scripts/stress_test_simulation.py",
+        "results/stress_test_summary.csv",
+        "results/uncertainty_stress_summary.csv"
+      ],
+      "validation": "python scripts/stress_test_simulation.py --trials 1500 --seed 9011"
+    },
+    {
+      "id": "implementation_complexity",
+      "requirement": "Review how complicated it is to build something with the alternatives.",
+      "primary_artifacts": [
+        "reports/implementation_blueprints.md",
+        "results/implementation_effort_estimates.csv",
+        "scripts/estimate_implementation_effort.py"
+      ],
+      "validation": "python scripts/estimate_implementation_effort.py"
+    },
+    {
+      "id": "evidence_quality",
+      "requirement": "Check factors that can make the evaluation unreliable.",
+      "primary_artifacts": [
+        "reports/evidence_gap_analysis.md",
+        "results/evidence_gap_analysis.csv",
+        "results/source_check.csv",
+        "scripts/analyze_evidence_gaps.py",
+        "scripts/check_sources.py"
+      ],
+      "validation": "python scripts/analyze_evidence_gaps.py"
+    },
+    {
+      "id": "pilot_plan",
+      "requirement": "Provide a way to move from simulated ranking to real evidence.",
+      "primary_artifacts": [
+        "reports/pilot_protocol.md",
+        "data/pilot_tasks.json",
+        "templates/pilot_run_log.csv",
+        "templates/reviewer_scorecard.md",
+        "templates/security_gate_checklist.md",
+        "scripts/score_pilot_results.py"
+      ],
+      "validation": "python scripts/score_pilot_results.py --input examples/pilot_candidate_summary.example.csv --output results/pilot_decision_scores.example.csv"
+    },
+    {
+      "id": "english_final_report",
+      "requirement": "Generate the final report in English.",
+      "primary_artifacts": [
+        "reports/ai_orchestrator_frameworks_report.md",
+        "reports/executive_brief.md",
+        "reports/artifact_index.md"
+      ],
+      "validation": "python scripts/validate_artifacts.py"
+    },
+    {
+      "id": "tests_and_reproducibility",
+      "requirement": "Upload the tests and final report to GitHub.",
+      "primary_artifacts": [
+        "tests/",
+        "scripts/run_all_checks.py",
+        "ci/validate-workflow.example.yml"
+      ],
+      "validation": "python scripts/run_all_checks.py"
+    }
+  ]
+}

@@ -99,9 +99,11 @@ def validate_report_references() -> None:
         "data/pilot_tasks.json",
         "data/risk_register.json",
         "data/simulation_assumptions.json",
+        "data/traceability_matrix.json",
         "reports/executive_brief.md",
         "reports/evidence_gap_analysis.md",
         "reports/methodology_appendix.md",
+        "reports/requirements_traceability.md",
         "reports/simulation_assumptions.md"
     ]:
         assert_true(artifact in report, f"report does not reference {artifact}")

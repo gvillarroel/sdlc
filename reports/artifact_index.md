@@ -11,6 +11,7 @@ Use this index to choose the right file quickly.
 | Quick decision summary | `reports/executive_brief.md` |
 | Guided shortlist selection | `reports/decision_tree.md` |
 | Full analysis | `reports/ai_orchestrator_frameworks_report.md` |
+| Requirement coverage | `reports/requirements_traceability.md` |
 | Scoring formula and assumptions | `reports/methodology_appendix.md` |
 | Simulation assumptions and stress tests | `reports/simulation_assumptions.md` |
 | Evidence-gap findings | `reports/evidence_gap_analysis.md` |
@@ -30,6 +31,7 @@ Use this index to choose the right file quickly.
 | Machine-readable decision tree | `data/decision_tree.json` |
 | Adoption risk register | `data/risk_register.json` |
 | Simulation assumption register | `data/simulation_assumptions.json` |
+| Requirement traceability matrix | `data/traceability_matrix.json` |
 
 ## Generated Results
 

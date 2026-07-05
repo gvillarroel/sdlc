@@ -55,6 +55,14 @@ class ReportArtifactsTest(unittest.TestCase):
         self.assertIn("results/evidence_gap_analysis.csv", text)
         self.assertIn("High", text)
 
+    def test_requirements_traceability_report_exists(self):
+        traceability = ROOT / "reports" / "requirements_traceability.md"
+        self.assertTrue(traceability.exists())
+        text = traceability.read_text(encoding="utf-8")
+        self.assertIn("# Requirements Traceability", text)
+        self.assertIn("data/traceability_matrix.json", text)
+        self.assertIn("python scripts/run_all_checks.py", text)
+
     def test_artifact_index_exists(self):
         index = ROOT / "reports" / "artifact_index.md"
         self.assertTrue(index.exists())

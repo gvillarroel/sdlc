@@ -38,6 +38,8 @@ For simulation assumptions, threats to validity, and stress-test results, read `
 
 For evidence gaps in young or low-confidence candidates, read `reports/evidence_gap_analysis.md`.
 
+For a requirement-to-artifact coverage map, read `reports/requirements_traceability.md`; the machine-readable matrix is `data/traceability_matrix.json`.
+
 Use this report in three passes:
 
 1. Pick the target scenario: custom framework, secure PR automation, local coding, research benchmarking, or enterprise control plane.
