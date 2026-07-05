@@ -22,13 +22,13 @@ This page summarizes the current repository state for a reviewer opening the Git
 
 | Check | Current result |
 |---|---|
-| Unit tests | 131 tests passed |
+| Unit tests | 133 tests passed |
 | Generated CSV schemas | 35 schemas checked, 0 failures |
 | Local artifact references | 745 references checked, 0 missing |
 | Markdown tables | 221 tables checked, 0 failures |
 | External source URLs | 41 URLs checked, 41 OK |
 | GitHub metadata | 17 repos checked, 0 failures, 0 license mismatches |
-| Artifact manifest | 154 report, data, result, script, test, template, and CI rows |
+| Artifact manifest | 155 report, data, result, script, test, template, and CI rows |
 
 ## Review Entry Points
 

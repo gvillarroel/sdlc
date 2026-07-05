@@ -123,13 +123,13 @@ This page summarizes the current repository state for a reviewer opening the Git
 
 | Check | Current result |
 |---|---|
-| Unit tests | 131 tests passed |
+| Unit tests | 133 tests passed |
 | Generated CSV schemas | 35 schemas checked, 0 failures |
 | Local artifact references | 745 references checked, 0 missing |
 | Markdown tables | 221 tables checked, 0 failures |
 | External source URLs | 41 URLs checked, 41 OK |
 | GitHub metadata | 17 repos checked, 0 failures, 0 license mismatches |
-| Artifact manifest | 154 report, data, result, script, test, template, and CI rows |
+| Artifact manifest | 155 report, data, result, script, test, template, and CI rows |
 
 ## Review Entry Points
 
@@ -2128,7 +2128,7 @@ This page summarizes the current quality checks for the report repository. It is
 
 | Check | Command | Latest result |
 |---|---|---|
-| Unit tests | `python -m unittest discover -s tests` | 131 tests passed. |
+| Unit tests | `python -m unittest discover -s tests` | 133 tests passed. |
 | Full local workflow | `python scripts/run_all_checks.py` | Passed. |
 | Offline artifact validation | `python scripts/validate_artifacts.py` | Passed. |
 | Generated CSV schemas | `python scripts/validate_csv_schemas.py` | 35 CSV schemas checked, 0 failures. |
