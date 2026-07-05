@@ -304,7 +304,9 @@ class ReportArtifactsTest(unittest.TestCase):
     def test_generated_svg_assets_exist(self):
         expected_files = [
             "rank_stability.svg",
-            "scenario_regret.svg"
+            "scenario_regret.svg",
+            "operational_hours.svg",
+            "criterion_spread.svg"
         ]
         for filename in expected_files:
             path = ROOT / "reports" / "assets" / filename

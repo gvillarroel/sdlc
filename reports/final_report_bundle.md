@@ -2018,7 +2018,7 @@ This page summarizes the current quality checks for the report repository. It is
 | Full local workflow | `python scripts/run_all_checks.py` | Passed. |
 | Offline artifact validation | `python scripts/validate_artifacts.py` | Passed. |
 | Generated CSV schemas | `python scripts/validate_csv_schemas.py` | 33 CSV schemas checked, 0 failures. |
-| Local artifact references | `python scripts/check_local_artifact_references.py` | 669 local references checked, 0 missing. |
+| Local artifact references | `python scripts/check_local_artifact_references.py` | 673 local references checked, 0 missing. |
 | External source URLs | `python scripts/check_sources.py --timeout 20` | 41 URLs checked, 41 OK. |
 | GitHub metadata | `python scripts/refresh_github_metadata.py --timeout 20` | 17 repos checked, 0 failures, 0 license mismatches. |
 | Whitespace | `git diff --check` | Passed. |
@@ -2825,7 +2825,7 @@ Use this index to choose the right file quickly.
 | Pilot sample-size planning | `reports/pilot_sample_size.md` |
 | Candidate implementation notes | `reports/implementation_blueprints.md` |
 | Stakeholder presentation outline | `reports/presentation_outline.md` |
-| Report charts | `reports/assets/rank_stability.svg`, `reports/assets/scenario_regret.svg` |
+| Report charts | `reports/assets/rank_stability.svg`, `reports/assets/scenario_regret.svg`, `reports/assets/operational_hours.svg`, `reports/assets/criterion_spread.svg` |
 
 ## Data Inputs
 

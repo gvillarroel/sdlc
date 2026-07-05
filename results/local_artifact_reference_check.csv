@@ -213,6 +213,8 @@ reports/artifact_index.md,examples/pilot_adapter_contract.py,examples/pilot_adap
 reports/artifact_index.md,examples/pilot_candidate_summary.example.csv,examples/pilot_candidate_summary.example.csv,True
 reports/artifact_index.md,reports/adoption_decision_record.md,reports/adoption_decision_record.md,True
 reports/artifact_index.md,reports/ai_orchestrator_frameworks_report.md,reports/ai_orchestrator_frameworks_report.md,True
+reports/artifact_index.md,reports/assets/criterion_spread.svg,reports/assets/criterion_spread.svg,True
+reports/artifact_index.md,reports/assets/operational_hours.svg,reports/assets/operational_hours.svg,True
 reports/artifact_index.md,reports/assets/rank_stability.svg,reports/assets/rank_stability.svg,True
 reports/artifact_index.md,reports/assets/scenario_regret.svg,reports/assets/scenario_regret.svg,True
 reports/artifact_index.md,reports/candidate_taxonomy.md,reports/candidate_taxonomy.md,True
@@ -353,6 +355,8 @@ reports/final_report_bundle.md,examples/pilot_candidate_summary.example.csv,exam
 reports/final_report_bundle.md,reports/adoption_decision_record.md,reports/adoption_decision_record.md,True
 reports/final_report_bundle.md,reports/ai_orchestrator_frameworks_report.md,reports/ai_orchestrator_frameworks_report.md,True
 reports/final_report_bundle.md,reports/artifact_index.md,reports/artifact_index.md,True
+reports/final_report_bundle.md,reports/assets/criterion_spread.svg,reports/assets/criterion_spread.svg,True
+reports/final_report_bundle.md,reports/assets/operational_hours.svg,reports/assets/operational_hours.svg,True
 reports/final_report_bundle.md,reports/assets/rank_stability.svg,reports/assets/rank_stability.svg,True
 reports/final_report_bundle.md,reports/assets/scenario_regret.svg,reports/assets/scenario_regret.svg,True
 reports/final_report_bundle.md,reports/candidate_taxonomy.md,reports/candidate_taxonomy.md,True

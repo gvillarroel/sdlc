@@ -36,7 +36,7 @@ Use this index to choose the right file quickly.
 | Pilot sample-size planning | `reports/pilot_sample_size.md` |
 | Candidate implementation notes | `reports/implementation_blueprints.md` |
 | Stakeholder presentation outline | `reports/presentation_outline.md` |
-| Report charts | `reports/assets/rank_stability.svg`, `reports/assets/scenario_regret.svg` |
+| Report charts | `reports/assets/rank_stability.svg`, `reports/assets/scenario_regret.svg`, `reports/assets/operational_hours.svg`, `reports/assets/criterion_spread.svg` |
 
 ## Data Inputs
 

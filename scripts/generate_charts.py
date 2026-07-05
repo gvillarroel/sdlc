@@ -107,6 +107,78 @@ def write_scenario_regret_chart(output_dir: Path) -> Path:
     return output_path
 
 
+def write_operational_hours_chart(output_dir: Path) -> Path:
+    rows = [
+        row
+        for row in read_csv(RESULTS / "operational_cost_estimates.csv")
+        if row["operating_profile"] == "pilot_100_tasks"
+    ]
+    rows.sort(key=lambda row: float(row["monthly_operational_hours"]))
+    rows = rows[:10]
+    width = 1000
+    row_height = 34
+    margin_left = 270
+    margin_right = 90
+    margin_top = 56
+    height = margin_top + len(rows) * row_height + 48
+    bar_max = width - margin_left - margin_right
+    max_hours = max(float(row["monthly_operational_hours"]) for row in rows) or 1.0
+
+    parts = [
+        f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">',
+        '<rect width="100%" height="100%" fill="#ffffff"/>',
+        '<text x="24" y="32" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#111827">Pilot operating effort: monthly hours</text>',
+        '<text x="24" y="52" font-family="Arial, sans-serif" font-size="12" fill="#4b5563">Lower is better. Controlled pilot profile with 100 tasks/month.</text>'
+    ]
+    for index, row in enumerate(rows):
+        y = margin_top + index * row_height
+        value = float(row["monthly_operational_hours"])
+        bar_width = value / max_hours * bar_max
+        parts.extend([
+            f'<text x="24" y="{y + 21}" font-family="Arial, sans-serif" font-size="13" fill="#111827">{esc(row["alternative"])}</text>',
+            f'<rect x="{margin_left}" y="{y + 6}" width="{bar_max}" height="18" rx="3" fill="#f3f4f6"/>',
+            f'<rect x="{margin_left}" y="{y + 6}" width="{bar_width:.1f}" height="18" rx="3" fill="#059669"/>',
+            f'<text x="{margin_left + bar_max + 10}" y="{y + 21}" font-family="Arial, sans-serif" font-size="12" fill="#111827">{value:.1f}h</text>'
+        ])
+    parts.append("</svg>")
+    output_path = output_dir / "operational_hours.svg"
+    output_path.write_text("\n".join(parts) + "\n", encoding="utf-8", newline="\n")
+    return output_path
+
+
+def write_criterion_spread_chart(output_dir: Path) -> Path:
+    rows = read_csv(RESULTS / "criterion_spread_summary.csv")[:10]
+    width = 980
+    row_height = 34
+    margin_left = 260
+    margin_right = 70
+    margin_top = 56
+    height = margin_top + len(rows) * row_height + 48
+    bar_max = width - margin_left - margin_right
+    max_spread = max(float(row["score_spread"]) for row in rows) or 1.0
+
+    parts = [
+        f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">',
+        '<rect width="100%" height="100%" fill="#ffffff"/>',
+        '<text x="24" y="32" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#111827">Highest-spread scoring criteria</text>',
+        '<text x="24" y="52" font-family="Arial, sans-serif" font-size="12" fill="#4b5563">Higher spread means the criterion separates candidates more strongly.</text>'
+    ]
+    for index, row in enumerate(rows):
+        y = margin_top + index * row_height
+        value = float(row["score_spread"])
+        bar_width = value / max_spread * bar_max
+        parts.extend([
+            f'<text x="24" y="{y + 21}" font-family="Arial, sans-serif" font-size="13" fill="#111827">{esc(row["criterion"])}</text>',
+            f'<rect x="{margin_left}" y="{y + 6}" width="{bar_max}" height="18" rx="3" fill="#f3f4f6"/>',
+            f'<rect x="{margin_left}" y="{y + 6}" width="{bar_width:.1f}" height="18" rx="3" fill="#7c3aed"/>',
+            f'<text x="{margin_left + bar_max + 10}" y="{y + 21}" font-family="Arial, sans-serif" font-size="12" fill="#111827">{value:.1f}</text>'
+        ])
+    parts.append("</svg>")
+    output_path = output_dir / "criterion_spread.svg"
+    output_path.write_text("\n".join(parts) + "\n", encoding="utf-8", newline="\n")
+    return output_path
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--output-dir", type=Path, default=DEFAULT_OUTPUT)
@@ -114,7 +186,9 @@ def main() -> int:
     args.output_dir.mkdir(parents=True, exist_ok=True)
     paths = [
         write_rank_stability_chart(args.output_dir),
-        write_scenario_regret_chart(args.output_dir)
+        write_scenario_regret_chart(args.output_dir),
+        write_operational_hours_chart(args.output_dir),
+        write_criterion_spread_chart(args.output_dir)
     ]
     for path in paths:
         print(path)
