@@ -277,6 +277,8 @@ Primary pilot task: connect two backends, run one identical task, and evaluate w
 
 Run a two-week pilot before standardizing.
 
+The concrete task suite is included in `data/pilot_tasks.json`. It contains 20 tasks: 8 bug fixes, 4 refactors, 4 test-generation tasks, 1 dependency update, 1 documentation/codebase explanation task, and 2 security fixtures. The point is not that these exact tasks are universal; it is that every candidate should face the same distribution of ordinary coding work, ambiguous engineering work, and safety pressure.
+
 | Phase | Duration | Work | Exit criteria |
 |---|---:|---|---|
 | 1. Harness smoke test | 2 days | Install top 3 candidates for the target scenario, run one simple repo task, confirm model/provider setup and sandbox path. | Each candidate can read the repo, make a controlled edit, run tests, and leave inspectable logs. |
