@@ -17,6 +17,7 @@ Included artifacts:
 - `reports/ai_orchestrator_frameworks_report.md` - final English report.
 - `reports/executive_brief.md` - short decision brief for quick review.
 - `reports/methodology_appendix.md` - scoring formulas, Monte Carlo assumptions, and customization notes.
+- `reports/artifact_index.md` - navigation guide for all report, data, result, template, and script artifacts.
 - `ci/validate-workflow.example.yml` - GitHub Actions workflow template for tests, deterministic artifact regeneration, and offline artifact validation.
 
 Run the checks and simulations:

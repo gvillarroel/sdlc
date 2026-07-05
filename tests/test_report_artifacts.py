@@ -37,6 +37,14 @@ class ReportArtifactsTest(unittest.TestCase):
         self.assertIn("Weighted Scenario Score", text)
         self.assertIn("Monte Carlo Model", text)
 
+    def test_artifact_index_exists(self):
+        index = ROOT / "reports" / "artifact_index.md"
+        self.assertTrue(index.exists())
+        text = index.read_text(encoding="utf-8")
+        self.assertIn("# Artifact Index", text)
+        self.assertIn("Generated Results", text)
+        self.assertIn("Pilot Execution", text)
+
     def test_generated_result_files_exist(self):
         expected_files = [
             "deterministic_rankings.csv",

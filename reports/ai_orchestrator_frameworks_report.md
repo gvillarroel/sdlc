@@ -30,6 +30,8 @@ My practical recommendation is:
 
 For a short decision-oriented version, read `reports/executive_brief.md`.
 
+For a navigation guide to every generated artifact, read `reports/artifact_index.md`.
+
 Use this report in three passes:
 
 1. Pick the target scenario: custom framework, secure PR automation, local coding, research benchmarking, or enterprise control plane.
