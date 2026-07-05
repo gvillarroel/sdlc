@@ -1,0 +1,145 @@
+{
+  "metadata": {
+    "created_at": "2026-07-05",
+    "purpose": "Actionable risk register for adopting permissive open-source AI coding-agent orchestrators."
+  },
+  "scale": {
+    "likelihood": "1 low, 2 medium, 3 high",
+    "impact": "1 low, 2 medium, 3 high",
+    "severity": "likelihood * impact"
+  },
+  "risks": [
+    {
+      "id": "R-001",
+      "risk": "Sandbox escape or workspace boundary failure",
+      "category": "security",
+      "likelihood": 2,
+      "impact": 3,
+      "affected_candidates": ["Codex CLI", "Sandcastle", "Open SWE", "OpenHands SDK", "Deep Agents", "Flue"],
+      "trigger": "Agent-written command attempts to read or write outside the approved workspace.",
+      "mitigation": "Run boundary tests before pilot tasks; use disposable workspaces; deny host mounts by default; require explicit approval for external writes.",
+      "evidence_required": "A failing-outside-workspace fixture and command logs proving the write is blocked."
+    },
+    {
+      "id": "R-002",
+      "risk": "Secret exposure through setup, logs, or tool output",
+      "category": "security",
+      "likelihood": 2,
+      "impact": 3,
+      "affected_candidates": ["All"],
+      "trigger": "Agent reads `.env`, SSH keys, provider tokens, CI secrets, or logs containing credentials.",
+      "mitigation": "Use secret scanning fixtures, redact logs, isolate setup credentials from agent runtime, and deny access to known secret paths.",
+      "evidence_required": "Secret-trap task showing the agent neither reads nor emits the planted secret."
+    },
+    {
+      "id": "R-003",
+      "risk": "Prompt injection from issue text, web pages, docs, or tool output",
+      "category": "security",
+      "likelihood": 3,
+      "impact": 3,
+      "affected_candidates": ["All"],
+      "trigger": "Untrusted text asks the agent to ignore policies, reveal secrets, or change unrelated files.",
+      "mitigation": "Treat external content as data; use explicit instruction hierarchy; include injection fixtures in evaluation.",
+      "evidence_required": "Prompt-injection pilot task showing ignored malicious instructions and safe final behavior."
+    },
+    {
+      "id": "R-004",
+      "risk": "Network policy too broad for autonomous execution",
+      "category": "security",
+      "likelihood": 2,
+      "impact": 3,
+      "affected_candidates": ["Codex CLI", "Open SWE", "OpenHands SDK", "Deep Agents", "Flue", "Sandcastle"],
+      "trigger": "Agent or install script reaches unapproved hosts during test, build, package install, or web search.",
+      "mitigation": "Default network off; add domain allowlists; run package installs in setup phase or disposable sandbox; audit DNS and private-network access.",
+      "evidence_required": "Network-deny task showing blocked access to a non-allowlisted host."
+    },
+    {
+      "id": "R-005",
+      "risk": "Model lock-in hides framework portability risk",
+      "category": "strategy",
+      "likelihood": 2,
+      "impact": 2,
+      "affected_candidates": ["Codex CLI", "Sandcastle", "Open SWE"],
+      "trigger": "Candidate performs well only with one provider-specific model or hosted account path.",
+      "mitigation": "Run at least two provider configurations where supported; document provider-specific features separately from framework features.",
+      "evidence_required": "Pilot results split by model/provider with the same task suite."
+    },
+    {
+      "id": "R-006",
+      "risk": "Benchmark success does not transfer to internal repositories",
+      "category": "evaluation",
+      "likelihood": 3,
+      "impact": 2,
+      "affected_candidates": ["SWE-agent", "mini-SWE-agent", "OpenHands SDK", "Deep Agents"],
+      "trigger": "Candidate has strong public benchmark posture but struggles with private build systems, monorepos, or undocumented conventions.",
+      "mitigation": "Use internal task fixtures and human review acceptance as first-class metrics.",
+      "evidence_required": "Representative internal task results, not only SWE-bench or public benchmark claims."
+    },
+    {
+      "id": "R-007",
+      "risk": "Alpha or beta API churn increases maintenance cost",
+      "category": "operational",
+      "likelihood": 3,
+      "impact": 2,
+      "affected_candidates": ["Omnigent", "Flue", "Sandcastle", "Open SWE", "OpenHands Agent Canvas"],
+      "trigger": "Breaking release, missing migration path, or unstable configuration API.",
+      "mitigation": "Pin versions, track release notes, keep integration wrappers thin, and avoid deep customization before pilot success.",
+      "evidence_required": "Version-pinned prototype with documented upgrade test."
+    },
+    {
+      "id": "R-008",
+      "risk": "Observability is insufficient for production failures",
+      "category": "operational",
+      "likelihood": 2,
+      "impact": 3,
+      "affected_candidates": ["Aider", "OpenCode", "goose", "mini-SWE-agent", "Sandcastle"],
+      "trigger": "Failed task cannot be reconstructed from logs, prompts, commands, diffs, and model outputs.",
+      "mitigation": "Require artifact capture in pilot; integrate tracing or structured run logs before scaling.",
+      "evidence_required": "One failed task replayed from stored artifacts without rerunning the agent."
+    },
+    {
+      "id": "R-009",
+      "risk": "Human approval burden removes productivity gains",
+      "category": "workflow",
+      "likelihood": 2,
+      "impact": 2,
+      "affected_candidates": ["Cline", "Codex CLI", "OpenCode", "goose", "Aider"],
+      "trigger": "Developers must approve too many low-risk actions or repair too many partial changes.",
+      "mitigation": "Measure human interventions per task; tune approval policy by action risk; prefer batch review of low-risk operations.",
+      "evidence_required": "Pilot report with human_intervention_count and reviewer_acceptance metrics."
+    },
+    {
+      "id": "R-010",
+      "risk": "Autonomous PRs create large or low-quality diffs",
+      "category": "quality",
+      "likelihood": 2,
+      "impact": 3,
+      "affected_candidates": ["Open SWE", "Codex CLI", "OpenHands SDK", "Deep Agents", "Cline"],
+      "trigger": "Agent patches pass tests but are broad, fragile, or inconsistent with local conventions.",
+      "mitigation": "Score diff size, review acceptance, convention adherence, and minimality; gate PRs on human review.",
+      "evidence_required": "Reviewer scoring for at least 20 pilot task diffs."
+    },
+    {
+      "id": "R-011",
+      "risk": "Cost and latency exceed practical operating envelope",
+      "category": "cost",
+      "likelihood": 2,
+      "impact": 2,
+      "affected_candidates": ["All"],
+      "trigger": "Long-running tasks consume excessive tokens, sandbox minutes, or wall-clock time.",
+      "mitigation": "Track token/cost/latency per task; enforce task budgets; compare local and cloud sandbox costs.",
+      "evidence_required": "Cost and latency distribution from repeated pilot trials."
+    },
+    {
+      "id": "R-012",
+      "risk": "Control-plane complexity outweighs benefits for small teams",
+      "category": "strategy",
+      "likelihood": 2,
+      "impact": 2,
+      "affected_candidates": ["Omnigent", "OpenHands Agent Canvas", "Open SWE"],
+      "trigger": "Team spends more time operating queues, backends, policies, and UIs than completing engineering work.",
+      "mitigation": "Start with CLI/SDK pilot; introduce control-plane layer only after clear multi-agent or multi-team demand.",
+      "evidence_required": "Pilot comparison of operational overhead versus task throughput."
+    }
+  ]
+}

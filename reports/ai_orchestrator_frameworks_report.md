@@ -320,6 +320,20 @@ Before running autonomous code-writing agents on real repositories:
 | Human approval policy | Destructive actions, external writes, and credential access require approval. |
 | Cleanup | Sandboxes, temporary files, credentials, and branches are removed or archived intentionally. |
 
+## Adoption Risk Register
+
+The full structured register is in `data/risk_register.json`. The highest-priority risks are:
+
+| Risk | Category | Severity | Mitigation |
+|---|---|---:|---|
+| Prompt injection from issue text, web pages, docs, or tool output | Security | 9 | Treat external content as data and include injection fixtures in the pilot. |
+| Sandbox escape or workspace boundary failure | Security | 6 | Run boundary tests and use disposable workspaces with denied external writes. |
+| Secret exposure through setup, logs, or tool output | Security | 6 | Isolate setup credentials, deny secret paths, and use secret-trap fixtures. |
+| Network policy too broad for autonomous execution | Security | 6 | Default network off and require explicit domain allowlists. |
+| Observability is insufficient for production failures | Operational | 6 | Require full artifact capture and replayable failed-task traces. |
+| Autonomous PRs create large or low-quality diffs | Quality | 6 | Score review acceptance, diff size, convention adherence, and minimality. |
+| Benchmark success does not transfer to internal repositories | Evaluation | 6 | Use internal representative tasks and human review acceptance. |
+
 ## Simulation Risk Factors
 
 These factors can materially change the ranking:
