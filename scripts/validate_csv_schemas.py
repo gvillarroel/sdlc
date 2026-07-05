@@ -35,6 +35,7 @@ SCHEMAS: dict[str, list[str]] = {
     "operational_fit_rankings.csv": ["scenario", "operating_profile", "rank", "alternative_id", "alternative", "simulation_rank", "simulation_score", "operational_friction_score", "monthly_operational_hours", "relative_token_pressure", "latency_risk_score", "adjusted_score", "rank_delta_vs_simulation"],
     "pilot_sample_size_estimates.csv": ["scenario", "top_candidate", "comparison_rank", "comparison_candidate", "score_gap", "estimated_top_success_rate", "estimated_comparison_success_rate", "tasks_per_candidate", "simulation_trials", "top_wins_probability", "tie_probability", "decision_confidence_target", "recommendation"],
     "evidence_gap_analysis.csv": ["alternative_id", "alternative", "evidence_risk_score", "evidence_risk_band", "gaps", "mitigation", "adoption_implication"],
+    "risk_validation_matrix.csv": ["risk_id", "risk", "category", "severity", "evidence_required", "validation_artifact", "metric_to_capture", "pass_condition", "affected_candidates"],
     "custom_weights_example_rankings.csv": ["scenario", "rank", "alternative_id", "alternative", "score"],
     "regret_analysis.csv": ["scenario", "alternative_id", "alternative", "deterministic_rank", "deterministic_score", "regret_vs_best", "monte_carlo_mean_rank", "win_rate", "top3_rate"],
     "pareto_frontier.csv": ["alternative_id", "alternative", "is_pareto_frontier", "dominated_by_count", "dominated_by"],

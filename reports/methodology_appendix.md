@@ -215,6 +215,16 @@ The model uses `data/pilot_sample_size_model.json` to map the 0-5 scenario simul
 
 This is intentionally conservative. If the model says the candidates remain unresolved, the pilot should treat them as a tie cluster and decide with safety gates, reviewer judgment, operational fit, and measured cost/latency.
 
+## Risk Validation Matrix
+
+The generated risk validation matrix is `reports/risk_validation_matrix.md` and `results/risk_validation_matrix.csv`, produced by:
+
+```powershell
+python scripts/build_risk_validation_matrix.py
+```
+
+It maps each risk in `data/risk_register.json` to a validation artifact, metric, and pass condition. It is meant to be used as a pilot gate checklist, especially for high-severity security and operational risks.
+
 ## Confidence And Evidence
 
 Source confidence is a manual value from 0 to 1. It reflects repository clarity, license clarity, docs, release posture, and whether the project appears canonical.

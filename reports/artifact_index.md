@@ -22,6 +22,7 @@ Use this index to choose the right file quickly.
 | Validation and QA summary | `reports/validation_summary.md` |
 | Results data dictionary | `reports/results_data_dictionary.md` |
 | Residual risks | `reports/residual_risks.md` |
+| Risk-to-evidence matrix | `reports/risk_validation_matrix.md` |
 | Maintenance procedure | `reports/maintenance_guide.md` |
 | Glossary | `reports/glossary.md` |
 | Scoring formula and assumptions | `reports/methodology_appendix.md` |
@@ -85,6 +86,7 @@ Use this index to choose the right file quickly.
 | Operation-adjusted scenario rankings | `results/operational_fit_rankings.csv` |
 | Pilot sample-size estimates | `results/pilot_sample_size_estimates.csv` |
 | Evidence-gap risk analysis | `results/evidence_gap_analysis.csv` |
+| Risk validation matrix | `results/risk_validation_matrix.csv` |
 | License audit | `results/license_audit.csv` |
 | URL health check | `results/source_check.csv` |
 | GitHub metadata check | `results/github_metadata_check.csv` |
@@ -117,6 +119,7 @@ Use this index to choose the right file quickly.
 | Estimate operational cost and latency risk | `scripts/estimate_operational_costs.py` |
 | Estimate pilot sample sizes | `scripts/estimate_pilot_sample_sizes.py` |
 | Analyze evidence gaps | `scripts/analyze_evidence_gaps.py` |
+| Build risk validation matrix | `scripts/build_risk_validation_matrix.py` |
 | Rank with custom weights | `scripts/rank_with_custom_weights.py` |
 | Regenerate license audit | `scripts/license_audit.py` |
 | Check external source URLs | `scripts/check_sources.py` |
@@ -152,6 +155,7 @@ python scripts/estimate_implementation_effort.py
 python scripts/estimate_operational_costs.py
 python scripts/estimate_pilot_sample_sizes.py
 python scripts/analyze_evidence_gaps.py
+python scripts/build_risk_validation_matrix.py
 python scripts/rank_with_custom_weights.py
 python scripts/license_audit.py
 python scripts/check_local_artifact_references.py

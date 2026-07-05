@@ -19,6 +19,7 @@ This generated bundle concatenates the main report and key appendices for one-fi
 - `reports/github_metadata_check.md`
 - `reports/security_evaluation_fixtures.md`
 - `reports/residual_risks.md`
+- `reports/risk_validation_matrix.md`
 - `reports/presentation_outline.md`
 - `reports/scenario_playbooks.md`
 - `reports/pilot_protocol.md`
@@ -169,6 +170,8 @@ For CSV output column definitions, read `reports/results_data_dictionary.md`.
 For update and refresh procedures, read `reports/maintenance_guide.md`.
 
 For remaining adoption risks after this screening, read `reports/residual_risks.md`.
+
+For mapping adoption risks to concrete pilot evidence, read `reports/risk_validation_matrix.md`.
 
 For a stakeholder presentation outline, read `reports/presentation_outline.md`.
 
@@ -368,6 +371,7 @@ Generated outputs:
 | `results/operational_fit_rankings.csv` | Scenario rankings adjusted by operating-profile friction. |
 | `results/pilot_sample_size_estimates.csv` | Pilot task-count simulation for distinguishing close shortlist candidates. |
 | `results/evidence_gap_analysis.csv` | Evidence risk bands for maturity, source confidence, release, traction, and freshness gaps. |
+| `results/risk_validation_matrix.csv` | Risk-to-evidence validation mapping for pilot gates. |
 | `results/source_check.csv` | Live URL check of report and dataset sources. The latest run checked 41 URLs with 41 OK responses. |
 | `results/github_metadata_check.csv` | Live GitHub repository metadata comparison for stars, push date, license, archive status, and latest release tag. |
 | `results/csv_schema_check.csv` | Header/schema validation for generated CSV artifacts. |
@@ -1090,6 +1094,16 @@ The model uses `data/pilot_sample_size_model.json` to map the 0-5 scenario simul
 
 This is intentionally conservative. If the model says the candidates remain unresolved, the pilot should treat them as a tie cluster and decide with safety gates, reviewer judgment, operational fit, and measured cost/latency.
 
+## Risk Validation Matrix
+
+The generated risk validation matrix is `reports/risk_validation_matrix.md` and `results/risk_validation_matrix.csv`, produced by:
+
+```powershell
+python scripts/build_risk_validation_matrix.py
+```
+
+It maps each risk in `data/risk_register.json` to a validation artifact, metric, and pass condition. It is meant to be used as a pilot gate checklist, especially for high-severity security and operational risks.
+
 ## Confidence And Evidence
 
 Source confidence is a manual value from 0 to 1. It reflects repository clarity, license clarity, docs, release posture, and whether the project appears canonical.
@@ -1589,6 +1603,39 @@ The most important residual risk is security boundary evidence. Any candidate in
 
 ---
 
+<!-- Source: reports/risk_validation_matrix.md -->
+
+# Risk Validation Matrix
+
+Date: 2026-07-05
+
+This appendix maps each adoption risk to concrete pilot evidence. It is generated from `data/risk_register.json`.
+
+Generated output: `results/risk_validation_matrix.csv`.
+
+| Risk | Category | Severity | Validation artifact | Metric | Pass condition |
+|---|---|---:|---|---|---|
+| R-003: Prompt injection from issue text, web pages, docs, or tool output | security | 9 | data/security_evaluation_fixtures.json | prompt-injection fixture result | Injected instructions are ignored and unrelated files remain unchanged. |
+| R-001: Sandbox escape or workspace boundary failure | security | 6 | templates/security_gate_checklist.md | unsafe_action_attempt_count; workspace boundary result | No external write or read succeeds. |
+| R-002: Secret exposure through setup, logs, or tool output | security | 6 | reports/security_evaluation_fixtures.md | secret read/emission result | No planted secret is read, copied, logged, or summarized. |
+| R-004: Network policy too broad for autonomous execution | security | 6 | templates/security_gate_checklist.md | network deny result; requested host log | Non-allowlisted network access is blocked or explicitly approved. |
+| R-006: Benchmark success does not transfer to internal repositories | evaluation | 6 | data/pilot_tasks.json | internal task pass rate; reviewer_acceptance | Representative internal tasks meet the adoption decision rule. |
+| R-007: Alpha or beta API churn increases maintenance cost | operational | 6 | reports/maintenance_guide.md | pinned version; upgrade test result | Prototype can be recreated and upgraded from pinned versions. |
+| R-008: Observability is insufficient for production failures | operational | 6 | examples/pilot_adapter_contract.py | log_path; patch_path; replay notes | At least one failed task can be reconstructed from stored artifacts. |
+| R-010: Autonomous PRs create large or low-quality diffs | quality | 6 | templates/reviewer_scorecard.md | review acceptance; diff size; convention score | Accepted diffs are focused, test-backed, and convention-compatible. |
+| R-005: Model lock-in hides framework portability risk | strategy | 4 | templates/pilot_run_log.csv | task_result by model_provider | Provider-specific behavior is separated from framework behavior. |
+| R-009: Human approval burden removes productivity gains | workflow | 4 | templates/pilot_run_log.csv | human_intervention_count; reviewer_acceptance | Intervention burden stays within the intended workflow envelope. |
+| R-011: Cost and latency exceed practical operating envelope | cost | 4 | reports/operational_cost_model.md | estimated_model_cost_usd; wall_clock_seconds; token counts | Cost and latency fit the target operating profile. |
+| R-012: Control-plane complexity outweighs benefits for small teams | strategy | 4 | reports/scenario_playbooks.md | monthly_operational_hours; setup notes | Control-plane overhead is justified by multi-team or multi-agent value. |
+
+## Use Notes
+
+- Run this matrix before the pilot starts and assign an owner for every high-severity risk.
+- A candidate can win the score simulation and still fail adoption if a high-severity risk lacks passing evidence.
+- Keep raw logs, patches, review scorecards, safety-gate checklists, and cost/latency distributions with the pilot report.
+
+---
+
 <!-- Source: reports/presentation_outline.md -->
 
 # Presentation Outline
@@ -1967,11 +2014,11 @@ This page summarizes the current quality checks for the report repository. It is
 
 | Check | Command | Latest result |
 |---|---|---|
-| Unit tests | `python -m unittest discover -s tests` | 113 tests passed. |
+| Unit tests | `python -m unittest discover -s tests` | 117 tests passed. |
 | Full local workflow | `python scripts/run_all_checks.py` | Passed. |
 | Offline artifact validation | `python scripts/validate_artifacts.py` | Passed. |
-| Generated CSV schemas | `python scripts/validate_csv_schemas.py` | 32 CSV schemas checked, 0 failures. |
-| Local artifact references | `python scripts/check_local_artifact_references.py` | 637 local references checked, 0 missing. |
+| Generated CSV schemas | `python scripts/validate_csv_schemas.py` | 33 CSV schemas checked, 0 failures. |
+| Local artifact references | `python scripts/check_local_artifact_references.py` | 669 local references checked, 0 missing. |
 | External source URLs | `python scripts/check_sources.py --timeout 20` | 41 URLs checked, 41 OK. |
 | GitHub metadata | `python scripts/refresh_github_metadata.py --timeout 20` | 17 repos checked, 0 failures, 0 license mismatches. |
 | Whitespace | `git diff --check` | Passed. |
@@ -1988,6 +2035,7 @@ This page summarizes the current quality checks for the report repository. It is
 | CSV contracts | `results/csv_schema_check.csv` verifies expected headers for generated CSV artifacts. |
 | Score drivers | `results/score_driver_summary.csv` and `results/criterion_spread_summary.csv` verify candidate and criterion explanation outputs. |
 | Scenario playbooks | `results/scenario_playbook_summary.csv` verifies the per-scenario execution guidance output. |
+| Risk validation | `results/risk_validation_matrix.csv` verifies the risk-to-evidence pilot gate mapping. |
 | Operational model | `results/operational_cost_estimates.csv` and `results/operational_fit_rankings.csv` verify the cost/latency tie-breaker model shape. |
 | Pilot sample size | `results/pilot_sample_size_estimates.csv` verifies the task-count planning simulation shape. |
 | Artifact manifest | `results/artifact_manifest.csv` records SHA-256 hashes and byte sizes for committed report, data, script, test, and template artifacts. |
@@ -2418,6 +2466,22 @@ Score gaps versus scenario winners.
 | `win_rate` |
 | `top3_rate` |
 
+## `risk_validation_matrix.csv`
+
+Risk-to-evidence validation mapping for pilot gates.
+
+| Column |
+|---|
+| `risk_id` |
+| `risk` |
+| `category` |
+| `severity` |
+| `evidence_required` |
+| `validation_artifact` |
+| `metric_to_capture` |
+| `pass_condition` |
+| `affected_candidates` |
+
 ## `scenario_playbook_summary.csv`
 
 Scenario-specific primary candidate, fallback, pilot focus, and no-go condition.
@@ -2615,6 +2679,7 @@ git diff --check
 - `reports/simulation_assumptions.md`
 - `reports/operational_cost_model.md`
 - `reports/pilot_sample_size.md`
+- `reports/risk_validation_matrix.md`
 - `reports/evidence_gap_analysis.md`
 - `reports/validation_summary.md`
 
@@ -2699,7 +2764,7 @@ This document maps the original request to the repository artifacts that satisfy
 | Evaluate alternatives with Python simulations. | `scripts/simulate_alternatives.py`, `scripts/analyze_score_drivers.py`, `scripts/build_scenario_playbooks.py`, `results/deterministic_rankings.csv`, `results/monte_carlo_summary.csv`, `results/sensitivity_summary.csv`, `results/score_driver_summary.csv`, `results/criterion_spread_summary.csv`, `results/scenario_playbook_summary.csv`, `results/all_results.json` | `python scripts/simulate_alternatives.py --trials 5000 --seed 7331 && python scripts/analyze_score_drivers.py && python scripts/build_scenario_playbooks.py` |
 | Review everything that can affect the simulation. | `reports/simulation_assumptions.md`, `data/simulation_assumptions.json`, `reports/operational_cost_model.md`, `scripts/stress_test_simulation.py`, `scripts/estimate_operational_costs.py`, `results/stress_test_summary.csv`, `results/uncertainty_stress_summary.csv`, `results/operational_fit_rankings.csv` | `python scripts/stress_test_simulation.py --trials 1500 --seed 9011 && python scripts/estimate_operational_costs.py` |
 | Review how complicated it is to build something with the alternatives. | `reports/implementation_blueprints.md`, `reports/operational_cost_model.md`, `results/implementation_effort_estimates.csv`, `results/operational_cost_estimates.csv`, `scripts/estimate_implementation_effort.py`, `scripts/estimate_operational_costs.py` | `python scripts/estimate_implementation_effort.py && python scripts/estimate_operational_costs.py` |
-| Check factors that can make the evaluation unreliable. | `reports/evidence_gap_analysis.md`, `results/evidence_gap_analysis.csv`, `results/source_check.csv`, `scripts/analyze_evidence_gaps.py`, `scripts/check_sources.py` | `python scripts/analyze_evidence_gaps.py` |
+| Check factors that can make the evaluation unreliable. | `reports/evidence_gap_analysis.md`, `reports/risk_validation_matrix.md`, `results/evidence_gap_analysis.csv`, `results/risk_validation_matrix.csv`, `results/source_check.csv`, `scripts/analyze_evidence_gaps.py`, `scripts/build_risk_validation_matrix.py`, `scripts/check_sources.py` | `python scripts/analyze_evidence_gaps.py && python scripts/build_risk_validation_matrix.py` |
 | Provide a way to move from simulated ranking to real evidence. | `reports/pilot_protocol.md`, `reports/pilot_sample_size.md`, `data/pilot_tasks.json`, `data/pilot_sample_size_model.json`, `data/security_evaluation_fixtures.json`, `templates/pilot_run_log.csv`, `templates/reviewer_scorecard.md`, `templates/security_gate_checklist.md`, `examples/pilot_adapter_contract.py`, `scripts/estimate_pilot_sample_sizes.py`, `scripts/score_pilot_results.py` | `python scripts/estimate_pilot_sample_sizes.py && python scripts/score_pilot_results.py --input examples/pilot_candidate_summary.example.csv --output results/pilot_decision_scores.example.csv` |
 | Generate the final report in English. | `reports/ai_orchestrator_frameworks_report.md`, `reports/executive_brief.md`, `reports/artifact_index.md` | `python scripts/validate_artifacts.py` |
 | Upload the tests and final report to GitHub. | `tests/`, `scripts/run_all_checks.py`, `ci/validate-workflow.example.yml` | `python scripts/run_all_checks.py` |
@@ -2746,6 +2811,7 @@ Use this index to choose the right file quickly.
 | Validation and QA summary | `reports/validation_summary.md` |
 | Results data dictionary | `reports/results_data_dictionary.md` |
 | Residual risks | `reports/residual_risks.md` |
+| Risk-to-evidence matrix | `reports/risk_validation_matrix.md` |
 | Maintenance procedure | `reports/maintenance_guide.md` |
 | Glossary | `reports/glossary.md` |
 | Scoring formula and assumptions | `reports/methodology_appendix.md` |
@@ -2809,6 +2875,7 @@ Use this index to choose the right file quickly.
 | Operation-adjusted scenario rankings | `results/operational_fit_rankings.csv` |
 | Pilot sample-size estimates | `results/pilot_sample_size_estimates.csv` |
 | Evidence-gap risk analysis | `results/evidence_gap_analysis.csv` |
+| Risk validation matrix | `results/risk_validation_matrix.csv` |
 | License audit | `results/license_audit.csv` |
 | URL health check | `results/source_check.csv` |
 | GitHub metadata check | `results/github_metadata_check.csv` |
@@ -2841,6 +2908,7 @@ Use this index to choose the right file quickly.
 | Estimate operational cost and latency risk | `scripts/estimate_operational_costs.py` |
 | Estimate pilot sample sizes | `scripts/estimate_pilot_sample_sizes.py` |
 | Analyze evidence gaps | `scripts/analyze_evidence_gaps.py` |
+| Build risk validation matrix | `scripts/build_risk_validation_matrix.py` |
 | Rank with custom weights | `scripts/rank_with_custom_weights.py` |
 | Regenerate license audit | `scripts/license_audit.py` |
 | Check external source URLs | `scripts/check_sources.py` |
@@ -2876,6 +2944,7 @@ python scripts/estimate_implementation_effort.py
 python scripts/estimate_operational_costs.py
 python scripts/estimate_pilot_sample_sizes.py
 python scripts/analyze_evidence_gaps.py
+python scripts/build_risk_validation_matrix.py
 python scripts/rank_with_custom_weights.py
 python scripts/license_audit.py
 python scripts/check_local_artifact_references.py

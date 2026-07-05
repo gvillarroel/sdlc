@@ -142,7 +142,7 @@ class ReportArtifactsTest(unittest.TestCase):
         text = summary.read_text(encoding="utf-8")
         self.assertIn("# Validation Summary", text)
         self.assertIn("python scripts/run_all_checks.py", text)
-        self.assertIn("113 tests passed", text)
+        self.assertIn("117 tests passed", text)
 
     def test_results_data_dictionary_exists(self):
         dictionary = ROOT / "reports" / "results_data_dictionary.md"
@@ -175,6 +175,14 @@ class ReportArtifactsTest(unittest.TestCase):
         self.assertIn("# Scenario Playbooks", text)
         self.assertIn("results/scenario_playbook_summary.csv", text)
         self.assertIn("No-go condition", text)
+
+    def test_risk_validation_matrix_exists(self):
+        matrix = ROOT / "reports" / "risk_validation_matrix.md"
+        self.assertTrue(matrix.exists())
+        text = matrix.read_text(encoding="utf-8")
+        self.assertIn("# Risk Validation Matrix", text)
+        self.assertIn("results/risk_validation_matrix.csv", text)
+        self.assertIn("Pass condition", text)
 
     def test_pilot_sample_size_exists(self):
         sample_size = ROOT / "reports" / "pilot_sample_size.md"
@@ -254,6 +262,7 @@ class ReportArtifactsTest(unittest.TestCase):
             "operational_fit_rankings.csv",
             "pilot_sample_size_estimates.csv",
             "evidence_gap_analysis.csv",
+            "risk_validation_matrix.csv",
             "custom_weights_example_rankings.csv",
             "local_artifact_reference_check.csv",
             "github_metadata_check.csv",

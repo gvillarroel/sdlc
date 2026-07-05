@@ -17,6 +17,7 @@ class CsvSchemasTest(unittest.TestCase):
             "operational_fit_rankings.csv",
             "pilot_sample_size_estimates.csv",
             "evidence_gap_analysis.csv",
+            "risk_validation_matrix.csv",
             "github_metadata_check.csv",
         ]:
             self.assertIn(filename, SCHEMAS)

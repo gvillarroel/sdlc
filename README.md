@@ -25,6 +25,7 @@ Included artifacts:
 - `scripts/estimate_operational_costs.py` - relative operating-cost, token-pressure, latency-risk, and operation-adjusted ranking model.
 - `scripts/estimate_pilot_sample_sizes.py` - pilot task-count simulation for distinguishing close shortlist candidates.
 - `scripts/analyze_evidence_gaps.py` - evidence-gap review for maturity, confidence, release, traction, and freshness risks.
+- `scripts/build_risk_validation_matrix.py` - risk-to-evidence pilot validation matrix builder.
 - `scripts/rank_with_custom_weights.py` - deterministic ranking for user-provided scenario weights.
 - `scripts/check_local_artifact_references.py` - offline check for local artifact references in README and reports.
 - `scripts/validate_csv_schemas.py` - generated CSV header/schema validation.
@@ -62,6 +63,7 @@ Included artifacts:
 - `reports/validation_summary.md` - latest validation and QA summary for generated artifacts and tests.
 - `reports/results_data_dictionary.md` - generated data dictionary for CSV outputs.
 - `reports/residual_risks.md` - residual risks that require pilot or legal/security evidence.
+- `reports/risk_validation_matrix.md` - generated mapping from adoption risks to pilot evidence.
 - `reports/maintenance_guide.md` - procedure for refreshing sources, scores, candidates, and generated artifacts.
 - `reports/methodology_appendix.md` - scoring formulas, Monte Carlo assumptions, and customization notes.
 - `reports/simulation_assumptions.md` - assumptions, stress tests, and interpretation of ranking fragility.
@@ -99,6 +101,7 @@ python scripts/estimate_implementation_effort.py
 python scripts/estimate_operational_costs.py
 python scripts/estimate_pilot_sample_sizes.py
 python scripts/analyze_evidence_gaps.py
+python scripts/build_risk_validation_matrix.py
 python scripts/rank_with_custom_weights.py
 python scripts/license_audit.py
 python scripts/check_local_artifact_references.py
@@ -134,6 +137,7 @@ Generated result files:
 - `results/operational_fit_rankings.csv`
 - `results/pilot_sample_size_estimates.csv`
 - `results/evidence_gap_analysis.csv`
+- `results/risk_validation_matrix.csv`
 - `results/custom_weights_example_rankings.csv`
 - `results/local_artifact_reference_check.csv`
 - `results/github_metadata_check.csv`

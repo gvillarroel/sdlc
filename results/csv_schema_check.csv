@@ -22,6 +22,7 @@ pilot_decision_scores.example.csv,True,,,12,12
 pilot_sample_size_estimates.csv,True,,,13,13
 rank_stability.csv,True,,,9,9
 regret_analysis.csv,True,,,9,9
+risk_validation_matrix.csv,True,,,9,9
 scenario_playbook_summary.csv,True,,,10,10
 scenario_weights.csv,True,,,4,4
 score_driver_summary.csv,True,,,12,12

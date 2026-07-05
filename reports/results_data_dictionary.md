@@ -363,6 +363,22 @@ Score gaps versus scenario winners.
 | `win_rate` |
 | `top3_rate` |
 
+## `risk_validation_matrix.csv`
+
+Risk-to-evidence validation mapping for pilot gates.
+
+| Column |
+|---|
+| `risk_id` |
+| `risk` |
+| `category` |
+| `severity` |
+| `evidence_required` |
+| `validation_artifact` |
+| `metric_to_capture` |
+| `pass_condition` |
+| `affected_candidates` |
+
 ## `scenario_playbook_summary.csv`
 
 Scenario-specific primary candidate, fallback, pilot focus, and no-go condition.

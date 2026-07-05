@@ -72,6 +72,8 @@ For update and refresh procedures, read `reports/maintenance_guide.md`.
 
 For remaining adoption risks after this screening, read `reports/residual_risks.md`.
 
+For mapping adoption risks to concrete pilot evidence, read `reports/risk_validation_matrix.md`.
+
 For a stakeholder presentation outline, read `reports/presentation_outline.md`.
 
 For terminology used across scoring and security sections, read `reports/glossary.md`.
@@ -270,6 +272,7 @@ Generated outputs:
 | `results/operational_fit_rankings.csv` | Scenario rankings adjusted by operating-profile friction. |
 | `results/pilot_sample_size_estimates.csv` | Pilot task-count simulation for distinguishing close shortlist candidates. |
 | `results/evidence_gap_analysis.csv` | Evidence risk bands for maturity, source confidence, release, traction, and freshness gaps. |
+| `results/risk_validation_matrix.csv` | Risk-to-evidence validation mapping for pilot gates. |
 | `results/source_check.csv` | Live URL check of report and dataset sources. The latest run checked 41 URLs with 41 OK responses. |
 | `results/github_metadata_check.csv` | Live GitHub repository metadata comparison for stars, push date, license, archive status, and latest release tag. |
 | `results/csv_schema_check.csv` | Header/schema validation for generated CSV artifacts. |

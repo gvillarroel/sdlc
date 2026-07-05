@@ -15,6 +15,7 @@ DATA = ROOT / "data"
 REPORTS = ROOT / "reports"
 SCENARIO_COUNT = 5
 CRITERIA_COUNT = 14
+RISK_COUNT = 12
 DETERMINISTIC_STRESS_CASE_COUNT = 8
 UNCERTAINTY_STRESS_CASE_COUNT = 5
 CUSTOM_WEIGHT_SCENARIO_COUNT = 2
@@ -40,6 +41,7 @@ REQUIRED_RESULT_FILES = [
     "operational_fit_rankings.csv",
     "pilot_sample_size_estimates.csv",
     "evidence_gap_analysis.csv",
+    "risk_validation_matrix.csv",
     "custom_weights_example_rankings.csv",
     "regret_analysis.csv",
     "pareto_frontier.csv",
@@ -116,6 +118,7 @@ def validate_result_shapes() -> None:
         "pilot sample-size win probabilities must be between 0 and 1",
     )
     assert_true(len(read_csv(RESULTS / "evidence_gap_analysis.csv")) == alt_count, "unexpected evidence gap row count")
+    assert_true(len(read_csv(RESULTS / "risk_validation_matrix.csv")) == RISK_COUNT, "unexpected risk validation row count")
     assert_true(len(read_csv(RESULTS / "custom_weights_example_rankings.csv")) == CUSTOM_WEIGHT_SCENARIO_COUNT * alt_count, "unexpected custom weights row count")
     assert_true(len(read_csv(RESULTS / "stress_test_summary.csv")) == DETERMINISTIC_STRESS_CASE_COUNT * SCENARIO_COUNT, "unexpected stress test summary row count")
     assert_true(len(read_csv(RESULTS / "stress_test_rankings.csv")) == DETERMINISTIC_STRESS_CASE_COUNT * SCENARIO_COUNT * alt_count, "unexpected stress test rankings row count")
@@ -187,6 +190,7 @@ def validate_report_references() -> None:
         "reports/requirements_traceability.md",
         "reports/results_data_dictionary.md",
         "reports/residual_risks.md",
+        "reports/risk_validation_matrix.md",
         "reports/scenario_playbooks.md",
         "reports/security_evaluation_fixtures.md",
         "reports/simulation_assumptions.md",

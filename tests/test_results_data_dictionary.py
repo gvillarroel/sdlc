@@ -25,6 +25,7 @@ class ResultsDataDictionaryTest(unittest.TestCase):
         self.assertIn("scenario_playbook_summary.csv", text)
         self.assertIn("operational_cost_estimates.csv", text)
         self.assertIn("pilot_sample_size_estimates.csv", text)
+        self.assertIn("risk_validation_matrix.csv", text)
         self.assertIn("csv_schema_check.csv", text)
 
 

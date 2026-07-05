@@ -53,6 +53,7 @@ git diff --check
 - `reports/simulation_assumptions.md`
 - `reports/operational_cost_model.md`
 - `reports/pilot_sample_size.md`
+- `reports/risk_validation_matrix.md`
 - `reports/evidence_gap_analysis.md`
 - `reports/validation_summary.md`
 

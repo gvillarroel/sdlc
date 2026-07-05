@@ -74,12 +74,15 @@
       "requirement": "Check factors that can make the evaluation unreliable.",
       "primary_artifacts": [
         "reports/evidence_gap_analysis.md",
+        "reports/risk_validation_matrix.md",
         "results/evidence_gap_analysis.csv",
+        "results/risk_validation_matrix.csv",
         "results/source_check.csv",
         "scripts/analyze_evidence_gaps.py",
+        "scripts/build_risk_validation_matrix.py",
         "scripts/check_sources.py"
       ],
-      "validation": "python scripts/analyze_evidence_gaps.py"
+      "validation": "python scripts/analyze_evidence_gaps.py && python scripts/build_risk_validation_matrix.py"
     },
     {
       "id": "pilot_plan",

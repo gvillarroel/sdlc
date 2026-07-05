@@ -16,6 +16,7 @@ class RunAllChecksTest(unittest.TestCase):
             "estimate_operational_costs.py",
             "estimate_pilot_sample_sizes.py",
             "analyze_evidence_gaps.py",
+            "build_risk_validation_matrix.py",
             "rank_with_custom_weights.py",
             "license_audit.py",
             "generate_charts.py",
