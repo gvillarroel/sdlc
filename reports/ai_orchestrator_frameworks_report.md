@@ -171,6 +171,7 @@ Generated outputs:
 | `results/criteria_definitions.csv` | Human-readable definitions for each scoring criterion. |
 | `results/evidence_matrix.csv` | Per-alternative repository, license, confidence, summary, implementation note, risk note, and source URLs. |
 | `results/alternative_scorecards.csv` | Wide table of all per-criterion scores by alternative. |
+| `results/source_check.csv` | Live URL check of report and dataset sources. The latest run checked 41 URLs with 41 OK responses. |
 | `results/all_results.json` | Complete machine-readable output. |
 
 ## Deterministic Results

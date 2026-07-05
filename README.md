@@ -8,6 +8,7 @@ Included artifacts:
 - `data/pilot_tasks.json` - 20-task pilot suite for moving from simulated ranking to execution evidence.
 - `data/risk_register.json` - actionable adoption risks, mitigations, and required evidence.
 - `scripts/simulate_alternatives.py` - deterministic weighted ranking, Monte Carlo uncertainty simulation, and sensitivity analysis.
+- `scripts/check_sources.py` - optional live source URL checker for the report and dataset.
 - `tests/test_simulation_model.py` - validation tests for the scoring model and dataset.
 - `results/` - generated CSV and JSON simulation outputs, including category scorecards and a scenario shortlist.
 - `reports/ai_orchestrator_frameworks_report.md` - final English report.
@@ -17,6 +18,7 @@ Run the checks and simulations:
 ```powershell
 python -m unittest discover -s tests
 python scripts/simulate_alternatives.py --trials 5000 --seed 7331
+python scripts/check_sources.py --timeout 20
 ```
 
 The shortlist excludes non-permissive or closed entries from the source conversation, including Claude Agent SDK and Codex app.
@@ -32,4 +34,5 @@ Generated result files:
 - `results/criteria_definitions.csv`
 - `results/evidence_matrix.csv`
 - `results/alternative_scorecards.csv`
+- `results/source_check.csv`
 - `results/all_results.json`
