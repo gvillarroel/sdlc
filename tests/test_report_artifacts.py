@@ -38,6 +38,14 @@ class ReportArtifactsTest(unittest.TestCase):
         self.assertIn("No-Go Conditions", text)
         self.assertIn("Status: Proposed", text)
 
+    def test_faq_exists(self):
+        faq = ROOT / "reports" / "faq.md"
+        self.assertTrue(faq.exists())
+        text = faq.read_text(encoding="utf-8")
+        self.assertIn("# FAQ", text)
+        self.assertIn("Why is there no single winner?", text)
+        self.assertIn("rank_with_custom_weights.py", text)
+
     def test_methodology_appendix_exists(self):
         appendix = ROOT / "reports" / "methodology_appendix.md"
         self.assertTrue(appendix.exists())
@@ -101,7 +109,7 @@ class ReportArtifactsTest(unittest.TestCase):
         text = summary.read_text(encoding="utf-8")
         self.assertIn("# Validation Summary", text)
         self.assertIn("python scripts/run_all_checks.py", text)
-        self.assertIn("76 tests passed", text)
+        self.assertIn("77 tests passed", text)
 
     def test_artifact_index_exists(self):
         index = ROOT / "reports" / "artifact_index.md"

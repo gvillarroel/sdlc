@@ -30,6 +30,8 @@ My practical recommendation is:
 
 For a short decision-oriented version, read `reports/executive_brief.md`.
 
+For common scope, exclusion, weighting, and pilot questions, read `reports/faq.md`.
+
 For the proposed adoption decision record, read `reports/adoption_decision_record.md`.
 
 For a navigation guide to every generated artifact, read `reports/artifact_index.md`.
