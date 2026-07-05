@@ -27,6 +27,8 @@ SCHEMAS: dict[str, list[str]] = {
     "criteria_definitions.csv": ["criterion", "definition"],
     "evidence_matrix.csv": ["alternative_id", "alternative", "repo", "url", "license", "primary_language", "maturity_level", "source_confidence", "stars", "created_at", "last_pushed_at", "latest_release", "summary", "implementation_notes", "risk_notes", "evidence_urls"],
     "alternative_scorecards.csv": ["alternative_id", "alternative", "license", "maturity_level", "source_confidence", *CRITERIA],
+    "score_driver_summary.csv": ["alternative_id", "alternative", "maturity_level", "source_confidence", "top_strengths", "top_weaknesses", "best_scenario", "best_rank", "worst_scenario", "worst_rank", "mean_score", "score_spread"],
+    "criterion_spread_summary.csv": ["criterion", "mean_score", "min_score", "max_score", "score_spread", "leaders", "laggards"],
     "implementation_effort_estimates.csv": ["alternative_id", "alternative", "prototype_complexity_score", "prototype_effort", "hardening_complexity_score", "hardening_effort", "first_slice", "adoption_note"],
     "operational_cost_estimates.csv": ["operating_profile", "operating_profile_name", "alternative_id", "alternative", "monthly_task_volume", "review_hours", "admin_hours", "governance_hours", "failure_buffer_hours", "monthly_operational_hours", "hours_per_task", "relative_token_pressure", "latency_risk_score", "operational_friction_score", "cost_risk_band", "main_cost_driver"],
     "operational_fit_rankings.csv": ["scenario", "operating_profile", "rank", "alternative_id", "alternative", "simulation_rank", "simulation_score", "operational_friction_score", "monthly_operational_hours", "relative_token_pressure", "latency_risk_score", "adjusted_score", "rank_delta_vs_simulation"],

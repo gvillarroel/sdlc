@@ -14,6 +14,7 @@ RESULTS = ROOT / "results"
 DATA = ROOT / "data"
 REPORTS = ROOT / "reports"
 SCENARIO_COUNT = 5
+CRITERIA_COUNT = 14
 DETERMINISTIC_STRESS_CASE_COUNT = 8
 UNCERTAINTY_STRESS_CASE_COUNT = 5
 CUSTOM_WEIGHT_SCENARIO_COUNT = 2
@@ -31,6 +32,8 @@ REQUIRED_RESULT_FILES = [
     "criteria_definitions.csv",
     "evidence_matrix.csv",
     "alternative_scorecards.csv",
+    "score_driver_summary.csv",
+    "criterion_spread_summary.csv",
     "implementation_effort_estimates.csv",
     "operational_cost_estimates.csv",
     "operational_fit_rankings.csv",
@@ -79,6 +82,8 @@ def validate_result_shapes() -> None:
     assert_true(len(read_csv(RESULTS / "deterministic_rankings.csv")) == alt_count * SCENARIO_COUNT, "unexpected deterministic ranking row count")
     assert_true(len(read_csv(RESULTS / "monte_carlo_summary.csv")) == alt_count * SCENARIO_COUNT, "unexpected monte carlo row count")
     assert_true(len(read_csv(RESULTS / "regret_analysis.csv")) == alt_count * SCENARIO_COUNT, "unexpected regret row count")
+    assert_true(len(read_csv(RESULTS / "score_driver_summary.csv")) == alt_count, "unexpected score driver row count")
+    assert_true(len(read_csv(RESULTS / "criterion_spread_summary.csv")) == CRITERIA_COUNT, "unexpected criterion spread row count")
     assert_true(len(read_csv(RESULTS / "rank_stability.csv")) == alt_count, "unexpected rank stability row count")
     assert_true(len(read_csv(RESULTS / "pareto_frontier.csv")) == alt_count, "unexpected pareto row count")
     assert_true(len(read_csv(RESULTS / "implementation_effort_estimates.csv")) == alt_count, "unexpected implementation effort row count")
@@ -176,6 +181,7 @@ def validate_report_references() -> None:
         "reports/operational_cost_model.md",
         "reports/pilot_sample_size.md",
         "reports/presentation_outline.md",
+        "reports/score_driver_summary.md",
         "reports/requirements_traceability.md",
         "reports/results_data_dictionary.md",
         "reports/residual_risks.md",

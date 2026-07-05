@@ -19,6 +19,7 @@ SOURCE_REPORTS = [
     "adoption_decision_record.md",
     "methodology_appendix.md",
     "simulation_assumptions.md",
+    "score_driver_summary.md",
     "operational_cost_model.md",
     "evidence_gap_analysis.md",
     "github_metadata_check.md",

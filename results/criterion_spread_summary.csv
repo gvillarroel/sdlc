@@ -1,0 +1,15 @@
+criterion,mean_score,min_score,max_score,score_spread,leaders,laggards
+multi_agent,3.288,0.5,4.6,4.1,Deep Agents; Open SWE,Anchor
+maturity,3.147,0.8,4.5,3.7,Aider; Cline / Cline SDK; Codex CLI,OmniAgent
+ci_pr,3.618,1.2,4.8,3.6,Open SWE,Anchor
+observability,3.247,1.0,4.6,3.6,Deep Agents; Open SWE,Anchor
+research_reproducibility,3.318,1.3,4.9,3.6,mini-SWE-agent,Anchor
+persistence_memory,3.312,1.2,4.6,3.4,Deep Agents,Anchor
+provider_portability,4.141,1.5,4.8,3.3,Omnigent; OpenCode; OpenHands Software Agent SDK; goose,Anchor
+sandbox_isolation,3.518,1.4,4.7,3.3,Codex CLI; Open SWE,Anchor
+extensibility,4.082,2.0,4.8,2.8,goose,Anchor
+security_governance,3.676,2.0,4.8,2.8,Codex CLI,Anchor
+deployment_flexibility,3.829,2.0,4.6,2.6,OpenHands Agent Canvas,Anchor
+implementation_ease,3.665,2.4,4.7,2.3,Aider,Omni Agent
+human_control,3.912,2.7,4.8,2.1,Cline / Cline SDK,mini-SWE-agent
+coding_fit,4.159,2.8,4.8,2.0,Aider; Codex CLI,Anchor

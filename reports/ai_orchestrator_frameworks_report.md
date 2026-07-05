@@ -48,6 +48,8 @@ For a quick guided shortlist, read `reports/decision_tree.md`.
 
 For simulation assumptions, threats to validity, and stress-test results, read `reports/simulation_assumptions.md`.
 
+For candidate score strengths, weaknesses, and high-spread criteria, read `reports/score_driver_summary.md`.
+
 For relative operating cost, token-pressure, latency-risk, and operation-adjusted rankings, read `reports/operational_cost_model.md`; the assumptions are in `data/operational_cost_model.json`.
 
 For evidence gaps in young or low-confidence candidates, read `reports/evidence_gap_analysis.md`.
@@ -258,6 +260,8 @@ Generated outputs:
 | `results/criteria_definitions.csv` | Human-readable definitions for each scoring criterion. |
 | `results/evidence_matrix.csv` | Per-alternative repository, license, confidence, summary, implementation note, risk note, and source URLs. |
 | `results/alternative_scorecards.csv` | Wide table of all per-criterion scores by alternative. |
+| `results/score_driver_summary.csv` | Per-candidate top strengths, weaknesses, and best/worst scenario ranks. |
+| `results/criterion_spread_summary.csv` | Per-criterion score spread, leaders, and laggards. |
 | `results/implementation_effort_estimates.csv` | Generated prototype and production-hardening complexity estimates. |
 | `results/operational_cost_estimates.csv` | Relative monthly operating effort, token pressure, latency risk, and cost-risk bands. |
 | `results/operational_fit_rankings.csv` | Scenario rankings adjusted by operating-profile friction. |

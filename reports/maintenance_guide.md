@@ -48,6 +48,7 @@ git diff --check
 
 - `reports/executive_brief.md`
 - `reports/adoption_decision_record.md`
+- `reports/score_driver_summary.md`
 - `reports/simulation_assumptions.md`
 - `reports/operational_cost_model.md`
 - `reports/pilot_sample_size.md`

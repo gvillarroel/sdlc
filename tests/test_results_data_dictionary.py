@@ -21,6 +21,7 @@ class ResultsDataDictionaryTest(unittest.TestCase):
         text = path.read_text(encoding="utf-8")
         self.assertIn("# Results Data Dictionary", text)
         self.assertIn("deterministic_rankings.csv", text)
+        self.assertIn("score_driver_summary.csv", text)
         self.assertIn("operational_cost_estimates.csv", text)
         self.assertIn("pilot_sample_size_estimates.csv", text)
         self.assertIn("csv_schema_check.csv", text)

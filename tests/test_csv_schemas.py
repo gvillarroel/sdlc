@@ -9,6 +9,8 @@ class CsvSchemasTest(unittest.TestCase):
             "deterministic_rankings.csv",
             "monte_carlo_summary.csv",
             "stress_test_summary.csv",
+            "score_driver_summary.csv",
+            "criterion_spread_summary.csv",
             "implementation_effort_estimates.csv",
             "operational_cost_estimates.csv",
             "operational_fit_rankings.csv",

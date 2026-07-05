@@ -29,12 +29,15 @@
       "requirement": "Evaluate alternatives with Python simulations.",
       "primary_artifacts": [
         "scripts/simulate_alternatives.py",
+        "scripts/analyze_score_drivers.py",
         "results/deterministic_rankings.csv",
         "results/monte_carlo_summary.csv",
         "results/sensitivity_summary.csv",
+        "results/score_driver_summary.csv",
+        "results/criterion_spread_summary.csv",
         "results/all_results.json"
       ],
-      "validation": "python scripts/simulate_alternatives.py --trials 5000 --seed 7331"
+      "validation": "python scripts/simulate_alternatives.py --trials 5000 --seed 7331 && python scripts/analyze_score_drivers.py"
     },
     {
       "id": "simulation_factors",

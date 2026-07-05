@@ -156,6 +156,16 @@ Category scorecards group criteria before scenario weights are applied:
 
 The generated output is `results/category_scores.csv`.
 
+## Score Driver Summary
+
+The generated score-driver outputs are `results/score_driver_summary.csv` and `results/criterion_spread_summary.csv`, produced by:
+
+```powershell
+python scripts/analyze_score_drivers.py
+```
+
+The candidate summary records the top three scored strengths, top three scored weaknesses, best scenario rank, worst scenario rank, mean score, and score spread for each alternative. The criterion summary highlights which criteria create the most score separation across the shortlist.
+
 ## Implementation Effort Model
 
 The generated effort estimate is `results/implementation_effort_estimates.csv`, produced by:

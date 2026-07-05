@@ -25,6 +25,7 @@ Use this index to choose the right file quickly.
 | Glossary | `reports/glossary.md` |
 | Scoring formula and assumptions | `reports/methodology_appendix.md` |
 | Simulation assumptions and stress tests | `reports/simulation_assumptions.md` |
+| Score driver explanation | `reports/score_driver_summary.md` |
 | Operational cost and latency model | `reports/operational_cost_model.md` |
 | Evidence-gap findings | `reports/evidence_gap_analysis.md` |
 | GitHub metadata verification | `reports/github_metadata_check.md` |
@@ -75,6 +76,8 @@ Use this index to choose the right file quickly.
 | Criteria definitions | `results/criteria_definitions.csv` |
 | Source/evidence table | `results/evidence_matrix.csv` |
 | Alternative scorecards | `results/alternative_scorecards.csv` |
+| Candidate score drivers | `results/score_driver_summary.csv` |
+| Criterion score spread | `results/criterion_spread_summary.csv` |
 | Prototype and hardening effort estimates | `results/implementation_effort_estimates.csv` |
 | Relative operating-cost estimates | `results/operational_cost_estimates.csv` |
 | Operation-adjusted scenario rankings | `results/operational_fit_rankings.csv` |
@@ -106,6 +109,7 @@ Use this index to choose the right file quickly.
 |---|---|
 | Regenerate rankings and simulations | `scripts/simulate_alternatives.py` |
 | Run simulation stress tests | `scripts/stress_test_simulation.py` |
+| Analyze score drivers | `scripts/analyze_score_drivers.py` |
 | Estimate implementation effort | `scripts/estimate_implementation_effort.py` |
 | Estimate operational cost and latency risk | `scripts/estimate_operational_costs.py` |
 | Estimate pilot sample sizes | `scripts/estimate_pilot_sample_sizes.py` |
@@ -139,6 +143,7 @@ Or run the core deterministic pieces manually:
 ```powershell
 python scripts/simulate_alternatives.py --trials 5000 --seed 7331
 python scripts/stress_test_simulation.py --trials 1500 --seed 9011
+python scripts/analyze_score_drivers.py
 python scripts/estimate_implementation_effort.py
 python scripts/estimate_operational_costs.py
 python scripts/estimate_pilot_sample_sizes.py

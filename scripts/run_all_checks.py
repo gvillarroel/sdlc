@@ -19,6 +19,7 @@ COMMANDS = [
     [PYTHON, "scripts/estimate_implementation_effort.py"],
     [PYTHON, "scripts/estimate_operational_costs.py"],
     [PYTHON, "scripts/estimate_pilot_sample_sizes.py"],
+    [PYTHON, "scripts/analyze_score_drivers.py"],
     [PYTHON, "scripts/analyze_evidence_gaps.py"],
     [PYTHON, "scripts/rank_with_custom_weights.py"],
     [PYTHON, "scripts/license_audit.py"],

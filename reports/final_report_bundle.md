@@ -13,6 +13,7 @@ This generated bundle concatenates the main report and key appendices for one-fi
 - `reports/adoption_decision_record.md`
 - `reports/methodology_appendix.md`
 - `reports/simulation_assumptions.md`
+- `reports/score_driver_summary.md`
 - `reports/operational_cost_model.md`
 - `reports/evidence_gap_analysis.md`
 - `reports/github_metadata_check.md`
@@ -143,6 +144,8 @@ For excluded items and boundary cases, read `reports/exclusions.md`.
 For a quick guided shortlist, read `reports/decision_tree.md`.
 
 For simulation assumptions, threats to validity, and stress-test results, read `reports/simulation_assumptions.md`.
+
+For candidate score strengths, weaknesses, and high-spread criteria, read `reports/score_driver_summary.md`.
 
 For relative operating cost, token-pressure, latency-risk, and operation-adjusted rankings, read `reports/operational_cost_model.md`; the assumptions are in `data/operational_cost_model.json`.
 
@@ -354,6 +357,8 @@ Generated outputs:
 | `results/criteria_definitions.csv` | Human-readable definitions for each scoring criterion. |
 | `results/evidence_matrix.csv` | Per-alternative repository, license, confidence, summary, implementation note, risk note, and source URLs. |
 | `results/alternative_scorecards.csv` | Wide table of all per-criterion scores by alternative. |
+| `results/score_driver_summary.csv` | Per-candidate top strengths, weaknesses, and best/worst scenario ranks. |
+| `results/criterion_spread_summary.csv` | Per-criterion score spread, leaders, and laggards. |
 | `results/implementation_effort_estimates.csv` | Generated prototype and production-hardening complexity estimates. |
 | `results/operational_cost_estimates.csv` | Relative monthly operating effort, token pressure, latency risk, and cost-risk bands. |
 | `results/operational_fit_rankings.csv` | Scenario rankings adjusted by operating-profile friction. |
@@ -1022,6 +1027,16 @@ Category scorecards group criteria before scenario weights are applied:
 
 The generated output is `results/category_scores.csv`.
 
+## Score Driver Summary
+
+The generated score-driver outputs are `results/score_driver_summary.csv` and `results/criterion_spread_summary.csv`, produced by:
+
+```powershell
+python scripts/analyze_score_drivers.py
+```
+
+The candidate summary records the top three scored strengths, top three scored weaknesses, best scenario rank, worst scenario rank, mean score, and score spread for each alternative. The criterion summary highlights which criteria create the most score separation across the shortlist.
+
 ## Implementation Effort Model
 
 The generated effort estimate is `results/implementation_effort_estimates.csv`, produced by:
@@ -1206,6 +1221,59 @@ The practical decision rule is:
 2. Select candidates from the top cluster for the target scenario, not from the global average.
 3. Use the pilot to replace subjective scores with measured task results, safety-gate outcomes, and cost data.
 4. Rerun the base simulation and stress tests after refreshing source metadata or changing scenario weights.
+
+---
+
+<!-- Source: reports/score_driver_summary.md -->
+
+# Score Driver Summary
+
+Date: 2026-07-05
+
+This appendix explains which scored criteria drive each candidate up or down in the simulation. It is generated from `data/alternatives.json` and the deterministic scenario rankings.
+
+Generated outputs: `results/score_driver_summary.csv` and `results/criterion_spread_summary.csv`.
+
+## Highest-Spread Criteria
+
+| Criterion | Spread | Mean | Leaders | Laggards |
+|---|---:|---:|---|---|
+| multi_agent | 4.1 | 3.288 | Deep Agents; Open SWE | Anchor |
+| maturity | 3.7 | 3.147 | Aider; Cline / Cline SDK; Codex CLI | OmniAgent |
+| ci_pr | 3.6 | 3.618 | Open SWE | Anchor |
+| observability | 3.6 | 3.247 | Deep Agents; Open SWE | Anchor |
+| research_reproducibility | 3.6 | 3.318 | mini-SWE-agent | Anchor |
+| persistence_memory | 3.4 | 3.312 | Deep Agents | Anchor |
+| provider_portability | 3.3 | 4.141 | Omnigent; OpenCode; OpenHands Software Agent SDK; goose | Anchor |
+| sandbox_isolation | 3.3 | 3.518 | Codex CLI; Open SWE | Anchor |
+
+## Candidate Drivers
+
+| Candidate | Strengths | Weaknesses | Best scenario | Worst scenario | Mean | Spread |
+|---|---|---|---|---|---:|---:|
+| Cline / Cline SDK | human_control=4.8; coding_fit=4.7; extensibility=4.7 | sandbox_isolation=2.8; research_reproducibility=3.4; observability=4.0 | custom_orchestrator_platform #1 | research_benchmarking #6 | 4.229 | 2.000 |
+| Codex CLI | coding_fit=4.8; security_governance=4.8; sandbox_isolation=4.7 | provider_portability=2.0; persistence_memory=3.4; research_reproducibility=3.6 | secure_autonomous_prs #1 | research_benchmarking #7 | 4.064 | 2.800 |
+| mini-SWE-agent | research_reproducibility=4.9; provider_portability=4.7; implementation_ease=4.6 | multi_agent=1.0; persistence_memory=1.8; observability=2.2 | research_benchmarking #1 | custom_orchestrator_platform #14 | 3.386 | 3.900 |
+| OpenHands Software Agent SDK | provider_portability=4.8; coding_fit=4.6; extensibility=4.5 | implementation_ease=3.8; observability=3.8; ci_pr=4.0 | custom_orchestrator_platform #2 | research_benchmarking #3 | 4.207 | 1.000 |
+| SWE-agent | research_reproducibility=4.8; provider_portability=4.6; coding_fit=4.5 | multi_agent=2.0; persistence_memory=2.5; human_control=3.1 | research_benchmarking #2 | quick_local_coding #12 | 3.721 | 2.800 |
+| Deep Agents | extensibility=4.7; provider_portability=4.7; multi_agent=4.6 | ci_pr=3.4; maturity=3.5; implementation_ease=3.6 | custom_orchestrator_platform #3 | secure_autonomous_prs #5 | 4.157 | 1.300 |
+| OpenCode | provider_portability=4.8; coding_fit=4.7; extensibility=4.5 | sandbox_isolation=2.6; observability=2.8; security_governance=3.3 | quick_local_coding #3 | custom_orchestrator_platform #9 | 3.921 | 2.200 |
+| Open SWE | ci_pr=4.8; sandbox_isolation=4.7; coding_fit=4.6 | implementation_ease=2.7; maturity=3.0; human_control=3.2 | custom_orchestrator_platform #4 | quick_local_coding #10 | 4.036 | 2.100 |
+| Aider | coding_fit=4.8; implementation_ease=4.7; provider_portability=4.7 | multi_agent=1.8; observability=2.4; sandbox_isolation=2.4 | research_benchmarking #4 | custom_orchestrator_platform #13 | 3.607 | 3.000 |
+| OpenHands Agent Canvas | provider_portability=4.7; deployment_flexibility=4.6; multi_agent=4.5 | maturity=3.0; research_reproducibility=3.0; implementation_ease=3.6 | custom_orchestrator_platform #5 | research_benchmarking #12 | 4.007 | 1.700 |
+| goose | extensibility=4.8; provider_portability=4.8; deployment_flexibility=4.3 | multi_agent=2.6; observability=2.8; research_reproducibility=3.2 | quick_local_coding #6 | custom_orchestrator_platform #10 | 3.821 | 2.200 |
+| Omnigent | provider_portability=4.8; human_control=4.7; extensibility=4.6 | maturity=2.0; implementation_ease=2.8; research_reproducibility=3.0 | custom_orchestrator_platform #7 | research_benchmarking #13 | 3.950 | 2.800 |
+| Flue | extensibility=4.6; provider_portability=4.6; deployment_flexibility=4.5 | maturity=3.0; human_control=3.2; research_reproducibility=3.2 | custom_orchestrator_platform #8 | quick_local_coding #11 | 3.914 | 1.600 |
+| Sandcastle | sandbox_isolation=4.6; coding_fit=4.2; ci_pr=4.1 | observability=2.7; maturity=2.8; persistence_memory=2.8 | custom_orchestrator_platform #12 | quick_local_coding #14 | 3.557 | 1.900 |
+| Omni Agent | security_governance=4.0; human_control=3.5; multi_agent=3.5 | maturity=1.0; research_reproducibility=1.8; implementation_ease=2.4 | custom_orchestrator_platform #15 | custom_orchestrator_platform #15 | 2.964 | 3.000 |
+| OmniAgent | provider_portability=4.0; human_control=3.7; extensibility=3.2 | maturity=0.8; ci_pr=1.5; observability=1.5 | custom_orchestrator_platform #16 | custom_orchestrator_platform #16 | 2.429 | 3.200 |
+| Anchor | human_control=4.0; implementation_ease=4.0; coding_fit=2.8 | multi_agent=0.5; maturity=1.0; observability=1.0 | custom_orchestrator_platform #17 | custom_orchestrator_platform #17 | 1.850 | 3.500 |
+
+## Interpretation
+
+- Criteria with high spread drive more ranking separation. Low-spread criteria should be treated as weaker differentiators unless a stakeholder explicitly weights them heavily.
+- Candidate strengths and weaknesses are scorecard diagnostics, not standalone recommendations. Always read them with evidence confidence, operational cost, security gates, and pilot results.
+- A candidate with a strong best scenario and a poor worst scenario is specialized; avoid generalizing it across workflows without changing scenario weights and rerunning the simulation.
 
 ---
 
@@ -1802,11 +1870,11 @@ This page summarizes the current quality checks for the report repository. It is
 
 | Check | Command | Latest result |
 |---|---|---|
-| Unit tests | `python -m unittest discover -s tests` | 104 tests passed. |
+| Unit tests | `python -m unittest discover -s tests` | 109 tests passed. |
 | Full local workflow | `python scripts/run_all_checks.py` | Passed. |
 | Offline artifact validation | `python scripts/validate_artifacts.py` | Passed. |
-| Generated CSV schemas | `python scripts/validate_csv_schemas.py` | 29 CSV schemas checked, 0 failures. |
-| Local artifact references | `python scripts/check_local_artifact_references.py` | 587 local references checked, 0 missing. |
+| Generated CSV schemas | `python scripts/validate_csv_schemas.py` | 31 CSV schemas checked, 0 failures. |
+| Local artifact references | `python scripts/check_local_artifact_references.py` | 614 local references checked, 0 missing. |
 | External source URLs | `python scripts/check_sources.py --timeout 20` | 41 URLs checked, 41 OK. |
 | GitHub metadata | `python scripts/refresh_github_metadata.py --timeout 20` | 17 repos checked, 0 failures, 0 license mismatches. |
 | Whitespace | `git diff --check` | Passed. |
@@ -1821,6 +1889,7 @@ This page summarizes the current quality checks for the report repository. It is
 | GitHub metadata | `results/github_metadata_check.csv` verifies repository reachability, live SPDX license match, archive status, stars, push date, and latest release tag. |
 | Report references | `results/local_artifact_reference_check.csv` verifies README and report references to local artifacts. |
 | CSV contracts | `results/csv_schema_check.csv` verifies expected headers for generated CSV artifacts. |
+| Score drivers | `results/score_driver_summary.csv` and `results/criterion_spread_summary.csv` verify candidate and criterion explanation outputs. |
 | Operational model | `results/operational_cost_estimates.csv` and `results/operational_fit_rankings.csv` verify the cost/latency tie-breaker model shape. |
 | Pilot sample size | `results/pilot_sample_size_estimates.csv` verifies the task-count planning simulation shape. |
 | Artifact manifest | `results/artifact_manifest.csv` records SHA-256 hashes and byte sizes for committed report, data, script, test, and template artifacts. |
@@ -1948,6 +2017,20 @@ Human-readable scoring criterion definitions.
 |---|
 | `criterion` |
 | `definition` |
+
+## `criterion_spread_summary.csv`
+
+Per-criterion score spread and candidate leaders or laggards.
+
+| Column |
+|---|
+| `criterion` |
+| `mean_score` |
+| `min_score` |
+| `max_score` |
+| `score_spread` |
+| `leaders` |
+| `laggards` |
 
 ## `csv_schema_check.csv`
 
@@ -2248,6 +2331,25 @@ Raw and normalized weights by scenario and criterion.
 | `raw_weight` |
 | `normalized_weight` |
 
+## `score_driver_summary.csv`
+
+Per-candidate top strengths, weaknesses, and best or worst scenario ranks.
+
+| Column |
+|---|
+| `alternative_id` |
+| `alternative` |
+| `maturity_level` |
+| `source_confidence` |
+| `top_strengths` |
+| `top_weaknesses` |
+| `best_scenario` |
+| `best_rank` |
+| `worst_scenario` |
+| `worst_rank` |
+| `mean_score` |
+| `score_spread` |
+
 ## `sensitivity_summary.csv`
 
 Criterion weight sensitivity results.
@@ -2393,6 +2495,7 @@ git diff --check
 
 - `reports/executive_brief.md`
 - `reports/adoption_decision_record.md`
+- `reports/score_driver_summary.md`
 - `reports/simulation_assumptions.md`
 - `reports/operational_cost_model.md`
 - `reports/pilot_sample_size.md`
@@ -2477,7 +2580,7 @@ This document maps the original request to the repository artifacts that satisfy
 |---|---|---|
 | Study the shared ChatGPT conversation and evaluate the listed alternatives. | `reports/ai_orchestrator_frameworks_report.md`, `data/alternatives.json`, `results/evidence_matrix.csv` | `python scripts/validate_artifacts.py` |
 | Review the alternatives that are not copyleft and are open source. | `results/license_audit.csv`, `scripts/license_audit.py`, `data/alternatives.json` | `python scripts/license_audit.py` |
-| Evaluate alternatives with Python simulations. | `scripts/simulate_alternatives.py`, `results/deterministic_rankings.csv`, `results/monte_carlo_summary.csv`, `results/sensitivity_summary.csv`, `results/all_results.json` | `python scripts/simulate_alternatives.py --trials 5000 --seed 7331` |
+| Evaluate alternatives with Python simulations. | `scripts/simulate_alternatives.py`, `scripts/analyze_score_drivers.py`, `results/deterministic_rankings.csv`, `results/monte_carlo_summary.csv`, `results/sensitivity_summary.csv`, `results/score_driver_summary.csv`, `results/criterion_spread_summary.csv`, `results/all_results.json` | `python scripts/simulate_alternatives.py --trials 5000 --seed 7331 && python scripts/analyze_score_drivers.py` |
 | Review everything that can affect the simulation. | `reports/simulation_assumptions.md`, `data/simulation_assumptions.json`, `reports/operational_cost_model.md`, `scripts/stress_test_simulation.py`, `scripts/estimate_operational_costs.py`, `results/stress_test_summary.csv`, `results/uncertainty_stress_summary.csv`, `results/operational_fit_rankings.csv` | `python scripts/stress_test_simulation.py --trials 1500 --seed 9011 && python scripts/estimate_operational_costs.py` |
 | Review how complicated it is to build something with the alternatives. | `reports/implementation_blueprints.md`, `reports/operational_cost_model.md`, `results/implementation_effort_estimates.csv`, `results/operational_cost_estimates.csv`, `scripts/estimate_implementation_effort.py`, `scripts/estimate_operational_costs.py` | `python scripts/estimate_implementation_effort.py && python scripts/estimate_operational_costs.py` |
 | Check factors that can make the evaluation unreliable. | `reports/evidence_gap_analysis.md`, `results/evidence_gap_analysis.csv`, `results/source_check.csv`, `scripts/analyze_evidence_gaps.py`, `scripts/check_sources.py` | `python scripts/analyze_evidence_gaps.py` |
@@ -2530,6 +2633,7 @@ Use this index to choose the right file quickly.
 | Glossary | `reports/glossary.md` |
 | Scoring formula and assumptions | `reports/methodology_appendix.md` |
 | Simulation assumptions and stress tests | `reports/simulation_assumptions.md` |
+| Score driver explanation | `reports/score_driver_summary.md` |
 | Operational cost and latency model | `reports/operational_cost_model.md` |
 | Evidence-gap findings | `reports/evidence_gap_analysis.md` |
 | GitHub metadata verification | `reports/github_metadata_check.md` |
@@ -2580,6 +2684,8 @@ Use this index to choose the right file quickly.
 | Criteria definitions | `results/criteria_definitions.csv` |
 | Source/evidence table | `results/evidence_matrix.csv` |
 | Alternative scorecards | `results/alternative_scorecards.csv` |
+| Candidate score drivers | `results/score_driver_summary.csv` |
+| Criterion score spread | `results/criterion_spread_summary.csv` |
 | Prototype and hardening effort estimates | `results/implementation_effort_estimates.csv` |
 | Relative operating-cost estimates | `results/operational_cost_estimates.csv` |
 | Operation-adjusted scenario rankings | `results/operational_fit_rankings.csv` |
@@ -2611,6 +2717,7 @@ Use this index to choose the right file quickly.
 |---|---|
 | Regenerate rankings and simulations | `scripts/simulate_alternatives.py` |
 | Run simulation stress tests | `scripts/stress_test_simulation.py` |
+| Analyze score drivers | `scripts/analyze_score_drivers.py` |
 | Estimate implementation effort | `scripts/estimate_implementation_effort.py` |
 | Estimate operational cost and latency risk | `scripts/estimate_operational_costs.py` |
 | Estimate pilot sample sizes | `scripts/estimate_pilot_sample_sizes.py` |
@@ -2644,6 +2751,7 @@ Or run the core deterministic pieces manually:
 ```powershell
 python scripts/simulate_alternatives.py --trials 5000 --seed 7331
 python scripts/stress_test_simulation.py --trials 1500 --seed 9011
+python scripts/analyze_score_drivers.py
 python scripts/estimate_implementation_effort.py
 python scripts/estimate_operational_costs.py
 python scripts/estimate_pilot_sample_sizes.py

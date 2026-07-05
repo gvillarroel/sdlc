@@ -27,6 +27,8 @@ FILE_DESCRIPTIONS = {
     "criteria_definitions.csv": "Human-readable scoring criterion definitions.",
     "evidence_matrix.csv": "Source, metadata, notes, and evidence URLs by alternative.",
     "alternative_scorecards.csv": "Wide scorecard of all 0-5 criterion scores.",
+    "score_driver_summary.csv": "Per-candidate top strengths, weaknesses, and best or worst scenario ranks.",
+    "criterion_spread_summary.csv": "Per-criterion score spread and candidate leaders or laggards.",
     "implementation_effort_estimates.csv": "Prototype and hardening effort estimates.",
     "operational_cost_estimates.csv": "Relative monthly operating effort, token pressure, latency risk, and cost-risk bands.",
     "operational_fit_rankings.csv": "Scenario rankings adjusted by operating-profile friction.",

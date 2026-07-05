@@ -61,6 +61,20 @@ Human-readable scoring criterion definitions.
 | `criterion` |
 | `definition` |
 
+## `criterion_spread_summary.csv`
+
+Per-criterion score spread and candidate leaders or laggards.
+
+| Column |
+|---|
+| `criterion` |
+| `mean_score` |
+| `min_score` |
+| `max_score` |
+| `score_spread` |
+| `leaders` |
+| `laggards` |
+
 ## `csv_schema_check.csv`
 
 Generated CSV schema validation output.
@@ -359,6 +373,25 @@ Raw and normalized weights by scenario and criterion.
 | `criterion` |
 | `raw_weight` |
 | `normalized_weight` |
+
+## `score_driver_summary.csv`
+
+Per-candidate top strengths, weaknesses, and best or worst scenario ranks.
+
+| Column |
+|---|
+| `alternative_id` |
+| `alternative` |
+| `maturity_level` |
+| `source_confidence` |
+| `top_strengths` |
+| `top_weaknesses` |
+| `best_scenario` |
+| `best_rank` |
+| `worst_scenario` |
+| `worst_rank` |
+| `mean_score` |
+| `score_spread` |
 
 ## `sensitivity_summary.csv`
 
