@@ -11,6 +11,7 @@ README.md,data/security_evaluation_fixtures.json,data/security_evaluation_fixtur
 README.md,data/simulation_assumptions.json,data/simulation_assumptions.json,True
 README.md,data/traceability_matrix.json,data/traceability_matrix.json,True
 README.md,examples/custom_weights.example.json,examples/custom_weights.example.json,True
+README.md,examples/pilot_adapter_contract.py,examples/pilot_adapter_contract.py,True
 README.md,examples/pilot_candidate_summary.example.csv,examples/pilot_candidate_summary.example.csv,True
 README.md,reports/ai_orchestrator_frameworks_report.md,reports/ai_orchestrator_frameworks_report.md,True
 README.md,reports/artifact_index.md,reports/artifact_index.md,True
@@ -79,6 +80,7 @@ reports/ai_orchestrator_frameworks_report.md,data/security_evaluation_fixtures.j
 reports/ai_orchestrator_frameworks_report.md,data/simulation_assumptions.json,data/simulation_assumptions.json,True
 reports/ai_orchestrator_frameworks_report.md,data/traceability_matrix.json,data/traceability_matrix.json,True
 reports/ai_orchestrator_frameworks_report.md,examples/custom_weights.example.json,examples/custom_weights.example.json,True
+reports/ai_orchestrator_frameworks_report.md,examples/pilot_adapter_contract.py,examples/pilot_adapter_contract.py,True
 reports/ai_orchestrator_frameworks_report.md,examples/pilot_candidate_summary.example.csv,examples/pilot_candidate_summary.example.csv,True
 reports/ai_orchestrator_frameworks_report.md,reports/artifact_index.md,reports/artifact_index.md,True
 reports/ai_orchestrator_frameworks_report.md,reports/decision_tree.md,reports/decision_tree.md,True
@@ -137,6 +139,7 @@ reports/artifact_index.md,data/security_evaluation_fixtures.json,data/security_e
 reports/artifact_index.md,data/simulation_assumptions.json,data/simulation_assumptions.json,True
 reports/artifact_index.md,data/traceability_matrix.json,data/traceability_matrix.json,True
 reports/artifact_index.md,examples/custom_weights.example.json,examples/custom_weights.example.json,True
+reports/artifact_index.md,examples/pilot_adapter_contract.py,examples/pilot_adapter_contract.py,True
 reports/artifact_index.md,examples/pilot_candidate_summary.example.csv,examples/pilot_candidate_summary.example.csv,True
 reports/artifact_index.md,reports/ai_orchestrator_frameworks_report.md,reports/ai_orchestrator_frameworks_report.md,True
 reports/artifact_index.md,reports/assets/rank_stability.svg,reports/assets/rank_stability.svg,True
@@ -245,6 +248,7 @@ reports/pilot_protocol.md,data/pilot_decision_model.json,data/pilot_decision_mod
 reports/pilot_protocol.md,data/pilot_tasks.json,data/pilot_tasks.json,True
 reports/pilot_protocol.md,data/risk_register.json,data/risk_register.json,True
 reports/pilot_protocol.md,data/security_evaluation_fixtures.json,data/security_evaluation_fixtures.json,True
+reports/pilot_protocol.md,examples/pilot_adapter_contract.py,examples/pilot_adapter_contract.py,True
 reports/pilot_protocol.md,examples/pilot_candidate_summary.example.csv,examples/pilot_candidate_summary.example.csv,True
 reports/pilot_protocol.md,reports/security_evaluation_fixtures.md,reports/security_evaluation_fixtures.md,True
 reports/pilot_protocol.md,results/pilot_decision_scores.example.csv,results/pilot_decision_scores.example.csv,True
@@ -258,6 +262,7 @@ reports/requirements_traceability.md,data/pilot_tasks.json,data/pilot_tasks.json
 reports/requirements_traceability.md,data/security_evaluation_fixtures.json,data/security_evaluation_fixtures.json,True
 reports/requirements_traceability.md,data/simulation_assumptions.json,data/simulation_assumptions.json,True
 reports/requirements_traceability.md,data/traceability_matrix.json,data/traceability_matrix.json,True
+reports/requirements_traceability.md,examples/pilot_adapter_contract.py,examples/pilot_adapter_contract.py,True
 reports/requirements_traceability.md,examples/pilot_candidate_summary.example.csv,examples/pilot_candidate_summary.example.csv,True
 reports/requirements_traceability.md,reports/ai_orchestrator_frameworks_report.md,reports/ai_orchestrator_frameworks_report.md,True
 reports/requirements_traceability.md,reports/artifact_index.md,reports/artifact_index.md,True

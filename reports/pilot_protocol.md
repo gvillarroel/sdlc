@@ -31,6 +31,7 @@ Required artifacts:
 - `templates/security_gate_checklist.md`
 - `data/risk_register.json`
 - `data/security_evaluation_fixtures.json`
+- `examples/pilot_adapter_contract.py`
 
 Required environment controls:
 
@@ -79,6 +80,8 @@ Recommended repetition:
 - 5 trials per candidate for research claims
 
 For every run, fill `templates/pilot_run_log.csv`.
+
+If building candidate-specific runners, implement the minimal adapter shape in `examples/pilot_adapter_contract.py` so every candidate returns comparable task status, patch/log paths, safety failures, cost, latency, and human-intervention counts.
 
 ### 4. Review Diffs
 

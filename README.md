@@ -33,6 +33,7 @@ Included artifacts:
 - `templates/` - pilot run log, reviewer scorecard, and security gate checklist templates.
 - `examples/pilot_candidate_summary.example.csv` - example input for post-pilot scoring.
 - `examples/custom_weights.example.json` - example custom scenario weights.
+- `examples/pilot_adapter_contract.py` - minimal Python adapter contract for comparable pilot runs.
 - `reports/ai_orchestrator_frameworks_report.md` - final English report.
 - `reports/executive_brief.md` - short decision brief for quick review.
 - `reports/evidence_gap_analysis.md` - evidence-gap findings for low-confidence or immature candidates.

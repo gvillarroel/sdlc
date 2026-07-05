@@ -367,6 +367,8 @@ Candidate-specific implementation blueprints are in `reports/implementation_blue
 
 After a pilot, use `data/pilot_decision_model.json` and `scripts/score_pilot_results.py` to convert candidate-level pilot results into a ranked post-pilot decision table. An example input/output pair is included at `examples/pilot_candidate_summary.example.csv` and `results/pilot_decision_scores.example.csv`.
 
+For implementation, `examples/pilot_adapter_contract.py` defines a minimal adapter shape so each candidate can return comparable status, patch path, log path, safety failures, cost, latency, and intervention counts.
+
 | Phase | Duration | Work | Exit criteria |
 |---|---:|---|---|
 | 1. Harness smoke test | 2 days | Install top 3 candidates for the target scenario, run one simple repo task, confirm model/provider setup and sandbox path. | Each candidate can read the repo, make a controlled edit, run tests, and leave inspectable logs. |

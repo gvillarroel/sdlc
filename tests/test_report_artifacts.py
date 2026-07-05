@@ -85,7 +85,7 @@ class ReportArtifactsTest(unittest.TestCase):
         text = summary.read_text(encoding="utf-8")
         self.assertIn("# Validation Summary", text)
         self.assertIn("python scripts/run_all_checks.py", text)
-        self.assertIn("71 tests passed", text)
+        self.assertIn("74 tests passed", text)
 
     def test_artifact_index_exists(self):
         index = ROOT / "reports" / "artifact_index.md"
@@ -156,6 +156,7 @@ class ReportArtifactsTest(unittest.TestCase):
         expected_files = [
             "pilot_candidate_summary.example.csv",
             "custom_weights.example.json",
+            "pilot_adapter_contract.py",
         ]
         for filename in expected_files:
             example = ROOT / "examples" / filename

@@ -80,6 +80,7 @@
         "templates/pilot_run_log.csv",
         "templates/reviewer_scorecard.md",
         "templates/security_gate_checklist.md",
+        "examples/pilot_adapter_contract.py",
         "scripts/score_pilot_results.py"
       ],
       "validation": "python scripts/score_pilot_results.py --input examples/pilot_candidate_summary.example.csv --output results/pilot_decision_scores.example.csv"

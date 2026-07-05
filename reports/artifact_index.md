@@ -77,6 +77,7 @@ Use this index to choose the right file quickly.
 | Security gate assessment | `templates/security_gate_checklist.md` |
 | Example post-pilot candidate summary | `examples/pilot_candidate_summary.example.csv` |
 | Example custom scenario weights | `examples/custom_weights.example.json` |
+| Minimal pilot adapter contract | `examples/pilot_adapter_contract.py` |
 
 ## Scripts
 
