@@ -9,6 +9,7 @@ Included artifacts:
 - `data/risk_register.json` - actionable adoption risks, mitigations, and required evidence.
 - `scripts/simulate_alternatives.py` - deterministic weighted ranking, Monte Carlo uncertainty simulation, and sensitivity analysis.
 - `scripts/check_sources.py` - optional live source URL checker for the report and dataset.
+- `scripts/license_audit.py` - permissive-license audit for included and excluded alternatives.
 - `tests/test_simulation_model.py` - validation tests for the scoring model and dataset.
 - `results/` - generated CSV and JSON simulation outputs, including category scorecards and a scenario shortlist.
 - `reports/ai_orchestrator_frameworks_report.md` - final English report.
@@ -18,6 +19,7 @@ Run the checks and simulations:
 ```powershell
 python -m unittest discover -s tests
 python scripts/simulate_alternatives.py --trials 5000 --seed 7331
+python scripts/license_audit.py
 python scripts/check_sources.py --timeout 20
 ```
 
@@ -35,4 +37,5 @@ Generated result files:
 - `results/evidence_matrix.csv`
 - `results/alternative_scorecards.csv`
 - `results/source_check.csv`
+- `results/license_audit.csv`
 - `results/all_results.json`

@@ -40,6 +40,8 @@ The most important negative result is that early or low-evidence projects can lo
 
 Included: Sandcastle, Flue, Anchor, Omnigent, OmniAgent, Omni Agent, Deep Agents, Codex CLI, OpenCode, Cline/Cline SDK, OpenHands Agent Canvas, OpenHands Software Agent SDK, Open SWE, Aider, goose, SWE-agent, and mini-SWE-agent.
 
+The license audit is generated in `results/license_audit.csv`: 17 alternatives were included under MIT or Apache-2.0, and 2 entries from the shared discussion were excluded.
+
 Excluded:
 
 | Excluded item | Reason |
@@ -172,6 +174,7 @@ Generated outputs:
 | `results/evidence_matrix.csv` | Per-alternative repository, license, confidence, summary, implementation note, risk note, and source URLs. |
 | `results/alternative_scorecards.csv` | Wide table of all per-criterion scores by alternative. |
 | `results/source_check.csv` | Live URL check of report and dataset sources. The latest run checked 41 URLs with 41 OK responses. |
+| `results/license_audit.csv` | Explicit permissive-license audit for included and excluded entries. |
 | `results/all_results.json` | Complete machine-readable output. |
 
 ## Deterministic Results

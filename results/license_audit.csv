@@ -1,0 +1,20 @@
+alternative,status,license,is_permissive,repo,url,reason
+Claude Agent SDK,excluded,not accepted for this evaluation,False,,,"Not included in the permissive open-source shortlist from this analysis. The shared table marked it as an official Anthropic license and Claude-centric, so it does not meet the requested permissive OSS filter."
+Codex app,excluded,not accepted for this evaluation,False,,,"Not included because the shared table marked it as a closed/commercial desktop application, not an open-source framework."
+Aider,included,Apache-2.0,True,Aider-AI/aider,https://github.com/Aider-AI/aider,Permissive OSS license accepted by this evaluation.
+Anchor,included,MIT,True,mjenkinsx9/anchor,https://github.com/mjenkinsx9/anchor,Permissive OSS license accepted by this evaluation.
+Cline / Cline SDK,included,Apache-2.0,True,cline/cline,https://github.com/cline/cline,Permissive OSS license accepted by this evaluation.
+Codex CLI,included,Apache-2.0,True,openai/codex,https://github.com/openai/codex,Permissive OSS license accepted by this evaluation.
+Deep Agents,included,MIT,True,langchain-ai/deepagents,https://github.com/langchain-ai/deepagents,Permissive OSS license accepted by this evaluation.
+Flue,included,Apache-2.0,True,withastro/flue,https://github.com/withastro/flue,Permissive OSS license accepted by this evaluation.
+goose,included,Apache-2.0,True,aaif-goose/goose,https://github.com/aaif-goose/goose,Permissive OSS license accepted by this evaluation.
+mini-SWE-agent,included,MIT,True,SWE-agent/mini-swe-agent,https://github.com/SWE-agent/mini-swe-agent,Permissive OSS license accepted by this evaluation.
+Omni Agent,included,MIT,True,2830500285/omni-agent,https://github.com/2830500285/omni-agent,Permissive OSS license accepted by this evaluation.
+OmniAgent,included,MIT,True,xianyu-sheng/omniagent,https://github.com/xianyu-sheng/omniagent,Permissive OSS license accepted by this evaluation.
+Omnigent,included,Apache-2.0,True,omnigent-ai/omnigent,https://github.com/omnigent-ai/omnigent,Permissive OSS license accepted by this evaluation.
+Open SWE,included,MIT,True,langchain-ai/open-swe,https://github.com/langchain-ai/open-swe,Permissive OSS license accepted by this evaluation.
+OpenCode,included,MIT,True,anomalyco/opencode,https://github.com/anomalyco/opencode,Permissive OSS license accepted by this evaluation.
+OpenHands Agent Canvas,included,MIT,True,OpenHands/agent-canvas,https://github.com/OpenHands/agent-canvas,Permissive OSS license accepted by this evaluation.
+OpenHands Software Agent SDK,included,MIT,True,OpenHands/software-agent-sdk,https://github.com/OpenHands/software-agent-sdk,Permissive OSS license accepted by this evaluation.
+Sandcastle,included,MIT,True,mattpocock/sandcastle,https://github.com/mattpocock/sandcastle,Permissive OSS license accepted by this evaluation.
+SWE-agent,included,MIT,True,SWE-agent/SWE-agent,https://github.com/SWE-agent/SWE-agent,Permissive OSS license accepted by this evaluation.
