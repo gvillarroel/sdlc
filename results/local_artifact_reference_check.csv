@@ -36,6 +36,7 @@ README.md,reports/operational_cost_model.md,reports/operational_cost_model.md,Tr
 README.md,reports/pilot_protocol.md,reports/pilot_protocol.md,True
 README.md,reports/pilot_sample_size.md,reports/pilot_sample_size.md,True
 README.md,reports/presentation_outline.md,reports/presentation_outline.md,True
+README.md,reports/recommendation_rationale.md,reports/recommendation_rationale.md,True
 README.md,reports/requirements_traceability.md,reports/requirements_traceability.md,True
 README.md,reports/residual_risks.md,reports/residual_risks.md,True
 README.md,reports/results_data_dictionary.md,reports/results_data_dictionary.md,True
@@ -69,6 +70,7 @@ README.md,results/pareto_frontier.csv,results/pareto_frontier.csv,True
 README.md,results/pilot_decision_scores.example.csv,results/pilot_decision_scores.example.csv,True
 README.md,results/pilot_sample_size_estimates.csv,results/pilot_sample_size_estimates.csv,True
 README.md,results/rank_stability.csv,results/rank_stability.csv,True
+README.md,results/recommendation_rationale.csv,results/recommendation_rationale.csv,True
 README.md,results/regret_analysis.csv,results/regret_analysis.csv,True
 README.md,results/risk_validation_matrix.csv,results/risk_validation_matrix.csv,True
 README.md,results/scenario_playbook_summary.csv,results/scenario_playbook_summary.csv,True
@@ -83,6 +85,7 @@ README.md,results/uncertainty_stress_summary.csv,results/uncertainty_stress_summ
 README.md,scripts/analyze_evidence_gaps.py,scripts/analyze_evidence_gaps.py,True
 README.md,scripts/analyze_score_drivers.py,scripts/analyze_score_drivers.py,True
 README.md,scripts/build_github_metadata_report.py,scripts/build_github_metadata_report.py,True
+README.md,scripts/build_recommendation_rationale.py,scripts/build_recommendation_rationale.py,True
 README.md,scripts/build_report_bundle.py,scripts/build_report_bundle.py,True
 README.md,scripts/build_results_data_dictionary.py,scripts/build_results_data_dictionary.py,True
 README.md,scripts/build_risk_validation_matrix.py,scripts/build_risk_validation_matrix.py,True
@@ -145,6 +148,7 @@ reports/ai_orchestrator_frameworks_report.md,reports/operational_cost_model.md,r
 reports/ai_orchestrator_frameworks_report.md,reports/pilot_protocol.md,reports/pilot_protocol.md,True
 reports/ai_orchestrator_frameworks_report.md,reports/pilot_sample_size.md,reports/pilot_sample_size.md,True
 reports/ai_orchestrator_frameworks_report.md,reports/presentation_outline.md,reports/presentation_outline.md,True
+reports/ai_orchestrator_frameworks_report.md,reports/recommendation_rationale.md,reports/recommendation_rationale.md,True
 reports/ai_orchestrator_frameworks_report.md,reports/requirements_traceability.md,reports/requirements_traceability.md,True
 reports/ai_orchestrator_frameworks_report.md,reports/residual_risks.md,reports/residual_risks.md,True
 reports/ai_orchestrator_frameworks_report.md,reports/results_data_dictionary.md,reports/results_data_dictionary.md,True
@@ -178,6 +182,7 @@ reports/ai_orchestrator_frameworks_report.md,results/pareto_frontier.csv,results
 reports/ai_orchestrator_frameworks_report.md,results/pilot_decision_scores.example.csv,results/pilot_decision_scores.example.csv,True
 reports/ai_orchestrator_frameworks_report.md,results/pilot_sample_size_estimates.csv,results/pilot_sample_size_estimates.csv,True
 reports/ai_orchestrator_frameworks_report.md,results/rank_stability.csv,results/rank_stability.csv,True
+reports/ai_orchestrator_frameworks_report.md,results/recommendation_rationale.csv,results/recommendation_rationale.csv,True
 reports/ai_orchestrator_frameworks_report.md,results/regret_analysis.csv,results/regret_analysis.csv,True
 reports/ai_orchestrator_frameworks_report.md,results/risk_validation_matrix.csv,results/risk_validation_matrix.csv,True
 reports/ai_orchestrator_frameworks_report.md,results/scenario_playbook_summary.csv,results/scenario_playbook_summary.csv,True
@@ -238,6 +243,7 @@ reports/artifact_index.md,reports/operational_cost_model.md,reports/operational_
 reports/artifact_index.md,reports/pilot_protocol.md,reports/pilot_protocol.md,True
 reports/artifact_index.md,reports/pilot_sample_size.md,reports/pilot_sample_size.md,True
 reports/artifact_index.md,reports/presentation_outline.md,reports/presentation_outline.md,True
+reports/artifact_index.md,reports/recommendation_rationale.md,reports/recommendation_rationale.md,True
 reports/artifact_index.md,reports/requirements_traceability.md,reports/requirements_traceability.md,True
 reports/artifact_index.md,reports/residual_risks.md,reports/residual_risks.md,True
 reports/artifact_index.md,reports/results_data_dictionary.md,reports/results_data_dictionary.md,True
@@ -271,6 +277,7 @@ reports/artifact_index.md,results/pareto_frontier.csv,results/pareto_frontier.cs
 reports/artifact_index.md,results/pilot_decision_scores.example.csv,results/pilot_decision_scores.example.csv,True
 reports/artifact_index.md,results/pilot_sample_size_estimates.csv,results/pilot_sample_size_estimates.csv,True
 reports/artifact_index.md,results/rank_stability.csv,results/rank_stability.csv,True
+reports/artifact_index.md,results/recommendation_rationale.csv,results/recommendation_rationale.csv,True
 reports/artifact_index.md,results/regret_analysis.csv,results/regret_analysis.csv,True
 reports/artifact_index.md,results/risk_validation_matrix.csv,results/risk_validation_matrix.csv,True
 reports/artifact_index.md,results/scenario_playbook_summary.csv,results/scenario_playbook_summary.csv,True
@@ -285,6 +292,7 @@ reports/artifact_index.md,results/uncertainty_stress_summary.csv,results/uncerta
 reports/artifact_index.md,scripts/analyze_evidence_gaps.py,scripts/analyze_evidence_gaps.py,True
 reports/artifact_index.md,scripts/analyze_score_drivers.py,scripts/analyze_score_drivers.py,True
 reports/artifact_index.md,scripts/build_github_metadata_report.py,scripts/build_github_metadata_report.py,True
+reports/artifact_index.md,scripts/build_recommendation_rationale.py,scripts/build_recommendation_rationale.py,True
 reports/artifact_index.md,scripts/build_report_bundle.py,scripts/build_report_bundle.py,True
 reports/artifact_index.md,scripts/build_results_data_dictionary.py,scripts/build_results_data_dictionary.py,True
 reports/artifact_index.md,scripts/build_risk_validation_matrix.py,scripts/build_risk_validation_matrix.py,True
@@ -383,6 +391,7 @@ reports/final_report_bundle.md,reports/operational_cost_model.md,reports/operati
 reports/final_report_bundle.md,reports/pilot_protocol.md,reports/pilot_protocol.md,True
 reports/final_report_bundle.md,reports/pilot_sample_size.md,reports/pilot_sample_size.md,True
 reports/final_report_bundle.md,reports/presentation_outline.md,reports/presentation_outline.md,True
+reports/final_report_bundle.md,reports/recommendation_rationale.md,reports/recommendation_rationale.md,True
 reports/final_report_bundle.md,reports/requirements_traceability.md,reports/requirements_traceability.md,True
 reports/final_report_bundle.md,reports/residual_risks.md,reports/residual_risks.md,True
 reports/final_report_bundle.md,reports/results_data_dictionary.md,reports/results_data_dictionary.md,True
@@ -416,6 +425,7 @@ reports/final_report_bundle.md,results/pareto_frontier.csv,results/pareto_fronti
 reports/final_report_bundle.md,results/pilot_decision_scores.example.csv,results/pilot_decision_scores.example.csv,True
 reports/final_report_bundle.md,results/pilot_sample_size_estimates.csv,results/pilot_sample_size_estimates.csv,True
 reports/final_report_bundle.md,results/rank_stability.csv,results/rank_stability.csv,True
+reports/final_report_bundle.md,results/recommendation_rationale.csv,results/recommendation_rationale.csv,True
 reports/final_report_bundle.md,results/regret_analysis.csv,results/regret_analysis.csv,True
 reports/final_report_bundle.md,results/risk_validation_matrix.csv,results/risk_validation_matrix.csv,True
 reports/final_report_bundle.md,results/scenario_playbook_summary.csv,results/scenario_playbook_summary.csv,True
@@ -430,6 +440,7 @@ reports/final_report_bundle.md,results/uncertainty_stress_summary.csv,results/un
 reports/final_report_bundle.md,scripts/analyze_evidence_gaps.py,scripts/analyze_evidence_gaps.py,True
 reports/final_report_bundle.md,scripts/analyze_score_drivers.py,scripts/analyze_score_drivers.py,True
 reports/final_report_bundle.md,scripts/build_github_metadata_report.py,scripts/build_github_metadata_report.py,True
+reports/final_report_bundle.md,scripts/build_recommendation_rationale.py,scripts/build_recommendation_rationale.py,True
 reports/final_report_bundle.md,scripts/build_report_bundle.py,scripts/build_report_bundle.py,True
 reports/final_report_bundle.md,scripts/build_results_data_dictionary.py,scripts/build_results_data_dictionary.py,True
 reports/final_report_bundle.md,scripts/build_risk_validation_matrix.py,scripts/build_risk_validation_matrix.py,True
@@ -565,6 +576,12 @@ reports/pilot_sample_size.md,data/pilot_sample_size_model.json,data/pilot_sample
 reports/pilot_sample_size.md,data/pilot_tasks.json,data/pilot_tasks.json,True
 reports/pilot_sample_size.md,results/pilot_sample_size_estimates.csv,results/pilot_sample_size_estimates.csv,True
 reports/presentation_outline.md,scripts/score_pilot_results.py,scripts/score_pilot_results.py,True
+reports/recommendation_rationale.md,results/decision_shortlist.csv,results/decision_shortlist.csv,True
+reports/recommendation_rationale.md,results/evidence_gap_analysis.csv,results/evidence_gap_analysis.csv,True
+reports/recommendation_rationale.md,results/implementation_effort_estimates.csv,results/implementation_effort_estimates.csv,True
+reports/recommendation_rationale.md,results/operational_fit_rankings.csv,results/operational_fit_rankings.csv,True
+reports/recommendation_rationale.md,results/recommendation_rationale.csv,results/recommendation_rationale.csv,True
+reports/recommendation_rationale.md,scripts/build_recommendation_rationale.py,scripts/build_recommendation_rationale.py,True
 reports/requirements_traceability.md,ci/validate-workflow.example.yml,ci/validate-workflow.example.yml,True
 reports/requirements_traceability.md,data/alternatives.json,data/alternatives.json,True
 reports/requirements_traceability.md,data/pilot_sample_size_model.json,data/pilot_sample_size_model.json,True
@@ -674,6 +691,7 @@ reports/validation_summary.md,results/markdown_table_check.csv,results/markdown_
 reports/validation_summary.md,results/operational_cost_estimates.csv,results/operational_cost_estimates.csv,True
 reports/validation_summary.md,results/operational_fit_rankings.csv,results/operational_fit_rankings.csv,True
 reports/validation_summary.md,results/pilot_sample_size_estimates.csv,results/pilot_sample_size_estimates.csv,True
+reports/validation_summary.md,results/recommendation_rationale.csv,results/recommendation_rationale.csv,True
 reports/validation_summary.md,results/risk_validation_matrix.csv,results/risk_validation_matrix.csv,True
 reports/validation_summary.md,results/scenario_playbook_summary.csv,results/scenario_playbook_summary.csv,True
 reports/validation_summary.md,results/score_driver_summary.csv,results/score_driver_summary.csv,True

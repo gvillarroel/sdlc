@@ -17,6 +17,7 @@ class CsvSchemasTest(unittest.TestCase):
             "operational_fit_rankings.csv",
             "pilot_sample_size_estimates.csv",
             "evidence_gap_analysis.csv",
+            "recommendation_rationale.csv",
             "risk_validation_matrix.csv",
             "markdown_table_check.csv",
             "github_metadata_check.csv",

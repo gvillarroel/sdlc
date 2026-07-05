@@ -30,6 +30,7 @@ Use this index to choose the right file quickly.
 | Score driver explanation | `reports/score_driver_summary.md` |
 | Operational cost and latency model | `reports/operational_cost_model.md` |
 | Evidence-gap findings | `reports/evidence_gap_analysis.md` |
+| Scenario recommendation rationale | `reports/recommendation_rationale.md` |
 | GitHub metadata verification | `reports/github_metadata_check.md` |
 | Security fixture catalog | `reports/security_evaluation_fixtures.md` |
 | Pilot execution protocol | `reports/pilot_protocol.md` |
@@ -86,6 +87,7 @@ Use this index to choose the right file quickly.
 | Operation-adjusted scenario rankings | `results/operational_fit_rankings.csv` |
 | Pilot sample-size estimates | `results/pilot_sample_size_estimates.csv` |
 | Evidence-gap risk analysis | `results/evidence_gap_analysis.csv` |
+| Scenario recommendation rationale | `results/recommendation_rationale.csv` |
 | Risk validation matrix | `results/risk_validation_matrix.csv` |
 | License audit | `results/license_audit.csv` |
 | URL health check | `results/source_check.csv` |
@@ -120,6 +122,7 @@ Use this index to choose the right file quickly.
 | Estimate operational cost and latency risk | `scripts/estimate_operational_costs.py` |
 | Estimate pilot sample sizes | `scripts/estimate_pilot_sample_sizes.py` |
 | Analyze evidence gaps | `scripts/analyze_evidence_gaps.py` |
+| Build recommendation rationale | `scripts/build_recommendation_rationale.py` |
 | Build risk validation matrix | `scripts/build_risk_validation_matrix.py` |
 | Rank with custom weights | `scripts/rank_with_custom_weights.py` |
 | Regenerate license audit | `scripts/license_audit.py` |
@@ -158,6 +161,7 @@ python scripts/estimate_implementation_effort.py
 python scripts/estimate_operational_costs.py
 python scripts/estimate_pilot_sample_sizes.py
 python scripts/analyze_evidence_gaps.py
+python scripts/build_recommendation_rationale.py
 python scripts/build_risk_validation_matrix.py
 python scripts/rank_with_custom_weights.py
 python scripts/license_audit.py

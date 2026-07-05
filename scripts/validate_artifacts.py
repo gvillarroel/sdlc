@@ -22,6 +22,7 @@ CUSTOM_WEIGHT_SCENARIO_COUNT = 2
 OPERATING_PROFILE_COUNT = 3
 PILOT_SAMPLE_COMPARISON_COUNT = 2
 PILOT_SAMPLE_TASK_COUNT = 5
+SCENARIO_SHORTLIST_COUNT = 5
 
 REQUIRED_RESULT_FILES = [
     "deterministic_rankings.csv",
@@ -41,6 +42,7 @@ REQUIRED_RESULT_FILES = [
     "operational_fit_rankings.csv",
     "pilot_sample_size_estimates.csv",
     "evidence_gap_analysis.csv",
+    "recommendation_rationale.csv",
     "risk_validation_matrix.csv",
     "custom_weights_example_rankings.csv",
     "regret_analysis.csv",
@@ -119,6 +121,15 @@ def validate_result_shapes() -> None:
         "pilot sample-size win probabilities must be between 0 and 1",
     )
     assert_true(len(read_csv(RESULTS / "evidence_gap_analysis.csv")) == alt_count, "unexpected evidence gap row count")
+    recommendation_rows = read_csv(RESULTS / "recommendation_rationale.csv")
+    assert_true(
+        len(recommendation_rows) == SCENARIO_COUNT * SCENARIO_SHORTLIST_COUNT,
+        "unexpected recommendation rationale row count",
+    )
+    assert_true(
+        all(row["posture"] for row in recommendation_rows),
+        "recommendation rationale rows must have a posture",
+    )
     assert_true(len(read_csv(RESULTS / "risk_validation_matrix.csv")) == RISK_COUNT, "unexpected risk validation row count")
     assert_true(len(read_csv(RESULTS / "custom_weights_example_rankings.csv")) == CUSTOM_WEIGHT_SCENARIO_COUNT * alt_count, "unexpected custom weights row count")
     assert_true(len(read_csv(RESULTS / "stress_test_summary.csv")) == DETERMINISTIC_STRESS_CASE_COUNT * SCENARIO_COUNT, "unexpected stress test summary row count")
@@ -191,6 +202,7 @@ def validate_report_references() -> None:
         "reports/operational_cost_model.md",
         "reports/pilot_sample_size.md",
         "reports/presentation_outline.md",
+        "reports/recommendation_rationale.md",
         "reports/score_driver_summary.md",
         "reports/requirements_traceability.md",
         "reports/results_data_dictionary.md",

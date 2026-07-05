@@ -25,6 +25,7 @@ Included artifacts:
 - `scripts/estimate_operational_costs.py` - relative operating-cost, token-pressure, latency-risk, and operation-adjusted ranking model.
 - `scripts/estimate_pilot_sample_sizes.py` - pilot task-count simulation for distinguishing close shortlist candidates.
 - `scripts/analyze_evidence_gaps.py` - evidence-gap review for maturity, confidence, release, traction, and freshness risks.
+- `scripts/build_recommendation_rationale.py` - generated scenario recommendation rationale from ranking, stability, risk, effort, and operational signals.
 - `scripts/build_risk_validation_matrix.py` - risk-to-evidence pilot validation matrix builder.
 - `scripts/rank_with_custom_weights.py` - deterministic ranking for user-provided scenario weights.
 - `scripts/check_local_artifact_references.py` - offline check for local artifact references in README and reports.
@@ -57,6 +58,7 @@ Included artifacts:
 - `reports/exclusions.md` - rationale for excluded non-matching items from the shared discussion.
 - `reports/faq.md` - answers to common scope, weighting, exclusion, and pilot questions.
 - `reports/evidence_gap_analysis.md` - evidence-gap findings for low-confidence or immature candidates.
+- `reports/recommendation_rationale.md` - generated scenario-by-scenario recommendation rationale.
 - `reports/operational_cost_model.md` - generated operating-cost and operation-adjusted ranking appendix.
 - `reports/github_metadata_check.md` - live GitHub metadata verification summary.
 - `reports/glossary.md` - definitions for scoring, simulation, security, and orchestration terms.
@@ -103,6 +105,7 @@ python scripts/estimate_implementation_effort.py
 python scripts/estimate_operational_costs.py
 python scripts/estimate_pilot_sample_sizes.py
 python scripts/analyze_evidence_gaps.py
+python scripts/build_recommendation_rationale.py
 python scripts/build_risk_validation_matrix.py
 python scripts/rank_with_custom_weights.py
 python scripts/license_audit.py
@@ -141,6 +144,7 @@ Generated result files:
 - `results/operational_fit_rankings.csv`
 - `results/pilot_sample_size_estimates.csv`
 - `results/evidence_gap_analysis.csv`
+- `results/recommendation_rationale.csv`
 - `results/risk_validation_matrix.csv`
 - `results/custom_weights_example_rankings.csv`
 - `results/local_artifact_reference_check.csv`

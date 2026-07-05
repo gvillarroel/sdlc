@@ -142,7 +142,7 @@ class ReportArtifactsTest(unittest.TestCase):
         text = summary.read_text(encoding="utf-8")
         self.assertIn("# Validation Summary", text)
         self.assertIn("python scripts/run_all_checks.py", text)
-        self.assertIn("122 tests passed", text)
+        self.assertIn("127 tests passed", text)
 
     def test_results_data_dictionary_exists(self):
         dictionary = ROOT / "reports" / "results_data_dictionary.md"
@@ -175,6 +175,14 @@ class ReportArtifactsTest(unittest.TestCase):
         self.assertIn("# Scenario Playbooks", text)
         self.assertIn("results/scenario_playbook_summary.csv", text)
         self.assertIn("No-go condition", text)
+
+    def test_recommendation_rationale_exists(self):
+        rationale = ROOT / "reports" / "recommendation_rationale.md"
+        self.assertTrue(rationale.exists())
+        text = rationale.read_text(encoding="utf-8")
+        self.assertIn("# Recommendation Rationale", text)
+        self.assertIn("results/recommendation_rationale.csv", text)
+        self.assertIn("Scenario Rationale", text)
 
     def test_risk_validation_matrix_exists(self):
         matrix = ROOT / "reports" / "risk_validation_matrix.md"
@@ -262,6 +270,7 @@ class ReportArtifactsTest(unittest.TestCase):
             "operational_fit_rankings.csv",
             "pilot_sample_size_estimates.csv",
             "evidence_gap_analysis.csv",
+            "recommendation_rationale.csv",
             "risk_validation_matrix.csv",
             "custom_weights_example_rankings.csv",
             "local_artifact_reference_check.csv",

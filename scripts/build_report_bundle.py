@@ -22,6 +22,7 @@ SOURCE_REPORTS = [
     "score_driver_summary.md",
     "operational_cost_model.md",
     "evidence_gap_analysis.md",
+    "recommendation_rationale.md",
     "github_metadata_check.md",
     "security_evaluation_fixtures.md",
     "residual_risks.md",

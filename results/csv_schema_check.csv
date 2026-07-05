@@ -22,6 +22,7 @@ pareto_frontier.csv,True,,,5,5
 pilot_decision_scores.example.csv,True,,,12,12
 pilot_sample_size_estimates.csv,True,,,13,13
 rank_stability.csv,True,,,9,9
+recommendation_rationale.csv,True,,,15,15
 regret_analysis.csv,True,,,9,9
 risk_validation_matrix.csv,True,,,9,9
 scenario_playbook_summary.csv,True,,,10,10

@@ -16,6 +16,7 @@ This generated bundle concatenates the main report and key appendices for one-fi
 - `reports/score_driver_summary.md`
 - `reports/operational_cost_model.md`
 - `reports/evidence_gap_analysis.md`
+- `reports/recommendation_rationale.md`
 - `reports/github_metadata_check.md`
 - `reports/security_evaluation_fixtures.md`
 - `reports/residual_risks.md`
@@ -154,6 +155,8 @@ For candidate score strengths, weaknesses, and high-spread criteria, read `repor
 For relative operating cost, token-pressure, latency-risk, and operation-adjusted rankings, read `reports/operational_cost_model.md`; the assumptions are in `data/operational_cost_model.json`.
 
 For evidence gaps in young or low-confidence candidates, read `reports/evidence_gap_analysis.md`.
+
+For a cross-evidence rationale behind each scenario shortlist, read `reports/recommendation_rationale.md`.
 
 For live GitHub metadata verification, read `reports/github_metadata_check.md`.
 
@@ -371,6 +374,7 @@ Generated outputs:
 | `results/operational_fit_rankings.csv` | Scenario rankings adjusted by operating-profile friction. |
 | `results/pilot_sample_size_estimates.csv` | Pilot task-count simulation for distinguishing close shortlist candidates. |
 | `results/evidence_gap_analysis.csv` | Evidence risk bands for maturity, source confidence, release, traction, and freshness gaps. |
+| `results/recommendation_rationale.csv` | Scenario shortlist rationale combining ranking, Monte Carlo stability, evidence risk, implementation effort, and operational ranks. |
 | `results/risk_validation_matrix.csv` | Risk-to-evidence validation mapping for pilot gates. |
 | `results/source_check.csv` | Live URL check of report and dataset sources. The latest run checked 41 URLs with 41 OK responses. |
 | `results/github_metadata_check.csv` | Live GitHub repository metadata comparison for stars, push date, license, archive status, and latest release tag. |
@@ -1457,6 +1461,67 @@ The evidence-gap analysis supports the report's main recommendation:
 
 ---
 
+<!-- Source: reports/recommendation_rationale.md -->
+
+# Recommendation Rationale
+
+Date: 2026-07-05
+
+## Purpose
+
+This appendix turns the generated screening outputs into a scenario-by-scenario decision rationale. It combines the deterministic shortlist, Monte Carlo stability, evidence-risk bands, implementation effort, and operation-adjusted ranks. It is still screening evidence: final selection requires the pilot protocol and security gates.
+
+Generated output: `results/recommendation_rationale.csv`
+
+Input outputs: `results/decision_shortlist.csv`, `results/evidence_gap_analysis.csv`, `results/implementation_effort_estimates.csv`, and `results/operational_fit_rankings.csv`.
+
+Run:
+
+```powershell
+python scripts/build_recommendation_rationale.py
+```
+
+## Scenario Rationale
+
+| Scenario | Rank | Candidate | Posture | Gap | Win | Top-3 | Evidence | Hardening | Operational ranks | Rationale |
+|---|---:|---|---|---:|---:|---:|---|---|---|---|
+| Custom orchestrator platform | 1 | Cline / Cline SDK | Head-to-head pilot | 0.000 | 31% | 83% | low | 2-4 weeks | 1 / 1 / 1 | scenario score leader; strong Monte Carlo shortlist stability (83% top-3 rate); leader is close enough that a head-to-head pilot is still required; low evidence-risk band; stays in the top three after operational-friction adjustment. |
+| Custom orchestrator platform | 2 | OpenHands Software Agent SDK | Head-to-head pilot | 0.001 | 33% | 85% | low | 2-4 weeks | 2 / 2 / 2 | near-tie with the leader (0.001 score gap); strong Monte Carlo shortlist stability (85% top-3 rate); low evidence-risk band; stays in the top three after operational-friction adjustment. |
+| Custom orchestrator platform | 3 | Deep Agents | Head-to-head pilot | 0.023 | 23% | 62% | low | 2-4 weeks | 3 / 3 / 3 | near-tie with the leader (0.023 score gap); moderate Monte Carlo shortlist stability (62% top-3 rate); low evidence-risk band; stays in the top three after operational-friction adjustment. |
+| Custom orchestrator platform | 4 | Open SWE | Watchlist only | 0.147 | 4% | 22% | low | 6-12 weeks | 4 / 4 / 4 | 0.147 behind the scenario leader; fragile Monte Carlo shortlist position (22% top-3 rate); low evidence-risk band; 6-12 weeks hardening estimate; operational rank is broadly consistent with simulation rank. |
+| Custom orchestrator platform | 5 | OpenHands Agent Canvas | Watchlist only | 0.179 | 4% | 18% | low | 3-6 weeks | 6 / 6 / 6 | 0.179 behind the scenario leader; fragile Monte Carlo shortlist position (18% top-3 rate); low evidence-risk band; 3-6 weeks hardening estimate; operational rank is broadly consistent with simulation rank. |
+| Secure autonomous PRs | 1 | Codex CLI | Head-to-head pilot | 0.000 | 28% | 76% | low | 1-2 weeks | 1 / 1 / 1 | scenario score leader; strong Monte Carlo shortlist stability (76% top-3 rate); leader is close enough that a head-to-head pilot is still required; low evidence-risk band; stays in the top three after operational-friction adjustment. |
+| Secure autonomous PRs | 2 | OpenHands Software Agent SDK | Head-to-head pilot | 0.022 | 21% | 69% | low | 2-4 weeks | 3 / 3 / 3 | near-tie with the leader (0.022 score gap); moderate Monte Carlo shortlist stability (69% top-3 rate); low evidence-risk band; stays in the top three after operational-friction adjustment. |
+| Secure autonomous PRs | 3 | Cline / Cline SDK | Head-to-head pilot | 0.022 | 23% | 67% | low | 2-4 weeks | 2 / 2 / 2 | near-tie with the leader (0.022 score gap); moderate Monte Carlo shortlist stability (67% top-3 rate); low evidence-risk band; stays in the top three after operational-friction adjustment. |
+| Secure autonomous PRs | 4 | Open SWE | Fallback or benchmark | 0.079 | 10% | 34% | low | 6-12 weeks | 4 / 4 / 4 | 0.079 behind the scenario leader; fragile Monte Carlo shortlist position (34% top-3 rate); low evidence-risk band; 6-12 weeks hardening estimate; operational rank is broadly consistent with simulation rank. |
+| Secure autonomous PRs | 5 | Deep Agents | Fallback or benchmark | 0.110 | 9% | 28% | low | 2-4 weeks | 5 / 5 / 5 | 0.110 behind the scenario leader; fragile Monte Carlo shortlist position (28% top-3 rate); low evidence-risk band; operational rank is broadly consistent with simulation rank. |
+| Quick local coding | 1 | Cline / Cline SDK | Primary pilot candidate | 0.000 | 82% | 99% | low | 2-4 weeks | 1 / 1 / 1 | scenario score leader; strong Monte Carlo shortlist stability (99% top-3 rate); credible win-rate signal (82%); low evidence-risk band; stays in the top three after operational-friction adjustment. |
+| Quick local coding | 2 | OpenHands Software Agent SDK | Head-to-head pilot | 0.139 | 11% | 82% | low | 2-4 weeks | 2 / 2 / 2 | 0.139 behind the scenario leader; strong Monte Carlo shortlist stability (82% top-3 rate); low evidence-risk band; stays in the top three after operational-friction adjustment. |
+| Quick local coding | 3 | OpenCode | Fallback or benchmark | 0.232 | 1% | 38% | low | 2-4 weeks | 4 / 5 / 5 | 0.232 behind the scenario leader; fragile Monte Carlo shortlist position (38% top-3 rate); low evidence-risk band; operational friction can push it down in rollout profiles. |
+| Quick local coding | 4 | Deep Agents | Fallback or benchmark | 0.265 | 3% | 28% | low | 2-4 weeks | 5 / 4 / 4 | 0.265 behind the scenario leader; fragile Monte Carlo shortlist position (28% top-3 rate); low evidence-risk band; operational rank is broadly consistent with simulation rank. |
+| Quick local coding | 5 | Codex CLI | Watchlist only | 0.272 | 1% | 24% | low | 1-2 weeks | 3 / 3 / 3 | 0.272 behind the scenario leader; fragile Monte Carlo shortlist position (24% top-3 rate); low evidence-risk band; stays in the top three after operational-friction adjustment. |
+| Research benchmarking | 1 | mini-SWE-agent | Primary pilot candidate | 0.000 | 45% | 80% | low | 2-4 weeks | 1 / 1 / 1 | scenario score leader; strong Monte Carlo shortlist stability (80% top-3 rate); credible win-rate signal (45%); low evidence-risk band; stays in the top three after operational-friction adjustment. |
+| Research benchmarking | 2 | SWE-agent | Head-to-head pilot | 0.112 | 23% | 76% | low | 1-2 weeks | 2 / 2 / 2 | 0.112 behind the scenario leader; strong Monte Carlo shortlist stability (76% top-3 rate); low evidence-risk band; stays in the top three after operational-friction adjustment. |
+| Research benchmarking | 3 | OpenHands Software Agent SDK | Head-to-head pilot | 0.170 | 16% | 64% | low | 2-4 weeks | 3 / 3 / 3 | 0.170 behind the scenario leader; moderate Monte Carlo shortlist stability (64% top-3 rate); low evidence-risk band; stays in the top three after operational-friction adjustment. |
+| Research benchmarking | 4 | Aider | Watchlist only | 0.310 | 3% | 24% | low | 2-4 weeks | 5 / 5 / 5 | 0.310 behind the scenario leader; fragile Monte Carlo shortlist position (24% top-3 rate); low evidence-risk band; operational rank is broadly consistent with simulation rank. |
+| Research benchmarking | 5 | Deep Agents | Fallback or benchmark | 0.326 | 9% | 29% | low | 2-4 weeks | 4 / 4 / 4 | 0.326 behind the scenario leader; fragile Monte Carlo shortlist position (29% top-3 rate); low evidence-risk band; operational rank is broadly consistent with simulation rank. |
+| Enterprise control plane | 1 | Cline / Cline SDK | Primary pilot candidate | 0.000 | 51% | 92% | low | 2-4 weeks | 1 / 1 / 1 | scenario score leader; strong Monte Carlo shortlist stability (92% top-3 rate); credible win-rate signal (51%); low evidence-risk band; stays in the top three after operational-friction adjustment. |
+| Enterprise control plane | 2 | OpenHands Software Agent SDK | Head-to-head pilot | 0.064 | 20% | 78% | low | 2-4 weeks | 2 / 2 / 2 | 0.064 behind the scenario leader; strong Monte Carlo shortlist stability (78% top-3 rate); low evidence-risk band; stays in the top three after operational-friction adjustment. |
+| Enterprise control plane | 3 | Deep Agents | Fallback or benchmark | 0.092 | 16% | 53% | low | 2-4 weeks | 3 / 3 / 3 | 0.092 behind the scenario leader; moderate Monte Carlo shortlist stability (53% top-3 rate); low evidence-risk band; stays in the top three after operational-friction adjustment. |
+| Enterprise control plane | 4 | Codex CLI | Watchlist only | 0.187 | 2% | 22% | low | 1-2 weeks | 4 / 4 / 4 | 0.187 behind the scenario leader; fragile Monte Carlo shortlist position (22% top-3 rate); low evidence-risk band; operational rank is broadly consistent with simulation rank. |
+| Enterprise control plane | 5 | Open SWE | Watchlist only | 0.210 | 3% | 17% | low | 6-12 weeks | 5 / 5 / 5 | 0.210 behind the scenario leader; fragile Monte Carlo shortlist position (17% top-3 rate); low evidence-risk band; 6-12 weeks hardening estimate; operational rank is broadly consistent with simulation rank. |
+
+Operational ranks are shown as `pilot / team rollout / autonomous PR` ranks after applying the operating-cost model.
+
+## Interpretation
+
+- A `Primary pilot candidate` is strong enough to lead a pilot, but still needs the pilot protocol and security gates.
+- A `Head-to-head pilot` is close enough to the leader that the report should not force a single winner without live task evidence.
+- `Second-phase exploration` candidates can be useful design references, but their evidence or maturity profile should keep them out of the first production decision.
+- `Fallback or benchmark` candidates are useful comparators for local productivity or research baselines.
+
+---
+
 <!-- Source: reports/github_metadata_check.md -->
 
 # GitHub Metadata Check
@@ -2016,12 +2081,12 @@ This page summarizes the current quality checks for the report repository. It is
 
 | Check | Command | Latest result |
 |---|---|---|
-| Unit tests | `python -m unittest discover -s tests` | 122 tests passed. |
+| Unit tests | `python -m unittest discover -s tests` | 127 tests passed. |
 | Full local workflow | `python scripts/run_all_checks.py` | Passed. |
 | Offline artifact validation | `python scripts/validate_artifacts.py` | Passed. |
-| Generated CSV schemas | `python scripts/validate_csv_schemas.py` | 34 CSV schemas checked, 0 failures. |
-| Local artifact references | `python scripts/check_local_artifact_references.py` | 686 local references checked, 0 missing. |
-| Markdown tables | `python scripts/validate_markdown_tables.py` | 213 tables checked, 0 failures. |
+| Generated CSV schemas | `python scripts/validate_csv_schemas.py` | 35 CSV schemas checked, 0 failures. |
+| Local artifact references | `python scripts/check_local_artifact_references.py` | 704 local references checked, 0 missing. |
+| Markdown tables | `python scripts/validate_markdown_tables.py` | 217 tables checked, 0 failures. |
 | External source URLs | `python scripts/check_sources.py --timeout 20` | 41 URLs checked, 41 OK. |
 | GitHub metadata | `python scripts/refresh_github_metadata.py --timeout 20` | 17 repos checked, 0 failures, 0 license mismatches. |
 | Whitespace | `git diff --check` | Passed. |
@@ -2041,6 +2106,7 @@ This page summarizes the current quality checks for the report repository. It is
 | Scenario playbooks | `results/scenario_playbook_summary.csv` verifies the per-scenario execution guidance output. |
 | Risk validation | `results/risk_validation_matrix.csv` verifies the risk-to-evidence pilot gate mapping. |
 | Operational model | `results/operational_cost_estimates.csv` and `results/operational_fit_rankings.csv` verify the cost/latency tie-breaker model shape. |
+| Recommendation rationale | `results/recommendation_rationale.csv` verifies that each scenario shortlist has a posture, evidence-risk band, effort estimate, and operational rank context. |
 | Pilot sample size | `results/pilot_sample_size_estimates.csv` verifies the task-count planning simulation shape. |
 | Artifact manifest | `results/artifact_manifest.csv` records SHA-256 hashes and byte sizes for committed report, data, script, test, and template artifacts. |
 | Simulation reproducibility | Unit tests cover deterministic scoring, Monte Carlo reproducibility, stress tests, custom weights, effort estimation, evidence-gap analysis, risk registers, decision tree, and artifact validation. |
@@ -2467,6 +2533,28 @@ Cross-scenario deterministic and Monte Carlo rank stability.
 | `mean_monte_carlo_rank` |
 | `mean_top3_rate` |
 
+## `recommendation_rationale.csv`
+
+Scenario shortlist rationale combining ranking, stability, evidence risk, implementation effort, and operational ranks.
+
+| Column |
+|---|
+| `scenario` |
+| `rank` |
+| `alternative_id` |
+| `alternative` |
+| `posture` |
+| `score_gap_to_leader` |
+| `win_rate` |
+| `top3_rate` |
+| `evidence_risk_band` |
+| `prototype_effort` |
+| `hardening_effort` |
+| `pilot_operational_rank` |
+| `team_rollout_operational_rank` |
+| `autonomous_pr_operational_rank` |
+| `key_rationale` |
+
 ## `regret_analysis.csv`
 
 Score gaps versus scenario winners.
@@ -2836,6 +2924,7 @@ Use this index to choose the right file quickly.
 | Score driver explanation | `reports/score_driver_summary.md` |
 | Operational cost and latency model | `reports/operational_cost_model.md` |
 | Evidence-gap findings | `reports/evidence_gap_analysis.md` |
+| Scenario recommendation rationale | `reports/recommendation_rationale.md` |
 | GitHub metadata verification | `reports/github_metadata_check.md` |
 | Security fixture catalog | `reports/security_evaluation_fixtures.md` |
 | Pilot execution protocol | `reports/pilot_protocol.md` |
@@ -2892,6 +2981,7 @@ Use this index to choose the right file quickly.
 | Operation-adjusted scenario rankings | `results/operational_fit_rankings.csv` |
 | Pilot sample-size estimates | `results/pilot_sample_size_estimates.csv` |
 | Evidence-gap risk analysis | `results/evidence_gap_analysis.csv` |
+| Scenario recommendation rationale | `results/recommendation_rationale.csv` |
 | Risk validation matrix | `results/risk_validation_matrix.csv` |
 | License audit | `results/license_audit.csv` |
 | URL health check | `results/source_check.csv` |
@@ -2926,6 +3016,7 @@ Use this index to choose the right file quickly.
 | Estimate operational cost and latency risk | `scripts/estimate_operational_costs.py` |
 | Estimate pilot sample sizes | `scripts/estimate_pilot_sample_sizes.py` |
 | Analyze evidence gaps | `scripts/analyze_evidence_gaps.py` |
+| Build recommendation rationale | `scripts/build_recommendation_rationale.py` |
 | Build risk validation matrix | `scripts/build_risk_validation_matrix.py` |
 | Rank with custom weights | `scripts/rank_with_custom_weights.py` |
 | Regenerate license audit | `scripts/license_audit.py` |
@@ -2964,6 +3055,7 @@ python scripts/estimate_implementation_effort.py
 python scripts/estimate_operational_costs.py
 python scripts/estimate_pilot_sample_sizes.py
 python scripts/analyze_evidence_gaps.py
+python scripts/build_recommendation_rationale.py
 python scripts/build_risk_validation_matrix.py
 python scripts/rank_with_custom_weights.py
 python scripts/license_audit.py

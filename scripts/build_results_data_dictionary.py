@@ -35,6 +35,7 @@ FILE_DESCRIPTIONS = {
     "operational_fit_rankings.csv": "Scenario rankings adjusted by operating-profile friction.",
     "pilot_sample_size_estimates.csv": "Pilot task-count simulation for separating close shortlist candidates.",
     "evidence_gap_analysis.csv": "Evidence risk signals and mitigation notes.",
+    "recommendation_rationale.csv": "Scenario shortlist rationale combining ranking, stability, evidence risk, implementation effort, and operational ranks.",
     "risk_validation_matrix.csv": "Risk-to-evidence validation mapping for pilot gates.",
     "custom_weights_example_rankings.csv": "Example deterministic rankings from custom weights.",
     "regret_analysis.csv": "Score gaps versus scenario winners.",

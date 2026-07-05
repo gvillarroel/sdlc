@@ -56,6 +56,8 @@ For relative operating cost, token-pressure, latency-risk, and operation-adjuste
 
 For evidence gaps in young or low-confidence candidates, read `reports/evidence_gap_analysis.md`.
 
+For a cross-evidence rationale behind each scenario shortlist, read `reports/recommendation_rationale.md`.
+
 For live GitHub metadata verification, read `reports/github_metadata_check.md`.
 
 For reusable security pilot fixtures, read `reports/security_evaluation_fixtures.md`; the machine-readable catalog is `data/security_evaluation_fixtures.json`.
@@ -272,6 +274,7 @@ Generated outputs:
 | `results/operational_fit_rankings.csv` | Scenario rankings adjusted by operating-profile friction. |
 | `results/pilot_sample_size_estimates.csv` | Pilot task-count simulation for distinguishing close shortlist candidates. |
 | `results/evidence_gap_analysis.csv` | Evidence risk bands for maturity, source confidence, release, traction, and freshness gaps. |
+| `results/recommendation_rationale.csv` | Scenario shortlist rationale combining ranking, Monte Carlo stability, evidence risk, implementation effort, and operational ranks. |
 | `results/risk_validation_matrix.csv` | Risk-to-evidence validation mapping for pilot gates. |
 | `results/source_check.csv` | Live URL check of report and dataset sources. The latest run checked 41 URLs with 41 OK responses. |
 | `results/github_metadata_check.csv` | Live GitHub repository metadata comparison for stars, push date, license, archive status, and latest release tag. |

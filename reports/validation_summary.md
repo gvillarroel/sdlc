@@ -10,12 +10,12 @@ This page summarizes the current quality checks for the report repository. It is
 
 | Check | Command | Latest result |
 |---|---|---|
-| Unit tests | `python -m unittest discover -s tests` | 122 tests passed. |
+| Unit tests | `python -m unittest discover -s tests` | 127 tests passed. |
 | Full local workflow | `python scripts/run_all_checks.py` | Passed. |
 | Offline artifact validation | `python scripts/validate_artifacts.py` | Passed. |
-| Generated CSV schemas | `python scripts/validate_csv_schemas.py` | 34 CSV schemas checked, 0 failures. |
-| Local artifact references | `python scripts/check_local_artifact_references.py` | 686 local references checked, 0 missing. |
-| Markdown tables | `python scripts/validate_markdown_tables.py` | 213 tables checked, 0 failures. |
+| Generated CSV schemas | `python scripts/validate_csv_schemas.py` | 35 CSV schemas checked, 0 failures. |
+| Local artifact references | `python scripts/check_local_artifact_references.py` | 704 local references checked, 0 missing. |
+| Markdown tables | `python scripts/validate_markdown_tables.py` | 217 tables checked, 0 failures. |
 | External source URLs | `python scripts/check_sources.py --timeout 20` | 41 URLs checked, 41 OK. |
 | GitHub metadata | `python scripts/refresh_github_metadata.py --timeout 20` | 17 repos checked, 0 failures, 0 license mismatches. |
 | Whitespace | `git diff --check` | Passed. |
@@ -35,6 +35,7 @@ This page summarizes the current quality checks for the report repository. It is
 | Scenario playbooks | `results/scenario_playbook_summary.csv` verifies the per-scenario execution guidance output. |
 | Risk validation | `results/risk_validation_matrix.csv` verifies the risk-to-evidence pilot gate mapping. |
 | Operational model | `results/operational_cost_estimates.csv` and `results/operational_fit_rankings.csv` verify the cost/latency tie-breaker model shape. |
+| Recommendation rationale | `results/recommendation_rationale.csv` verifies that each scenario shortlist has a posture, evidence-risk band, effort estimate, and operational rank context. |
 | Pilot sample size | `results/pilot_sample_size_estimates.csv` verifies the task-count planning simulation shape. |
 | Artifact manifest | `results/artifact_manifest.csv` records SHA-256 hashes and byte sizes for committed report, data, script, test, and template artifacts. |
 | Simulation reproducibility | Unit tests cover deterministic scoring, Monte Carlo reproducibility, stress tests, custom weights, effort estimation, evidence-gap analysis, risk registers, decision tree, and artifact validation. |

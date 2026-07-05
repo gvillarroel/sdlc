@@ -360,6 +360,28 @@ Cross-scenario deterministic and Monte Carlo rank stability.
 | `mean_monte_carlo_rank` |
 | `mean_top3_rate` |
 
+## `recommendation_rationale.csv`
+
+Scenario shortlist rationale combining ranking, stability, evidence risk, implementation effort, and operational ranks.
+
+| Column |
+|---|
+| `scenario` |
+| `rank` |
+| `alternative_id` |
+| `alternative` |
+| `posture` |
+| `score_gap_to_leader` |
+| `win_rate` |
+| `top3_rate` |
+| `evidence_risk_band` |
+| `prototype_effort` |
+| `hardening_effort` |
+| `pilot_operational_rank` |
+| `team_rollout_operational_rank` |
+| `autonomous_pr_operational_rank` |
+| `key_rationale` |
+
 ## `regret_analysis.csv`
 
 Score gaps versus scenario winners.

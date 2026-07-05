@@ -22,6 +22,7 @@ COMMANDS = [
     [PYTHON, "scripts/analyze_score_drivers.py"],
     [PYTHON, "scripts/build_scenario_playbooks.py"],
     [PYTHON, "scripts/analyze_evidence_gaps.py"],
+    [PYTHON, "scripts/build_recommendation_rationale.py"],
     [PYTHON, "scripts/build_risk_validation_matrix.py"],
     [PYTHON, "scripts/rank_with_custom_weights.py"],
     [PYTHON, "scripts/license_audit.py"],
