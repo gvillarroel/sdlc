@@ -32,7 +32,7 @@ Included artifacts:
 - `scripts/run_all_checks.py` - one-command local regeneration and validation workflow.
 - `tests/test_simulation_model.py` - validation tests for the scoring model and dataset.
 - `results/` - generated CSV and JSON simulation outputs, including category scorecards and a scenario shortlist.
-- `templates/` - pilot run log, reviewer scorecard, and security gate checklist templates.
+- `templates/` - pilot run log, reviewer scorecard, security gate checklist, and scenario workshop templates.
 - `examples/pilot_candidate_summary.example.csv` - example input for post-pilot scoring.
 - `examples/custom_weights.example.json` - example custom scenario weights.
 - `examples/pilot_adapter_contract.py` - minimal Python adapter contract for comparable pilot runs.

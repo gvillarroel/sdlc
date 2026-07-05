@@ -29,6 +29,7 @@ Required artifacts:
 - `templates/pilot_run_log.csv`
 - `templates/reviewer_scorecard.md`
 - `templates/security_gate_checklist.md`
+- `templates/scenario_selection_workshop.md`
 - `data/risk_register.json`
 - `data/security_evaluation_fixtures.json`
 - `examples/pilot_adapter_contract.py`
@@ -46,6 +47,8 @@ Required environment controls:
 ## Procedure
 
 ### 1. Prepare Fixtures
+
+Before preparing fixtures, use `templates/scenario_selection_workshop.md` to confirm the target workflow, hard gates, and stakeholder weights.
 
 Create or select a representative repository fixture with:
 

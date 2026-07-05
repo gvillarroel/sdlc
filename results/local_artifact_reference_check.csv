@@ -221,6 +221,7 @@ reports/artifact_index.md,scripts/validate_artifacts.py,scripts/validate_artifac
 reports/artifact_index.md,scripts/validate_csv_schemas.py,scripts/validate_csv_schemas.py,True
 reports/artifact_index.md,templates/pilot_run_log.csv,templates/pilot_run_log.csv,True
 reports/artifact_index.md,templates/reviewer_scorecard.md,templates/reviewer_scorecard.md,True
+reports/artifact_index.md,templates/scenario_selection_workshop.md,templates/scenario_selection_workshop.md,True
 reports/artifact_index.md,templates/security_gate_checklist.md,templates/security_gate_checklist.md,True
 reports/decision_tree.md,data/decision_tree.json,data/decision_tree.json,True
 reports/evidence_gap_analysis.md,results/evidence_gap_analysis.csv,results/evidence_gap_analysis.csv,True
@@ -324,6 +325,7 @@ reports/final_report_bundle.md,scripts/validate_artifacts.py,scripts/validate_ar
 reports/final_report_bundle.md,scripts/validate_csv_schemas.py,scripts/validate_csv_schemas.py,True
 reports/final_report_bundle.md,templates/pilot_run_log.csv,templates/pilot_run_log.csv,True
 reports/final_report_bundle.md,templates/reviewer_scorecard.md,templates/reviewer_scorecard.md,True
+reports/final_report_bundle.md,templates/scenario_selection_workshop.md,templates/scenario_selection_workshop.md,True
 reports/final_report_bundle.md,templates/security_gate_checklist.md,templates/security_gate_checklist.md,True
 reports/github_metadata_check.md,data/alternatives.json,data/alternatives.json,True
 reports/github_metadata_check.md,reports/evidence_gap_analysis.md,reports/evidence_gap_analysis.md,True
@@ -394,6 +396,7 @@ reports/pilot_protocol.md,results/pilot_decision_scores.example.csv,results/pilo
 reports/pilot_protocol.md,scripts/score_pilot_results.py,scripts/score_pilot_results.py,True
 reports/pilot_protocol.md,templates/pilot_run_log.csv,templates/pilot_run_log.csv,True
 reports/pilot_protocol.md,templates/reviewer_scorecard.md,templates/reviewer_scorecard.md,True
+reports/pilot_protocol.md,templates/scenario_selection_workshop.md,templates/scenario_selection_workshop.md,True
 reports/pilot_protocol.md,templates/security_gate_checklist.md,templates/security_gate_checklist.md,True
 reports/requirements_traceability.md,ci/validate-workflow.example.yml,ci/validate-workflow.example.yml,True
 reports/requirements_traceability.md,data/alternatives.json,data/alternatives.json,True

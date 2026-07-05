@@ -458,7 +458,7 @@ Run a two-week pilot before standardizing.
 
 The concrete task suite is included in `data/pilot_tasks.json`. It contains 20 tasks: 8 bug fixes, 4 refactors, 4 test-generation tasks, 1 dependency update, 1 documentation/codebase explanation task, and 2 security fixtures. The point is not that these exact tasks are universal; it is that every candidate should face the same distribution of ordinary coding work, ambiguous engineering work, and safety pressure.
 
-Pilot templates are included in `templates/`: `pilot_run_log.csv` for metrics capture, `reviewer_scorecard.md` for qualitative review, and `security_gate_checklist.md` for safety gates.
+Pilot templates are included in `templates/`: `scenario_selection_workshop.md` for stakeholder priorities, `pilot_run_log.csv` for metrics capture, `reviewer_scorecard.md` for qualitative review, and `security_gate_checklist.md` for safety gates.
 
 The detailed execution protocol is in `reports/pilot_protocol.md`.
 
@@ -1259,6 +1259,7 @@ Required artifacts:
 - `templates/pilot_run_log.csv`
 - `templates/reviewer_scorecard.md`
 - `templates/security_gate_checklist.md`
+- `templates/scenario_selection_workshop.md`
 - `data/risk_register.json`
 - `data/security_evaluation_fixtures.json`
 - `examples/pilot_adapter_contract.py`
@@ -1276,6 +1277,8 @@ Required environment controls:
 ## Procedure
 
 ### 1. Prepare Fixtures
+
+Before preparing fixtures, use `templates/scenario_selection_workshop.md` to confirm the target workflow, hard gates, and stakeholder weights.
 
 Create or select a representative repository fixture with:
 
@@ -2057,6 +2060,7 @@ Use this index to choose the right file quickly.
 | Capture candidate/task metrics | `templates/pilot_run_log.csv` |
 | Human code-review assessment | `templates/reviewer_scorecard.md` |
 | Security gate assessment | `templates/security_gate_checklist.md` |
+| Select scenario and weights | `templates/scenario_selection_workshop.md` |
 | Example post-pilot candidate summary | `examples/pilot_candidate_summary.example.csv` |
 | Example custom scenario weights | `examples/custom_weights.example.json` |
 | Minimal pilot adapter contract | `examples/pilot_adapter_contract.py` |

@@ -193,7 +193,8 @@ class ReportArtifactsTest(unittest.TestCase):
             "pilot_run_log.csv",
             "pilot_candidate_summary.csv",
             "reviewer_scorecard.md",
-            "security_gate_checklist.md"
+            "security_gate_checklist.md",
+            "scenario_selection_workshop.md"
         ]
         for filename in expected_files:
             path = ROOT / "templates" / filename

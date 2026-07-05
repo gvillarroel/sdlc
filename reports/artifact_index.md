@@ -81,6 +81,7 @@ Use this index to choose the right file quickly.
 | Capture candidate/task metrics | `templates/pilot_run_log.csv` |
 | Human code-review assessment | `templates/reviewer_scorecard.md` |
 | Security gate assessment | `templates/security_gate_checklist.md` |
+| Select scenario and weights | `templates/scenario_selection_workshop.md` |
 | Example post-pilot candidate summary | `examples/pilot_candidate_summary.example.csv` |
 | Example custom scenario weights | `examples/custom_weights.example.json` |
 | Minimal pilot adapter contract | `examples/pilot_adapter_contract.py` |
