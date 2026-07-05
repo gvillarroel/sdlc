@@ -220,6 +220,19 @@ Local Markdown artifact reference check.
 | `resolved_path` |
 | `exists` |
 
+## `markdown_table_check.csv`
+
+Markdown table column consistency check.
+
+| Column |
+|---|
+| `source_file` |
+| `start_line` |
+| `rows_checked` |
+| `expected_columns` |
+| `ok` |
+| `message` |
+
 ## `monte_carlo_summary.csv`
 
 Monte Carlo score and rank stability by scenario.

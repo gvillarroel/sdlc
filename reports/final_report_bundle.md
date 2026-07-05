@@ -378,6 +378,7 @@ Generated outputs:
 | `results/artifact_manifest.csv` | SHA-256 manifest for report, data, result, script, template, test, and CI artifacts. |
 | `results/license_audit.csv` | Explicit permissive-license audit for included and excluded entries. |
 | `results/local_artifact_reference_check.csv` | Offline check that local artifact references in README and reports resolve to existing files. |
+| `results/markdown_table_check.csv` | Offline check that Markdown tables in README and reports have consistent column counts. |
 | `results/regret_analysis.csv` | Score gap between each candidate and the scenario winner. |
 | `results/pareto_frontier.csv` | Candidates that are not strictly dominated across all criteria. |
 | `results/rank_stability.csv` | Cross-scenario rank stability, best/worst rank, and average Monte Carlo top-3 rate. |
@@ -2014,11 +2015,12 @@ This page summarizes the current quality checks for the report repository. It is
 
 | Check | Command | Latest result |
 |---|---|---|
-| Unit tests | `python -m unittest discover -s tests` | 117 tests passed. |
+| Unit tests | `python -m unittest discover -s tests` | 120 tests passed. |
 | Full local workflow | `python scripts/run_all_checks.py` | Passed. |
 | Offline artifact validation | `python scripts/validate_artifacts.py` | Passed. |
-| Generated CSV schemas | `python scripts/validate_csv_schemas.py` | 33 CSV schemas checked, 0 failures. |
-| Local artifact references | `python scripts/check_local_artifact_references.py` | 673 local references checked, 0 missing. |
+| Generated CSV schemas | `python scripts/validate_csv_schemas.py` | 34 CSV schemas checked, 0 failures. |
+| Local artifact references | `python scripts/check_local_artifact_references.py` | 682 local references checked, 0 missing. |
+| Markdown tables | `python scripts/validate_markdown_tables.py` | 213 tables checked, 0 failures. |
 | External source URLs | `python scripts/check_sources.py --timeout 20` | 41 URLs checked, 41 OK. |
 | GitHub metadata | `python scripts/refresh_github_metadata.py --timeout 20` | 17 repos checked, 0 failures, 0 license mismatches. |
 | Whitespace | `git diff --check` | Passed. |
@@ -2032,6 +2034,7 @@ This page summarizes the current quality checks for the report repository. It is
 | Source availability | `results/source_check.csv` verifies that report and dataset URLs respond successfully. |
 | GitHub metadata | `results/github_metadata_check.csv` verifies repository reachability, live SPDX license match, archive status, stars, push date, and latest release tag. |
 | Report references | `results/local_artifact_reference_check.csv` verifies README and report references to local artifacts. |
+| Markdown tables | `results/markdown_table_check.csv` verifies table column consistency in README and report Markdown files. |
 | CSV contracts | `results/csv_schema_check.csv` verifies expected headers for generated CSV artifacts. |
 | Score drivers | `results/score_driver_summary.csv` and `results/criterion_spread_summary.csv` verify candidate and criterion explanation outputs. |
 | Scenario playbooks | `results/scenario_playbook_summary.csv` verifies the per-scenario execution guidance output. |
@@ -2322,6 +2325,19 @@ Local Markdown artifact reference check.
 | `reference` |
 | `resolved_path` |
 | `exists` |
+
+## `markdown_table_check.csv`
+
+Markdown table column consistency check.
+
+| Column |
+|---|
+| `source_file` |
+| `start_line` |
+| `rows_checked` |
+| `expected_columns` |
+| `ok` |
+| `message` |
 
 ## `monte_carlo_summary.csv`
 
@@ -2880,6 +2896,7 @@ Use this index to choose the right file quickly.
 | URL health check | `results/source_check.csv` |
 | GitHub metadata check | `results/github_metadata_check.csv` |
 | Local artifact reference check | `results/local_artifact_reference_check.csv` |
+| Markdown table consistency check | `results/markdown_table_check.csv` |
 | Generated CSV schema check | `results/csv_schema_check.csv` |
 | Artifact SHA-256 manifest | `results/artifact_manifest.csv` |
 | Complete machine-readable output | `results/all_results.json` |
@@ -2914,6 +2931,7 @@ Use this index to choose the right file quickly.
 | Check external source URLs | `scripts/check_sources.py` |
 | Refresh GitHub metadata check | `scripts/refresh_github_metadata.py` |
 | Check local artifact references | `scripts/check_local_artifact_references.py` |
+| Validate Markdown tables | `scripts/validate_markdown_tables.py` |
 | Validate generated CSV schemas | `scripts/validate_csv_schemas.py` |
 | Generate artifact SHA-256 manifest | `scripts/generate_artifact_manifest.py` |
 | Validate generated artifacts offline | `scripts/validate_artifacts.py` |
@@ -2948,6 +2966,7 @@ python scripts/build_risk_validation_matrix.py
 python scripts/rank_with_custom_weights.py
 python scripts/license_audit.py
 python scripts/check_local_artifact_references.py
+python scripts/validate_markdown_tables.py
 python scripts/validate_csv_schemas.py
 python scripts/generate_artifact_manifest.py
 python scripts/build_results_data_dictionary.py

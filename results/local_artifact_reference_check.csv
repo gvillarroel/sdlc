@@ -61,6 +61,7 @@ README.md,results/github_metadata_check.csv,results/github_metadata_check.csv,Tr
 README.md,results/implementation_effort_estimates.csv,results/implementation_effort_estimates.csv,True
 README.md,results/license_audit.csv,results/license_audit.csv,True
 README.md,results/local_artifact_reference_check.csv,results/local_artifact_reference_check.csv,True
+README.md,results/markdown_table_check.csv,results/markdown_table_check.csv,True
 README.md,results/monte_carlo_summary.csv,results/monte_carlo_summary.csv,True
 README.md,results/operational_cost_estimates.csv,results/operational_cost_estimates.csv,True
 README.md,results/operational_fit_rankings.csv,results/operational_fit_rankings.csv,True
@@ -102,6 +103,7 @@ README.md,scripts/simulate_alternatives.py,scripts/simulate_alternatives.py,True
 README.md,scripts/stress_test_simulation.py,scripts/stress_test_simulation.py,True
 README.md,scripts/validate_artifacts.py,scripts/validate_artifacts.py,True
 README.md,scripts/validate_csv_schemas.py,scripts/validate_csv_schemas.py,True
+README.md,scripts/validate_markdown_tables.py,scripts/validate_markdown_tables.py,True
 README.md,tests/test_simulation_model.py,tests/test_simulation_model.py,True
 reports/adoption_decision_record.md,data/pilot_decision_model.json,data/pilot_decision_model.json,True
 reports/adoption_decision_record.md,scripts/score_pilot_results.py,scripts/score_pilot_results.py,True
@@ -167,6 +169,7 @@ reports/ai_orchestrator_frameworks_report.md,results/github_metadata_check.csv,r
 reports/ai_orchestrator_frameworks_report.md,results/implementation_effort_estimates.csv,results/implementation_effort_estimates.csv,True
 reports/ai_orchestrator_frameworks_report.md,results/license_audit.csv,results/license_audit.csv,True
 reports/ai_orchestrator_frameworks_report.md,results/local_artifact_reference_check.csv,results/local_artifact_reference_check.csv,True
+reports/ai_orchestrator_frameworks_report.md,results/markdown_table_check.csv,results/markdown_table_check.csv,True
 reports/ai_orchestrator_frameworks_report.md,results/monte_carlo_summary.csv,results/monte_carlo_summary.csv,True
 reports/ai_orchestrator_frameworks_report.md,results/operational_cost_estimates.csv,results/operational_cost_estimates.csv,True
 reports/ai_orchestrator_frameworks_report.md,results/operational_fit_rankings.csv,results/operational_fit_rankings.csv,True
@@ -259,6 +262,7 @@ reports/artifact_index.md,results/github_metadata_check.csv,results/github_metad
 reports/artifact_index.md,results/implementation_effort_estimates.csv,results/implementation_effort_estimates.csv,True
 reports/artifact_index.md,results/license_audit.csv,results/license_audit.csv,True
 reports/artifact_index.md,results/local_artifact_reference_check.csv,results/local_artifact_reference_check.csv,True
+reports/artifact_index.md,results/markdown_table_check.csv,results/markdown_table_check.csv,True
 reports/artifact_index.md,results/monte_carlo_summary.csv,results/monte_carlo_summary.csv,True
 reports/artifact_index.md,results/operational_cost_estimates.csv,results/operational_cost_estimates.csv,True
 reports/artifact_index.md,results/operational_fit_rankings.csv,results/operational_fit_rankings.csv,True
@@ -300,6 +304,7 @@ reports/artifact_index.md,scripts/simulate_alternatives.py,scripts/simulate_alte
 reports/artifact_index.md,scripts/stress_test_simulation.py,scripts/stress_test_simulation.py,True
 reports/artifact_index.md,scripts/validate_artifacts.py,scripts/validate_artifacts.py,True
 reports/artifact_index.md,scripts/validate_csv_schemas.py,scripts/validate_csv_schemas.py,True
+reports/artifact_index.md,scripts/validate_markdown_tables.py,scripts/validate_markdown_tables.py,True
 reports/artifact_index.md,templates/pilot_run_log.csv,templates/pilot_run_log.csv,True
 reports/artifact_index.md,templates/reviewer_scorecard.md,templates/reviewer_scorecard.md,True
 reports/artifact_index.md,templates/scenario_selection_workshop.md,templates/scenario_selection_workshop.md,True
@@ -401,6 +406,7 @@ reports/final_report_bundle.md,results/github_metadata_check.csv,results/github_
 reports/final_report_bundle.md,results/implementation_effort_estimates.csv,results/implementation_effort_estimates.csv,True
 reports/final_report_bundle.md,results/license_audit.csv,results/license_audit.csv,True
 reports/final_report_bundle.md,results/local_artifact_reference_check.csv,results/local_artifact_reference_check.csv,True
+reports/final_report_bundle.md,results/markdown_table_check.csv,results/markdown_table_check.csv,True
 reports/final_report_bundle.md,results/monte_carlo_summary.csv,results/monte_carlo_summary.csv,True
 reports/final_report_bundle.md,results/operational_cost_estimates.csv,results/operational_cost_estimates.csv,True
 reports/final_report_bundle.md,results/operational_fit_rankings.csv,results/operational_fit_rankings.csv,True
@@ -442,6 +448,7 @@ reports/final_report_bundle.md,scripts/simulate_alternatives.py,scripts/simulate
 reports/final_report_bundle.md,scripts/stress_test_simulation.py,scripts/stress_test_simulation.py,True
 reports/final_report_bundle.md,scripts/validate_artifacts.py,scripts/validate_artifacts.py,True
 reports/final_report_bundle.md,scripts/validate_csv_schemas.py,scripts/validate_csv_schemas.py,True
+reports/final_report_bundle.md,scripts/validate_markdown_tables.py,scripts/validate_markdown_tables.py,True
 reports/final_report_bundle.md,templates/pilot_run_log.csv,templates/pilot_run_log.csv,True
 reports/final_report_bundle.md,templates/reviewer_scorecard.md,templates/reviewer_scorecard.md,True
 reports/final_report_bundle.md,templates/scenario_selection_workshop.md,templates/scenario_selection_workshop.md,True
@@ -659,6 +666,7 @@ reports/validation_summary.md,results/csv_schema_check.csv,results/csv_schema_ch
 reports/validation_summary.md,results/github_metadata_check.csv,results/github_metadata_check.csv,True
 reports/validation_summary.md,results/license_audit.csv,results/license_audit.csv,True
 reports/validation_summary.md,results/local_artifact_reference_check.csv,results/local_artifact_reference_check.csv,True
+reports/validation_summary.md,results/markdown_table_check.csv,results/markdown_table_check.csv,True
 reports/validation_summary.md,results/operational_cost_estimates.csv,results/operational_cost_estimates.csv,True
 reports/validation_summary.md,results/operational_fit_rankings.csv,results/operational_fit_rankings.csv,True
 reports/validation_summary.md,results/pilot_sample_size_estimates.csv,results/pilot_sample_size_estimates.csv,True
@@ -672,3 +680,4 @@ reports/validation_summary.md,scripts/refresh_github_metadata.py,scripts/refresh
 reports/validation_summary.md,scripts/run_all_checks.py,scripts/run_all_checks.py,True
 reports/validation_summary.md,scripts/validate_artifacts.py,scripts/validate_artifacts.py,True
 reports/validation_summary.md,scripts/validate_csv_schemas.py,scripts/validate_csv_schemas.py,True
+reports/validation_summary.md,scripts/validate_markdown_tables.py,scripts/validate_markdown_tables.py,True

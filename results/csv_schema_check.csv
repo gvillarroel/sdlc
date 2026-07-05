@@ -14,6 +14,7 @@ github_metadata_check.csv,True,,error; dataset_stars; live_stars; star_delta; da
 implementation_effort_estimates.csv,True,,license; maturity_level; source_confidence; prototype_scope_adjustment; prototype_driver; hardening_scope_adjustment; hardening_driver; risk_notes,16,8
 license_audit.csv,True,,,7,7
 local_artifact_reference_check.csv,True,,,4,4
+markdown_table_check.csv,True,,,6,6
 monte_carlo_summary.csv,True,,,10,10
 operational_cost_estimates.csv,True,,,16,16
 operational_fit_rankings.csv,True,,,13,13

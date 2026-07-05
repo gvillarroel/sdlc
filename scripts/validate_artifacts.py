@@ -54,6 +54,7 @@ REQUIRED_RESULT_FILES = [
     "license_audit.csv",
     "source_check.csv",
     "local_artifact_reference_check.csv",
+    "markdown_table_check.csv",
     "github_metadata_check.csv",
     "csv_schema_check.csv",
     "artifact_manifest.csv",
@@ -142,6 +143,10 @@ def validate_license_and_sources() -> None:
     reference_rows = read_csv(RESULTS / "local_artifact_reference_check.csv")
     assert_true(reference_rows, "local artifact reference check is empty")
     assert_true(all(row["exists"] == "True" for row in reference_rows), "one or more local artifact references are missing")
+
+    markdown_table_rows = read_csv(RESULTS / "markdown_table_check.csv")
+    assert_true(markdown_table_rows, "Markdown table check is empty")
+    assert_true(all(row["ok"] == "True" for row in markdown_table_rows), "one or more Markdown tables have inconsistent columns")
 
     github_rows = read_csv(RESULTS / "github_metadata_check.csv")
     assert_true(len(github_rows) == 17, "unexpected GitHub metadata row count")

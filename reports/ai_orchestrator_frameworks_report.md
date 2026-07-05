@@ -279,6 +279,7 @@ Generated outputs:
 | `results/artifact_manifest.csv` | SHA-256 manifest for report, data, result, script, template, test, and CI artifacts. |
 | `results/license_audit.csv` | Explicit permissive-license audit for included and excluded entries. |
 | `results/local_artifact_reference_check.csv` | Offline check that local artifact references in README and reports resolve to existing files. |
+| `results/markdown_table_check.csv` | Offline check that Markdown tables in README and reports have consistent column counts. |
 | `results/regret_analysis.csv` | Score gap between each candidate and the scenario winner. |
 | `results/pareto_frontier.csv` | Candidates that are not strictly dominated across all criteria. |
 | `results/rank_stability.csv` | Cross-scenario rank stability, best/worst rank, and average Monte Carlo top-3 rate. |

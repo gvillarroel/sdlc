@@ -91,6 +91,7 @@ Use this index to choose the right file quickly.
 | URL health check | `results/source_check.csv` |
 | GitHub metadata check | `results/github_metadata_check.csv` |
 | Local artifact reference check | `results/local_artifact_reference_check.csv` |
+| Markdown table consistency check | `results/markdown_table_check.csv` |
 | Generated CSV schema check | `results/csv_schema_check.csv` |
 | Artifact SHA-256 manifest | `results/artifact_manifest.csv` |
 | Complete machine-readable output | `results/all_results.json` |
@@ -125,6 +126,7 @@ Use this index to choose the right file quickly.
 | Check external source URLs | `scripts/check_sources.py` |
 | Refresh GitHub metadata check | `scripts/refresh_github_metadata.py` |
 | Check local artifact references | `scripts/check_local_artifact_references.py` |
+| Validate Markdown tables | `scripts/validate_markdown_tables.py` |
 | Validate generated CSV schemas | `scripts/validate_csv_schemas.py` |
 | Generate artifact SHA-256 manifest | `scripts/generate_artifact_manifest.py` |
 | Validate generated artifacts offline | `scripts/validate_artifacts.py` |
@@ -159,6 +161,7 @@ python scripts/build_risk_validation_matrix.py
 python scripts/rank_with_custom_weights.py
 python scripts/license_audit.py
 python scripts/check_local_artifact_references.py
+python scripts/validate_markdown_tables.py
 python scripts/validate_csv_schemas.py
 python scripts/generate_artifact_manifest.py
 python scripts/build_results_data_dictionary.py

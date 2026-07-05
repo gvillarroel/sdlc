@@ -29,6 +29,7 @@ COMMANDS = [
     [PYTHON, "scripts/build_results_data_dictionary.py"],
     [PYTHON, "scripts/build_report_bundle.py"],
     [PYTHON, "scripts/check_local_artifact_references.py"],
+    [PYTHON, "scripts/validate_markdown_tables.py"],
     [PYTHON, "scripts/generate_artifact_manifest.py"],
     [
         PYTHON,

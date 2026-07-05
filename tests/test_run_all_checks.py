@@ -23,6 +23,7 @@ class RunAllChecksTest(unittest.TestCase):
             "build_results_data_dictionary.py",
             "build_report_bundle.py",
             "check_local_artifact_references.py",
+            "validate_markdown_tables.py",
             "generate_artifact_manifest.py",
             "validate_csv_schemas.py",
             "score_pilot_results.py",

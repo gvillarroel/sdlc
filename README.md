@@ -28,6 +28,7 @@ Included artifacts:
 - `scripts/build_risk_validation_matrix.py` - risk-to-evidence pilot validation matrix builder.
 - `scripts/rank_with_custom_weights.py` - deterministic ranking for user-provided scenario weights.
 - `scripts/check_local_artifact_references.py` - offline check for local artifact references in README and reports.
+- `scripts/validate_markdown_tables.py` - Markdown table column consistency check for README and reports.
 - `scripts/validate_csv_schemas.py` - generated CSV header/schema validation.
 - `scripts/generate_artifact_manifest.py` - SHA-256 manifest generator for repository artifacts.
 - `scripts/refresh_github_metadata.py` - optional live GitHub metadata checker for repository, license, star, push, and release signals.
@@ -105,6 +106,7 @@ python scripts/build_risk_validation_matrix.py
 python scripts/rank_with_custom_weights.py
 python scripts/license_audit.py
 python scripts/check_local_artifact_references.py
+python scripts/validate_markdown_tables.py
 python scripts/validate_csv_schemas.py
 python scripts/generate_artifact_manifest.py
 python scripts/generate_charts.py
@@ -140,6 +142,7 @@ Generated result files:
 - `results/risk_validation_matrix.csv`
 - `results/custom_weights_example_rankings.csv`
 - `results/local_artifact_reference_check.csv`
+- `results/markdown_table_check.csv`
 - `results/github_metadata_check.csv`
 - `results/csv_schema_check.csv`
 - `results/artifact_manifest.csv`

@@ -48,6 +48,7 @@ FILE_DESCRIPTIONS = {
     "license_audit.csv": "Permissive-license audit.",
     "source_check.csv": "Live external source URL check.",
     "local_artifact_reference_check.csv": "Local Markdown artifact reference check.",
+    "markdown_table_check.csv": "Markdown table column consistency check.",
     "github_metadata_check.csv": "Live GitHub repository metadata check.",
     "csv_schema_check.csv": "Generated CSV schema validation output.",
 }
