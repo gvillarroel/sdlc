@@ -1,18 +1,18 @@
 alternative_id,alternative,repo,ok,error,dataset_stars,live_stars,star_delta,dataset_last_pushed_at,live_last_pushed_at,dataset_license,live_license,license_matches,archived,latest_release_tag,latest_release_error
-aider,Aider,Aider-AI/aider,True,,47082,47083,1,2026-05-22,2026-05-22,Apache-2.0,Apache-2.0,True,False,v0.86.0,
+aider,Aider,Aider-AI/aider,True,,47082,47084,2,2026-05-22,2026-05-22,Apache-2.0,Apache-2.0,True,False,v0.86.0,
 anchor,Anchor,mjenkinsx9/anchor,True,,0,0,0,2026-06-17,2026-06-17,MIT,MIT,True,False,v0.3.0,
-cline,Cline / Cline SDK,cline/cline,True,,64315,64316,1,2026-07-05,2026-07-05,Apache-2.0,Apache-2.0,True,False,cli-v3.0.37,
-codex_cli,Codex CLI,openai/codex,True,,95651,95654,3,2026-07-05,2026-07-05,Apache-2.0,Apache-2.0,True,False,rust-v0.142.5,
-deep_agents,Deep Agents,langchain-ai/deepagents,True,,25715,25716,1,2026-07-05,2026-07-05,MIT,MIT,True,False,deepagents==0.6.12,
+cline,Cline / Cline SDK,cline/cline,True,,64315,64318,3,2026-07-05,2026-07-05,Apache-2.0,Apache-2.0,True,False,cli-v3.0.37,
+codex_cli,Codex CLI,openai/codex,True,,95651,95656,5,2026-07-05,2026-07-05,Apache-2.0,Apache-2.0,True,False,rust-v0.142.5,
+deep_agents,Deep Agents,langchain-ai/deepagents,True,,25715,25721,6,2026-07-05,2026-07-05,MIT,MIT,True,False,deepagents==0.6.12,
 flue,Flue,withastro/flue,True,,7104,7105,1,2026-07-04,2026-07-04,Apache-2.0,Apache-2.0,True,False,,not_found
-goose,goose,aaif-goose/goose,True,,50679,50679,0,2026-07-05,2026-07-05,Apache-2.0,Apache-2.0,True,False,v1.41.0,
-mini_swe_agent,mini-SWE-agent,SWE-agent/mini-swe-agent,True,,5578,5578,0,2026-07-02,2026-07-02,MIT,MIT,True,False,v2.4.4,
+goose,goose,aaif-goose/goose,True,,50679,50680,1,2026-07-05,2026-07-05,Apache-2.0,Apache-2.0,True,False,v1.41.0,
+mini_swe_agent,mini-SWE-agent,SWE-agent/mini-swe-agent,True,,5578,5579,1,2026-07-02,2026-07-02,MIT,MIT,True,False,v2.4.4,
 omni_agent,Omni Agent,2830500285/omni-agent,True,,1,1,0,2026-05-16,2026-05-16,MIT,MIT,True,False,,not_found
 omniagent,OmniAgent,xianyu-sheng/omniagent,True,,0,0,0,2026-06-29,2026-06-29,MIT,MIT,True,False,v0.1.0,
-omnigent,Omnigent,omnigent-ai/omnigent,True,,6304,6306,2,2026-07-05,2026-07-05,Apache-2.0,Apache-2.0,True,False,v0.4.0,
+omnigent,Omnigent,omnigent-ai/omnigent,True,,6304,6314,10,2026-07-05,2026-07-05,Apache-2.0,Apache-2.0,True,False,v0.4.0,
 open_swe,Open SWE,langchain-ai/open-swe,True,,10107,10107,0,2026-07-05,2026-07-05,MIT,MIT,True,False,,not_found
-opencode,OpenCode,anomalyco/opencode,True,,182587,182605,18,2026-07-05,2026-07-05,MIT,MIT,True,False,v1.17.13,
+opencode,OpenCode,anomalyco/opencode,True,,182587,182610,23,2026-07-05,2026-07-05,MIT,MIT,True,False,v1.17.13,
 openhands_agent_canvas,OpenHands Agent Canvas,OpenHands/agent-canvas,True,,141,141,0,2026-07-05,2026-07-05,MIT,MIT,True,False,v1.1.0,
 openhands_sdk,OpenHands Software Agent SDK,OpenHands/software-agent-sdk,True,,865,865,0,2026-07-05,2026-07-05,MIT,MIT,True,False,v1.31.1,
-sandcastle,Sandcastle,mattpocock/sandcastle,True,,6638,6639,1,2026-06-29,2026-06-29,MIT,MIT,True,False,v0.12.0,
+sandcastle,Sandcastle,mattpocock/sandcastle,True,,6638,6641,3,2026-06-29,2026-06-29,MIT,MIT,True,False,v0.12.0,
 swe_agent,SWE-agent,SWE-agent/SWE-agent,True,,19705,19705,0,2026-07-01,2026-07-01,MIT,MIT,True,False,v1.1.0,
