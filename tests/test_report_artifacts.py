@@ -36,6 +36,17 @@ class ReportArtifactsTest(unittest.TestCase):
             self.assertTrue(path.exists(), f"missing generated result file: {path}")
             self.assertGreater(path.stat().st_size, 0)
 
+    def test_pilot_templates_exist(self):
+        expected_files = [
+            "pilot_run_log.csv",
+            "reviewer_scorecard.md",
+            "security_gate_checklist.md"
+        ]
+        for filename in expected_files:
+            path = ROOT / "templates" / filename
+            self.assertTrue(path.exists(), f"missing template file: {path}")
+            self.assertGreater(path.stat().st_size, 0)
+
 
 if __name__ == "__main__":
     unittest.main()

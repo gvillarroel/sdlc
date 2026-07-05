@@ -12,6 +12,7 @@ Included artifacts:
 - `scripts/license_audit.py` - permissive-license audit for included and excluded alternatives.
 - `tests/test_simulation_model.py` - validation tests for the scoring model and dataset.
 - `results/` - generated CSV and JSON simulation outputs, including category scorecards and a scenario shortlist.
+- `templates/` - pilot run log, reviewer scorecard, and security gate checklist templates.
 - `reports/ai_orchestrator_frameworks_report.md` - final English report.
 
 Run the checks and simulations:
