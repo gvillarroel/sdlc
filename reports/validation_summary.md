@@ -10,10 +10,10 @@ This page summarizes the current quality checks for the report repository. It is
 
 | Check | Command | Latest result |
 |---|---|---|
-| Unit tests | `python -m unittest discover -s tests` | 80 tests passed. |
+| Unit tests | `python -m unittest discover -s tests` | 83 tests passed. |
 | Full local workflow | `python scripts/run_all_checks.py` | Passed. |
 | Offline artifact validation | `python scripts/validate_artifacts.py` | Passed. |
-| Generated CSV schemas | `python scripts/validate_csv_schemas.py` | 24 CSV schemas checked, 0 failures. |
+| Generated CSV schemas | `python scripts/validate_csv_schemas.py` | 25 CSV schemas checked, 0 failures. |
 | Local artifact references | `python scripts/check_local_artifact_references.py` | 308 local references checked, 0 missing. |
 | External source URLs | `python scripts/check_sources.py --timeout 20` | 41 URLs checked, 41 OK. |
 | GitHub metadata | `python scripts/refresh_github_metadata.py --timeout 20` | 17 repos checked, 0 failures, 0 license mismatches. |

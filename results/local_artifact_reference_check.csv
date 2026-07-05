@@ -27,6 +27,7 @@ README.md,reports/implementation_blueprints.md,reports/implementation_blueprints
 README.md,reports/methodology_appendix.md,reports/methodology_appendix.md,True
 README.md,reports/pilot_protocol.md,reports/pilot_protocol.md,True
 README.md,reports/requirements_traceability.md,reports/requirements_traceability.md,True
+README.md,reports/results_data_dictionary.md,reports/results_data_dictionary.md,True
 README.md,reports/security_evaluation_fixtures.md,reports/security_evaluation_fixtures.md,True
 README.md,reports/simulation_assumptions.md,reports/simulation_assumptions.md,True
 README.md,reports/validation_summary.md,reports/validation_summary.md,True
@@ -58,6 +59,7 @@ README.md,results/uncertainty_stress_details.csv,results/uncertainty_stress_deta
 README.md,results/uncertainty_stress_summary.csv,results/uncertainty_stress_summary.csv,True
 README.md,scripts/analyze_evidence_gaps.py,scripts/analyze_evidence_gaps.py,True
 README.md,scripts/build_report_bundle.py,scripts/build_report_bundle.py,True
+README.md,scripts/build_results_data_dictionary.py,scripts/build_results_data_dictionary.py,True
 README.md,scripts/check_local_artifact_references.py,scripts/check_local_artifact_references.py,True
 README.md,scripts/check_sources.py,scripts/check_sources.py,True
 README.md,scripts/estimate_implementation_effort.py,scripts/estimate_implementation_effort.py,True
@@ -102,6 +104,7 @@ reports/ai_orchestrator_frameworks_report.md,reports/implementation_blueprints.m
 reports/ai_orchestrator_frameworks_report.md,reports/methodology_appendix.md,reports/methodology_appendix.md,True
 reports/ai_orchestrator_frameworks_report.md,reports/pilot_protocol.md,reports/pilot_protocol.md,True
 reports/ai_orchestrator_frameworks_report.md,reports/requirements_traceability.md,reports/requirements_traceability.md,True
+reports/ai_orchestrator_frameworks_report.md,reports/results_data_dictionary.md,reports/results_data_dictionary.md,True
 reports/ai_orchestrator_frameworks_report.md,reports/security_evaluation_fixtures.md,reports/security_evaluation_fixtures.md,True
 reports/ai_orchestrator_frameworks_report.md,reports/simulation_assumptions.md,reports/simulation_assumptions.md,True
 reports/ai_orchestrator_frameworks_report.md,reports/validation_summary.md,reports/validation_summary.md,True
@@ -167,6 +170,7 @@ reports/artifact_index.md,reports/implementation_blueprints.md,reports/implement
 reports/artifact_index.md,reports/methodology_appendix.md,reports/methodology_appendix.md,True
 reports/artifact_index.md,reports/pilot_protocol.md,reports/pilot_protocol.md,True
 reports/artifact_index.md,reports/requirements_traceability.md,reports/requirements_traceability.md,True
+reports/artifact_index.md,reports/results_data_dictionary.md,reports/results_data_dictionary.md,True
 reports/artifact_index.md,reports/security_evaluation_fixtures.md,reports/security_evaluation_fixtures.md,True
 reports/artifact_index.md,reports/simulation_assumptions.md,reports/simulation_assumptions.md,True
 reports/artifact_index.md,reports/validation_summary.md,reports/validation_summary.md,True
@@ -198,6 +202,7 @@ reports/artifact_index.md,results/uncertainty_stress_details.csv,results/uncerta
 reports/artifact_index.md,results/uncertainty_stress_summary.csv,results/uncertainty_stress_summary.csv,True
 reports/artifact_index.md,scripts/analyze_evidence_gaps.py,scripts/analyze_evidence_gaps.py,True
 reports/artifact_index.md,scripts/build_report_bundle.py,scripts/build_report_bundle.py,True
+reports/artifact_index.md,scripts/build_results_data_dictionary.py,scripts/build_results_data_dictionary.py,True
 reports/artifact_index.md,scripts/check_local_artifact_references.py,scripts/check_local_artifact_references.py,True
 reports/artifact_index.md,scripts/check_sources.py,scripts/check_sources.py,True
 reports/artifact_index.md,scripts/estimate_implementation_effort.py,scripts/estimate_implementation_effort.py,True
@@ -267,6 +272,7 @@ reports/final_report_bundle.md,reports/implementation_blueprints.md,reports/impl
 reports/final_report_bundle.md,reports/methodology_appendix.md,reports/methodology_appendix.md,True
 reports/final_report_bundle.md,reports/pilot_protocol.md,reports/pilot_protocol.md,True
 reports/final_report_bundle.md,reports/requirements_traceability.md,reports/requirements_traceability.md,True
+reports/final_report_bundle.md,reports/results_data_dictionary.md,reports/results_data_dictionary.md,True
 reports/final_report_bundle.md,reports/security_evaluation_fixtures.md,reports/security_evaluation_fixtures.md,True
 reports/final_report_bundle.md,reports/simulation_assumptions.md,reports/simulation_assumptions.md,True
 reports/final_report_bundle.md,reports/validation_summary.md,reports/validation_summary.md,True
@@ -298,6 +304,7 @@ reports/final_report_bundle.md,results/uncertainty_stress_details.csv,results/un
 reports/final_report_bundle.md,results/uncertainty_stress_summary.csv,results/uncertainty_stress_summary.csv,True
 reports/final_report_bundle.md,scripts/analyze_evidence_gaps.py,scripts/analyze_evidence_gaps.py,True
 reports/final_report_bundle.md,scripts/build_report_bundle.py,scripts/build_report_bundle.py,True
+reports/final_report_bundle.md,scripts/build_results_data_dictionary.py,scripts/build_results_data_dictionary.py,True
 reports/final_report_bundle.md,scripts/check_local_artifact_references.py,scripts/check_local_artifact_references.py,True
 reports/final_report_bundle.md,scripts/check_sources.py,scripts/check_sources.py,True
 reports/final_report_bundle.md,scripts/estimate_implementation_effort.py,scripts/estimate_implementation_effort.py,True
@@ -401,6 +408,7 @@ reports/requirements_traceability.md,scripts/validate_artifacts.py,scripts/valid
 reports/requirements_traceability.md,templates/pilot_run_log.csv,templates/pilot_run_log.csv,True
 reports/requirements_traceability.md,templates/reviewer_scorecard.md,templates/reviewer_scorecard.md,True
 reports/requirements_traceability.md,templates/security_gate_checklist.md,templates/security_gate_checklist.md,True
+reports/results_data_dictionary.md,scripts/validate_csv_schemas.py,scripts/validate_csv_schemas.py,True
 reports/security_evaluation_fixtures.md,data/security_evaluation_fixtures.json,data/security_evaluation_fixtures.json,True
 reports/security_evaluation_fixtures.md,templates/security_gate_checklist.md,templates/security_gate_checklist.md,True
 reports/simulation_assumptions.md,data/pilot_tasks.json,data/pilot_tasks.json,True

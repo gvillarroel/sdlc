@@ -15,6 +15,7 @@ class RunAllChecksTest(unittest.TestCase):
             "rank_with_custom_weights.py",
             "license_audit.py",
             "generate_charts.py",
+            "build_results_data_dictionary.py",
             "build_report_bundle.py",
             "check_local_artifact_references.py",
             "validate_csv_schemas.py",

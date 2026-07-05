@@ -22,6 +22,7 @@ SOURCE_REPORTS = [
     "security_evaluation_fixtures.md",
     "pilot_protocol.md",
     "validation_summary.md",
+    "results_data_dictionary.md",
     "requirements_traceability.md",
     "artifact_index.md",
 ]

@@ -117,7 +117,15 @@ class ReportArtifactsTest(unittest.TestCase):
         text = summary.read_text(encoding="utf-8")
         self.assertIn("# Validation Summary", text)
         self.assertIn("python scripts/run_all_checks.py", text)
-        self.assertIn("80 tests passed", text)
+        self.assertIn("83 tests passed", text)
+
+    def test_results_data_dictionary_exists(self):
+        dictionary = ROOT / "reports" / "results_data_dictionary.md"
+        self.assertTrue(dictionary.exists())
+        text = dictionary.read_text(encoding="utf-8")
+        self.assertIn("# Results Data Dictionary", text)
+        self.assertIn("monte_carlo_summary.csv", text)
+        self.assertIn("github_metadata_check.csv", text)
 
     def test_artifact_index_exists(self):
         index = ROOT / "reports" / "artifact_index.md"

@@ -16,6 +16,7 @@ This generated bundle concatenates the main report and key appendices for one-fi
 - `reports/security_evaluation_fixtures.md`
 - `reports/pilot_protocol.md`
 - `reports/validation_summary.md`
+- `reports/results_data_dictionary.md`
 - `reports/requirements_traceability.md`
 - `reports/artifact_index.md`
 
@@ -138,6 +139,8 @@ For reusable security pilot fixtures, read `reports/security_evaluation_fixtures
 For a requirement-to-artifact coverage map, read `reports/requirements_traceability.md`; the machine-readable matrix is `data/traceability_matrix.json`.
 
 For the latest validation and QA summary, read `reports/validation_summary.md`.
+
+For CSV output column definitions, read `reports/results_data_dictionary.md`.
 
 For terminology used across scoring and security sections, read `reports/glossary.md`.
 
@@ -1396,10 +1399,10 @@ This page summarizes the current quality checks for the report repository. It is
 
 | Check | Command | Latest result |
 |---|---|---|
-| Unit tests | `python -m unittest discover -s tests` | 80 tests passed. |
+| Unit tests | `python -m unittest discover -s tests` | 83 tests passed. |
 | Full local workflow | `python scripts/run_all_checks.py` | Passed. |
 | Offline artifact validation | `python scripts/validate_artifacts.py` | Passed. |
-| Generated CSV schemas | `python scripts/validate_csv_schemas.py` | 24 CSV schemas checked, 0 failures. |
+| Generated CSV schemas | `python scripts/validate_csv_schemas.py` | 25 CSV schemas checked, 0 failures. |
 | Local artifact references | `python scripts/check_local_artifact_references.py` | 308 local references checked, 0 missing. |
 | External source URLs | `python scripts/check_sources.py --timeout 20` | 41 URLs checked, 41 OK. |
 | GitHub metadata | `python scripts/refresh_github_metadata.py --timeout 20` | 17 repos checked, 0 failures, 0 license mismatches. |
@@ -1423,6 +1426,390 @@ This page summarizes the current quality checks for the report repository. It is
 - The live source and GitHub checks depend on network availability and should be rerun before final adoption.
 - The committed CI file is under `ci/validate-workflow.example.yml` because pushing workflow files requires a token with GitHub `workflow` scope.
 - Simulation outputs are screening evidence; the pilot protocol is still required before choosing a production foundation.
+
+---
+
+<!-- Source: reports/results_data_dictionary.md -->
+
+# Results Data Dictionary
+
+Date: 2026-07-05
+
+This generated dictionary summarizes the CSV outputs in `results/`. Expected columns come from `scripts/validate_csv_schemas.py`.
+
+## `alternative_scorecards.csv`
+
+Wide scorecard of all 0-5 criterion scores.
+
+| Column |
+|---|
+| `alternative_id` |
+| `alternative` |
+| `license` |
+| `maturity_level` |
+| `source_confidence` |
+| `implementation_ease` |
+| `maturity` |
+| `provider_portability` |
+| `sandbox_isolation` |
+| `persistence_memory` |
+| `multi_agent` |
+| `human_control` |
+| `ci_pr` |
+| `observability` |
+| `security_governance` |
+| `extensibility` |
+| `deployment_flexibility` |
+| `coding_fit` |
+| `research_reproducibility` |
+
+## `category_scores.csv`
+
+Criterion-group scorecards independent of scenario weights.
+
+| Column |
+|---|
+| `category` |
+| `rank` |
+| `alternative_id` |
+| `alternative` |
+| `score` |
+
+## `criteria_definitions.csv`
+
+Human-readable scoring criterion definitions.
+
+| Column |
+|---|
+| `criterion` |
+| `definition` |
+
+## `csv_schema_check.csv`
+
+Generated CSV schema validation output.
+
+| Column |
+|---|
+| `filename` |
+| `ok` |
+| `missing_columns` |
+| `extra_columns` |
+| `actual_column_count` |
+| `required_column_count` |
+
+## `custom_weights_example_rankings.csv`
+
+Example deterministic rankings from custom weights.
+
+| Column |
+|---|
+| `scenario` |
+| `rank` |
+| `alternative_id` |
+| `alternative` |
+| `score` |
+
+## `decision_shortlist.csv`
+
+Scenario shortlist combining deterministic and Monte Carlo evidence.
+
+| Column |
+|---|
+| `scenario` |
+| `deterministic_rank` |
+| `alternative_id` |
+| `alternative` |
+| `deterministic_score` |
+| `monte_carlo_mean_score` |
+| `monte_carlo_mean_rank` |
+| `win_rate` |
+| `top3_rate` |
+
+## `deterministic_rankings.csv`
+
+Base weighted rankings by scenario.
+
+| Column |
+|---|
+| `scenario` |
+| `rank` |
+| `alternative_id` |
+| `alternative` |
+| `score` |
+
+## `evidence_gap_analysis.csv`
+
+Evidence risk signals and mitigation notes.
+
+| Column |
+|---|
+| `alternative_id` |
+| `alternative` |
+| `evidence_risk_score` |
+| `evidence_risk_band` |
+| `gaps` |
+| `mitigation` |
+| `adoption_implication` |
+
+## `evidence_matrix.csv`
+
+Source, metadata, notes, and evidence URLs by alternative.
+
+| Column |
+|---|
+| `alternative_id` |
+| `alternative` |
+| `repo` |
+| `url` |
+| `license` |
+| `primary_language` |
+| `maturity_level` |
+| `source_confidence` |
+| `stars` |
+| `created_at` |
+| `last_pushed_at` |
+| `latest_release` |
+| `summary` |
+| `implementation_notes` |
+| `risk_notes` |
+| `evidence_urls` |
+
+## `github_metadata_check.csv`
+
+Live GitHub repository metadata check.
+
+| Column |
+|---|
+| `alternative_id` |
+| `alternative` |
+| `repo` |
+| `ok` |
+| `dataset_license` |
+| `live_license` |
+| `license_matches` |
+| `archived` |
+
+## `implementation_effort_estimates.csv`
+
+Prototype and hardening effort estimates.
+
+| Column |
+|---|
+| `alternative_id` |
+| `alternative` |
+| `prototype_complexity_score` |
+| `prototype_effort` |
+| `hardening_complexity_score` |
+| `hardening_effort` |
+| `first_slice` |
+| `adoption_note` |
+
+## `license_audit.csv`
+
+Permissive-license audit.
+
+| Column |
+|---|
+| `alternative` |
+| `status` |
+| `is_permissive` |
+| `license` |
+| `repo` |
+| `url` |
+| `reason` |
+
+## `local_artifact_reference_check.csv`
+
+Local Markdown artifact reference check.
+
+| Column |
+|---|
+| `source_file` |
+| `reference` |
+| `resolved_path` |
+| `exists` |
+
+## `monte_carlo_summary.csv`
+
+Monte Carlo score and rank stability by scenario.
+
+| Column |
+|---|
+| `scenario` |
+| `alternative_id` |
+| `alternative` |
+| `mean_score` |
+| `p10_score` |
+| `p90_score` |
+| `mean_rank` |
+| `win_rate` |
+| `top3_rate` |
+| `trials` |
+
+## `pareto_frontier.csv`
+
+Raw-criteria Pareto dominance analysis.
+
+| Column |
+|---|
+| `alternative_id` |
+| `alternative` |
+| `is_pareto_frontier` |
+| `dominated_by_count` |
+| `dominated_by` |
+
+## `pilot_decision_scores.example.csv`
+
+Example post-pilot decision score output.
+
+| Column |
+|---|
+| `rank` |
+| `candidate` |
+| `eligible` |
+| `final_score` |
+| `gate_failures` |
+| `task_success_rate` |
+| `review_acceptance_rate` |
+| `safety_score` |
+| `artifact_completeness` |
+| `cost_latency_score` |
+| `setup_maintenance_score` |
+| `notes` |
+
+## `rank_stability.csv`
+
+Cross-scenario deterministic and Monte Carlo rank stability.
+
+| Column |
+|---|
+| `alternative_id` |
+| `alternative` |
+| `mean_deterministic_rank` |
+| `best_deterministic_rank` |
+| `worst_deterministic_rank` |
+| `top3_scenarios` |
+| `top3_scenario_rate` |
+| `mean_monte_carlo_rank` |
+| `mean_top3_rate` |
+
+## `regret_analysis.csv`
+
+Score gaps versus scenario winners.
+
+| Column |
+|---|
+| `scenario` |
+| `alternative_id` |
+| `alternative` |
+| `deterministic_rank` |
+| `deterministic_score` |
+| `regret_vs_best` |
+| `monte_carlo_mean_rank` |
+| `win_rate` |
+| `top3_rate` |
+
+## `scenario_weights.csv`
+
+Raw and normalized weights by scenario and criterion.
+
+| Column |
+|---|
+| `scenario` |
+| `criterion` |
+| `raw_weight` |
+| `normalized_weight` |
+
+## `sensitivity_summary.csv`
+
+Criterion weight sensitivity results.
+
+| Column |
+|---|
+| `scenario` |
+| `criterion` |
+| `base_top` |
+| `half_weight_top` |
+| `double_weight_top` |
+| `half_weight_top3_overlap` |
+| `double_weight_top3_overlap` |
+
+## `source_check.csv`
+
+Live external source URL check.
+
+| Column |
+|---|
+| `url` |
+| `ok` |
+| `status` |
+| `elapsed_ms` |
+| `final_url` |
+| `error` |
+
+## `stress_test_rankings.csv`
+
+Full deterministic rankings under stress cases.
+
+| Column |
+|---|
+| `stress_case` |
+| `scenario` |
+| `rank` |
+| `alternative_id` |
+| `alternative` |
+| `score` |
+
+## `stress_test_summary.csv`
+
+Deterministic stress-test summary.
+
+| Column |
+|---|
+| `stress_case` |
+| `scenario` |
+| `rank1` |
+| `rank2` |
+| `rank3` |
+| `baseline_rank1` |
+| `rank1_changed` |
+| `top3_overlap` |
+| `rank1_margin` |
+
+## `uncertainty_stress_details.csv`
+
+Full Monte Carlo rows under alternate uncertainty cases.
+
+| Column |
+|---|
+| `uncertainty_case` |
+| `scenario` |
+| `alternative_id` |
+| `alternative` |
+| `mean_score` |
+| `mean_rank` |
+| `win_rate` |
+| `top3_rate` |
+| `trials` |
+
+## `uncertainty_stress_summary.csv`
+
+Monte Carlo summary under alternate uncertainty cases.
+
+| Column |
+|---|
+| `uncertainty_case` |
+| `scenario` |
+| `weight_sigma` |
+| `score_sigma_multiplier` |
+| `rank1` |
+| `rank2` |
+| `baseline_rank1` |
+| `rank1_changed` |
+| `win_rate` |
+| `top3_rate` |
+| `win_rate_margin` |
+| `trials` |
 
 ---
 
@@ -1486,6 +1873,7 @@ Use this index to choose the right file quickly.
 | One-file report bundle | `reports/final_report_bundle.md` |
 | Requirement coverage | `reports/requirements_traceability.md` |
 | Validation and QA summary | `reports/validation_summary.md` |
+| Results data dictionary | `reports/results_data_dictionary.md` |
 | Glossary | `reports/glossary.md` |
 | Scoring formula and assumptions | `reports/methodology_appendix.md` |
 | Simulation assumptions and stress tests | `reports/simulation_assumptions.md` |
@@ -1569,6 +1957,7 @@ Use this index to choose the right file quickly.
 | Validate generated CSV schemas | `scripts/validate_csv_schemas.py` |
 | Validate generated artifacts offline | `scripts/validate_artifacts.py` |
 | Generate report SVG charts | `scripts/generate_charts.py` |
+| Build results data dictionary | `scripts/build_results_data_dictionary.py` |
 | Build one-file report bundle | `scripts/build_report_bundle.py` |
 | Score pilot results | `scripts/score_pilot_results.py` |
 | Run all local checks | `scripts/run_all_checks.py` |
@@ -1593,6 +1982,7 @@ python scripts/rank_with_custom_weights.py
 python scripts/license_audit.py
 python scripts/check_local_artifact_references.py
 python scripts/validate_csv_schemas.py
+python scripts/build_results_data_dictionary.py
 python scripts/build_report_bundle.py
 python scripts/validate_artifacts.py
 ```

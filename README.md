@@ -26,6 +26,7 @@ Included artifacts:
 - `scripts/license_audit.py` - permissive-license audit for included and excluded alternatives.
 - `scripts/validate_artifacts.py` - offline consistency validation for generated artifacts and report references.
 - `scripts/generate_charts.py` - SVG chart generator for report visualizations.
+- `scripts/build_results_data_dictionary.py` - generated CSV results data dictionary builder.
 - `scripts/build_report_bundle.py` - generated one-file final report bundle builder.
 - `scripts/score_pilot_results.py` - post-pilot candidate scoring calculator.
 - `scripts/run_all_checks.py` - one-command local regeneration and validation workflow.
@@ -46,6 +47,7 @@ Included artifacts:
 - `reports/security_evaluation_fixtures.md` - reusable security fixture catalog for pilot gates.
 - `reports/requirements_traceability.md` - coverage map from the original request to artifacts and validation commands.
 - `reports/validation_summary.md` - latest validation and QA summary for generated artifacts and tests.
+- `reports/results_data_dictionary.md` - generated data dictionary for CSV outputs.
 - `reports/methodology_appendix.md` - scoring formulas, Monte Carlo assumptions, and customization notes.
 - `reports/simulation_assumptions.md` - assumptions, stress tests, and interpretation of ranking fragility.
 - `reports/artifact_index.md` - navigation guide for all report, data, result, template, and script artifacts.
@@ -73,6 +75,7 @@ python scripts/license_audit.py
 python scripts/check_local_artifact_references.py
 python scripts/validate_csv_schemas.py
 python scripts/generate_charts.py
+python scripts/build_results_data_dictionary.py
 python scripts/build_report_bundle.py
 python scripts/score_pilot_results.py --input examples/pilot_candidate_summary.example.csv --output results/pilot_decision_scores.example.csv
 python scripts/check_sources.py --timeout 20
