@@ -15,6 +15,7 @@ class RunAllChecksTest(unittest.TestCase):
             "rank_with_custom_weights.py",
             "license_audit.py",
             "generate_charts.py",
+            "check_local_artifact_references.py",
             "score_pilot_results.py",
             "validate_artifacts.py"
         ]

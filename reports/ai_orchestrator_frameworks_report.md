@@ -210,6 +210,7 @@ Generated outputs:
 | `results/evidence_gap_analysis.csv` | Evidence risk bands for maturity, source confidence, release, traction, and freshness gaps. |
 | `results/source_check.csv` | Live URL check of report and dataset sources. The latest run checked 41 URLs with 41 OK responses. |
 | `results/license_audit.csv` | Explicit permissive-license audit for included and excluded entries. |
+| `results/local_artifact_reference_check.csv` | Offline check that local artifact references in README and reports resolve to existing files. |
 | `results/regret_analysis.csv` | Score gap between each candidate and the scenario winner. |
 | `results/pareto_frontier.csv` | Candidates that are not strictly dominated across all criteria. |
 | `results/rank_stability.csv` | Cross-scenario rank stability, best/worst rank, and average Monte Carlo top-3 rate. |
@@ -486,6 +487,14 @@ python scripts/validate_artifacts.py
 ```
 
 It checks that generated result files exist, result row counts match the dataset/scenario shape, the license audit still has 17 included and 2 excluded entries, the latest source check has all URLs marked OK, and the report references the major generated artifacts.
+
+The local reference checker is:
+
+```powershell
+python scripts/check_local_artifact_references.py
+```
+
+It writes `results/local_artifact_reference_check.csv` and fails if README or report files mention a missing local artifact.
 
 The full local regeneration and validation path is:
 

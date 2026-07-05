@@ -19,6 +19,7 @@ Included artifacts:
 - `scripts/estimate_implementation_effort.py` - reproducible prototype and hardening effort estimates from the scoring dataset.
 - `scripts/analyze_evidence_gaps.py` - evidence-gap review for maturity, confidence, release, traction, and freshness risks.
 - `scripts/rank_with_custom_weights.py` - deterministic ranking for user-provided scenario weights.
+- `scripts/check_local_artifact_references.py` - offline check for local artifact references in README and reports.
 - `scripts/check_sources.py` - optional live source URL checker for the report and dataset.
 - `scripts/license_audit.py` - permissive-license audit for included and excluded alternatives.
 - `scripts/validate_artifacts.py` - offline consistency validation for generated artifacts and report references.
@@ -59,6 +60,7 @@ python scripts/estimate_implementation_effort.py
 python scripts/analyze_evidence_gaps.py
 python scripts/rank_with_custom_weights.py
 python scripts/license_audit.py
+python scripts/check_local_artifact_references.py
 python scripts/generate_charts.py
 python scripts/score_pilot_results.py --input examples/pilot_candidate_summary.example.csv --output results/pilot_decision_scores.example.csv
 python scripts/check_sources.py --timeout 20
@@ -81,6 +83,7 @@ Generated result files:
 - `results/implementation_effort_estimates.csv`
 - `results/evidence_gap_analysis.csv`
 - `results/custom_weights_example_rankings.csv`
+- `results/local_artifact_reference_check.csv`
 - `results/source_check.csv`
 - `results/license_audit.csv`
 - `results/regret_analysis.csv`

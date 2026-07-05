@@ -61,6 +61,7 @@ Use this index to choose the right file quickly.
 | Evidence-gap risk analysis | `results/evidence_gap_analysis.csv` |
 | License audit | `results/license_audit.csv` |
 | URL health check | `results/source_check.csv` |
+| Local artifact reference check | `results/local_artifact_reference_check.csv` |
 | Complete machine-readable output | `results/all_results.json` |
 
 ## Pilot Execution
@@ -84,6 +85,7 @@ Use this index to choose the right file quickly.
 | Rank with custom weights | `scripts/rank_with_custom_weights.py` |
 | Regenerate license audit | `scripts/license_audit.py` |
 | Check external source URLs | `scripts/check_sources.py` |
+| Check local artifact references | `scripts/check_local_artifact_references.py` |
 | Validate generated artifacts offline | `scripts/validate_artifacts.py` |
 | Generate report SVG charts | `scripts/generate_charts.py` |
 | Score pilot results | `scripts/score_pilot_results.py` |
@@ -107,6 +109,7 @@ python scripts/estimate_implementation_effort.py
 python scripts/analyze_evidence_gaps.py
 python scripts/rank_with_custom_weights.py
 python scripts/license_audit.py
+python scripts/check_local_artifact_references.py
 python scripts/validate_artifacts.py
 ```
 

@@ -41,6 +41,7 @@ REQUIRED_RESULT_FILES = [
     "pilot_decision_scores.example.csv",
     "license_audit.csv",
     "source_check.csv",
+    "local_artifact_reference_check.csv",
     "all_results.json"
 ]
 
@@ -92,6 +93,10 @@ def validate_license_and_sources() -> None:
     source_rows = read_csv(RESULTS / "source_check.csv")
     assert_true(source_rows, "source check is empty")
     assert_true(all(row["ok"] == "True" for row in source_rows), "one or more source URLs failed latest check")
+
+    reference_rows = read_csv(RESULTS / "local_artifact_reference_check.csv")
+    assert_true(reference_rows, "local artifact reference check is empty")
+    assert_true(all(row["exists"] == "True" for row in reference_rows), "one or more local artifact references are missing")
 
 
 def validate_report_references() -> None:

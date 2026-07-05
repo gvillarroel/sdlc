@@ -112,6 +112,7 @@ class ReportArtifactsTest(unittest.TestCase):
             "implementation_effort_estimates.csv",
             "evidence_gap_analysis.csv",
             "custom_weights_example_rankings.csv",
+            "local_artifact_reference_check.csv",
             "stress_test_summary.csv",
             "uncertainty_stress_summary.csv",
             "all_results.json"

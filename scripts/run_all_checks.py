@@ -21,6 +21,7 @@ COMMANDS = [
     [PYTHON, "scripts/rank_with_custom_weights.py"],
     [PYTHON, "scripts/license_audit.py"],
     [PYTHON, "scripts/generate_charts.py"],
+    [PYTHON, "scripts/check_local_artifact_references.py"],
     [
         PYTHON,
         "scripts/score_pilot_results.py",
