@@ -1405,7 +1405,7 @@ This page summarizes the current quality checks for the report repository. It is
 
 | Check | Command | Latest result |
 |---|---|---|
-| Unit tests | `python -m unittest discover -s tests` | 84 tests passed. |
+| Unit tests | `python -m unittest discover -s tests` | 85 tests passed. |
 | Full local workflow | `python scripts/run_all_checks.py` | Passed. |
 | Offline artifact validation | `python scripts/validate_artifacts.py` | Passed. |
 | Generated CSV schemas | `python scripts/validate_csv_schemas.py` | 25 CSV schemas checked, 0 failures. |
@@ -2085,6 +2085,7 @@ Use this index to choose the right file quickly.
 | Build one-file report bundle | `scripts/build_report_bundle.py` |
 | Score pilot results | `scripts/score_pilot_results.py` |
 | Run all local checks | `scripts/run_all_checks.py` |
+| Run all local checks from PowerShell | `scripts/run_all_checks.ps1` |
 
 ## Maintenance
 

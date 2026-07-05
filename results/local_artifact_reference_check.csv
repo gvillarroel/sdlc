@@ -68,6 +68,7 @@ README.md,scripts/generate_charts.py,scripts/generate_charts.py,True
 README.md,scripts/license_audit.py,scripts/license_audit.py,True
 README.md,scripts/rank_with_custom_weights.py,scripts/rank_with_custom_weights.py,True
 README.md,scripts/refresh_github_metadata.py,scripts/refresh_github_metadata.py,True
+README.md,scripts/run_all_checks.ps1,scripts/run_all_checks.ps1,True
 README.md,scripts/run_all_checks.py,scripts/run_all_checks.py,True
 README.md,scripts/score_pilot_results.py,scripts/score_pilot_results.py,True
 README.md,scripts/simulate_alternatives.py,scripts/simulate_alternatives.py,True
@@ -213,6 +214,7 @@ reports/artifact_index.md,scripts/generate_charts.py,scripts/generate_charts.py,
 reports/artifact_index.md,scripts/license_audit.py,scripts/license_audit.py,True
 reports/artifact_index.md,scripts/rank_with_custom_weights.py,scripts/rank_with_custom_weights.py,True
 reports/artifact_index.md,scripts/refresh_github_metadata.py,scripts/refresh_github_metadata.py,True
+reports/artifact_index.md,scripts/run_all_checks.ps1,scripts/run_all_checks.ps1,True
 reports/artifact_index.md,scripts/run_all_checks.py,scripts/run_all_checks.py,True
 reports/artifact_index.md,scripts/score_pilot_results.py,scripts/score_pilot_results.py,True
 reports/artifact_index.md,scripts/simulate_alternatives.py,scripts/simulate_alternatives.py,True
@@ -317,6 +319,7 @@ reports/final_report_bundle.md,scripts/generate_charts.py,scripts/generate_chart
 reports/final_report_bundle.md,scripts/license_audit.py,scripts/license_audit.py,True
 reports/final_report_bundle.md,scripts/rank_with_custom_weights.py,scripts/rank_with_custom_weights.py,True
 reports/final_report_bundle.md,scripts/refresh_github_metadata.py,scripts/refresh_github_metadata.py,True
+reports/final_report_bundle.md,scripts/run_all_checks.ps1,scripts/run_all_checks.ps1,True
 reports/final_report_bundle.md,scripts/run_all_checks.py,scripts/run_all_checks.py,True
 reports/final_report_bundle.md,scripts/score_pilot_results.py,scripts/score_pilot_results.py,True
 reports/final_report_bundle.md,scripts/simulate_alternatives.py,scripts/simulate_alternatives.py,True

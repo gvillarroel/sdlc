@@ -106,6 +106,7 @@ Use this index to choose the right file quickly.
 | Build one-file report bundle | `scripts/build_report_bundle.py` |
 | Score pilot results | `scripts/score_pilot_results.py` |
 | Run all local checks | `scripts/run_all_checks.py` |
+| Run all local checks from PowerShell | `scripts/run_all_checks.ps1` |
 
 ## Maintenance
 

@@ -30,6 +30,7 @@ Included artifacts:
 - `scripts/build_report_bundle.py` - generated one-file final report bundle builder.
 - `scripts/score_pilot_results.py` - post-pilot candidate scoring calculator.
 - `scripts/run_all_checks.py` - one-command local regeneration and validation workflow.
+- `scripts/run_all_checks.ps1` - PowerShell wrapper for the full local workflow.
 - `tests/test_simulation_model.py` - validation tests for the scoring model and dataset.
 - `results/` - generated CSV and JSON simulation outputs, including category scorecards and a scenario shortlist.
 - `templates/` - pilot run log, reviewer scorecard, security gate checklist, and scenario workshop templates.
@@ -61,6 +62,12 @@ Run the checks and simulations:
 
 ```powershell
 python scripts/run_all_checks.py
+```
+
+PowerShell wrapper:
+
+```powershell
+.\scripts\run_all_checks.ps1
 ```
 
 Or run individual steps:

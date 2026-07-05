@@ -117,7 +117,7 @@ class ReportArtifactsTest(unittest.TestCase):
         text = summary.read_text(encoding="utf-8")
         self.assertIn("# Validation Summary", text)
         self.assertIn("python scripts/run_all_checks.py", text)
-        self.assertIn("84 tests passed", text)
+        self.assertIn("85 tests passed", text)
 
     def test_results_data_dictionary_exists(self):
         dictionary = ROOT / "reports" / "results_data_dictionary.md"
@@ -223,6 +223,13 @@ class ReportArtifactsTest(unittest.TestCase):
             text = path.read_text(encoding="utf-8")
             self.assertIn("<svg", text)
             self.assertIn("</svg>", text)
+
+    def test_powershell_runner_exists(self):
+        runner = ROOT / "scripts" / "run_all_checks.ps1"
+        self.assertTrue(runner.exists())
+        text = runner.read_text(encoding="utf-8")
+        self.assertIn("run_all_checks.py", text)
+        self.assertIn("$ErrorActionPreference", text)
 
 
 if __name__ == "__main__":
