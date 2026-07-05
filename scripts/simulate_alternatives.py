@@ -482,6 +482,112 @@ def alternative_scorecard_rows(alternatives: list[Alternative]) -> list[dict[str
     return rows
 
 
+def regret_analysis_rows(
+    deterministic: dict[str, list[dict[str, Any]]],
+    monte_carlo: dict[str, list[dict[str, Any]]]
+) -> list[dict[str, Any]]:
+    rows = []
+    for scenario, scenario_rows in deterministic.items():
+        best_score = scenario_rows[0]["score"]
+        mc_by_id = {
+            row["alternative_id"]: row
+            for row in monte_carlo[scenario]
+        }
+        for row in scenario_rows:
+            mc_row = mc_by_id[row["alternative_id"]]
+            rows.append({
+                "scenario": scenario,
+                "alternative_id": row["alternative_id"],
+                "alternative": row["alternative"],
+                "deterministic_rank": row["rank"],
+                "deterministic_score": row["score"],
+                "regret_vs_best": best_score - row["score"],
+                "monte_carlo_mean_rank": mc_row["mean_rank"],
+                "win_rate": mc_row["win_rate"],
+                "top3_rate": mc_row["top3_rate"]
+            })
+    rows.sort(key=lambda row: (row["scenario"], row["regret_vs_best"], row["deterministic_rank"]))
+    return rows
+
+
+def dominates(candidate: Alternative, other: Alternative, criteria: list[str]) -> bool:
+    at_least_as_good = all(candidate.scores[criterion] >= other.scores[criterion] for criterion in criteria)
+    strictly_better = any(candidate.scores[criterion] > other.scores[criterion] for criterion in criteria)
+    return at_least_as_good and strictly_better
+
+
+def pareto_frontier_rows(alternatives: list[Alternative]) -> list[dict[str, Any]]:
+    rows = []
+    for alt in alternatives:
+        dominated_by = [
+            other.name
+            for other in alternatives
+            if other.id != alt.id and dominates(other, alt, CRITERIA)
+        ]
+        rows.append({
+            "alternative_id": alt.id,
+            "alternative": alt.name,
+            "is_pareto_frontier": not dominated_by,
+            "dominated_by_count": len(dominated_by),
+            "dominated_by": "; ".join(dominated_by)
+        })
+    rows.sort(key=lambda row: (not row["is_pareto_frontier"], row["dominated_by_count"], row["alternative"]))
+    return rows
+
+
+def rank_stability_rows(
+    deterministic: dict[str, list[dict[str, Any]]],
+    monte_carlo: dict[str, list[dict[str, Any]]]
+) -> list[dict[str, Any]]:
+    scenario_count = len(deterministic)
+    by_alt: dict[str, dict[str, Any]] = {}
+    for scenario, rows in deterministic.items():
+        mc_by_id = {
+            row["alternative_id"]: row
+            for row in monte_carlo[scenario]
+        }
+        for row in rows:
+            entry = by_alt.setdefault(
+                row["alternative_id"],
+                {
+                    "alternative_id": row["alternative_id"],
+                    "alternative": row["alternative"],
+                    "deterministic_ranks": [],
+                    "top3_scenarios": 0,
+                    "mean_rank_values": [],
+                    "top3_rates": []
+                }
+            )
+            entry["deterministic_ranks"].append(row["rank"])
+            if row["rank"] <= 3:
+                entry["top3_scenarios"] += 1
+            entry["mean_rank_values"].append(mc_by_id[row["alternative_id"]]["mean_rank"])
+            entry["top3_rates"].append(mc_by_id[row["alternative_id"]]["top3_rate"])
+    rows = []
+    for entry in by_alt.values():
+        ranks = entry["deterministic_ranks"]
+        rows.append({
+            "alternative_id": entry["alternative_id"],
+            "alternative": entry["alternative"],
+            "mean_deterministic_rank": statistics.fmean(ranks),
+            "best_deterministic_rank": min(ranks),
+            "worst_deterministic_rank": max(ranks),
+            "top3_scenarios": entry["top3_scenarios"],
+            "top3_scenario_rate": entry["top3_scenarios"] / scenario_count,
+            "mean_monte_carlo_rank": statistics.fmean(entry["mean_rank_values"]),
+            "mean_top3_rate": statistics.fmean(entry["top3_rates"])
+        })
+    rows.sort(
+        key=lambda row: (
+            -row["top3_scenario_rate"],
+            row["mean_deterministic_rank"],
+            -row["mean_top3_rate"],
+            row["alternative"]
+        )
+    )
+    return rows
+
+
 def write_outputs(
     raw_data: dict[str, Any],
     alternatives: list[Alternative],
@@ -490,6 +596,9 @@ def write_outputs(
     sensitivity: dict[str, list[dict[str, Any]]],
     categories: list[dict[str, Any]],
     shortlist: list[dict[str, Any]],
+    regret: list[dict[str, Any]],
+    pareto: list[dict[str, Any]],
+    rank_stability: list[dict[str, Any]],
     output_dir: Path = DEFAULT_RESULTS
 ) -> None:
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -608,6 +717,47 @@ def write_outputs(
             *CRITERIA
         ]
     )
+    write_csv(
+        output_dir / "regret_analysis.csv",
+        regret,
+        [
+            "scenario",
+            "alternative_id",
+            "alternative",
+            "deterministic_rank",
+            "deterministic_score",
+            "regret_vs_best",
+            "monte_carlo_mean_rank",
+            "win_rate",
+            "top3_rate"
+        ]
+    )
+    write_csv(
+        output_dir / "pareto_frontier.csv",
+        pareto,
+        [
+            "alternative_id",
+            "alternative",
+            "is_pareto_frontier",
+            "dominated_by_count",
+            "dominated_by"
+        ]
+    )
+    write_csv(
+        output_dir / "rank_stability.csv",
+        rank_stability,
+        [
+            "alternative_id",
+            "alternative",
+            "mean_deterministic_rank",
+            "best_deterministic_rank",
+            "worst_deterministic_rank",
+            "top3_scenarios",
+            "top3_scenario_rate",
+            "mean_monte_carlo_rank",
+            "mean_top3_rate"
+        ]
+    )
     with (output_dir / "all_results.json").open("w", encoding="utf-8", newline="\n") as handle:
         json.dump(
             {
@@ -621,7 +771,10 @@ def write_outputs(
                 "scenario_weights": scenario_weights_rows(),
                 "criteria_definitions": criteria_definition_rows(raw_data),
                 "evidence_matrix": evidence_matrix_rows(raw_data),
-                "alternative_scorecards": alternative_scorecard_rows(alternatives)
+                "alternative_scorecards": alternative_scorecard_rows(alternatives),
+                "regret_analysis": regret,
+                "pareto_frontier": pareto,
+                "rank_stability": rank_stability
             },
             handle,
             indent=2
@@ -644,6 +797,9 @@ def main() -> int:
     sensitivity = sensitivity_summary(alternatives)
     categories = category_scores(alternatives)
     shortlist = decision_shortlist(deterministic, monte_carlo)
+    regret = regret_analysis_rows(deterministic, monte_carlo)
+    pareto = pareto_frontier_rows(alternatives)
+    rank_stability = rank_stability_rows(deterministic, monte_carlo)
     write_outputs(
         raw_data,
         alternatives,
@@ -652,6 +808,9 @@ def main() -> int:
         sensitivity,
         categories,
         shortlist,
+        regret,
+        pareto,
+        rank_stability,
         args.output_dir
     )
 

@@ -1,0 +1,18 @@
+alternative_id,alternative,is_pareto_frontier,dominated_by_count,dominated_by
+aider,Aider,True,0,
+cline,Cline / Cline SDK,True,0,
+codex_cli,Codex CLI,True,0,
+deep_agents,Deep Agents,True,0,
+flue,Flue,True,0,
+omnigent,Omnigent,True,0,
+open_swe,Open SWE,True,0,
+opencode,OpenCode,True,0,
+openhands_agent_canvas,OpenHands Agent Canvas,True,0,
+openhands_sdk,OpenHands Software Agent SDK,True,0,
+swe_agent,SWE-agent,True,0,
+sandcastle,Sandcastle,True,0,
+goose,goose,True,0,
+mini_swe_agent,mini-SWE-agent,True,0,
+omni_agent,Omni Agent,False,4,Omnigent; Deep Agents; OpenHands Agent Canvas; OpenHands Software Agent SDK
+anchor,Anchor,False,5,Codex CLI; OpenCode; Cline / Cline SDK; Aider; goose
+omniagent,OmniAgent,False,5,Deep Agents; OpenCode; Cline / Cline SDK; OpenHands Agent Canvas; OpenHands Software Agent SDK

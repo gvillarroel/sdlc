@@ -1,0 +1,18 @@
+alternative_id,alternative,mean_deterministic_rank,best_deterministic_rank,worst_deterministic_rank,top3_scenarios,top3_scenario_rate,mean_monte_carlo_rank,mean_top3_rate
+openhands_sdk,OpenHands Software Agent SDK,2.2,2,3,5,1.0,2.68608,0.75568
+cline,Cline / Cline SDK,2.4,1,6,4,0.8,3.02508,0.69512
+deep_agents,Deep Agents,4.0,3,5,2,0.4,4.46344,0.4004
+codex_cli,Codex CLI,4.6,1,7,1,0.2,5.0647199999999994,0.26715999999999995
+opencode,OpenCode,7.6,3,9,1,0.2,7.165000000000001,0.08412
+swe_agent,SWE-agent,9.4,2,12,1,0.2,9.064,0.15136
+mini_swe_agent,mini-SWE-agent,11.2,1,14,1,0.2,11.4362,0.15936
+open_swe,Open SWE,6.4,4,10,0,0.0,6.60112,0.1668
+openhands_agent_canvas,OpenHands Agent Canvas,7.2,5,12,0,0.0,7.1635599999999995,0.13416
+omnigent,Omnigent,8.6,7,13,0,0.0,9.08996,0.08256
+flue,Flue,9.2,8,11,0,0.0,8.2584,0.03868
+goose,goose,9.2,6,10,0,0.0,8.883280000000001,0.01432
+aider,Aider,10.2,4,13,0,0.0,10.172880000000001,0.0498
+sandcastle,Sandcastle,12.8,12,14,0,0.0,12.19824,0.00035999999999999997
+omni_agent,Omni Agent,15.0,15,15,0,0.0,15.01524,0.00012000000000000002
+omniagent,OmniAgent,16.0,16,16,0,0.0,15.96244,0.0
+anchor,Anchor,17.0,17,17,0,0.0,16.75036,0.0

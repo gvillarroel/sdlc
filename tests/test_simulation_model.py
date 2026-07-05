@@ -10,8 +10,11 @@ from scripts.simulate_alternatives import (
     criteria_definition_rows,
     decision_shortlist,
     deterministic_rankings,
+    pareto_frontier_rows,
     evidence_matrix_rows,
     load_data,
+    rank_stability_rows,
+    regret_analysis_rows,
     run_monte_carlo,
     scenario_weights_rows,
     validate_data,
@@ -118,6 +121,31 @@ class SimulationModelTest(unittest.TestCase):
         for row in scorecard_rows:
             for criterion in CRITERIA:
                 self.assertIn(criterion, row)
+
+    def test_robustness_rows_are_consistent(self):
+        deterministic = deterministic_rankings(self.alternatives)
+        monte_carlo = run_monte_carlo(self.alternatives, trials=50, seed=456)
+        regret_rows = regret_analysis_rows(deterministic, monte_carlo)
+        self.assertEqual(len(regret_rows), len(SCENARIOS) * len(self.alternatives))
+        for scenario in SCENARIOS:
+            scenario_regrets = [
+                row["regret_vs_best"]
+                for row in regret_rows
+                if row["scenario"] == scenario
+            ]
+            self.assertEqual(min(scenario_regrets), 0)
+            for regret in scenario_regrets:
+                self.assertGreaterEqual(regret, 0)
+
+        pareto_rows = pareto_frontier_rows(self.alternatives)
+        self.assertEqual(len(pareto_rows), len(self.alternatives))
+        self.assertTrue(any(row["is_pareto_frontier"] for row in pareto_rows))
+
+        stability_rows = rank_stability_rows(deterministic, monte_carlo)
+        self.assertEqual(len(stability_rows), len(self.alternatives))
+        for row in stability_rows:
+            self.assertGreaterEqual(row["top3_scenario_rate"], 0)
+            self.assertLessEqual(row["top3_scenario_rate"], 1)
 
 
 if __name__ == "__main__":

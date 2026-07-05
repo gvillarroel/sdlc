@@ -179,6 +179,9 @@ Generated outputs:
 | `results/alternative_scorecards.csv` | Wide table of all per-criterion scores by alternative. |
 | `results/source_check.csv` | Live URL check of report and dataset sources. The latest run checked 41 URLs with 41 OK responses. |
 | `results/license_audit.csv` | Explicit permissive-license audit for included and excluded entries. |
+| `results/regret_analysis.csv` | Score gap between each candidate and the scenario winner. |
+| `results/pareto_frontier.csv` | Candidates that are not strictly dominated across all criteria. |
+| `results/rank_stability.csv` | Cross-scenario rank stability, best/worst rank, and average Monte Carlo top-3 rate. |
 | `results/all_results.json` | Complete machine-readable output. |
 
 ## Deterministic Results
@@ -210,6 +213,21 @@ The model is most sensitive in the custom-orchestrator scenario. If sandboxing, 
 The secure-autonomous-PR scenario is also sensitive. Codex CLI wins under the default weights, but OpenHands SDK can overtake it when provider portability, persistence, or security-governance weight is increased. Cline can overtake when human control, extensibility, or deployment flexibility is weighted more heavily.
 
 The research scenario is stable around mini-SWE-agent and SWE-agent; halving implementation-ease weight moves SWE-agent into first place, which is expected because mini-SWE-agent's advantage is simplicity.
+
+## Robustness Findings
+
+The additional robustness outputs change how the ranking should be read:
+
+| Finding | Evidence | Interpretation |
+|---|---|---|
+| OpenHands SDK is the most consistently strong candidate. | It ranks in the deterministic top 3 for all 5 scenarios and has the best average deterministic rank. | It is the safest default for a custom software-agent foundation. |
+| Cline is very strong but more scenario-dependent. | It ranks first in 3 scenarios, but drops to rank 6 in research benchmarking. | Excellent practical product/SDK candidate, less ideal as a research baseline. |
+| Deep Agents is the strongest architecture-oriented foundation. | It ranks top 5 in all scenarios and leads the agent-architecture category. | Best when building a custom orchestration layer matters more than out-of-the-box product UX. |
+| Codex CLI has a clear niche. | It wins secure autonomous PRs but ranks lower in provider-neutral and research contexts. | Use when OpenAI-centered secure CLI/CI execution is acceptable. |
+| Anchor, OmniAgent, and Omni Agent are dominated or near-dominated. | `pareto_frontier.csv` shows Anchor, OmniAgent, and Omni Agent are strictly dominated. | They should remain reference material, not primary adoption candidates. |
+| Most serious candidates are Pareto-frontier options. | 14 of 17 included options are not strictly dominated across all criteria. | This confirms the decision is scenario-specific; many tools are strong in at least one dimension. |
+
+Regret analysis also shows the custom-orchestrator race is effectively a tie: OpenHands SDK is only 0.0007 points behind Cline deterministically and has slightly better Monte Carlo top-3 stability.
 
 ## Candidate Deep Dives
 

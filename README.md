@@ -41,4 +41,7 @@ Generated result files:
 - `results/alternative_scorecards.csv`
 - `results/source_check.csv`
 - `results/license_audit.csv`
+- `results/regret_analysis.csv`
+- `results/pareto_frontier.csv`
+- `results/rank_stability.csv`
 - `results/all_results.json`

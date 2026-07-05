@@ -97,6 +97,18 @@ For each scenario and criterion, the script computes:
 
 This identifies whether a scenario has a robust winner or a fragile top cluster.
 
+## Robustness Outputs
+
+The simulator also emits three robustness views:
+
+| Output | Meaning |
+|---|---|
+| `results/regret_analysis.csv` | For each scenario, the deterministic score gap between every candidate and the scenario winner. A tiny regret means the practical difference is negligible. |
+| `results/pareto_frontier.csv` | Whether a candidate is strictly dominated across all criteria. A dominated candidate is no better on any criterion and worse on at least one criterion versus another candidate. |
+| `results/rank_stability.csv` | Average deterministic rank, best/worst rank, number of top-3 scenarios, mean Monte Carlo rank, and mean top-3 rate. |
+
+The Pareto frontier is computed over the raw criteria, not scenario-weighted scores. This intentionally answers a different question: whether a candidate has any criterion-level advantage before use-case weighting.
+
 ## Category Scorecards
 
 Category scorecards group criteria before scenario weights are applied:
