@@ -53,6 +53,7 @@ Included artifacts:
 - `reports/final_report_bundle.md` - generated one-file bundle of the main report and key appendices.
 - `reports/adoption_decision_record.md` - proposed adoption decision record and no-go conditions.
 - `reports/executive_brief.md` - short decision brief for quick review.
+- `reports/release_notes.md` - reviewer-oriented summary of delivered artifacts and current validation status.
 - `reports/candidate_taxonomy.md` - grouping of candidates by adoption shape and workflow fit.
 - `reports/environment_prerequisites.md` - local environment requirements for reproducing checks.
 - `reports/exclusions.md` - rationale for excluded non-matching items from the shared discussion.

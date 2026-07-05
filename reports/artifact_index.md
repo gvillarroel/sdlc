@@ -9,6 +9,7 @@ Use this index to choose the right file quickly.
 | Need | Artifact |
 |---|---|
 | Quick decision summary | `reports/executive_brief.md` |
+| Delivery summary | `reports/release_notes.md` |
 | Common questions | `reports/faq.md` |
 | Proposed adoption decision record | `reports/adoption_decision_record.md` |
 | Scenario execution playbooks | `reports/scenario_playbooks.md` |

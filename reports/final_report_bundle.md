@@ -7,6 +7,7 @@ This generated bundle concatenates the main report and key appendices for one-fi
 ## Included Files
 
 - `reports/executive_brief.md`
+- `reports/release_notes.md`
 - `reports/ai_orchestrator_frameworks_report.md`
 - `reports/candidate_taxonomy.md`
 - `reports/exclusions.md`
@@ -96,6 +97,50 @@ The evaluation is not a live benchmark of every candidate. It is a multi-criteri
 
 ---
 
+<!-- Source: reports/release_notes.md -->
+
+# Release Notes
+
+Date: 2026-07-05
+
+## Purpose
+
+This page summarizes the current repository state for a reviewer opening the GitHub project after the report refresh.
+
+## Delivered Scope
+
+| Area | Delivered artifacts |
+|---|---|
+| Final English report | `reports/ai_orchestrator_frameworks_report.md`, `reports/final_report_bundle.md`, `reports/executive_brief.md` |
+| Reproducible simulations | `scripts/simulate_alternatives.py`, `scripts/stress_test_simulation.py`, `results/all_results.json` |
+| Decision rationale | `reports/scenario_playbooks.md`, `reports/recommendation_rationale.md`, `reports/adoption_decision_record.md` |
+| Implementation complexity | `reports/implementation_blueprints.md`, `reports/operational_cost_model.md`, `results/implementation_effort_estimates.csv` |
+| Evidence and risk | `reports/evidence_gap_analysis.md`, `reports/github_metadata_check.md`, `reports/risk_validation_matrix.md` |
+| Pilot path | `reports/pilot_protocol.md`, `reports/pilot_sample_size.md`, `templates/pilot_run_log.csv`, `templates/security_gate_checklist.md` |
+| Reproducibility and QA | `reports/validation_summary.md`, `reports/results_data_dictionary.md`, `results/artifact_manifest.csv` |
+
+## Current Validation Snapshot
+
+| Check | Current result |
+|---|---|
+| Unit tests | 131 tests passed |
+| Generated CSV schemas | 35 schemas checked, 0 failures |
+| Local artifact references | 744 references checked, 0 missing |
+| Markdown tables | 221 tables checked, 0 failures |
+| External source URLs | 41 URLs checked, 41 OK |
+| GitHub metadata | 17 repos checked, 0 failures, 0 license mismatches |
+| Artifact manifest | 154 report, data, result, script, test, template, and CI rows |
+
+## Review Entry Points
+
+Start with `reports/executive_brief.md` for the decision summary, then use `reports/recommendation_rationale.md` to see why each scenario shortlist is a pilot candidate, head-to-head candidate, fallback, or watchlist item. Use `reports/validation_summary.md` before relying on a refreshed checkout.
+
+## Refresh Notes
+
+The local workflow is `python scripts/run_all_checks.py`. Live URL and GitHub checks are intentionally separate because they depend on network and API-limit behavior. If GitHub API refreshes return `http_403` or `http_401`, follow the operational notes in `reports/maintenance_guide.md` before replacing `results/github_metadata_check.csv`.
+
+---
+
 <!-- Source: reports/ai_orchestrator_frameworks_report.md -->
 
 # Permissive Open-Source AI Orchestrator Alternatives
@@ -129,6 +174,8 @@ My practical recommendation is:
 ## How To Use This Report
 
 For a short decision-oriented version, read `reports/executive_brief.md`.
+
+For a reviewer-oriented delivery summary, read `reports/release_notes.md`.
 
 For common scope, exclusion, weighting, and pilot questions, read `reports/faq.md`.
 
@@ -2081,12 +2128,12 @@ This page summarizes the current quality checks for the report repository. It is
 
 | Check | Command | Latest result |
 |---|---|---|
-| Unit tests | `python -m unittest discover -s tests` | 130 tests passed. |
+| Unit tests | `python -m unittest discover -s tests` | 131 tests passed. |
 | Full local workflow | `python scripts/run_all_checks.py` | Passed. |
 | Offline artifact validation | `python scripts/validate_artifacts.py` | Passed. |
 | Generated CSV schemas | `python scripts/validate_csv_schemas.py` | 35 CSV schemas checked, 0 failures. |
-| Local artifact references | `python scripts/check_local_artifact_references.py` | 715 local references checked, 0 missing. |
-| Markdown tables | `python scripts/validate_markdown_tables.py` | 217 tables checked, 0 failures. |
+| Local artifact references | `python scripts/check_local_artifact_references.py` | 744 local references checked, 0 missing. |
+| Markdown tables | `python scripts/validate_markdown_tables.py` | 221 tables checked, 0 failures. |
 | External source URLs | `python scripts/check_sources.py --timeout 20` | 41 URLs checked, 41 OK. |
 | GitHub metadata | `python scripts/refresh_github_metadata.py --timeout 20` | 17 repos checked, 0 failures, 0 license mismatches. |
 | Whitespace | `git diff --check` | Passed. |
@@ -2924,6 +2971,7 @@ Use this index to choose the right file quickly.
 | Need | Artifact |
 |---|---|
 | Quick decision summary | `reports/executive_brief.md` |
+| Delivery summary | `reports/release_notes.md` |
 | Common questions | `reports/faq.md` |
 | Proposed adoption decision record | `reports/adoption_decision_record.md` |
 | Scenario execution playbooks | `reports/scenario_playbooks.md` |

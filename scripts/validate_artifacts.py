@@ -202,6 +202,7 @@ def validate_report_references() -> None:
         "reports/operational_cost_model.md",
         "reports/pilot_sample_size.md",
         "reports/presentation_outline.md",
+        "reports/release_notes.md",
         "reports/recommendation_rationale.md",
         "reports/score_driver_summary.md",
         "reports/requirements_traceability.md",

@@ -31,6 +31,14 @@ class ReportArtifactsTest(unittest.TestCase):
         self.assertIn("# Executive Brief", text)
         self.assertIn("Recommended Next Step", text)
 
+    def test_release_notes_exist(self):
+        notes = ROOT / "reports" / "release_notes.md"
+        self.assertTrue(notes.exists())
+        text = notes.read_text(encoding="utf-8")
+        self.assertIn("# Release Notes", text)
+        self.assertIn("Current Validation Snapshot", text)
+        self.assertIn("reports/final_report_bundle.md", text)
+
     def test_adoption_decision_record_exists(self):
         adr = ROOT / "reports" / "adoption_decision_record.md"
         self.assertTrue(adr.exists())
@@ -142,7 +150,7 @@ class ReportArtifactsTest(unittest.TestCase):
         text = summary.read_text(encoding="utf-8")
         self.assertIn("# Validation Summary", text)
         self.assertIn("python scripts/run_all_checks.py", text)
-        self.assertIn("130 tests passed", text)
+        self.assertIn("131 tests passed", text)
 
     def test_results_data_dictionary_exists(self):
         dictionary = ROOT / "reports" / "results_data_dictionary.md"

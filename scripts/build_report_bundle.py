@@ -13,6 +13,7 @@ DEFAULT_OUTPUT = REPORTS / "final_report_bundle.md"
 
 SOURCE_REPORTS = [
     "executive_brief.md",
+    "release_notes.md",
     "ai_orchestrator_frameworks_report.md",
     "candidate_taxonomy.md",
     "exclusions.md",

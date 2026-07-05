@@ -30,6 +30,8 @@ My practical recommendation is:
 
 For a short decision-oriented version, read `reports/executive_brief.md`.
 
+For a reviewer-oriented delivery summary, read `reports/release_notes.md`.
+
 For common scope, exclusion, weighting, and pilot questions, read `reports/faq.md`.
 
 For candidate grouping by adoption shape, read `reports/candidate_taxonomy.md`; the machine-readable taxonomy is `data/candidate_taxonomy.json`.
