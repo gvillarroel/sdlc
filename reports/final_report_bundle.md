@@ -331,6 +331,7 @@ Generated outputs:
 | `results/source_check.csv` | Live URL check of report and dataset sources. The latest run checked 41 URLs with 41 OK responses. |
 | `results/github_metadata_check.csv` | Live GitHub repository metadata comparison for stars, push date, license, archive status, and latest release tag. |
 | `results/csv_schema_check.csv` | Header/schema validation for generated CSV artifacts. |
+| `results/artifact_manifest.csv` | SHA-256 manifest for report, data, result, script, template, test, and CI artifacts. |
 | `results/license_audit.csv` | Explicit permissive-license audit for included and excluded entries. |
 | `results/local_artifact_reference_check.csv` | Offline check that local artifact references in README and reports resolve to existing files. |
 | `results/regret_analysis.csv` | Score gap between each candidate and the scenario winner. |
@@ -627,6 +628,14 @@ python scripts/validate_csv_schemas.py
 ```
 
 It writes `results/csv_schema_check.csv` and fails if a generated CSV drops an expected column.
+
+The artifact manifest generator is:
+
+```powershell
+python scripts/generate_artifact_manifest.py
+```
+
+It writes `results/artifact_manifest.csv` with file size and SHA-256 values for repository artifacts.
 
 The full local regeneration and validation path is:
 
@@ -1599,11 +1608,11 @@ This page summarizes the current quality checks for the report repository. It is
 
 | Check | Command | Latest result |
 |---|---|---|
-| Unit tests | `python -m unittest discover -s tests` | 92 tests passed. |
+| Unit tests | `python -m unittest discover -s tests` | 94 tests passed. |
 | Full local workflow | `python scripts/run_all_checks.py` | Passed. |
 | Offline artifact validation | `python scripts/validate_artifacts.py` | Passed. |
-| Generated CSV schemas | `python scripts/validate_csv_schemas.py` | 25 CSV schemas checked, 0 failures. |
-| Local artifact references | `python scripts/check_local_artifact_references.py` | 308 local references checked, 0 missing. |
+| Generated CSV schemas | `python scripts/validate_csv_schemas.py` | 26 CSV schemas checked, 0 failures. |
+| Local artifact references | `python scripts/check_local_artifact_references.py` | 520 local references checked, 0 missing. |
 | External source URLs | `python scripts/check_sources.py --timeout 20` | 41 URLs checked, 41 OK. |
 | GitHub metadata | `python scripts/refresh_github_metadata.py --timeout 20` | 17 repos checked, 0 failures, 0 license mismatches. |
 | Whitespace | `git diff --check` | Passed. |
@@ -1618,6 +1627,7 @@ This page summarizes the current quality checks for the report repository. It is
 | GitHub metadata | `results/github_metadata_check.csv` verifies repository reachability, live SPDX license match, archive status, stars, push date, and latest release tag. |
 | Report references | `results/local_artifact_reference_check.csv` verifies README and report references to local artifacts. |
 | CSV contracts | `results/csv_schema_check.csv` verifies expected headers for generated CSV artifacts. |
+| Artifact manifest | `results/artifact_manifest.csv` records SHA-256 hashes and byte sizes for committed report, data, script, test, and template artifacts. |
 | Simulation reproducibility | Unit tests cover deterministic scoring, Monte Carlo reproducibility, stress tests, custom weights, effort estimation, evidence-gap analysis, risk registers, decision tree, and artifact validation. |
 
 ## Known Validation Boundaries
@@ -1711,6 +1721,16 @@ Wide scorecard of all 0-5 criterion scores.
 | `deployment_flexibility` |
 | `coding_fit` |
 | `research_reproducibility` |
+
+## `artifact_manifest.csv`
+
+Generated CSV artifact.
+
+| Column |
+|---|
+| `path` |
+| `size_bytes` |
+| `sha256` |
 
 ## `category_scores.csv`
 
@@ -2300,6 +2320,7 @@ Use this index to choose the right file quickly.
 | GitHub metadata check | `results/github_metadata_check.csv` |
 | Local artifact reference check | `results/local_artifact_reference_check.csv` |
 | Generated CSV schema check | `results/csv_schema_check.csv` |
+| Artifact SHA-256 manifest | `results/artifact_manifest.csv` |
 | Complete machine-readable output | `results/all_results.json` |
 
 ## Pilot Execution
@@ -2328,6 +2349,7 @@ Use this index to choose the right file quickly.
 | Refresh GitHub metadata check | `scripts/refresh_github_metadata.py` |
 | Check local artifact references | `scripts/check_local_artifact_references.py` |
 | Validate generated CSV schemas | `scripts/validate_csv_schemas.py` |
+| Generate artifact SHA-256 manifest | `scripts/generate_artifact_manifest.py` |
 | Validate generated artifacts offline | `scripts/validate_artifacts.py` |
 | Generate report SVG charts | `scripts/generate_charts.py` |
 | Build results data dictionary | `scripts/build_results_data_dictionary.py` |
@@ -2356,6 +2378,7 @@ python scripts/rank_with_custom_weights.py
 python scripts/license_audit.py
 python scripts/check_local_artifact_references.py
 python scripts/validate_csv_schemas.py
+python scripts/generate_artifact_manifest.py
 python scripts/build_results_data_dictionary.py
 python scripts/build_report_bundle.py
 python scripts/validate_artifacts.py

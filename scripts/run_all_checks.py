@@ -24,6 +24,7 @@ COMMANDS = [
     [PYTHON, "scripts/build_results_data_dictionary.py"],
     [PYTHON, "scripts/build_report_bundle.py"],
     [PYTHON, "scripts/check_local_artifact_references.py"],
+    [PYTHON, "scripts/generate_artifact_manifest.py"],
     [
         PYTHON,
         "scripts/score_pilot_results.py",
@@ -33,6 +34,7 @@ COMMANDS = [
         "results/pilot_decision_scores.example.csv",
     ],
     [PYTHON, "scripts/validate_csv_schemas.py"],
+    [PYTHON, "scripts/generate_artifact_manifest.py"],
     [PYTHON, "scripts/validate_artifacts.py"],
 ]
 

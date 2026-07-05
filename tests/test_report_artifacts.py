@@ -141,7 +141,7 @@ class ReportArtifactsTest(unittest.TestCase):
         text = summary.read_text(encoding="utf-8")
         self.assertIn("# Validation Summary", text)
         self.assertIn("python scripts/run_all_checks.py", text)
-        self.assertIn("92 tests passed", text)
+        self.assertIn("94 tests passed", text)
 
     def test_results_data_dictionary_exists(self):
         dictionary = ROOT / "reports" / "results_data_dictionary.md"
@@ -219,6 +219,7 @@ class ReportArtifactsTest(unittest.TestCase):
             "local_artifact_reference_check.csv",
             "github_metadata_check.csv",
             "csv_schema_check.csv",
+            "artifact_manifest.csv",
             "stress_test_summary.csv",
             "uncertainty_stress_summary.csv",
             "all_results.json"

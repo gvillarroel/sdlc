@@ -237,6 +237,7 @@ Generated outputs:
 | `results/source_check.csv` | Live URL check of report and dataset sources. The latest run checked 41 URLs with 41 OK responses. |
 | `results/github_metadata_check.csv` | Live GitHub repository metadata comparison for stars, push date, license, archive status, and latest release tag. |
 | `results/csv_schema_check.csv` | Header/schema validation for generated CSV artifacts. |
+| `results/artifact_manifest.csv` | SHA-256 manifest for report, data, result, script, template, test, and CI artifacts. |
 | `results/license_audit.csv` | Explicit permissive-license audit for included and excluded entries. |
 | `results/local_artifact_reference_check.csv` | Offline check that local artifact references in README and reports resolve to existing files. |
 | `results/regret_analysis.csv` | Score gap between each candidate and the scenario winner. |
@@ -533,6 +534,14 @@ python scripts/validate_csv_schemas.py
 ```
 
 It writes `results/csv_schema_check.csv` and fails if a generated CSV drops an expected column.
+
+The artifact manifest generator is:
+
+```powershell
+python scripts/generate_artifact_manifest.py
+```
+
+It writes `results/artifact_manifest.csv` with file size and SHA-256 values for repository artifacts.
 
 The full local regeneration and validation path is:
 

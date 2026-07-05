@@ -40,6 +40,7 @@ README.md,reports/simulation_assumptions.md,reports/simulation_assumptions.md,Tr
 README.md,reports/validation_summary.md,reports/validation_summary.md,True
 README.md,results/all_results.json,results/all_results.json,True
 README.md,results/alternative_scorecards.csv,results/alternative_scorecards.csv,True
+README.md,results/artifact_manifest.csv,results/artifact_manifest.csv,True
 README.md,results/category_scores.csv,results/category_scores.csv,True
 README.md,results/criteria_definitions.csv,results/criteria_definitions.csv,True
 README.md,results/csv_schema_check.csv,results/csv_schema_check.csv,True
@@ -70,6 +71,7 @@ README.md,scripts/build_results_data_dictionary.py,scripts/build_results_data_di
 README.md,scripts/check_local_artifact_references.py,scripts/check_local_artifact_references.py,True
 README.md,scripts/check_sources.py,scripts/check_sources.py,True
 README.md,scripts/estimate_implementation_effort.py,scripts/estimate_implementation_effort.py,True
+README.md,scripts/generate_artifact_manifest.py,scripts/generate_artifact_manifest.py,True
 README.md,scripts/generate_charts.py,scripts/generate_charts.py,True
 README.md,scripts/license_audit.py,scripts/license_audit.py,True
 README.md,scripts/rank_with_custom_weights.py,scripts/rank_with_custom_weights.py,True
@@ -125,6 +127,7 @@ reports/ai_orchestrator_frameworks_report.md,reports/simulation_assumptions.md,r
 reports/ai_orchestrator_frameworks_report.md,reports/validation_summary.md,reports/validation_summary.md,True
 reports/ai_orchestrator_frameworks_report.md,results/all_results.json,results/all_results.json,True
 reports/ai_orchestrator_frameworks_report.md,results/alternative_scorecards.csv,results/alternative_scorecards.csv,True
+reports/ai_orchestrator_frameworks_report.md,results/artifact_manifest.csv,results/artifact_manifest.csv,True
 reports/ai_orchestrator_frameworks_report.md,results/category_scores.csv,results/category_scores.csv,True
 reports/ai_orchestrator_frameworks_report.md,results/criteria_definitions.csv,results/criteria_definitions.csv,True
 reports/ai_orchestrator_frameworks_report.md,results/csv_schema_check.csv,results/csv_schema_check.csv,True
@@ -150,6 +153,7 @@ reports/ai_orchestrator_frameworks_report.md,results/stress_test_summary.csv,res
 reports/ai_orchestrator_frameworks_report.md,results/uncertainty_stress_details.csv,results/uncertainty_stress_details.csv,True
 reports/ai_orchestrator_frameworks_report.md,results/uncertainty_stress_summary.csv,results/uncertainty_stress_summary.csv,True
 reports/ai_orchestrator_frameworks_report.md,scripts/check_local_artifact_references.py,scripts/check_local_artifact_references.py,True
+reports/ai_orchestrator_frameworks_report.md,scripts/generate_artifact_manifest.py,scripts/generate_artifact_manifest.py,True
 reports/ai_orchestrator_frameworks_report.md,scripts/rank_with_custom_weights.py,scripts/rank_with_custom_weights.py,True
 reports/ai_orchestrator_frameworks_report.md,scripts/run_all_checks.py,scripts/run_all_checks.py,True
 reports/ai_orchestrator_frameworks_report.md,scripts/score_pilot_results.py,scripts/score_pilot_results.py,True
@@ -198,6 +202,7 @@ reports/artifact_index.md,reports/simulation_assumptions.md,reports/simulation_a
 reports/artifact_index.md,reports/validation_summary.md,reports/validation_summary.md,True
 reports/artifact_index.md,results/all_results.json,results/all_results.json,True
 reports/artifact_index.md,results/alternative_scorecards.csv,results/alternative_scorecards.csv,True
+reports/artifact_index.md,results/artifact_manifest.csv,results/artifact_manifest.csv,True
 reports/artifact_index.md,results/category_scores.csv,results/category_scores.csv,True
 reports/artifact_index.md,results/criteria_definitions.csv,results/criteria_definitions.csv,True
 reports/artifact_index.md,results/csv_schema_check.csv,results/csv_schema_check.csv,True
@@ -228,6 +233,7 @@ reports/artifact_index.md,scripts/build_results_data_dictionary.py,scripts/build
 reports/artifact_index.md,scripts/check_local_artifact_references.py,scripts/check_local_artifact_references.py,True
 reports/artifact_index.md,scripts/check_sources.py,scripts/check_sources.py,True
 reports/artifact_index.md,scripts/estimate_implementation_effort.py,scripts/estimate_implementation_effort.py,True
+reports/artifact_index.md,scripts/generate_artifact_manifest.py,scripts/generate_artifact_manifest.py,True
 reports/artifact_index.md,scripts/generate_charts.py,scripts/generate_charts.py,True
 reports/artifact_index.md,scripts/license_audit.py,scripts/license_audit.py,True
 reports/artifact_index.md,scripts/rank_with_custom_weights.py,scripts/rank_with_custom_weights.py,True
@@ -317,6 +323,7 @@ reports/final_report_bundle.md,reports/simulation_assumptions.md,reports/simulat
 reports/final_report_bundle.md,reports/validation_summary.md,reports/validation_summary.md,True
 reports/final_report_bundle.md,results/all_results.json,results/all_results.json,True
 reports/final_report_bundle.md,results/alternative_scorecards.csv,results/alternative_scorecards.csv,True
+reports/final_report_bundle.md,results/artifact_manifest.csv,results/artifact_manifest.csv,True
 reports/final_report_bundle.md,results/category_scores.csv,results/category_scores.csv,True
 reports/final_report_bundle.md,results/criteria_definitions.csv,results/criteria_definitions.csv,True
 reports/final_report_bundle.md,results/csv_schema_check.csv,results/csv_schema_check.csv,True
@@ -347,6 +354,7 @@ reports/final_report_bundle.md,scripts/build_results_data_dictionary.py,scripts/
 reports/final_report_bundle.md,scripts/check_local_artifact_references.py,scripts/check_local_artifact_references.py,True
 reports/final_report_bundle.md,scripts/check_sources.py,scripts/check_sources.py,True
 reports/final_report_bundle.md,scripts/estimate_implementation_effort.py,scripts/estimate_implementation_effort.py,True
+reports/final_report_bundle.md,scripts/generate_artifact_manifest.py,scripts/generate_artifact_manifest.py,True
 reports/final_report_bundle.md,scripts/generate_charts.py,scripts/generate_charts.py,True
 reports/final_report_bundle.md,scripts/license_audit.py,scripts/license_audit.py,True
 reports/final_report_bundle.md,scripts/rank_with_custom_weights.py,scripts/rank_with_custom_weights.py,True
@@ -499,6 +507,7 @@ reports/simulation_assumptions.md,templates/pilot_run_log.csv,templates/pilot_ru
 reports/simulation_assumptions.md,templates/reviewer_scorecard.md,templates/reviewer_scorecard.md,True
 reports/simulation_assumptions.md,templates/security_gate_checklist.md,templates/security_gate_checklist.md,True
 reports/validation_summary.md,ci/validate-workflow.example.yml,ci/validate-workflow.example.yml,True
+reports/validation_summary.md,results/artifact_manifest.csv,results/artifact_manifest.csv,True
 reports/validation_summary.md,results/csv_schema_check.csv,results/csv_schema_check.csv,True
 reports/validation_summary.md,results/github_metadata_check.csv,results/github_metadata_check.csv,True
 reports/validation_summary.md,results/license_audit.csv,results/license_audit.csv,True

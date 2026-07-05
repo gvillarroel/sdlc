@@ -43,6 +43,7 @@ SCHEMAS: dict[str, list[str]] = {
     "local_artifact_reference_check.csv": ["source_file", "reference", "resolved_path", "exists"],
     "github_metadata_check.csv": ["alternative_id", "alternative", "repo", "ok", "dataset_license", "live_license", "license_matches", "archived"],
     "csv_schema_check.csv": ["filename", "ok", "missing_columns", "extra_columns", "actual_column_count", "required_column_count"],
+    "artifact_manifest.csv": ["path", "size_bytes", "sha256"],
 }
 
 

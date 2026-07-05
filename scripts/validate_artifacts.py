@@ -44,6 +44,7 @@ REQUIRED_RESULT_FILES = [
     "local_artifact_reference_check.csv",
     "github_metadata_check.csv",
     "csv_schema_check.csv",
+    "artifact_manifest.csv",
     "all_results.json"
 ]
 
@@ -109,6 +110,10 @@ def validate_license_and_sources() -> None:
     schema_rows = read_csv(RESULTS / "csv_schema_check.csv")
     assert_true(schema_rows, "CSV schema check is empty")
     assert_true(all(row["ok"] == "True" for row in schema_rows), "one or more generated CSV schemas changed")
+
+    manifest_rows = read_csv(RESULTS / "artifact_manifest.csv")
+    assert_true(manifest_rows, "artifact manifest is empty")
+    assert_true(all(len(row["sha256"]) == 64 for row in manifest_rows), "artifact manifest contains invalid SHA-256 values")
 
 
 def validate_report_references() -> None:

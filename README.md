@@ -22,6 +22,7 @@ Included artifacts:
 - `scripts/rank_with_custom_weights.py` - deterministic ranking for user-provided scenario weights.
 - `scripts/check_local_artifact_references.py` - offline check for local artifact references in README and reports.
 - `scripts/validate_csv_schemas.py` - generated CSV header/schema validation.
+- `scripts/generate_artifact_manifest.py` - SHA-256 manifest generator for repository artifacts.
 - `scripts/refresh_github_metadata.py` - optional live GitHub metadata checker for repository, license, star, push, and release signals.
 - `scripts/check_sources.py` - optional live source URL checker for the report and dataset.
 - `scripts/license_audit.py` - permissive-license audit for included and excluded alternatives.
@@ -88,6 +89,7 @@ python scripts/rank_with_custom_weights.py
 python scripts/license_audit.py
 python scripts/check_local_artifact_references.py
 python scripts/validate_csv_schemas.py
+python scripts/generate_artifact_manifest.py
 python scripts/generate_charts.py
 python scripts/build_results_data_dictionary.py
 python scripts/build_report_bundle.py
@@ -116,6 +118,7 @@ Generated result files:
 - `results/local_artifact_reference_check.csv`
 - `results/github_metadata_check.csv`
 - `results/csv_schema_check.csv`
+- `results/artifact_manifest.csv`
 - `results/source_check.csv`
 - `results/license_audit.csv`
 - `results/regret_analysis.csv`

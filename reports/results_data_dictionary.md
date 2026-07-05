@@ -30,6 +30,16 @@ Wide scorecard of all 0-5 criterion scores.
 | `coding_fit` |
 | `research_reproducibility` |
 
+## `artifact_manifest.csv`
+
+Generated CSV artifact.
+
+| Column |
+|---|
+| `path` |
+| `size_bytes` |
+| `sha256` |
+
 ## `category_scores.csv`
 
 Criterion-group scorecards independent of scenario weights.

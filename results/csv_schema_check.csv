@@ -1,5 +1,6 @@
 filename,ok,missing_columns,extra_columns,actual_column_count,required_column_count
 alternative_scorecards.csv,True,,,19,19
+artifact_manifest.csv,True,,,3,3
 category_scores.csv,True,,,5,5
 criteria_definitions.csv,True,,,2,2
 csv_schema_check.csv,True,,,6,6
