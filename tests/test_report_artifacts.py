@@ -29,6 +29,14 @@ class ReportArtifactsTest(unittest.TestCase):
         self.assertIn("# Executive Brief", text)
         self.assertIn("Recommended Next Step", text)
 
+    def test_methodology_appendix_exists(self):
+        appendix = ROOT / "reports" / "methodology_appendix.md"
+        self.assertTrue(appendix.exists())
+        text = appendix.read_text(encoding="utf-8")
+        self.assertIn("# Methodology Appendix", text)
+        self.assertIn("Weighted Scenario Score", text)
+        self.assertIn("Monte Carlo Model", text)
+
     def test_generated_result_files_exist(self):
         expected_files = [
             "deterministic_rankings.csv",

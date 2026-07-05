@@ -15,6 +15,7 @@ Included artifacts:
 - `templates/` - pilot run log, reviewer scorecard, and security gate checklist templates.
 - `reports/ai_orchestrator_frameworks_report.md` - final English report.
 - `reports/executive_brief.md` - short decision brief for quick review.
+- `reports/methodology_appendix.md` - scoring formulas, Monte Carlo assumptions, and customization notes.
 
 Run the checks and simulations:
 

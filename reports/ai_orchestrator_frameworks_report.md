@@ -148,6 +148,8 @@ The Python simulation is in `scripts/simulate_alternatives.py`. It uses `data/al
 - `results/sensitivity_summary.csv`
 - `results/all_results.json`
 
+The formula details, uncertainty model, category groups, and customization steps are documented in `reports/methodology_appendix.md`.
+
 The score model uses 14 criteria on a 0-5 scale: implementation ease, maturity, provider portability, sandbox isolation, persistence/memory, multi-agent support, human control, CI/PR fit, observability, security/governance, extensibility, deployment flexibility, coding-task fit, and research reproducibility.
 
 Five scenarios were simulated:
