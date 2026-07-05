@@ -17,6 +17,7 @@ Use this index to choose the right file quickly.
 | Requirement coverage | `reports/requirements_traceability.md` |
 | Validation and QA summary | `reports/validation_summary.md` |
 | Results data dictionary | `reports/results_data_dictionary.md` |
+| Maintenance procedure | `reports/maintenance_guide.md` |
 | Glossary | `reports/glossary.md` |
 | Scoring formula and assumptions | `reports/methodology_appendix.md` |
 | Simulation assumptions and stress tests | `reports/simulation_assumptions.md` |

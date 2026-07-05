@@ -17,6 +17,7 @@ This generated bundle concatenates the main report and key appendices for one-fi
 - `reports/pilot_protocol.md`
 - `reports/validation_summary.md`
 - `reports/results_data_dictionary.md`
+- `reports/maintenance_guide.md`
 - `reports/requirements_traceability.md`
 - `reports/artifact_index.md`
 
@@ -141,6 +142,8 @@ For a requirement-to-artifact coverage map, read `reports/requirements_traceabil
 For the latest validation and QA summary, read `reports/validation_summary.md`.
 
 For CSV output column definitions, read `reports/results_data_dictionary.md`.
+
+For update and refresh procedures, read `reports/maintenance_guide.md`.
 
 For terminology used across scoring and security sections, read `reports/glossary.md`.
 
@@ -1399,7 +1402,7 @@ This page summarizes the current quality checks for the report repository. It is
 
 | Check | Command | Latest result |
 |---|---|---|
-| Unit tests | `python -m unittest discover -s tests` | 83 tests passed. |
+| Unit tests | `python -m unittest discover -s tests` | 84 tests passed. |
 | Full local workflow | `python scripts/run_all_checks.py` | Passed. |
 | Offline artifact validation | `python scripts/validate_artifacts.py` | Passed. |
 | Generated CSV schemas | `python scripts/validate_csv_schemas.py` | 25 CSV schemas checked, 0 failures. |
@@ -1813,6 +1816,122 @@ Monte Carlo summary under alternate uncertainty cases.
 
 ---
 
+<!-- Source: reports/maintenance_guide.md -->
+
+# Maintenance Guide
+
+Date: 2026-07-05
+
+## When To Refresh
+
+Refresh the repository when any of these are true:
+
+- More than 30 days have passed since the last source and GitHub metadata checks.
+- A candidate has a major release, license change, repository move, or archive notice.
+- A stakeholder wants different scenario priorities.
+- Pilot results replace subjective scores.
+- A new alternative from the source discussion becomes relevant.
+
+## Standard Refresh Procedure
+
+1. Refresh live evidence:
+
+```powershell
+python scripts/check_sources.py --timeout 20
+python scripts/refresh_github_metadata.py --timeout 20
+```
+
+2. Edit input data if evidence changed:
+
+- `data/alternatives.json`
+- `data/scoring_rubric.json`
+- `data/scenario_profiles.json`
+- `data/risk_register.json`
+- `data/simulation_assumptions.json`
+
+3. Regenerate and validate offline artifacts:
+
+```powershell
+python scripts/run_all_checks.py
+```
+
+4. Review generated changes:
+
+```powershell
+git diff --stat
+git diff --check
+```
+
+5. Re-read the decision documents:
+
+- `reports/executive_brief.md`
+- `reports/adoption_decision_record.md`
+- `reports/simulation_assumptions.md`
+- `reports/evidence_gap_analysis.md`
+- `reports/validation_summary.md`
+
+## Updating Scores
+
+When changing 0-5 criterion scores:
+
+1. Update the score in `data/alternatives.json`.
+2. Check the corresponding anchor in `data/scoring_rubric.json`.
+3. Add or update the evidence note in `implementation_notes` or `risk_notes`.
+4. Rerun `python scripts/run_all_checks.py`.
+5. Review deterministic rank, Monte Carlo stability, stress-test output, regret, and Pareto changes.
+
+Do not change scores only to force a preferred winner. If a score is uncertain, prefer updating `source_confidence`, stress-testing the assumption, or capturing pilot evidence.
+
+## Adding A Candidate
+
+Minimum required work:
+
+1. Add the candidate to `data/alternatives.json` with MIT or Apache-2.0 license evidence.
+2. Add source URLs and repository metadata.
+3. Score every criterion.
+4. Run `python scripts/license_audit.py`.
+5. Run `python scripts/run_all_checks.py`.
+6. Update narrative sections if the candidate enters a top cluster or changes a recommendation.
+
+## Changing Scenario Weights
+
+For exploratory changes, use:
+
+```powershell
+python scripts/rank_with_custom_weights.py --weights examples/custom_weights.example.json
+```
+
+For canonical scenario changes, edit the `SCENARIOS` map in `scripts/simulate_alternatives.py`, then rerun the full workflow.
+
+## Incorporating Pilot Results
+
+After a real pilot:
+
+1. Fill `templates/pilot_run_log.csv`.
+2. Summarize candidate-level metrics in a file shaped like `examples/pilot_candidate_summary.example.csv`.
+3. Run:
+
+```powershell
+python scripts/score_pilot_results.py --input examples/pilot_candidate_summary.example.csv --output results/pilot_decision_scores.example.csv
+```
+
+4. Update `reports/adoption_decision_record.md` from Proposed to Accepted, Rejected, or Deferred.
+5. Replace subjective notes in the main report with measured pilot evidence where appropriate.
+
+## Release Checklist
+
+Before sharing a refreshed report:
+
+- `python scripts/run_all_checks.py` passes.
+- `python scripts/check_sources.py --timeout 20` passes.
+- `python scripts/refresh_github_metadata.py --timeout 20` passes.
+- `git diff --check` passes.
+- `reports/final_report_bundle.md` is regenerated.
+- `reports/validation_summary.md` reflects the current test and schema counts.
+- No generated `__pycache__` directories are left in the working tree.
+
+---
+
 <!-- Source: reports/requirements_traceability.md -->
 
 # Requirements Traceability
@@ -1874,6 +1993,7 @@ Use this index to choose the right file quickly.
 | Requirement coverage | `reports/requirements_traceability.md` |
 | Validation and QA summary | `reports/validation_summary.md` |
 | Results data dictionary | `reports/results_data_dictionary.md` |
+| Maintenance procedure | `reports/maintenance_guide.md` |
 | Glossary | `reports/glossary.md` |
 | Scoring formula and assumptions | `reports/methodology_appendix.md` |
 | Simulation assumptions and stress tests | `reports/simulation_assumptions.md` |

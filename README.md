@@ -48,6 +48,7 @@ Included artifacts:
 - `reports/requirements_traceability.md` - coverage map from the original request to artifacts and validation commands.
 - `reports/validation_summary.md` - latest validation and QA summary for generated artifacts and tests.
 - `reports/results_data_dictionary.md` - generated data dictionary for CSV outputs.
+- `reports/maintenance_guide.md` - procedure for refreshing sources, scores, candidates, and generated artifacts.
 - `reports/methodology_appendix.md` - scoring formulas, Monte Carlo assumptions, and customization notes.
 - `reports/simulation_assumptions.md` - assumptions, stress tests, and interpretation of ranking fragility.
 - `reports/artifact_index.md` - navigation guide for all report, data, result, template, and script artifacts.

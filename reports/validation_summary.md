@@ -10,7 +10,7 @@ This page summarizes the current quality checks for the report repository. It is
 
 | Check | Command | Latest result |
 |---|---|---|
-| Unit tests | `python -m unittest discover -s tests` | 83 tests passed. |
+| Unit tests | `python -m unittest discover -s tests` | 84 tests passed. |
 | Full local workflow | `python scripts/run_all_checks.py` | Passed. |
 | Offline artifact validation | `python scripts/validate_artifacts.py` | Passed. |
 | Generated CSV schemas | `python scripts/validate_csv_schemas.py` | 25 CSV schemas checked, 0 failures. |

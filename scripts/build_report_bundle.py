@@ -23,6 +23,7 @@ SOURCE_REPORTS = [
     "pilot_protocol.md",
     "validation_summary.md",
     "results_data_dictionary.md",
+    "maintenance_guide.md",
     "requirements_traceability.md",
     "artifact_index.md",
 ]
