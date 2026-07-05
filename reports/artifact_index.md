@@ -9,6 +9,7 @@ Use this index to choose the right file quickly.
 | Need | Artifact |
 |---|---|
 | Quick decision summary | `reports/executive_brief.md` |
+| Guided shortlist selection | `reports/decision_tree.md` |
 | Full analysis | `reports/ai_orchestrator_frameworks_report.md` |
 | Scoring formula and assumptions | `reports/methodology_appendix.md` |
 | Pilot execution protocol | `reports/pilot_protocol.md` |
@@ -24,6 +25,7 @@ Use this index to choose the right file quickly.
 | Scenario definitions and shortlists | `data/scenario_profiles.json` |
 | Pilot task suite | `data/pilot_tasks.json` |
 | Post-pilot decision model | `data/pilot_decision_model.json` |
+| Machine-readable decision tree | `data/decision_tree.json` |
 | Adoption risk register | `data/risk_register.json` |
 
 ## Generated Results

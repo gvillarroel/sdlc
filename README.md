@@ -9,6 +9,7 @@ Included artifacts:
 - `data/scenario_profiles.json` - plain-English scenario definitions and intended shortlists.
 - `data/pilot_tasks.json` - 20-task pilot suite for moving from simulated ranking to execution evidence.
 - `data/pilot_decision_model.json` - post-pilot scoring weights and gates.
+- `data/decision_tree.json` - machine-readable guided selection tree.
 - `data/risk_register.json` - actionable adoption risks, mitigations, and required evidence.
 - `scripts/simulate_alternatives.py` - deterministic weighted ranking, Monte Carlo uncertainty simulation, and sensitivity analysis.
 - `scripts/check_sources.py` - optional live source URL checker for the report and dataset.
@@ -26,6 +27,7 @@ Included artifacts:
 - `reports/artifact_index.md` - navigation guide for all report, data, result, template, and script artifacts.
 - `reports/pilot_protocol.md` - step-by-step protocol for executing the recommended pilot.
 - `reports/implementation_blueprints.md` - implementation notes for the main pilot candidates.
+- `reports/decision_tree.md` - guided shortlist selection tree.
 - `ci/validate-workflow.example.yml` - GitHub Actions workflow template for tests, deterministic artifact regeneration, and offline artifact validation.
 
 Run the checks and simulations:
