@@ -9,6 +9,7 @@ This generated bundle concatenates the main report and key appendices for one-fi
 - `reports/executive_brief.md`
 - `reports/ai_orchestrator_frameworks_report.md`
 - `reports/candidate_taxonomy.md`
+- `reports/exclusions.md`
 - `reports/adoption_decision_record.md`
 - `reports/methodology_appendix.md`
 - `reports/simulation_assumptions.md`
@@ -133,6 +134,8 @@ For a navigation guide to every generated artifact, read `reports/artifact_index
 For one-file review, read the generated bundle at `reports/final_report_bundle.md`.
 
 For local prerequisites and live-check requirements, read `reports/environment_prerequisites.md`.
+
+For excluded items and boundary cases, read `reports/exclusions.md`.
 
 For a quick guided shortlist, read `reports/decision_tree.md`.
 
@@ -697,6 +700,47 @@ Use the taxonomy before reading the ranking tables:
 4. Treat candidates in the experimental-reference group as second-phase unless fresh evidence changes their risk profile.
 
 This prevents a common mistake: choosing a polished local assistant when the actual need is a governed platform, or choosing a platform starter when the actual need is a quick local coding tool.
+
+---
+
+<!-- Source: reports/exclusions.md -->
+
+# Exclusions
+
+Date: 2026-07-05
+
+## Purpose
+
+This appendix documents items from the shared discussion that were not included in the permissive open-source evaluation set.
+
+The generated license audit is `results/license_audit.csv`.
+
+## Excluded Items
+
+| Item | Exclusion reason | Impact |
+|---|---|---|
+| Claude Agent SDK | The shared discussion framed it as an official Anthropic/Claude-centric SDK rather than a permissive OSS candidate for this filter. | Not scored, not simulated, and not included in pilot recommendations. |
+| Codex app | The shared discussion framed it as a closed/commercial desktop application, not the open-source Codex CLI. | Not scored. Codex CLI remains included because it is Apache-2.0. |
+
+## Boundary Cases
+
+| Item | Treatment |
+|---|---|
+| Codex CLI | Included as Apache-2.0 open source, with provider-dependence noted as a practical risk. |
+| OpenHands SDK and Agent Canvas | Included as separate MIT repositories because their SDK/control-plane roles differ. |
+| OpenCode | Included under the current canonical `anomalyco/opencode` repository; the older archived repo is not used as the canonical source. |
+| Omnigent | Included because it is Apache-2.0, but evidence-gap analysis treats it as second-phase due to alpha maturity. |
+
+## Rule For Future Additions
+
+A new candidate should enter the dataset only if:
+
+1. Its canonical repository is clear.
+2. The license is MIT or Apache-2.0 at the project level.
+3. Source evidence is sufficient to score every criterion.
+4. It is meaningfully related to coding-agent orchestration, coding workflows, research harnesses, or agent control planes.
+
+If a candidate fails the license rule, it can be mentioned narratively but should not enter `data/alternatives.json` or simulation outputs.
 
 ---
 
@@ -1481,7 +1525,7 @@ This page summarizes the current quality checks for the report repository. It is
 
 | Check | Command | Latest result |
 |---|---|---|
-| Unit tests | `python -m unittest discover -s tests` | 90 tests passed. |
+| Unit tests | `python -m unittest discover -s tests` | 91 tests passed. |
 | Full local workflow | `python scripts/run_all_checks.py` | Passed. |
 | Offline artifact validation | `python scripts/validate_artifacts.py` | Passed. |
 | Generated CSV schemas | `python scripts/validate_csv_schemas.py` | 25 CSV schemas checked, 0 failures. |
@@ -2117,6 +2161,7 @@ Use this index to choose the right file quickly.
 | Proposed adoption decision record | `reports/adoption_decision_record.md` |
 | Candidate taxonomy | `reports/candidate_taxonomy.md` |
 | Environment prerequisites | `reports/environment_prerequisites.md` |
+| Exclusion rationale | `reports/exclusions.md` |
 | Guided shortlist selection | `reports/decision_tree.md` |
 | Full analysis | `reports/ai_orchestrator_frameworks_report.md` |
 | One-file report bundle | `reports/final_report_bundle.md` |

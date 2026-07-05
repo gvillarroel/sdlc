@@ -70,6 +70,14 @@ class ReportArtifactsTest(unittest.TestCase):
         self.assertIn("Python 3.12", text)
         self.assertIn("run_all_checks.ps1", text)
 
+    def test_exclusions_report_exists(self):
+        exclusions = ROOT / "reports" / "exclusions.md"
+        self.assertTrue(exclusions.exists())
+        text = exclusions.read_text(encoding="utf-8")
+        self.assertIn("# Exclusions", text)
+        self.assertIn("Claude Agent SDK", text)
+        self.assertIn("Codex app", text)
+
     def test_methodology_appendix_exists(self):
         appendix = ROOT / "reports" / "methodology_appendix.md"
         self.assertTrue(appendix.exists())
@@ -133,7 +141,7 @@ class ReportArtifactsTest(unittest.TestCase):
         text = summary.read_text(encoding="utf-8")
         self.assertIn("# Validation Summary", text)
         self.assertIn("python scripts/run_all_checks.py", text)
-        self.assertIn("90 tests passed", text)
+        self.assertIn("91 tests passed", text)
 
     def test_results_data_dictionary_exists(self):
         dictionary = ROOT / "reports" / "results_data_dictionary.md"

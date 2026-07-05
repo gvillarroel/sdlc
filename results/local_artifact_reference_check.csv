@@ -21,6 +21,7 @@ README.md,reports/candidate_taxonomy.md,reports/candidate_taxonomy.md,True
 README.md,reports/decision_tree.md,reports/decision_tree.md,True
 README.md,reports/environment_prerequisites.md,reports/environment_prerequisites.md,True
 README.md,reports/evidence_gap_analysis.md,reports/evidence_gap_analysis.md,True
+README.md,reports/exclusions.md,reports/exclusions.md,True
 README.md,reports/executive_brief.md,reports/executive_brief.md,True
 README.md,reports/faq.md,reports/faq.md,True
 README.md,reports/final_report_bundle.md,reports/final_report_bundle.md,True
@@ -104,6 +105,7 @@ reports/ai_orchestrator_frameworks_report.md,reports/candidate_taxonomy.md,repor
 reports/ai_orchestrator_frameworks_report.md,reports/decision_tree.md,reports/decision_tree.md,True
 reports/ai_orchestrator_frameworks_report.md,reports/environment_prerequisites.md,reports/environment_prerequisites.md,True
 reports/ai_orchestrator_frameworks_report.md,reports/evidence_gap_analysis.md,reports/evidence_gap_analysis.md,True
+reports/ai_orchestrator_frameworks_report.md,reports/exclusions.md,reports/exclusions.md,True
 reports/ai_orchestrator_frameworks_report.md,reports/executive_brief.md,reports/executive_brief.md,True
 reports/ai_orchestrator_frameworks_report.md,reports/faq.md,reports/faq.md,True
 reports/ai_orchestrator_frameworks_report.md,reports/final_report_bundle.md,reports/final_report_bundle.md,True
@@ -175,6 +177,7 @@ reports/artifact_index.md,reports/candidate_taxonomy.md,reports/candidate_taxono
 reports/artifact_index.md,reports/decision_tree.md,reports/decision_tree.md,True
 reports/artifact_index.md,reports/environment_prerequisites.md,reports/environment_prerequisites.md,True
 reports/artifact_index.md,reports/evidence_gap_analysis.md,reports/evidence_gap_analysis.md,True
+reports/artifact_index.md,reports/exclusions.md,reports/exclusions.md,True
 reports/artifact_index.md,reports/executive_brief.md,reports/executive_brief.md,True
 reports/artifact_index.md,reports/faq.md,reports/faq.md,True
 reports/artifact_index.md,reports/final_report_bundle.md,reports/final_report_bundle.md,True
@@ -246,6 +249,8 @@ reports/environment_prerequisites.md,scripts/run_all_checks.ps1,scripts/run_all_
 reports/environment_prerequisites.md,scripts/run_all_checks.py,scripts/run_all_checks.py,True
 reports/evidence_gap_analysis.md,results/evidence_gap_analysis.csv,results/evidence_gap_analysis.csv,True
 reports/evidence_gap_analysis.md,scripts/analyze_evidence_gaps.py,scripts/analyze_evidence_gaps.py,True
+reports/exclusions.md,data/alternatives.json,data/alternatives.json,True
+reports/exclusions.md,results/license_audit.csv,results/license_audit.csv,True
 reports/executive_brief.md,data/alternatives.json,data/alternatives.json,True
 reports/executive_brief.md,data/pilot_tasks.json,data/pilot_tasks.json,True
 reports/executive_brief.md,data/risk_register.json,data/risk_register.json,True
@@ -290,6 +295,7 @@ reports/final_report_bundle.md,reports/candidate_taxonomy.md,reports/candidate_t
 reports/final_report_bundle.md,reports/decision_tree.md,reports/decision_tree.md,True
 reports/final_report_bundle.md,reports/environment_prerequisites.md,reports/environment_prerequisites.md,True
 reports/final_report_bundle.md,reports/evidence_gap_analysis.md,reports/evidence_gap_analysis.md,True
+reports/final_report_bundle.md,reports/exclusions.md,reports/exclusions.md,True
 reports/final_report_bundle.md,reports/executive_brief.md,reports/executive_brief.md,True
 reports/final_report_bundle.md,reports/faq.md,reports/faq.md,True
 reports/final_report_bundle.md,reports/final_report_bundle.md,reports/final_report_bundle.md,True

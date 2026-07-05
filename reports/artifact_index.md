@@ -13,6 +13,7 @@ Use this index to choose the right file quickly.
 | Proposed adoption decision record | `reports/adoption_decision_record.md` |
 | Candidate taxonomy | `reports/candidate_taxonomy.md` |
 | Environment prerequisites | `reports/environment_prerequisites.md` |
+| Exclusion rationale | `reports/exclusions.md` |
 | Guided shortlist selection | `reports/decision_tree.md` |
 | Full analysis | `reports/ai_orchestrator_frameworks_report.md` |
 | One-file report bundle | `reports/final_report_bundle.md` |

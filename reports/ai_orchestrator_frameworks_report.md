@@ -42,6 +42,8 @@ For one-file review, read the generated bundle at `reports/final_report_bundle.m
 
 For local prerequisites and live-check requirements, read `reports/environment_prerequisites.md`.
 
+For excluded items and boundary cases, read `reports/exclusions.md`.
+
 For a quick guided shortlist, read `reports/decision_tree.md`.
 
 For simulation assumptions, threats to validity, and stress-test results, read `reports/simulation_assumptions.md`.

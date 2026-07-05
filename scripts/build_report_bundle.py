@@ -15,6 +15,7 @@ SOURCE_REPORTS = [
     "executive_brief.md",
     "ai_orchestrator_frameworks_report.md",
     "candidate_taxonomy.md",
+    "exclusions.md",
     "adoption_decision_record.md",
     "methodology_appendix.md",
     "simulation_assumptions.md",
