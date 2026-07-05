@@ -133,7 +133,7 @@ class ReportArtifactsTest(unittest.TestCase):
         text = summary.read_text(encoding="utf-8")
         self.assertIn("# Validation Summary", text)
         self.assertIn("python scripts/run_all_checks.py", text)
-        self.assertIn("89 tests passed", text)
+        self.assertIn("90 tests passed", text)
 
     def test_results_data_dictionary_exists(self):
         dictionary = ROOT / "reports" / "results_data_dictionary.md"
@@ -150,6 +150,14 @@ class ReportArtifactsTest(unittest.TestCase):
         self.assertIn("# Maintenance Guide", text)
         self.assertIn("Standard Refresh Procedure", text)
         self.assertIn("python scripts/run_all_checks.py", text)
+
+    def test_residual_risks_exists(self):
+        risks = ROOT / "reports" / "residual_risks.md"
+        self.assertTrue(risks.exists())
+        text = risks.read_text(encoding="utf-8")
+        self.assertIn("# Residual Risks", text)
+        self.assertIn("Simulated rankings may not predict live task success", text)
+        self.assertIn("security fixtures", text)
 
     def test_artifact_index_exists(self):
         index = ROOT / "reports" / "artifact_index.md"

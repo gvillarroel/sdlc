@@ -31,6 +31,7 @@ README.md,reports/maintenance_guide.md,reports/maintenance_guide.md,True
 README.md,reports/methodology_appendix.md,reports/methodology_appendix.md,True
 README.md,reports/pilot_protocol.md,reports/pilot_protocol.md,True
 README.md,reports/requirements_traceability.md,reports/requirements_traceability.md,True
+README.md,reports/residual_risks.md,reports/residual_risks.md,True
 README.md,reports/results_data_dictionary.md,reports/results_data_dictionary.md,True
 README.md,reports/security_evaluation_fixtures.md,reports/security_evaluation_fixtures.md,True
 README.md,reports/simulation_assumptions.md,reports/simulation_assumptions.md,True
@@ -113,6 +114,7 @@ reports/ai_orchestrator_frameworks_report.md,reports/maintenance_guide.md,report
 reports/ai_orchestrator_frameworks_report.md,reports/methodology_appendix.md,reports/methodology_appendix.md,True
 reports/ai_orchestrator_frameworks_report.md,reports/pilot_protocol.md,reports/pilot_protocol.md,True
 reports/ai_orchestrator_frameworks_report.md,reports/requirements_traceability.md,reports/requirements_traceability.md,True
+reports/ai_orchestrator_frameworks_report.md,reports/residual_risks.md,reports/residual_risks.md,True
 reports/ai_orchestrator_frameworks_report.md,reports/results_data_dictionary.md,reports/results_data_dictionary.md,True
 reports/ai_orchestrator_frameworks_report.md,reports/security_evaluation_fixtures.md,reports/security_evaluation_fixtures.md,True
 reports/ai_orchestrator_frameworks_report.md,reports/simulation_assumptions.md,reports/simulation_assumptions.md,True
@@ -183,6 +185,7 @@ reports/artifact_index.md,reports/maintenance_guide.md,reports/maintenance_guide
 reports/artifact_index.md,reports/methodology_appendix.md,reports/methodology_appendix.md,True
 reports/artifact_index.md,reports/pilot_protocol.md,reports/pilot_protocol.md,True
 reports/artifact_index.md,reports/requirements_traceability.md,reports/requirements_traceability.md,True
+reports/artifact_index.md,reports/residual_risks.md,reports/residual_risks.md,True
 reports/artifact_index.md,reports/results_data_dictionary.md,reports/results_data_dictionary.md,True
 reports/artifact_index.md,reports/security_evaluation_fixtures.md,reports/security_evaluation_fixtures.md,True
 reports/artifact_index.md,reports/simulation_assumptions.md,reports/simulation_assumptions.md,True
@@ -297,6 +300,7 @@ reports/final_report_bundle.md,reports/maintenance_guide.md,reports/maintenance_
 reports/final_report_bundle.md,reports/methodology_appendix.md,reports/methodology_appendix.md,True
 reports/final_report_bundle.md,reports/pilot_protocol.md,reports/pilot_protocol.md,True
 reports/final_report_bundle.md,reports/requirements_traceability.md,reports/requirements_traceability.md,True
+reports/final_report_bundle.md,reports/residual_risks.md,reports/residual_risks.md,True
 reports/final_report_bundle.md,reports/results_data_dictionary.md,reports/results_data_dictionary.md,True
 reports/final_report_bundle.md,reports/security_evaluation_fixtures.md,reports/security_evaluation_fixtures.md,True
 reports/final_report_bundle.md,reports/simulation_assumptions.md,reports/simulation_assumptions.md,True
@@ -458,6 +462,10 @@ reports/requirements_traceability.md,scripts/validate_artifacts.py,scripts/valid
 reports/requirements_traceability.md,templates/pilot_run_log.csv,templates/pilot_run_log.csv,True
 reports/requirements_traceability.md,templates/reviewer_scorecard.md,templates/reviewer_scorecard.md,True
 reports/requirements_traceability.md,templates/security_gate_checklist.md,templates/security_gate_checklist.md,True
+reports/residual_risks.md,data/pilot_tasks.json,data/pilot_tasks.json,True
+reports/residual_risks.md,data/security_evaluation_fixtures.json,data/security_evaluation_fixtures.json,True
+reports/residual_risks.md,templates/pilot_run_log.csv,templates/pilot_run_log.csv,True
+reports/residual_risks.md,templates/reviewer_scorecard.md,templates/reviewer_scorecard.md,True
 reports/results_data_dictionary.md,scripts/validate_csv_schemas.py,scripts/validate_csv_schemas.py,True
 reports/security_evaluation_fixtures.md,data/security_evaluation_fixtures.json,data/security_evaluation_fixtures.json,True
 reports/security_evaluation_fixtures.md,templates/security_gate_checklist.md,templates/security_gate_checklist.md,True

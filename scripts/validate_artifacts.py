@@ -135,6 +135,7 @@ def validate_report_references() -> None:
         "reports/methodology_appendix.md",
         "reports/requirements_traceability.md",
         "reports/results_data_dictionary.md",
+        "reports/residual_risks.md",
         "reports/security_evaluation_fixtures.md",
         "reports/simulation_assumptions.md",
         "reports/validation_summary.md"

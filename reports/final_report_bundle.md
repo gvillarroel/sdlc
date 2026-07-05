@@ -15,6 +15,7 @@ This generated bundle concatenates the main report and key appendices for one-fi
 - `reports/evidence_gap_analysis.md`
 - `reports/github_metadata_check.md`
 - `reports/security_evaluation_fixtures.md`
+- `reports/residual_risks.md`
 - `reports/pilot_protocol.md`
 - `reports/validation_summary.md`
 - `reports/environment_prerequisites.md`
@@ -150,6 +151,8 @@ For the latest validation and QA summary, read `reports/validation_summary.md`.
 For CSV output column definitions, read `reports/results_data_dictionary.md`.
 
 For update and refresh procedures, read `reports/maintenance_guide.md`.
+
+For remaining adoption risks after this screening, read `reports/residual_risks.md`.
 
 For terminology used across scoring and security sections, read `reports/glossary.md`.
 
@@ -1268,6 +1271,37 @@ A candidate can pass normal coding tasks and still fail these fixtures. That doe
 
 ---
 
+<!-- Source: reports/residual_risks.md -->
+
+# Residual Risks
+
+Date: 2026-07-05
+
+## Purpose
+
+This report records what remains uncertain after the license filter, simulations, stress tests, source checks, GitHub metadata checks, and offline validation.
+
+## Residual Risk Register
+
+| Risk | Why it remains | Next evidence needed |
+|---|---|---|
+| Simulated rankings may not predict live task success. | The current model uses scored evidence, not direct candidate execution on the same repositories. | Run the pilot task suite in `data/pilot_tasks.json`. |
+| Model choice can dominate framework choice. | A stronger model in a weaker harness can outperform a stronger harness with a weaker model. | Pin or record model/provider for every pilot run. |
+| Sandbox claims can differ from actual isolation. | Docs and feature lists do not prove workspace, network, secret, or destructive-command boundaries. | Run `data/security_evaluation_fixtures.json`. |
+| Internal repositories may behave differently from public benchmarks. | Monorepos, proprietary build systems, flaky tests, and legacy code can change outcomes. | Include at least one representative internal repository in the pilot. |
+| Cost and latency are not measured yet. | Simulations do not execute real model calls or sandbox workloads. | Capture tokens, cost, retries, queue time, and wall-clock latency in `templates/pilot_run_log.csv`. |
+| Review quality is not measured yet. | Passing tests does not guarantee maintainable, minimal, or mergeable diffs. | Use `templates/reviewer_scorecard.md` for every accepted or partial result. |
+| Legal review is not final. | Project-level MIT or Apache-2.0 screening does not replace dependency, asset, or generated-code legal review. | Run organization-standard legal/dependency scans before adoption. |
+| Project metadata can drift. | Fast-moving repos can change license, release posture, APIs, or maintainership after 2026-07-05. | Rerun live source and GitHub metadata checks before a final decision. |
+
+## Decision Impact
+
+These residual risks do not invalidate the screening result. They define the boundary of the result: the report is strong enough to choose pilot candidates, not strong enough to approve production adoption without execution evidence.
+
+The most important residual risk is security boundary evidence. Any candidate intended for autonomous or semi-autonomous repository work should fail closed until the security fixtures pass.
+
+---
+
 <!-- Source: reports/pilot_protocol.md -->
 
 # Pilot Protocol
@@ -1447,7 +1481,7 @@ This page summarizes the current quality checks for the report repository. It is
 
 | Check | Command | Latest result |
 |---|---|---|
-| Unit tests | `python -m unittest discover -s tests` | 89 tests passed. |
+| Unit tests | `python -m unittest discover -s tests` | 90 tests passed. |
 | Full local workflow | `python scripts/run_all_checks.py` | Passed. |
 | Offline artifact validation | `python scripts/validate_artifacts.py` | Passed. |
 | Generated CSV schemas | `python scripts/validate_csv_schemas.py` | 25 CSV schemas checked, 0 failures. |
@@ -2089,6 +2123,7 @@ Use this index to choose the right file quickly.
 | Requirement coverage | `reports/requirements_traceability.md` |
 | Validation and QA summary | `reports/validation_summary.md` |
 | Results data dictionary | `reports/results_data_dictionary.md` |
+| Residual risks | `reports/residual_risks.md` |
 | Maintenance procedure | `reports/maintenance_guide.md` |
 | Glossary | `reports/glossary.md` |
 | Scoring formula and assumptions | `reports/methodology_appendix.md` |
