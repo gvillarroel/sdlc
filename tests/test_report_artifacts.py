@@ -45,6 +45,14 @@ class ReportArtifactsTest(unittest.TestCase):
         self.assertIn("Generated Results", text)
         self.assertIn("Pilot Execution", text)
 
+    def test_pilot_protocol_exists(self):
+        protocol = ROOT / "reports" / "pilot_protocol.md"
+        self.assertTrue(protocol.exists())
+        text = protocol.read_text(encoding="utf-8")
+        self.assertIn("# Pilot Protocol", text)
+        self.assertIn("Decision Rule", text)
+        self.assertIn("Safety gate", text)
+
     def test_generated_result_files_exist(self):
         expected_files = [
             "deterministic_rankings.csv",

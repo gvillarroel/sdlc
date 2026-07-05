@@ -11,6 +11,7 @@ Use this index to choose the right file quickly.
 | Quick decision summary | `reports/executive_brief.md` |
 | Full analysis | `reports/ai_orchestrator_frameworks_report.md` |
 | Scoring formula and assumptions | `reports/methodology_appendix.md` |
+| Pilot execution protocol | `reports/pilot_protocol.md` |
 
 ## Data Inputs
 

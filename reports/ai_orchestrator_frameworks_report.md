@@ -317,6 +317,8 @@ The concrete task suite is included in `data/pilot_tasks.json`. It contains 20 t
 
 Pilot templates are included in `templates/`: `pilot_run_log.csv` for metrics capture, `reviewer_scorecard.md` for qualitative review, and `security_gate_checklist.md` for safety gates.
 
+The detailed execution protocol is in `reports/pilot_protocol.md`.
+
 | Phase | Duration | Work | Exit criteria |
 |---|---:|---|---|
 | 1. Harness smoke test | 2 days | Install top 3 candidates for the target scenario, run one simple repo task, confirm model/provider setup and sandbox path. | Each candidate can read the repo, make a controlled edit, run tests, and leave inspectable logs. |
