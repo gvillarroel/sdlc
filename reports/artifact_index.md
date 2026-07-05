@@ -12,6 +12,7 @@ Use this index to choose the right file quickly.
 | Guided shortlist selection | `reports/decision_tree.md` |
 | Full analysis | `reports/ai_orchestrator_frameworks_report.md` |
 | Requirement coverage | `reports/requirements_traceability.md` |
+| Validation and QA summary | `reports/validation_summary.md` |
 | Scoring formula and assumptions | `reports/methodology_appendix.md` |
 | Simulation assumptions and stress tests | `reports/simulation_assumptions.md` |
 | Evidence-gap findings | `reports/evidence_gap_analysis.md` |

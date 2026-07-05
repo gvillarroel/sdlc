@@ -24,6 +24,7 @@ README.md,reports/pilot_protocol.md,reports/pilot_protocol.md,True
 README.md,reports/requirements_traceability.md,reports/requirements_traceability.md,True
 README.md,reports/security_evaluation_fixtures.md,reports/security_evaluation_fixtures.md,True
 README.md,reports/simulation_assumptions.md,reports/simulation_assumptions.md,True
+README.md,reports/validation_summary.md,reports/validation_summary.md,True
 README.md,results/all_results.json,results/all_results.json,True
 README.md,results/alternative_scorecards.csv,results/alternative_scorecards.csv,True
 README.md,results/category_scores.csv,results/category_scores.csv,True
@@ -90,6 +91,7 @@ reports/ai_orchestrator_frameworks_report.md,reports/pilot_protocol.md,reports/p
 reports/ai_orchestrator_frameworks_report.md,reports/requirements_traceability.md,reports/requirements_traceability.md,True
 reports/ai_orchestrator_frameworks_report.md,reports/security_evaluation_fixtures.md,reports/security_evaluation_fixtures.md,True
 reports/ai_orchestrator_frameworks_report.md,reports/simulation_assumptions.md,reports/simulation_assumptions.md,True
+reports/ai_orchestrator_frameworks_report.md,reports/validation_summary.md,reports/validation_summary.md,True
 reports/ai_orchestrator_frameworks_report.md,results/all_results.json,results/all_results.json,True
 reports/ai_orchestrator_frameworks_report.md,results/alternative_scorecards.csv,results/alternative_scorecards.csv,True
 reports/ai_orchestrator_frameworks_report.md,results/category_scores.csv,results/category_scores.csv,True
@@ -149,6 +151,7 @@ reports/artifact_index.md,reports/pilot_protocol.md,reports/pilot_protocol.md,Tr
 reports/artifact_index.md,reports/requirements_traceability.md,reports/requirements_traceability.md,True
 reports/artifact_index.md,reports/security_evaluation_fixtures.md,reports/security_evaluation_fixtures.md,True
 reports/artifact_index.md,reports/simulation_assumptions.md,reports/simulation_assumptions.md,True
+reports/artifact_index.md,reports/validation_summary.md,reports/validation_summary.md,True
 reports/artifact_index.md,results/all_results.json,results/all_results.json,True
 reports/artifact_index.md,results/alternative_scorecards.csv,results/alternative_scorecards.csv,True
 reports/artifact_index.md,results/category_scores.csv,results/category_scores.csv,True
@@ -307,3 +310,15 @@ reports/simulation_assumptions.md,scripts/stress_test_simulation.py,scripts/stre
 reports/simulation_assumptions.md,templates/pilot_run_log.csv,templates/pilot_run_log.csv,True
 reports/simulation_assumptions.md,templates/reviewer_scorecard.md,templates/reviewer_scorecard.md,True
 reports/simulation_assumptions.md,templates/security_gate_checklist.md,templates/security_gate_checklist.md,True
+reports/validation_summary.md,ci/validate-workflow.example.yml,ci/validate-workflow.example.yml,True
+reports/validation_summary.md,results/csv_schema_check.csv,results/csv_schema_check.csv,True
+reports/validation_summary.md,results/github_metadata_check.csv,results/github_metadata_check.csv,True
+reports/validation_summary.md,results/license_audit.csv,results/license_audit.csv,True
+reports/validation_summary.md,results/local_artifact_reference_check.csv,results/local_artifact_reference_check.csv,True
+reports/validation_summary.md,results/source_check.csv,results/source_check.csv,True
+reports/validation_summary.md,scripts/check_local_artifact_references.py,scripts/check_local_artifact_references.py,True
+reports/validation_summary.md,scripts/check_sources.py,scripts/check_sources.py,True
+reports/validation_summary.md,scripts/refresh_github_metadata.py,scripts/refresh_github_metadata.py,True
+reports/validation_summary.md,scripts/run_all_checks.py,scripts/run_all_checks.py,True
+reports/validation_summary.md,scripts/validate_artifacts.py,scripts/validate_artifacts.py,True
+reports/validation_summary.md,scripts/validate_csv_schemas.py,scripts/validate_csv_schemas.py,True

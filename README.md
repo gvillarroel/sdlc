@@ -39,6 +39,7 @@ Included artifacts:
 - `reports/github_metadata_check.md` - live GitHub metadata verification summary.
 - `reports/security_evaluation_fixtures.md` - reusable security fixture catalog for pilot gates.
 - `reports/requirements_traceability.md` - coverage map from the original request to artifacts and validation commands.
+- `reports/validation_summary.md` - latest validation and QA summary for generated artifacts and tests.
 - `reports/methodology_appendix.md` - scoring formulas, Monte Carlo assumptions, and customization notes.
 - `reports/simulation_assumptions.md` - assumptions, stress tests, and interpretation of ranking fragility.
 - `reports/artifact_index.md` - navigation guide for all report, data, result, template, and script artifacts.

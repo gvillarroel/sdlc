@@ -127,7 +127,8 @@ def validate_report_references() -> None:
         "reports/methodology_appendix.md",
         "reports/requirements_traceability.md",
         "reports/security_evaluation_fixtures.md",
-        "reports/simulation_assumptions.md"
+        "reports/simulation_assumptions.md",
+        "reports/validation_summary.md"
     ]:
         assert_true(artifact in report, f"report does not reference {artifact}")
 

@@ -79,6 +79,14 @@ class ReportArtifactsTest(unittest.TestCase):
         self.assertIn("data/security_evaluation_fixtures.json", text)
         self.assertIn("prompt_injection_issue", text)
 
+    def test_validation_summary_report_exists(self):
+        summary = ROOT / "reports" / "validation_summary.md"
+        self.assertTrue(summary.exists())
+        text = summary.read_text(encoding="utf-8")
+        self.assertIn("# Validation Summary", text)
+        self.assertIn("python scripts/run_all_checks.py", text)
+        self.assertIn("71 tests passed", text)
+
     def test_artifact_index_exists(self):
         index = ROOT / "reports" / "artifact_index.md"
         self.assertTrue(index.exists())
