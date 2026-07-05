@@ -116,6 +116,7 @@
         "reports/ai_orchestrator_frameworks_report.md",
         "reports/final_report_bundle.md",
         "reports/executive_brief.md",
+        "reports/release_notes.md",
         "reports/artifact_index.md"
       ],
       "validation": "python scripts/validate_artifacts.py"

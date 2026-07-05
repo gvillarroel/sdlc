@@ -24,7 +24,7 @@ This page summarizes the current repository state for a reviewer opening the Git
 |---|---|
 | Unit tests | 131 tests passed |
 | Generated CSV schemas | 35 schemas checked, 0 failures |
-| Local artifact references | 744 references checked, 0 missing |
+| Local artifact references | 745 references checked, 0 missing |
 | Markdown tables | 221 tables checked, 0 failures |
 | External source URLs | 41 URLs checked, 41 OK |
 | GitHub metadata | 17 repos checked, 0 failures, 0 license mismatches |

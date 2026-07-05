@@ -125,7 +125,7 @@ This page summarizes the current repository state for a reviewer opening the Git
 |---|---|
 | Unit tests | 131 tests passed |
 | Generated CSV schemas | 35 schemas checked, 0 failures |
-| Local artifact references | 744 references checked, 0 missing |
+| Local artifact references | 745 references checked, 0 missing |
 | Markdown tables | 221 tables checked, 0 failures |
 | External source URLs | 41 URLs checked, 41 OK |
 | GitHub metadata | 17 repos checked, 0 failures, 0 license mismatches |
@@ -2132,7 +2132,7 @@ This page summarizes the current quality checks for the report repository. It is
 | Full local workflow | `python scripts/run_all_checks.py` | Passed. |
 | Offline artifact validation | `python scripts/validate_artifacts.py` | Passed. |
 | Generated CSV schemas | `python scripts/validate_csv_schemas.py` | 35 CSV schemas checked, 0 failures. |
-| Local artifact references | `python scripts/check_local_artifact_references.py` | 744 local references checked, 0 missing. |
+| Local artifact references | `python scripts/check_local_artifact_references.py` | 745 local references checked, 0 missing. |
 | Markdown tables | `python scripts/validate_markdown_tables.py` | 221 tables checked, 0 failures. |
 | External source URLs | `python scripts/check_sources.py --timeout 20` | 41 URLs checked, 41 OK. |
 | GitHub metadata | `python scripts/refresh_github_metadata.py --timeout 20` | 17 repos checked, 0 failures, 0 license mismatches. |
@@ -2939,7 +2939,7 @@ This document maps the original request to the repository artifacts that satisfy
 | Review how complicated it is to build something with the alternatives. | `reports/implementation_blueprints.md`, `reports/operational_cost_model.md`, `results/implementation_effort_estimates.csv`, `results/operational_cost_estimates.csv`, `scripts/estimate_implementation_effort.py`, `scripts/estimate_operational_costs.py` | `python scripts/estimate_implementation_effort.py && python scripts/estimate_operational_costs.py` |
 | Check factors that can make the evaluation unreliable. | `reports/evidence_gap_analysis.md`, `reports/github_metadata_check.md`, `reports/risk_validation_matrix.md`, `results/evidence_gap_analysis.csv`, `results/github_metadata_check.csv`, `results/risk_validation_matrix.csv`, `results/source_check.csv`, `scripts/analyze_evidence_gaps.py`, `scripts/build_github_metadata_report.py`, `scripts/build_risk_validation_matrix.py`, `scripts/refresh_github_metadata.py`, `scripts/check_sources.py` | `python scripts/analyze_evidence_gaps.py && python scripts/build_risk_validation_matrix.py && python scripts/build_github_metadata_report.py` |
 | Provide a way to move from simulated ranking to real evidence. | `reports/pilot_protocol.md`, `reports/pilot_sample_size.md`, `data/pilot_tasks.json`, `data/pilot_sample_size_model.json`, `data/security_evaluation_fixtures.json`, `templates/pilot_run_log.csv`, `templates/reviewer_scorecard.md`, `templates/security_gate_checklist.md`, `examples/pilot_adapter_contract.py`, `scripts/estimate_pilot_sample_sizes.py`, `scripts/score_pilot_results.py` | `python scripts/estimate_pilot_sample_sizes.py && python scripts/score_pilot_results.py --input examples/pilot_candidate_summary.example.csv --output results/pilot_decision_scores.example.csv` |
-| Generate the final report in English. | `reports/ai_orchestrator_frameworks_report.md`, `reports/final_report_bundle.md`, `reports/executive_brief.md`, `reports/artifact_index.md` | `python scripts/validate_artifacts.py` |
+| Generate the final report in English. | `reports/ai_orchestrator_frameworks_report.md`, `reports/final_report_bundle.md`, `reports/executive_brief.md`, `reports/release_notes.md`, `reports/artifact_index.md` | `python scripts/validate_artifacts.py` |
 | Upload the tests and final report to GitHub. | `tests/`, `scripts/run_all_checks.py`, `results/artifact_manifest.csv`, `ci/validate-workflow.example.yml` | `python scripts/run_all_checks.py` |
 
 ## Reproducibility Command

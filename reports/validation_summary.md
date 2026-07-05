@@ -14,7 +14,7 @@ This page summarizes the current quality checks for the report repository. It is
 | Full local workflow | `python scripts/run_all_checks.py` | Passed. |
 | Offline artifact validation | `python scripts/validate_artifacts.py` | Passed. |
 | Generated CSV schemas | `python scripts/validate_csv_schemas.py` | 35 CSV schemas checked, 0 failures. |
-| Local artifact references | `python scripts/check_local_artifact_references.py` | 744 local references checked, 0 missing. |
+| Local artifact references | `python scripts/check_local_artifact_references.py` | 745 local references checked, 0 missing. |
 | Markdown tables | `python scripts/validate_markdown_tables.py` | 221 tables checked, 0 failures. |
 | External source URLs | `python scripts/check_sources.py --timeout 20` | 41 URLs checked, 41 OK. |
 | GitHub metadata | `python scripts/refresh_github_metadata.py --timeout 20` | 17 repos checked, 0 failures, 0 license mismatches. |
