@@ -36,6 +36,8 @@ For a quick guided shortlist, read `reports/decision_tree.md`.
 
 For simulation assumptions, threats to validity, and stress-test results, read `reports/simulation_assumptions.md`.
 
+For evidence gaps in young or low-confidence candidates, read `reports/evidence_gap_analysis.md`.
+
 Use this report in three passes:
 
 1. Pick the target scenario: custom framework, secure PR automation, local coding, research benchmarking, or enterprise control plane.
@@ -132,6 +134,8 @@ The generated effort model makes that split explicit:
 | Low | Anchor, OmniAgent, Omni Agent | Very low traction or narrow scope; useful as design references, not primary adoption bets. |
 | Medium-low | Omnigent | Strong meta-harness concept and visible traction, but alpha status and broad control-plane scope make implementation risk high. |
 
+The generated evidence-gap analysis is `results/evidence_gap_analysis.csv`. It flags Anchor, OmniAgent, and Omni Agent as high evidence risk, Omnigent as medium evidence risk, and the major recommended candidates as low evidence risk for shortlist-level screening.
+
 ## Category Scorecards
 
 These category scores are generated from `results/category_scores.csv`. They are separate from scenario rankings: they show where each candidate is intrinsically strong before scenario weights are applied.
@@ -199,6 +203,7 @@ Generated outputs:
 | `results/evidence_matrix.csv` | Per-alternative repository, license, confidence, summary, implementation note, risk note, and source URLs. |
 | `results/alternative_scorecards.csv` | Wide table of all per-criterion scores by alternative. |
 | `results/implementation_effort_estimates.csv` | Generated prototype and production-hardening complexity estimates. |
+| `results/evidence_gap_analysis.csv` | Evidence risk bands for maturity, source confidence, release, traction, and freshness gaps. |
 | `results/source_check.csv` | Live URL check of report and dataset sources. The latest run checked 41 URLs with 41 OK responses. |
 | `results/license_audit.csv` | Explicit permissive-license audit for included and excluded entries. |
 | `results/regret_analysis.csv` | Score gap between each candidate and the scenario winner. |

@@ -13,6 +13,7 @@ Use this index to choose the right file quickly.
 | Full analysis | `reports/ai_orchestrator_frameworks_report.md` |
 | Scoring formula and assumptions | `reports/methodology_appendix.md` |
 | Simulation assumptions and stress tests | `reports/simulation_assumptions.md` |
+| Evidence-gap findings | `reports/evidence_gap_analysis.md` |
 | Pilot execution protocol | `reports/pilot_protocol.md` |
 | Candidate implementation notes | `reports/implementation_blueprints.md` |
 | Report charts | `reports/assets/rank_stability.svg`, `reports/assets/scenario_regret.svg` |
@@ -52,6 +53,7 @@ Use this index to choose the right file quickly.
 | Source/evidence table | `results/evidence_matrix.csv` |
 | Alternative scorecards | `results/alternative_scorecards.csv` |
 | Prototype and hardening effort estimates | `results/implementation_effort_estimates.csv` |
+| Evidence-gap risk analysis | `results/evidence_gap_analysis.csv` |
 | License audit | `results/license_audit.csv` |
 | URL health check | `results/source_check.csv` |
 | Complete machine-readable output | `results/all_results.json` |
@@ -72,6 +74,7 @@ Use this index to choose the right file quickly.
 | Regenerate rankings and simulations | `scripts/simulate_alternatives.py` |
 | Run simulation stress tests | `scripts/stress_test_simulation.py` |
 | Estimate implementation effort | `scripts/estimate_implementation_effort.py` |
+| Analyze evidence gaps | `scripts/analyze_evidence_gaps.py` |
 | Regenerate license audit | `scripts/license_audit.py` |
 | Check external source URLs | `scripts/check_sources.py` |
 | Validate generated artifacts offline | `scripts/validate_artifacts.py` |
@@ -94,6 +97,7 @@ Or run the core deterministic pieces manually:
 python scripts/simulate_alternatives.py --trials 5000 --seed 7331
 python scripts/stress_test_simulation.py --trials 1500 --seed 9011
 python scripts/estimate_implementation_effort.py
+python scripts/analyze_evidence_gaps.py
 python scripts/license_audit.py
 python scripts/validate_artifacts.py
 ```

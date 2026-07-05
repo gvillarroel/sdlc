@@ -167,6 +167,14 @@ Source confidence is a manual value from 0 to 1. It reflects repository clarity,
 
 Evidence is exported to `results/evidence_matrix.csv`. Live URL status is exported to `results/source_check.csv`.
 
+Evidence gaps are exported to `results/evidence_gap_analysis.csv` by:
+
+```powershell
+python scripts/analyze_evidence_gaps.py
+```
+
+The evidence-gap score combines source confidence, maturity, release availability, repository traction, evidence URL count, freshness, and repository age. It is a review-priority signal, not a direct product-quality score.
+
 ## Known Limitations
 
 - Scores are analyst judgments, not measured execution results.

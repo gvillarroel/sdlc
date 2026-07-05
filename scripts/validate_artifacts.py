@@ -28,6 +28,7 @@ REQUIRED_RESULT_FILES = [
     "evidence_matrix.csv",
     "alternative_scorecards.csv",
     "implementation_effort_estimates.csv",
+    "evidence_gap_analysis.csv",
     "regret_analysis.csv",
     "pareto_frontier.csv",
     "rank_stability.csv",
@@ -69,6 +70,7 @@ def validate_result_shapes() -> None:
     assert_true(len(read_csv(RESULTS / "rank_stability.csv")) == alt_count, "unexpected rank stability row count")
     assert_true(len(read_csv(RESULTS / "pareto_frontier.csv")) == alt_count, "unexpected pareto row count")
     assert_true(len(read_csv(RESULTS / "implementation_effort_estimates.csv")) == alt_count, "unexpected implementation effort row count")
+    assert_true(len(read_csv(RESULTS / "evidence_gap_analysis.csv")) == alt_count, "unexpected evidence gap row count")
     assert_true(len(read_csv(RESULTS / "stress_test_summary.csv")) == DETERMINISTIC_STRESS_CASE_COUNT * SCENARIO_COUNT, "unexpected stress test summary row count")
     assert_true(len(read_csv(RESULTS / "stress_test_rankings.csv")) == DETERMINISTIC_STRESS_CASE_COUNT * SCENARIO_COUNT * alt_count, "unexpected stress test rankings row count")
     assert_true(len(read_csv(RESULTS / "uncertainty_stress_summary.csv")) == UNCERTAINTY_STRESS_CASE_COUNT * SCENARIO_COUNT, "unexpected uncertainty stress summary row count")
@@ -98,6 +100,7 @@ def validate_report_references() -> None:
         "data/risk_register.json",
         "data/simulation_assumptions.json",
         "reports/executive_brief.md",
+        "reports/evidence_gap_analysis.md",
         "reports/methodology_appendix.md",
         "reports/simulation_assumptions.md"
     ]:

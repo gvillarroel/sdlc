@@ -47,6 +47,14 @@ class ReportArtifactsTest(unittest.TestCase):
         self.assertIn("Observed Ranking Changes", text)
         self.assertIn("data/simulation_assumptions.json", text)
 
+    def test_evidence_gap_report_exists(self):
+        evidence = ROOT / "reports" / "evidence_gap_analysis.md"
+        self.assertTrue(evidence.exists())
+        text = evidence.read_text(encoding="utf-8")
+        self.assertIn("# Evidence Gap Analysis", text)
+        self.assertIn("results/evidence_gap_analysis.csv", text)
+        self.assertIn("High", text)
+
     def test_artifact_index_exists(self):
         index = ROOT / "reports" / "artifact_index.md"
         self.assertTrue(index.exists())
@@ -86,6 +94,7 @@ class ReportArtifactsTest(unittest.TestCase):
             "category_scores.csv",
             "decision_shortlist.csv",
             "implementation_effort_estimates.csv",
+            "evidence_gap_analysis.csv",
             "stress_test_summary.csv",
             "uncertainty_stress_summary.csv",
             "all_results.json"

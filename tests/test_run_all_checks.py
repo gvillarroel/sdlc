@@ -11,6 +11,7 @@ class RunAllChecksTest(unittest.TestCase):
             "simulate_alternatives.py",
             "stress_test_simulation.py",
             "estimate_implementation_effort.py",
+            "analyze_evidence_gaps.py",
             "license_audit.py",
             "generate_charts.py",
             "score_pilot_results.py",
