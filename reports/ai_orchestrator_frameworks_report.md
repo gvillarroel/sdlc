@@ -427,6 +427,12 @@ python scripts/validate_artifacts.py
 
 It checks that generated result files exist, result row counts match the dataset/scenario shape, the license audit still has 17 included and 2 excluded entries, the latest source check has all URLs marked OK, and the report references the major generated artifacts.
 
+The full local regeneration and validation path is:
+
+```powershell
+python scripts/run_all_checks.py
+```
+
 The same non-network validation path is available as `ci/validate-workflow.example.yml`, a GitHub Actions workflow template that runs tests, regenerates deterministic simulation/license artifacts, validates the result set, and fails if generated outputs are not committed. It can be copied into `.github/workflows/` when the pushing token has GitHub `workflow` scope.
 
 ## Final Recommendation

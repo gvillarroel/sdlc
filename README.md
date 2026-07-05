@@ -17,6 +17,7 @@ Included artifacts:
 - `scripts/validate_artifacts.py` - offline consistency validation for generated artifacts and report references.
 - `scripts/generate_charts.py` - SVG chart generator for report visualizations.
 - `scripts/score_pilot_results.py` - post-pilot candidate scoring calculator.
+- `scripts/run_all_checks.py` - one-command local regeneration and validation workflow.
 - `tests/test_simulation_model.py` - validation tests for the scoring model and dataset.
 - `results/` - generated CSV and JSON simulation outputs, including category scorecards and a scenario shortlist.
 - `templates/` - pilot run log, reviewer scorecard, and security gate checklist templates.
@@ -31,6 +32,12 @@ Included artifacts:
 - `ci/validate-workflow.example.yml` - GitHub Actions workflow template for tests, deterministic artifact regeneration, and offline artifact validation.
 
 Run the checks and simulations:
+
+```powershell
+python scripts/run_all_checks.py
+```
+
+Or run individual steps:
 
 ```powershell
 python -m unittest discover -s tests

@@ -1,0 +1,22 @@
+import unittest
+
+from scripts.run_all_checks import COMMANDS
+
+
+class RunAllChecksTest(unittest.TestCase):
+    def test_runner_includes_required_steps(self):
+        joined = [" ".join(command) for command in COMMANDS]
+        required_fragments = [
+            "unittest discover",
+            "simulate_alternatives.py",
+            "license_audit.py",
+            "generate_charts.py",
+            "score_pilot_results.py",
+            "validate_artifacts.py"
+        ]
+        for fragment in required_fragments:
+            self.assertTrue(any(fragment in command for command in joined), fragment)
+
+
+if __name__ == "__main__":
+    unittest.main()

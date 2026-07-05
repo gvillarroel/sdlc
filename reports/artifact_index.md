@@ -68,6 +68,7 @@ Use this index to choose the right file quickly.
 | Validate generated artifacts offline | `scripts/validate_artifacts.py` |
 | Generate report SVG charts | `scripts/generate_charts.py` |
 | Score pilot results | `scripts/score_pilot_results.py` |
+| Run all local checks | `scripts/run_all_checks.py` |
 
 ## Maintenance
 
@@ -75,6 +76,12 @@ Run the core validation set:
 
 ```powershell
 python -m unittest discover -s tests
+python scripts/run_all_checks.py
+```
+
+Or run the core deterministic pieces manually:
+
+```powershell
 python scripts/simulate_alternatives.py --trials 5000 --seed 7331
 python scripts/license_audit.py
 python scripts/validate_artifacts.py
