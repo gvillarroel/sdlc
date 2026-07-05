@@ -28,6 +28,8 @@ My practical recommendation is:
 
 ## How To Use This Report
 
+For a short decision-oriented version, read `reports/executive_brief.md`.
+
 Use this report in three passes:
 
 1. Pick the target scenario: custom framework, secure PR automation, local coding, research benchmarking, or enterprise control plane.

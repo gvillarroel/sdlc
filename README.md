@@ -14,6 +14,7 @@ Included artifacts:
 - `results/` - generated CSV and JSON simulation outputs, including category scorecards and a scenario shortlist.
 - `templates/` - pilot run log, reviewer scorecard, and security gate checklist templates.
 - `reports/ai_orchestrator_frameworks_report.md` - final English report.
+- `reports/executive_brief.md` - short decision brief for quick review.
 
 Run the checks and simulations:
 

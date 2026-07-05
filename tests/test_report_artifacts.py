@@ -22,6 +22,13 @@ class ReportArtifactsTest(unittest.TestCase):
         for section in required_sections:
             self.assertIn(section, report)
 
+    def test_executive_brief_exists(self):
+        brief = ROOT / "reports" / "executive_brief.md"
+        self.assertTrue(brief.exists())
+        text = brief.read_text(encoding="utf-8")
+        self.assertIn("# Executive Brief", text)
+        self.assertIn("Recommended Next Step", text)
+
     def test_generated_result_files_exist(self):
         expected_files = [
             "deterministic_rankings.csv",
