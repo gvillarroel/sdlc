@@ -6,6 +6,7 @@ Included artifacts:
 
 - `data/alternatives.json` - curated dataset, source links, license filter, and 0-5 criterion scores.
 - `data/scoring_rubric.json` - calibration guide for the 0-5 scoring model.
+- `data/scenario_profiles.json` - plain-English scenario definitions and intended shortlists.
 - `data/pilot_tasks.json` - 20-task pilot suite for moving from simulated ranking to execution evidence.
 - `data/risk_register.json` - actionable adoption risks, mitigations, and required evidence.
 - `scripts/simulate_alternatives.py` - deterministic weighted ranking, Monte Carlo uncertainty simulation, and sensitivity analysis.

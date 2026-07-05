@@ -166,6 +166,8 @@ Five scenarios were simulated:
 | `research_benchmarking` | Run reproducible experiments and ablations. |
 | `enterprise_control_plane` | Govern multiple agent workflows and backends. |
 
+Plain-English scenario profiles are in `data/scenario_profiles.json`, including each scenario's question, priorities, non-goals, and typical shortlist.
+
 The Monte Carlo run used 5,000 trials with a fixed seed. Each trial perturbed scenario weights and per-alternative scores. Alpha and low-confidence projects received wider uncertainty.
 
 Generated outputs:

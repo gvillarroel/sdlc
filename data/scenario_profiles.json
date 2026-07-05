@@ -1,0 +1,126 @@
+{
+  "metadata": {
+    "created_at": "2026-07-05",
+    "purpose": "Plain-English profiles for the weighting scenarios used in the simulation model."
+  },
+  "scenarios": [
+    {
+      "id": "custom_orchestrator_platform",
+      "label": "Custom orchestrator platform",
+      "question": "What should we build on if we need our own agent orchestration layer?",
+      "priorities": [
+        "Extensibility",
+        "Multi-agent orchestration",
+        "Provider portability",
+        "Sandbox isolation",
+        "Deployment flexibility",
+        "Observability"
+      ],
+      "not_optimized_for": [
+        "Fastest individual developer setup",
+        "Minimal research scaffold",
+        "Single-provider optimization"
+      ],
+      "typical_shortlist": [
+        "OpenHands Software Agent SDK",
+        "Deep Agents",
+        "Cline / Cline SDK",
+        "Flue"
+      ]
+    },
+    {
+      "id": "secure_autonomous_prs",
+      "label": "Secure autonomous PRs",
+      "question": "What should run autonomous coding work safely and open PRs?",
+      "priorities": [
+        "Sandbox isolation",
+        "Security governance",
+        "CI/PR workflow",
+        "Observability",
+        "Human approval"
+      ],
+      "not_optimized_for": [
+        "Pure provider neutrality",
+        "Lowest implementation effort",
+        "Interactive pair-programming comfort"
+      ],
+      "typical_shortlist": [
+        "Codex CLI",
+        "OpenHands Software Agent SDK",
+        "Cline / Cline SDK",
+        "Open SWE"
+      ]
+    },
+    {
+      "id": "quick_local_coding",
+      "label": "Quick local coding",
+      "question": "What should a developer try first for local coding productivity?",
+      "priorities": [
+        "Implementation ease",
+        "Maturity",
+        "Human control",
+        "Coding fit",
+        "Provider portability"
+      ],
+      "not_optimized_for": [
+        "Hard sandbox guarantees",
+        "Enterprise control plane",
+        "Research reproducibility"
+      ],
+      "typical_shortlist": [
+        "Cline / Cline SDK",
+        "OpenCode",
+        "Aider",
+        "goose"
+      ]
+    },
+    {
+      "id": "research_benchmarking",
+      "label": "Research benchmarking",
+      "question": "What should we use for reproducible experiments and ablations?",
+      "priorities": [
+        "Research reproducibility",
+        "Implementation ease",
+        "Coding fit",
+        "Observability",
+        "Provider portability"
+      ],
+      "not_optimized_for": [
+        "Enterprise governance",
+        "Rich multi-agent control plane",
+        "Production-grade PR automation"
+      ],
+      "typical_shortlist": [
+        "mini-SWE-agent",
+        "SWE-agent",
+        "OpenHands Software Agent SDK",
+        "Deep Agents"
+      ]
+    },
+    {
+      "id": "enterprise_control_plane",
+      "label": "Enterprise control plane",
+      "question": "What should govern multiple teams, agents, backends, and workflows?",
+      "priorities": [
+        "Security governance",
+        "Observability",
+        "Deployment flexibility",
+        "Human control",
+        "Multi-agent orchestration",
+        "Maturity"
+      ],
+      "not_optimized_for": [
+        "Small-team minimalism",
+        "Lowest setup effort",
+        "Single CLI workflow"
+      ],
+      "typical_shortlist": [
+        "Cline / Cline SDK",
+        "OpenHands Agent Canvas",
+        "OpenHands Software Agent SDK",
+        "Open SWE",
+        "Omnigent"
+      ]
+    }
+  ]
+}

@@ -18,6 +18,7 @@ Use this index to choose the right file quickly.
 |---|---|
 | Candidate list, scores, source links, and notes | `data/alternatives.json` |
 | Score calibration anchors | `data/scoring_rubric.json` |
+| Scenario definitions and shortlists | `data/scenario_profiles.json` |
 | Pilot task suite | `data/pilot_tasks.json` |
 | Adoption risk register | `data/risk_register.json` |
 
