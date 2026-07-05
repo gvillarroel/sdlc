@@ -5,6 +5,7 @@ This repository contains a reproducible evaluation of permissive open-source alt
 Included artifacts:
 
 - `data/alternatives.json` - curated dataset, source links, license filter, and 0-5 criterion scores.
+- `data/scoring_rubric.json` - calibration guide for the 0-5 scoring model.
 - `data/pilot_tasks.json` - 20-task pilot suite for moving from simulated ranking to execution evidence.
 - `data/risk_register.json` - actionable adoption risks, mitigations, and required evidence.
 - `scripts/simulate_alternatives.py` - deterministic weighted ranking, Monte Carlo uncertainty simulation, and sensitivity analysis.

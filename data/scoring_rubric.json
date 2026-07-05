@@ -1,0 +1,86 @@
+{
+  "metadata": {
+    "created_at": "2026-07-05",
+    "purpose": "Calibration guide for the 0-5 scoring model used in data/alternatives.json."
+  },
+  "scale": {
+    "0": "Absent or not evidenced.",
+    "1": "Very weak, experimental, or only indirectly supported.",
+    "2": "Partial capability with meaningful gaps.",
+    "3": "Usable baseline capability with known limitations.",
+    "4": "Strong capability suitable for serious pilots.",
+    "5": "Best-in-class or clearly production-grade for this evaluation criterion."
+  },
+  "criteria": {
+    "implementation_ease": {
+      "0": "Cannot be practically installed or trialed from available materials.",
+      "3": "Prototype is feasible with moderate integration work.",
+      "5": "A credible prototype can be run quickly with clear docs and minimal glue code."
+    },
+    "maturity": {
+      "0": "No clear repo, release, or maintenance evidence.",
+      "3": "Active beta or young project with enough evidence for a pilot.",
+      "5": "Stable production posture, active maintenance, releases, docs, and broad usage."
+    },
+    "provider_portability": {
+      "0": "Hard locked to one provider or hosted account path.",
+      "3": "Some provider flexibility, but important features depend on one provider.",
+      "5": "Designed for multiple providers and local/open-weight model options."
+    },
+    "sandbox_isolation": {
+      "0": "No meaningful execution boundary.",
+      "3": "Basic isolation or external sandbox path is available.",
+      "5": "Clear, testable, policy-aware sandboxing with strong default boundaries."
+    },
+    "persistence_memory": {
+      "0": "No session, state, or memory support beyond transient prompt context.",
+      "3": "Basic session state or logs exist.",
+      "5": "Durable state, memory, context offloading, and resumability are first-class."
+    },
+    "multi_agent": {
+      "0": "Single-agent only.",
+      "3": "Some subagent or parallel workflow support.",
+      "5": "Supervisor/subagent orchestration is first-class and configurable."
+    },
+    "human_control": {
+      "0": "No clear user approval, interruption, or review loop.",
+      "3": "Basic confirmations or interactive steering exist.",
+      "5": "Rich human-in-the-loop control, approvals, review, and handoff are core."
+    },
+    "ci_pr": {
+      "0": "No practical CI, GitHub, branch, issue, or PR workflow fit.",
+      "3": "Can be scripted into CI or PR workflows with effort.",
+      "5": "CI/PR/issue workflows are native or clearly documented."
+    },
+    "observability": {
+      "0": "Failures cannot be reconstructed.",
+      "3": "Basic logs or transcripts are available.",
+      "5": "Structured traces, artifacts, replayability, and debugging support are strong."
+    },
+    "security_governance": {
+      "0": "No permission model, policy controls, or guardrails.",
+      "3": "Basic permissions or approval policies exist.",
+      "5": "Governed execution, risk tiers, policies, and audit controls are strong."
+    },
+    "extensibility": {
+      "0": "Closed behavior with no practical extension points.",
+      "3": "Some hooks, commands, tools, or plugin mechanism exists.",
+      "5": "Rich APIs, hooks, MCP/plugins/tools, skills, or adapters are first-class."
+    },
+    "deployment_flexibility": {
+      "0": "Only one narrow execution environment is practical.",
+      "3": "Runs locally and can be adapted to another target.",
+      "5": "Local, CI, self-hosted, container, and cloud paths are viable."
+    },
+    "coding_fit": {
+      "0": "Not meaningfully designed for software engineering tasks.",
+      "3": "Can assist with coding but is not optimized for repo-scale work.",
+      "5": "Strong fit for repo understanding, edits, tests, diffs, and PR workflows."
+    },
+    "research_reproducibility": {
+      "0": "Hard to reproduce, inspect, or benchmark.",
+      "3": "Reproducible with extra harness work.",
+      "5": "Excellent for deterministic experiments, ablations, logs, and benchmarks."
+    }
+  }
+}

@@ -43,6 +43,8 @@ Each alternative receives a score from 0 to 5 on 14 criteria:
 
 Definitions are exported to `results/criteria_definitions.csv`.
 
+The scoring anchors are documented in `data/scoring_rubric.json`. Each criterion has low, mid, and high anchors for the 0-5 scale so future reviewers can adjust scores consistently.
+
 ## Weighted Scenario Score
 
 For an alternative `a` and scenario `s`, the deterministic score is:

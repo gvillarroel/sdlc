@@ -17,6 +17,7 @@ Use this index to choose the right file quickly.
 | Need | Artifact |
 |---|---|
 | Candidate list, scores, source links, and notes | `data/alternatives.json` |
+| Score calibration anchors | `data/scoring_rubric.json` |
 | Pilot task suite | `data/pilot_tasks.json` |
 | Adoption risk register | `data/risk_register.json` |
 

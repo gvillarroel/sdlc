@@ -154,6 +154,8 @@ The formula details, uncertainty model, category groups, and customization steps
 
 The score model uses 14 criteria on a 0-5 scale: implementation ease, maturity, provider portability, sandbox isolation, persistence/memory, multi-agent support, human control, CI/PR fit, observability, security/governance, extensibility, deployment flexibility, coding-task fit, and research reproducibility.
 
+Score calibration anchors are documented in `data/scoring_rubric.json`.
+
 Five scenarios were simulated:
 
 | Scenario | Intent |
