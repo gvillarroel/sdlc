@@ -21,6 +21,16 @@ python scripts/check_sources.py --timeout 20
 python scripts/refresh_github_metadata.py --timeout 20
 ```
 
+If `refresh_github_metadata.py` reports `http_403`, treat it as a likely GitHub API rate-limit or abuse-protection response unless the browser URL also fails. Retry with a short sleep or a valid token:
+
+```powershell
+$env:GITHUB_TOKEN = "<valid GitHub token>"
+python scripts/refresh_github_metadata.py --timeout 20 --sleep 0.2
+Remove-Item Env:\GITHUB_TOKEN
+```
+
+If a configured token returns `http_401`, remove or replace it. The script falls back to unauthenticated requests, but a failed live refresh should not be committed over the last successful `results/github_metadata_check.csv`.
+
 2. Edit input data if evidence changed:
 
 - `data/alternatives.json`
@@ -112,6 +122,7 @@ Before sharing a refreshed report:
 - `python scripts/run_all_checks.py` passes.
 - `python scripts/check_sources.py --timeout 20` passes.
 - `python scripts/refresh_github_metadata.py --timeout 20` passes.
+- `results/github_metadata_check.csv` has 17 successful rows before regenerating `reports/github_metadata_check.md`.
 - `git diff --check` passes.
 - `reports/final_report_bundle.md` is regenerated.
 - `reports/validation_summary.md` reflects the current test and schema counts.

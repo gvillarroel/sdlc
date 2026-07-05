@@ -15,7 +15,7 @@ Date: 2026-07-05
 | Capability | Used by |
 |---|---|
 | Internet access | `scripts/check_sources.py` and `scripts/refresh_github_metadata.py` |
-| GitHub API access | `scripts/refresh_github_metadata.py`; unauthenticated public API access is usually enough for the current 17 repos. |
+| GitHub API access | `scripts/refresh_github_metadata.py`; unauthenticated public API access is usually enough for the current 17 repos, but a valid `GITHUB_TOKEN` or `GH_TOKEN` helps avoid rate-limit `403` responses. |
 | GitHub token with `workflow` scope | Only needed if copying `ci/validate-workflow.example.yml` into `.github/workflows/`. |
 
 ## Standard Commands
@@ -38,6 +38,16 @@ Run live checks when network access is available:
 python scripts/check_sources.py --timeout 20
 python scripts/refresh_github_metadata.py --timeout 20
 ```
+
+If GitHub API calls return `http_403`, retry later or set a valid token:
+
+```powershell
+$env:GITHUB_TOKEN = "<valid GitHub token>"
+python scripts/refresh_github_metadata.py --timeout 20 --sleep 0.2
+Remove-Item Env:\GITHUB_TOKEN
+```
+
+If a configured token returns `http_401`, the script falls back to unauthenticated requests before failing.
 
 ## Dependency Policy
 

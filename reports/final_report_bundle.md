@@ -2085,7 +2085,7 @@ This page summarizes the current quality checks for the report repository. It is
 | Full local workflow | `python scripts/run_all_checks.py` | Passed. |
 | Offline artifact validation | `python scripts/validate_artifacts.py` | Passed. |
 | Generated CSV schemas | `python scripts/validate_csv_schemas.py` | 35 CSV schemas checked, 0 failures. |
-| Local artifact references | `python scripts/check_local_artifact_references.py` | 713 local references checked, 0 missing. |
+| Local artifact references | `python scripts/check_local_artifact_references.py` | 715 local references checked, 0 missing. |
 | Markdown tables | `python scripts/validate_markdown_tables.py` | 217 tables checked, 0 failures. |
 | External source URLs | `python scripts/check_sources.py --timeout 20` | 41 URLs checked, 41 OK. |
 | GitHub metadata | `python scripts/refresh_github_metadata.py --timeout 20` | 17 repos checked, 0 failures, 0 license mismatches. |
@@ -2139,7 +2139,7 @@ Date: 2026-07-05
 | Capability | Used by |
 |---|---|
 | Internet access | `scripts/check_sources.py` and `scripts/refresh_github_metadata.py` |
-| GitHub API access | `scripts/refresh_github_metadata.py`; unauthenticated public API access is usually enough for the current 17 repos. |
+| GitHub API access | `scripts/refresh_github_metadata.py`; unauthenticated public API access is usually enough for the current 17 repos, but a valid `GITHUB_TOKEN` or `GH_TOKEN` helps avoid rate-limit `403` responses. |
 | GitHub token with `workflow` scope | Only needed if copying `ci/validate-workflow.example.yml` into `.github/workflows/`. |
 
 ## Standard Commands
@@ -2162,6 +2162,16 @@ Run live checks when network access is available:
 python scripts/check_sources.py --timeout 20
 python scripts/refresh_github_metadata.py --timeout 20
 ```
+
+If GitHub API calls return `http_403`, retry later or set a valid token:
+
+```powershell
+$env:GITHUB_TOKEN = "<valid GitHub token>"
+python scripts/refresh_github_metadata.py --timeout 20 --sleep 0.2
+Remove-Item Env:\GITHUB_TOKEN
+```
+
+If a configured token returns `http_401`, the script falls back to unauthenticated requests before failing.
 
 ## Dependency Policy
 
@@ -2752,6 +2762,16 @@ python scripts/check_sources.py --timeout 20
 python scripts/refresh_github_metadata.py --timeout 20
 ```
 
+If `refresh_github_metadata.py` reports `http_403`, treat it as a likely GitHub API rate-limit or abuse-protection response unless the browser URL also fails. Retry with a short sleep or a valid token:
+
+```powershell
+$env:GITHUB_TOKEN = "<valid GitHub token>"
+python scripts/refresh_github_metadata.py --timeout 20 --sleep 0.2
+Remove-Item Env:\GITHUB_TOKEN
+```
+
+If a configured token returns `http_401`, remove or replace it. The script falls back to unauthenticated requests, but a failed live refresh should not be committed over the last successful `results/github_metadata_check.csv`.
+
 2. Edit input data if evidence changed:
 
 - `data/alternatives.json`
@@ -2843,6 +2863,7 @@ Before sharing a refreshed report:
 - `python scripts/run_all_checks.py` passes.
 - `python scripts/check_sources.py --timeout 20` passes.
 - `python scripts/refresh_github_metadata.py --timeout 20` passes.
+- `results/github_metadata_check.csv` has 17 successful rows before regenerating `reports/github_metadata_check.md`.
 - `git diff --check` passes.
 - `reports/final_report_bundle.md` is regenerated.
 - `reports/validation_summary.md` reflects the current test and schema counts.

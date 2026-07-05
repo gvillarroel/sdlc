@@ -486,6 +486,7 @@ reports/maintenance_guide.md,reports/adoption_decision_record.md,reports/adoptio
 reports/maintenance_guide.md,reports/evidence_gap_analysis.md,reports/evidence_gap_analysis.md,True
 reports/maintenance_guide.md,reports/executive_brief.md,reports/executive_brief.md,True
 reports/maintenance_guide.md,reports/final_report_bundle.md,reports/final_report_bundle.md,True
+reports/maintenance_guide.md,reports/github_metadata_check.md,reports/github_metadata_check.md,True
 reports/maintenance_guide.md,reports/operational_cost_model.md,reports/operational_cost_model.md,True
 reports/maintenance_guide.md,reports/pilot_sample_size.md,reports/pilot_sample_size.md,True
 reports/maintenance_guide.md,reports/risk_validation_matrix.md,reports/risk_validation_matrix.md,True
@@ -493,6 +494,7 @@ reports/maintenance_guide.md,reports/scenario_playbooks.md,reports/scenario_play
 reports/maintenance_guide.md,reports/score_driver_summary.md,reports/score_driver_summary.md,True
 reports/maintenance_guide.md,reports/simulation_assumptions.md,reports/simulation_assumptions.md,True
 reports/maintenance_guide.md,reports/validation_summary.md,reports/validation_summary.md,True
+reports/maintenance_guide.md,results/github_metadata_check.csv,results/github_metadata_check.csv,True
 reports/maintenance_guide.md,results/pilot_decision_scores.example.csv,results/pilot_decision_scores.example.csv,True
 reports/maintenance_guide.md,scripts/check_sources.py,scripts/check_sources.py,True
 reports/maintenance_guide.md,scripts/license_audit.py,scripts/license_audit.py,True
