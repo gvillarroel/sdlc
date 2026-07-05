@@ -53,6 +53,14 @@ class ReportArtifactsTest(unittest.TestCase):
         self.assertIn("Decision Rule", text)
         self.assertIn("Safety gate", text)
 
+    def test_implementation_blueprints_exist(self):
+        blueprints = ROOT / "reports" / "implementation_blueprints.md"
+        self.assertTrue(blueprints.exists())
+        text = blueprints.read_text(encoding="utf-8")
+        self.assertIn("# Implementation Blueprints", text)
+        self.assertIn("OpenHands Software Agent SDK", text)
+        self.assertIn("Codex CLI", text)
+
     def test_generated_result_files_exist(self):
         expected_files = [
             "deterministic_rankings.csv",

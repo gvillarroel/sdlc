@@ -22,6 +22,7 @@ Included artifacts:
 - `reports/methodology_appendix.md` - scoring formulas, Monte Carlo assumptions, and customization notes.
 - `reports/artifact_index.md` - navigation guide for all report, data, result, template, and script artifacts.
 - `reports/pilot_protocol.md` - step-by-step protocol for executing the recommended pilot.
+- `reports/implementation_blueprints.md` - implementation notes for the main pilot candidates.
 - `ci/validate-workflow.example.yml` - GitHub Actions workflow template for tests, deterministic artifact regeneration, and offline artifact validation.
 
 Run the checks and simulations:

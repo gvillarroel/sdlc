@@ -12,6 +12,7 @@ Use this index to choose the right file quickly.
 | Full analysis | `reports/ai_orchestrator_frameworks_report.md` |
 | Scoring formula and assumptions | `reports/methodology_appendix.md` |
 | Pilot execution protocol | `reports/pilot_protocol.md` |
+| Candidate implementation notes | `reports/implementation_blueprints.md` |
 | Report charts | `reports/assets/rank_stability.svg`, `reports/assets/scenario_regret.svg` |
 
 ## Data Inputs
