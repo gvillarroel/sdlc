@@ -13,6 +13,7 @@ Use this index to choose the right file quickly.
 | Proposed adoption decision record | `reports/adoption_decision_record.md` |
 | Guided shortlist selection | `reports/decision_tree.md` |
 | Full analysis | `reports/ai_orchestrator_frameworks_report.md` |
+| One-file report bundle | `reports/final_report_bundle.md` |
 | Requirement coverage | `reports/requirements_traceability.md` |
 | Validation and QA summary | `reports/validation_summary.md` |
 | Glossary | `reports/glossary.md` |
@@ -98,6 +99,7 @@ Use this index to choose the right file quickly.
 | Validate generated CSV schemas | `scripts/validate_csv_schemas.py` |
 | Validate generated artifacts offline | `scripts/validate_artifacts.py` |
 | Generate report SVG charts | `scripts/generate_charts.py` |
+| Build one-file report bundle | `scripts/build_report_bundle.py` |
 | Score pilot results | `scripts/score_pilot_results.py` |
 | Run all local checks | `scripts/run_all_checks.py` |
 
@@ -121,6 +123,7 @@ python scripts/rank_with_custom_weights.py
 python scripts/license_audit.py
 python scripts/check_local_artifact_references.py
 python scripts/validate_csv_schemas.py
+python scripts/build_report_bundle.py
 python scripts/validate_artifacts.py
 ```
 

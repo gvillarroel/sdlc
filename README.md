@@ -26,6 +26,7 @@ Included artifacts:
 - `scripts/license_audit.py` - permissive-license audit for included and excluded alternatives.
 - `scripts/validate_artifacts.py` - offline consistency validation for generated artifacts and report references.
 - `scripts/generate_charts.py` - SVG chart generator for report visualizations.
+- `scripts/build_report_bundle.py` - generated one-file final report bundle builder.
 - `scripts/score_pilot_results.py` - post-pilot candidate scoring calculator.
 - `scripts/run_all_checks.py` - one-command local regeneration and validation workflow.
 - `tests/test_simulation_model.py` - validation tests for the scoring model and dataset.
@@ -35,6 +36,7 @@ Included artifacts:
 - `examples/custom_weights.example.json` - example custom scenario weights.
 - `examples/pilot_adapter_contract.py` - minimal Python adapter contract for comparable pilot runs.
 - `reports/ai_orchestrator_frameworks_report.md` - final English report.
+- `reports/final_report_bundle.md` - generated one-file bundle of the main report and key appendices.
 - `reports/adoption_decision_record.md` - proposed adoption decision record and no-go conditions.
 - `reports/executive_brief.md` - short decision brief for quick review.
 - `reports/faq.md` - answers to common scope, weighting, exclusion, and pilot questions.
@@ -71,6 +73,7 @@ python scripts/license_audit.py
 python scripts/check_local_artifact_references.py
 python scripts/validate_csv_schemas.py
 python scripts/generate_charts.py
+python scripts/build_report_bundle.py
 python scripts/score_pilot_results.py --input examples/pilot_candidate_summary.example.csv --output results/pilot_decision_scores.example.csv
 python scripts/check_sources.py --timeout 20
 python scripts/refresh_github_metadata.py --timeout 20

@@ -38,6 +38,14 @@ class ReportArtifactsTest(unittest.TestCase):
         self.assertIn("No-Go Conditions", text)
         self.assertIn("Status: Proposed", text)
 
+    def test_final_report_bundle_exists(self):
+        bundle = ROOT / "reports" / "final_report_bundle.md"
+        self.assertTrue(bundle.exists())
+        text = bundle.read_text(encoding="utf-8")
+        self.assertIn("# Final Report Bundle", text)
+        self.assertIn("reports/ai_orchestrator_frameworks_report.md", text)
+        self.assertIn("# Executive Brief", text)
+
     def test_faq_exists(self):
         faq = ROOT / "reports" / "faq.md"
         self.assertTrue(faq.exists())
@@ -109,7 +117,7 @@ class ReportArtifactsTest(unittest.TestCase):
         text = summary.read_text(encoding="utf-8")
         self.assertIn("# Validation Summary", text)
         self.assertIn("python scripts/run_all_checks.py", text)
-        self.assertIn("77 tests passed", text)
+        self.assertIn("80 tests passed", text)
 
     def test_artifact_index_exists(self):
         index = ROOT / "reports" / "artifact_index.md"
