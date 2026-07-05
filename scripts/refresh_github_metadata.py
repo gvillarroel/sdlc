@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import sys
 import time
 import urllib.error
@@ -29,31 +30,62 @@ def github_date(value: str | None) -> str:
     return datetime.fromisoformat(value.replace("Z", "+00:00")).date().isoformat()
 
 
-def get_json(url: str, timeout: int) -> tuple[dict[str, Any] | None, str]:
-    request = urllib.request.Request(
-        url,
-        headers={
+def get_json(url: str, timeout: int, github_token: str = "", attempts: int = 2) -> tuple[dict[str, Any] | None, str]:
+    active_token = github_token
+    for attempt in range(attempts):
+        headers = {
             "Accept": "application/vnd.github+json",
             "User-Agent": "sdlc-report-metadata-check",
-        },
-    )
-    try:
-        with urllib.request.urlopen(request, timeout=timeout) as response:
-            return json.loads(response.read().decode("utf-8")), ""
-    except urllib.error.HTTPError as exc:
-        if exc.code == 404:
-            return None, "not_found"
-        return None, f"http_{exc.code}"
-    except urllib.error.URLError as exc:
-        return None, str(exc.reason)
+        }
+        if active_token:
+            headers["Authorization"] = f"Bearer {active_token}"
+        request = urllib.request.Request(
+            url,
+            headers=headers,
+        )
+        try:
+            with urllib.request.urlopen(request, timeout=timeout) as response:
+                return json.loads(response.read().decode("utf-8")), ""
+        except urllib.error.HTTPError as exc:
+            code = exc.code
+            exc.close()
+            if code == 404:
+                return None, "not_found"
+            if code == 401 and active_token:
+                active_token = ""
+                if attempt < attempts - 1:
+                    continue
+            if code in {403, 429, 502, 503, 504} and attempt < attempts - 1:
+                time.sleep(1.5 * (attempt + 1))
+                continue
+            return None, f"http_{code}"
+        except urllib.error.URLError as exc:
+            if attempt < attempts - 1:
+                time.sleep(1.5 * (attempt + 1))
+                continue
+            return None, str(exc.reason)
+    return None, "unknown_error"
 
 
-def metadata_rows(raw_data: dict[str, Any], timeout: int, sleep_seconds: float) -> list[dict[str, Any]]:
+def metadata_rows(
+    raw_data: dict[str, Any],
+    timeout: int,
+    sleep_seconds: float,
+    github_token: str = "",
+) -> list[dict[str, Any]]:
     rows = []
     for item in raw_data["alternatives"]:
         repo = item["repo"]
-        repo_payload, repo_error = get_json(f"{GITHUB_API}/repos/{repo}", timeout)
-        release_payload, release_error = get_json(f"{GITHUB_API}/repos/{repo}/releases/latest", timeout)
+        repo_payload, repo_error = get_json(
+            f"{GITHUB_API}/repos/{repo}",
+            timeout,
+            github_token,
+        )
+        release_payload, release_error = get_json(
+            f"{GITHUB_API}/repos/{repo}/releases/latest",
+            timeout,
+            github_token,
+        )
         if sleep_seconds:
             time.sleep(sleep_seconds)
 
@@ -140,7 +172,13 @@ def main() -> int:
     args = parser.parse_args()
 
     raw_data = json.loads(args.data.read_text(encoding="utf-8"))
-    rows = metadata_rows(raw_data, timeout=args.timeout, sleep_seconds=args.sleep)
+    github_token = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN") or ""
+    rows = metadata_rows(
+        raw_data,
+        timeout=args.timeout,
+        sleep_seconds=args.sleep,
+        github_token=github_token,
+    )
     write_metadata_rows(rows, args.output_dir)
     failed = [row for row in rows if not row["ok"]]
     mismatched = [
