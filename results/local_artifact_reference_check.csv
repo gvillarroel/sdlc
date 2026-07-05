@@ -3,6 +3,7 @@ README.md,ci/validate-workflow.example.yml,ci/validate-workflow.example.yml,True
 README.md,data/alternatives.json,data/alternatives.json,True
 README.md,data/candidate_taxonomy.json,data/candidate_taxonomy.json,True
 README.md,data/decision_tree.json,data/decision_tree.json,True
+README.md,data/operational_cost_model.json,data/operational_cost_model.json,True
 README.md,data/pilot_decision_model.json,data/pilot_decision_model.json,True
 README.md,data/pilot_tasks.json,data/pilot_tasks.json,True
 README.md,data/risk_register.json,data/risk_register.json,True
@@ -30,6 +31,7 @@ README.md,reports/glossary.md,reports/glossary.md,True
 README.md,reports/implementation_blueprints.md,reports/implementation_blueprints.md,True
 README.md,reports/maintenance_guide.md,reports/maintenance_guide.md,True
 README.md,reports/methodology_appendix.md,reports/methodology_appendix.md,True
+README.md,reports/operational_cost_model.md,reports/operational_cost_model.md,True
 README.md,reports/pilot_protocol.md,reports/pilot_protocol.md,True
 README.md,reports/presentation_outline.md,reports/presentation_outline.md,True
 README.md,reports/requirements_traceability.md,reports/requirements_traceability.md,True
@@ -54,6 +56,8 @@ README.md,results/implementation_effort_estimates.csv,results/implementation_eff
 README.md,results/license_audit.csv,results/license_audit.csv,True
 README.md,results/local_artifact_reference_check.csv,results/local_artifact_reference_check.csv,True
 README.md,results/monte_carlo_summary.csv,results/monte_carlo_summary.csv,True
+README.md,results/operational_cost_estimates.csv,results/operational_cost_estimates.csv,True
+README.md,results/operational_fit_rankings.csv,results/operational_fit_rankings.csv,True
 README.md,results/pareto_frontier.csv,results/pareto_frontier.csv,True
 README.md,results/pilot_decision_scores.example.csv,results/pilot_decision_scores.example.csv,True
 README.md,results/rank_stability.csv,results/rank_stability.csv,True
@@ -71,6 +75,7 @@ README.md,scripts/build_results_data_dictionary.py,scripts/build_results_data_di
 README.md,scripts/check_local_artifact_references.py,scripts/check_local_artifact_references.py,True
 README.md,scripts/check_sources.py,scripts/check_sources.py,True
 README.md,scripts/estimate_implementation_effort.py,scripts/estimate_implementation_effort.py,True
+README.md,scripts/estimate_operational_costs.py,scripts/estimate_operational_costs.py,True
 README.md,scripts/generate_artifact_manifest.py,scripts/generate_artifact_manifest.py,True
 README.md,scripts/generate_charts.py,scripts/generate_charts.py,True
 README.md,scripts/license_audit.py,scripts/license_audit.py,True
@@ -91,6 +96,7 @@ reports/ai_orchestrator_frameworks_report.md,assets/scenario_regret.svg,reports/
 reports/ai_orchestrator_frameworks_report.md,ci/validate-workflow.example.yml,ci/validate-workflow.example.yml,True
 reports/ai_orchestrator_frameworks_report.md,data/alternatives.json,data/alternatives.json,True
 reports/ai_orchestrator_frameworks_report.md,data/candidate_taxonomy.json,data/candidate_taxonomy.json,True
+reports/ai_orchestrator_frameworks_report.md,data/operational_cost_model.json,data/operational_cost_model.json,True
 reports/ai_orchestrator_frameworks_report.md,data/pilot_decision_model.json,data/pilot_decision_model.json,True
 reports/ai_orchestrator_frameworks_report.md,data/pilot_tasks.json,data/pilot_tasks.json,True
 reports/ai_orchestrator_frameworks_report.md,data/risk_register.json,data/risk_register.json,True
@@ -117,6 +123,7 @@ reports/ai_orchestrator_frameworks_report.md,reports/glossary.md,reports/glossar
 reports/ai_orchestrator_frameworks_report.md,reports/implementation_blueprints.md,reports/implementation_blueprints.md,True
 reports/ai_orchestrator_frameworks_report.md,reports/maintenance_guide.md,reports/maintenance_guide.md,True
 reports/ai_orchestrator_frameworks_report.md,reports/methodology_appendix.md,reports/methodology_appendix.md,True
+reports/ai_orchestrator_frameworks_report.md,reports/operational_cost_model.md,reports/operational_cost_model.md,True
 reports/ai_orchestrator_frameworks_report.md,reports/pilot_protocol.md,reports/pilot_protocol.md,True
 reports/ai_orchestrator_frameworks_report.md,reports/presentation_outline.md,reports/presentation_outline.md,True
 reports/ai_orchestrator_frameworks_report.md,reports/requirements_traceability.md,reports/requirements_traceability.md,True
@@ -141,6 +148,8 @@ reports/ai_orchestrator_frameworks_report.md,results/implementation_effort_estim
 reports/ai_orchestrator_frameworks_report.md,results/license_audit.csv,results/license_audit.csv,True
 reports/ai_orchestrator_frameworks_report.md,results/local_artifact_reference_check.csv,results/local_artifact_reference_check.csv,True
 reports/ai_orchestrator_frameworks_report.md,results/monte_carlo_summary.csv,results/monte_carlo_summary.csv,True
+reports/ai_orchestrator_frameworks_report.md,results/operational_cost_estimates.csv,results/operational_cost_estimates.csv,True
+reports/ai_orchestrator_frameworks_report.md,results/operational_fit_rankings.csv,results/operational_fit_rankings.csv,True
 reports/ai_orchestrator_frameworks_report.md,results/pareto_frontier.csv,results/pareto_frontier.csv,True
 reports/ai_orchestrator_frameworks_report.md,results/pilot_decision_scores.example.csv,results/pilot_decision_scores.example.csv,True
 reports/ai_orchestrator_frameworks_report.md,results/rank_stability.csv,results/rank_stability.csv,True
@@ -153,6 +162,7 @@ reports/ai_orchestrator_frameworks_report.md,results/stress_test_summary.csv,res
 reports/ai_orchestrator_frameworks_report.md,results/uncertainty_stress_details.csv,results/uncertainty_stress_details.csv,True
 reports/ai_orchestrator_frameworks_report.md,results/uncertainty_stress_summary.csv,results/uncertainty_stress_summary.csv,True
 reports/ai_orchestrator_frameworks_report.md,scripts/check_local_artifact_references.py,scripts/check_local_artifact_references.py,True
+reports/ai_orchestrator_frameworks_report.md,scripts/estimate_operational_costs.py,scripts/estimate_operational_costs.py,True
 reports/ai_orchestrator_frameworks_report.md,scripts/generate_artifact_manifest.py,scripts/generate_artifact_manifest.py,True
 reports/ai_orchestrator_frameworks_report.md,scripts/rank_with_custom_weights.py,scripts/rank_with_custom_weights.py,True
 reports/ai_orchestrator_frameworks_report.md,scripts/run_all_checks.py,scripts/run_all_checks.py,True
@@ -164,6 +174,7 @@ reports/ai_orchestrator_frameworks_report.md,scripts/validate_csv_schemas.py,scr
 reports/artifact_index.md,data/alternatives.json,data/alternatives.json,True
 reports/artifact_index.md,data/candidate_taxonomy.json,data/candidate_taxonomy.json,True
 reports/artifact_index.md,data/decision_tree.json,data/decision_tree.json,True
+reports/artifact_index.md,data/operational_cost_model.json,data/operational_cost_model.json,True
 reports/artifact_index.md,data/pilot_decision_model.json,data/pilot_decision_model.json,True
 reports/artifact_index.md,data/pilot_tasks.json,data/pilot_tasks.json,True
 reports/artifact_index.md,data/risk_register.json,data/risk_register.json,True
@@ -192,6 +203,7 @@ reports/artifact_index.md,reports/glossary.md,reports/glossary.md,True
 reports/artifact_index.md,reports/implementation_blueprints.md,reports/implementation_blueprints.md,True
 reports/artifact_index.md,reports/maintenance_guide.md,reports/maintenance_guide.md,True
 reports/artifact_index.md,reports/methodology_appendix.md,reports/methodology_appendix.md,True
+reports/artifact_index.md,reports/operational_cost_model.md,reports/operational_cost_model.md,True
 reports/artifact_index.md,reports/pilot_protocol.md,reports/pilot_protocol.md,True
 reports/artifact_index.md,reports/presentation_outline.md,reports/presentation_outline.md,True
 reports/artifact_index.md,reports/requirements_traceability.md,reports/requirements_traceability.md,True
@@ -216,6 +228,8 @@ reports/artifact_index.md,results/implementation_effort_estimates.csv,results/im
 reports/artifact_index.md,results/license_audit.csv,results/license_audit.csv,True
 reports/artifact_index.md,results/local_artifact_reference_check.csv,results/local_artifact_reference_check.csv,True
 reports/artifact_index.md,results/monte_carlo_summary.csv,results/monte_carlo_summary.csv,True
+reports/artifact_index.md,results/operational_cost_estimates.csv,results/operational_cost_estimates.csv,True
+reports/artifact_index.md,results/operational_fit_rankings.csv,results/operational_fit_rankings.csv,True
 reports/artifact_index.md,results/pareto_frontier.csv,results/pareto_frontier.csv,True
 reports/artifact_index.md,results/pilot_decision_scores.example.csv,results/pilot_decision_scores.example.csv,True
 reports/artifact_index.md,results/rank_stability.csv,results/rank_stability.csv,True
@@ -233,6 +247,7 @@ reports/artifact_index.md,scripts/build_results_data_dictionary.py,scripts/build
 reports/artifact_index.md,scripts/check_local_artifact_references.py,scripts/check_local_artifact_references.py,True
 reports/artifact_index.md,scripts/check_sources.py,scripts/check_sources.py,True
 reports/artifact_index.md,scripts/estimate_implementation_effort.py,scripts/estimate_implementation_effort.py,True
+reports/artifact_index.md,scripts/estimate_operational_costs.py,scripts/estimate_operational_costs.py,True
 reports/artifact_index.md,scripts/generate_artifact_manifest.py,scripts/generate_artifact_manifest.py,True
 reports/artifact_index.md,scripts/generate_charts.py,scripts/generate_charts.py,True
 reports/artifact_index.md,scripts/license_audit.py,scripts/license_audit.py,True
@@ -284,6 +299,7 @@ reports/final_report_bundle.md,ci/validate-workflow.example.yml,ci/validate-work
 reports/final_report_bundle.md,data/alternatives.json,data/alternatives.json,True
 reports/final_report_bundle.md,data/candidate_taxonomy.json,data/candidate_taxonomy.json,True
 reports/final_report_bundle.md,data/decision_tree.json,data/decision_tree.json,True
+reports/final_report_bundle.md,data/operational_cost_model.json,data/operational_cost_model.json,True
 reports/final_report_bundle.md,data/pilot_decision_model.json,data/pilot_decision_model.json,True
 reports/final_report_bundle.md,data/pilot_tasks.json,data/pilot_tasks.json,True
 reports/final_report_bundle.md,data/risk_register.json,data/risk_register.json,True
@@ -313,6 +329,7 @@ reports/final_report_bundle.md,reports/glossary.md,reports/glossary.md,True
 reports/final_report_bundle.md,reports/implementation_blueprints.md,reports/implementation_blueprints.md,True
 reports/final_report_bundle.md,reports/maintenance_guide.md,reports/maintenance_guide.md,True
 reports/final_report_bundle.md,reports/methodology_appendix.md,reports/methodology_appendix.md,True
+reports/final_report_bundle.md,reports/operational_cost_model.md,reports/operational_cost_model.md,True
 reports/final_report_bundle.md,reports/pilot_protocol.md,reports/pilot_protocol.md,True
 reports/final_report_bundle.md,reports/presentation_outline.md,reports/presentation_outline.md,True
 reports/final_report_bundle.md,reports/requirements_traceability.md,reports/requirements_traceability.md,True
@@ -337,6 +354,8 @@ reports/final_report_bundle.md,results/implementation_effort_estimates.csv,resul
 reports/final_report_bundle.md,results/license_audit.csv,results/license_audit.csv,True
 reports/final_report_bundle.md,results/local_artifact_reference_check.csv,results/local_artifact_reference_check.csv,True
 reports/final_report_bundle.md,results/monte_carlo_summary.csv,results/monte_carlo_summary.csv,True
+reports/final_report_bundle.md,results/operational_cost_estimates.csv,results/operational_cost_estimates.csv,True
+reports/final_report_bundle.md,results/operational_fit_rankings.csv,results/operational_fit_rankings.csv,True
 reports/final_report_bundle.md,results/pareto_frontier.csv,results/pareto_frontier.csv,True
 reports/final_report_bundle.md,results/pilot_decision_scores.example.csv,results/pilot_decision_scores.example.csv,True
 reports/final_report_bundle.md,results/rank_stability.csv,results/rank_stability.csv,True
@@ -354,6 +373,7 @@ reports/final_report_bundle.md,scripts/build_results_data_dictionary.py,scripts/
 reports/final_report_bundle.md,scripts/check_local_artifact_references.py,scripts/check_local_artifact_references.py,True
 reports/final_report_bundle.md,scripts/check_sources.py,scripts/check_sources.py,True
 reports/final_report_bundle.md,scripts/estimate_implementation_effort.py,scripts/estimate_implementation_effort.py,True
+reports/final_report_bundle.md,scripts/estimate_operational_costs.py,scripts/estimate_operational_costs.py,True
 reports/final_report_bundle.md,scripts/generate_artifact_manifest.py,scripts/generate_artifact_manifest.py,True
 reports/final_report_bundle.md,scripts/generate_charts.py,scripts/generate_charts.py,True
 reports/final_report_bundle.md,scripts/license_audit.py,scripts/license_audit.py,True
@@ -376,6 +396,7 @@ reports/github_metadata_check.md,results/github_metadata_check.csv,results/githu
 reports/github_metadata_check.md,scripts/refresh_github_metadata.py,scripts/refresh_github_metadata.py,True
 reports/implementation_blueprints.md,results/implementation_effort_estimates.csv,results/implementation_effort_estimates.csv,True
 reports/maintenance_guide.md,data/alternatives.json,data/alternatives.json,True
+reports/maintenance_guide.md,data/operational_cost_model.json,data/operational_cost_model.json,True
 reports/maintenance_guide.md,data/risk_register.json,data/risk_register.json,True
 reports/maintenance_guide.md,data/scenario_profiles.json,data/scenario_profiles.json,True
 reports/maintenance_guide.md,data/scoring_rubric.json,data/scoring_rubric.json,True
@@ -386,6 +407,7 @@ reports/maintenance_guide.md,reports/adoption_decision_record.md,reports/adoptio
 reports/maintenance_guide.md,reports/evidence_gap_analysis.md,reports/evidence_gap_analysis.md,True
 reports/maintenance_guide.md,reports/executive_brief.md,reports/executive_brief.md,True
 reports/maintenance_guide.md,reports/final_report_bundle.md,reports/final_report_bundle.md,True
+reports/maintenance_guide.md,reports/operational_cost_model.md,reports/operational_cost_model.md,True
 reports/maintenance_guide.md,reports/simulation_assumptions.md,reports/simulation_assumptions.md,True
 reports/maintenance_guide.md,reports/validation_summary.md,reports/validation_summary.md,True
 reports/maintenance_guide.md,results/pilot_decision_scores.example.csv,results/pilot_decision_scores.example.csv,True
@@ -398,6 +420,7 @@ reports/maintenance_guide.md,scripts/score_pilot_results.py,scripts/score_pilot_
 reports/maintenance_guide.md,scripts/simulate_alternatives.py,scripts/simulate_alternatives.py,True
 reports/maintenance_guide.md,templates/pilot_run_log.csv,templates/pilot_run_log.csv,True
 reports/methodology_appendix.md,data/alternatives.json,data/alternatives.json,True
+reports/methodology_appendix.md,data/operational_cost_model.json,data/operational_cost_model.json,True
 reports/methodology_appendix.md,data/pilot_tasks.json,data/pilot_tasks.json,True
 reports/methodology_appendix.md,data/scoring_rubric.json,data/scoring_rubric.json,True
 reports/methodology_appendix.md,data/simulation_assumptions.json,data/simulation_assumptions.json,True
@@ -412,6 +435,8 @@ reports/methodology_appendix.md,results/evidence_matrix.csv,results/evidence_mat
 reports/methodology_appendix.md,results/github_metadata_check.csv,results/github_metadata_check.csv,True
 reports/methodology_appendix.md,results/implementation_effort_estimates.csv,results/implementation_effort_estimates.csv,True
 reports/methodology_appendix.md,results/license_audit.csv,results/license_audit.csv,True
+reports/methodology_appendix.md,results/operational_cost_estimates.csv,results/operational_cost_estimates.csv,True
+reports/methodology_appendix.md,results/operational_fit_rankings.csv,results/operational_fit_rankings.csv,True
 reports/methodology_appendix.md,results/pareto_frontier.csv,results/pareto_frontier.csv,True
 reports/methodology_appendix.md,results/rank_stability.csv,results/rank_stability.csv,True
 reports/methodology_appendix.md,results/regret_analysis.csv,results/regret_analysis.csv,True
@@ -424,10 +449,15 @@ reports/methodology_appendix.md,results/uncertainty_stress_details.csv,results/u
 reports/methodology_appendix.md,results/uncertainty_stress_summary.csv,results/uncertainty_stress_summary.csv,True
 reports/methodology_appendix.md,scripts/analyze_evidence_gaps.py,scripts/analyze_evidence_gaps.py,True
 reports/methodology_appendix.md,scripts/estimate_implementation_effort.py,scripts/estimate_implementation_effort.py,True
+reports/methodology_appendix.md,scripts/estimate_operational_costs.py,scripts/estimate_operational_costs.py,True
 reports/methodology_appendix.md,scripts/rank_with_custom_weights.py,scripts/rank_with_custom_weights.py,True
 reports/methodology_appendix.md,scripts/refresh_github_metadata.py,scripts/refresh_github_metadata.py,True
 reports/methodology_appendix.md,scripts/simulate_alternatives.py,scripts/simulate_alternatives.py,True
 reports/methodology_appendix.md,scripts/stress_test_simulation.py,scripts/stress_test_simulation.py,True
+reports/operational_cost_model.md,data/alternatives.json,data/alternatives.json,True
+reports/operational_cost_model.md,data/operational_cost_model.json,data/operational_cost_model.json,True
+reports/operational_cost_model.md,results/operational_cost_estimates.csv,results/operational_cost_estimates.csv,True
+reports/operational_cost_model.md,results/operational_fit_rankings.csv,results/operational_fit_rankings.csv,True
 reports/pilot_protocol.md,data/pilot_decision_model.json,data/pilot_decision_model.json,True
 reports/pilot_protocol.md,data/pilot_tasks.json,data/pilot_tasks.json,True
 reports/pilot_protocol.md,data/risk_register.json,data/risk_register.json,True
@@ -455,6 +485,7 @@ reports/requirements_traceability.md,reports/artifact_index.md,reports/artifact_
 reports/requirements_traceability.md,reports/evidence_gap_analysis.md,reports/evidence_gap_analysis.md,True
 reports/requirements_traceability.md,reports/executive_brief.md,reports/executive_brief.md,True
 reports/requirements_traceability.md,reports/implementation_blueprints.md,reports/implementation_blueprints.md,True
+reports/requirements_traceability.md,reports/operational_cost_model.md,reports/operational_cost_model.md,True
 reports/requirements_traceability.md,reports/pilot_protocol.md,reports/pilot_protocol.md,True
 reports/requirements_traceability.md,reports/simulation_assumptions.md,reports/simulation_assumptions.md,True
 reports/requirements_traceability.md,results/all_results.json,results/all_results.json,True
@@ -464,6 +495,8 @@ reports/requirements_traceability.md,results/evidence_matrix.csv,results/evidenc
 reports/requirements_traceability.md,results/implementation_effort_estimates.csv,results/implementation_effort_estimates.csv,True
 reports/requirements_traceability.md,results/license_audit.csv,results/license_audit.csv,True
 reports/requirements_traceability.md,results/monte_carlo_summary.csv,results/monte_carlo_summary.csv,True
+reports/requirements_traceability.md,results/operational_cost_estimates.csv,results/operational_cost_estimates.csv,True
+reports/requirements_traceability.md,results/operational_fit_rankings.csv,results/operational_fit_rankings.csv,True
 reports/requirements_traceability.md,results/pilot_decision_scores.example.csv,results/pilot_decision_scores.example.csv,True
 reports/requirements_traceability.md,results/sensitivity_summary.csv,results/sensitivity_summary.csv,True
 reports/requirements_traceability.md,results/source_check.csv,results/source_check.csv,True
@@ -472,6 +505,7 @@ reports/requirements_traceability.md,results/uncertainty_stress_summary.csv,resu
 reports/requirements_traceability.md,scripts/analyze_evidence_gaps.py,scripts/analyze_evidence_gaps.py,True
 reports/requirements_traceability.md,scripts/check_sources.py,scripts/check_sources.py,True
 reports/requirements_traceability.md,scripts/estimate_implementation_effort.py,scripts/estimate_implementation_effort.py,True
+reports/requirements_traceability.md,scripts/estimate_operational_costs.py,scripts/estimate_operational_costs.py,True
 reports/requirements_traceability.md,scripts/license_audit.py,scripts/license_audit.py,True
 reports/requirements_traceability.md,scripts/run_all_checks.py,scripts/run_all_checks.py,True
 reports/requirements_traceability.md,scripts/score_pilot_results.py,scripts/score_pilot_results.py,True
@@ -512,6 +546,8 @@ reports/validation_summary.md,results/csv_schema_check.csv,results/csv_schema_ch
 reports/validation_summary.md,results/github_metadata_check.csv,results/github_metadata_check.csv,True
 reports/validation_summary.md,results/license_audit.csv,results/license_audit.csv,True
 reports/validation_summary.md,results/local_artifact_reference_check.csv,results/local_artifact_reference_check.csv,True
+reports/validation_summary.md,results/operational_cost_estimates.csv,results/operational_cost_estimates.csv,True
+reports/validation_summary.md,results/operational_fit_rankings.csv,results/operational_fit_rankings.csv,True
 reports/validation_summary.md,results/source_check.csv,results/source_check.csv,True
 reports/validation_summary.md,scripts/check_local_artifact_references.py,scripts/check_local_artifact_references.py,True
 reports/validation_summary.md,scripts/check_sources.py,scripts/check_sources.py,True

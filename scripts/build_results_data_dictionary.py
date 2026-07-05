@@ -28,6 +28,8 @@ FILE_DESCRIPTIONS = {
     "evidence_matrix.csv": "Source, metadata, notes, and evidence URLs by alternative.",
     "alternative_scorecards.csv": "Wide scorecard of all 0-5 criterion scores.",
     "implementation_effort_estimates.csv": "Prototype and hardening effort estimates.",
+    "operational_cost_estimates.csv": "Relative monthly operating effort, token pressure, latency risk, and cost-risk bands.",
+    "operational_fit_rankings.csv": "Scenario rankings adjusted by operating-profile friction.",
     "evidence_gap_analysis.csv": "Evidence risk signals and mitigation notes.",
     "custom_weights_example_rankings.csv": "Example deterministic rankings from custom weights.",
     "regret_analysis.csv": "Score gaps versus scenario winners.",

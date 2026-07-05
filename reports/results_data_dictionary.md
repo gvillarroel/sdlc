@@ -223,6 +223,49 @@ Monte Carlo score and rank stability by scenario.
 | `top3_rate` |
 | `trials` |
 
+## `operational_cost_estimates.csv`
+
+Relative monthly operating effort, token pressure, latency risk, and cost-risk bands.
+
+| Column |
+|---|
+| `operating_profile` |
+| `operating_profile_name` |
+| `alternative_id` |
+| `alternative` |
+| `monthly_task_volume` |
+| `review_hours` |
+| `admin_hours` |
+| `governance_hours` |
+| `failure_buffer_hours` |
+| `monthly_operational_hours` |
+| `hours_per_task` |
+| `relative_token_pressure` |
+| `latency_risk_score` |
+| `operational_friction_score` |
+| `cost_risk_band` |
+| `main_cost_driver` |
+
+## `operational_fit_rankings.csv`
+
+Scenario rankings adjusted by operating-profile friction.
+
+| Column |
+|---|
+| `scenario` |
+| `operating_profile` |
+| `rank` |
+| `alternative_id` |
+| `alternative` |
+| `simulation_rank` |
+| `simulation_score` |
+| `operational_friction_score` |
+| `monthly_operational_hours` |
+| `relative_token_pressure` |
+| `latency_risk_score` |
+| `adjusted_score` |
+| `rank_delta_vs_simulation` |
+
 ## `pareto_frontier.csv`
 
 Raw-criteria Pareto dominance analysis.

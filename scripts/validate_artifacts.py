@@ -17,6 +17,7 @@ SCENARIO_COUNT = 5
 DETERMINISTIC_STRESS_CASE_COUNT = 8
 UNCERTAINTY_STRESS_CASE_COUNT = 5
 CUSTOM_WEIGHT_SCENARIO_COUNT = 2
+OPERATING_PROFILE_COUNT = 3
 
 REQUIRED_RESULT_FILES = [
     "deterministic_rankings.csv",
@@ -29,6 +30,8 @@ REQUIRED_RESULT_FILES = [
     "evidence_matrix.csv",
     "alternative_scorecards.csv",
     "implementation_effort_estimates.csv",
+    "operational_cost_estimates.csv",
+    "operational_fit_rankings.csv",
     "evidence_gap_analysis.csv",
     "custom_weights_example_rankings.csv",
     "regret_analysis.csv",
@@ -76,6 +79,23 @@ def validate_result_shapes() -> None:
     assert_true(len(read_csv(RESULTS / "rank_stability.csv")) == alt_count, "unexpected rank stability row count")
     assert_true(len(read_csv(RESULTS / "pareto_frontier.csv")) == alt_count, "unexpected pareto row count")
     assert_true(len(read_csv(RESULTS / "implementation_effort_estimates.csv")) == alt_count, "unexpected implementation effort row count")
+    operational_cost_rows = read_csv(RESULTS / "operational_cost_estimates.csv")
+    operational_fit_rows = read_csv(RESULTS / "operational_fit_rankings.csv")
+    assert_true(len(operational_cost_rows) == alt_count * OPERATING_PROFILE_COUNT, "unexpected operational cost row count")
+    assert_true(len(operational_fit_rows) == alt_count * SCENARIO_COUNT * OPERATING_PROFILE_COUNT, "unexpected operational fit row count")
+    assert_true(
+        all(float(row["monthly_operational_hours"]) > 0 for row in operational_cost_rows),
+        "operational cost rows must have positive monthly hours",
+    )
+    assert_true(
+        all(row["cost_risk_band"] in {"Low", "Moderate", "High", "Very high"} for row in operational_cost_rows),
+        "unexpected operational cost risk band",
+    )
+    grouped_fit_ranks: dict[tuple[str, str], list[int]] = {}
+    for row in operational_fit_rows:
+        grouped_fit_ranks.setdefault((row["scenario"], row["operating_profile"]), []).append(int(row["rank"]))
+    for group, ranks in grouped_fit_ranks.items():
+        assert_true(sorted(ranks) == list(range(1, alt_count + 1)), f"unexpected operational fit ranks for {group}")
     assert_true(len(read_csv(RESULTS / "evidence_gap_analysis.csv")) == alt_count, "unexpected evidence gap row count")
     assert_true(len(read_csv(RESULTS / "custom_weights_example_rankings.csv")) == CUSTOM_WEIGHT_SCENARIO_COUNT * alt_count, "unexpected custom weights row count")
     assert_true(len(read_csv(RESULTS / "stress_test_summary.csv")) == DETERMINISTIC_STRESS_CASE_COUNT * SCENARIO_COUNT, "unexpected stress test summary row count")
@@ -124,6 +144,7 @@ def validate_report_references() -> None:
         "data/pilot_tasks.json",
         "data/risk_register.json",
         "data/candidate_taxonomy.json",
+        "data/operational_cost_model.json",
         "data/security_evaluation_fixtures.json",
         "data/simulation_assumptions.json",
         "data/traceability_matrix.json",
@@ -139,6 +160,7 @@ def validate_report_references() -> None:
         "reports/github_metadata_check.md",
         "reports/maintenance_guide.md",
         "reports/methodology_appendix.md",
+        "reports/operational_cost_model.md",
         "reports/presentation_outline.md",
         "reports/requirements_traceability.md",
         "reports/results_data_dictionary.md",

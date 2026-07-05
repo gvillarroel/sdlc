@@ -25,6 +25,7 @@ Use this index to choose the right file quickly.
 | Glossary | `reports/glossary.md` |
 | Scoring formula and assumptions | `reports/methodology_appendix.md` |
 | Simulation assumptions and stress tests | `reports/simulation_assumptions.md` |
+| Operational cost and latency model | `reports/operational_cost_model.md` |
 | Evidence-gap findings | `reports/evidence_gap_analysis.md` |
 | GitHub metadata verification | `reports/github_metadata_check.md` |
 | Security fixture catalog | `reports/security_evaluation_fixtures.md` |
@@ -45,6 +46,7 @@ Use this index to choose the right file quickly.
 | Machine-readable decision tree | `data/decision_tree.json` |
 | Adoption risk register | `data/risk_register.json` |
 | Simulation assumption register | `data/simulation_assumptions.json` |
+| Operational cost model assumptions | `data/operational_cost_model.json` |
 | Security evaluation fixtures | `data/security_evaluation_fixtures.json` |
 | Candidate taxonomy data | `data/candidate_taxonomy.json` |
 | Requirement traceability matrix | `data/traceability_matrix.json` |
@@ -72,6 +74,8 @@ Use this index to choose the right file quickly.
 | Source/evidence table | `results/evidence_matrix.csv` |
 | Alternative scorecards | `results/alternative_scorecards.csv` |
 | Prototype and hardening effort estimates | `results/implementation_effort_estimates.csv` |
+| Relative operating-cost estimates | `results/operational_cost_estimates.csv` |
+| Operation-adjusted scenario rankings | `results/operational_fit_rankings.csv` |
 | Evidence-gap risk analysis | `results/evidence_gap_analysis.csv` |
 | License audit | `results/license_audit.csv` |
 | URL health check | `results/source_check.csv` |
@@ -100,6 +104,7 @@ Use this index to choose the right file quickly.
 | Regenerate rankings and simulations | `scripts/simulate_alternatives.py` |
 | Run simulation stress tests | `scripts/stress_test_simulation.py` |
 | Estimate implementation effort | `scripts/estimate_implementation_effort.py` |
+| Estimate operational cost and latency risk | `scripts/estimate_operational_costs.py` |
 | Analyze evidence gaps | `scripts/analyze_evidence_gaps.py` |
 | Rank with custom weights | `scripts/rank_with_custom_weights.py` |
 | Regenerate license audit | `scripts/license_audit.py` |
@@ -131,6 +136,7 @@ Or run the core deterministic pieces manually:
 python scripts/simulate_alternatives.py --trials 5000 --seed 7331
 python scripts/stress_test_simulation.py --trials 1500 --seed 9011
 python scripts/estimate_implementation_effort.py
+python scripts/estimate_operational_costs.py
 python scripts/analyze_evidence_gaps.py
 python scripts/rank_with_custom_weights.py
 python scripts/license_audit.py

@@ -22,7 +22,7 @@ Recommended pilot sets:
 
 The evaluation filters the shared-discussion alternatives to permissive open-source projects under MIT or Apache-2.0. It excludes Claude Agent SDK and Codex app because they do not satisfy the requested permissive OSS filter as framed in the source discussion.
 
-The simulation is decision-support evidence, not live coding performance. It combines deterministic weighted scoring, Monte Carlo uncertainty, sensitivity analysis, stress tests, implementation effort estimates, evidence-gap analysis, source URL checks, GitHub metadata checks, and pilot planning artifacts.
+The simulation is decision-support evidence, not live coding performance. It combines deterministic weighted scoring, Monte Carlo uncertainty, sensitivity analysis, stress tests, implementation effort estimates, operational cost estimates, evidence-gap analysis, source URL checks, GitHub metadata checks, and pilot planning artifacts.
 
 ## Main Evidence
 

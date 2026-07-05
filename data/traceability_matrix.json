@@ -42,21 +42,27 @@
       "primary_artifacts": [
         "reports/simulation_assumptions.md",
         "data/simulation_assumptions.json",
+        "reports/operational_cost_model.md",
         "scripts/stress_test_simulation.py",
+        "scripts/estimate_operational_costs.py",
         "results/stress_test_summary.csv",
-        "results/uncertainty_stress_summary.csv"
+        "results/uncertainty_stress_summary.csv",
+        "results/operational_fit_rankings.csv"
       ],
-      "validation": "python scripts/stress_test_simulation.py --trials 1500 --seed 9011"
+      "validation": "python scripts/stress_test_simulation.py --trials 1500 --seed 9011 && python scripts/estimate_operational_costs.py"
     },
     {
       "id": "implementation_complexity",
       "requirement": "Review how complicated it is to build something with the alternatives.",
       "primary_artifacts": [
         "reports/implementation_blueprints.md",
+        "reports/operational_cost_model.md",
         "results/implementation_effort_estimates.csv",
-        "scripts/estimate_implementation_effort.py"
+        "results/operational_cost_estimates.csv",
+        "scripts/estimate_implementation_effort.py",
+        "scripts/estimate_operational_costs.py"
       ],
-      "validation": "python scripts/estimate_implementation_effort.py"
+      "validation": "python scripts/estimate_implementation_effort.py && python scripts/estimate_operational_costs.py"
     },
     {
       "id": "evidence_quality",

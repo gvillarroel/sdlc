@@ -12,12 +12,14 @@ Included artifacts:
 - `data/decision_tree.json` - machine-readable guided selection tree.
 - `data/risk_register.json` - actionable adoption risks, mitigations, and required evidence.
 - `data/simulation_assumptions.json` - structured threats to validity and mitigation coverage for the simulation.
+- `data/operational_cost_model.json` - operating profiles and assumptions for relative cost/latency planning.
 - `data/security_evaluation_fixtures.json` - security fixtures for sandbox, secret, network, prompt-injection, and approval testing.
 - `data/candidate_taxonomy.json` - candidate groups by adoption shape.
 - `data/traceability_matrix.json` - requirement-to-artifact traceability map.
 - `scripts/simulate_alternatives.py` - deterministic weighted ranking, Monte Carlo uncertainty simulation, and sensitivity analysis.
 - `scripts/stress_test_simulation.py` - stress tests for scenario weights, maturity discounts, source confidence, sandbox assumptions, and uncertainty.
 - `scripts/estimate_implementation_effort.py` - reproducible prototype and hardening effort estimates from the scoring dataset.
+- `scripts/estimate_operational_costs.py` - relative operating-cost, token-pressure, latency-risk, and operation-adjusted ranking model.
 - `scripts/analyze_evidence_gaps.py` - evidence-gap review for maturity, confidence, release, traction, and freshness risks.
 - `scripts/rank_with_custom_weights.py` - deterministic ranking for user-provided scenario weights.
 - `scripts/check_local_artifact_references.py` - offline check for local artifact references in README and reports.
@@ -48,6 +50,7 @@ Included artifacts:
 - `reports/exclusions.md` - rationale for excluded non-matching items from the shared discussion.
 - `reports/faq.md` - answers to common scope, weighting, exclusion, and pilot questions.
 - `reports/evidence_gap_analysis.md` - evidence-gap findings for low-confidence or immature candidates.
+- `reports/operational_cost_model.md` - generated operating-cost and operation-adjusted ranking appendix.
 - `reports/github_metadata_check.md` - live GitHub metadata verification summary.
 - `reports/glossary.md` - definitions for scoring, simulation, security, and orchestration terms.
 - `reports/security_evaluation_fixtures.md` - reusable security fixture catalog for pilot gates.
@@ -84,6 +87,7 @@ python -m unittest discover -s tests
 python scripts/simulate_alternatives.py --trials 5000 --seed 7331
 python scripts/stress_test_simulation.py --trials 1500 --seed 9011
 python scripts/estimate_implementation_effort.py
+python scripts/estimate_operational_costs.py
 python scripts/analyze_evidence_gaps.py
 python scripts/rank_with_custom_weights.py
 python scripts/license_audit.py
@@ -113,6 +117,8 @@ Generated result files:
 - `results/evidence_matrix.csv`
 - `results/alternative_scorecards.csv`
 - `results/implementation_effort_estimates.csv`
+- `results/operational_cost_estimates.csv`
+- `results/operational_fit_rankings.csv`
 - `results/evidence_gap_analysis.csv`
 - `results/custom_weights_example_rankings.csv`
 - `results/local_artifact_reference_check.csv`

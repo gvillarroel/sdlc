@@ -13,6 +13,7 @@ This generated bundle concatenates the main report and key appendices for one-fi
 - `reports/adoption_decision_record.md`
 - `reports/methodology_appendix.md`
 - `reports/simulation_assumptions.md`
+- `reports/operational_cost_model.md`
 - `reports/evidence_gap_analysis.md`
 - `reports/github_metadata_check.md`
 - `reports/security_evaluation_fixtures.md`
@@ -142,6 +143,8 @@ For a quick guided shortlist, read `reports/decision_tree.md`.
 
 For simulation assumptions, threats to validity, and stress-test results, read `reports/simulation_assumptions.md`.
 
+For relative operating cost, token-pressure, latency-risk, and operation-adjusted rankings, read `reports/operational_cost_model.md`; the assumptions are in `data/operational_cost_model.json`.
+
 For evidence gaps in young or low-confidence candidates, read `reports/evidence_gap_analysis.md`.
 
 For live GitHub metadata verification, read `reports/github_metadata_check.md`.
@@ -249,6 +252,28 @@ The generated effort model makes that split explicit:
 | First slice | The smallest useful implementation slice that should be built before deeper integration. |
 | Adoption note | A generated caution on whether the candidate is a low-friction smoke test, a policy-heavy pilot, provider-dependent, or reference-only. |
 
+## Operational Cost Model
+
+The generated operating-cost appendix is `reports/operational_cost_model.md`. It uses `data/operational_cost_model.json` and `scripts/estimate_operational_costs.py` to estimate relative monthly operating hours, hours per task, token-pressure index, latency-risk score, and operation-adjusted rankings.
+
+This is not a vendor pricing table. Model prices, hosted seats, and internal labor rates are deliberately excluded because they change quickly and depend on provider choices. The useful planning question at this stage is whether a candidate is likely to add reviewer time, administration, governance overhead, failure recovery, token pressure, or latency tuning.
+
+Generated outputs:
+
+| Output | Meaning |
+|---|---|
+| `results/operational_cost_estimates.csv` | Monthly operating-hour estimate for each candidate under pilot, team rollout, and autonomous PR profiles. |
+| `results/operational_fit_rankings.csv` | Scenario rankings after applying an operating-profile friction penalty to the simulation score. |
+
+Key readouts:
+
+| Operating view | Readout |
+|---|---|
+| Lowest-friction pilot operations | Codex CLI and Cline are the lightest monthly-operating candidates in the generated 100-task profile. |
+| Strategic-fit caution | OpenHands SDK and Deep Agents remain stronger foundations for custom orchestration even when they are not the lowest-friction operating choices. |
+| Rank-shift signal | In quick local coding, Codex CLI moves up under operational adjustment because its sandbox/profile model lowers operating friction relative to some local CLI alternatives. |
+| Pilot instrumentation | Actual token usage, wall-clock latency, reviewer interventions, failed-run recovery time, and governance exceptions must be captured during the pilot. |
+
 ## Evidence Confidence
 
 | Confidence | Projects | Reason |
@@ -327,6 +352,8 @@ Generated outputs:
 | `results/evidence_matrix.csv` | Per-alternative repository, license, confidence, summary, implementation note, risk note, and source URLs. |
 | `results/alternative_scorecards.csv` | Wide table of all per-criterion scores by alternative. |
 | `results/implementation_effort_estimates.csv` | Generated prototype and production-hardening complexity estimates. |
+| `results/operational_cost_estimates.csv` | Relative monthly operating effort, token pressure, latency risk, and cost-risk bands. |
+| `results/operational_fit_rankings.csv` | Scenario rankings adjusted by operating-profile friction. |
 | `results/evidence_gap_analysis.csv` | Evidence risk bands for maturity, source confidence, release, traction, and freshness gaps. |
 | `results/source_check.csv` | Live URL check of report and dataset sources. The latest run checked 41 URLs with 41 OK responses. |
 | `results/github_metadata_check.csv` | Live GitHub repository metadata comparison for stars, push date, license, archive status, and latest release tag. |
@@ -782,7 +809,7 @@ Recommended pilot sets:
 
 The evaluation filters the shared-discussion alternatives to permissive open-source projects under MIT or Apache-2.0. It excludes Claude Agent SDK and Codex app because they do not satisfy the requested permissive OSS filter as framed in the source discussion.
 
-The simulation is decision-support evidence, not live coding performance. It combines deterministic weighted scoring, Monte Carlo uncertainty, sensitivity analysis, stress tests, implementation effort estimates, evidence-gap analysis, source URL checks, GitHub metadata checks, and pilot planning artifacts.
+The simulation is decision-support evidence, not live coding performance. It combines deterministic weighted scoring, Monte Carlo uncertainty, sensitivity analysis, stress tests, implementation effort estimates, operational cost estimates, evidence-gap analysis, source URL checks, GitHub metadata checks, and pilot planning artifacts.
 
 ## Main Evidence
 
@@ -1004,6 +1031,18 @@ It computes two separate 1-5 complexity scores:
 
 The scope adjustment is explicit in the script because a broad async PR platform can score well technically while still requiring more integration work than a local CLI.
 
+## Operational Cost Model
+
+The generated operating-cost estimates are `results/operational_cost_estimates.csv` and `results/operational_fit_rankings.csv`, produced by:
+
+```powershell
+python scripts/estimate_operational_costs.py
+```
+
+The model uses `data/operational_cost_model.json` to define three operating profiles: a controlled pilot, a team rollout, and an autonomous PR lane. It estimates review hours, administration hours, governance hours, failure-recovery buffer, relative token pressure, latency risk, and an operation-adjusted ranking.
+
+The operation-adjusted ranking starts from the same scenario simulation score, then subtracts a profile-specific penalty for operating friction. It is a tie-breaker for adoption planning, not a replacement for live pilot evidence or provider-specific cost data.
+
 ## Confidence And Evidence
 
 Source confidence is a manual value from 0 to 1. It reflects repository clarity, license clarity, docs, release posture, and whether the project appears canonical.
@@ -1149,6 +1188,98 @@ The practical decision rule is:
 2. Select candidates from the top cluster for the target scenario, not from the global average.
 3. Use the pilot to replace subjective scores with measured task results, safety-gate outcomes, and cost data.
 4. Rerun the base simulation and stress tests after refreshing source metadata or changing scenario weights.
+
+---
+
+<!-- Source: reports/operational_cost_model.md -->
+
+# Operational Cost Model
+
+Date: 2026-07-05
+
+This appendix estimates operational effort for the permissive open-source shortlist. It is not a vendor pricing model. Model and token prices change too frequently, so the output uses relative planning metrics: monthly operating hours, hours per task, token-pressure index, latency-risk score, and an operation-adjusted scenario ranking.
+
+Inputs: `data/operational_cost_model.json`, `data/alternatives.json`, and the existing 0-5 criteria scores. Generated outputs: `results/operational_cost_estimates.csv` and `results/operational_fit_rankings.csv`.
+
+## Operating Profiles
+
+| Profile | Monthly tasks | Review min/task | Admin hours | Governance hours | Incident min/task |
+|---|---:|---:|---:|---:|---:|
+| Controlled pilot, 100 tasks/month | 100 | 18 | 6 | 4 | 4 |
+| Team rollout, 400 tasks/month | 400 | 12 | 14 | 8 | 3 |
+| Autonomous PR lane, 1000 tasks/month | 1000 | 10 | 24 | 14 | 5 |
+
+## Lowest-Friction Candidates
+
+### Controlled pilot, 100 tasks/month
+
+| Rank | Candidate | Monthly hours | Hours/task | Token pressure | Latency risk | Band | Main driver |
+|---:|---|---:|---:|---:|---:|---|---|
+| 1 | Codex CLI | 52.80 | 0.528 | 1.171 | 2.089 | Moderate | latency_tuning |
+| 2 | Cline / Cline SDK | 53.59 | 0.536 | 1.130 | 1.486 | Moderate | governance |
+| 3 | Deep Agents | 57.65 | 0.577 | 1.200 | 1.783 | Moderate | review_load |
+| 4 | OpenHands Software Agent SDK | 56.09 | 0.561 | 1.150 | 1.684 | Moderate | review_load |
+| 5 | Open SWE | 57.88 | 0.579 | 1.238 | 2.379 | Moderate | administration |
+
+### Team rollout, 400 tasks/month
+
+| Rank | Candidate | Monthly hours | Hours/task | Token pressure | Latency risk | Band | Main driver |
+|---:|---|---:|---:|---:|---:|---|---|
+| 1 | Codex CLI | 137.88 | 0.345 | 1.171 | 2.089 | Moderate | latency_tuning |
+| 2 | Cline / Cline SDK | 139.77 | 0.349 | 1.130 | 1.486 | Moderate | governance |
+| 3 | Deep Agents | 150.72 | 0.377 | 1.200 | 1.783 | Moderate | review_load |
+| 4 | Open SWE | 151.36 | 0.378 | 1.238 | 2.379 | Moderate | administration |
+| 5 | OpenHands Software Agent SDK | 146.53 | 0.366 | 1.150 | 1.684 | Moderate | review_load |
+
+### Autonomous PR lane, 1000 tasks/month
+
+| Rank | Candidate | Monthly hours | Hours/task | Token pressure | Latency risk | Band | Main driver |
+|---:|---|---:|---:|---:|---:|---|---|
+| 1 | Codex CLI | 327.10 | 0.327 | 1.171 | 2.089 | Moderate | latency_tuning |
+| 2 | Cline / Cline SDK | 336.71 | 0.337 | 1.130 | 1.486 | Moderate | governance |
+| 3 | Deep Agents | 358.53 | 0.359 | 1.200 | 1.783 | Moderate | review_load |
+| 4 | Open SWE | 360.06 | 0.360 | 1.238 | 2.379 | Moderate | administration |
+| 5 | OpenHands Software Agent SDK | 348.84 | 0.349 | 1.150 | 1.684 | Moderate | review_load |
+
+## Operation-Adjusted Scenario Winners
+
+| Scenario | Profile | Rank 1 | Adjusted score | Simulation rank | Rank delta |
+|---|---|---|---:|---:|---:|
+| custom_orchestrator_platform | pilot_100_tasks | Cline / Cline SDK | 4.114 | 1 | 0 |
+| custom_orchestrator_platform | team_rollout_400_tasks | Cline / Cline SDK | 4.102 | 1 | 0 |
+| custom_orchestrator_platform | autonomous_pr_1000_tasks | Cline / Cline SDK | 4.039 | 1 | 0 |
+| secure_autonomous_prs | pilot_100_tasks | Codex CLI | 4.104 | 1 | 0 |
+| secure_autonomous_prs | team_rollout_400_tasks | Codex CLI | 4.095 | 1 | 0 |
+| secure_autonomous_prs | autonomous_pr_1000_tasks | Codex CLI | 4.039 | 1 | 0 |
+| quick_local_coding | pilot_100_tasks | Cline / Cline SDK | 4.240 | 1 | 0 |
+| quick_local_coding | team_rollout_400_tasks | Cline / Cline SDK | 4.228 | 1 | 0 |
+| quick_local_coding | autonomous_pr_1000_tasks | Cline / Cline SDK | 4.166 | 1 | 0 |
+| research_benchmarking | pilot_100_tasks | mini-SWE-agent | 4.163 | 1 | 0 |
+| research_benchmarking | team_rollout_400_tasks | mini-SWE-agent | 4.127 | 1 | 0 |
+| research_benchmarking | autonomous_pr_1000_tasks | mini-SWE-agent | 4.020 | 1 | 0 |
+| enterprise_control_plane | pilot_100_tasks | Cline / Cline SDK | 4.154 | 1 | 0 |
+| enterprise_control_plane | team_rollout_400_tasks | Cline / Cline SDK | 4.142 | 1 | 0 |
+| enterprise_control_plane | autonomous_pr_1000_tasks | Cline / Cline SDK | 4.079 | 1 | 0 |
+
+## Largest Operation-Adjusted Rank Shifts
+
+| Scenario | Profile | Candidate | Simulation rank | Adjusted rank | Delta | Adjusted score |
+|---|---|---|---:|---:|---:|---:|
+| quick_local_coding | autonomous_pr_1000_tasks | Codex CLI | 5 | 3 | 2 | 3.909 |
+| quick_local_coding | autonomous_pr_1000_tasks | OpenCode | 3 | 5 | -2 | 3.859 |
+| quick_local_coding | autonomous_pr_1000_tasks | Omnigent | 9 | 11 | -2 | 3.610 |
+| quick_local_coding | pilot_100_tasks | Codex CLI | 5 | 3 | 2 | 3.974 |
+| quick_local_coding | team_rollout_400_tasks | Codex CLI | 5 | 3 | 2 | 3.965 |
+| quick_local_coding | team_rollout_400_tasks | OpenCode | 3 | 5 | -2 | 3.946 |
+| custom_orchestrator_platform | autonomous_pr_1000_tasks | Codex CLI | 6 | 5 | 1 | 3.866 |
+| custom_orchestrator_platform | autonomous_pr_1000_tasks | OpenHands Agent Canvas | 5 | 6 | -1 | 3.801 |
+
+## Interpretation
+
+- Low-friction operating cost does not automatically mean best strategic fit. It identifies where review, administration, governance, and failure-recovery overhead are likely to be lower.
+- Multi-agent and durable-memory systems can carry more token and latency pressure even when they are architecturally attractive. The pilot should capture actual token usage, wall-clock latency, failed-run recovery time, and reviewer intervention count.
+- The operation-adjusted score is intentionally conservative: it starts from the same simulation score and subtracts a profile-specific penalty for operational friction. It should be used as a tie-breaker, not as a replacement for the main simulation.
+- The model excludes vendor price tables, hosted-seat costs, and internal labor rates. Add those after a pilot once the organization knows provider, model, and reviewer workflow choices.
 
 ---
 
@@ -1608,11 +1739,11 @@ This page summarizes the current quality checks for the report repository. It is
 
 | Check | Command | Latest result |
 |---|---|---|
-| Unit tests | `python -m unittest discover -s tests` | 94 tests passed. |
+| Unit tests | `python -m unittest discover -s tests` | 99 tests passed. |
 | Full local workflow | `python scripts/run_all_checks.py` | Passed. |
 | Offline artifact validation | `python scripts/validate_artifacts.py` | Passed. |
-| Generated CSV schemas | `python scripts/validate_csv_schemas.py` | 26 CSV schemas checked, 0 failures. |
-| Local artifact references | `python scripts/check_local_artifact_references.py` | 520 local references checked, 0 missing. |
+| Generated CSV schemas | `python scripts/validate_csv_schemas.py` | 28 CSV schemas checked, 0 failures. |
+| Local artifact references | `python scripts/check_local_artifact_references.py` | 556 local references checked, 0 missing. |
 | External source URLs | `python scripts/check_sources.py --timeout 20` | 41 URLs checked, 41 OK. |
 | GitHub metadata | `python scripts/refresh_github_metadata.py --timeout 20` | 17 repos checked, 0 failures, 0 license mismatches. |
 | Whitespace | `git diff --check` | Passed. |
@@ -1621,12 +1752,13 @@ This page summarizes the current quality checks for the report repository. It is
 
 | Area | Coverage |
 |---|---|
-| Data shape | Required generated result files exist and row counts match the expected number of alternatives, scenarios, and stress cases. |
+| Data shape | Required generated result files exist and row counts match the expected number of alternatives, scenarios, operating profiles, and stress cases. |
 | License filter | `results/license_audit.csv` keeps the included set at 17 permissive MIT or Apache-2.0 alternatives and 2 excluded entries. |
 | Source availability | `results/source_check.csv` verifies that report and dataset URLs respond successfully. |
 | GitHub metadata | `results/github_metadata_check.csv` verifies repository reachability, live SPDX license match, archive status, stars, push date, and latest release tag. |
 | Report references | `results/local_artifact_reference_check.csv` verifies README and report references to local artifacts. |
 | CSV contracts | `results/csv_schema_check.csv` verifies expected headers for generated CSV artifacts. |
+| Operational model | `results/operational_cost_estimates.csv` and `results/operational_fit_rankings.csv` verify the cost/latency tie-breaker model shape. |
 | Artifact manifest | `results/artifact_manifest.csv` records SHA-256 hashes and byte sizes for committed report, data, script, test, and template artifacts. |
 | Simulation reproducibility | Unit tests cover deterministic scoring, Monte Carlo reproducibility, stress tests, custom weights, effort estimation, evidence-gap analysis, risk registers, decision tree, and artifact validation. |
 
@@ -1915,6 +2047,49 @@ Monte Carlo score and rank stability by scenario.
 | `top3_rate` |
 | `trials` |
 
+## `operational_cost_estimates.csv`
+
+Relative monthly operating effort, token pressure, latency risk, and cost-risk bands.
+
+| Column |
+|---|
+| `operating_profile` |
+| `operating_profile_name` |
+| `alternative_id` |
+| `alternative` |
+| `monthly_task_volume` |
+| `review_hours` |
+| `admin_hours` |
+| `governance_hours` |
+| `failure_buffer_hours` |
+| `monthly_operational_hours` |
+| `hours_per_task` |
+| `relative_token_pressure` |
+| `latency_risk_score` |
+| `operational_friction_score` |
+| `cost_risk_band` |
+| `main_cost_driver` |
+
+## `operational_fit_rankings.csv`
+
+Scenario rankings adjusted by operating-profile friction.
+
+| Column |
+|---|
+| `scenario` |
+| `operating_profile` |
+| `rank` |
+| `alternative_id` |
+| `alternative` |
+| `simulation_rank` |
+| `simulation_score` |
+| `operational_friction_score` |
+| `monthly_operational_hours` |
+| `relative_token_pressure` |
+| `latency_risk_score` |
+| `adjusted_score` |
+| `rank_delta_vs_simulation` |
+
 ## `pareto_frontier.csv`
 
 Raw-criteria Pareto dominance analysis.
@@ -2114,6 +2289,7 @@ python scripts/refresh_github_metadata.py --timeout 20
 - `data/scenario_profiles.json`
 - `data/risk_register.json`
 - `data/simulation_assumptions.json`
+- `data/operational_cost_model.json`
 
 3. Regenerate and validate offline artifacts:
 
@@ -2133,6 +2309,7 @@ git diff --check
 - `reports/executive_brief.md`
 - `reports/adoption_decision_record.md`
 - `reports/simulation_assumptions.md`
+- `reports/operational_cost_model.md`
 - `reports/evidence_gap_analysis.md`
 - `reports/validation_summary.md`
 
@@ -2215,8 +2392,8 @@ This document maps the original request to the repository artifacts that satisfy
 | Study the shared ChatGPT conversation and evaluate the listed alternatives. | `reports/ai_orchestrator_frameworks_report.md`, `data/alternatives.json`, `results/evidence_matrix.csv` | `python scripts/validate_artifacts.py` |
 | Review the alternatives that are not copyleft and are open source. | `results/license_audit.csv`, `scripts/license_audit.py`, `data/alternatives.json` | `python scripts/license_audit.py` |
 | Evaluate alternatives with Python simulations. | `scripts/simulate_alternatives.py`, `results/deterministic_rankings.csv`, `results/monte_carlo_summary.csv`, `results/sensitivity_summary.csv`, `results/all_results.json` | `python scripts/simulate_alternatives.py --trials 5000 --seed 7331` |
-| Review everything that can affect the simulation. | `reports/simulation_assumptions.md`, `data/simulation_assumptions.json`, `scripts/stress_test_simulation.py`, `results/stress_test_summary.csv`, `results/uncertainty_stress_summary.csv` | `python scripts/stress_test_simulation.py --trials 1500 --seed 9011` |
-| Review how complicated it is to build something with the alternatives. | `reports/implementation_blueprints.md`, `results/implementation_effort_estimates.csv`, `scripts/estimate_implementation_effort.py` | `python scripts/estimate_implementation_effort.py` |
+| Review everything that can affect the simulation. | `reports/simulation_assumptions.md`, `data/simulation_assumptions.json`, `reports/operational_cost_model.md`, `scripts/stress_test_simulation.py`, `scripts/estimate_operational_costs.py`, `results/stress_test_summary.csv`, `results/uncertainty_stress_summary.csv`, `results/operational_fit_rankings.csv` | `python scripts/stress_test_simulation.py --trials 1500 --seed 9011 && python scripts/estimate_operational_costs.py` |
+| Review how complicated it is to build something with the alternatives. | `reports/implementation_blueprints.md`, `reports/operational_cost_model.md`, `results/implementation_effort_estimates.csv`, `results/operational_cost_estimates.csv`, `scripts/estimate_implementation_effort.py`, `scripts/estimate_operational_costs.py` | `python scripts/estimate_implementation_effort.py && python scripts/estimate_operational_costs.py` |
 | Check factors that can make the evaluation unreliable. | `reports/evidence_gap_analysis.md`, `results/evidence_gap_analysis.csv`, `results/source_check.csv`, `scripts/analyze_evidence_gaps.py`, `scripts/check_sources.py` | `python scripts/analyze_evidence_gaps.py` |
 | Provide a way to move from simulated ranking to real evidence. | `reports/pilot_protocol.md`, `data/pilot_tasks.json`, `data/security_evaluation_fixtures.json`, `templates/pilot_run_log.csv`, `templates/reviewer_scorecard.md`, `templates/security_gate_checklist.md`, `examples/pilot_adapter_contract.py`, `scripts/score_pilot_results.py` | `python scripts/score_pilot_results.py --input examples/pilot_candidate_summary.example.csv --output results/pilot_decision_scores.example.csv` |
 | Generate the final report in English. | `reports/ai_orchestrator_frameworks_report.md`, `reports/executive_brief.md`, `reports/artifact_index.md` | `python scripts/validate_artifacts.py` |
@@ -2230,7 +2407,7 @@ Run the full local validation workflow:
 python scripts/run_all_checks.py
 ```
 
-The workflow runs unit tests, regenerates simulation outputs, stress tests, implementation effort estimates, evidence-gap analysis, license audit, charts, pilot score example, and offline artifact validation.
+The workflow runs unit tests, regenerates simulation outputs, stress tests, implementation effort estimates, operational cost estimates, evidence-gap analysis, license audit, charts, pilot score example, and offline artifact validation.
 
 ## GitHub Status
 
@@ -2267,6 +2444,7 @@ Use this index to choose the right file quickly.
 | Glossary | `reports/glossary.md` |
 | Scoring formula and assumptions | `reports/methodology_appendix.md` |
 | Simulation assumptions and stress tests | `reports/simulation_assumptions.md` |
+| Operational cost and latency model | `reports/operational_cost_model.md` |
 | Evidence-gap findings | `reports/evidence_gap_analysis.md` |
 | GitHub metadata verification | `reports/github_metadata_check.md` |
 | Security fixture catalog | `reports/security_evaluation_fixtures.md` |
@@ -2287,6 +2465,7 @@ Use this index to choose the right file quickly.
 | Machine-readable decision tree | `data/decision_tree.json` |
 | Adoption risk register | `data/risk_register.json` |
 | Simulation assumption register | `data/simulation_assumptions.json` |
+| Operational cost model assumptions | `data/operational_cost_model.json` |
 | Security evaluation fixtures | `data/security_evaluation_fixtures.json` |
 | Candidate taxonomy data | `data/candidate_taxonomy.json` |
 | Requirement traceability matrix | `data/traceability_matrix.json` |
@@ -2314,6 +2493,8 @@ Use this index to choose the right file quickly.
 | Source/evidence table | `results/evidence_matrix.csv` |
 | Alternative scorecards | `results/alternative_scorecards.csv` |
 | Prototype and hardening effort estimates | `results/implementation_effort_estimates.csv` |
+| Relative operating-cost estimates | `results/operational_cost_estimates.csv` |
+| Operation-adjusted scenario rankings | `results/operational_fit_rankings.csv` |
 | Evidence-gap risk analysis | `results/evidence_gap_analysis.csv` |
 | License audit | `results/license_audit.csv` |
 | URL health check | `results/source_check.csv` |
@@ -2342,6 +2523,7 @@ Use this index to choose the right file quickly.
 | Regenerate rankings and simulations | `scripts/simulate_alternatives.py` |
 | Run simulation stress tests | `scripts/stress_test_simulation.py` |
 | Estimate implementation effort | `scripts/estimate_implementation_effort.py` |
+| Estimate operational cost and latency risk | `scripts/estimate_operational_costs.py` |
 | Analyze evidence gaps | `scripts/analyze_evidence_gaps.py` |
 | Rank with custom weights | `scripts/rank_with_custom_weights.py` |
 | Regenerate license audit | `scripts/license_audit.py` |
@@ -2373,6 +2555,7 @@ Or run the core deterministic pieces manually:
 python scripts/simulate_alternatives.py --trials 5000 --seed 7331
 python scripts/stress_test_simulation.py --trials 1500 --seed 9011
 python scripts/estimate_implementation_effort.py
+python scripts/estimate_operational_costs.py
 python scripts/analyze_evidence_gaps.py
 python scripts/rank_with_custom_weights.py
 python scripts/license_audit.py

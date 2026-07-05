@@ -10,6 +10,8 @@ class CsvSchemasTest(unittest.TestCase):
             "monte_carlo_summary.csv",
             "stress_test_summary.csv",
             "implementation_effort_estimates.csv",
+            "operational_cost_estimates.csv",
+            "operational_fit_rankings.csv",
             "evidence_gap_analysis.csv",
             "github_metadata_check.csv",
         ]:

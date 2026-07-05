@@ -1,0 +1,47 @@
+{
+  "metadata": {
+    "created_at": "2026-07-05",
+    "purpose": "Relative operating-cost model for comparing permissive open-source AI orchestrator candidates without depending on volatile model-provider prices.",
+    "unit_notes": "Monthly operational hours are planning estimates, not vendor bills. Relative token pressure is a unitless index where 1.0 is the baseline."
+  },
+  "profiles": [
+    {
+      "id": "pilot_100_tasks",
+      "name": "Controlled pilot, 100 tasks/month",
+      "monthly_tasks": 100,
+      "base_review_minutes_per_task": 18,
+      "base_admin_hours": 6,
+      "base_governance_hours": 4,
+      "incident_buffer_minutes_per_task": 4,
+      "operational_penalty_weight": 0.08
+    },
+    {
+      "id": "team_rollout_400_tasks",
+      "name": "Team rollout, 400 tasks/month",
+      "monthly_tasks": 400,
+      "base_review_minutes_per_task": 12,
+      "base_admin_hours": 14,
+      "base_governance_hours": 8,
+      "incident_buffer_minutes_per_task": 3,
+      "operational_penalty_weight": 0.12
+    },
+    {
+      "id": "autonomous_pr_1000_tasks",
+      "name": "Autonomous PR lane, 1000 tasks/month",
+      "monthly_tasks": 1000,
+      "base_review_minutes_per_task": 10,
+      "base_admin_hours": 24,
+      "base_governance_hours": 14,
+      "incident_buffer_minutes_per_task": 5,
+      "operational_penalty_weight": 0.18
+    }
+  ],
+  "coefficient_notes": {
+    "review": "Low human-control, CI/PR, coding-fit, and source-confidence scores increase reviewer time.",
+    "administration": "Low deployment-flexibility, observability, implementation-ease, and maturity scores increase monthly ownership overhead.",
+    "governance": "Low security-governance, sandbox-isolation, and observability scores increase policy and audit overhead.",
+    "failure_buffer": "Low maturity, sandboxing, observability, and source confidence increase recovery and incident allowance.",
+    "token_pressure": "Multi-agent and persistent-memory features can increase context/tool usage; provider portability and implementation ease reduce tuning pressure.",
+    "latency_risk": "Latency risk is a relative planning score driven by token pressure, implementation friction, deployment constraints, provider constraints, and observability."
+  }
+}

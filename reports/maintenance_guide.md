@@ -28,6 +28,7 @@ python scripts/refresh_github_metadata.py --timeout 20
 - `data/scenario_profiles.json`
 - `data/risk_register.json`
 - `data/simulation_assumptions.json`
+- `data/operational_cost_model.json`
 
 3. Regenerate and validate offline artifacts:
 
@@ -47,6 +48,7 @@ git diff --check
 - `reports/executive_brief.md`
 - `reports/adoption_decision_record.md`
 - `reports/simulation_assumptions.md`
+- `reports/operational_cost_model.md`
 - `reports/evidence_gap_analysis.md`
 - `reports/validation_summary.md`
 

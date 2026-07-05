@@ -171,6 +171,18 @@ It computes two separate 1-5 complexity scores:
 
 The scope adjustment is explicit in the script because a broad async PR platform can score well technically while still requiring more integration work than a local CLI.
 
+## Operational Cost Model
+
+The generated operating-cost estimates are `results/operational_cost_estimates.csv` and `results/operational_fit_rankings.csv`, produced by:
+
+```powershell
+python scripts/estimate_operational_costs.py
+```
+
+The model uses `data/operational_cost_model.json` to define three operating profiles: a controlled pilot, a team rollout, and an autonomous PR lane. It estimates review hours, administration hours, governance hours, failure-recovery buffer, relative token pressure, latency risk, and an operation-adjusted ranking.
+
+The operation-adjusted ranking starts from the same scenario simulation score, then subtracts a profile-specific penalty for operating friction. It is a tie-breaker for adoption planning, not a replacement for live pilot evidence or provider-specific cost data.
+
 ## Confidence And Evidence
 
 Source confidence is a manual value from 0 to 1. It reflects repository clarity, license clarity, docs, release posture, and whether the project appears canonical.

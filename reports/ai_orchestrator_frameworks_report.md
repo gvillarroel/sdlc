@@ -48,6 +48,8 @@ For a quick guided shortlist, read `reports/decision_tree.md`.
 
 For simulation assumptions, threats to validity, and stress-test results, read `reports/simulation_assumptions.md`.
 
+For relative operating cost, token-pressure, latency-risk, and operation-adjusted rankings, read `reports/operational_cost_model.md`; the assumptions are in `data/operational_cost_model.json`.
+
 For evidence gaps in young or low-confidence candidates, read `reports/evidence_gap_analysis.md`.
 
 For live GitHub metadata verification, read `reports/github_metadata_check.md`.
@@ -155,6 +157,28 @@ The generated effort model makes that split explicit:
 | First slice | The smallest useful implementation slice that should be built before deeper integration. |
 | Adoption note | A generated caution on whether the candidate is a low-friction smoke test, a policy-heavy pilot, provider-dependent, or reference-only. |
 
+## Operational Cost Model
+
+The generated operating-cost appendix is `reports/operational_cost_model.md`. It uses `data/operational_cost_model.json` and `scripts/estimate_operational_costs.py` to estimate relative monthly operating hours, hours per task, token-pressure index, latency-risk score, and operation-adjusted rankings.
+
+This is not a vendor pricing table. Model prices, hosted seats, and internal labor rates are deliberately excluded because they change quickly and depend on provider choices. The useful planning question at this stage is whether a candidate is likely to add reviewer time, administration, governance overhead, failure recovery, token pressure, or latency tuning.
+
+Generated outputs:
+
+| Output | Meaning |
+|---|---|
+| `results/operational_cost_estimates.csv` | Monthly operating-hour estimate for each candidate under pilot, team rollout, and autonomous PR profiles. |
+| `results/operational_fit_rankings.csv` | Scenario rankings after applying an operating-profile friction penalty to the simulation score. |
+
+Key readouts:
+
+| Operating view | Readout |
+|---|---|
+| Lowest-friction pilot operations | Codex CLI and Cline are the lightest monthly-operating candidates in the generated 100-task profile. |
+| Strategic-fit caution | OpenHands SDK and Deep Agents remain stronger foundations for custom orchestration even when they are not the lowest-friction operating choices. |
+| Rank-shift signal | In quick local coding, Codex CLI moves up under operational adjustment because its sandbox/profile model lowers operating friction relative to some local CLI alternatives. |
+| Pilot instrumentation | Actual token usage, wall-clock latency, reviewer interventions, failed-run recovery time, and governance exceptions must be captured during the pilot. |
+
 ## Evidence Confidence
 
 | Confidence | Projects | Reason |
@@ -233,6 +257,8 @@ Generated outputs:
 | `results/evidence_matrix.csv` | Per-alternative repository, license, confidence, summary, implementation note, risk note, and source URLs. |
 | `results/alternative_scorecards.csv` | Wide table of all per-criterion scores by alternative. |
 | `results/implementation_effort_estimates.csv` | Generated prototype and production-hardening complexity estimates. |
+| `results/operational_cost_estimates.csv` | Relative monthly operating effort, token pressure, latency risk, and cost-risk bands. |
+| `results/operational_fit_rankings.csv` | Scenario rankings adjusted by operating-profile friction. |
 | `results/evidence_gap_analysis.csv` | Evidence risk bands for maturity, source confidence, release, traction, and freshness gaps. |
 | `results/source_check.csv` | Live URL check of report and dataset sources. The latest run checked 41 URLs with 41 OK responses. |
 | `results/github_metadata_check.csv` | Live GitHub repository metadata comparison for stars, push date, license, archive status, and latest release tag. |

@@ -14,6 +14,8 @@ implementation_effort_estimates.csv,True,,license; maturity_level; source_confid
 license_audit.csv,True,,,7,7
 local_artifact_reference_check.csv,True,,,4,4
 monte_carlo_summary.csv,True,,,10,10
+operational_cost_estimates.csv,True,,,16,16
+operational_fit_rankings.csv,True,,,13,13
 pareto_frontier.csv,True,,,5,5
 pilot_decision_scores.example.csv,True,,,12,12
 rank_stability.csv,True,,,9,9
