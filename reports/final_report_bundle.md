@@ -17,6 +17,7 @@ This generated bundle concatenates the main report and key appendices for one-fi
 - `reports/github_metadata_check.md`
 - `reports/security_evaluation_fixtures.md`
 - `reports/residual_risks.md`
+- `reports/presentation_outline.md`
 - `reports/pilot_protocol.md`
 - `reports/validation_summary.md`
 - `reports/environment_prerequisites.md`
@@ -156,6 +157,8 @@ For CSV output column definitions, read `reports/results_data_dictionary.md`.
 For update and refresh procedures, read `reports/maintenance_guide.md`.
 
 For remaining adoption risks after this screening, read `reports/residual_risks.md`.
+
+For a stakeholder presentation outline, read `reports/presentation_outline.md`.
 
 For terminology used across scoring and security sections, read `reports/glossary.md`.
 
@@ -1346,6 +1349,77 @@ The most important residual risk is security boundary evidence. Any candidate in
 
 ---
 
+<!-- Source: reports/presentation_outline.md -->
+
+# Presentation Outline
+
+Date: 2026-07-05
+
+## Purpose
+
+This outline turns the report into a short stakeholder presentation. It is not a slide deck; it is a source outline for preparing one.
+
+## 1. Decision Context
+
+- The source discussion listed AI coding-agent orchestrators, CLIs, SDKs, and control planes.
+- The evaluation filters to permissive open-source candidates only: MIT and Apache-2.0.
+- The output is a pilot shortlist, not a production adoption approval.
+
+## 2. Main Recommendation
+
+- There is no universal winner.
+- Use scenario-specific pilot clusters.
+- Start with OpenHands SDK and Deep Agents for custom Python orchestration.
+- Use Flue for TypeScript-first product agents.
+- Use Codex CLI for OpenAI-centered secure CLI/CI workflows.
+- Use mini-SWE-agent and SWE-agent for research baselines.
+
+## 3. Evidence Base
+
+- 17 included permissive OSS alternatives.
+- 2 excluded non-matching entries.
+- Deterministic rankings and 5,000-trial Monte Carlo simulations.
+- Sensitivity, stress, regret, Pareto, and rank-stability outputs.
+- Evidence-gap, source URL, and GitHub metadata checks.
+- Implementation effort model and security fixture catalog.
+
+## 4. What Changes The Ranking
+
+- Scenario weights.
+- Security and sandbox assumptions.
+- Provider neutrality requirements.
+- Project maturity and source confidence.
+- Model choice and task harness design.
+- Repository representativeness.
+
+## 5. Recommended Pilot
+
+- Pick the target workflow first.
+- Select 2-3 candidates from the matching scenario cluster.
+- Run security fixtures before scaling to the full task suite.
+- Capture task outcomes, cost, latency, human interventions, review acceptance, and artifacts.
+- Score results with `scripts/score_pilot_results.py`.
+
+## 6. No-Go Conditions
+
+- Secret exposure.
+- Workspace boundary failure.
+- Prompt-injection compliance.
+- Unapproved network access.
+- Direct protected-branch push.
+- Missing replayable logs or artifacts.
+- Unreviewable diffs.
+
+## 7. Ask From Stakeholders
+
+- Confirm target scenario and hard gates.
+- Confirm approved model providers.
+- Select representative repository fixtures.
+- Approve the pilot candidate set.
+- Define cost, latency, and review-acceptance thresholds.
+
+---
+
 <!-- Source: reports/pilot_protocol.md -->
 
 # Pilot Protocol
@@ -1525,7 +1599,7 @@ This page summarizes the current quality checks for the report repository. It is
 
 | Check | Command | Latest result |
 |---|---|---|
-| Unit tests | `python -m unittest discover -s tests` | 91 tests passed. |
+| Unit tests | `python -m unittest discover -s tests` | 92 tests passed. |
 | Full local workflow | `python scripts/run_all_checks.py` | Passed. |
 | Offline artifact validation | `python scripts/validate_artifacts.py` | Passed. |
 | Generated CSV schemas | `python scripts/validate_csv_schemas.py` | 25 CSV schemas checked, 0 failures. |
@@ -2178,6 +2252,7 @@ Use this index to choose the right file quickly.
 | Security fixture catalog | `reports/security_evaluation_fixtures.md` |
 | Pilot execution protocol | `reports/pilot_protocol.md` |
 | Candidate implementation notes | `reports/implementation_blueprints.md` |
+| Stakeholder presentation outline | `reports/presentation_outline.md` |
 | Report charts | `reports/assets/rank_stability.svg`, `reports/assets/scenario_regret.svg` |
 
 ## Data Inputs

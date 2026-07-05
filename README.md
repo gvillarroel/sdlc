@@ -61,6 +61,7 @@ Included artifacts:
 - `reports/pilot_protocol.md` - step-by-step protocol for executing the recommended pilot.
 - `reports/implementation_blueprints.md` - implementation notes for the main pilot candidates.
 - `reports/decision_tree.md` - guided shortlist selection tree.
+- `reports/presentation_outline.md` - stakeholder presentation outline.
 - `ci/validate-workflow.example.yml` - GitHub Actions workflow template for the full local check workflow and committed-output validation.
 
 Run the checks and simulations:

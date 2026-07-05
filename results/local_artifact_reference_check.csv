@@ -31,6 +31,7 @@ README.md,reports/implementation_blueprints.md,reports/implementation_blueprints
 README.md,reports/maintenance_guide.md,reports/maintenance_guide.md,True
 README.md,reports/methodology_appendix.md,reports/methodology_appendix.md,True
 README.md,reports/pilot_protocol.md,reports/pilot_protocol.md,True
+README.md,reports/presentation_outline.md,reports/presentation_outline.md,True
 README.md,reports/requirements_traceability.md,reports/requirements_traceability.md,True
 README.md,reports/residual_risks.md,reports/residual_risks.md,True
 README.md,reports/results_data_dictionary.md,reports/results_data_dictionary.md,True
@@ -115,6 +116,7 @@ reports/ai_orchestrator_frameworks_report.md,reports/implementation_blueprints.m
 reports/ai_orchestrator_frameworks_report.md,reports/maintenance_guide.md,reports/maintenance_guide.md,True
 reports/ai_orchestrator_frameworks_report.md,reports/methodology_appendix.md,reports/methodology_appendix.md,True
 reports/ai_orchestrator_frameworks_report.md,reports/pilot_protocol.md,reports/pilot_protocol.md,True
+reports/ai_orchestrator_frameworks_report.md,reports/presentation_outline.md,reports/presentation_outline.md,True
 reports/ai_orchestrator_frameworks_report.md,reports/requirements_traceability.md,reports/requirements_traceability.md,True
 reports/ai_orchestrator_frameworks_report.md,reports/residual_risks.md,reports/residual_risks.md,True
 reports/ai_orchestrator_frameworks_report.md,reports/results_data_dictionary.md,reports/results_data_dictionary.md,True
@@ -187,6 +189,7 @@ reports/artifact_index.md,reports/implementation_blueprints.md,reports/implement
 reports/artifact_index.md,reports/maintenance_guide.md,reports/maintenance_guide.md,True
 reports/artifact_index.md,reports/methodology_appendix.md,reports/methodology_appendix.md,True
 reports/artifact_index.md,reports/pilot_protocol.md,reports/pilot_protocol.md,True
+reports/artifact_index.md,reports/presentation_outline.md,reports/presentation_outline.md,True
 reports/artifact_index.md,reports/requirements_traceability.md,reports/requirements_traceability.md,True
 reports/artifact_index.md,reports/residual_risks.md,reports/residual_risks.md,True
 reports/artifact_index.md,reports/results_data_dictionary.md,reports/results_data_dictionary.md,True
@@ -305,6 +308,7 @@ reports/final_report_bundle.md,reports/implementation_blueprints.md,reports/impl
 reports/final_report_bundle.md,reports/maintenance_guide.md,reports/maintenance_guide.md,True
 reports/final_report_bundle.md,reports/methodology_appendix.md,reports/methodology_appendix.md,True
 reports/final_report_bundle.md,reports/pilot_protocol.md,reports/pilot_protocol.md,True
+reports/final_report_bundle.md,reports/presentation_outline.md,reports/presentation_outline.md,True
 reports/final_report_bundle.md,reports/requirements_traceability.md,reports/requirements_traceability.md,True
 reports/final_report_bundle.md,reports/residual_risks.md,reports/residual_risks.md,True
 reports/final_report_bundle.md,reports/results_data_dictionary.md,reports/results_data_dictionary.md,True
@@ -429,6 +433,7 @@ reports/pilot_protocol.md,templates/pilot_run_log.csv,templates/pilot_run_log.cs
 reports/pilot_protocol.md,templates/reviewer_scorecard.md,templates/reviewer_scorecard.md,True
 reports/pilot_protocol.md,templates/scenario_selection_workshop.md,templates/scenario_selection_workshop.md,True
 reports/pilot_protocol.md,templates/security_gate_checklist.md,templates/security_gate_checklist.md,True
+reports/presentation_outline.md,scripts/score_pilot_results.py,scripts/score_pilot_results.py,True
 reports/requirements_traceability.md,ci/validate-workflow.example.yml,ci/validate-workflow.example.yml,True
 reports/requirements_traceability.md,data/alternatives.json,data/alternatives.json,True
 reports/requirements_traceability.md,data/pilot_tasks.json,data/pilot_tasks.json,True

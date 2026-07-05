@@ -23,6 +23,7 @@ SOURCE_REPORTS = [
     "github_metadata_check.md",
     "security_evaluation_fixtures.md",
     "residual_risks.md",
+    "presentation_outline.md",
     "pilot_protocol.md",
     "validation_summary.md",
     "environment_prerequisites.md",

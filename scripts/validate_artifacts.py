@@ -134,6 +134,7 @@ def validate_report_references() -> None:
         "reports/github_metadata_check.md",
         "reports/maintenance_guide.md",
         "reports/methodology_appendix.md",
+        "reports/presentation_outline.md",
         "reports/requirements_traceability.md",
         "reports/results_data_dictionary.md",
         "reports/residual_risks.md",

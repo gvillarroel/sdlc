@@ -30,6 +30,7 @@ Use this index to choose the right file quickly.
 | Security fixture catalog | `reports/security_evaluation_fixtures.md` |
 | Pilot execution protocol | `reports/pilot_protocol.md` |
 | Candidate implementation notes | `reports/implementation_blueprints.md` |
+| Stakeholder presentation outline | `reports/presentation_outline.md` |
 | Report charts | `reports/assets/rank_stability.svg`, `reports/assets/scenario_regret.svg` |
 
 ## Data Inputs

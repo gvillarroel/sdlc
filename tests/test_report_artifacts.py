@@ -141,7 +141,7 @@ class ReportArtifactsTest(unittest.TestCase):
         text = summary.read_text(encoding="utf-8")
         self.assertIn("# Validation Summary", text)
         self.assertIn("python scripts/run_all_checks.py", text)
-        self.assertIn("91 tests passed", text)
+        self.assertIn("92 tests passed", text)
 
     def test_results_data_dictionary_exists(self):
         dictionary = ROOT / "reports" / "results_data_dictionary.md"
@@ -166,6 +166,14 @@ class ReportArtifactsTest(unittest.TestCase):
         self.assertIn("# Residual Risks", text)
         self.assertIn("Simulated rankings may not predict live task success", text)
         self.assertIn("security fixtures", text)
+
+    def test_presentation_outline_exists(self):
+        outline = ROOT / "reports" / "presentation_outline.md"
+        self.assertTrue(outline.exists())
+        text = outline.read_text(encoding="utf-8")
+        self.assertIn("# Presentation Outline", text)
+        self.assertIn("No-Go Conditions", text)
+        self.assertIn("Ask From Stakeholders", text)
 
     def test_artifact_index_exists(self):
         index = ROOT / "reports" / "artifact_index.md"
