@@ -16,6 +16,7 @@ COMMANDS = [
     [PYTHON, "-m", "unittest", "discover", "-s", "tests"],
     [PYTHON, "scripts/simulate_alternatives.py", "--trials", "5000", "--seed", "7331"],
     [PYTHON, "scripts/stress_test_simulation.py", "--trials", "1500", "--seed", "9011"],
+    [PYTHON, "scripts/estimate_implementation_effort.py"],
     [PYTHON, "scripts/license_audit.py"],
     [PYTHON, "scripts/generate_charts.py"],
     [

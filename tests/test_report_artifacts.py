@@ -85,6 +85,7 @@ class ReportArtifactsTest(unittest.TestCase):
             "sensitivity_summary.csv",
             "category_scores.csv",
             "decision_shortlist.csv",
+            "implementation_effort_estimates.csv",
             "stress_test_summary.csv",
             "uncertainty_stress_summary.csv",
             "all_results.json"

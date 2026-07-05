@@ -91,6 +91,8 @@ Notable verification corrections from the shared table:
 
 These estimates assume a small experienced engineering team, one representative repository, one primary model provider already approved, and a goal of producing a credible prototype rather than a hardened enterprise rollout.
 
+The generated matrix `results/implementation_effort_estimates.csv` complements the manual estimates below. It separates first-prototype complexity from production-hardening complexity and records the main driver for each candidate.
+
 | Alternative | Credible prototype | Production hardening | Hidden work |
 |---|---:|---:|---|
 | Aider | 0.5-1 day | 3-7 days | Repo conventions, model routing, test command integration, and human workflow. |
@@ -111,6 +113,15 @@ These estimates assume a small experienced engineering team, one representative 
 | Omni Agent | 2-5 days | Not recommended yet | Verification concept may be useful, but repo maturity is too low for platform adoption. |
 
 The main implementation trap is confusing "installable" with "operationally usable." CLI tools can be installed in minutes, but an autonomous coding workflow is not credible until it has sandboxing, repeatable tests, review artifacts, failure handling, credential boundaries, and a rollback path.
+
+The generated effort model makes that split explicit:
+
+| Effort view | Meaning |
+|---|---|
+| Prototype complexity | Friction from implementation ease, extension surface, coding fit, provider portability, and deployment flexibility, with a scope adjustment for platform breadth. |
+| Hardening complexity | Friction from maturity, sandboxing, governance, observability, CI/PR fit, deployment flexibility, and scope adjustment. |
+| First slice | The smallest useful implementation slice that should be built before deeper integration. |
+| Adoption note | A generated caution on whether the candidate is a low-friction smoke test, a policy-heavy pilot, provider-dependent, or reference-only. |
 
 ## Evidence Confidence
 
@@ -187,6 +198,7 @@ Generated outputs:
 | `results/criteria_definitions.csv` | Human-readable definitions for each scoring criterion. |
 | `results/evidence_matrix.csv` | Per-alternative repository, license, confidence, summary, implementation note, risk note, and source URLs. |
 | `results/alternative_scorecards.csv` | Wide table of all per-criterion scores by alternative. |
+| `results/implementation_effort_estimates.csv` | Generated prototype and production-hardening complexity estimates. |
 | `results/source_check.csv` | Live URL check of report and dataset sources. The latest run checked 41 URLs with 41 OK responses. |
 | `results/license_audit.csv` | Explicit permissive-license audit for included and excluded entries. |
 | `results/regret_analysis.csv` | Score gap between each candidate and the scenario winner. |

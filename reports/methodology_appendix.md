@@ -146,6 +146,21 @@ Category scorecards group criteria before scenario weights are applied:
 
 The generated output is `results/category_scores.csv`.
 
+## Implementation Effort Model
+
+The generated effort estimate is `results/implementation_effort_estimates.csv`, produced by:
+
+```powershell
+python scripts/estimate_implementation_effort.py
+```
+
+It computes two separate 1-5 complexity scores:
+
+- Prototype complexity: driven by implementation ease, extensibility, coding fit, provider portability, deployment flexibility, and a scope adjustment for platform breadth.
+- Hardening complexity: driven by maturity, sandboxing, security/governance, observability, CI/PR fit, deployment flexibility, and a scope adjustment for operational breadth.
+
+The scope adjustment is explicit in the script because a broad async PR platform can score well technically while still requiring more integration work than a local CLI.
+
 ## Confidence And Evidence
 
 Source confidence is a manual value from 0 to 1. It reflects repository clarity, license clarity, docs, release posture, and whether the project appears canonical.

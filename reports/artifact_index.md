@@ -51,6 +51,7 @@ Use this index to choose the right file quickly.
 | Criteria definitions | `results/criteria_definitions.csv` |
 | Source/evidence table | `results/evidence_matrix.csv` |
 | Alternative scorecards | `results/alternative_scorecards.csv` |
+| Prototype and hardening effort estimates | `results/implementation_effort_estimates.csv` |
 | License audit | `results/license_audit.csv` |
 | URL health check | `results/source_check.csv` |
 | Complete machine-readable output | `results/all_results.json` |
@@ -70,6 +71,7 @@ Use this index to choose the right file quickly.
 |---|---|
 | Regenerate rankings and simulations | `scripts/simulate_alternatives.py` |
 | Run simulation stress tests | `scripts/stress_test_simulation.py` |
+| Estimate implementation effort | `scripts/estimate_implementation_effort.py` |
 | Regenerate license audit | `scripts/license_audit.py` |
 | Check external source URLs | `scripts/check_sources.py` |
 | Validate generated artifacts offline | `scripts/validate_artifacts.py` |
@@ -91,6 +93,7 @@ Or run the core deterministic pieces manually:
 ```powershell
 python scripts/simulate_alternatives.py --trials 5000 --seed 7331
 python scripts/stress_test_simulation.py --trials 1500 --seed 9011
+python scripts/estimate_implementation_effort.py
 python scripts/license_audit.py
 python scripts/validate_artifacts.py
 ```

@@ -14,6 +14,7 @@ Included artifacts:
 - `data/simulation_assumptions.json` - structured threats to validity and mitigation coverage for the simulation.
 - `scripts/simulate_alternatives.py` - deterministic weighted ranking, Monte Carlo uncertainty simulation, and sensitivity analysis.
 - `scripts/stress_test_simulation.py` - stress tests for scenario weights, maturity discounts, source confidence, sandbox assumptions, and uncertainty.
+- `scripts/estimate_implementation_effort.py` - reproducible prototype and hardening effort estimates from the scoring dataset.
 - `scripts/check_sources.py` - optional live source URL checker for the report and dataset.
 - `scripts/license_audit.py` - permissive-license audit for included and excluded alternatives.
 - `scripts/validate_artifacts.py` - offline consistency validation for generated artifacts and report references.
@@ -46,6 +47,7 @@ Or run individual steps:
 python -m unittest discover -s tests
 python scripts/simulate_alternatives.py --trials 5000 --seed 7331
 python scripts/stress_test_simulation.py --trials 1500 --seed 9011
+python scripts/estimate_implementation_effort.py
 python scripts/license_audit.py
 python scripts/generate_charts.py
 python scripts/score_pilot_results.py --input examples/pilot_candidate_summary.example.csv --output results/pilot_decision_scores.example.csv
@@ -66,6 +68,7 @@ Generated result files:
 - `results/criteria_definitions.csv`
 - `results/evidence_matrix.csv`
 - `results/alternative_scorecards.csv`
+- `results/implementation_effort_estimates.csv`
 - `results/source_check.csv`
 - `results/license_audit.csv`
 - `results/regret_analysis.csv`

@@ -4,6 +4,8 @@ Date: 2026-07-05
 
 These blueprints describe what to build first for the highest-priority candidates. They are not installation docs; they are pilot architecture notes.
 
+For a generated candidate-by-candidate estimate of prototype effort, hardening effort, first slice, and adoption caution, see `results/implementation_effort_estimates.csv`.
+
 ## OpenHands Software Agent SDK
 
 Best use: Python foundation for a custom software-agent system.
