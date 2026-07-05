@@ -38,6 +38,8 @@ For simulation assumptions, threats to validity, and stress-test results, read `
 
 For evidence gaps in young or low-confidence candidates, read `reports/evidence_gap_analysis.md`.
 
+For live GitHub metadata verification, read `reports/github_metadata_check.md`.
+
 For reusable security pilot fixtures, read `reports/security_evaluation_fixtures.md`; the machine-readable catalog is `data/security_evaluation_fixtures.json`.
 
 For a requirement-to-artifact coverage map, read `reports/requirements_traceability.md`; the machine-readable matrix is `data/traceability_matrix.json`.
@@ -209,6 +211,7 @@ Generated outputs:
 | `results/implementation_effort_estimates.csv` | Generated prototype and production-hardening complexity estimates. |
 | `results/evidence_gap_analysis.csv` | Evidence risk bands for maturity, source confidence, release, traction, and freshness gaps. |
 | `results/source_check.csv` | Live URL check of report and dataset sources. The latest run checked 41 URLs with 41 OK responses. |
+| `results/github_metadata_check.csv` | Live GitHub repository metadata comparison for stars, push date, license, archive status, and latest release tag. |
 | `results/license_audit.csv` | Explicit permissive-license audit for included and excluded entries. |
 | `results/local_artifact_reference_check.csv` | Offline check that local artifact references in README and reports resolve to existing files. |
 | `results/regret_analysis.csv` | Score gap between each candidate and the scenario winner. |

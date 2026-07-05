@@ -185,6 +185,14 @@ python scripts/analyze_evidence_gaps.py
 
 The evidence-gap score combines source confidence, maturity, release availability, repository traction, evidence URL count, freshness, and repository age. It is a review-priority signal, not a direct product-quality score.
 
+Live GitHub metadata is exported to `results/github_metadata_check.csv` by:
+
+```powershell
+python scripts/refresh_github_metadata.py --timeout 20
+```
+
+This live check is intentionally optional because it depends on the GitHub API. The committed CSV records the latest successful check and the offline validation verifies that all checked repositories resolved, licenses matched, and none were archived.
+
 ## Known Limitations
 
 - Scores are analyst judgments, not measured execution results.

@@ -20,6 +20,7 @@ Included artifacts:
 - `scripts/analyze_evidence_gaps.py` - evidence-gap review for maturity, confidence, release, traction, and freshness risks.
 - `scripts/rank_with_custom_weights.py` - deterministic ranking for user-provided scenario weights.
 - `scripts/check_local_artifact_references.py` - offline check for local artifact references in README and reports.
+- `scripts/refresh_github_metadata.py` - optional live GitHub metadata checker for repository, license, star, push, and release signals.
 - `scripts/check_sources.py` - optional live source URL checker for the report and dataset.
 - `scripts/license_audit.py` - permissive-license audit for included and excluded alternatives.
 - `scripts/validate_artifacts.py` - offline consistency validation for generated artifacts and report references.
@@ -34,6 +35,7 @@ Included artifacts:
 - `reports/ai_orchestrator_frameworks_report.md` - final English report.
 - `reports/executive_brief.md` - short decision brief for quick review.
 - `reports/evidence_gap_analysis.md` - evidence-gap findings for low-confidence or immature candidates.
+- `reports/github_metadata_check.md` - live GitHub metadata verification summary.
 - `reports/security_evaluation_fixtures.md` - reusable security fixture catalog for pilot gates.
 - `reports/requirements_traceability.md` - coverage map from the original request to artifacts and validation commands.
 - `reports/methodology_appendix.md` - scoring formulas, Monte Carlo assumptions, and customization notes.
@@ -64,6 +66,7 @@ python scripts/check_local_artifact_references.py
 python scripts/generate_charts.py
 python scripts/score_pilot_results.py --input examples/pilot_candidate_summary.example.csv --output results/pilot_decision_scores.example.csv
 python scripts/check_sources.py --timeout 20
+python scripts/refresh_github_metadata.py --timeout 20
 python scripts/validate_artifacts.py
 ```
 
@@ -84,6 +87,7 @@ Generated result files:
 - `results/evidence_gap_analysis.csv`
 - `results/custom_weights_example_rankings.csv`
 - `results/local_artifact_reference_check.csv`
+- `results/github_metadata_check.csv`
 - `results/source_check.csv`
 - `results/license_audit.csv`
 - `results/regret_analysis.csv`

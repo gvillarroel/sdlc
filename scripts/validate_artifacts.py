@@ -42,6 +42,7 @@ REQUIRED_RESULT_FILES = [
     "license_audit.csv",
     "source_check.csv",
     "local_artifact_reference_check.csv",
+    "github_metadata_check.csv",
     "all_results.json"
 ]
 
@@ -98,6 +99,12 @@ def validate_license_and_sources() -> None:
     assert_true(reference_rows, "local artifact reference check is empty")
     assert_true(all(row["exists"] == "True" for row in reference_rows), "one or more local artifact references are missing")
 
+    github_rows = read_csv(RESULTS / "github_metadata_check.csv")
+    assert_true(len(github_rows) == 17, "unexpected GitHub metadata row count")
+    assert_true(all(row["ok"] == "True" for row in github_rows), "one or more GitHub metadata checks failed")
+    assert_true(all(row["license_matches"] == "True" for row in github_rows), "one or more GitHub licenses no longer match dataset")
+    assert_true(all(row["archived"] == "False" for row in github_rows), "one or more GitHub repositories are archived")
+
 
 def validate_report_references() -> None:
     report = (REPORTS / "ai_orchestrator_frameworks_report.md").read_text(encoding="utf-8")
@@ -111,6 +118,7 @@ def validate_report_references() -> None:
         "data/traceability_matrix.json",
         "reports/executive_brief.md",
         "reports/evidence_gap_analysis.md",
+        "reports/github_metadata_check.md",
         "reports/methodology_appendix.md",
         "reports/requirements_traceability.md",
         "reports/security_evaluation_fixtures.md",

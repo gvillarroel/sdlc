@@ -17,6 +17,7 @@ README.md,reports/artifact_index.md,reports/artifact_index.md,True
 README.md,reports/decision_tree.md,reports/decision_tree.md,True
 README.md,reports/evidence_gap_analysis.md,reports/evidence_gap_analysis.md,True
 README.md,reports/executive_brief.md,reports/executive_brief.md,True
+README.md,reports/github_metadata_check.md,reports/github_metadata_check.md,True
 README.md,reports/implementation_blueprints.md,reports/implementation_blueprints.md,True
 README.md,reports/methodology_appendix.md,reports/methodology_appendix.md,True
 README.md,reports/pilot_protocol.md,reports/pilot_protocol.md,True
@@ -32,6 +33,7 @@ README.md,results/decision_shortlist.csv,results/decision_shortlist.csv,True
 README.md,results/deterministic_rankings.csv,results/deterministic_rankings.csv,True
 README.md,results/evidence_gap_analysis.csv,results/evidence_gap_analysis.csv,True
 README.md,results/evidence_matrix.csv,results/evidence_matrix.csv,True
+README.md,results/github_metadata_check.csv,results/github_metadata_check.csv,True
 README.md,results/implementation_effort_estimates.csv,results/implementation_effort_estimates.csv,True
 README.md,results/license_audit.csv,results/license_audit.csv,True
 README.md,results/local_artifact_reference_check.csv,results/local_artifact_reference_check.csv,True
@@ -54,6 +56,7 @@ README.md,scripts/estimate_implementation_effort.py,scripts/estimate_implementat
 README.md,scripts/generate_charts.py,scripts/generate_charts.py,True
 README.md,scripts/license_audit.py,scripts/license_audit.py,True
 README.md,scripts/rank_with_custom_weights.py,scripts/rank_with_custom_weights.py,True
+README.md,scripts/refresh_github_metadata.py,scripts/refresh_github_metadata.py,True
 README.md,scripts/run_all_checks.py,scripts/run_all_checks.py,True
 README.md,scripts/score_pilot_results.py,scripts/score_pilot_results.py,True
 README.md,scripts/simulate_alternatives.py,scripts/simulate_alternatives.py,True
@@ -78,6 +81,7 @@ reports/ai_orchestrator_frameworks_report.md,reports/artifact_index.md,reports/a
 reports/ai_orchestrator_frameworks_report.md,reports/decision_tree.md,reports/decision_tree.md,True
 reports/ai_orchestrator_frameworks_report.md,reports/evidence_gap_analysis.md,reports/evidence_gap_analysis.md,True
 reports/ai_orchestrator_frameworks_report.md,reports/executive_brief.md,reports/executive_brief.md,True
+reports/ai_orchestrator_frameworks_report.md,reports/github_metadata_check.md,reports/github_metadata_check.md,True
 reports/ai_orchestrator_frameworks_report.md,reports/implementation_blueprints.md,reports/implementation_blueprints.md,True
 reports/ai_orchestrator_frameworks_report.md,reports/methodology_appendix.md,reports/methodology_appendix.md,True
 reports/ai_orchestrator_frameworks_report.md,reports/pilot_protocol.md,reports/pilot_protocol.md,True
@@ -93,6 +97,7 @@ reports/ai_orchestrator_frameworks_report.md,results/decision_shortlist.csv,resu
 reports/ai_orchestrator_frameworks_report.md,results/deterministic_rankings.csv,results/deterministic_rankings.csv,True
 reports/ai_orchestrator_frameworks_report.md,results/evidence_gap_analysis.csv,results/evidence_gap_analysis.csv,True
 reports/ai_orchestrator_frameworks_report.md,results/evidence_matrix.csv,results/evidence_matrix.csv,True
+reports/ai_orchestrator_frameworks_report.md,results/github_metadata_check.csv,results/github_metadata_check.csv,True
 reports/ai_orchestrator_frameworks_report.md,results/implementation_effort_estimates.csv,results/implementation_effort_estimates.csv,True
 reports/ai_orchestrator_frameworks_report.md,results/license_audit.csv,results/license_audit.csv,True
 reports/ai_orchestrator_frameworks_report.md,results/local_artifact_reference_check.csv,results/local_artifact_reference_check.csv,True
@@ -133,6 +138,7 @@ reports/artifact_index.md,reports/assets/scenario_regret.svg,reports/assets/scen
 reports/artifact_index.md,reports/decision_tree.md,reports/decision_tree.md,True
 reports/artifact_index.md,reports/evidence_gap_analysis.md,reports/evidence_gap_analysis.md,True
 reports/artifact_index.md,reports/executive_brief.md,reports/executive_brief.md,True
+reports/artifact_index.md,reports/github_metadata_check.md,reports/github_metadata_check.md,True
 reports/artifact_index.md,reports/implementation_blueprints.md,reports/implementation_blueprints.md,True
 reports/artifact_index.md,reports/methodology_appendix.md,reports/methodology_appendix.md,True
 reports/artifact_index.md,reports/pilot_protocol.md,reports/pilot_protocol.md,True
@@ -148,6 +154,7 @@ reports/artifact_index.md,results/decision_shortlist.csv,results/decision_shortl
 reports/artifact_index.md,results/deterministic_rankings.csv,results/deterministic_rankings.csv,True
 reports/artifact_index.md,results/evidence_gap_analysis.csv,results/evidence_gap_analysis.csv,True
 reports/artifact_index.md,results/evidence_matrix.csv,results/evidence_matrix.csv,True
+reports/artifact_index.md,results/github_metadata_check.csv,results/github_metadata_check.csv,True
 reports/artifact_index.md,results/implementation_effort_estimates.csv,results/implementation_effort_estimates.csv,True
 reports/artifact_index.md,results/license_audit.csv,results/license_audit.csv,True
 reports/artifact_index.md,results/local_artifact_reference_check.csv,results/local_artifact_reference_check.csv,True
@@ -170,6 +177,7 @@ reports/artifact_index.md,scripts/estimate_implementation_effort.py,scripts/esti
 reports/artifact_index.md,scripts/generate_charts.py,scripts/generate_charts.py,True
 reports/artifact_index.md,scripts/license_audit.py,scripts/license_audit.py,True
 reports/artifact_index.md,scripts/rank_with_custom_weights.py,scripts/rank_with_custom_weights.py,True
+reports/artifact_index.md,scripts/refresh_github_metadata.py,scripts/refresh_github_metadata.py,True
 reports/artifact_index.md,scripts/run_all_checks.py,scripts/run_all_checks.py,True
 reports/artifact_index.md,scripts/score_pilot_results.py,scripts/score_pilot_results.py,True
 reports/artifact_index.md,scripts/simulate_alternatives.py,scripts/simulate_alternatives.py,True
@@ -188,6 +196,10 @@ reports/executive_brief.md,reports/ai_orchestrator_frameworks_report.md,reports/
 reports/executive_brief.md,results/evidence_matrix.csv,results/evidence_matrix.csv,True
 reports/executive_brief.md,results/license_audit.csv,results/license_audit.csv,True
 reports/executive_brief.md,results/source_check.csv,results/source_check.csv,True
+reports/github_metadata_check.md,data/alternatives.json,data/alternatives.json,True
+reports/github_metadata_check.md,reports/evidence_gap_analysis.md,reports/evidence_gap_analysis.md,True
+reports/github_metadata_check.md,results/github_metadata_check.csv,results/github_metadata_check.csv,True
+reports/github_metadata_check.md,scripts/refresh_github_metadata.py,scripts/refresh_github_metadata.py,True
 reports/implementation_blueprints.md,results/implementation_effort_estimates.csv,results/implementation_effort_estimates.csv,True
 reports/methodology_appendix.md,data/alternatives.json,data/alternatives.json,True
 reports/methodology_appendix.md,data/pilot_tasks.json,data/pilot_tasks.json,True
@@ -201,6 +213,7 @@ reports/methodology_appendix.md,results/custom_weights_example_rankings.csv,resu
 reports/methodology_appendix.md,results/decision_shortlist.csv,results/decision_shortlist.csv,True
 reports/methodology_appendix.md,results/evidence_gap_analysis.csv,results/evidence_gap_analysis.csv,True
 reports/methodology_appendix.md,results/evidence_matrix.csv,results/evidence_matrix.csv,True
+reports/methodology_appendix.md,results/github_metadata_check.csv,results/github_metadata_check.csv,True
 reports/methodology_appendix.md,results/implementation_effort_estimates.csv,results/implementation_effort_estimates.csv,True
 reports/methodology_appendix.md,results/license_audit.csv,results/license_audit.csv,True
 reports/methodology_appendix.md,results/pareto_frontier.csv,results/pareto_frontier.csv,True
@@ -216,6 +229,7 @@ reports/methodology_appendix.md,results/uncertainty_stress_summary.csv,results/u
 reports/methodology_appendix.md,scripts/analyze_evidence_gaps.py,scripts/analyze_evidence_gaps.py,True
 reports/methodology_appendix.md,scripts/estimate_implementation_effort.py,scripts/estimate_implementation_effort.py,True
 reports/methodology_appendix.md,scripts/rank_with_custom_weights.py,scripts/rank_with_custom_weights.py,True
+reports/methodology_appendix.md,scripts/refresh_github_metadata.py,scripts/refresh_github_metadata.py,True
 reports/methodology_appendix.md,scripts/simulate_alternatives.py,scripts/simulate_alternatives.py,True
 reports/methodology_appendix.md,scripts/stress_test_simulation.py,scripts/stress_test_simulation.py,True
 reports/pilot_protocol.md,data/pilot_decision_model.json,data/pilot_decision_model.json,True

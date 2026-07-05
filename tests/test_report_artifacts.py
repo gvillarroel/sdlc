@@ -55,6 +55,14 @@ class ReportArtifactsTest(unittest.TestCase):
         self.assertIn("results/evidence_gap_analysis.csv", text)
         self.assertIn("High", text)
 
+    def test_github_metadata_report_exists(self):
+        metadata = ROOT / "reports" / "github_metadata_check.md"
+        self.assertTrue(metadata.exists())
+        text = metadata.read_text(encoding="utf-8")
+        self.assertIn("# GitHub Metadata Check", text)
+        self.assertIn("results/github_metadata_check.csv", text)
+        self.assertIn("license mismatches", text)
+
     def test_requirements_traceability_report_exists(self):
         traceability = ROOT / "reports" / "requirements_traceability.md"
         self.assertTrue(traceability.exists())
@@ -113,6 +121,7 @@ class ReportArtifactsTest(unittest.TestCase):
             "evidence_gap_analysis.csv",
             "custom_weights_example_rankings.csv",
             "local_artifact_reference_check.csv",
+            "github_metadata_check.csv",
             "stress_test_summary.csv",
             "uncertainty_stress_summary.csv",
             "all_results.json"

@@ -15,6 +15,7 @@ Use this index to choose the right file quickly.
 | Scoring formula and assumptions | `reports/methodology_appendix.md` |
 | Simulation assumptions and stress tests | `reports/simulation_assumptions.md` |
 | Evidence-gap findings | `reports/evidence_gap_analysis.md` |
+| GitHub metadata verification | `reports/github_metadata_check.md` |
 | Security fixture catalog | `reports/security_evaluation_fixtures.md` |
 | Pilot execution protocol | `reports/pilot_protocol.md` |
 | Candidate implementation notes | `reports/implementation_blueprints.md` |
@@ -61,6 +62,7 @@ Use this index to choose the right file quickly.
 | Evidence-gap risk analysis | `results/evidence_gap_analysis.csv` |
 | License audit | `results/license_audit.csv` |
 | URL health check | `results/source_check.csv` |
+| GitHub metadata check | `results/github_metadata_check.csv` |
 | Local artifact reference check | `results/local_artifact_reference_check.csv` |
 | Complete machine-readable output | `results/all_results.json` |
 
@@ -85,6 +87,7 @@ Use this index to choose the right file quickly.
 | Rank with custom weights | `scripts/rank_with_custom_weights.py` |
 | Regenerate license audit | `scripts/license_audit.py` |
 | Check external source URLs | `scripts/check_sources.py` |
+| Refresh GitHub metadata check | `scripts/refresh_github_metadata.py` |
 | Check local artifact references | `scripts/check_local_artifact_references.py` |
 | Validate generated artifacts offline | `scripts/validate_artifacts.py` |
 | Generate report SVG charts | `scripts/generate_charts.py` |
@@ -117,4 +120,5 @@ Run live source verification when network access is available:
 
 ```powershell
 python scripts/check_sources.py --timeout 20
+python scripts/refresh_github_metadata.py --timeout 20
 ```
