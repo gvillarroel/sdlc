@@ -19,6 +19,7 @@ README.md,reports/ai_orchestrator_frameworks_report.md,reports/ai_orchestrator_f
 README.md,reports/artifact_index.md,reports/artifact_index.md,True
 README.md,reports/candidate_taxonomy.md,reports/candidate_taxonomy.md,True
 README.md,reports/decision_tree.md,reports/decision_tree.md,True
+README.md,reports/environment_prerequisites.md,reports/environment_prerequisites.md,True
 README.md,reports/evidence_gap_analysis.md,reports/evidence_gap_analysis.md,True
 README.md,reports/executive_brief.md,reports/executive_brief.md,True
 README.md,reports/faq.md,reports/faq.md,True
@@ -100,6 +101,7 @@ reports/ai_orchestrator_frameworks_report.md,reports/adoption_decision_record.md
 reports/ai_orchestrator_frameworks_report.md,reports/artifact_index.md,reports/artifact_index.md,True
 reports/ai_orchestrator_frameworks_report.md,reports/candidate_taxonomy.md,reports/candidate_taxonomy.md,True
 reports/ai_orchestrator_frameworks_report.md,reports/decision_tree.md,reports/decision_tree.md,True
+reports/ai_orchestrator_frameworks_report.md,reports/environment_prerequisites.md,reports/environment_prerequisites.md,True
 reports/ai_orchestrator_frameworks_report.md,reports/evidence_gap_analysis.md,reports/evidence_gap_analysis.md,True
 reports/ai_orchestrator_frameworks_report.md,reports/executive_brief.md,reports/executive_brief.md,True
 reports/ai_orchestrator_frameworks_report.md,reports/faq.md,reports/faq.md,True
@@ -169,6 +171,7 @@ reports/artifact_index.md,reports/assets/rank_stability.svg,reports/assets/rank_
 reports/artifact_index.md,reports/assets/scenario_regret.svg,reports/assets/scenario_regret.svg,True
 reports/artifact_index.md,reports/candidate_taxonomy.md,reports/candidate_taxonomy.md,True
 reports/artifact_index.md,reports/decision_tree.md,reports/decision_tree.md,True
+reports/artifact_index.md,reports/environment_prerequisites.md,reports/environment_prerequisites.md,True
 reports/artifact_index.md,reports/evidence_gap_analysis.md,reports/evidence_gap_analysis.md,True
 reports/artifact_index.md,reports/executive_brief.md,reports/executive_brief.md,True
 reports/artifact_index.md,reports/faq.md,reports/faq.md,True
@@ -233,6 +236,11 @@ reports/artifact_index.md,templates/scenario_selection_workshop.md,templates/sce
 reports/artifact_index.md,templates/security_gate_checklist.md,templates/security_gate_checklist.md,True
 reports/candidate_taxonomy.md,data/candidate_taxonomy.json,data/candidate_taxonomy.json,True
 reports/decision_tree.md,data/decision_tree.json,data/decision_tree.json,True
+reports/environment_prerequisites.md,ci/validate-workflow.example.yml,ci/validate-workflow.example.yml,True
+reports/environment_prerequisites.md,scripts/check_sources.py,scripts/check_sources.py,True
+reports/environment_prerequisites.md,scripts/refresh_github_metadata.py,scripts/refresh_github_metadata.py,True
+reports/environment_prerequisites.md,scripts/run_all_checks.ps1,scripts/run_all_checks.ps1,True
+reports/environment_prerequisites.md,scripts/run_all_checks.py,scripts/run_all_checks.py,True
 reports/evidence_gap_analysis.md,results/evidence_gap_analysis.csv,results/evidence_gap_analysis.csv,True
 reports/evidence_gap_analysis.md,scripts/analyze_evidence_gaps.py,scripts/analyze_evidence_gaps.py,True
 reports/executive_brief.md,data/alternatives.json,data/alternatives.json,True
@@ -277,6 +285,7 @@ reports/final_report_bundle.md,reports/assets/rank_stability.svg,reports/assets/
 reports/final_report_bundle.md,reports/assets/scenario_regret.svg,reports/assets/scenario_regret.svg,True
 reports/final_report_bundle.md,reports/candidate_taxonomy.md,reports/candidate_taxonomy.md,True
 reports/final_report_bundle.md,reports/decision_tree.md,reports/decision_tree.md,True
+reports/final_report_bundle.md,reports/environment_prerequisites.md,reports/environment_prerequisites.md,True
 reports/final_report_bundle.md,reports/evidence_gap_analysis.md,reports/evidence_gap_analysis.md,True
 reports/final_report_bundle.md,reports/executive_brief.md,reports/executive_brief.md,True
 reports/final_report_bundle.md,reports/faq.md,reports/faq.md,True

@@ -43,6 +43,7 @@ Included artifacts:
 - `reports/adoption_decision_record.md` - proposed adoption decision record and no-go conditions.
 - `reports/executive_brief.md` - short decision brief for quick review.
 - `reports/candidate_taxonomy.md` - grouping of candidates by adoption shape and workflow fit.
+- `reports/environment_prerequisites.md` - local environment requirements for reproducing checks.
 - `reports/faq.md` - answers to common scope, weighting, exclusion, and pilot questions.
 - `reports/evidence_gap_analysis.md` - evidence-gap findings for low-confidence or immature candidates.
 - `reports/github_metadata_check.md` - live GitHub metadata verification summary.

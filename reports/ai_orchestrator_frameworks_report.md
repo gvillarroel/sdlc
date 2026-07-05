@@ -40,6 +40,8 @@ For a navigation guide to every generated artifact, read `reports/artifact_index
 
 For one-file review, read the generated bundle at `reports/final_report_bundle.md`.
 
+For local prerequisites and live-check requirements, read `reports/environment_prerequisites.md`.
+
 For a quick guided shortlist, read `reports/decision_tree.md`.
 
 For simulation assumptions, threats to validity, and stress-test results, read `reports/simulation_assumptions.md`.

@@ -17,6 +17,7 @@ This generated bundle concatenates the main report and key appendices for one-fi
 - `reports/security_evaluation_fixtures.md`
 - `reports/pilot_protocol.md`
 - `reports/validation_summary.md`
+- `reports/environment_prerequisites.md`
 - `reports/results_data_dictionary.md`
 - `reports/maintenance_guide.md`
 - `reports/requirements_traceability.md`
@@ -129,6 +130,8 @@ For the proposed adoption decision record, read `reports/adoption_decision_recor
 For a navigation guide to every generated artifact, read `reports/artifact_index.md`.
 
 For one-file review, read the generated bundle at `reports/final_report_bundle.md`.
+
+For local prerequisites and live-check requirements, read `reports/environment_prerequisites.md`.
 
 For a quick guided shortlist, read `reports/decision_tree.md`.
 
@@ -1444,7 +1447,7 @@ This page summarizes the current quality checks for the report repository. It is
 
 | Check | Command | Latest result |
 |---|---|---|
-| Unit tests | `python -m unittest discover -s tests` | 88 tests passed. |
+| Unit tests | `python -m unittest discover -s tests` | 89 tests passed. |
 | Full local workflow | `python scripts/run_all_checks.py` | Passed. |
 | Offline artifact validation | `python scripts/validate_artifacts.py` | Passed. |
 | Generated CSV schemas | `python scripts/validate_csv_schemas.py` | 25 CSV schemas checked, 0 failures. |
@@ -1471,6 +1474,55 @@ This page summarizes the current quality checks for the report repository. It is
 - The live source and GitHub checks depend on network availability and should be rerun before final adoption.
 - The committed CI file is under `ci/validate-workflow.example.yml` because pushing workflow files requires a token with GitHub `workflow` scope.
 - Simulation outputs are screening evidence; the pilot protocol is still required before choosing a production foundation.
+
+---
+
+<!-- Source: reports/environment_prerequisites.md -->
+
+# Environment Prerequisites
+
+Date: 2026-07-05
+
+## Required
+
+| Requirement | Notes |
+|---|---|
+| Python 3.12 or newer | The scripts use only the Python standard library. |
+| PowerShell | Used by the documented Windows commands and `scripts/run_all_checks.ps1`. |
+| Git | Required for reviewing diffs, committing, and pushing report updates. |
+
+## Optional Live Checks
+
+| Capability | Used by |
+|---|---|
+| Internet access | `scripts/check_sources.py` and `scripts/refresh_github_metadata.py` |
+| GitHub API access | `scripts/refresh_github_metadata.py`; unauthenticated public API access is usually enough for the current 17 repos. |
+| GitHub token with `workflow` scope | Only needed if copying `ci/validate-workflow.example.yml` into `.github/workflows/`. |
+
+## Standard Commands
+
+Run the offline workflow:
+
+```powershell
+python scripts/run_all_checks.py
+```
+
+Or from PowerShell:
+
+```powershell
+.\scripts\run_all_checks.ps1
+```
+
+Run live checks when network access is available:
+
+```powershell
+python scripts/check_sources.py --timeout 20
+python scripts/refresh_github_metadata.py --timeout 20
+```
+
+## Dependency Policy
+
+The repository intentionally avoids third-party Python dependencies for the report-generation and validation path. That keeps the evaluation reproducible in a fresh Python environment and avoids mixing dependency installation risk into the analysis itself.
 
 ---
 
@@ -2030,6 +2082,7 @@ Use this index to choose the right file quickly.
 | Common questions | `reports/faq.md` |
 | Proposed adoption decision record | `reports/adoption_decision_record.md` |
 | Candidate taxonomy | `reports/candidate_taxonomy.md` |
+| Environment prerequisites | `reports/environment_prerequisites.md` |
 | Guided shortlist selection | `reports/decision_tree.md` |
 | Full analysis | `reports/ai_orchestrator_frameworks_report.md` |
 | One-file report bundle | `reports/final_report_bundle.md` |

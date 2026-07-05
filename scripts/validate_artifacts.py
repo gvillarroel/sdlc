@@ -124,6 +124,7 @@ def validate_report_references() -> None:
         "data/traceability_matrix.json",
         "reports/adoption_decision_record.md",
         "reports/candidate_taxonomy.md",
+        "reports/environment_prerequisites.md",
         "reports/executive_brief.md",
         "reports/evidence_gap_analysis.md",
         "reports/faq.md",
