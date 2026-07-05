@@ -32,6 +32,7 @@ Included artifacts:
 - `scripts/validate_csv_schemas.py` - generated CSV header/schema validation.
 - `scripts/generate_artifact_manifest.py` - SHA-256 manifest generator for repository artifacts.
 - `scripts/refresh_github_metadata.py` - optional live GitHub metadata checker for repository, license, star, push, and release signals.
+- `scripts/build_github_metadata_report.py` - generated Markdown summary for the latest GitHub metadata CSV.
 - `scripts/check_sources.py` - optional live source URL checker for the report and dataset.
 - `scripts/license_audit.py` - permissive-license audit for included and excluded alternatives.
 - `scripts/validate_artifacts.py` - offline consistency validation for generated artifacts and report references.
@@ -111,6 +112,7 @@ python scripts/validate_csv_schemas.py
 python scripts/generate_artifact_manifest.py
 python scripts/generate_charts.py
 python scripts/build_results_data_dictionary.py
+python scripts/build_github_metadata_report.py
 python scripts/build_report_bundle.py
 python scripts/score_pilot_results.py --input examples/pilot_candidate_summary.example.csv --output results/pilot_decision_scores.example.csv
 python scripts/check_sources.py --timeout 20

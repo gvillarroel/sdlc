@@ -27,6 +27,7 @@ COMMANDS = [
     [PYTHON, "scripts/license_audit.py"],
     [PYTHON, "scripts/generate_charts.py"],
     [PYTHON, "scripts/build_results_data_dictionary.py"],
+    [PYTHON, "scripts/build_github_metadata_report.py"],
     [PYTHON, "scripts/build_report_bundle.py"],
     [PYTHON, "scripts/check_local_artifact_references.py"],
     [PYTHON, "scripts/validate_markdown_tables.py"],

@@ -12,6 +12,7 @@ Run:
 
 ```powershell
 python scripts/refresh_github_metadata.py --timeout 20
+python scripts/build_github_metadata_report.py
 ```
 
 ## Latest Result
@@ -27,14 +28,14 @@ Largest star deltas in the latest run:
 
 | Candidate | Dataset stars | Live stars | Delta |
 |---|---:|---:|---:|
-| OpenCode | 182,587 | 182,605 | +18 |
-| Codex CLI | 95,651 | 95,654 | +3 |
-| Omnigent | 6,304 | 6,306 | +2 |
-| Aider | 47,082 | 47,083 | +1 |
-| Cline / Cline SDK | 64,315 | 64,316 | +1 |
-| Deep Agents | 25,715 | 25,716 | +1 |
-| Flue | 7,104 | 7,105 | +1 |
-| Sandcastle | 6,638 | 6,639 | +1 |
+| OpenCode | 182,587 | 182,610 | +23 |
+| Omnigent | 6,304 | 6,314 | +10 |
+| Deep Agents | 25,715 | 25,721 | +6 |
+| Codex CLI | 95,651 | 95,656 | +5 |
+| Sandcastle | 6,638 | 6,641 | +3 |
+| Cline / Cline SDK | 64,315 | 64,318 | +3 |
+| Aider | 47,082 | 47,084 | +2 |
+| mini-SWE-agent | 5,578 | 5,579 | +1 |
 
 ## Interpretation
 

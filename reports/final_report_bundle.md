@@ -1473,6 +1473,7 @@ Run:
 
 ```powershell
 python scripts/refresh_github_metadata.py --timeout 20
+python scripts/build_github_metadata_report.py
 ```
 
 ## Latest Result
@@ -1488,14 +1489,14 @@ Largest star deltas in the latest run:
 
 | Candidate | Dataset stars | Live stars | Delta |
 |---|---:|---:|---:|
-| OpenCode | 182,587 | 182,605 | +18 |
-| Codex CLI | 95,651 | 95,654 | +3 |
-| Omnigent | 6,304 | 6,306 | +2 |
-| Aider | 47,082 | 47,083 | +1 |
-| Cline / Cline SDK | 64,315 | 64,316 | +1 |
-| Deep Agents | 25,715 | 25,716 | +1 |
-| Flue | 7,104 | 7,105 | +1 |
-| Sandcastle | 6,638 | 6,639 | +1 |
+| OpenCode | 182,587 | 182,610 | +23 |
+| Omnigent | 6,304 | 6,314 | +10 |
+| Deep Agents | 25,715 | 25,721 | +6 |
+| Codex CLI | 95,651 | 95,656 | +5 |
+| Sandcastle | 6,638 | 6,641 | +3 |
+| Cline / Cline SDK | 64,315 | 64,318 | +3 |
+| Aider | 47,082 | 47,084 | +2 |
+| mini-SWE-agent | 5,578 | 5,579 | +1 |
 
 ## Interpretation
 
@@ -2015,11 +2016,11 @@ This page summarizes the current quality checks for the report repository. It is
 
 | Check | Command | Latest result |
 |---|---|---|
-| Unit tests | `python -m unittest discover -s tests` | 120 tests passed. |
+| Unit tests | `python -m unittest discover -s tests` | 122 tests passed. |
 | Full local workflow | `python scripts/run_all_checks.py` | Passed. |
 | Offline artifact validation | `python scripts/validate_artifacts.py` | Passed. |
 | Generated CSV schemas | `python scripts/validate_csv_schemas.py` | 34 CSV schemas checked, 0 failures. |
-| Local artifact references | `python scripts/check_local_artifact_references.py` | 682 local references checked, 0 missing. |
+| Local artifact references | `python scripts/check_local_artifact_references.py` | 686 local references checked, 0 missing. |
 | Markdown tables | `python scripts/validate_markdown_tables.py` | 213 tables checked, 0 failures. |
 | External source URLs | `python scripts/check_sources.py --timeout 20` | 41 URLs checked, 41 OK. |
 | GitHub metadata | `python scripts/refresh_github_metadata.py --timeout 20` | 17 repos checked, 0 failures, 0 license mismatches. |
@@ -2930,6 +2931,7 @@ Use this index to choose the right file quickly.
 | Regenerate license audit | `scripts/license_audit.py` |
 | Check external source URLs | `scripts/check_sources.py` |
 | Refresh GitHub metadata check | `scripts/refresh_github_metadata.py` |
+| Build GitHub metadata report | `scripts/build_github_metadata_report.py` |
 | Check local artifact references | `scripts/check_local_artifact_references.py` |
 | Validate Markdown tables | `scripts/validate_markdown_tables.py` |
 | Validate generated CSV schemas | `scripts/validate_csv_schemas.py` |
@@ -2970,6 +2972,7 @@ python scripts/validate_markdown_tables.py
 python scripts/validate_csv_schemas.py
 python scripts/generate_artifact_manifest.py
 python scripts/build_results_data_dictionary.py
+python scripts/build_github_metadata_report.py
 python scripts/build_report_bundle.py
 python scripts/validate_artifacts.py
 ```

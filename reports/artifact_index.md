@@ -125,6 +125,7 @@ Use this index to choose the right file quickly.
 | Regenerate license audit | `scripts/license_audit.py` |
 | Check external source URLs | `scripts/check_sources.py` |
 | Refresh GitHub metadata check | `scripts/refresh_github_metadata.py` |
+| Build GitHub metadata report | `scripts/build_github_metadata_report.py` |
 | Check local artifact references | `scripts/check_local_artifact_references.py` |
 | Validate Markdown tables | `scripts/validate_markdown_tables.py` |
 | Validate generated CSV schemas | `scripts/validate_csv_schemas.py` |
@@ -165,6 +166,7 @@ python scripts/validate_markdown_tables.py
 python scripts/validate_csv_schemas.py
 python scripts/generate_artifact_manifest.py
 python scripts/build_results_data_dictionary.py
+python scripts/build_github_metadata_report.py
 python scripts/build_report_bundle.py
 python scripts/validate_artifacts.py
 ```

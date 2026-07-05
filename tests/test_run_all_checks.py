@@ -21,6 +21,7 @@ class RunAllChecksTest(unittest.TestCase):
             "license_audit.py",
             "generate_charts.py",
             "build_results_data_dictionary.py",
+            "build_github_metadata_report.py",
             "build_report_bundle.py",
             "check_local_artifact_references.py",
             "validate_markdown_tables.py",

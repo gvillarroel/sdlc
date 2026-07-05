@@ -82,6 +82,7 @@ README.md,results/uncertainty_stress_details.csv,results/uncertainty_stress_deta
 README.md,results/uncertainty_stress_summary.csv,results/uncertainty_stress_summary.csv,True
 README.md,scripts/analyze_evidence_gaps.py,scripts/analyze_evidence_gaps.py,True
 README.md,scripts/analyze_score_drivers.py,scripts/analyze_score_drivers.py,True
+README.md,scripts/build_github_metadata_report.py,scripts/build_github_metadata_report.py,True
 README.md,scripts/build_report_bundle.py,scripts/build_report_bundle.py,True
 README.md,scripts/build_results_data_dictionary.py,scripts/build_results_data_dictionary.py,True
 README.md,scripts/build_risk_validation_matrix.py,scripts/build_risk_validation_matrix.py,True
@@ -283,6 +284,7 @@ reports/artifact_index.md,results/uncertainty_stress_details.csv,results/uncerta
 reports/artifact_index.md,results/uncertainty_stress_summary.csv,results/uncertainty_stress_summary.csv,True
 reports/artifact_index.md,scripts/analyze_evidence_gaps.py,scripts/analyze_evidence_gaps.py,True
 reports/artifact_index.md,scripts/analyze_score_drivers.py,scripts/analyze_score_drivers.py,True
+reports/artifact_index.md,scripts/build_github_metadata_report.py,scripts/build_github_metadata_report.py,True
 reports/artifact_index.md,scripts/build_report_bundle.py,scripts/build_report_bundle.py,True
 reports/artifact_index.md,scripts/build_results_data_dictionary.py,scripts/build_results_data_dictionary.py,True
 reports/artifact_index.md,scripts/build_risk_validation_matrix.py,scripts/build_risk_validation_matrix.py,True
@@ -427,6 +429,7 @@ reports/final_report_bundle.md,results/uncertainty_stress_details.csv,results/un
 reports/final_report_bundle.md,results/uncertainty_stress_summary.csv,results/uncertainty_stress_summary.csv,True
 reports/final_report_bundle.md,scripts/analyze_evidence_gaps.py,scripts/analyze_evidence_gaps.py,True
 reports/final_report_bundle.md,scripts/analyze_score_drivers.py,scripts/analyze_score_drivers.py,True
+reports/final_report_bundle.md,scripts/build_github_metadata_report.py,scripts/build_github_metadata_report.py,True
 reports/final_report_bundle.md,scripts/build_report_bundle.py,scripts/build_report_bundle.py,True
 reports/final_report_bundle.md,scripts/build_results_data_dictionary.py,scripts/build_results_data_dictionary.py,True
 reports/final_report_bundle.md,scripts/build_risk_validation_matrix.py,scripts/build_risk_validation_matrix.py,True
@@ -456,6 +459,7 @@ reports/final_report_bundle.md,templates/security_gate_checklist.md,templates/se
 reports/github_metadata_check.md,data/alternatives.json,data/alternatives.json,True
 reports/github_metadata_check.md,reports/evidence_gap_analysis.md,reports/evidence_gap_analysis.md,True
 reports/github_metadata_check.md,results/github_metadata_check.csv,results/github_metadata_check.csv,True
+reports/github_metadata_check.md,scripts/build_github_metadata_report.py,scripts/build_github_metadata_report.py,True
 reports/github_metadata_check.md,scripts/refresh_github_metadata.py,scripts/refresh_github_metadata.py,True
 reports/implementation_blueprints.md,results/implementation_effort_estimates.csv,results/implementation_effort_estimates.csv,True
 reports/maintenance_guide.md,data/alternatives.json,data/alternatives.json,True
