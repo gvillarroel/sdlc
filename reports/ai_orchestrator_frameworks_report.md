@@ -36,6 +36,8 @@ For candidate grouping by adoption shape, read `reports/candidate_taxonomy.md`; 
 
 For the proposed adoption decision record, read `reports/adoption_decision_record.md`.
 
+For scenario-specific execution guidance, read `reports/scenario_playbooks.md`.
+
 For a navigation guide to every generated artifact, read `reports/artifact_index.md`.
 
 For one-file review, read the generated bundle at `reports/final_report_bundle.md`.
@@ -256,6 +258,7 @@ Generated outputs:
 | `results/sensitivity_summary.csv` | How rankings change when each criterion is halved or doubled. |
 | `results/category_scores.csv` | Criteria grouped into adoption, architecture, safety, operations, and research categories. |
 | `results/decision_shortlist.csv` | Scenario shortlist combining deterministic and Monte Carlo outputs. |
+| `results/scenario_playbook_summary.csv` | Primary candidate, fallback candidates, pilot focus, and no-go condition by scenario. |
 | `results/scenario_weights.csv` | Raw and normalized scenario weights for each criterion. |
 | `results/criteria_definitions.csv` | Human-readable definitions for each scoring criterion. |
 | `results/evidence_matrix.csv` | Per-alternative repository, license, confidence, summary, implementation note, risk note, and source URLs. |

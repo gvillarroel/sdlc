@@ -11,6 +11,7 @@ Use this index to choose the right file quickly.
 | Quick decision summary | `reports/executive_brief.md` |
 | Common questions | `reports/faq.md` |
 | Proposed adoption decision record | `reports/adoption_decision_record.md` |
+| Scenario execution playbooks | `reports/scenario_playbooks.md` |
 | Candidate taxonomy | `reports/candidate_taxonomy.md` |
 | Environment prerequisites | `reports/environment_prerequisites.md` |
 | Exclusion rationale | `reports/exclusions.md` |
@@ -63,6 +64,7 @@ Use this index to choose the right file quickly.
 | Sensitivity to criterion weights | `results/sensitivity_summary.csv` |
 | Category strengths | `results/category_scores.csv` |
 | Practical shortlist | `results/decision_shortlist.csv` |
+| Scenario playbook summary | `results/scenario_playbook_summary.csv` |
 | Regret versus scenario winner | `results/regret_analysis.csv` |
 | Pareto dominance | `results/pareto_frontier.csv` |
 | Cross-scenario rank stability | `results/rank_stability.csv` |
@@ -110,6 +112,7 @@ Use this index to choose the right file quickly.
 | Regenerate rankings and simulations | `scripts/simulate_alternatives.py` |
 | Run simulation stress tests | `scripts/stress_test_simulation.py` |
 | Analyze score drivers | `scripts/analyze_score_drivers.py` |
+| Build scenario playbooks | `scripts/build_scenario_playbooks.py` |
 | Estimate implementation effort | `scripts/estimate_implementation_effort.py` |
 | Estimate operational cost and latency risk | `scripts/estimate_operational_costs.py` |
 | Estimate pilot sample sizes | `scripts/estimate_pilot_sample_sizes.py` |
@@ -144,6 +147,7 @@ Or run the core deterministic pieces manually:
 python scripts/simulate_alternatives.py --trials 5000 --seed 7331
 python scripts/stress_test_simulation.py --trials 1500 --seed 9011
 python scripts/analyze_score_drivers.py
+python scripts/build_scenario_playbooks.py
 python scripts/estimate_implementation_effort.py
 python scripts/estimate_operational_costs.py
 python scripts/estimate_pilot_sample_sizes.py

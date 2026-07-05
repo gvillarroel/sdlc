@@ -20,6 +20,7 @@ This generated bundle concatenates the main report and key appendices for one-fi
 - `reports/security_evaluation_fixtures.md`
 - `reports/residual_risks.md`
 - `reports/presentation_outline.md`
+- `reports/scenario_playbooks.md`
 - `reports/pilot_protocol.md`
 - `reports/pilot_sample_size.md`
 - `reports/validation_summary.md`
@@ -132,6 +133,8 @@ For common scope, exclusion, weighting, and pilot questions, read `reports/faq.m
 For candidate grouping by adoption shape, read `reports/candidate_taxonomy.md`; the machine-readable taxonomy is `data/candidate_taxonomy.json`.
 
 For the proposed adoption decision record, read `reports/adoption_decision_record.md`.
+
+For scenario-specific execution guidance, read `reports/scenario_playbooks.md`.
 
 For a navigation guide to every generated artifact, read `reports/artifact_index.md`.
 
@@ -353,6 +356,7 @@ Generated outputs:
 | `results/sensitivity_summary.csv` | How rankings change when each criterion is halved or doubled. |
 | `results/category_scores.csv` | Criteria grouped into adoption, architecture, safety, operations, and research categories. |
 | `results/decision_shortlist.csv` | Scenario shortlist combining deterministic and Monte Carlo outputs. |
+| `results/scenario_playbook_summary.csv` | Primary candidate, fallback candidates, pilot focus, and no-go condition by scenario. |
 | `results/scenario_weights.csv` | Raw and normalized scenario weights for each criterion. |
 | `results/criteria_definitions.csv` | Human-readable definitions for each scoring criterion. |
 | `results/evidence_matrix.csv` | Per-alternative repository, license, confidence, summary, implementation note, risk note, and source URLs. |
@@ -1037,6 +1041,16 @@ python scripts/analyze_score_drivers.py
 
 The candidate summary records the top three scored strengths, top three scored weaknesses, best scenario rank, worst scenario rank, mean score, and score spread for each alternative. The criterion summary highlights which criteria create the most score separation across the shortlist.
 
+## Scenario Playbooks
+
+The generated scenario playbooks are `reports/scenario_playbooks.md` and `results/scenario_playbook_summary.csv`, produced by:
+
+```powershell
+python scripts/build_scenario_playbooks.py
+```
+
+They combine deterministic scenario rankings with `data/scenario_profiles.json` to produce a primary candidate, fallback candidates, pilot focus, and no-go condition for each scenario. The playbooks are execution aids; they do not override safety gates or measured pilot evidence.
+
 ## Implementation Effort Model
 
 The generated effort estimate is `results/implementation_effort_estimates.csv`, produced by:
@@ -1646,6 +1660,89 @@ This outline turns the report into a short stakeholder presentation. It is not a
 
 ---
 
+<!-- Source: reports/scenario_playbooks.md -->
+
+# Scenario Playbooks
+
+Date: 2026-07-05
+
+This appendix turns each simulated scenario into a short execution playbook. Use it after choosing the scenario and before starting the pilot.
+
+Generated output: `results/scenario_playbook_summary.csv`.
+
+## Custom orchestrator platform
+
+Question: What should we build on if we need our own agent orchestration layer?
+
+| Field | Recommendation |
+|---|---|
+| Primary candidate | Cline / Cline SDK (4.237) |
+| Fallback candidates | OpenHands Software Agent SDK; Deep Agents |
+| Priority summary | Extensibility; Multi-agent orchestration; Provider portability; Sandbox isolation |
+| Pilot focus | Build one minimal orchestrator slice with tools, sandbox policy, trace capture, and a rollback path. |
+| No-go condition | No inspectable tool boundary, traces, or extension path for product-specific policy. |
+| Related artifacts | reports/pilot_protocol.md; reports/pilot_sample_size.md; reports/operational_cost_model.md |
+
+## Secure autonomous PRs
+
+Question: What should run autonomous coding work safely and open PRs?
+
+| Field | Recommendation |
+|---|---|
+| Primary candidate | Codex CLI (4.221) |
+| Fallback candidates | OpenHands Software Agent SDK; Cline / Cline SDK |
+| Priority summary | Sandbox isolation; Security governance; CI/PR workflow; Observability |
+| Pilot focus | Run autonomous issue-to-PR tasks under the strictest sandbox, network, secret, branch, and approval gates. |
+| No-go condition | Any unresolved safety gate failure, secret exposure, protected-branch write, or missing audit log. |
+| Related artifacts | reports/pilot_protocol.md; reports/pilot_sample_size.md; reports/operational_cost_model.md |
+
+## Quick local coding
+
+Question: What should a developer try first for local coding productivity?
+
+| Field | Recommendation |
+|---|---|
+| Primary candidate | Cline / Cline SDK (4.363) |
+| Fallback candidates | OpenHands Software Agent SDK; OpenCode |
+| Priority summary | Implementation ease; Maturity; Human control; Coding fit |
+| Pilot focus | Measure developer setup time, review friction, accepted diffs, and daily workflow ergonomics. |
+| No-go condition | Setup or review friction is higher than current developer workflow for routine tasks. |
+| Related artifacts | reports/pilot_protocol.md; reports/pilot_sample_size.md; reports/operational_cost_model.md |
+
+## Research benchmarking
+
+Question: What should we use for reproducible experiments and ablations?
+
+| Field | Recommendation |
+|---|---|
+| Primary candidate | mini-SWE-agent (4.356) |
+| Fallback candidates | SWE-agent; OpenHands Software Agent SDK |
+| Priority summary | Research reproducibility; Implementation ease; Coding fit; Observability |
+| Pilot focus | Run fixed-seed benchmark tasks with complete trajectories, patches, costs, and ablation notes. |
+| No-go condition | Runs cannot be reproduced with fixed seeds, task definitions, logs, and patch artifacts. |
+| Related artifacts | reports/pilot_protocol.md; reports/pilot_sample_size.md; reports/operational_cost_model.md |
+
+## Enterprise control plane
+
+Question: What should govern multiple teams, agents, backends, and workflows?
+
+| Field | Recommendation |
+|---|---|
+| Primary candidate | Cline / Cline SDK (4.277) |
+| Fallback candidates | OpenHands Software Agent SDK; Deep Agents |
+| Priority summary | Security governance; Observability; Deployment flexibility; Human control |
+| Pilot focus | Evaluate admin controls, auditability, multi-team workflow ownership, and backend portability. |
+| No-go condition | No credible ownership model for users, permissions, audit logs, incidents, and upgrades. |
+| Related artifacts | reports/pilot_protocol.md; reports/pilot_sample_size.md; reports/operational_cost_model.md |
+
+## Use Notes
+
+- Treat the primary candidate as a starting hypothesis, not a final selection.
+- If the pilot sample-size appendix says the top cluster is unresolved, keep both primary and fallback candidates in the same pilot wave.
+- If the operational-cost appendix contradicts the scenario winner, decide whether strategic fit or operating friction matters more for the current adoption phase.
+
+---
+
 <!-- Source: reports/pilot_protocol.md -->
 
 # Pilot Protocol
@@ -1870,11 +1967,11 @@ This page summarizes the current quality checks for the report repository. It is
 
 | Check | Command | Latest result |
 |---|---|---|
-| Unit tests | `python -m unittest discover -s tests` | 109 tests passed. |
+| Unit tests | `python -m unittest discover -s tests` | 113 tests passed. |
 | Full local workflow | `python scripts/run_all_checks.py` | Passed. |
 | Offline artifact validation | `python scripts/validate_artifacts.py` | Passed. |
-| Generated CSV schemas | `python scripts/validate_csv_schemas.py` | 31 CSV schemas checked, 0 failures. |
-| Local artifact references | `python scripts/check_local_artifact_references.py` | 614 local references checked, 0 missing. |
+| Generated CSV schemas | `python scripts/validate_csv_schemas.py` | 32 CSV schemas checked, 0 failures. |
+| Local artifact references | `python scripts/check_local_artifact_references.py` | 637 local references checked, 0 missing. |
 | External source URLs | `python scripts/check_sources.py --timeout 20` | 41 URLs checked, 41 OK. |
 | GitHub metadata | `python scripts/refresh_github_metadata.py --timeout 20` | 17 repos checked, 0 failures, 0 license mismatches. |
 | Whitespace | `git diff --check` | Passed. |
@@ -1890,6 +1987,7 @@ This page summarizes the current quality checks for the report repository. It is
 | Report references | `results/local_artifact_reference_check.csv` verifies README and report references to local artifacts. |
 | CSV contracts | `results/csv_schema_check.csv` verifies expected headers for generated CSV artifacts. |
 | Score drivers | `results/score_driver_summary.csv` and `results/criterion_spread_summary.csv` verify candidate and criterion explanation outputs. |
+| Scenario playbooks | `results/scenario_playbook_summary.csv` verifies the per-scenario execution guidance output. |
 | Operational model | `results/operational_cost_estimates.csv` and `results/operational_fit_rankings.csv` verify the cost/latency tie-breaker model shape. |
 | Pilot sample size | `results/pilot_sample_size_estimates.csv` verifies the task-count planning simulation shape. |
 | Artifact manifest | `results/artifact_manifest.csv` records SHA-256 hashes and byte sizes for committed report, data, script, test, and template artifacts. |
@@ -2320,6 +2418,23 @@ Score gaps versus scenario winners.
 | `win_rate` |
 | `top3_rate` |
 
+## `scenario_playbook_summary.csv`
+
+Scenario-specific primary candidate, fallback, pilot focus, and no-go condition.
+
+| Column |
+|---|
+| `scenario` |
+| `label` |
+| `question` |
+| `primary_candidate` |
+| `primary_score` |
+| `fallback_candidates` |
+| `priority_summary` |
+| `pilot_focus` |
+| `no_go_condition` |
+| `related_artifacts` |
+
 ## `scenario_weights.csv`
 
 Raw and normalized weights by scenario and criterion.
@@ -2495,6 +2610,7 @@ git diff --check
 
 - `reports/executive_brief.md`
 - `reports/adoption_decision_record.md`
+- `reports/scenario_playbooks.md`
 - `reports/score_driver_summary.md`
 - `reports/simulation_assumptions.md`
 - `reports/operational_cost_model.md`
@@ -2580,7 +2696,7 @@ This document maps the original request to the repository artifacts that satisfy
 |---|---|---|
 | Study the shared ChatGPT conversation and evaluate the listed alternatives. | `reports/ai_orchestrator_frameworks_report.md`, `data/alternatives.json`, `results/evidence_matrix.csv` | `python scripts/validate_artifacts.py` |
 | Review the alternatives that are not copyleft and are open source. | `results/license_audit.csv`, `scripts/license_audit.py`, `data/alternatives.json` | `python scripts/license_audit.py` |
-| Evaluate alternatives with Python simulations. | `scripts/simulate_alternatives.py`, `scripts/analyze_score_drivers.py`, `results/deterministic_rankings.csv`, `results/monte_carlo_summary.csv`, `results/sensitivity_summary.csv`, `results/score_driver_summary.csv`, `results/criterion_spread_summary.csv`, `results/all_results.json` | `python scripts/simulate_alternatives.py --trials 5000 --seed 7331 && python scripts/analyze_score_drivers.py` |
+| Evaluate alternatives with Python simulations. | `scripts/simulate_alternatives.py`, `scripts/analyze_score_drivers.py`, `scripts/build_scenario_playbooks.py`, `results/deterministic_rankings.csv`, `results/monte_carlo_summary.csv`, `results/sensitivity_summary.csv`, `results/score_driver_summary.csv`, `results/criterion_spread_summary.csv`, `results/scenario_playbook_summary.csv`, `results/all_results.json` | `python scripts/simulate_alternatives.py --trials 5000 --seed 7331 && python scripts/analyze_score_drivers.py && python scripts/build_scenario_playbooks.py` |
 | Review everything that can affect the simulation. | `reports/simulation_assumptions.md`, `data/simulation_assumptions.json`, `reports/operational_cost_model.md`, `scripts/stress_test_simulation.py`, `scripts/estimate_operational_costs.py`, `results/stress_test_summary.csv`, `results/uncertainty_stress_summary.csv`, `results/operational_fit_rankings.csv` | `python scripts/stress_test_simulation.py --trials 1500 --seed 9011 && python scripts/estimate_operational_costs.py` |
 | Review how complicated it is to build something with the alternatives. | `reports/implementation_blueprints.md`, `reports/operational_cost_model.md`, `results/implementation_effort_estimates.csv`, `results/operational_cost_estimates.csv`, `scripts/estimate_implementation_effort.py`, `scripts/estimate_operational_costs.py` | `python scripts/estimate_implementation_effort.py && python scripts/estimate_operational_costs.py` |
 | Check factors that can make the evaluation unreliable. | `reports/evidence_gap_analysis.md`, `results/evidence_gap_analysis.csv`, `results/source_check.csv`, `scripts/analyze_evidence_gaps.py`, `scripts/check_sources.py` | `python scripts/analyze_evidence_gaps.py` |
@@ -2619,6 +2735,7 @@ Use this index to choose the right file quickly.
 | Quick decision summary | `reports/executive_brief.md` |
 | Common questions | `reports/faq.md` |
 | Proposed adoption decision record | `reports/adoption_decision_record.md` |
+| Scenario execution playbooks | `reports/scenario_playbooks.md` |
 | Candidate taxonomy | `reports/candidate_taxonomy.md` |
 | Environment prerequisites | `reports/environment_prerequisites.md` |
 | Exclusion rationale | `reports/exclusions.md` |
@@ -2671,6 +2788,7 @@ Use this index to choose the right file quickly.
 | Sensitivity to criterion weights | `results/sensitivity_summary.csv` |
 | Category strengths | `results/category_scores.csv` |
 | Practical shortlist | `results/decision_shortlist.csv` |
+| Scenario playbook summary | `results/scenario_playbook_summary.csv` |
 | Regret versus scenario winner | `results/regret_analysis.csv` |
 | Pareto dominance | `results/pareto_frontier.csv` |
 | Cross-scenario rank stability | `results/rank_stability.csv` |
@@ -2718,6 +2836,7 @@ Use this index to choose the right file quickly.
 | Regenerate rankings and simulations | `scripts/simulate_alternatives.py` |
 | Run simulation stress tests | `scripts/stress_test_simulation.py` |
 | Analyze score drivers | `scripts/analyze_score_drivers.py` |
+| Build scenario playbooks | `scripts/build_scenario_playbooks.py` |
 | Estimate implementation effort | `scripts/estimate_implementation_effort.py` |
 | Estimate operational cost and latency risk | `scripts/estimate_operational_costs.py` |
 | Estimate pilot sample sizes | `scripts/estimate_pilot_sample_sizes.py` |
@@ -2752,6 +2871,7 @@ Or run the core deterministic pieces manually:
 python scripts/simulate_alternatives.py --trials 5000 --seed 7331
 python scripts/stress_test_simulation.py --trials 1500 --seed 9011
 python scripts/analyze_score_drivers.py
+python scripts/build_scenario_playbooks.py
 python scripts/estimate_implementation_effort.py
 python scripts/estimate_operational_costs.py
 python scripts/estimate_pilot_sample_sizes.py

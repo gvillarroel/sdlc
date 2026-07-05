@@ -363,6 +363,23 @@ Score gaps versus scenario winners.
 | `win_rate` |
 | `top3_rate` |
 
+## `scenario_playbook_summary.csv`
+
+Scenario-specific primary candidate, fallback, pilot focus, and no-go condition.
+
+| Column |
+|---|
+| `scenario` |
+| `label` |
+| `question` |
+| `primary_candidate` |
+| `primary_score` |
+| `fallback_candidates` |
+| `priority_summary` |
+| `pilot_focus` |
+| `no_go_condition` |
+| `related_artifacts` |
+
 ## `scenario_weights.csv`
 
 Raw and normalized weights by scenario and criterion.

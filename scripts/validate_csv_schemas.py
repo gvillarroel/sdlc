@@ -24,6 +24,7 @@ SCHEMAS: dict[str, list[str]] = {
     "category_scores.csv": ["category", "rank", "alternative_id", "alternative", "score"],
     "decision_shortlist.csv": ["scenario", "deterministic_rank", "alternative_id", "alternative", "deterministic_score", "monte_carlo_mean_score", "monte_carlo_mean_rank", "win_rate", "top3_rate"],
     "scenario_weights.csv": ["scenario", "criterion", "raw_weight", "normalized_weight"],
+    "scenario_playbook_summary.csv": ["scenario", "label", "question", "primary_candidate", "primary_score", "fallback_candidates", "priority_summary", "pilot_focus", "no_go_condition", "related_artifacts"],
     "criteria_definitions.csv": ["criterion", "definition"],
     "evidence_matrix.csv": ["alternative_id", "alternative", "repo", "url", "license", "primary_language", "maturity_level", "source_confidence", "stars", "created_at", "last_pushed_at", "latest_release", "summary", "implementation_notes", "risk_notes", "evidence_urls"],
     "alternative_scorecards.csv": ["alternative_id", "alternative", "license", "maturity_level", "source_confidence", *CRITERIA],

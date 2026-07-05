@@ -11,6 +11,7 @@ class CsvSchemasTest(unittest.TestCase):
             "stress_test_summary.csv",
             "score_driver_summary.csv",
             "criterion_spread_summary.csv",
+            "scenario_playbook_summary.csv",
             "implementation_effort_estimates.csv",
             "operational_cost_estimates.csv",
             "operational_fit_rankings.csv",

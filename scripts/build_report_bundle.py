@@ -26,6 +26,7 @@ SOURCE_REPORTS = [
     "security_evaluation_fixtures.md",
     "residual_risks.md",
     "presentation_outline.md",
+    "scenario_playbooks.md",
     "pilot_protocol.md",
     "pilot_sample_size.md",
     "validation_summary.md",

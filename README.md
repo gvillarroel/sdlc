@@ -20,6 +20,7 @@ Included artifacts:
 - `scripts/simulate_alternatives.py` - deterministic weighted ranking, Monte Carlo uncertainty simulation, and sensitivity analysis.
 - `scripts/stress_test_simulation.py` - stress tests for scenario weights, maturity discounts, source confidence, sandbox assumptions, and uncertainty.
 - `scripts/analyze_score_drivers.py` - candidate score-driver and criterion-spread summary.
+- `scripts/build_scenario_playbooks.py` - scenario-specific decision playbook builder.
 - `scripts/estimate_implementation_effort.py` - reproducible prototype and hardening effort estimates from the scoring dataset.
 - `scripts/estimate_operational_costs.py` - relative operating-cost, token-pressure, latency-risk, and operation-adjusted ranking model.
 - `scripts/estimate_pilot_sample_sizes.py` - pilot task-count simulation for distinguishing close shortlist candidates.
@@ -66,6 +67,7 @@ Included artifacts:
 - `reports/simulation_assumptions.md` - assumptions, stress tests, and interpretation of ranking fragility.
 - `reports/score_driver_summary.md` - generated explanation of candidate strengths, weaknesses, and high-spread criteria.
 - `reports/artifact_index.md` - navigation guide for all report, data, result, template, and script artifacts.
+- `reports/scenario_playbooks.md` - generated per-scenario execution playbooks.
 - `reports/pilot_protocol.md` - step-by-step protocol for executing the recommended pilot.
 - `reports/pilot_sample_size.md` - generated task-count planning appendix for the pilot.
 - `reports/implementation_blueprints.md` - implementation notes for the main pilot candidates.
@@ -92,6 +94,7 @@ python -m unittest discover -s tests
 python scripts/simulate_alternatives.py --trials 5000 --seed 7331
 python scripts/stress_test_simulation.py --trials 1500 --seed 9011
 python scripts/analyze_score_drivers.py
+python scripts/build_scenario_playbooks.py
 python scripts/estimate_implementation_effort.py
 python scripts/estimate_operational_costs.py
 python scripts/estimate_pilot_sample_sizes.py
@@ -119,6 +122,7 @@ Generated result files:
 - `results/sensitivity_summary.csv`
 - `results/category_scores.csv`
 - `results/decision_shortlist.csv`
+- `results/scenario_playbook_summary.csv`
 - `results/scenario_weights.csv`
 - `results/criteria_definitions.csv`
 - `results/evidence_matrix.csv`

@@ -29,6 +29,7 @@ REQUIRED_RESULT_FILES = [
     "category_scores.csv",
     "decision_shortlist.csv",
     "scenario_weights.csv",
+    "scenario_playbook_summary.csv",
     "criteria_definitions.csv",
     "evidence_matrix.csv",
     "alternative_scorecards.csv",
@@ -81,6 +82,7 @@ def validate_result_shapes() -> None:
 
     assert_true(len(read_csv(RESULTS / "deterministic_rankings.csv")) == alt_count * SCENARIO_COUNT, "unexpected deterministic ranking row count")
     assert_true(len(read_csv(RESULTS / "monte_carlo_summary.csv")) == alt_count * SCENARIO_COUNT, "unexpected monte carlo row count")
+    assert_true(len(read_csv(RESULTS / "scenario_playbook_summary.csv")) == SCENARIO_COUNT, "unexpected scenario playbook row count")
     assert_true(len(read_csv(RESULTS / "regret_analysis.csv")) == alt_count * SCENARIO_COUNT, "unexpected regret row count")
     assert_true(len(read_csv(RESULTS / "score_driver_summary.csv")) == alt_count, "unexpected score driver row count")
     assert_true(len(read_csv(RESULTS / "criterion_spread_summary.csv")) == CRITERIA_COUNT, "unexpected criterion spread row count")
@@ -185,6 +187,7 @@ def validate_report_references() -> None:
         "reports/requirements_traceability.md",
         "reports/results_data_dictionary.md",
         "reports/residual_risks.md",
+        "reports/scenario_playbooks.md",
         "reports/security_evaluation_fixtures.md",
         "reports/simulation_assumptions.md",
         "reports/validation_summary.md"

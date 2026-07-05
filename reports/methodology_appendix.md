@@ -166,6 +166,16 @@ python scripts/analyze_score_drivers.py
 
 The candidate summary records the top three scored strengths, top three scored weaknesses, best scenario rank, worst scenario rank, mean score, and score spread for each alternative. The criterion summary highlights which criteria create the most score separation across the shortlist.
 
+## Scenario Playbooks
+
+The generated scenario playbooks are `reports/scenario_playbooks.md` and `results/scenario_playbook_summary.csv`, produced by:
+
+```powershell
+python scripts/build_scenario_playbooks.py
+```
+
+They combine deterministic scenario rankings with `data/scenario_profiles.json` to produce a primary candidate, fallback candidates, pilot focus, and no-go condition for each scenario. The playbooks are execution aids; they do not override safety gates or measured pilot evidence.
+
 ## Implementation Effort Model
 
 The generated effort estimate is `results/implementation_effort_estimates.csv`, produced by:

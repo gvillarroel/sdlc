@@ -24,6 +24,7 @@ FILE_DESCRIPTIONS = {
     "category_scores.csv": "Criterion-group scorecards independent of scenario weights.",
     "decision_shortlist.csv": "Scenario shortlist combining deterministic and Monte Carlo evidence.",
     "scenario_weights.csv": "Raw and normalized weights by scenario and criterion.",
+    "scenario_playbook_summary.csv": "Scenario-specific primary candidate, fallback, pilot focus, and no-go condition.",
     "criteria_definitions.csv": "Human-readable scoring criterion definitions.",
     "evidence_matrix.csv": "Source, metadata, notes, and evidence URLs by alternative.",
     "alternative_scorecards.csv": "Wide scorecard of all 0-5 criterion scores.",

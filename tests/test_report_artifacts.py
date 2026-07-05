@@ -142,7 +142,7 @@ class ReportArtifactsTest(unittest.TestCase):
         text = summary.read_text(encoding="utf-8")
         self.assertIn("# Validation Summary", text)
         self.assertIn("python scripts/run_all_checks.py", text)
-        self.assertIn("109 tests passed", text)
+        self.assertIn("113 tests passed", text)
 
     def test_results_data_dictionary_exists(self):
         dictionary = ROOT / "reports" / "results_data_dictionary.md"
@@ -167,6 +167,14 @@ class ReportArtifactsTest(unittest.TestCase):
         self.assertIn("# Score Driver Summary", text)
         self.assertIn("results/score_driver_summary.csv", text)
         self.assertIn("Highest-Spread Criteria", text)
+
+    def test_scenario_playbooks_exist(self):
+        playbooks = ROOT / "reports" / "scenario_playbooks.md"
+        self.assertTrue(playbooks.exists())
+        text = playbooks.read_text(encoding="utf-8")
+        self.assertIn("# Scenario Playbooks", text)
+        self.assertIn("results/scenario_playbook_summary.csv", text)
+        self.assertIn("No-go condition", text)
 
     def test_pilot_sample_size_exists(self):
         sample_size = ROOT / "reports" / "pilot_sample_size.md"
@@ -238,6 +246,7 @@ class ReportArtifactsTest(unittest.TestCase):
             "sensitivity_summary.csv",
             "category_scores.csv",
             "decision_shortlist.csv",
+            "scenario_playbook_summary.csv",
             "score_driver_summary.csv",
             "criterion_spread_summary.csv",
             "implementation_effort_estimates.csv",
