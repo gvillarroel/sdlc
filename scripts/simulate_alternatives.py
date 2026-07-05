@@ -254,8 +254,12 @@ def perturb_weights(
     return {criterion: value / total for criterion, value in perturbed.items()}
 
 
-def sample_scores(alt: Alternative, rng: random.Random) -> dict[str, float]:
-    sigma = alt_sigma(alt)
+def sample_scores(
+    alt: Alternative,
+    rng: random.Random,
+    sigma_multiplier: float = 1.0
+) -> dict[str, float]:
+    sigma = alt_sigma(alt) * sigma_multiplier
     return {
         criterion: clamp(rng.gauss(score, sigma))
         for criterion, score in alt.scores.items()
@@ -280,8 +284,12 @@ def run_monte_carlo(
     trials: int = 5000,
     seed: int = 7331,
     weight_sigma: float = 0.22,
+    score_sigma_multiplier: float = 1.0,
     scenarios: dict[str, dict[str, float]] = SCENARIOS
 ) -> dict[str, list[dict[str, Any]]]:
+    if score_sigma_multiplier < 0:
+        raise ValueError("score_sigma_multiplier must be non-negative")
+
     rng = random.Random(seed)
     summaries: dict[str, list[dict[str, Any]]] = {}
     for scenario, base_weights in scenarios.items():
@@ -300,7 +308,10 @@ def run_monte_carlo(
             weights = perturb_weights(base_weights, rng, weight_sigma)
             rows = []
             for alt in alternatives:
-                score = weighted_score(sample_scores(alt, rng), weights)
+                score = weighted_score(
+                    sample_scores(alt, rng, score_sigma_multiplier),
+                    weights
+                )
                 rows.append((alt.id, score))
                 per_alt[alt.id]["scores"].append(score)
             rows.sort(key=lambda item: item[1], reverse=True)

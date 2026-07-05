@@ -19,13 +19,8 @@ jobs:
       - name: Run unit tests
         run: python -m unittest discover -s tests
 
-      - name: Regenerate deterministic artifacts
-        run: |
-          python scripts/simulate_alternatives.py --trials 5000 --seed 7331
-          python scripts/license_audit.py
-
-      - name: Validate artifacts
-        run: python scripts/validate_artifacts.py
+      - name: Regenerate and validate artifacts
+        run: python scripts/run_all_checks.py
 
       - name: Check generated outputs are committed
         run: git diff --exit-code

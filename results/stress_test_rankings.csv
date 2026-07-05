@@ -1,0 +1,681 @@
+stress_case,scenario,rank,alternative_id,alternative,score
+baseline,custom_orchestrator_platform,1,cline,Cline / Cline SDK,4.236764705882353
+baseline,custom_orchestrator_platform,2,openhands_sdk,OpenHands Software Agent SDK,4.236029411764706
+baseline,custom_orchestrator_platform,3,deep_agents,Deep Agents,4.213970588235294
+baseline,custom_orchestrator_platform,4,open_swe,Open SWE,4.089705882352941
+baseline,custom_orchestrator_platform,5,openhands_agent_canvas,OpenHands Agent Canvas,4.058088235294117
+baseline,custom_orchestrator_platform,6,codex_cli,Codex CLI,4.047794117647059
+baseline,custom_orchestrator_platform,7,omnigent,Omnigent,4.026470588235294
+baseline,custom_orchestrator_platform,8,flue,Flue,4.005147058823529
+baseline,custom_orchestrator_platform,9,opencode,OpenCode,3.923529411764706
+baseline,custom_orchestrator_platform,10,goose,goose,3.8323529411764703
+baseline,custom_orchestrator_platform,11,swe_agent,SWE-agent,3.709558823529412
+baseline,custom_orchestrator_platform,12,sandcastle,Sandcastle,3.5933823529411764
+baseline,custom_orchestrator_platform,13,aider,Aider,3.5323529411764705
+baseline,custom_orchestrator_platform,14,mini_swe_agent,mini-SWE-agent,3.361764705882353
+baseline,custom_orchestrator_platform,15,omni_agent,Omni Agent,3.0330882352941178
+baseline,custom_orchestrator_platform,16,omniagent,OmniAgent,2.486029411764706
+baseline,custom_orchestrator_platform,17,anchor,Anchor,1.788970588235294
+baseline,secure_autonomous_prs,1,codex_cli,Codex CLI,4.221014492753623
+baseline,secure_autonomous_prs,2,openhands_sdk,OpenHands Software Agent SDK,4.19927536231884
+baseline,secure_autonomous_prs,3,cline,Cline / Cline SDK,4.1985507246376805
+baseline,secure_autonomous_prs,4,open_swe,Open SWE,4.142028985507246
+baseline,secure_autonomous_prs,5,deep_agents,Deep Agents,4.110869565217391
+baseline,secure_autonomous_prs,6,openhands_agent_canvas,OpenHands Agent Canvas,4.015217391304347
+baseline,secure_autonomous_prs,7,omnigent,Omnigent,4.003623188405797
+baseline,secure_autonomous_prs,8,flue,Flue,3.929710144927536
+baseline,secure_autonomous_prs,9,opencode,OpenCode,3.8376811594202898
+baseline,secure_autonomous_prs,10,goose,goose,3.7804347826086957
+baseline,secure_autonomous_prs,11,swe_agent,SWE-agent,3.752173913043478
+baseline,secure_autonomous_prs,12,sandcastle,Sandcastle,3.6586956521739125
+baseline,secure_autonomous_prs,13,aider,Aider,3.507246376811594
+baseline,secure_autonomous_prs,14,mini_swe_agent,mini-SWE-agent,3.3188405797101446
+baseline,secure_autonomous_prs,15,omni_agent,Omni Agent,3.0355072463768114
+baseline,secure_autonomous_prs,16,omniagent,OmniAgent,2.300724637681159
+baseline,secure_autonomous_prs,17,anchor,Anchor,1.8231884057971013
+baseline,quick_local_coding,1,cline,Cline / Cline SDK,4.363114754098361
+baseline,quick_local_coding,2,openhands_sdk,OpenHands Software Agent SDK,4.224590163934426
+baseline,quick_local_coding,3,opencode,OpenCode,4.131147540983607
+baseline,quick_local_coding,4,deep_agents,Deep Agents,4.0983606557377055
+baseline,quick_local_coding,5,codex_cli,Codex CLI,4.090983606557377
+baseline,quick_local_coding,6,goose,goose,4.028688524590164
+baseline,quick_local_coding,7,openhands_agent_canvas,OpenHands Agent Canvas,4.019672131147541
+baseline,quick_local_coding,8,aider,Aider,3.9565573770491804
+baseline,quick_local_coding,9,omnigent,Omnigent,3.871311475409836
+baseline,quick_local_coding,10,open_swe,Open SWE,3.865573770491803
+baseline,quick_local_coding,11,flue,Flue,3.860655737704918
+baseline,quick_local_coding,12,swe_agent,SWE-agent,3.7827868852459017
+baseline,quick_local_coding,13,mini_swe_agent,mini-SWE-agent,3.6286885245901646
+baseline,quick_local_coding,14,sandcastle,Sandcastle,3.5934426229508203
+baseline,quick_local_coding,15,omni_agent,Omni Agent,2.892622950819672
+baseline,quick_local_coding,16,omniagent,OmniAgent,2.589344262295082
+baseline,quick_local_coding,17,anchor,Anchor,2.1688524590163936
+baseline,research_benchmarking,1,mini_swe_agent,mini-SWE-agent,4.356034482758621
+baseline,research_benchmarking,2,swe_agent,SWE-agent,4.243965517241379
+baseline,research_benchmarking,3,openhands_sdk,OpenHands Software Agent SDK,4.186206896551725
+baseline,research_benchmarking,4,aider,Aider,4.0456896551724135
+baseline,research_benchmarking,5,deep_agents,Deep Agents,4.030172413793103
+baseline,research_benchmarking,6,cline,Cline / Cline SDK,3.9163793103448277
+baseline,research_benchmarking,7,codex_cli,Codex CLI,3.887931034482759
+baseline,research_benchmarking,8,opencode,OpenCode,3.8724137931034486
+baseline,research_benchmarking,9,open_swe,Open SWE,3.84396551724138
+baseline,research_benchmarking,10,goose,goose,3.6974137931034483
+baseline,research_benchmarking,11,flue,Flue,3.594827586206897
+baseline,research_benchmarking,12,openhands_agent_canvas,OpenHands Agent Canvas,3.532758620689655
+baseline,research_benchmarking,13,omnigent,Omnigent,3.378448275862069
+baseline,research_benchmarking,14,sandcastle,Sandcastle,3.310344827586207
+baseline,research_benchmarking,15,omni_agent,Omni Agent,2.3603448275862067
+baseline,research_benchmarking,16,omniagent,OmniAgent,2.177586206896552
+baseline,research_benchmarking,17,anchor,Anchor,1.9612068965517242
+baseline,enterprise_control_plane,1,cline,Cline / Cline SDK,4.276712328767124
+baseline,enterprise_control_plane,2,openhands_sdk,OpenHands Software Agent SDK,4.213013698630137
+baseline,enterprise_control_plane,3,deep_agents,Deep Agents,4.184246575342466
+baseline,enterprise_control_plane,4,codex_cli,Codex CLI,4.08972602739726
+baseline,enterprise_control_plane,5,open_swe,Open SWE,4.066438356164383
+baseline,enterprise_control_plane,6,openhands_agent_canvas,OpenHands Agent Canvas,4.061643835616438
+baseline,enterprise_control_plane,7,omnigent,Omnigent,4.0253424657534245
+baseline,enterprise_control_plane,8,flue,Flue,3.9575342465753427
+baseline,enterprise_control_plane,9,opencode,OpenCode,3.9164383561643836
+baseline,enterprise_control_plane,10,goose,goose,3.8253424657534247
+baseline,enterprise_control_plane,11,swe_agent,SWE-agent,3.6815068493150687
+baseline,enterprise_control_plane,12,sandcastle,Sandcastle,3.5767123287671234
+baseline,enterprise_control_plane,13,aider,Aider,3.5404109589041095
+baseline,enterprise_control_plane,14,mini_swe_agent,mini-SWE-agent,3.2575342465753425
+baseline,enterprise_control_plane,15,omni_agent,Omni Agent,3.0397260273972604
+baseline,enterprise_control_plane,16,omniagent,OmniAgent,2.436301369863014
+baseline,enterprise_control_plane,17,anchor,Anchor,1.8061643835616439
+security_strict,custom_orchestrator_platform,1,openhands_sdk,OpenHands Software Agent SDK,4.232704402515723
+security_strict,custom_orchestrator_platform,2,deep_agents,Deep Agents,4.183522012578616
+security_strict,custom_orchestrator_platform,3,cline,Cline / Cline SDK,4.1466666666666665
+security_strict,custom_orchestrator_platform,4,open_swe,Open SWE,4.1412578616352205
+security_strict,custom_orchestrator_platform,5,codex_cli,Codex CLI,4.140125786163522
+security_strict,custom_orchestrator_platform,6,omnigent,Omnigent,4.073207547169811
+security_strict,custom_orchestrator_platform,7,openhands_agent_canvas,OpenHands Agent Canvas,4.043899371069182
+security_strict,custom_orchestrator_platform,8,flue,Flue,3.996100628930818
+security_strict,custom_orchestrator_platform,9,opencode,OpenCode,3.809056603773585
+security_strict,custom_orchestrator_platform,10,goose,goose,3.780125786163522
+security_strict,custom_orchestrator_platform,11,swe_agent,SWE-agent,3.741635220125786
+security_strict,custom_orchestrator_platform,12,sandcastle,Sandcastle,3.681635220125786
+security_strict,custom_orchestrator_platform,13,aider,Aider,3.439496855345912
+security_strict,custom_orchestrator_platform,14,mini_swe_agent,mini-SWE-agent,3.358238993710692
+security_strict,custom_orchestrator_platform,15,omni_agent,Omni Agent,3.0971069182389934
+security_strict,custom_orchestrator_platform,16,omniagent,OmniAgent,2.42062893081761
+security_strict,custom_orchestrator_platform,17,anchor,Anchor,1.800125786163522
+security_strict,secure_autonomous_prs,1,codex_cli,Codex CLI,4.311292200232828
+security_strict,secure_autonomous_prs,2,openhands_sdk,OpenHands Software Agent SDK,4.20023282887078
+security_strict,secure_autonomous_prs,3,open_swe,Open SWE,4.197555296856811
+security_strict,secure_autonomous_prs,4,cline,Cline / Cline SDK,4.09545983701979
+security_strict,secure_autonomous_prs,5,deep_agents,Deep Agents,4.088591385331782
+security_strict,secure_autonomous_prs,6,omnigent,Omnigent,4.073224679860302
+security_strict,secure_autonomous_prs,7,openhands_agent_canvas,OpenHands Agent Canvas,4.00733410942957
+security_strict,secure_autonomous_prs,8,flue,Flue,3.928405122235157
+security_strict,secure_autonomous_prs,9,swe_agent,SWE-agent,3.780791618160652
+security_strict,secure_autonomous_prs,10,sandcastle,Sandcastle,3.7612339930151335
+security_strict,secure_autonomous_prs,11,goose,goose,3.725145518044237
+security_strict,secure_autonomous_prs,12,opencode,OpenCode,3.7087310826542494
+security_strict,secure_autonomous_prs,13,aider,Aider,3.3948777648428403
+security_strict,secure_autonomous_prs,14,mini_swe_agent,mini-SWE-agent,3.3157159487776484
+security_strict,secure_autonomous_prs,15,omni_agent,Omni Agent,3.1252619324796274
+security_strict,secure_autonomous_prs,16,omniagent,OmniAgent,2.2537834691501746
+security_strict,secure_autonomous_prs,17,anchor,Anchor,1.8391152502910362
+security_strict,quick_local_coding,1,cline,Cline / Cline SDK,4.31671469740634
+security_strict,quick_local_coding,2,openhands_sdk,OpenHands Software Agent SDK,4.2162824207492795
+security_strict,quick_local_coding,3,codex_cli,Codex CLI,4.153890489913544
+security_strict,quick_local_coding,4,deep_agents,Deep Agents,4.087896253602305
+security_strict,quick_local_coding,5,opencode,OpenCode,4.0489913544668585
+security_strict,quick_local_coding,6,openhands_agent_canvas,OpenHands Agent Canvas,4.025936599423631
+security_strict,quick_local_coding,7,goose,goose,3.9841498559077806
+security_strict,quick_local_coding,8,omnigent,Omnigent,3.939481268011527
+security_strict,quick_local_coding,9,open_swe,Open SWE,3.9036023054755042
+security_strict,quick_local_coding,10,aider,Aider,3.8740634005763686
+security_strict,quick_local_coding,11,flue,Flue,3.8489913544668584
+security_strict,quick_local_coding,12,swe_agent,SWE-agent,3.773631123919308
+security_strict,quick_local_coding,13,sandcastle,Sandcastle,3.6502881844380397
+security_strict,quick_local_coding,14,mini_swe_agent,mini-SWE-agent,3.5690201729106628
+security_strict,quick_local_coding,15,omni_agent,Omni Agent,2.9708933717579247
+security_strict,quick_local_coding,16,omniagent,OmniAgent,2.564985590778098
+security_strict,quick_local_coding,17,anchor,Anchor,2.187896253602305
+security_strict,research_benchmarking,1,mini_swe_agent,mini-SWE-agent,4.312111292962356
+security_strict,research_benchmarking,2,swe_agent,SWE-agent,4.234697217675941
+security_strict,research_benchmarking,3,openhands_sdk,OpenHands Software Agent SDK,4.189198036006546
+security_strict,research_benchmarking,4,deep_agents,Deep Agents,4.029296235679214
+security_strict,research_benchmarking,5,aider,Aider,3.978396072013093
+security_strict,research_benchmarking,6,codex_cli,Codex CLI,3.9289689034369886
+security_strict,research_benchmarking,7,cline,Cline / Cline SDK,3.887397708674304
+security_strict,research_benchmarking,8,open_swe,Open SWE,3.8787234042553194
+security_strict,research_benchmarking,9,opencode,OpenCode,3.825204582651391
+security_strict,research_benchmarking,10,goose,goose,3.680851063829787
+security_strict,research_benchmarking,11,flue,Flue,3.6166939443535187
+security_strict,research_benchmarking,12,openhands_agent_canvas,OpenHands Agent Canvas,3.5515548281505724
+security_strict,research_benchmarking,13,omnigent,Omnigent,3.4255319148936167
+security_strict,research_benchmarking,14,sandcastle,Sandcastle,3.3618657937806873
+security_strict,research_benchmarking,15,omni_agent,Omni Agent,2.411456628477905
+security_strict,research_benchmarking,16,omniagent,OmniAgent,2.16481178396072
+security_strict,research_benchmarking,17,anchor,Anchor,1.948772504091653
+security_strict,enterprise_control_plane,1,openhands_sdk,OpenHands Software Agent SDK,4.2093317972350235
+security_strict,enterprise_control_plane,2,cline,Cline / Cline SDK,4.202534562211982
+security_strict,enterprise_control_plane,3,codex_cli,Codex CLI,4.181912442396314
+security_strict,enterprise_control_plane,4,deep_agents,Deep Agents,4.157027649769585
+security_strict,enterprise_control_plane,5,open_swe,Open SWE,4.11094470046083
+security_strict,enterprise_control_plane,6,omnigent,Omnigent,4.083986175115207
+security_strict,enterprise_control_plane,7,openhands_agent_canvas,OpenHands Agent Canvas,4.0527649769585254
+security_strict,enterprise_control_plane,8,flue,Flue,3.9426267281105996
+security_strict,enterprise_control_plane,9,opencode,OpenCode,3.8138248847926266
+security_strict,enterprise_control_plane,10,goose,goose,3.7809907834101386
+security_strict,enterprise_control_plane,11,swe_agent,SWE-agent,3.7056451612903225
+security_strict,enterprise_control_plane,12,sandcastle,Sandcastle,3.661751152073733
+security_strict,enterprise_control_plane,13,aider,Aider,3.461405529953917
+security_strict,enterprise_control_plane,14,mini_swe_agent,mini-SWE-agent,3.2527649769585256
+security_strict,enterprise_control_plane,15,omni_agent,Omni Agent,3.120967741935484
+security_strict,enterprise_control_plane,16,omniagent,OmniAgent,2.3934331797235027
+security_strict,enterprise_control_plane,17,anchor,Anchor,1.8438940092165899
+provider_neutral,custom_orchestrator_platform,1,cline,Cline / Cline SDK,4.285732814526589
+provider_neutral,custom_orchestrator_platform,2,openhands_sdk,OpenHands Software Agent SDK,4.285732814526589
+provider_neutral,custom_orchestrator_platform,3,deep_agents,Deep Agents,4.257068741893645
+provider_neutral,custom_orchestrator_platform,4,openhands_agent_canvas,OpenHands Agent Canvas,4.120103761348898
+provider_neutral,custom_orchestrator_platform,5,omnigent,Omnigent,4.091309987029831
+provider_neutral,custom_orchestrator_platform,6,flue,Flue,4.072503242542153
+provider_neutral,custom_orchestrator_platform,7,open_swe,Open SWE,4.062775616083009
+provider_neutral,custom_orchestrator_platform,8,opencode,OpenCode,4.004409857328145
+provider_neutral,custom_orchestrator_platform,9,goose,goose,3.932295719844358
+provider_neutral,custom_orchestrator_platform,10,codex_cli,Codex CLI,3.903112840466926
+provider_neutral,custom_orchestrator_platform,11,swe_agent,SWE-agent,3.786640726329442
+provider_neutral,custom_orchestrator_platform,12,aider,Aider,3.6281452658884565
+provider_neutral,custom_orchestrator_platform,13,sandcastle,Sandcastle,3.616083009079118
+provider_neutral,custom_orchestrator_platform,14,mini_swe_agent,mini-SWE-agent,3.4898832684824903
+provider_neutral,custom_orchestrator_platform,15,omni_agent,Omni Agent,3.063553826199741
+provider_neutral,custom_orchestrator_platform,16,omniagent,OmniAgent,2.5988326848249033
+provider_neutral,custom_orchestrator_platform,17,anchor,Anchor,1.7782101167315176
+provider_neutral,secure_autonomous_prs,1,cline,Cline / Cline SDK,4.2320855614973265
+provider_neutral,secure_autonomous_prs,2,openhands_sdk,OpenHands Software Agent SDK,4.231951871657754
+provider_neutral,secure_autonomous_prs,3,deep_agents,Deep Agents,4.1431818181818185
+provider_neutral,secure_autonomous_prs,4,codex_cli,Codex CLI,4.125802139037433
+provider_neutral,secure_autonomous_prs,5,open_swe,Open SWE,4.119786096256685
+provider_neutral,secure_autonomous_prs,6,openhands_agent_canvas,OpenHands Agent Canvas,4.059224598930482
+provider_neutral,secure_autonomous_prs,7,omnigent,Omnigent,4.041844919786096
+provider_neutral,secure_autonomous_prs,8,flue,Flue,3.9790106951871658
+provider_neutral,secure_autonomous_prs,9,opencode,OpenCode,3.8930481283422465
+provider_neutral,secure_autonomous_prs,10,goose,goose,3.8461229946524065
+provider_neutral,secure_autonomous_prs,11,swe_agent,SWE-agent,3.7954545454545454
+provider_neutral,secure_autonomous_prs,12,sandcastle,Sandcastle,3.6688502673796792
+provider_neutral,secure_autonomous_prs,13,aider,Aider,3.5660427807486634
+provider_neutral,secure_autonomous_prs,14,mini_swe_agent,mini-SWE-agent,3.4024064171122994
+provider_neutral,secure_autonomous_prs,15,omni_agent,Omni Agent,3.0490641711229944
+provider_neutral,secure_autonomous_prs,16,omniagent,OmniAgent,2.3758021390374333
+provider_neutral,secure_autonomous_prs,17,anchor,Anchor,1.8168449197860963
+provider_neutral,quick_local_coding,1,cline,Cline / Cline SDK,4.397832369942196
+provider_neutral,quick_local_coding,2,openhands_sdk,OpenHands Software Agent SDK,4.278468208092486
+provider_neutral,quick_local_coding,3,opencode,OpenCode,4.1908959537572255
+provider_neutral,quick_local_coding,4,deep_agents,Deep Agents,4.156647398843931
+provider_neutral,quick_local_coding,5,goose,goose,4.107080924855492
+provider_neutral,quick_local_coding,6,openhands_agent_canvas,OpenHands Agent Canvas,4.089884393063584
+provider_neutral,quick_local_coding,7,aider,Aider,4.009537572254335
+provider_neutral,quick_local_coding,8,omnigent,Omnigent,3.9579479768786126
+provider_neutral,quick_local_coding,9,flue,Flue,3.9456647398843927
+provider_neutral,quick_local_coding,10,codex_cli,Codex CLI,3.923843930635838
+provider_neutral,quick_local_coding,11,open_swe,Open SWE,3.8630057803468207
+provider_neutral,quick_local_coding,12,swe_agent,SWE-agent,3.85621387283237
+provider_neutral,quick_local_coding,13,mini_swe_agent,mini-SWE-agent,3.7309248554913297
+provider_neutral,quick_local_coding,14,sandcastle,Sandcastle,3.613872832369942
+provider_neutral,quick_local_coding,15,omni_agent,Omni Agent,2.9424855491329485
+provider_neutral,quick_local_coding,16,omniagent,OmniAgent,2.6992774566473994
+provider_neutral,quick_local_coding,17,anchor,Anchor,2.1091040462427744
+provider_neutral,research_benchmarking,1,mini_swe_agent,mini-SWE-agent,4.3664526484751205
+provider_neutral,research_benchmarking,2,swe_agent,SWE-agent,4.256019261637239
+provider_neutral,research_benchmarking,3,openhands_sdk,OpenHands Software Agent SDK,4.221027287319423
+provider_neutral,research_benchmarking,4,aider,Aider,4.07207062600321
+provider_neutral,research_benchmarking,5,deep_agents,Deep Agents,4.069983948635634
+provider_neutral,research_benchmarking,6,cline,Cline / Cline SDK,3.967897271268058
+provider_neutral,research_benchmarking,7,opencode,OpenCode,3.9263242375601926
+provider_neutral,research_benchmarking,8,open_swe,Open SWE,3.8441412520064207
+provider_neutral,research_benchmarking,9,codex_cli,Codex CLI,3.8009630818619584
+provider_neutral,research_benchmarking,10,goose,goose,3.76709470304976
+provider_neutral,research_benchmarking,11,flue,Flue,3.6629213483146073
+provider_neutral,research_benchmarking,12,openhands_agent_canvas,OpenHands Agent Canvas,3.6072231139646873
+provider_neutral,research_benchmarking,13,omnigent,Omnigent,3.464686998394864
+provider_neutral,research_benchmarking,14,sandcastle,Sandcastle,3.341733547351525
+provider_neutral,research_benchmarking,15,omni_agent,Omni Agent,2.4279293739967898
+provider_neutral,research_benchmarking,16,omniagent,OmniAgent,2.2738362760834674
+provider_neutral,research_benchmarking,17,anchor,Anchor,1.9398073836276084
+provider_neutral,enterprise_control_plane,1,cline,Cline / Cline SDK,4.317317073170732
+provider_neutral,enterprise_control_plane,2,openhands_sdk,OpenHands Software Agent SDK,4.261707317073171
+provider_neutral,enterprise_control_plane,3,deep_agents,Deep Agents,4.226219512195122
+provider_neutral,enterprise_control_plane,4,openhands_agent_canvas,OpenHands Agent Canvas,4.1207317073170735
+provider_neutral,enterprise_control_plane,5,omnigent,Omnigent,4.0842682926829275
+provider_neutral,enterprise_control_plane,6,open_swe,Open SWE,4.0425609756097565
+provider_neutral,enterprise_control_plane,7,flue,Flue,4.025121951219512
+provider_neutral,enterprise_control_plane,8,opencode,OpenCode,3.991829268292683
+provider_neutral,enterprise_control_plane,9,codex_cli,Codex CLI,3.948414634146342
+provider_neutral,enterprise_control_plane,10,goose,goose,3.9176829268292686
+provider_neutral,enterprise_control_plane,11,swe_agent,SWE-agent,3.756707317073171
+provider_neutral,enterprise_control_plane,12,aider,Aider,3.629268292682927
+provider_neutral,enterprise_control_plane,13,sandcastle,Sandcastle,3.5985365853658537
+provider_neutral,enterprise_control_plane,14,mini_swe_agent,mini-SWE-agent,3.388902439024391
+provider_neutral,enterprise_control_plane,15,omni_agent,Omni Agent,3.065487804878049
+provider_neutral,enterprise_control_plane,16,omniagent,OmniAgent,2.5445121951219516
+provider_neutral,enterprise_control_plane,17,anchor,Anchor,1.7939024390243903
+fast_adoption,custom_orchestrator_platform,1,cline,Cline / Cline SDK,4.262822252374491
+fast_adoption,custom_orchestrator_platform,2,openhands_sdk,OpenHands Software Agent SDK,4.2112618724559026
+fast_adoption,custom_orchestrator_platform,3,deep_agents,Deep Agents,4.13270013568521
+fast_adoption,custom_orchestrator_platform,4,codex_cli,Codex CLI,4.103527815468114
+fast_adoption,custom_orchestrator_platform,5,opencode,OpenCode,3.9953867028493897
+fast_adoption,custom_orchestrator_platform,6,openhands_agent_canvas,OpenHands Agent Canvas,3.989687924016282
+fast_adoption,custom_orchestrator_platform,7,open_swe,Open SWE,3.959837177747626
+fast_adoption,custom_orchestrator_platform,8,flue,Flue,3.9290366350067845
+fast_adoption,custom_orchestrator_platform,9,goose,goose,3.9202170963364993
+fast_adoption,custom_orchestrator_platform,10,omnigent,Omnigent,3.8815468113975573
+fast_adoption,custom_orchestrator_platform,11,swe_agent,SWE-agent,3.765400271370421
+fast_adoption,custom_orchestrator_platform,12,aider,Aider,3.726051560379919
+fast_adoption,custom_orchestrator_platform,13,sandcastle,Sandcastle,3.5833107191316143
+fast_adoption,custom_orchestrator_platform,14,mini_swe_agent,mini-SWE-agent,3.5438263229308005
+fast_adoption,custom_orchestrator_platform,15,omni_agent,Omni Agent,2.9165535956580735
+fast_adoption,custom_orchestrator_platform,16,omniagent,OmniAgent,2.480189959294437
+fast_adoption,custom_orchestrator_platform,17,anchor,Anchor,1.980325644504749
+fast_adoption,secure_autonomous_prs,1,codex_cli,Codex CLI,4.261019192587691
+fast_adoption,secure_autonomous_prs,2,cline,Cline / Cline SDK,4.233223031105228
+fast_adoption,secure_autonomous_prs,3,openhands_sdk,OpenHands Software Agent SDK,4.183984116479153
+fast_adoption,secure_autonomous_prs,4,deep_agents,Deep Agents,4.0513567174056915
+fast_adoption,secure_autonomous_prs,5,open_swe,Open SWE,4.031171409662475
+fast_adoption,secure_autonomous_prs,6,openhands_agent_canvas,OpenHands Agent Canvas,3.960026472534745
+fast_adoption,secure_autonomous_prs,7,opencode,OpenCode,3.910324288550629
+fast_adoption,secure_autonomous_prs,8,omnigent,Omnigent,3.8799470549305095
+fast_adoption,secure_autonomous_prs,9,flue,Flue,3.8616810059563207
+fast_adoption,secure_autonomous_prs,10,goose,goose,3.854930509596294
+fast_adoption,secure_autonomous_prs,11,swe_agent,SWE-agent,3.794506949040371
+fast_adoption,secure_autonomous_prs,12,aider,Aider,3.6749172733289215
+fast_adoption,secure_autonomous_prs,13,sandcastle,Sandcastle,3.640370615486433
+fast_adoption,secure_autonomous_prs,14,mini_swe_agent,mini-SWE-agent,3.44844473858372
+fast_adoption,secure_autonomous_prs,15,omni_agent,Omni Agent,2.925082726671079
+fast_adoption,secure_autonomous_prs,16,omniagent,OmniAgent,2.296757114493713
+fast_adoption,secure_autonomous_prs,17,anchor,Anchor,1.958702845797485
+fast_adoption,quick_local_coding,1,cline,Cline / Cline SDK,4.376299797434166
+fast_adoption,quick_local_coding,2,opencode,OpenCode,4.19696151249156
+fast_adoption,quick_local_coding,3,openhands_sdk,OpenHands Software Agent SDK,4.179743416610398
+fast_adoption,quick_local_coding,4,codex_cli,Codex CLI,4.155975692099933
+fast_adoption,quick_local_coding,5,aider,Aider,4.12424037812289
+fast_adoption,quick_local_coding,6,goose,goose,4.088656313301823
+fast_adoption,quick_local_coding,7,deep_agents,Deep Agents,4.008710330857529
+fast_adoption,quick_local_coding,8,openhands_agent_canvas,OpenHands Agent Canvas,3.9361917623227547
+fast_adoption,quick_local_coding,9,swe_agent,SWE-agent,3.7750844024307897
+fast_adoption,quick_local_coding,10,mini_swe_agent,mini-SWE-agent,3.7678595543551654
+fast_adoption,quick_local_coding,11,flue,Flue,3.7628629304523966
+fast_adoption,quick_local_coding,12,open_swe,Open SWE,3.7081701553004724
+fast_adoption,quick_local_coding,13,omnigent,Omnigent,3.6855503038487507
+fast_adoption,quick_local_coding,14,sandcastle,Sandcastle,3.549628629304524
+fast_adoption,quick_local_coding,15,omni_agent,Omni Agent,2.7551654287643483
+fast_adoption,quick_local_coding,16,omniagent,OmniAgent,2.5912221471978394
+fast_adoption,quick_local_coding,17,anchor,Anchor,2.371640783254558
+fast_adoption,research_benchmarking,1,mini_swe_agent,mini-SWE-agent,4.38135593220339
+fast_adoption,research_benchmarking,2,aider,Aider,4.171751412429379
+fast_adoption,research_benchmarking,3,openhands_sdk,OpenHands Software Agent SDK,4.136370056497175
+fast_adoption,research_benchmarking,4,swe_agent,SWE-agent,4.1036016949152545
+fast_adoption,research_benchmarking,5,cline,Cline / Cline SDK,3.985875706214689
+fast_adoption,research_benchmarking,6,opencode,OpenCode,3.9750706214689266
+fast_adoption,research_benchmarking,7,codex_cli,Codex CLI,3.965677966101695
+fast_adoption,research_benchmarking,8,deep_agents,Deep Agents,3.9573446327683617
+fast_adoption,research_benchmarking,9,goose,goose,3.805367231638418
+fast_adoption,research_benchmarking,10,open_swe,Open SWE,3.6774717514124293
+fast_adoption,research_benchmarking,11,flue,Flue,3.5610169491525423
+fast_adoption,research_benchmarking,12,openhands_agent_canvas,OpenHands Agent Canvas,3.5449858757062147
+fast_adoption,research_benchmarking,13,sandcastle,Sandcastle,3.3048022598870057
+fast_adoption,research_benchmarking,14,omnigent,Omnigent,3.281002824858757
+fast_adoption,research_benchmarking,15,omni_agent,Omni Agent,2.348093220338983
+fast_adoption,research_benchmarking,16,omniagent,OmniAgent,2.3097457627118647
+fast_adoption,research_benchmarking,17,anchor,Anchor,2.254166666666667
+fast_adoption,enterprise_control_plane,1,cline,Cline / Cline SDK,4.30566750629723
+fast_adoption,enterprise_control_plane,2,openhands_sdk,OpenHands Software Agent SDK,4.192317380352645
+fast_adoption,enterprise_control_plane,3,codex_cli,Codex CLI,4.144584382871537
+fast_adoption,enterprise_control_plane,4,deep_agents,Deep Agents,4.1074307304785895
+fast_adoption,enterprise_control_plane,5,openhands_agent_canvas,OpenHands Agent Canvas,3.989798488664988
+fast_adoption,enterprise_control_plane,6,opencode,OpenCode,3.9857682619647354
+fast_adoption,enterprise_control_plane,7,open_swe,Open SWE,3.943198992443325
+fast_adoption,enterprise_control_plane,8,goose,goose,3.9094458438287156
+fast_adoption,enterprise_control_plane,9,omnigent,Omnigent,3.8799748110831236
+fast_adoption,enterprise_control_plane,10,flue,Flue,3.87808564231738
+fast_adoption,enterprise_control_plane,11,swe_agent,SWE-agent,3.742569269521411
+fast_adoption,enterprise_control_plane,12,aider,Aider,3.725566750629723
+fast_adoption,enterprise_control_plane,13,sandcastle,Sandcastle,3.5629722921914357
+fast_adoption,enterprise_control_plane,14,mini_swe_agent,mini-SWE-agent,3.415743073047859
+fast_adoption,enterprise_control_plane,15,omni_agent,Omni Agent,2.9112090680100757
+fast_adoption,enterprise_control_plane,16,omniagent,OmniAgent,2.408060453400504
+fast_adoption,enterprise_control_plane,17,anchor,Anchor,1.9565491183879096
+research_heavy,custom_orchestrator_platform,1,openhands_sdk,OpenHands Software Agent SDK,4.214634146341464
+research_heavy,custom_orchestrator_platform,2,deep_agents,Deep Agents,4.200527356624917
+research_heavy,custom_orchestrator_platform,3,cline,Cline / Cline SDK,4.18022412656559
+research_heavy,custom_orchestrator_platform,4,open_swe,Open SWE,4.073104812129203
+research_heavy,custom_orchestrator_platform,5,codex_cli,Codex CLI,4.017402768622281
+research_heavy,custom_orchestrator_platform,6,openhands_agent_canvas,OpenHands Agent Canvas,3.977719182597231
+research_heavy,custom_orchestrator_platform,7,flue,Flue,3.9543836519446276
+research_heavy,custom_orchestrator_platform,8,omnigent,Omnigent,3.9430454845088994
+research_heavy,custom_orchestrator_platform,9,opencode,OpenCode,3.8772577455504287
+research_heavy,custom_orchestrator_platform,10,goose,goose,3.7759393539881345
+research_heavy,custom_orchestrator_platform,11,swe_agent,SWE-agent,3.7728411338167436
+research_heavy,custom_orchestrator_platform,12,aider,Aider,3.5510217534607778
+research_heavy,custom_orchestrator_platform,13,sandcastle,Sandcastle,3.527620303230059
+research_heavy,custom_orchestrator_platform,14,mini_swe_agent,mini-SWE-agent,3.444429795649308
+research_heavy,custom_orchestrator_platform,15,omni_agent,Omni Agent,2.9477916941331577
+research_heavy,custom_orchestrator_platform,16,omniagent,OmniAgent,2.4142386288727753
+research_heavy,custom_orchestrator_platform,17,anchor,Anchor,1.778510217534608
+research_heavy,secure_autonomous_prs,1,openhands_sdk,OpenHands Software Agent SDK,4.183159268929503
+research_heavy,secure_autonomous_prs,2,codex_cli,Codex CLI,4.172193211488251
+research_heavy,secure_autonomous_prs,3,cline,Cline / Cline SDK,4.145953002610966
+research_heavy,secure_autonomous_prs,4,open_swe,Open SWE,4.129895561357703
+research_heavy,secure_autonomous_prs,5,deep_agents,Deep Agents,4.112402088772845
+research_heavy,secure_autonomous_prs,6,openhands_agent_canvas,OpenHands Agent Canvas,3.9416449086161878
+research_heavy,secure_autonomous_prs,7,omnigent,Omnigent,3.9304177545691905
+research_heavy,secure_autonomous_prs,8,flue,Flue,3.8912532637075716
+research_heavy,secure_autonomous_prs,9,swe_agent,SWE-agent,3.8143603133159267
+research_heavy,secure_autonomous_prs,10,opencode,OpenCode,3.7946475195822456
+research_heavy,secure_autonomous_prs,11,goose,goose,3.7242819843342034
+research_heavy,secure_autonomous_prs,12,sandcastle,Sandcastle,3.5870757180156656
+research_heavy,secure_autonomous_prs,13,aider,Aider,3.5184073107049607
+research_heavy,secure_autonomous_prs,14,mini_swe_agent,mini-SWE-agent,3.394647519582245
+research_heavy,secure_autonomous_prs,15,omni_agent,Omni Agent,2.9544386422976503
+research_heavy,secure_autonomous_prs,16,omniagent,OmniAgent,2.2412532637075717
+research_heavy,secure_autonomous_prs,17,anchor,Anchor,1.7943864229765012
+research_heavy,quick_local_coding,1,cline,Cline / Cline SDK,4.2992647058823525
+research_heavy,quick_local_coding,2,openhands_sdk,OpenHands Software Agent SDK,4.202941176470588
+research_heavy,quick_local_coding,3,opencode,OpenCode,4.085661764705883
+research_heavy,quick_local_coding,4,deep_agents,Deep Agents,4.083823529411765
+research_heavy,quick_local_coding,5,codex_cli,Codex CLI,4.063235294117647
+research_heavy,quick_local_coding,6,goose,goose,3.9738970588235296
+research_heavy,quick_local_coding,7,aider,Aider,3.9606617647058826
+research_heavy,quick_local_coding,8,openhands_agent_canvas,OpenHands Agent Canvas,3.9448529411764706
+research_heavy,quick_local_coding,9,open_swe,Open SWE,3.8452205882352946
+research_heavy,quick_local_coding,10,swe_agent,SWE-agent,3.8227941176470592
+research_heavy,quick_local_coding,11,flue,Flue,3.8154411764705882
+research_heavy,quick_local_coding,12,omnigent,Omnigent,3.789705882352941
+research_heavy,quick_local_coding,13,mini_swe_agent,mini-SWE-agent,3.7099264705882353
+research_heavy,quick_local_coding,14,sandcastle,Sandcastle,3.534558823529412
+research_heavy,quick_local_coding,15,omni_agent,Omni Agent,2.8176470588235296
+research_heavy,quick_local_coding,16,omniagent,OmniAgent,2.533455882352942
+research_heavy,quick_local_coding,17,anchor,Anchor,2.1643382352941174
+research_heavy,research_benchmarking,1,mini_swe_agent,mini-SWE-agent,4.542026078234705
+research_heavy,research_benchmarking,2,swe_agent,SWE-agent,4.418756268806419
+research_heavy,research_benchmarking,3,openhands_sdk,OpenHands Software Agent SDK,4.175125376128385
+research_heavy,research_benchmarking,4,aider,Aider,4.028385155466399
+research_heavy,research_benchmarking,5,deep_agents,Deep Agents,4.012738214643932
+research_heavy,research_benchmarking,6,open_swe,Open SWE,3.877331995987963
+research_heavy,research_benchmarking,7,codex_cli,Codex CLI,3.7879638916750245
+research_heavy,research_benchmarking,8,opencode,OpenCode,3.7353059177532595
+research_heavy,research_benchmarking,9,cline,Cline / Cline SDK,3.731695085255767
+research_heavy,research_benchmarking,10,goose,goose,3.5176529588766297
+research_heavy,research_benchmarking,11,flue,Flue,3.4489468405215646
+research_heavy,research_benchmarking,12,openhands_agent_canvas,OpenHands Agent Canvas,3.336409227683049
+research_heavy,research_benchmarking,13,omnigent,Omnigent,3.22617853560682
+research_heavy,research_benchmarking,14,sandcastle,Sandcastle,3.182948846539619
+research_heavy,research_benchmarking,15,omni_agent,Omni Agent,2.1584754262788364
+research_heavy,research_benchmarking,16,omniagent,OmniAgent,1.945336008024072
+research_heavy,research_benchmarking,17,anchor,Anchor,1.7622868605817452
+research_heavy,enterprise_control_plane,1,cline,Cline / Cline SDK,4.234235368156073
+research_heavy,enterprise_control_plane,2,openhands_sdk,OpenHands Software Agent SDK,4.194587791063562
+research_heavy,enterprise_control_plane,3,deep_agents,Deep Agents,4.182127123977343
+research_heavy,enterprise_control_plane,4,codex_cli,Codex CLI,4.06393958464443
+research_heavy,enterprise_control_plane,5,open_swe,Open SWE,4.0619886721208305
+research_heavy,enterprise_control_plane,6,openhands_agent_canvas,OpenHands Agent Canvas,4.004531151667715
+research_heavy,enterprise_control_plane,7,omnigent,Omnigent,3.969666456891126
+research_heavy,enterprise_control_plane,8,flue,Flue,3.931906859660163
+research_heavy,enterprise_control_plane,9,opencode,OpenCode,3.873379483952171
+research_heavy,enterprise_control_plane,10,goose,goose,3.777029578351164
+research_heavy,enterprise_control_plane,11,swe_agent,SWE-agent,3.7269981120201385
+research_heavy,enterprise_control_plane,12,aider,Aider,3.538640654499685
+research_heavy,enterprise_control_plane,13,sandcastle,Sandcastle,3.5234738829452485
+research_heavy,enterprise_control_plane,14,mini_swe_agent,mini-SWE-agent,3.305349276274386
+research_heavy,enterprise_control_plane,15,omni_agent,Omni Agent,2.9832599118942733
+research_heavy,enterprise_control_plane,16,omniagent,OmniAgent,2.3827564505978605
+research_heavy,enterprise_control_plane,17,anchor,Anchor,1.791692888609188
+maturity_discount,custom_orchestrator_platform,1,cline,Cline / Cline SDK,4.236764705882353
+maturity_discount,custom_orchestrator_platform,2,openhands_sdk,OpenHands Software Agent SDK,4.236029411764706
+maturity_discount,custom_orchestrator_platform,3,codex_cli,Codex CLI,4.047794117647059
+maturity_discount,custom_orchestrator_platform,4,deep_agents,Deep Agents,3.963970588235294
+maturity_discount,custom_orchestrator_platform,5,opencode,OpenCode,3.923529411764706
+maturity_discount,custom_orchestrator_platform,6,open_swe,Open SWE,3.8397058823529413
+maturity_discount,custom_orchestrator_platform,7,goose,goose,3.8323529411764703
+maturity_discount,custom_orchestrator_platform,8,openhands_agent_canvas,OpenHands Agent Canvas,3.8080882352941177
+maturity_discount,custom_orchestrator_platform,9,flue,Flue,3.7551470588235296
+maturity_discount,custom_orchestrator_platform,10,swe_agent,SWE-agent,3.709558823529412
+maturity_discount,custom_orchestrator_platform,11,aider,Aider,3.5323529411764705
+maturity_discount,custom_orchestrator_platform,12,omnigent,Omnigent,3.4264705882352944
+maturity_discount,custom_orchestrator_platform,13,sandcastle,Sandcastle,3.3433823529411764
+maturity_discount,custom_orchestrator_platform,14,mini_swe_agent,mini-SWE-agent,3.111764705882353
+maturity_discount,custom_orchestrator_platform,15,omni_agent,Omni Agent,2.433088235294117
+maturity_discount,custom_orchestrator_platform,16,omniagent,OmniAgent,1.886029411764706
+maturity_discount,custom_orchestrator_platform,17,anchor,Anchor,1.1977941176470588
+maturity_discount,secure_autonomous_prs,1,codex_cli,Codex CLI,4.221014492753623
+maturity_discount,secure_autonomous_prs,2,openhands_sdk,OpenHands Software Agent SDK,4.19927536231884
+maturity_discount,secure_autonomous_prs,3,cline,Cline / Cline SDK,4.1985507246376805
+maturity_discount,secure_autonomous_prs,4,open_swe,Open SWE,3.8920289855072463
+maturity_discount,secure_autonomous_prs,5,deep_agents,Deep Agents,3.860869565217391
+maturity_discount,secure_autonomous_prs,6,opencode,OpenCode,3.8376811594202898
+maturity_discount,secure_autonomous_prs,7,goose,goose,3.7804347826086957
+maturity_discount,secure_autonomous_prs,8,openhands_agent_canvas,OpenHands Agent Canvas,3.765217391304348
+maturity_discount,secure_autonomous_prs,9,swe_agent,SWE-agent,3.752173913043478
+maturity_discount,secure_autonomous_prs,10,flue,Flue,3.6797101449275362
+maturity_discount,secure_autonomous_prs,11,aider,Aider,3.507246376811594
+maturity_discount,secure_autonomous_prs,12,sandcastle,Sandcastle,3.408695652173913
+maturity_discount,secure_autonomous_prs,13,omnigent,Omnigent,3.403623188405797
+maturity_discount,secure_autonomous_prs,14,mini_swe_agent,mini-SWE-agent,3.068840579710145
+maturity_discount,secure_autonomous_prs,15,omni_agent,Omni Agent,2.4355072463768113
+maturity_discount,secure_autonomous_prs,16,omniagent,OmniAgent,1.7007246376811593
+maturity_discount,secure_autonomous_prs,17,anchor,Anchor,1.228985507246377
+maturity_discount,quick_local_coding,1,cline,Cline / Cline SDK,4.363114754098361
+maturity_discount,quick_local_coding,2,openhands_sdk,OpenHands Software Agent SDK,4.224590163934426
+maturity_discount,quick_local_coding,3,opencode,OpenCode,4.131147540983607
+maturity_discount,quick_local_coding,4,codex_cli,Codex CLI,4.090983606557377
+maturity_discount,quick_local_coding,5,goose,goose,4.028688524590164
+maturity_discount,quick_local_coding,6,aider,Aider,3.9565573770491804
+maturity_discount,quick_local_coding,7,deep_agents,Deep Agents,3.8483606557377046
+maturity_discount,quick_local_coding,8,swe_agent,SWE-agent,3.7827868852459017
+maturity_discount,quick_local_coding,9,openhands_agent_canvas,OpenHands Agent Canvas,3.769672131147541
+maturity_discount,quick_local_coding,10,open_swe,Open SWE,3.6155737704918036
+maturity_discount,quick_local_coding,11,flue,Flue,3.610655737704918
+maturity_discount,quick_local_coding,12,mini_swe_agent,mini-SWE-agent,3.378688524590164
+maturity_discount,quick_local_coding,13,sandcastle,Sandcastle,3.34344262295082
+maturity_discount,quick_local_coding,14,omnigent,Omnigent,3.271311475409836
+maturity_discount,quick_local_coding,15,omni_agent,Omni Agent,2.292622950819672
+maturity_discount,quick_local_coding,16,omniagent,OmniAgent,1.989344262295082
+maturity_discount,quick_local_coding,17,anchor,Anchor,1.5721311475409836
+maturity_discount,research_benchmarking,1,swe_agent,SWE-agent,4.243965517241379
+maturity_discount,research_benchmarking,2,openhands_sdk,OpenHands Software Agent SDK,4.186206896551725
+maturity_discount,research_benchmarking,3,mini_swe_agent,mini-SWE-agent,4.106034482758621
+maturity_discount,research_benchmarking,4,aider,Aider,4.0456896551724135
+maturity_discount,research_benchmarking,5,cline,Cline / Cline SDK,3.9163793103448277
+maturity_discount,research_benchmarking,6,codex_cli,Codex CLI,3.887931034482759
+maturity_discount,research_benchmarking,7,opencode,OpenCode,3.8724137931034486
+maturity_discount,research_benchmarking,8,deep_agents,Deep Agents,3.7801724137931036
+maturity_discount,research_benchmarking,9,goose,goose,3.6974137931034483
+maturity_discount,research_benchmarking,10,open_swe,Open SWE,3.5939655172413794
+maturity_discount,research_benchmarking,11,flue,Flue,3.3448275862068964
+maturity_discount,research_benchmarking,12,openhands_agent_canvas,OpenHands Agent Canvas,3.282758620689655
+maturity_discount,research_benchmarking,13,sandcastle,Sandcastle,3.060344827586207
+maturity_discount,research_benchmarking,14,omnigent,Omnigent,2.7784482758620688
+maturity_discount,research_benchmarking,15,omni_agent,Omni Agent,1.760344827586207
+maturity_discount,research_benchmarking,16,omniagent,OmniAgent,1.5775862068965518
+maturity_discount,research_benchmarking,17,anchor,Anchor,1.3620689655172415
+maturity_discount,enterprise_control_plane,1,cline,Cline / Cline SDK,4.276712328767124
+maturity_discount,enterprise_control_plane,2,openhands_sdk,OpenHands Software Agent SDK,4.213013698630137
+maturity_discount,enterprise_control_plane,3,codex_cli,Codex CLI,4.08972602739726
+maturity_discount,enterprise_control_plane,4,deep_agents,Deep Agents,3.9342465753424656
+maturity_discount,enterprise_control_plane,5,opencode,OpenCode,3.9164383561643836
+maturity_discount,enterprise_control_plane,6,goose,goose,3.8253424657534247
+maturity_discount,enterprise_control_plane,7,open_swe,Open SWE,3.8164383561643835
+maturity_discount,enterprise_control_plane,8,openhands_agent_canvas,OpenHands Agent Canvas,3.8116438356164384
+maturity_discount,enterprise_control_plane,9,flue,Flue,3.7075342465753427
+maturity_discount,enterprise_control_plane,10,swe_agent,SWE-agent,3.6815068493150687
+maturity_discount,enterprise_control_plane,11,aider,Aider,3.5404109589041095
+maturity_discount,enterprise_control_plane,12,omnigent,Omnigent,3.425342465753425
+maturity_discount,enterprise_control_plane,13,sandcastle,Sandcastle,3.3267123287671234
+maturity_discount,enterprise_control_plane,14,mini_swe_agent,mini-SWE-agent,3.0075342465753425
+maturity_discount,enterprise_control_plane,15,omni_agent,Omni Agent,2.4397260273972603
+maturity_discount,enterprise_control_plane,16,omniagent,OmniAgent,1.836301369863014
+maturity_discount,enterprise_control_plane,17,anchor,Anchor,1.2143835616438357
+evidence_discount,custom_orchestrator_platform,1,cline,Cline / Cline SDK,4.1887647058823525
+evidence_discount,custom_orchestrator_platform,2,openhands_sdk,OpenHands Software Agent SDK,4.188029411764706
+evidence_discount,custom_orchestrator_platform,3,deep_agents,Deep Agents,4.153970588235294
+evidence_discount,custom_orchestrator_platform,4,codex_cli,Codex CLI,4.023794117647059
+evidence_discount,custom_orchestrator_platform,5,open_swe,Open SWE,3.993705882352941
+evidence_discount,custom_orchestrator_platform,6,flue,Flue,3.945147058823529
+evidence_discount,custom_orchestrator_platform,7,opencode,OpenCode,3.8875294117647057
+evidence_discount,custom_orchestrator_platform,8,openhands_agent_canvas,OpenHands Agent Canvas,3.878088235294118
+evidence_discount,custom_orchestrator_platform,9,goose,goose,3.7723529411764707
+evidence_discount,custom_orchestrator_platform,10,omnigent,Omnigent,3.726470588235294
+evidence_discount,custom_orchestrator_platform,11,swe_agent,SWE-agent,3.6375588235294116
+evidence_discount,custom_orchestrator_platform,12,aider,Aider,3.484352941176471
+evidence_discount,custom_orchestrator_platform,13,sandcastle,Sandcastle,3.4733823529411767
+evidence_discount,custom_orchestrator_platform,14,mini_swe_agent,mini-SWE-agent,3.2777647058823534
+evidence_discount,custom_orchestrator_platform,15,omni_agent,Omni Agent,2.4930882352941177
+evidence_discount,custom_orchestrator_platform,16,omniagent,OmniAgent,1.9460294117647061
+evidence_discount,custom_orchestrator_platform,17,anchor,Anchor,1.2525
+evidence_discount,secure_autonomous_prs,1,codex_cli,Codex CLI,4.197014492753623
+evidence_discount,secure_autonomous_prs,2,openhands_sdk,OpenHands Software Agent SDK,4.15127536231884
+evidence_discount,secure_autonomous_prs,3,cline,Cline / Cline SDK,4.1505507246376805
+evidence_discount,secure_autonomous_prs,4,deep_agents,Deep Agents,4.050869565217391
+evidence_discount,secure_autonomous_prs,5,open_swe,Open SWE,4.046028985507246
+evidence_discount,secure_autonomous_prs,6,flue,Flue,3.869710144927536
+evidence_discount,secure_autonomous_prs,7,openhands_agent_canvas,OpenHands Agent Canvas,3.8352173913043477
+evidence_discount,secure_autonomous_prs,8,opencode,OpenCode,3.8016811594202897
+evidence_discount,secure_autonomous_prs,9,goose,goose,3.720434782608695
+evidence_discount,secure_autonomous_prs,10,omnigent,Omnigent,3.703623188405797
+evidence_discount,secure_autonomous_prs,11,swe_agent,SWE-agent,3.680173913043478
+evidence_discount,secure_autonomous_prs,12,sandcastle,Sandcastle,3.538695652173913
+evidence_discount,secure_autonomous_prs,13,aider,Aider,3.459246376811594
+evidence_discount,secure_autonomous_prs,14,mini_swe_agent,mini-SWE-agent,3.2348405797101445
+evidence_discount,secure_autonomous_prs,15,omni_agent,Omni Agent,2.4955072463768113
+evidence_discount,secure_autonomous_prs,16,omniagent,OmniAgent,1.7607246376811594
+evidence_discount,secure_autonomous_prs,17,anchor,Anchor,1.2855072463768114
+evidence_discount,quick_local_coding,1,cline,Cline / Cline SDK,4.315114754098361
+evidence_discount,quick_local_coding,2,openhands_sdk,OpenHands Software Agent SDK,4.176590163934426
+evidence_discount,quick_local_coding,3,opencode,OpenCode,4.095147540983607
+evidence_discount,quick_local_coding,4,codex_cli,Codex CLI,4.066983606557377
+evidence_discount,quick_local_coding,5,deep_agents,Deep Agents,4.038360655737705
+evidence_discount,quick_local_coding,6,goose,goose,3.968688524590164
+evidence_discount,quick_local_coding,7,aider,Aider,3.9085573770491804
+evidence_discount,quick_local_coding,8,openhands_agent_canvas,OpenHands Agent Canvas,3.8396721311475415
+evidence_discount,quick_local_coding,9,flue,Flue,3.8006557377049184
+evidence_discount,quick_local_coding,10,open_swe,Open SWE,3.769573770491803
+evidence_discount,quick_local_coding,11,swe_agent,SWE-agent,3.7107868852459016
+evidence_discount,quick_local_coding,12,omnigent,Omnigent,3.5713114754098365
+evidence_discount,quick_local_coding,13,mini_swe_agent,mini-SWE-agent,3.5446885245901645
+evidence_discount,quick_local_coding,14,sandcastle,Sandcastle,3.4734426229508197
+evidence_discount,quick_local_coding,15,omni_agent,Omni Agent,2.352622950819672
+evidence_discount,quick_local_coding,16,omniagent,OmniAgent,2.049344262295082
+evidence_discount,quick_local_coding,17,anchor,Anchor,1.6301639344262295
+evidence_discount,research_benchmarking,1,mini_swe_agent,mini-SWE-agent,4.272034482758621
+evidence_discount,research_benchmarking,2,swe_agent,SWE-agent,4.17196551724138
+evidence_discount,research_benchmarking,3,openhands_sdk,OpenHands Software Agent SDK,4.138206896551724
+evidence_discount,research_benchmarking,4,aider,Aider,3.9976896551724135
+evidence_discount,research_benchmarking,5,deep_agents,Deep Agents,3.970172413793103
+evidence_discount,research_benchmarking,6,cline,Cline / Cline SDK,3.8683793103448276
+evidence_discount,research_benchmarking,7,codex_cli,Codex CLI,3.8639310344827584
+evidence_discount,research_benchmarking,8,opencode,OpenCode,3.8364137931034485
+evidence_discount,research_benchmarking,9,open_swe,Open SWE,3.7479655172413793
+evidence_discount,research_benchmarking,10,goose,goose,3.6374137931034487
+evidence_discount,research_benchmarking,11,flue,Flue,3.5348275862068963
+evidence_discount,research_benchmarking,12,openhands_agent_canvas,OpenHands Agent Canvas,3.3527586206896554
+evidence_discount,research_benchmarking,13,sandcastle,Sandcastle,3.1903448275862067
+evidence_discount,research_benchmarking,14,omnigent,Omnigent,3.078448275862069
+evidence_discount,research_benchmarking,15,omni_agent,Omni Agent,1.8203448275862069
+evidence_discount,research_benchmarking,16,omniagent,OmniAgent,1.6375862068965519
+evidence_discount,research_benchmarking,17,anchor,Anchor,1.4215517241379312
+evidence_discount,enterprise_control_plane,1,cline,Cline / Cline SDK,4.2287123287671236
+evidence_discount,enterprise_control_plane,2,openhands_sdk,OpenHands Software Agent SDK,4.165013698630137
+evidence_discount,enterprise_control_plane,3,deep_agents,Deep Agents,4.1242465753424655
+evidence_discount,enterprise_control_plane,4,codex_cli,Codex CLI,4.06572602739726
+evidence_discount,enterprise_control_plane,5,open_swe,Open SWE,3.9704383561643835
+evidence_discount,enterprise_control_plane,6,flue,Flue,3.897534246575342
+evidence_discount,enterprise_control_plane,7,openhands_agent_canvas,OpenHands Agent Canvas,3.8816438356164387
+evidence_discount,enterprise_control_plane,8,opencode,OpenCode,3.880438356164383
+evidence_discount,enterprise_control_plane,9,goose,goose,3.765342465753425
+evidence_discount,enterprise_control_plane,10,omnigent,Omnigent,3.7253424657534246
+evidence_discount,enterprise_control_plane,11,swe_agent,SWE-agent,3.6095068493150686
+evidence_discount,enterprise_control_plane,12,aider,Aider,3.4924109589041095
+evidence_discount,enterprise_control_plane,13,sandcastle,Sandcastle,3.4567123287671233
+evidence_discount,enterprise_control_plane,14,mini_swe_agent,mini-SWE-agent,3.173534246575343
+evidence_discount,enterprise_control_plane,15,omni_agent,Omni Agent,2.4997260273972604
+evidence_discount,enterprise_control_plane,16,omniagent,OmniAgent,1.8963013698630138
+evidence_discount,enterprise_control_plane,17,anchor,Anchor,1.2694520547945205
+sandbox_gate,custom_orchestrator_platform,1,openhands_sdk,OpenHands Software Agent SDK,4.23813046402152
+sandbox_gate,custom_orchestrator_platform,2,deep_agents,Deep Agents,4.1990585070611965
+sandbox_gate,custom_orchestrator_platform,3,open_swe,Open SWE,4.1317417619367856
+sandbox_gate,custom_orchestrator_platform,4,codex_cli,Codex CLI,4.106859448554136
+sandbox_gate,custom_orchestrator_platform,5,omnigent,Omnigent,4.05137861466039
+sandbox_gate,custom_orchestrator_platform,6,openhands_agent_canvas,OpenHands Agent Canvas,4.042770679219905
+sandbox_gate,custom_orchestrator_platform,7,cline,Cline / Cline SDK,4.036852723604572
+sandbox_gate,custom_orchestrator_platform,8,flue,Flue,4.008338937457968
+sandbox_gate,custom_orchestrator_platform,9,swe_agent,SWE-agent,3.7431741761936785
+sandbox_gate,custom_orchestrator_platform,10,goose,goose,3.7351714862138534
+sandbox_gate,custom_orchestrator_platform,11,opencode,OpenCode,3.674243443174176
+sandbox_gate,custom_orchestrator_platform,12,sandcastle,Sandcastle,3.65245460659045
+sandbox_gate,custom_orchestrator_platform,13,mini_swe_agent,mini-SWE-agent,3.3722932078009413
+sandbox_gate,custom_orchestrator_platform,14,aider,Aider,3.2605245460659043
+sandbox_gate,custom_orchestrator_platform,15,omni_agent,Omni Agent,2.9980497646267654
+sandbox_gate,custom_orchestrator_platform,16,omniagent,OmniAgent,2.112777404169469
+sandbox_gate,custom_orchestrator_platform,17,anchor,Anchor,1.4063214525891055
+sandbox_gate,secure_autonomous_prs,1,codex_cli,Codex CLI,4.281089743589743
+sandbox_gate,secure_autonomous_prs,2,openhands_sdk,OpenHands Software Agent SDK,4.206089743589743
+sandbox_gate,secure_autonomous_prs,3,open_swe,Open SWE,4.191987179487179
+sandbox_gate,secure_autonomous_prs,4,deep_agents,Deep Agents,4.102884615384615
+sandbox_gate,secure_autonomous_prs,5,omnigent,Omnigent,4.040705128205128
+sandbox_gate,secure_autonomous_prs,6,openhands_agent_canvas,OpenHands Agent Canvas,4.0
+sandbox_gate,secure_autonomous_prs,7,cline,Cline / Cline SDK,3.94698717948718
+sandbox_gate,secure_autonomous_prs,8,flue,Flue,3.9416666666666664
+sandbox_gate,secure_autonomous_prs,9,swe_agent,SWE-agent,3.7913461538461535
+sandbox_gate,secure_autonomous_prs,10,sandcastle,Sandcastle,3.7288461538461535
+sandbox_gate,secure_autonomous_prs,11,goose,goose,3.6603846153846153
+sandbox_gate,secure_autonomous_prs,12,opencode,OpenCode,3.526025641025641
+sandbox_gate,secure_autonomous_prs,13,mini_swe_agent,mini-SWE-agent,3.335897435897436
+sandbox_gate,secure_autonomous_prs,14,aider,Aider,3.160833333333333
+sandbox_gate,secure_autonomous_prs,15,omni_agent,Omni Agent,2.9962179487179488
+sandbox_gate,secure_autonomous_prs,16,omniagent,OmniAgent,1.8456410256410258
+sandbox_gate,secure_autonomous_prs,17,anchor,Anchor,1.3360897435897436
+sandbox_gate,quick_local_coding,1,openhands_sdk,OpenHands Software Agent SDK,4.225968992248062
+sandbox_gate,quick_local_coding,2,cline,Cline / Cline SDK,4.181162790697674
+sandbox_gate,quick_local_coding,3,codex_cli,Codex CLI,4.126744186046511
+sandbox_gate,quick_local_coding,4,deep_agents,Deep Agents,4.095736434108527
+sandbox_gate,quick_local_coding,5,openhands_agent_canvas,OpenHands Agent Canvas,4.013178294573643
+sandbox_gate,quick_local_coding,6,goose,goose,3.933953488372093
+sandbox_gate,quick_local_coding,7,open_swe,Open SWE,3.9027131782945736
+sandbox_gate,quick_local_coding,8,omnigent,Omnigent,3.897286821705426
+sandbox_gate,quick_local_coding,9,opencode,OpenCode,3.893333333333333
+sandbox_gate,quick_local_coding,10,flue,Flue,3.8682170542635657
+sandbox_gate,quick_local_coding,11,swe_agent,SWE-agent,3.797286821705426
+sandbox_gate,quick_local_coding,12,aider,Aider,3.6760465116279066
+sandbox_gate,quick_local_coding,13,sandcastle,Sandcastle,3.626356589147287
+sandbox_gate,quick_local_coding,14,mini_swe_agent,mini-SWE-agent,3.6162790697674416
+sandbox_gate,quick_local_coding,15,omni_agent,Omni Agent,2.85108527131783
+sandbox_gate,quick_local_coding,16,omniagent,OmniAgent,2.204496124031008
+sandbox_gate,quick_local_coding,17,anchor,Anchor,1.7413178294573644
+sandbox_gate,research_benchmarking,1,mini_swe_agent,mini-SWE-agent,4.331719532554257
+sandbox_gate,research_benchmarking,2,swe_agent,SWE-agent,4.241569282136894
+sandbox_gate,research_benchmarking,3,openhands_sdk,OpenHands Software Agent SDK,4.1889816360601
+sandbox_gate,research_benchmarking,4,deep_agents,Deep Agents,4.030050083472454
+sandbox_gate,research_benchmarking,5,codex_cli,Codex CLI,3.914524207011686
+sandbox_gate,research_benchmarking,6,aider,Aider,3.8993322203672784
+sandbox_gate,research_benchmarking,7,open_swe,Open SWE,3.8686143572621035
+sandbox_gate,research_benchmarking,8,cline,Cline / Cline SDK,3.829549248747913
+sandbox_gate,research_benchmarking,9,opencode,OpenCode,3.756761268781302
+sandbox_gate,research_benchmarking,10,goose,goose,3.6570951585976625
+sandbox_gate,research_benchmarking,11,flue,Flue,3.610684474123539
+sandbox_gate,research_benchmarking,12,openhands_agent_canvas,OpenHands Agent Canvas,3.542904841402337
+sandbox_gate,research_benchmarking,13,omnigent,Omnigent,3.407011686143573
+sandbox_gate,research_benchmarking,14,sandcastle,Sandcastle,3.34457429048414
+sandbox_gate,research_benchmarking,15,omni_agent,Omni Agent,2.3552587646076795
+sandbox_gate,research_benchmarking,16,omniagent,OmniAgent,2.0035058430717863
+sandbox_gate,research_benchmarking,17,anchor,Anchor,1.7595993322203671
+sandbox_gate,enterprise_control_plane,1,openhands_sdk,OpenHands Software Agent SDK,4.21625
+sandbox_gate,enterprise_control_plane,2,deep_agents,Deep Agents,4.172499999999999
+sandbox_gate,enterprise_control_plane,3,codex_cli,Codex CLI,4.1475
+sandbox_gate,enterprise_control_plane,4,open_swe,Open SWE,4.10875
+sandbox_gate,enterprise_control_plane,5,cline,Cline / Cline SDK,4.069625
+sandbox_gate,enterprise_control_plane,6,omnigent,Omnigent,4.05375
+sandbox_gate,enterprise_control_plane,7,openhands_agent_canvas,OpenHands Agent Canvas,4.0475
+sandbox_gate,enterprise_control_plane,8,flue,Flue,3.9612499999999997
+sandbox_gate,enterprise_control_plane,9,goose,goose,3.724125
+sandbox_gate,enterprise_control_plane,10,swe_agent,SWE-agent,3.7137499999999997
+sandbox_gate,enterprise_control_plane,11,opencode,OpenCode,3.653
+sandbox_gate,enterprise_control_plane,12,sandcastle,Sandcastle,3.6312499999999996
+sandbox_gate,enterprise_control_plane,13,mini_swe_agent,mini-SWE-agent,3.27
+sandbox_gate,enterprise_control_plane,14,aider,Aider,3.2482499999999996
+sandbox_gate,enterprise_control_plane,15,omni_agent,Omni Agent,3.004875
+sandbox_gate,enterprise_control_plane,16,omniagent,OmniAgent,2.031625
+sandbox_gate,enterprise_control_plane,17,anchor,Anchor,1.38325

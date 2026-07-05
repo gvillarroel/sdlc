@@ -89,6 +89,8 @@ Maturity sigma:
 
 This means alpha or weakly verified projects can still rank well if their feature scores are strong, but the model treats their outcomes as less certain.
 
+The stress-test runner reuses the same Monte Carlo implementation with alternate `weight_sigma` values and a `score_sigma_multiplier` parameter. The base report keeps the default score uncertainty multiplier at `1.0`; stress cases raise or lower it to test how fragile the ranking is when analyst score uncertainty changes.
+
 ## Sensitivity Analysis
 
 For each scenario and criterion, the script computes:
@@ -110,6 +112,25 @@ The simulator also emits three robustness views:
 | `results/rank_stability.csv` | Average deterministic rank, best/worst rank, number of top-3 scenarios, mean Monte Carlo rank, and mean top-3 rate. |
 
 The Pareto frontier is computed over the raw criteria, not scenario-weighted scores. This intentionally answers a different question: whether a candidate has any criterion-level advantage before use-case weighting.
+
+## Assumption Stress Tests
+
+The assumption and stress-test appendix is `reports/simulation_assumptions.md`. The machine-readable assumption register is `data/simulation_assumptions.json`.
+
+Run:
+
+```powershell
+python scripts/stress_test_simulation.py --trials 1500 --seed 9011
+```
+
+This produces:
+
+- `results/stress_test_summary.csv`
+- `results/stress_test_rankings.csv`
+- `results/uncertainty_stress_summary.csv`
+- `results/uncertainty_stress_details.csv`
+
+These outputs intentionally test model fragility, not live coding performance. They answer whether the shortlist changes when security, provider neutrality, adoption speed, research reproducibility, maturity, evidence confidence, sandbox assumptions, or uncertainty levels are stressed.
 
 ## Category Scorecards
 

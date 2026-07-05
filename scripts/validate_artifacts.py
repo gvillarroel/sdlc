@@ -13,6 +13,9 @@ ROOT = Path(__file__).resolve().parents[1]
 RESULTS = ROOT / "results"
 DATA = ROOT / "data"
 REPORTS = ROOT / "reports"
+SCENARIO_COUNT = 5
+DETERMINISTIC_STRESS_CASE_COUNT = 8
+UNCERTAINTY_STRESS_CASE_COUNT = 5
 
 REQUIRED_RESULT_FILES = [
     "deterministic_rankings.csv",
@@ -27,6 +30,10 @@ REQUIRED_RESULT_FILES = [
     "regret_analysis.csv",
     "pareto_frontier.csv",
     "rank_stability.csv",
+    "stress_test_summary.csv",
+    "stress_test_rankings.csv",
+    "uncertainty_stress_summary.csv",
+    "uncertainty_stress_details.csv",
     "pilot_decision_scores.example.csv",
     "license_audit.csv",
     "source_check.csv",
@@ -54,13 +61,16 @@ def validate_required_files() -> None:
 def validate_result_shapes() -> None:
     alternatives = json.loads((DATA / "alternatives.json").read_text(encoding="utf-8"))["alternatives"]
     alt_count = len(alternatives)
-    scenario_count = 5
 
-    assert_true(len(read_csv(RESULTS / "deterministic_rankings.csv")) == alt_count * scenario_count, "unexpected deterministic ranking row count")
-    assert_true(len(read_csv(RESULTS / "monte_carlo_summary.csv")) == alt_count * scenario_count, "unexpected monte carlo row count")
-    assert_true(len(read_csv(RESULTS / "regret_analysis.csv")) == alt_count * scenario_count, "unexpected regret row count")
+    assert_true(len(read_csv(RESULTS / "deterministic_rankings.csv")) == alt_count * SCENARIO_COUNT, "unexpected deterministic ranking row count")
+    assert_true(len(read_csv(RESULTS / "monte_carlo_summary.csv")) == alt_count * SCENARIO_COUNT, "unexpected monte carlo row count")
+    assert_true(len(read_csv(RESULTS / "regret_analysis.csv")) == alt_count * SCENARIO_COUNT, "unexpected regret row count")
     assert_true(len(read_csv(RESULTS / "rank_stability.csv")) == alt_count, "unexpected rank stability row count")
     assert_true(len(read_csv(RESULTS / "pareto_frontier.csv")) == alt_count, "unexpected pareto row count")
+    assert_true(len(read_csv(RESULTS / "stress_test_summary.csv")) == DETERMINISTIC_STRESS_CASE_COUNT * SCENARIO_COUNT, "unexpected stress test summary row count")
+    assert_true(len(read_csv(RESULTS / "stress_test_rankings.csv")) == DETERMINISTIC_STRESS_CASE_COUNT * SCENARIO_COUNT * alt_count, "unexpected stress test rankings row count")
+    assert_true(len(read_csv(RESULTS / "uncertainty_stress_summary.csv")) == UNCERTAINTY_STRESS_CASE_COUNT * SCENARIO_COUNT, "unexpected uncertainty stress summary row count")
+    assert_true(len(read_csv(RESULTS / "uncertainty_stress_details.csv")) == UNCERTAINTY_STRESS_CASE_COUNT * SCENARIO_COUNT * alt_count, "unexpected uncertainty stress details row count")
 
 
 def validate_license_and_sources() -> None:
@@ -84,8 +94,10 @@ def validate_report_references() -> None:
     for artifact in [
         "data/pilot_tasks.json",
         "data/risk_register.json",
+        "data/simulation_assumptions.json",
         "reports/executive_brief.md",
-        "reports/methodology_appendix.md"
+        "reports/methodology_appendix.md",
+        "reports/simulation_assumptions.md"
     ]:
         assert_true(artifact in report, f"report does not reference {artifact}")
 

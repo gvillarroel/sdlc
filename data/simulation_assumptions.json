@@ -1,0 +1,139 @@
+{
+  "metadata": {
+    "created_at": "2026-07-05",
+    "purpose": "Structured assumptions and threats to validity for the AI orchestrator alternative simulation.",
+    "scale": "impact is 1-5, where 5 means the factor can materially change the recommended shortlist."
+  },
+  "assumptions": [
+    {
+      "id": "criterion_completeness",
+      "category": "model_design",
+      "assumption": "The 14 criteria capture the main decision drivers for selecting an AI coding-agent orchestrator.",
+      "impact": 4,
+      "ranking_effect": "Missing a critical criterion can systematically favor the wrong class of tool.",
+      "how_to_detect": "Review failed pilot decisions and stakeholder objections for recurring factors not represented in the criteria.",
+      "mitigation": "Add criteria only when they change a real adoption decision, then rerun all rankings and sensitivity outputs.",
+      "covered_by": ["data/scoring_rubric.json", "results/criteria_definitions.csv", "results/sensitivity_summary.csv"]
+    },
+    {
+      "id": "score_subjectivity",
+      "category": "scoring",
+      "assumption": "Manual 0-5 scores are close enough to current evidence to be useful for screening.",
+      "impact": 5,
+      "ranking_effect": "Subjective over-scoring can make young projects look safer or more complete than they are.",
+      "how_to_detect": "Compare analyst scores with measured pilot results, reviewer notes, install logs, and security-gate outcomes.",
+      "mitigation": "Replace high-impact subjective scores with measured values after the pilot.",
+      "covered_by": ["results/alternative_scorecards.csv", "results/uncertainty_stress_summary.csv", "templates/pilot_run_log.csv"]
+    },
+    {
+      "id": "scenario_weight_fit",
+      "category": "stakeholder_priority",
+      "assumption": "The five scenario weight profiles represent likely adoption contexts.",
+      "impact": 5,
+      "ranking_effect": "Different teams can legitimately choose different winners because they value safety, speed, or research reproducibility differently.",
+      "how_to_detect": "Ask the adopting team to rank the criteria before seeing the model output, then compare with default weights.",
+      "mitigation": "Edit scenario weights and rerun the simulation; treat tiny score gaps as ties.",
+      "covered_by": ["data/scenario_profiles.json", "results/scenario_weights.csv", "results/stress_test_summary.csv"]
+    },
+    {
+      "id": "source_freshness",
+      "category": "evidence",
+      "assumption": "Repository metadata, docs, releases, and licenses checked on 2026-07-05 remain representative enough for near-term decisions.",
+      "impact": 4,
+      "ranking_effect": "Fast-moving projects can gain or lose maturity, change licenses, or deprecate APIs after the retrieval date.",
+      "how_to_detect": "Rerun source checks and refresh repository metadata before an adoption decision.",
+      "mitigation": "Refresh data and regenerate outputs when more than 30 days old or when a candidate releases a major version.",
+      "covered_by": ["results/source_check.csv", "results/evidence_matrix.csv", "scripts/check_sources.py"]
+    },
+    {
+      "id": "license_clarity",
+      "category": "legal",
+      "assumption": "The project-level MIT or Apache-2.0 license is sufficient for the requested permissive-OSS screen.",
+      "impact": 4,
+      "ranking_effect": "Mixed-license monorepos, generated assets, docs, or bundled dependencies can create review work not captured by the project license.",
+      "how_to_detect": "Run a legal dependency/license scan on the exact version piloted.",
+      "mitigation": "Treat the current license audit as a screen, not final legal approval.",
+      "covered_by": ["results/license_audit.csv", "scripts/license_audit.py"]
+    },
+    {
+      "id": "model_provider_effect",
+      "category": "execution",
+      "assumption": "Framework capability can be compared separately from the exact model used.",
+      "impact": 5,
+      "ranking_effect": "A weaker framework with a stronger model can outperform a stronger framework with a weaker model in live tasks.",
+      "how_to_detect": "Run the same task suite with a pinned model where possible and log model-specific failures where not possible.",
+      "mitigation": "Separate framework score from model score in the pilot and record provider constraints explicitly.",
+      "covered_by": ["data/pilot_tasks.json", "templates/pilot_run_log.csv", "reports/pilot_protocol.md"]
+    },
+    {
+      "id": "sandbox_equivalence",
+      "category": "security",
+      "assumption": "Sandbox-related scores are comparable across local shell, containers, cloud sandboxes, and policy-gated approvals.",
+      "impact": 5,
+      "ranking_effect": "Approval checkpoints can look similar to isolation in a table but offer a different security boundary.",
+      "how_to_detect": "Run workspace-boundary, secret-trap, network-deny, and malicious-install fixtures.",
+      "mitigation": "Gate adoption on demonstrated sandbox behavior, not documentation claims.",
+      "covered_by": ["templates/security_gate_checklist.md", "data/risk_register.json", "results/stress_test_summary.csv"]
+    },
+    {
+      "id": "repository_representativeness",
+      "category": "evaluation",
+      "assumption": "The pilot task suite will resemble the organization's real repositories and workflows.",
+      "impact": 5,
+      "ranking_effect": "A tool can do well on clean benchmark tasks and fail on monorepos, flaky tests, proprietary build systems, or legacy code.",
+      "how_to_detect": "Include at least one representative internal repository and failure-prone workflow in the pilot.",
+      "mitigation": "Do not standardize from public benchmark results alone.",
+      "covered_by": ["data/pilot_tasks.json", "reports/pilot_protocol.md"]
+    },
+    {
+      "id": "human_review_tolerance",
+      "category": "workflow",
+      "assumption": "The desired human-in-the-loop model is known for the target scenario.",
+      "impact": 4,
+      "ranking_effect": "Teams that require approval before shell commands will prefer different tools than teams seeking async autonomous PRs.",
+      "how_to_detect": "Measure human interventions per task and reviewer acceptance in the pilot.",
+      "mitigation": "Choose scenario weights that reflect actual review policy, not aspirational autonomy.",
+      "covered_by": ["templates/reviewer_scorecard.md", "results/scenario_weights.csv"]
+    },
+    {
+      "id": "cost_and_rate_limits",
+      "category": "operations",
+      "assumption": "Token cost, model availability, and sandbox minutes are not decisive at the screening stage.",
+      "impact": 4,
+      "ranking_effect": "A candidate that is technically strong can become impractical under cost, latency, or rate-limit constraints.",
+      "how_to_detect": "Track tokens, API cost, retry count, wall-clock time, and queue latency during the pilot.",
+      "mitigation": "Add cost gates before production rollout.",
+      "covered_by": ["templates/pilot_run_log.csv", "reports/pilot_protocol.md"]
+    },
+    {
+      "id": "project_maturity_drift",
+      "category": "maintenance",
+      "assumption": "Current maturity and confidence values remain stable enough for near-term comparison.",
+      "impact": 4,
+      "ranking_effect": "Alpha projects can improve quickly, and production projects can regress through API churn or stalled maintenance.",
+      "how_to_detect": "Refresh releases, issue activity, docs, breaking changes, and maintainership signals.",
+      "mitigation": "Rerun maturity and evidence-discount stress tests before a final choice.",
+      "covered_by": ["results/stress_test_summary.csv", "results/evidence_matrix.csv"]
+    },
+    {
+      "id": "stochastic_behavior",
+      "category": "statistics",
+      "assumption": "5,000 Monte Carlo trials with a fixed seed are enough to estimate ranking stability for screening.",
+      "impact": 3,
+      "ranking_effect": "Near-tie candidates can swap positions when random variation, score uncertainty, or weight volatility increases.",
+      "how_to_detect": "Rerun with higher trials, different seeds, and high-uncertainty cases.",
+      "mitigation": "Use top-3 stability and regret gaps instead of treating rank 1 as absolute.",
+      "covered_by": ["results/monte_carlo_summary.csv", "results/regret_analysis.csv", "results/uncertainty_stress_summary.csv"]
+    },
+    {
+      "id": "integration_hidden_work",
+      "category": "implementation",
+      "assumption": "Implementation effort estimates account for the main integration work.",
+      "impact": 4,
+      "ranking_effect": "Authentication, secrets, CI, observability, deployment, and rollback work can dominate the core framework setup.",
+      "how_to_detect": "Log setup hours separately from task-execution hours in the pilot.",
+      "mitigation": "Score production hardening separately from prototype success.",
+      "covered_by": ["reports/implementation_blueprints.md", "templates/pilot_run_log.csv"]
+    }
+  ]
+}

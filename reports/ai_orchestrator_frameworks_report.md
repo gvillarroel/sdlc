@@ -34,6 +34,8 @@ For a navigation guide to every generated artifact, read `reports/artifact_index
 
 For a quick guided shortlist, read `reports/decision_tree.md`.
 
+For simulation assumptions, threats to validity, and stress-test results, read `reports/simulation_assumptions.md`.
+
 Use this report in three passes:
 
 1. Pick the target scenario: custom framework, secure PR automation, local coding, research benchmarking, or enterprise control plane.
@@ -190,6 +192,10 @@ Generated outputs:
 | `results/regret_analysis.csv` | Score gap between each candidate and the scenario winner. |
 | `results/pareto_frontier.csv` | Candidates that are not strictly dominated across all criteria. |
 | `results/rank_stability.csv` | Cross-scenario rank stability, best/worst rank, and average Monte Carlo top-3 rate. |
+| `results/stress_test_summary.csv` | Deterministic assumption stress-test summary. |
+| `results/stress_test_rankings.csv` | Full deterministic rankings under each stress-test case. |
+| `results/uncertainty_stress_summary.csv` | Monte Carlo ranking stability under alternate uncertainty assumptions. |
+| `results/uncertainty_stress_details.csv` | Full Monte Carlo rows for every candidate under each uncertainty stress case. |
 | `results/pilot_decision_scores.example.csv` | Example post-pilot scoring output generated from the example candidate summary. |
 | `results/all_results.json` | Complete machine-readable output. |
 
@@ -383,6 +389,8 @@ The full structured register is in `data/risk_register.json`. The highest-priori
 
 ## Simulation Risk Factors
 
+The structured assumption register is `data/simulation_assumptions.json`. A separate appendix, `reports/simulation_assumptions.md`, describes the threats to validity, generated stress-test outputs, and interpretation.
+
 These factors can materially change the ranking:
 
 | Factor | Why it matters |
@@ -400,6 +408,26 @@ These factors can materially change the ranking:
 | API cost and rate limits | Long-running coding agents can spend heavily on tokens, tool calls, and sandbox minutes. |
 | Benchmark mismatch | SWE-bench-style performance does not guarantee success on internal repos or interactive workflows. |
 | Security threat model | Prompt injection, secret exfiltration, dependency install scripts, and malicious repos require explicit controls. |
+
+## Stress Test Findings
+
+The additional stress-test script runs deterministic assumption shifts and alternate Monte Carlo uncertainty settings:
+
+```powershell
+python scripts/stress_test_simulation.py --trials 1500 --seed 9011
+```
+
+The deterministic stress tests changed the rank-1 candidate in 9 of 40 scenario/stress combinations. The Monte Carlo uncertainty stress tests changed rank 1 in 2 of 25 combinations. The main interpretation is that the shortlist is more robust than the exact winner.
+
+| Stress observation | Impact |
+|---|---|
+| Strict security and sandbox assumptions often move custom-orchestrator and enterprise-control-plane scenarios from Cline to OpenHands SDK. | If sandbox evidence is a hard gate, OpenHands SDK deserves stronger priority. |
+| Provider-neutral weighting moves secure autonomous PRs from Codex CLI to Cline by only 0.0001 points. | This is effectively a tie and should be decided by pilot constraints. |
+| A maturity discount moves research benchmarking from mini-SWE-agent to SWE-agent. | mini-SWE-agent wins on simplicity; SWE-agent wins when production-readiness matters more. |
+| High score uncertainty can move secure autonomous PRs from Codex CLI to OpenHands SDK. | Codex CLI remains strong, but its lead should not be treated as absolute. |
+| Volatile stakeholder weights can move the Monte Carlo custom-orchestrator top candidate between OpenHands SDK and Cline. | This scenario should be piloted as a cluster, not as a single-tool decision. |
+
+These findings reinforce the recommended pilot set rather than replacing it: OpenHands SDK, Deep Agents, Cline, Codex CLI, SWE-agent, and mini-SWE-agent remain the important candidates for the relevant scenarios.
 
 ## From This Simulation To A Real Evaluation
 
@@ -433,7 +461,7 @@ The full local regeneration and validation path is:
 python scripts/run_all_checks.py
 ```
 
-The same non-network validation path is available as `ci/validate-workflow.example.yml`, a GitHub Actions workflow template that runs tests, regenerates deterministic simulation/license artifacts, validates the result set, and fails if generated outputs are not committed. It can be copied into `.github/workflows/` when the pushing token has GitHub `workflow` scope.
+The same non-network validation path is available as `ci/validate-workflow.example.yml`, a GitHub Actions workflow template that runs the full local check workflow and fails if generated outputs are not committed. It can be copied into `.github/workflows/` when the pushing token has GitHub `workflow` scope.
 
 ## Final Recommendation
 

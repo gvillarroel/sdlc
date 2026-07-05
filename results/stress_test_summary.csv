@@ -1,0 +1,41 @@
+stress_case,scenario,description,rank1,rank2,rank3,baseline_rank1,rank1_changed,top3_overlap,rank1_margin
+baseline,custom_orchestrator_platform,Base analyst scores and scenario weights.,Cline / Cline SDK,OpenHands Software Agent SDK,Deep Agents,Cline / Cline SDK,False,3,0.0007352941176472783
+baseline,secure_autonomous_prs,Base analyst scores and scenario weights.,Codex CLI,OpenHands Software Agent SDK,Cline / Cline SDK,Codex CLI,False,3,0.02173913043478315
+baseline,quick_local_coding,Base analyst scores and scenario weights.,Cline / Cline SDK,OpenHands Software Agent SDK,OpenCode,Cline / Cline SDK,False,3,0.13852459016393492
+baseline,research_benchmarking,Base analyst scores and scenario weights.,mini-SWE-agent,SWE-agent,OpenHands Software Agent SDK,mini-SWE-agent,False,3,0.11206896551724199
+baseline,enterprise_control_plane,Base analyst scores and scenario weights.,Cline / Cline SDK,OpenHands Software Agent SDK,Deep Agents,Cline / Cline SDK,False,3,0.06369863013698662
+security_strict,custom_orchestrator_platform,"Security, sandboxing, approvals, and PR gates matter more.",OpenHands Software Agent SDK,Deep Agents,Cline / Cline SDK,Cline / Cline SDK,True,3,0.04918238993710666
+security_strict,secure_autonomous_prs,"Security, sandboxing, approvals, and PR gates matter more.",Codex CLI,OpenHands Software Agent SDK,Open SWE,Codex CLI,False,2,0.11105937136204869
+security_strict,quick_local_coding,"Security, sandboxing, approvals, and PR gates matter more.",Cline / Cline SDK,OpenHands Software Agent SDK,Codex CLI,Cline / Cline SDK,False,2,0.10043227665706045
+security_strict,research_benchmarking,"Security, sandboxing, approvals, and PR gates matter more.",mini-SWE-agent,SWE-agent,OpenHands Software Agent SDK,mini-SWE-agent,False,3,0.07741407528641542
+security_strict,enterprise_control_plane,"Security, sandboxing, approvals, and PR gates matter more.",OpenHands Software Agent SDK,Cline / Cline SDK,Codex CLI,Cline / Cline SDK,True,2,0.006797235023041637
+provider_neutral,custom_orchestrator_platform,Provider portability and deployment flexibility dominate.,Cline / Cline SDK,OpenHands Software Agent SDK,Deep Agents,Cline / Cline SDK,False,3,0.0
+provider_neutral,secure_autonomous_prs,Provider portability and deployment flexibility dominate.,Cline / Cline SDK,OpenHands Software Agent SDK,Deep Agents,Codex CLI,True,2,0.00013368983957207092
+provider_neutral,quick_local_coding,Provider portability and deployment flexibility dominate.,Cline / Cline SDK,OpenHands Software Agent SDK,OpenCode,Cline / Cline SDK,False,3,0.11936416184971055
+provider_neutral,research_benchmarking,Provider portability and deployment flexibility dominate.,mini-SWE-agent,SWE-agent,OpenHands Software Agent SDK,mini-SWE-agent,False,3,0.11043338683788129
+provider_neutral,enterprise_control_plane,Provider portability and deployment flexibility dominate.,Cline / Cline SDK,OpenHands Software Agent SDK,Deep Agents,Cline / Cline SDK,False,3,0.055609756097561025
+fast_adoption,custom_orchestrator_platform,Short prototype timeline and daily developer ergonomics dominate.,Cline / Cline SDK,OpenHands Software Agent SDK,Deep Agents,Cline / Cline SDK,False,3,0.05156037991858842
+fast_adoption,secure_autonomous_prs,Short prototype timeline and daily developer ergonomics dominate.,Codex CLI,Cline / Cline SDK,OpenHands Software Agent SDK,Codex CLI,False,3,0.027796161482462445
+fast_adoption,quick_local_coding,Short prototype timeline and daily developer ergonomics dominate.,Cline / Cline SDK,OpenCode,OpenHands Software Agent SDK,Cline / Cline SDK,False,3,0.17933828494260595
+fast_adoption,research_benchmarking,Short prototype timeline and daily developer ergonomics dominate.,mini-SWE-agent,Aider,OpenHands Software Agent SDK,mini-SWE-agent,False,2,0.20960451977401107
+fast_adoption,enterprise_control_plane,Short prototype timeline and daily developer ergonomics dominate.,Cline / Cline SDK,OpenHands Software Agent SDK,Codex CLI,Cline / Cline SDK,False,2,0.11335012594458505
+research_heavy,custom_orchestrator_platform,"Reproducibility, observability, and explainability dominate.",OpenHands Software Agent SDK,Deep Agents,Cline / Cline SDK,Cline / Cline SDK,True,3,0.01410678971654633
+research_heavy,secure_autonomous_prs,"Reproducibility, observability, and explainability dominate.",OpenHands Software Agent SDK,Codex CLI,Cline / Cline SDK,Codex CLI,True,3,0.010966057441252453
+research_heavy,quick_local_coding,"Reproducibility, observability, and explainability dominate.",Cline / Cline SDK,OpenHands Software Agent SDK,OpenCode,Cline / Cline SDK,False,3,0.09632352941176414
+research_heavy,research_benchmarking,"Reproducibility, observability, and explainability dominate.",mini-SWE-agent,SWE-agent,OpenHands Software Agent SDK,mini-SWE-agent,False,3,0.1232698094282858
+research_heavy,enterprise_control_plane,"Reproducibility, observability, and explainability dominate.",Cline / Cline SDK,OpenHands Software Agent SDK,Deep Agents,Cline / Cline SDK,False,3,0.0396475770925111
+maturity_discount,custom_orchestrator_platform,Alpha and beta projects receive an explicit production-readiness discount.,Cline / Cline SDK,OpenHands Software Agent SDK,Codex CLI,Cline / Cline SDK,False,2,0.0007352941176472783
+maturity_discount,secure_autonomous_prs,Alpha and beta projects receive an explicit production-readiness discount.,Codex CLI,OpenHands Software Agent SDK,Cline / Cline SDK,Codex CLI,False,3,0.02173913043478315
+maturity_discount,quick_local_coding,Alpha and beta projects receive an explicit production-readiness discount.,Cline / Cline SDK,OpenHands Software Agent SDK,OpenCode,Cline / Cline SDK,False,3,0.13852459016393492
+maturity_discount,research_benchmarking,Alpha and beta projects receive an explicit production-readiness discount.,SWE-agent,OpenHands Software Agent SDK,mini-SWE-agent,mini-SWE-agent,True,3,0.057758620689654094
+maturity_discount,enterprise_control_plane,Alpha and beta projects receive an explicit production-readiness discount.,Cline / Cline SDK,OpenHands Software Agent SDK,Codex CLI,Cline / Cline SDK,False,2,0.06369863013698662
+evidence_discount,custom_orchestrator_platform,Low-confidence source evidence receives an explicit score discount.,Cline / Cline SDK,OpenHands Software Agent SDK,Deep Agents,Cline / Cline SDK,False,3,0.0007352941176463901
+evidence_discount,secure_autonomous_prs,Low-confidence source evidence receives an explicit score discount.,Codex CLI,OpenHands Software Agent SDK,Cline / Cline SDK,Codex CLI,False,3,0.04573913043478317
+evidence_discount,quick_local_coding,Low-confidence source evidence receives an explicit score discount.,Cline / Cline SDK,OpenHands Software Agent SDK,OpenCode,Cline / Cline SDK,False,3,0.13852459016393492
+evidence_discount,research_benchmarking,Low-confidence source evidence receives an explicit score discount.,mini-SWE-agent,SWE-agent,OpenHands Software Agent SDK,mini-SWE-agent,False,3,0.10006896551724154
+evidence_discount,enterprise_control_plane,Low-confidence source evidence receives an explicit score discount.,Cline / Cline SDK,OpenHands Software Agent SDK,Deep Agents,Cline / Cline SDK,False,3,0.06369863013698662
+sandbox_gate,custom_orchestrator_platform,"Weak sandboxing also drags down governance, CI, deployment, and coding fit.",OpenHands Software Agent SDK,Deep Agents,Open SWE,Cline / Cline SDK,True,2,0.039071956960323284
+sandbox_gate,secure_autonomous_prs,"Weak sandboxing also drags down governance, CI, deployment, and coding fit.",Codex CLI,OpenHands Software Agent SDK,Open SWE,Codex CLI,False,2,0.07500000000000018
+sandbox_gate,quick_local_coding,"Weak sandboxing also drags down governance, CI, deployment, and coding fit.",OpenHands Software Agent SDK,Cline / Cline SDK,Codex CLI,Cline / Cline SDK,True,2,0.04480620155038828
+sandbox_gate,research_benchmarking,"Weak sandboxing also drags down governance, CI, deployment, and coding fit.",mini-SWE-agent,SWE-agent,OpenHands Software Agent SDK,mini-SWE-agent,False,3,0.0901502504173628
+sandbox_gate,enterprise_control_plane,"Weak sandboxing also drags down governance, CI, deployment, and coding fit.",OpenHands Software Agent SDK,Deep Agents,Codex CLI,Cline / Cline SDK,True,2,0.04375000000000018

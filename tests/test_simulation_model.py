@@ -66,6 +66,15 @@ class SimulationModelTest(unittest.TestCase):
                 self.assertGreaterEqual(row["top3_rate"], 0)
                 self.assertLessEqual(row["top3_rate"], 1)
 
+    def test_monte_carlo_rejects_invalid_uncertainty_multiplier(self):
+        with self.assertRaises(ValueError):
+            run_monte_carlo(
+                self.alternatives,
+                trials=1,
+                seed=123,
+                score_sigma_multiplier=-0.1
+            )
+
     def test_category_scores_are_ranked_and_bounded(self):
         rows = category_scores(self.alternatives)
         self.assertEqual(

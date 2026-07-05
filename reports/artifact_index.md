@@ -12,6 +12,7 @@ Use this index to choose the right file quickly.
 | Guided shortlist selection | `reports/decision_tree.md` |
 | Full analysis | `reports/ai_orchestrator_frameworks_report.md` |
 | Scoring formula and assumptions | `reports/methodology_appendix.md` |
+| Simulation assumptions and stress tests | `reports/simulation_assumptions.md` |
 | Pilot execution protocol | `reports/pilot_protocol.md` |
 | Candidate implementation notes | `reports/implementation_blueprints.md` |
 | Report charts | `reports/assets/rank_stability.svg`, `reports/assets/scenario_regret.svg` |
@@ -27,6 +28,7 @@ Use this index to choose the right file quickly.
 | Post-pilot decision model | `data/pilot_decision_model.json` |
 | Machine-readable decision tree | `data/decision_tree.json` |
 | Adoption risk register | `data/risk_register.json` |
+| Simulation assumption register | `data/simulation_assumptions.json` |
 
 ## Generated Results
 
@@ -40,6 +42,10 @@ Use this index to choose the right file quickly.
 | Regret versus scenario winner | `results/regret_analysis.csv` |
 | Pareto dominance | `results/pareto_frontier.csv` |
 | Cross-scenario rank stability | `results/rank_stability.csv` |
+| Deterministic assumption stress summary | `results/stress_test_summary.csv` |
+| Deterministic assumption stress rankings | `results/stress_test_rankings.csv` |
+| Monte Carlo uncertainty stress summary | `results/uncertainty_stress_summary.csv` |
+| Monte Carlo uncertainty stress details | `results/uncertainty_stress_details.csv` |
 | Example post-pilot decision scores | `results/pilot_decision_scores.example.csv` |
 | Model weights | `results/scenario_weights.csv` |
 | Criteria definitions | `results/criteria_definitions.csv` |
@@ -63,6 +69,7 @@ Use this index to choose the right file quickly.
 | Need | Artifact |
 |---|---|
 | Regenerate rankings and simulations | `scripts/simulate_alternatives.py` |
+| Run simulation stress tests | `scripts/stress_test_simulation.py` |
 | Regenerate license audit | `scripts/license_audit.py` |
 | Check external source URLs | `scripts/check_sources.py` |
 | Validate generated artifacts offline | `scripts/validate_artifacts.py` |
@@ -83,6 +90,7 @@ Or run the core deterministic pieces manually:
 
 ```powershell
 python scripts/simulate_alternatives.py --trials 5000 --seed 7331
+python scripts/stress_test_simulation.py --trials 1500 --seed 9011
 python scripts/license_audit.py
 python scripts/validate_artifacts.py
 ```

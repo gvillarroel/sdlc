@@ -17,6 +17,7 @@ class ReportArtifactsTest(unittest.TestCase):
             "## Candidate Deep Dives",
             "## Recommended Pilot Plan",
             "## Security Checklist",
+            "## Stress Test Findings",
             "## From This Simulation To A Real Evaluation"
         ]
         for section in required_sections:
@@ -36,6 +37,15 @@ class ReportArtifactsTest(unittest.TestCase):
         self.assertIn("# Methodology Appendix", text)
         self.assertIn("Weighted Scenario Score", text)
         self.assertIn("Monte Carlo Model", text)
+        self.assertIn("Assumption Stress Tests", text)
+
+    def test_simulation_assumptions_report_exists(self):
+        assumptions = ROOT / "reports" / "simulation_assumptions.md"
+        self.assertTrue(assumptions.exists())
+        text = assumptions.read_text(encoding="utf-8")
+        self.assertIn("# Simulation Assumptions And Stress Tests", text)
+        self.assertIn("Observed Ranking Changes", text)
+        self.assertIn("data/simulation_assumptions.json", text)
 
     def test_artifact_index_exists(self):
         index = ROOT / "reports" / "artifact_index.md"
@@ -75,6 +85,8 @@ class ReportArtifactsTest(unittest.TestCase):
             "sensitivity_summary.csv",
             "category_scores.csv",
             "decision_shortlist.csv",
+            "stress_test_summary.csv",
+            "uncertainty_stress_summary.csv",
             "all_results.json"
         ]
         for filename in expected_files:

@@ -1,0 +1,426 @@
+uncertainty_case,scenario,alternative_id,alternative,mean_score,mean_rank,win_rate,top3_rate,trials
+baseline_uncertainty,custom_orchestrator_platform,openhands_sdk,OpenHands Software Agent SDK,4.2314228613414375,2.286,0.3233333333333333,0.844,1500
+baseline_uncertainty,custom_orchestrator_platform,cline,Cline / Cline SDK,4.227070675852748,2.3666666666666667,0.31133333333333335,0.824,1500
+baseline_uncertainty,custom_orchestrator_platform,deep_agents,Deep Agents,4.177590514268518,3.2773333333333334,0.214,0.6153333333333333,1500
+baseline_uncertainty,custom_orchestrator_platform,open_swe,Open SWE,4.059054115340755,5.280666666666667,0.05333333333333334,0.22533333333333333,1500
+baseline_uncertainty,custom_orchestrator_platform,openhands_agent_canvas,OpenHands Agent Canvas,4.027971767760656,5.8693333333333335,0.042,0.18133333333333335,1500
+baseline_uncertainty,custom_orchestrator_platform,omnigent,Omnigent,3.91558657269314,7.544666666666667,0.03866666666666667,0.122,1500
+baseline_uncertainty,custom_orchestrator_platform,flue,Flue,3.9912184004526723,6.509333333333333,0.013333333333333334,0.08533333333333333,1500
+baseline_uncertainty,custom_orchestrator_platform,codex_cli,Codex CLI,4.037240886205184,5.69,0.004,0.09733333333333333,1500
+baseline_uncertainty,custom_orchestrator_platform,opencode,OpenCode,3.921109195682703,7.718666666666667,0.0,0.005333333333333333,1500
+baseline_uncertainty,custom_orchestrator_platform,goose,goose,3.822745151972334,9.308,0.0,0.0,1500
+baseline_uncertainty,custom_orchestrator_platform,swe_agent,SWE-agent,3.7035179718491125,10.808,0.0,0.0,1500
+baseline_uncertainty,custom_orchestrator_platform,sandcastle,Sandcastle,3.5784311960894235,12.076666666666666,0.0,0.0,1500
+baseline_uncertainty,custom_orchestrator_platform,aider,Aider,3.5272850596300214,12.633333333333333,0.0,0.0,1500
+baseline_uncertainty,custom_orchestrator_platform,mini_swe_agent,mini-SWE-agent,3.341440587958104,13.891333333333334,0.0,0.0,1500
+baseline_uncertainty,custom_orchestrator_platform,omni_agent,Omni Agent,3.0019347640441034,14.846666666666666,0.0,0.0,1500
+baseline_uncertainty,custom_orchestrator_platform,omniagent,OmniAgent,2.488141866406389,15.953333333333333,0.0,0.0,1500
+baseline_uncertainty,custom_orchestrator_platform,anchor,Anchor,1.8449670373128522,16.94,0.0,0.0,1500
+baseline_uncertainty,secure_autonomous_prs,codex_cli,Codex CLI,4.2097103753534135,2.606,0.2813333333333333,0.748,1500
+baseline_uncertainty,secure_autonomous_prs,openhands_sdk,OpenHands Software Agent SDK,4.197110621431899,2.822,0.21866666666666668,0.6853333333333333,1500
+baseline_uncertainty,secure_autonomous_prs,cline,Cline / Cline SDK,4.189834480000709,2.9546666666666668,0.20933333333333334,0.6446666666666667,1500
+baseline_uncertainty,secure_autonomous_prs,open_swe,Open SWE,4.102525032552286,4.442,0.106,0.3313333333333333,1500
+baseline_uncertainty,secure_autonomous_prs,deep_agents,Deep Agents,4.095826904095333,4.5553333333333335,0.09933333333333333,0.30333333333333334,1500
+baseline_uncertainty,secure_autonomous_prs,omnigent,Omnigent,3.8874673391254375,7.715333333333334,0.043333333333333335,0.11866666666666667,1500
+baseline_uncertainty,secure_autonomous_prs,openhands_agent_canvas,OpenHands Agent Canvas,3.994106437571525,6.150666666666667,0.03866666666666667,0.13866666666666666,1500
+baseline_uncertainty,secure_autonomous_prs,flue,Flue,3.9122409030440557,7.478,0.0033333333333333335,0.029333333333333333,1500
+baseline_uncertainty,secure_autonomous_prs,opencode,OpenCode,3.8349780119839676,8.678666666666667,0.0,0.0006666666666666666,1500
+baseline_uncertainty,secure_autonomous_prs,goose,goose,3.7772876799144415,9.664,0.0,0.0,1500
+baseline_uncertainty,secure_autonomous_prs,swe_agent,SWE-agent,3.7487486039894597,10.099333333333334,0.0,0.0,1500
+baseline_uncertainty,secure_autonomous_prs,sandcastle,Sandcastle,3.6471787473434563,11.292666666666667,0.0,0.0,1500
+baseline_uncertainty,secure_autonomous_prs,aider,Aider,3.5017772171284864,12.829333333333333,0.0,0.0,1500
+baseline_uncertainty,secure_autonomous_prs,mini_swe_agent,mini-SWE-agent,3.2986103127622872,14.025333333333334,0.0,0.0,1500
+baseline_uncertainty,secure_autonomous_prs,omni_agent,Omni Agent,3.0191657079274274,14.738,0.0,0.0,1500
+baseline_uncertainty,secure_autonomous_prs,omniagent,OmniAgent,2.3211907441900066,16.088666666666665,0.0,0.0,1500
+baseline_uncertainty,secure_autonomous_prs,anchor,Anchor,1.8664911161722615,16.86,0.0,0.0,1500
+baseline_uncertainty,quick_local_coding,cline,Cline / Cline SDK,4.351561360551183,1.2493333333333334,0.7926666666666666,0.994,1500
+baseline_uncertainty,quick_local_coding,openhands_sdk,OpenHands Software Agent SDK,4.223652657677299,2.5513333333333335,0.132,0.8226666666666667,1500
+baseline_uncertainty,quick_local_coding,deep_agents,Deep Agents,4.068961674194634,5.339333333333333,0.030666666666666665,0.25466666666666665,1500
+baseline_uncertainty,quick_local_coding,openhands_agent_canvas,OpenHands Agent Canvas,3.989302905322318,6.910666666666667,0.019333333333333334,0.144,1500
+baseline_uncertainty,quick_local_coding,opencode,OpenCode,4.123596273402904,4.198,0.010666666666666666,0.38266666666666665,1500
+baseline_uncertainty,quick_local_coding,codex_cli,Codex CLI,4.084057433560611,4.981333333333334,0.007333333333333333,0.242,1500
+baseline_uncertainty,quick_local_coding,omnigent,Omnigent,3.7583766983828246,10.36,0.006,0.048,1500
+baseline_uncertainty,quick_local_coding,goose,goose,4.025559357905909,6.172,0.0006666666666666666,0.074,1500
+baseline_uncertainty,quick_local_coding,flue,Flue,3.840969365631145,9.517333333333333,0.0006666666666666666,0.011333333333333334,1500
+baseline_uncertainty,quick_local_coding,aider,Aider,3.944210831543966,7.836,0.0,0.014666666666666666,1500
+baseline_uncertainty,quick_local_coding,open_swe,Open SWE,3.8394840794571143,9.596666666666666,0.0,0.012,1500
+baseline_uncertainty,quick_local_coding,swe_agent,SWE-agent,3.7761427411572144,10.790666666666667,0.0,0.0,1500
+baseline_uncertainty,quick_local_coding,mini_swe_agent,mini-SWE-agent,3.605835561598105,12.698,0.0,0.0,1500
+baseline_uncertainty,quick_local_coding,sandcastle,Sandcastle,3.586034890064963,12.848666666666666,0.0,0.0,1500
+baseline_uncertainty,quick_local_coding,omni_agent,Omni Agent,2.8797189236462915,15.280666666666667,0.0,0.0,1500
+baseline_uncertainty,quick_local_coding,omniagent,OmniAgent,2.594174445354157,15.893333333333333,0.0,0.0,1500
+baseline_uncertainty,quick_local_coding,anchor,Anchor,2.182562781547433,16.776666666666667,0.0,0.0,1500
+baseline_uncertainty,research_benchmarking,mini_swe_agent,mini-SWE-agent,4.273138734943131,2.372,0.462,0.796,1500
+baseline_uncertainty,research_benchmarking,swe_agent,SWE-agent,4.223399363075157,2.672,0.234,0.7566666666666667,1500
+baseline_uncertainty,research_benchmarking,openhands_sdk,OpenHands Software Agent SDK,4.181112116847094,3.192,0.14866666666666667,0.6206666666666667,1500
+baseline_uncertainty,research_benchmarking,deep_agents,Deep Agents,4.016705219204238,5.508666666666667,0.09066666666666667,0.30333333333333334,1500
+baseline_uncertainty,research_benchmarking,aider,Aider,4.038467786861985,5.042666666666666,0.025333333333333333,0.23333333333333334,1500
+baseline_uncertainty,research_benchmarking,open_swe,Open SWE,3.8432951932447548,7.809333333333333,0.017333333333333333,0.10933333333333334,1500
+baseline_uncertainty,research_benchmarking,omnigent,Omnigent,3.3129009322998013,12.094,0.009333333333333334,0.03266666666666666,1500
+baseline_uncertainty,research_benchmarking,cline,Cline / Cline SDK,3.9161706689229123,6.8773333333333335,0.004666666666666667,0.062,1500
+baseline_uncertainty,research_benchmarking,codex_cli,Codex CLI,3.8914517558623345,7.294666666666667,0.004,0.037333333333333336,1500
+baseline_uncertainty,research_benchmarking,openhands_agent_canvas,OpenHands Agent Canvas,3.5254776155784686,11.244666666666667,0.002,0.012,1500
+baseline_uncertainty,research_benchmarking,opencode,OpenCode,3.8682681424684877,7.644,0.0013333333333333333,0.028666666666666667,1500
+baseline_uncertainty,research_benchmarking,flue,Flue,3.5916315721803835,10.795333333333334,0.0006666666666666666,0.004,1500
+baseline_uncertainty,research_benchmarking,goose,goose,3.6934661611287227,10.002,0.0,0.0033333333333333335,1500
+baseline_uncertainty,research_benchmarking,sandcastle,Sandcastle,3.314012032012243,12.83,0.0,0.0006666666666666666,1500
+baseline_uncertainty,research_benchmarking,omni_agent,Omni Agent,2.366293414604616,15.488666666666667,0.0,0.0,1500
+baseline_uncertainty,research_benchmarking,omniagent,OmniAgent,2.192569986632755,15.896,0.0,0.0,1500
+baseline_uncertainty,research_benchmarking,anchor,Anchor,2.0071135551342105,16.236666666666668,0.0,0.0,1500
+baseline_uncertainty,enterprise_control_plane,cline,Cline / Cline SDK,4.269186435539426,1.782,0.5206666666666667,0.93,1500
+baseline_uncertainty,enterprise_control_plane,openhands_sdk,OpenHands Software Agent SDK,4.206352869438701,2.632,0.19866666666666666,0.77,1500
+baseline_uncertainty,enterprise_control_plane,deep_agents,Deep Agents,4.154251444689198,3.6146666666666665,0.15066666666666667,0.5393333333333333,1500
+baseline_uncertainty,enterprise_control_plane,openhands_agent_canvas,OpenHands Agent Canvas,4.027928993420407,5.6706666666666665,0.04533333333333334,0.19733333333333333,1500
+baseline_uncertainty,enterprise_control_plane,omnigent,Omnigent,3.9073544279645778,7.554,0.034666666666666665,0.11733333333333333,1500
+baseline_uncertainty,enterprise_control_plane,open_swe,Open SWE,4.029205617113576,5.703333333333333,0.03266666666666666,0.17066666666666666,1500
+baseline_uncertainty,enterprise_control_plane,codex_cli,Codex CLI,4.080463850245636,4.8053333333333335,0.010666666666666666,0.20933333333333334,1500
+baseline_uncertainty,enterprise_control_plane,flue,Flue,3.943573217643948,7.0873333333333335,0.006666666666666667,0.058,1500
+baseline_uncertainty,enterprise_control_plane,opencode,OpenCode,3.9124789810693437,7.708,0.0,0.008,1500
+baseline_uncertainty,enterprise_control_plane,goose,goose,3.819182740675756,9.188,0.0,0.0,1500
+baseline_uncertainty,enterprise_control_plane,swe_agent,SWE-agent,3.6764874570164094,11.012,0.0,0.0,1500
+baseline_uncertainty,enterprise_control_plane,sandcastle,Sandcastle,3.570077954108557,12.012,0.0,0.0,1500
+baseline_uncertainty,enterprise_control_plane,aider,Aider,3.5322681913154823,12.452666666666667,0.0,0.0,1500
+baseline_uncertainty,enterprise_control_plane,mini_swe_agent,mini-SWE-agent,3.241573286954975,14.175333333333333,0.0,0.0,1500
+baseline_uncertainty,enterprise_control_plane,omni_agent,Omni Agent,3.0203291791899263,14.698666666666666,0.0,0.0,1500
+baseline_uncertainty,enterprise_control_plane,omniagent,OmniAgent,2.4427324597814057,15.974666666666666,0.0,0.0,1500
+baseline_uncertainty,enterprise_control_plane,anchor,Anchor,1.829479522455355,16.929333333333332,0.0,0.0,1500
+low_uncertainty,custom_orchestrator_platform,openhands_sdk,OpenHands Software Agent SDK,4.235165707772879,2.034666666666667,0.3526666666666667,0.9266666666666666,1500
+low_uncertainty,custom_orchestrator_platform,cline,Cline / Cline SDK,4.2346888935389595,2.03,0.352,0.938,1500
+low_uncertainty,custom_orchestrator_platform,deep_agents,Deep Agents,4.2038977369794335,2.674,0.242,0.768,1500
+low_uncertainty,custom_orchestrator_platform,omnigent,Omnigent,3.992910936582047,6.788666666666667,0.02266666666666667,0.09333333333333334,1500
+low_uncertainty,custom_orchestrator_platform,open_swe,Open SWE,4.083165019088787,5.099333333333333,0.017333333333333333,0.13533333333333333,1500
+low_uncertainty,custom_orchestrator_platform,openhands_agent_canvas,OpenHands Agent Canvas,4.052309435310664,5.738,0.013333333333333334,0.09733333333333333,1500
+low_uncertainty,custom_orchestrator_platform,flue,Flue,4.004047059756226,6.719333333333333,0.0,0.021333333333333333,1500
+low_uncertainty,custom_orchestrator_platform,codex_cli,Codex CLI,4.044373766918884,5.886666666666667,0.0,0.02,1500
+low_uncertainty,custom_orchestrator_platform,opencode,OpenCode,3.924419954457956,8.363333333333333,0.0,0.0,1500
+low_uncertainty,custom_orchestrator_platform,goose,goose,3.829420400717578,9.768666666666666,0.0,0.0,1500
+low_uncertainty,custom_orchestrator_platform,swe_agent,SWE-agent,3.70746120403195,11.049333333333333,0.0,0.0,1500
+low_uncertainty,custom_orchestrator_platform,sandcastle,Sandcastle,3.588407811496786,12.186,0.0,0.0,1500
+low_uncertainty,custom_orchestrator_platform,aider,Aider,3.5320505532421285,12.725333333333333,0.0,0.0,1500
+low_uncertainty,custom_orchestrator_platform,mini_swe_agent,mini-SWE-agent,3.355463576504755,13.988666666666667,0.0,0.0,1500
+low_uncertainty,custom_orchestrator_platform,omni_agent,Omni Agent,3.0274041385709594,14.964,0.0,0.0,1500
+low_uncertainty,custom_orchestrator_platform,omniagent,OmniAgent,2.4871805401293843,15.986,0.0,0.0,1500
+low_uncertainty,custom_orchestrator_platform,anchor,Anchor,1.804332467552049,16.998,0.0,0.0,1500
+low_uncertainty,secure_autonomous_prs,codex_cli,Codex CLI,4.218207982353154,2.191333333333333,0.368,0.8513333333333334,1500
+low_uncertainty,secure_autonomous_prs,cline,Cline / Cline SDK,4.196917592451953,2.691333333333333,0.22466666666666665,0.7213333333333334,1500
+low_uncertainty,secure_autonomous_prs,openhands_sdk,OpenHands Software Agent SDK,4.199559749220502,2.6266666666666665,0.21933333333333332,0.7493333333333333,1500
+low_uncertainty,secure_autonomous_prs,open_swe,Open SWE,4.131949716318224,4.128,0.09533333333333334,0.32266666666666666,1500
+low_uncertainty,secure_autonomous_prs,deep_agents,Deep Agents,4.109672004029706,4.564666666666667,0.052,0.21933333333333332,1500
+low_uncertainty,secure_autonomous_prs,omnigent,Omnigent,3.968006222338955,6.879333333333333,0.03133333333333333,0.084,1500
+low_uncertainty,secure_autonomous_prs,openhands_agent_canvas,OpenHands Agent Canvas,4.013090519045641,6.184666666666667,0.009333333333333334,0.048666666666666664,1500
+low_uncertainty,secure_autonomous_prs,flue,Flue,3.925350254177985,7.570666666666667,0.0,0.0033333333333333335,1500
+low_uncertainty,secure_autonomous_prs,opencode,OpenCode,3.837699042996015,8.933333333333334,0.0,0.0,1500
+low_uncertainty,secure_autonomous_prs,goose,goose,3.77986175963482,10.05,0.0,0.0,1500
+low_uncertainty,secure_autonomous_prs,swe_agent,SWE-agent,3.7513663206059396,10.561333333333334,0.0,0.0,1500
+low_uncertainty,secure_autonomous_prs,sandcastle,Sandcastle,3.6562355356535337,11.712666666666667,0.0,0.0,1500
+low_uncertainty,secure_autonomous_prs,aider,Aider,3.5064257563042243,12.945333333333334,0.0,0.0,1500
+low_uncertainty,secure_autonomous_prs,mini_swe_agent,mini-SWE-agent,3.3112997470240972,14.056,0.0,0.0,1500
+low_uncertainty,secure_autonomous_prs,omni_agent,Omni Agent,3.038944875948864,14.905333333333333,0.0,0.0,1500
+low_uncertainty,secure_autonomous_prs,omniagent,OmniAgent,2.308099640959322,16.026666666666667,0.0,0.0,1500
+low_uncertainty,secure_autonomous_prs,anchor,Anchor,1.8317377369166485,16.972666666666665,0.0,0.0,1500
+low_uncertainty,quick_local_coding,cline,Cline / Cline SDK,4.361041736864025,1.03,0.97,1.0,1500
+low_uncertainty,quick_local_coding,openhands_sdk,OpenHands Software Agent SDK,4.226059419061945,2.219333333333333,0.027333333333333334,0.954,1500
+low_uncertainty,quick_local_coding,openhands_agent_canvas,OpenHands Agent Canvas,4.013222598932561,6.5553333333333335,0.0013333333333333333,0.09733333333333333,1500
+low_uncertainty,quick_local_coding,omnigent,Omnigent,3.833077856724593,10.000666666666667,0.0013333333333333333,0.023333333333333334,1500
+low_uncertainty,quick_local_coding,opencode,OpenCode,4.129335005640112,3.828666666666667,0.0,0.45266666666666666,1500
+low_uncertainty,quick_local_coding,deep_agents,Deep Agents,4.089355129193874,4.820666666666667,0.0,0.266,1500
+low_uncertainty,quick_local_coding,codex_cli,Codex CLI,4.090046736861307,4.75,0.0,0.19,1500
+low_uncertainty,quick_local_coding,goose,goose,4.029565503264594,6.244,0.0,0.015333333333333332,1500
+low_uncertainty,quick_local_coding,open_swe,Open SWE,3.8586307198767584,9.828666666666667,0.0,0.0013333333333333333,1500
+low_uncertainty,quick_local_coding,aider,Aider,3.9538007626261593,8.022666666666666,0.0,0.0,1500
+low_uncertainty,quick_local_coding,flue,Flue,3.8544846454331223,9.842,0.0,0.0,1500
+low_uncertainty,quick_local_coding,swe_agent,SWE-agent,3.7803603575405664,11.27,0.0,0.0,1500
+low_uncertainty,quick_local_coding,mini_swe_agent,mini-SWE-agent,3.6236740924315054,13.159333333333333,0.0,0.0,1500
+low_uncertainty,quick_local_coding,sandcastle,Sandcastle,3.5919084426043533,13.428666666666667,0.0,0.0,1500
+low_uncertainty,quick_local_coding,omni_agent,Omni Agent,2.892084811217059,15.142666666666667,0.0,0.0,1500
+low_uncertainty,quick_local_coding,omniagent,OmniAgent,2.594133736433195,15.915333333333333,0.0,0.0,1500
+low_uncertainty,quick_local_coding,anchor,Anchor,2.1701659093960677,16.942,0.0,0.0,1500
+low_uncertainty,research_benchmarking,mini_swe_agent,mini-SWE-agent,4.321834033392642,1.5226666666666666,0.694,0.946,1500
+low_uncertainty,research_benchmarking,swe_agent,SWE-agent,4.239882958421498,2.206,0.21266666666666667,0.914,1500
+low_uncertainty,research_benchmarking,openhands_sdk,OpenHands Software Agent SDK,4.184200713902649,2.8646666666666665,0.074,0.7813333333333333,1500
+low_uncertainty,research_benchmarking,deep_agents,Deep Agents,4.027181703901216,5.128666666666667,0.015333333333333332,0.19666666666666666,1500
+low_uncertainty,research_benchmarking,aider,Aider,4.045549489146655,4.689333333333333,0.002,0.12866666666666668,1500
+low_uncertainty,research_benchmarking,open_swe,Open SWE,3.8505013683331617,7.846,0.002,0.018666666666666668,1500
+low_uncertainty,research_benchmarking,cline,Cline / Cline SDK,3.9173670890003494,6.772,0.0,0.007333333333333333,1500
+low_uncertainty,research_benchmarking,codex_cli,Codex CLI,3.8910768639415982,7.273333333333333,0.0,0.0033333333333333335,1500
+low_uncertainty,research_benchmarking,omnigent,Omnigent,3.3536304186498502,12.662666666666667,0.0,0.0026666666666666666,1500
+low_uncertainty,research_benchmarking,opencode,OpenCode,3.8709356243647557,7.644,0.0,0.0013333333333333333,1500
+low_uncertainty,research_benchmarking,goose,goose,3.6952541594733326,10.241333333333333,0.0,0.0,1500
+low_uncertainty,research_benchmarking,flue,Flue,3.595823892593042,11.18,0.0,0.0,1500
+low_uncertainty,research_benchmarking,openhands_agent_canvas,OpenHands Agent Canvas,3.531836334090543,11.712,0.0,0.0,1500
+low_uncertainty,research_benchmarking,sandcastle,Sandcastle,3.3138043122173833,13.276,0.0,0.0,1500
+low_uncertainty,research_benchmarking,omni_agent,Omni Agent,2.358519966226376,15.511333333333333,0.0,0.0,1500
+low_uncertainty,research_benchmarking,omniagent,OmniAgent,2.1780277831292567,15.994666666666667,0.0,0.0,1500
+low_uncertainty,research_benchmarking,anchor,Anchor,1.9745967830448605,16.47533333333333,0.0,0.0,1500
+low_uncertainty,enterprise_control_plane,cline,Cline / Cline SDK,4.276291783562268,1.3613333333333333,0.7206666666666667,0.988,1500
+low_uncertainty,enterprise_control_plane,openhands_sdk,OpenHands Software Agent SDK,4.21085214855695,2.4166666666666665,0.13066666666666665,0.8973333333333333,1500
+low_uncertainty,enterprise_control_plane,deep_agents,Deep Agents,4.176800888438853,3.1486666666666667,0.11533333333333333,0.6653333333333333,1500
+low_uncertainty,enterprise_control_plane,omnigent,Omnigent,3.9878379327169253,6.759333333333333,0.015333333333333332,0.09733333333333333,1500
+low_uncertainty,enterprise_control_plane,openhands_agent_canvas,OpenHands Agent Canvas,4.053546336911772,5.537333333333334,0.009333333333333334,0.13266666666666665,1500
+low_uncertainty,enterprise_control_plane,open_swe,Open SWE,4.055797548588584,5.539333333333333,0.008666666666666666,0.106,1500
+low_uncertainty,enterprise_control_plane,codex_cli,Codex CLI,4.087165255390184,4.874,0.0,0.106,1500
+low_uncertainty,enterprise_control_plane,flue,Flue,3.9560441699466398,7.468666666666667,0.0,0.007333333333333333,1500
+low_uncertainty,enterprise_control_plane,opencode,OpenCode,3.9160637477052083,8.266,0.0,0.0,1500
+low_uncertainty,enterprise_control_plane,goose,goose,3.8240964369897035,9.676,0.0,0.0,1500
+low_uncertainty,enterprise_control_plane,swe_agent,SWE-agent,3.679591858913418,11.149333333333333,0.0,0.0,1500
+low_uncertainty,enterprise_control_plane,sandcastle,Sandcastle,3.5760203810512157,12.212,0.0,0.0,1500
+low_uncertainty,enterprise_control_plane,aider,Aider,3.538154491868905,12.602,0.0,0.0,1500
+low_uncertainty,enterprise_control_plane,mini_swe_agent,mini-SWE-agent,3.2530301949783995,14.144,0.0,0.0,1500
+low_uncertainty,enterprise_control_plane,omni_agent,Omni Agent,3.03906614364832,14.858,0.0,0.0,1500
+low_uncertainty,enterprise_control_plane,omniagent,OmniAgent,2.437874396472089,15.995333333333333,0.0,0.0,1500
+low_uncertainty,enterprise_control_plane,anchor,Anchor,1.8017482864875127,16.992,0.0,0.0,1500
+high_score_uncertainty,custom_orchestrator_platform,openhands_sdk,OpenHands Software Agent SDK,4.217075680056351,2.504,0.30133333333333334,0.7893333333333333,1500
+high_score_uncertainty,custom_orchestrator_platform,cline,Cline / Cline SDK,4.204057021319221,2.6246666666666667,0.294,0.7466666666666667,1500
+high_score_uncertainty,custom_orchestrator_platform,deep_agents,Deep Agents,4.115847595521822,4.03,0.18266666666666667,0.5006666666666667,1500
+high_score_uncertainty,custom_orchestrator_platform,open_swe,Open SWE,3.9978972091610667,5.726,0.06533333333333333,0.24533333333333332,1500
+high_score_uncertainty,custom_orchestrator_platform,openhands_agent_canvas,OpenHands Agent Canvas,3.9595763797373227,6.344666666666667,0.056666666666666664,0.212,1500
+high_score_uncertainty,custom_orchestrator_platform,omnigent,Omnigent,3.762193264215577,8.827333333333334,0.036,0.11133333333333334,1500
+high_score_uncertainty,custom_orchestrator_platform,flue,Flue,3.9467366810514166,6.531333333333333,0.035333333333333335,0.16066666666666668,1500
+high_score_uncertainty,custom_orchestrator_platform,codex_cli,Codex CLI,4.019125188593152,5.354666666666667,0.023333333333333334,0.18533333333333332,1500
+high_score_uncertainty,custom_orchestrator_platform,opencode,OpenCode,3.908396774692292,7.128666666666667,0.004666666666666667,0.034666666666666665,1500
+high_score_uncertainty,custom_orchestrator_platform,goose,goose,3.8074973506572825,8.712666666666667,0.0006666666666666666,0.01,1500
+high_score_uncertainty,custom_orchestrator_platform,swe_agent,SWE-agent,3.6918032156232408,10.258,0.0,0.0013333333333333333,1500
+high_score_uncertainty,custom_orchestrator_platform,sandcastle,Sandcastle,3.5448903210746745,11.676,0.0,0.0013333333333333333,1500
+high_score_uncertainty,custom_orchestrator_platform,omni_agent,Omni Agent,2.9239212765537563,14.771333333333333,0.0,0.0013333333333333333,1500
+high_score_uncertainty,custom_orchestrator_platform,aider,Aider,3.5143381200247648,12.262,0.0,0.0,1500
+high_score_uncertainty,custom_orchestrator_platform,mini_swe_agent,mini-SWE-agent,3.3111953638281992,13.594666666666667,0.0,0.0,1500
+high_score_uncertainty,custom_orchestrator_platform,omniagent,OmniAgent,2.4898417669767587,15.872666666666667,0.0,0.0,1500
+high_score_uncertainty,custom_orchestrator_platform,anchor,Anchor,1.9413555863343266,16.781333333333333,0.0,0.0,1500
+high_score_uncertainty,secure_autonomous_prs,openhands_sdk,OpenHands Software Agent SDK,4.185308030242991,2.9146666666666667,0.238,0.67,1500
+high_score_uncertainty,secure_autonomous_prs,codex_cli,Codex CLI,4.187249055720783,2.8866666666666667,0.23066666666666666,0.676,1500
+high_score_uncertainty,secure_autonomous_prs,cline,Cline / Cline SDK,4.1676694014944315,3.1233333333333335,0.19866666666666666,0.6193333333333333,1500
+high_score_uncertainty,secure_autonomous_prs,deep_agents,Deep Agents,4.048140400213723,4.9206666666666665,0.108,0.338,1500
+high_score_uncertainty,secure_autonomous_prs,open_swe,Open SWE,4.036513161727345,5.1,0.10133333333333333,0.30333333333333334,1500
+high_score_uncertainty,secure_autonomous_prs,openhands_agent_canvas,OpenHands Agent Canvas,3.9337410963372994,6.537333333333334,0.064,0.18666666666666668,1500
+high_score_uncertainty,secure_autonomous_prs,omnigent,Omnigent,3.730729738931118,9.068666666666667,0.03666666666666667,0.10666666666666667,1500
+high_score_uncertainty,secure_autonomous_prs,flue,Flue,3.869751572036876,7.518,0.020666666666666667,0.084,1500
+high_score_uncertainty,secure_autonomous_prs,sandcastle,Sandcastle,3.613022610365994,10.809333333333333,0.0006666666666666666,0.007333333333333333,1500
+high_score_uncertainty,secure_autonomous_prs,goose,goose,3.7685784986584356,9.030666666666667,0.0006666666666666666,0.002,1500
+high_score_uncertainty,secure_autonomous_prs,omni_agent,Omni Agent,2.94756795630707,14.589333333333334,0.0006666666666666666,0.0006666666666666666,1500
+high_score_uncertainty,secure_autonomous_prs,opencode,OpenCode,3.8249899514641688,8.18,0.0,0.004666666666666667,1500
+high_score_uncertainty,secure_autonomous_prs,swe_agent,SWE-agent,3.7393660621090112,9.458666666666666,0.0,0.0013333333333333333,1500
+high_score_uncertainty,secure_autonomous_prs,aider,Aider,3.48916541252567,12.415333333333333,0.0,0.0,1500
+high_score_uncertainty,secure_autonomous_prs,mini_swe_agent,mini-SWE-agent,3.269016611231417,13.7,0.0,0.0,1500
+high_score_uncertainty,secure_autonomous_prs,omniagent,OmniAgent,2.352230875866179,16.032666666666668,0.0,0.0,1500
+high_score_uncertainty,secure_autonomous_prs,anchor,Anchor,1.9557226239964611,16.714666666666666,0.0,0.0,1500
+high_score_uncertainty,quick_local_coding,cline,Cline / Cline SDK,4.323977585315885,1.6766666666666667,0.6,0.934,1500
+high_score_uncertainty,quick_local_coding,openhands_sdk,OpenHands Software Agent SDK,4.210850406304669,2.932,0.20066666666666666,0.7,1500
+high_score_uncertainty,quick_local_coding,deep_agents,Deep Agents,4.015832446051259,6.038666666666667,0.06133333333333333,0.23933333333333334,1500
+high_score_uncertainty,quick_local_coding,opencode,OpenCode,4.106425082012218,4.463333333333333,0.04,0.36466666666666664,1500
+high_score_uncertainty,quick_local_coding,openhands_agent_canvas,OpenHands Agent Canvas,3.9227129950985495,7.518666666666666,0.038,0.15266666666666667,1500
+high_score_uncertainty,quick_local_coding,codex_cli,Codex CLI,4.067126331712164,5.078666666666667,0.021333333333333333,0.2733333333333333,1500
+high_score_uncertainty,quick_local_coding,omnigent,Omnigent,3.615798951531642,10.962,0.016666666666666666,0.056666666666666664,1500
+high_score_uncertainty,quick_local_coding,goose,goose,4.0131686390783505,6.016,0.011333333333333334,0.14733333333333334,1500
+high_score_uncertainty,quick_local_coding,flue,Flue,3.800304739744219,9.324,0.004666666666666667,0.050666666666666665,1500
+high_score_uncertainty,quick_local_coding,open_swe,Open SWE,3.7910685397609227,9.442,0.004,0.037333333333333336,1500
+high_score_uncertainty,quick_local_coding,aider,Aider,3.9209284520195427,7.685333333333333,0.0013333333333333333,0.037333333333333336,1500
+high_score_uncertainty,quick_local_coding,omni_agent,Omni Agent,2.827309513114288,15.220666666666666,0.0006666666666666666,0.0006666666666666666,1500
+high_score_uncertainty,quick_local_coding,sandcastle,Sandcastle,3.557911932247438,12.056666666666667,0.0,0.004,1500
+high_score_uncertainty,quick_local_coding,mini_swe_agent,mini-SWE-agent,3.5652949929260265,12.114666666666666,0.0,0.0013333333333333333,1500
+high_score_uncertainty,quick_local_coding,swe_agent,SWE-agent,3.763909542945589,10.088,0.0,0.0006666666666666666,1500
+high_score_uncertainty,quick_local_coding,omniagent,OmniAgent,2.5798197076631784,15.844,0.0,0.0,1500
+high_score_uncertainty,quick_local_coding,anchor,Anchor,2.2254886226891686,16.538666666666668,0.0,0.0,1500
+high_score_uncertainty,research_benchmarking,mini_swe_agent,mini-SWE-agent,4.192780396272349,3.675333333333333,0.27466666666666667,0.6006666666666667,1500
+high_score_uncertainty,research_benchmarking,openhands_sdk,OpenHands Software Agent SDK,4.169251048223427,3.7933333333333334,0.18533333333333332,0.524,1500
+high_score_uncertainty,research_benchmarking,swe_agent,SWE-agent,4.192727250132038,3.4186666666666667,0.18333333333333332,0.6166666666666667,1500
+high_score_uncertainty,research_benchmarking,deep_agents,Deep Agents,3.9779378653594435,6.126666666666667,0.14133333333333334,0.32133333333333336,1500
+high_score_uncertainty,research_benchmarking,aider,Aider,4.021367479826488,5.512,0.058,0.262,1500
+high_score_uncertainty,research_benchmarking,open_swe,Open SWE,3.8075303912436733,7.8486666666666665,0.04933333333333333,0.16866666666666666,1500
+high_score_uncertainty,research_benchmarking,omnigent,Omnigent,3.216096083172767,11.716666666666667,0.024,0.066,1500
+high_score_uncertainty,research_benchmarking,openhands_agent_canvas,OpenHands Agent Canvas,3.4926632027902773,10.714,0.020666666666666667,0.056,1500
+high_score_uncertainty,research_benchmarking,codex_cli,Codex CLI,3.8854605475076758,7.215333333333334,0.02,0.09733333333333333,1500
+high_score_uncertainty,research_benchmarking,cline,Cline / Cline SDK,3.9035127705183963,6.986666666666666,0.018,0.11866666666666667,1500
+high_score_uncertainty,research_benchmarking,opencode,OpenCode,3.8555743730287664,7.612,0.01,0.08,1500
+high_score_uncertainty,research_benchmarking,flue,Flue,3.568827482320297,10.295333333333334,0.01,0.04666666666666667,1500
+high_score_uncertainty,research_benchmarking,sandcastle,Sandcastle,3.300100549998843,12.18,0.0033333333333333335,0.014666666666666666,1500
+high_score_uncertainty,research_benchmarking,goose,goose,3.682851942059172,9.618,0.0013333333333333333,0.018666666666666668,1500
+high_score_uncertainty,research_benchmarking,omni_agent,Omni Agent,2.385072308451162,15.01,0.0006666666666666666,0.005333333333333333,1500
+high_score_uncertainty,research_benchmarking,omniagent,OmniAgent,2.236552109028113,15.472666666666667,0.0,0.0026666666666666666,1500
+high_score_uncertainty,research_benchmarking,anchor,Anchor,2.0884244229020967,15.804666666666666,0.0,0.0006666666666666666,1500
+high_score_uncertainty,enterprise_control_plane,cline,Cline / Cline SDK,4.246854850532406,2.166,0.4093333333333333,0.8426666666666667,1500
+high_score_uncertainty,enterprise_control_plane,openhands_sdk,OpenHands Software Agent SDK,4.191959200981042,2.7933333333333334,0.232,0.706,1500
+high_score_uncertainty,enterprise_control_plane,deep_agents,Deep Agents,4.096916352467629,4.260666666666666,0.148,0.44333333333333336,1500
+high_score_uncertainty,enterprise_control_plane,openhands_agent_canvas,OpenHands Agent Canvas,3.959312182873393,6.199333333333334,0.066,0.22,1500
+high_score_uncertainty,enterprise_control_plane,open_swe,Open SWE,3.96693828766018,6.115333333333333,0.04666666666666667,0.20066666666666666,1500
+high_score_uncertainty,enterprise_control_plane,omnigent,Omnigent,3.7525922725614116,8.88,0.03866666666666667,0.10133333333333333,1500
+high_score_uncertainty,enterprise_control_plane,codex_cli,Codex CLI,4.061746142947186,4.618,0.034,0.302,1500
+high_score_uncertainty,enterprise_control_plane,flue,Flue,3.902102344504287,7.032666666666667,0.023333333333333334,0.128,1500
+high_score_uncertainty,enterprise_control_plane,opencode,OpenCode,3.9001112763411094,7.152666666666667,0.002,0.04066666666666666,1500
+high_score_uncertainty,enterprise_control_plane,goose,goose,3.8068165692617737,8.530666666666667,0.0,0.009333333333333334,1500
+high_score_uncertainty,enterprise_control_plane,sandcastle,Sandcastle,3.5430219910174072,11.514666666666667,0.0,0.0033333333333333335,1500
+high_score_uncertainty,enterprise_control_plane,swe_agent,SWE-agent,3.6668063429551614,10.462666666666667,0.0,0.002,1500
+high_score_uncertainty,enterprise_control_plane,omni_agent,Omni Agent,2.95012826345756,14.556666666666667,0.0,0.0006666666666666666,1500
+high_score_uncertainty,enterprise_control_plane,aider,Aider,3.517303833414268,12.100666666666667,0.0,0.0,1500
+high_score_uncertainty,enterprise_control_plane,mini_swe_agent,mini-SWE-agent,3.214579760898753,13.937333333333333,0.0,0.0,1500
+high_score_uncertainty,enterprise_control_plane,omniagent,OmniAgent,2.4523876887492633,15.884666666666666,0.0,0.0,1500
+high_score_uncertainty,enterprise_control_plane,anchor,Anchor,1.9132631338773145,16.794666666666668,0.0,0.0,1500
+volatile_weights,custom_orchestrator_platform,cline,Cline / Cline SDK,4.227318909293062,2.525333333333333,0.30333333333333334,0.784,1500
+volatile_weights,custom_orchestrator_platform,openhands_sdk,OpenHands Software Agent SDK,4.231151086789083,2.4086666666666665,0.296,0.8126666666666666,1500
+volatile_weights,custom_orchestrator_platform,deep_agents,Deep Agents,4.176418024277181,3.43,0.21066666666666667,0.578,1500
+volatile_weights,custom_orchestrator_platform,open_swe,Open SWE,4.0597562757136645,5.346,0.06533333333333333,0.23866666666666667,1500
+volatile_weights,custom_orchestrator_platform,openhands_agent_canvas,OpenHands Agent Canvas,4.027668744602703,5.908666666666667,0.048,0.19,1500
+volatile_weights,custom_orchestrator_platform,omnigent,Omnigent,3.916806095011705,7.55,0.04133333333333333,0.13066666666666665,1500
+volatile_weights,custom_orchestrator_platform,flue,Flue,3.991253315054161,6.525333333333333,0.017333333333333333,0.08666666666666667,1500
+volatile_weights,custom_orchestrator_platform,codex_cli,Codex CLI,4.037092970435891,5.736,0.016666666666666666,0.162,1500
+volatile_weights,custom_orchestrator_platform,opencode,OpenCode,3.9212914025575594,7.64,0.0013333333333333333,0.015333333333333332,1500
+volatile_weights,custom_orchestrator_platform,goose,goose,3.8221259640611365,9.169333333333332,0.0,0.002,1500
+volatile_weights,custom_orchestrator_platform,swe_agent,SWE-agent,3.7030750574952913,10.678666666666667,0.0,0.0,1500
+volatile_weights,custom_orchestrator_platform,sandcastle,Sandcastle,3.5775428449369424,12.018,0.0,0.0,1500
+volatile_weights,custom_orchestrator_platform,aider,Aider,3.5271546071125317,12.566,0.0,0.0,1500
+volatile_weights,custom_orchestrator_platform,mini_swe_agent,mini-SWE-agent,3.3398082061794048,13.822666666666667,0.0,0.0,1500
+volatile_weights,custom_orchestrator_platform,omni_agent,Omni Agent,3.001792608092379,14.801333333333334,0.0,0.0,1500
+volatile_weights,custom_orchestrator_platform,omniagent,OmniAgent,2.4857801535245576,15.952666666666667,0.0,0.0,1500
+volatile_weights,custom_orchestrator_platform,anchor,Anchor,1.8447298492686448,16.921333333333333,0.0,0.0,1500
+volatile_weights,secure_autonomous_prs,codex_cli,Codex CLI,4.209418668596866,2.76,0.26866666666666666,0.704,1500
+volatile_weights,secure_autonomous_prs,cline,Cline / Cline SDK,4.1903388588628525,3.029333333333333,0.21933333333333332,0.6333333333333333,1500
+volatile_weights,secure_autonomous_prs,openhands_sdk,OpenHands Software Agent SDK,4.196761988898063,2.9093333333333335,0.204,0.67,1500
+volatile_weights,secure_autonomous_prs,open_swe,Open SWE,4.101889162179565,4.530666666666667,0.12066666666666667,0.33466666666666667,1500
+volatile_weights,secure_autonomous_prs,deep_agents,Deep Agents,4.097531727058358,4.567333333333333,0.102,0.3273333333333333,1500
+volatile_weights,secure_autonomous_prs,omnigent,Omnigent,3.8861101544113614,7.78,0.043333333333333335,0.12733333333333333,1500
+volatile_weights,secure_autonomous_prs,openhands_agent_canvas,OpenHands Agent Canvas,3.993681561561936,6.2,0.035333333333333335,0.15466666666666667,1500
+volatile_weights,secure_autonomous_prs,flue,Flue,3.9111750435418506,7.511333333333333,0.006666666666666667,0.04533333333333334,1500
+volatile_weights,secure_autonomous_prs,swe_agent,SWE-agent,3.7483185844762312,9.976666666666667,0.0,0.0013333333333333333,1500
+volatile_weights,secure_autonomous_prs,opencode,OpenCode,3.834973287885935,8.640666666666666,0.0,0.0006666666666666666,1500
+volatile_weights,secure_autonomous_prs,goose,goose,3.7777899204482224,9.565333333333333,0.0,0.0006666666666666666,1500
+volatile_weights,secure_autonomous_prs,sandcastle,Sandcastle,3.6467625638245122,11.209333333333333,0.0,0.0006666666666666666,1500
+volatile_weights,secure_autonomous_prs,aider,Aider,3.5015523124169383,12.739333333333333,0.0,0.0,1500
+volatile_weights,secure_autonomous_prs,mini_swe_agent,mini-SWE-agent,3.2979681044134415,13.974666666666666,0.0,0.0,1500
+volatile_weights,secure_autonomous_prs,omni_agent,Omni Agent,3.017938769297212,14.676666666666666,0.0,0.0,1500
+volatile_weights,secure_autonomous_prs,omniagent,OmniAgent,2.3212059104441494,16.08,0.0,0.0,1500
+volatile_weights,secure_autonomous_prs,anchor,Anchor,1.8665970105154017,16.849333333333334,0.0,0.0,1500
+volatile_weights,quick_local_coding,cline,Cline / Cline SDK,4.35101004349066,1.3346666666666667,0.7513333333333333,0.9813333333333333,1500
+volatile_weights,quick_local_coding,openhands_sdk,OpenHands Software Agent SDK,4.224253768024406,2.706,0.142,0.7746666666666666,1500
+volatile_weights,quick_local_coding,deep_agents,Deep Agents,4.069309611381279,5.441333333333334,0.03666666666666667,0.264,1500
+volatile_weights,quick_local_coding,openhands_agent_canvas,OpenHands Agent Canvas,3.988808155551076,6.962666666666666,0.023333333333333334,0.14466666666666667,1500
+volatile_weights,quick_local_coding,codex_cli,Codex CLI,4.084328397182724,5.121333333333333,0.022,0.3,1500
+volatile_weights,quick_local_coding,opencode,OpenCode,4.122189391038607,4.349333333333333,0.015333333333333332,0.342,1500
+volatile_weights,quick_local_coding,omnigent,Omnigent,3.7591610471872925,10.223333333333333,0.006666666666666667,0.050666666666666665,1500
+volatile_weights,quick_local_coding,goose,goose,4.0242803947953885,6.252,0.0013333333333333333,0.08,1500
+volatile_weights,quick_local_coding,flue,Flue,3.841128073871015,9.449333333333334,0.0013333333333333333,0.014666666666666666,1500
+volatile_weights,quick_local_coding,aider,Aider,3.941507721593025,7.881333333333333,0.0,0.027333333333333334,1500
+volatile_weights,quick_local_coding,open_swe,Open SWE,3.8403106779231293,9.421333333333333,0.0,0.02,1500
+volatile_weights,quick_local_coding,mini_swe_agent,mini-SWE-agent,3.6025332006780593,12.543333333333333,0.0,0.0006666666666666666,1500
+volatile_weights,quick_local_coding,swe_agent,SWE-agent,3.775526785304126,10.678666666666667,0.0,0.0,1500
+volatile_weights,quick_local_coding,sandcastle,Sandcastle,3.5865045183074233,12.715333333333334,0.0,0.0,1500
+volatile_weights,quick_local_coding,omni_agent,Omni Agent,2.8820014309061177,15.288666666666666,0.0,0.0,1500
+volatile_weights,quick_local_coding,omniagent,OmniAgent,2.5949229881803855,15.888,0.0,0.0,1500
+volatile_weights,quick_local_coding,anchor,Anchor,2.1802931977772357,16.743333333333332,0.0,0.0,1500
+volatile_weights,research_benchmarking,mini_swe_agent,mini-SWE-agent,4.261976893161807,2.632,0.412,0.762,1500
+volatile_weights,research_benchmarking,swe_agent,SWE-agent,4.215577999150794,2.994666666666667,0.23066666666666666,0.6893333333333334,1500
+volatile_weights,research_benchmarking,openhands_sdk,OpenHands Software Agent SDK,4.182244946747478,3.1886666666666668,0.16933333333333334,0.62,1500
+volatile_weights,research_benchmarking,deep_agents,Deep Agents,4.018999341424869,5.538,0.09666666666666666,0.30533333333333335,1500
+volatile_weights,research_benchmarking,aider,Aider,4.035888069986978,5.107333333333333,0.036,0.25133333333333335,1500
+volatile_weights,research_benchmarking,open_swe,Open SWE,3.8422402172031513,7.89,0.020666666666666667,0.112,1500
+volatile_weights,research_benchmarking,cline,Cline / Cline SDK,3.924185654786198,6.686,0.012,0.098,1500
+volatile_weights,research_benchmarking,omnigent,Omnigent,3.3201476341586345,12.073333333333334,0.01,0.03666666666666667,1500
+volatile_weights,research_benchmarking,codex_cli,Codex CLI,3.8958485570626884,7.198,0.005333333333333333,0.06066666666666667,1500
+volatile_weights,research_benchmarking,opencode,OpenCode,3.873238211631199,7.539333333333333,0.004666666666666667,0.04133333333333333,1500
+volatile_weights,research_benchmarking,openhands_agent_canvas,OpenHands Agent Canvas,3.535760536092701,11.144,0.0026666666666666666,0.012666666666666666,1500
+volatile_weights,research_benchmarking,goose,goose,3.700784484996562,9.894666666666666,0.0,0.004666666666666667,1500
+volatile_weights,research_benchmarking,flue,Flue,3.5982353771973923,10.733333333333333,0.0,0.004666666666666667,1500
+volatile_weights,research_benchmarking,sandcastle,Sandcastle,3.3192840357980433,12.793333333333333,0.0,0.0006666666666666666,1500
+volatile_weights,research_benchmarking,omni_agent,Omni Agent,2.376059455654067,15.458,0.0,0.0006666666666666666,1500
+volatile_weights,research_benchmarking,omniagent,OmniAgent,2.197664119824736,15.89,0.0,0.0,1500
+volatile_weights,research_benchmarking,anchor,Anchor,2.0121535035763274,16.239333333333335,0.0,0.0,1500
+volatile_weights,enterprise_control_plane,cline,Cline / Cline SDK,4.268253918412155,1.9686666666666666,0.47,0.888,1500
+volatile_weights,enterprise_control_plane,openhands_sdk,OpenHands Software Agent SDK,4.2055935293599855,2.7693333333333334,0.18666666666666668,0.7293333333333333,1500
+volatile_weights,enterprise_control_plane,deep_agents,Deep Agents,4.153635029604214,3.743333333333333,0.164,0.5166666666666667,1500
+volatile_weights,enterprise_control_plane,openhands_agent_canvas,OpenHands Agent Canvas,4.026727393239803,5.737333333333333,0.05,0.202,1500
+volatile_weights,enterprise_control_plane,open_swe,Open SWE,4.0291060293403325,5.751333333333333,0.04733333333333333,0.17733333333333334,1500
+volatile_weights,enterprise_control_plane,omnigent,Omnigent,3.9073328785944366,7.536,0.04066666666666666,0.13733333333333334,1500
+volatile_weights,enterprise_control_plane,codex_cli,Codex CLI,4.081017887583133,4.862666666666667,0.03333333333333333,0.262,1500
+volatile_weights,enterprise_control_plane,flue,Flue,3.9428162302046657,7.1066666666666665,0.008,0.06866666666666667,1500
+volatile_weights,enterprise_control_plane,opencode,OpenCode,3.9117446141963996,7.6066666666666665,0.0,0.017333333333333333,1500
+volatile_weights,enterprise_control_plane,goose,goose,3.818297481420346,9.062666666666667,0.0,0.0013333333333333333,1500
+volatile_weights,enterprise_control_plane,swe_agent,SWE-agent,3.675939647323267,10.928666666666667,0.0,0.0,1500
+volatile_weights,enterprise_control_plane,sandcastle,Sandcastle,3.57009420386001,11.939333333333334,0.0,0.0,1500
+volatile_weights,enterprise_control_plane,aider,Aider,3.531784503522547,12.324,0.0,0.0,1500
+volatile_weights,enterprise_control_plane,mini_swe_agent,mini-SWE-agent,3.24070669647933,14.13,0.0,0.0,1500
+volatile_weights,enterprise_control_plane,omni_agent,Omni Agent,3.018776743869245,14.654666666666667,0.0,0.0,1500
+volatile_weights,enterprise_control_plane,omniagent,OmniAgent,2.4418060483474275,15.963333333333333,0.0,0.0,1500
+volatile_weights,enterprise_control_plane,anchor,Anchor,1.826770038534736,16.915333333333333,0.0,0.0,1500
+high_all_uncertainty,custom_orchestrator_platform,openhands_sdk,OpenHands Software Agent SDK,4.217082892238574,2.606,0.2926666666666667,0.7553333333333333,1500
+high_all_uncertainty,custom_orchestrator_platform,cline,Cline / Cline SDK,4.20378558815544,2.762,0.2806666666666667,0.7193333333333334,1500
+high_all_uncertainty,custom_orchestrator_platform,deep_agents,Deep Agents,4.114614990992076,4.17,0.17,0.478,1500
+high_all_uncertainty,custom_orchestrator_platform,open_swe,Open SWE,3.9988510886622772,5.792666666666666,0.076,0.25533333333333336,1500
+high_all_uncertainty,custom_orchestrator_platform,openhands_agent_canvas,OpenHands Agent Canvas,3.9593164949972923,6.386666666666667,0.058666666666666666,0.22133333333333333,1500
+high_all_uncertainty,custom_orchestrator_platform,omnigent,Omnigent,3.764044988166934,8.788,0.04066666666666666,0.12266666666666666,1500
+high_all_uncertainty,custom_orchestrator_platform,codex_cli,Codex CLI,4.018971419643474,5.433333333333334,0.038,0.22,1500
+high_all_uncertainty,custom_orchestrator_platform,flue,Flue,3.947226304125023,6.551333333333333,0.037333333333333336,0.16333333333333333,1500
+high_all_uncertainty,custom_orchestrator_platform,opencode,OpenCode,3.9085001417435237,7.1513333333333335,0.004666666666666667,0.04466666666666667,1500
+high_all_uncertainty,custom_orchestrator_platform,goose,goose,3.8068337206969027,8.644666666666666,0.0006666666666666666,0.008666666666666666,1500
+high_all_uncertainty,custom_orchestrator_platform,sandcastle,Sandcastle,3.544194959321895,11.574666666666667,0.0006666666666666666,0.005333333333333333,1500
+high_all_uncertainty,custom_orchestrator_platform,swe_agent,SWE-agent,3.6913951335801176,10.170666666666667,0.0,0.004666666666666667,1500
+high_all_uncertainty,custom_orchestrator_platform,omni_agent,Omni Agent,2.9232377746145515,14.686,0.0,0.0013333333333333333,1500
+high_all_uncertainty,custom_orchestrator_platform,aider,Aider,3.5141826539684327,12.171333333333333,0.0,0.0,1500
+high_all_uncertainty,custom_orchestrator_platform,mini_swe_agent,mini-SWE-agent,3.30980035177779,13.498666666666667,0.0,0.0,1500
+high_all_uncertainty,custom_orchestrator_platform,omniagent,OmniAgent,2.48668276405664,15.848666666666666,0.0,0.0,1500
+high_all_uncertainty,custom_orchestrator_platform,anchor,Anchor,1.9416795431140226,16.764,0.0,0.0,1500
+high_all_uncertainty,secure_autonomous_prs,codex_cli,Codex CLI,4.186890560115465,2.9953333333333334,0.23333333333333334,0.662,1500
+high_all_uncertainty,secure_autonomous_prs,openhands_sdk,OpenHands Software Agent SDK,4.184795222211412,3.0326666666666666,0.22666666666666666,0.6406666666666667,1500
+high_all_uncertainty,secure_autonomous_prs,cline,Cline / Cline SDK,4.167961546170246,3.2346666666666666,0.19866666666666666,0.6026666666666667,1500
+high_all_uncertainty,secure_autonomous_prs,deep_agents,Deep Agents,4.050486305271752,5.010666666666666,0.11266666666666666,0.33466666666666667,1500
+high_all_uncertainty,secure_autonomous_prs,open_swe,Open SWE,4.03552775381616,5.202,0.10733333333333334,0.31533333333333335,1500
+high_all_uncertainty,secure_autonomous_prs,openhands_agent_canvas,OpenHands Agent Canvas,3.9329774432419464,6.584666666666666,0.059333333333333335,0.20066666666666666,1500
+high_all_uncertainty,secure_autonomous_prs,omnigent,Omnigent,3.728575869591416,9.05,0.04066666666666666,0.118,1500
+high_all_uncertainty,secure_autonomous_prs,flue,Flue,3.8679796526991375,7.5633333333333335,0.019333333333333334,0.096,1500
+high_all_uncertainty,secure_autonomous_prs,sandcastle,Sandcastle,3.6127211815274634,10.702,0.0006666666666666666,0.008,1500
+high_all_uncertainty,secure_autonomous_prs,goose,goose,3.7692340896470213,8.956,0.0006666666666666666,0.005333333333333333,1500
+high_all_uncertainty,secure_autonomous_prs,omni_agent,Omni Agent,2.9456435344790077,14.504666666666667,0.0006666666666666666,0.0006666666666666666,1500
+high_all_uncertainty,secure_autonomous_prs,opencode,OpenCode,3.8248585715652292,8.157333333333334,0.0,0.010666666666666666,1500
+high_all_uncertainty,secure_autonomous_prs,swe_agent,SWE-agent,3.739101247058946,9.392666666666667,0.0,0.004666666666666667,1500
+high_all_uncertainty,secure_autonomous_prs,omniagent,OmniAgent,2.352209177647545,16.003333333333334,0.0,0.0006666666666666666,1500
+high_all_uncertainty,secure_autonomous_prs,aider,Aider,3.488910150001138,12.282666666666668,0.0,0.0,1500
+high_all_uncertainty,secure_autonomous_prs,mini_swe_agent,mini-SWE-agent,3.268568671089512,13.638,0.0,0.0,1500
+high_all_uncertainty,secure_autonomous_prs,anchor,Anchor,1.9555416899413245,16.69,0.0,0.0,1500
+high_all_uncertainty,quick_local_coding,cline,Cline / Cline SDK,4.323414872241717,1.7933333333333332,0.562,0.9133333333333333,1500
+high_all_uncertainty,quick_local_coding,openhands_sdk,OpenHands Software Agent SDK,4.211902029025563,3.0633333333333335,0.20466666666666666,0.6713333333333333,1500
+high_all_uncertainty,quick_local_coding,deep_agents,Deep Agents,4.015806756452519,6.106,0.064,0.24466666666666667,1500
+high_all_uncertainty,quick_local_coding,openhands_agent_canvas,OpenHands Agent Canvas,3.9219974938369737,7.532,0.04666666666666667,0.15866666666666668,1500
+high_all_uncertainty,quick_local_coding,opencode,OpenCode,4.105075645351126,4.609333333333334,0.03933333333333333,0.3373333333333333,1500
+high_all_uncertainty,quick_local_coding,codex_cli,Codex CLI,4.067466921280642,5.19,0.03666666666666667,0.30266666666666664,1500
+high_all_uncertainty,quick_local_coding,omnigent,Omnigent,3.616043841003102,10.820666666666666,0.019333333333333334,0.06066666666666667,1500
+high_all_uncertainty,quick_local_coding,goose,goose,4.011791559556286,6.104,0.014666666666666666,0.148,1500
+high_all_uncertainty,quick_local_coding,flue,Flue,3.8003943292604294,9.259333333333334,0.005333333333333333,0.05533333333333333,1500
+high_all_uncertainty,quick_local_coding,open_swe,Open SWE,3.7917527462841547,9.371333333333334,0.005333333333333333,0.05,1500
+high_all_uncertainty,quick_local_coding,aider,Aider,3.9182047743716177,7.718,0.0013333333333333333,0.048,1500
+high_all_uncertainty,quick_local_coding,omni_agent,Omni Agent,2.830563572974242,15.161333333333333,0.0006666666666666666,0.0006666666666666666,1500
+high_all_uncertainty,quick_local_coding,sandcastle,Sandcastle,3.558360739554842,11.956666666666667,0.0,0.006,1500
+high_all_uncertainty,quick_local_coding,mini_swe_agent,mini-SWE-agent,3.562003731942619,12.010666666666667,0.0,0.002,1500
+high_all_uncertainty,quick_local_coding,swe_agent,SWE-agent,3.7635855500187185,9.976,0.0,0.0013333333333333333,1500
+high_all_uncertainty,quick_local_coding,omniagent,OmniAgent,2.580939798226617,15.818,0.0,0.0,1500
+high_all_uncertainty,quick_local_coding,anchor,Anchor,2.2234094152687147,16.51,0.0,0.0,1500
+high_all_uncertainty,research_benchmarking,mini_swe_agent,mini-SWE-agent,4.182512680343512,3.9006666666666665,0.256,0.5666666666666667,1500
+high_all_uncertainty,research_benchmarking,openhands_sdk,OpenHands Software Agent SDK,4.170909720432098,3.796666666666667,0.18666666666666668,0.526,1500
+high_all_uncertainty,research_benchmarking,swe_agent,SWE-agent,4.185409040805062,3.648,0.18066666666666667,0.5846666666666667,1500
+high_all_uncertainty,research_benchmarking,deep_agents,Deep Agents,3.9807582203804723,6.1353333333333335,0.146,0.316,1500
+high_all_uncertainty,research_benchmarking,aider,Aider,4.018290237117676,5.573333333333333,0.056666666666666664,0.252,1500
+high_all_uncertainty,research_benchmarking,open_swe,Open SWE,3.806291674992345,7.926,0.05,0.17466666666666666,1500
+high_all_uncertainty,research_benchmarking,omnigent,Omnigent,3.2227211076457896,11.732666666666667,0.024666666666666667,0.06666666666666667,1500
+high_all_uncertainty,research_benchmarking,cline,Cline / Cline SDK,3.9112072518034577,6.84,0.023333333333333334,0.14666666666666667,1500
+high_all_uncertainty,research_benchmarking,codex_cli,Codex CLI,3.889909599096434,7.144,0.02266666666666667,0.11666666666666667,1500
+high_all_uncertainty,research_benchmarking,openhands_agent_canvas,OpenHands Agent Canvas,3.5033544188439056,10.640666666666666,0.021333333333333333,0.059333333333333335,1500
+high_all_uncertainty,research_benchmarking,opencode,OpenCode,3.8607177753933755,7.561333333333334,0.014666666666666666,0.08933333333333333,1500
+high_all_uncertainty,research_benchmarking,flue,Flue,3.5748205894456175,10.220666666666666,0.010666666666666666,0.051333333333333335,1500
+high_all_uncertainty,research_benchmarking,sandcastle,Sandcastle,3.305492500255294,12.16,0.0033333333333333335,0.014666666666666666,1500
+high_all_uncertainty,research_benchmarking,goose,goose,3.690471362394071,9.5,0.002,0.025333333333333333,1500
+high_all_uncertainty,research_benchmarking,omni_agent,Omni Agent,2.3940769114067337,14.983333333333333,0.0006666666666666666,0.005333333333333333,1500
+high_all_uncertainty,research_benchmarking,anchor,Anchor,2.0929080534075672,15.769333333333334,0.0006666666666666666,0.0013333333333333333,1500
+high_all_uncertainty,research_benchmarking,omniagent,OmniAgent,2.2393855386468275,15.468,0.0,0.0033333333333333335,1500
+high_all_uncertainty,enterprise_control_plane,cline,Cline / Cline SDK,4.245773960973797,2.322,0.3873333333333333,0.804,1500
+high_all_uncertainty,enterprise_control_plane,openhands_sdk,OpenHands Software Agent SDK,4.191186691854257,2.926,0.21266666666666667,0.6813333333333333,1500
+high_all_uncertainty,enterprise_control_plane,deep_agents,Deep Agents,4.0966971649061685,4.3566666666666665,0.154,0.436,1500
+high_all_uncertainty,enterprise_control_plane,openhands_agent_canvas,OpenHands Agent Canvas,3.9584409555018643,6.280666666666667,0.06933333333333333,0.22,1500
+high_all_uncertainty,enterprise_control_plane,open_swe,Open SWE,3.9667861608003228,6.147333333333333,0.05466666666666667,0.20666666666666667,1500
+high_all_uncertainty,enterprise_control_plane,codex_cli,Codex CLI,4.062110001873165,4.720666666666666,0.052,0.3313333333333333,1500
+high_all_uncertainty,enterprise_control_plane,omnigent,Omnigent,3.7536860702702683,8.798666666666668,0.038,0.116,1500
+high_all_uncertainty,enterprise_control_plane,flue,Flue,3.9015491456734375,7.031333333333333,0.027333333333333334,0.13333333333333333,1500
+high_all_uncertainty,enterprise_control_plane,opencode,OpenCode,3.899382440641968,7.165333333333334,0.004,0.050666666666666665,1500
+high_all_uncertainty,enterprise_control_plane,goose,goose,3.805749236294327,8.491333333333333,0.0006666666666666666,0.014,1500
+high_all_uncertainty,enterprise_control_plane,sandcastle,Sandcastle,3.5434879920855007,11.428666666666667,0.0,0.0033333333333333335,1500
+high_all_uncertainty,enterprise_control_plane,swe_agent,SWE-agent,3.666288968181432,10.372,0.0,0.0013333333333333333,1500
+high_all_uncertainty,enterprise_control_plane,omni_agent,Omni Agent,2.948842042025588,14.470666666666666,0.0,0.0013333333333333333,1500
+high_all_uncertainty,enterprise_control_plane,aider,Aider,3.5168395643482313,11.973333333333333,0.0,0.0006666666666666666,1500
+high_all_uncertainty,enterprise_control_plane,mini_swe_agent,mini-SWE-agent,3.213475672144072,13.879333333333333,0.0,0.0,1500
+high_all_uncertainty,enterprise_control_plane,omniagent,OmniAgent,2.452252861476781,15.866,0.0,0.0,1500
+high_all_uncertainty,enterprise_control_plane,anchor,Anchor,1.910163843110322,16.77,0.0,0.0,1500
