@@ -33,6 +33,7 @@ class TraceabilityMatrixTest(unittest.TestCase):
         for required_id in [
             "filter_permissive_open_source",
             "python_simulations",
+            "dedicated_sandbox_report",
             "simulation_factors",
             "implementation_complexity",
             "english_final_report",

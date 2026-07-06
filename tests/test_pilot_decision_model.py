@@ -31,6 +31,9 @@ class PilotDecisionModelTest(unittest.TestCase):
                 "artifact_complete_runs": "19",
                 "cost_latency_score": "0.8",
                 "setup_maintenance_score": "0.7",
+                "market_readiness_score": "0.8",
+                "reviewer_comprehension_score": "0.7",
+                "trust_provenance_score": "0.9",
                 "notes": ""
             },
             {
@@ -43,6 +46,9 @@ class PilotDecisionModelTest(unittest.TestCase):
                 "artifact_complete_runs": "20",
                 "cost_latency_score": "1.0",
                 "setup_maintenance_score": "1.0",
+                "market_readiness_score": "1.0",
+                "reviewer_comprehension_score": "1.0",
+                "trust_provenance_score": "1.0",
                 "notes": ""
             }
         ]
@@ -65,6 +71,9 @@ class PilotDecisionModelTest(unittest.TestCase):
                 "artifact_complete_runs": "9",
                 "cost_latency_score": "0.6",
                 "setup_maintenance_score": "0.7",
+                "market_readiness_score": "0.8",
+                "reviewer_comprehension_score": "0.7",
+                "trust_provenance_score": "0.9",
                 "notes": "ok"
             }
         ], model)
@@ -75,6 +84,30 @@ class PilotDecisionModelTest(unittest.TestCase):
                 loaded = list(csv.DictReader(handle))
             self.assertEqual(loaded[0]["candidate"], "Candidate")
             self.assertEqual(loaded[0]["rank"], "1")
+
+    def test_market_and_trust_scores_can_block_candidate(self):
+        model = load_model(MODEL)
+        rows = score_rows([
+            {
+                "candidate": "Technically Strong But Weak Product Fit",
+                "attempted_tasks": "20",
+                "successful_tasks": "18",
+                "reviewed_diffs": "18",
+                "accepted_diffs": "17",
+                "safety_failures": "0",
+                "artifact_complete_runs": "20",
+                "cost_latency_score": "0.9",
+                "setup_maintenance_score": "0.9",
+                "market_readiness_score": "0.4",
+                "reviewer_comprehension_score": "0.5",
+                "trust_provenance_score": "0.7",
+                "notes": ""
+            }
+        ], model)
+        self.assertFalse(rows[0]["eligible"])
+        self.assertIn("market_readiness_score", rows[0]["gate_failures"])
+        self.assertIn("reviewer_comprehension_score", rows[0]["gate_failures"])
+        self.assertIn("trust_provenance_score", rows[0]["gate_failures"])
 
 
 if __name__ == "__main__":

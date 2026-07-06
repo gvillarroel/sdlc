@@ -9,6 +9,7 @@ class RunAllChecksTest(unittest.TestCase):
         required_fragments = [
             "unittest discover",
             "simulate_alternatives.py",
+            "simulate_sandboxes.py",
             "stress_test_simulation.py",
             "analyze_score_drivers.py",
             "build_scenario_playbooks.py",

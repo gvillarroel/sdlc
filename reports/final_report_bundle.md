@@ -9,6 +9,12 @@ This generated bundle concatenates the main report and key appendices for one-fi
 - `reports/executive_brief.md`
 - `reports/release_notes.md`
 - `reports/ai_orchestrator_frameworks_report.md`
+- `reports/sandbox_report.md`
+- `reports/market_maintenance_synthesis.md`
+- `reports/market_entry_barriers_shift.md`
+- `reports/market_fragmentation_user_share.md`
+- `reports/long_term_ai_app_maintenance.md`
+- `reports/ai_code_trust_matrix.md`
 - `reports/candidate_taxonomy.md`
 - `reports/exclusions.md`
 - `reports/adoption_decision_record.md`
@@ -68,6 +74,18 @@ Use `data/pilot_tasks.json` and the templates in `templates/` to capture metrics
 
 The evaluation is not a live benchmark of every candidate. It is a multi-criteria decision analysis backed by GitHub metadata, source links, license filtering, scoring criteria, Monte Carlo uncertainty, and sensitivity checks. It narrows the field and exposes tradeoffs; the pilot should decide final adoption.
 
+## Market And Maintenance Addendum
+
+AI-native creation lowers prototype cost, but it shifts the burden toward distribution, defensibility, trust, and maintenance. Read the four addenda before treating a fast-to-build framework as a product foundation:
+
+| Question | Addendum |
+|---|---|
+| What is the combined go/no-go model? | `reports/market_maintenance_synthesis.md` |
+| How have entry barriers moved? | `reports/market_entry_barriers_shift.md` |
+| What happens when many generated tools fight for the same users? | `reports/market_fragmentation_user_share.md` |
+| Can generated applications be supported over time? | `reports/long_term_ai_app_maintenance.md` |
+| When should teams read AI-generated code versus trust verification gates? | `reports/ai_code_trust_matrix.md` |
+
 ## Highest Risks
 
 | Risk | Why it matters | Required mitigation |
@@ -113,6 +131,8 @@ This page summarizes the current repository state for a reviewer opening the Git
 |---|---|
 | Final English report | `reports/ai_orchestrator_frameworks_report.md`, `reports/final_report_bundle.md`, `reports/executive_brief.md` |
 | Reproducible simulations | `scripts/simulate_alternatives.py`, `scripts/stress_test_simulation.py`, `results/all_results.json` |
+| Dedicated sandbox analysis | `reports/sandbox_report.md`, `data/sandbox_evaluation.json`, `results/sandbox_decision_matrix.csv` |
+| Market and maintenance addenda | `reports/market_maintenance_synthesis.md`, `reports/market_entry_barriers_shift.md`, `reports/market_fragmentation_user_share.md`, `reports/long_term_ai_app_maintenance.md`, `reports/ai_code_trust_matrix.md`, `results/market_maintenance_source_matrix.csv` |
 | Decision rationale | `reports/scenario_playbooks.md`, `reports/recommendation_rationale.md`, `reports/adoption_decision_record.md` |
 | Implementation complexity | `reports/implementation_blueprints.md`, `reports/operational_cost_model.md`, `results/implementation_effort_estimates.csv` |
 | Evidence and risk | `reports/evidence_gap_analysis.md`, `reports/github_metadata_check.md`, `reports/risk_validation_matrix.md` |
@@ -123,13 +143,13 @@ This page summarizes the current repository state for a reviewer opening the Git
 
 | Check | Current result |
 |---|---|
-| Unit tests | 133 tests passed |
-| Generated CSV schemas | 35 schemas checked, 0 failures |
-| Local artifact references | 745 references checked, 0 missing |
-| Markdown tables | 221 tables checked, 0 failures |
-| External source URLs | 41 URLs checked, 41 OK |
+| Unit tests | 141 tests passed |
+| Generated CSV schemas | 41 schemas checked, 0 failures |
+| Local artifact references | 853 references checked, 0 missing |
+| Markdown tables | 313 tables checked, 0 failures |
+| External source URLs | 62 URLs checked, 62 OK |
 | GitHub metadata | 17 repos checked, 0 failures, 0 license mismatches |
-| Artifact manifest | 155 report, data, result, script, test, template, and CI rows |
+| Artifact manifest | 170 report, data, result, script, test, template, and CI rows |
 
 ## Review Entry Points
 
@@ -190,6 +210,20 @@ For a navigation guide to every generated artifact, read `reports/artifact_index
 For one-file review, read the generated bundle at `reports/final_report_bundle.md`.
 
 For local prerequisites and live-check requirements, read `reports/environment_prerequisites.md`.
+
+For a dedicated sandbox evaluation across Docker, Podman, gVisor, Firecracker, Kata, managed cloud sandboxes, and agent-runtime controls, read `reports/sandbox_report.md`; the machine-readable dataset is `data/sandbox_evaluation.json`.
+
+For the combined market, maintenance, and trust decision model, read `reports/market_maintenance_synthesis.md`.
+
+For market-analysis changes caused by AI-native software creation, read `reports/market_entry_barriers_shift.md`.
+
+For user-share pressure and app-layer fragmentation, read `reports/market_fragmentation_user_share.md`.
+
+For long-term technical support capacity and AI-generated maintenance risk, read `reports/long_term_ai_app_maintenance.md`.
+
+For the code-reading versus AI-trust framework matrix, read `reports/ai_code_trust_matrix.md`.
+
+For the curated source matrix behind the market, maintenance, and trust addenda, read `results/market_maintenance_source_matrix.csv`.
 
 For excluded items and boundary cases, read `reports/exclusions.md`.
 
@@ -433,6 +467,11 @@ Generated outputs:
 | `results/regret_analysis.csv` | Score gap between each candidate and the scenario winner. |
 | `results/pareto_frontier.csv` | Candidates that are not strictly dominated across all criteria. |
 | `results/rank_stability.csv` | Cross-scenario rank stability, best/worst rank, and average Monte Carlo top-3 rate. |
+| `results/sandbox_deterministic_rankings.csv` | Dedicated sandbox weighted rankings by scenario. |
+| `results/sandbox_monte_carlo_summary.csv` | Dedicated sandbox ranking stability under score and weight uncertainty. |
+| `results/sandbox_threat_coverage.csv` | Dedicated sandbox threat-to-control coverage by sandbox option. |
+| `results/sandbox_decision_matrix.csv` | Dedicated sandbox scenario shortlist with recommendation posture and caveats. |
+| `results/sandbox_source_matrix.csv` | Official source URLs used by the dedicated sandbox dataset. |
 | `results/stress_test_summary.csv` | Deterministic assumption stress-test summary. |
 | `results/stress_test_rankings.csv` | Full deterministic rankings under each stress-test case. |
 | `results/uncertainty_stress_summary.csv` | Monte Carlo ranking stability under alternate uncertainty assumptions. |
@@ -774,6 +813,691 @@ The strongest next action is not another desk review. It is a controlled pilot w
 - SWE-agent docs: https://swe-agent.com/latest/
 - mini-SWE-agent: https://github.com/SWE-agent/mini-swe-agent
 - SWE-bench: https://www.swebench.com/
+
+---
+
+<!-- Source: reports/sandbox_report.md -->
+
+# Sandbox Evaluation Report
+
+Date: 2026-07-05
+
+## Executive Summary
+
+Sandbox choice is not a single technology decision. For AI coding agents, the right boundary depends on whether the workload is local development, autonomous pull requests, arbitrary user code, high-scale evaluations, or enterprise self-hosted control.
+
+The simulation ranks sandbox options across five scenarios using 14 criteria: isolation strength, workspace reset, network control, secret boundary, filesystem mount control, dependency support, agent SDK fit, observability, startup speed, horizontal scale, self-hosting control, operational ease, cost predictability, and maturity. Local and self-hosted scenarios also apply an explicit managed-service dependency penalty.
+
+Generated outputs:
+
+| File | Purpose |
+|---|---|
+| `results/sandbox_deterministic_rankings.csv` | Weighted sandbox ranking by scenario. |
+| `results/sandbox_monte_carlo_summary.csv` | Ranking stability under score and weight uncertainty. |
+| `results/sandbox_threat_coverage.csv` | Threat-to-control coverage by sandbox option. |
+| `results/sandbox_decision_matrix.csv` | Scenario shortlist with recommendation posture and caveats. |
+| `results/sandbox_source_matrix.csv` | Official source URLs used by the sandbox dataset. |
+
+## Recommendations
+
+| Scenario | Recommendation | Why |
+|---|---|---|
+| Local developer agents | Flue virtual sandbox / Daytona sandboxes / Kubernetes hardened pods | No decisive single winner; run a head-to-head pilot because the top cluster is close under uncertainty. |
+| Autonomous PR security | Daytona sandboxes | Score 4.165; 94% top-3 stability; Agent workflows that need a developer-like machine with programmatic file and command control. |
+| Untrusted user code | Daytona sandboxes | Score 4.199; 93% top-3 stability; Agent workflows that need a developer-like machine with programmatic file and command control. |
+| Evals and RL scale | Daytona sandboxes | Score 4.264; 99% top-3 stability; Agent workflows that need a developer-like machine with programmatic file and command control. |
+| Enterprise self-hosted | Kubernetes hardened pods | Score 4.082; 99% top-3 stability; Enterprise platform teams that already operate Kubernetes and need central policy, admission, and audit controls. |
+
+## Scenario Decision Matrix
+
+| Scenario | Rank | Sandbox | Type | Score | Mean rank | Win | Top-3 | Posture | Main caveat |
+|---|---:|---|---|---:|---:|---:|---:|---|---|
+| Local developer agents | 1 | Flue virtual sandbox | agent_virtual_workspace | 3.965 | 3.67 | 31% | 60% | Pilot head-to-head | The virtual sandbox is not equivalent to hard OS isolation for arbitrary untrusted code execution. |
+| Local developer agents | 2 | Daytona sandboxes | managed_agent_sandbox | 3.962 | 3.37 | 27% | 62% | Pilot head-to-head | Validate actual isolation, tenancy, credential flow, and pricing under sustained task volume. |
+| Local developer agents | 3 | Kubernetes hardened pods | orchestrated_container_policy | 3.956 | 3.15 | 22% | 65% | Pilot head-to-head | A hardened pod is still container isolation unless combined with gVisor, Kata, or VM-backed runtime classes; policy drift is a real risk. |
+| Local developer agents | 4 | Docker rootless containers | container_runtime | 3.922 | 4.65 | 8% | 36% | Fallback or benchmark | Container escapes remain a kernel/runtime risk; bind mounts, Docker socket exposure, privileged flags, and rootless-in-container workarounds can erase much of the benefit. |
+| Local developer agents | 5 | Podman rootless containers | container_runtime | 3.896 | 5.96 | 3% | 19% | Watchlist | Rootless networking, storage drivers, UID/GID mapping, and enterprise desktop support need deliberate setup. |
+| Autonomous PR security | 1 | Daytona sandboxes | managed_agent_sandbox | 4.165 | 1.61 | 64% | 94% | Primary candidate | Validate actual isolation, tenancy, credential flow, and pricing under sustained task volume. |
+| Autonomous PR security | 2 | E2B sandboxes | managed_agent_sandbox | 4.114 | 2.44 | 25% | 82% | Pilot head-to-head | Managed-service dependency, data residency, cost, and secret-handling model must pass procurement and security review. |
+| Autonomous PR security | 3 | Kubernetes hardened pods | orchestrated_container_policy | 4.045 | 4.04 | 4% | 43% | Fallback or benchmark | A hardened pod is still container isolation unless combined with gVisor, Kata, or VM-backed runtime classes; policy drift is a real risk. |
+| Autonomous PR security | 4 | Modal Sandboxes | managed_cloud_sandbox | 4.044 | 4.43 | 4% | 38% | Fallback or benchmark | Managed-service dependency and platform-specific observability/cost model must match the workload. |
+| Autonomous PR security | 5 | Firecracker microVMs | microvm_runtime | 3.995 | 6.08 | 0% | 10% | Security architecture option | It is a low-level building block: image lifecycle, networking, snapshots, storage, API service, and observability must be engineered. |
+| Untrusted user code | 1 | Daytona sandboxes | managed_agent_sandbox | 4.199 | 1.74 | 57% | 93% | Primary candidate | Validate actual isolation, tenancy, credential flow, and pricing under sustained task volume. |
+| Untrusted user code | 2 | E2B sandboxes | managed_agent_sandbox | 4.158 | 2.43 | 27% | 82% | Pilot head-to-head | Managed-service dependency, data residency, cost, and secret-handling model must pass procurement and security review. |
+| Untrusted user code | 3 | Modal Sandboxes | managed_cloud_sandbox | 4.121 | 3.35 | 11% | 62% | Pilot head-to-head | Managed-service dependency and platform-specific observability/cost model must match the workload. |
+| Untrusted user code | 4 | Kubernetes hardened pods | orchestrated_container_policy | 4.051 | 5.24 | 1% | 18% | Watchlist | A hardened pod is still container isolation unless combined with gVisor, Kata, or VM-backed runtime classes; policy drift is a real risk. |
+| Untrusted user code | 5 | Firecracker microVMs | microvm_runtime | 4.045 | 5.62 | 0% | 12% | Security architecture option | It is a low-level building block: image lifecycle, networking, snapshots, storage, API service, and observability must be engineered. |
+| Evals and RL scale | 1 | Daytona sandboxes | managed_agent_sandbox | 4.264 | 1.46 | 67% | 99% | Primary candidate | Validate actual isolation, tenancy, credential flow, and pricing under sustained task volume. |
+| Evals and RL scale | 2 | Modal Sandboxes | managed_cloud_sandbox | 4.197 | 2.37 | 17% | 93% | Pilot head-to-head | Managed-service dependency and platform-specific observability/cost model must match the workload. |
+| Evals and RL scale | 3 | E2B sandboxes | managed_agent_sandbox | 4.195 | 2.41 | 16% | 92% | Pilot head-to-head | Managed-service dependency, data residency, cost, and secret-handling model must pass procurement and security review. |
+| Evals and RL scale | 4 | Vercel Sandbox | managed_microvm_sandbox | 4.032 | 5.59 | 0% | 6% | Watchlist | Platform dependency, region/control-plane constraints, and whether the product's network/secret policy is sufficient for enterprise autonomy. |
+| Evals and RL scale | 5 | OpenHands runtime API sandbox | agent_runtime_sandbox | 4.012 | 6.07 | 0% | 4% | Watchlist | Runtime service availability, image control, credential handling, and the exact container isolation policy must be verified. |
+| Enterprise self-hosted | 1 | Kubernetes hardened pods | orchestrated_container_policy | 4.082 | 1.41 | 68% | 99% | Primary candidate | A hardened pod is still container isolation unless combined with gVisor, Kata, or VM-backed runtime classes; policy drift is a real risk. |
+| Enterprise self-hosted | 2 | Firecracker microVMs | microvm_runtime | 4.046 | 2.05 | 26% | 95% | Pilot head-to-head | It is a low-level building block: image lifecycle, networking, snapshots, storage, API service, and observability must be engineered. |
+| Enterprise self-hosted | 3 | Kata Containers | vm_backed_container_runtime | 3.984 | 3.17 | 5% | 70% | Pilot head-to-head | RuntimeClass, image, networking, Kubernetes integration, performance overhead, and VMM backend choices add operational work. |
+| Enterprise self-hosted | 4 | gVisor runsc | userspace_kernel | 3.918 | 4.65 | 0% | 17% | Watchlist | Syscall compatibility, filesystem performance, and debugging differences must be tested against real build/test workloads. |
+| Enterprise self-hosted | 5 | Flue virtual sandbox | agent_virtual_workspace | 3.880 | 5.78 | 1% | 12% | Watchlist | The virtual sandbox is not equivalent to hard OS isolation for arbitrary untrusted code execution. |
+
+## Sandbox Taxonomy
+
+| Type | What it means | Typical examples |
+|---|---|---|
+| Process sandbox | Constrains one command or process using namespaces, cgroups, seccomp, chroot, or similar controls. | nsjail, bubblewrap |
+| Container runtime | Provides disposable build/test environments with familiar images and tooling. | Docker rootless, Podman rootless |
+| Userspace kernel | Inserts an application kernel between the workload and host kernel. | gVisor runsc |
+| MicroVM or VM-backed containers | Uses hardware virtualization boundaries while preserving some container ergonomics. | Firecracker, Kata Containers, Vercel Sandbox |
+| Managed agent sandbox | Provides API-driven sandbox lifecycle for agents. | E2B, Daytona, Modal, OpenHands runtime API |
+| Agent control sandbox | Constrains an agent's tool calls through local workspace, network, and approval policy. | Codex sandbox, framework-level providers |
+
+## Threat Coverage Highlights
+
+| Threat | Strongest options | Weakest pattern to avoid |
+|---|---|---|
+| Agent-written code reads or modifies host files outside the intended workspace. | Firecracker microVMs; Vercel Sandbox; Daytona sandboxes | Docker rootless containers |
+| Generated code scans private services or exfiltrates data through unrestricted outbound network access. | Kubernetes hardened pods; Codex sandbox and approvals; Daytona sandboxes | nsjail or bubblewrap process sandbox |
+| Agent commands access API keys, CI secrets, cloud credentials, package tokens, or SSH material. | Codex sandbox and approvals; Daytona sandboxes; Kubernetes hardened pods | Docker rootless containers |
+| A malicious dependency or generated program exploits the runtime boundary. | Firecracker microVMs; E2B sandboxes; Modal Sandboxes | Flue virtual sandbox |
+| Long-running agent loops consume sandbox minutes, tokens, storage, or queue slots. | Flue virtual sandbox; Daytona sandboxes; Kubernetes hardened pods | nsjail or bubblewrap process sandbox |
+
+## Implementation Guidance
+
+1. Do not treat approval prompts as equivalent to hard isolation. Approval policy is useful, but it does not replace a host, kernel, filesystem, or network boundary.
+2. Default to disposable workspaces. Long-lived sandboxes should be explicit exceptions with retention, quota, and credential rules.
+3. Keep credentials outside the sandbox until a specific tool call needs them, and prefer short-lived scoped credentials.
+4. Disable network by default for autonomous code execution, then add domain allowlists for package registries, Git remotes, and required APIs.
+5. For arbitrary user code, prefer microVM, userspace-kernel, VM-backed container, or managed sandbox options over plain containers.
+6. For local developer agents, combine rootless containers or Codex-style workspace/network policies with explicit mount rules and review checkpoints.
+7. For self-hosted enterprise deployments, test Kubernetes hardened pods alone and with gVisor or Kata RuntimeClass before accepting container isolation as sufficient.
+
+## Source Notes
+
+The dataset uses official documentation and source repositories for Docker, Podman, gVisor, Firecracker, Kata Containers, nsjail, bubblewrap, E2B, Daytona, Modal, Vercel, OpenHands, Codex, Sandcastle, Flue, and Kubernetes. See `results/sandbox_source_matrix.csv` for the exact URLs.
+
+## Validation Boundary
+
+This report is a screening simulation. It does not prove that a particular hosted sandbox prevents escapes, protects secrets, or meets compliance needs. Before production use, run the security fixtures in `data/security_evaluation_fixtures.json`, add sandbox-specific escape and exfiltration tests, capture logs in `templates/pilot_run_log.csv`, and review the provider's legal and security documentation.
+
+---
+
+<!-- Source: reports/market_maintenance_synthesis.md -->
+
+# Market, Maintenance, And Trust Synthesis
+
+Date: 2026-07-06
+
+## Purpose
+
+This synthesis converts the four market and technical addenda into one decision model for AI coding-agent framework adoption. The four underlying reports are:
+
+- `reports/market_entry_barriers_shift.md`
+- `reports/market_fragmentation_user_share.md`
+- `reports/long_term_ai_app_maintenance.md`
+- `reports/ai_code_trust_matrix.md`
+
+The source evidence behind those reports is traceable in `results/market_maintenance_source_matrix.csv`.
+
+## Integrated Finding
+
+AI makes software creation faster, but the durable bottleneck moves to four constraints:
+
+| Constraint | What changed | What it means for a framework choice |
+|---|---|---|
+| Market entry | More teams can build credible first versions. | Favor frameworks that help prove differentiation, not just generate code. |
+| User-share fragmentation | Similar tools compete for bounded attention, budgets, and workflow slots. | Favor frameworks that support telemetry, retention evidence, and product learning loops. |
+| Long-term maintenance | AI-generated systems still need ownership, tests, security, and support. | Favor frameworks with traceability, evals, small diffs, and maintainable extension points. |
+| Trust calibration | LLM output is not compiler output unless constrained by verification gates. | Favor frameworks with sandboxing, policy, logs, review artifacts, and rollback. |
+
+The result is a stricter adoption rule: a candidate is not production-viable because it can create software quickly. It is viable only if it can help build a differentiated, retained, maintainable, and trusted product.
+
+## Four-Gate Decision Model
+
+Apply these gates after the existing scenario ranking and before a production pilot.
+
+| Gate | Pass condition | Fail signal | Evidence artifact |
+|---|---|---|---|
+| Market defense | The product has a defensible wedge: workflow depth, proprietary data, regulated trust, distribution, or switching cost. | The demo can be cloned from screenshots and public APIs. | `reports/market_entry_barriers_shift.md` |
+| User-share realism | The team can explain who keeps using the product despite substitutes and platform bundling. | TAM is broad, but obtainable share is unsupported. | `reports/market_fragmentation_user_share.md` |
+| Maintenance capacity | The team can fund and operate the code after generation. | Generated code increases review, support, security, or comprehension debt faster than value. | `reports/long_term_ai_app_maintenance.md` |
+| Trust posture | The workflow defines when code must be read and when verification gates can substitute for reading. | AI output is accepted because it appears plausible or tests pass narrowly. | `reports/ai_code_trust_matrix.md` |
+
+## Candidate Implications
+
+The existing shortlist still holds, but the interpretation changes:
+
+| Candidate type | Strength under synthesis | Watch point |
+|---|---|---|
+| Secure CLI/CI runner | Good fit when trust posture, sandboxing, and approval policy matter most. | May not provide product-level defensibility or provider neutrality by itself. |
+| Programmable SDK/framework | Good fit when the product needs custom tools, telemetry, evals, and workflow-specific differentiation. | More implementation and governance work before production. |
+| Local coding assistant | Good fit for adoption speed and developer workflow. | Risk of weak market moat if converted directly into a product layer. |
+| Research harness | Good fit for reproducibility and evaluation. | Usually not enough operational/product surface for production customers. |
+| Control plane | Good fit when multiple teams, workflows, and policies need governance. | Higher setup and maintenance burden; requires clear internal demand. |
+
+## Product-Readiness Rubric
+
+Use this rubric to decide whether a fast prototype deserves a pilot budget.
+
+| Dimension | 1 - Weak | 3 - Adequate | 5 - Strong |
+|---|---|---|---|
+| Defensibility | Generic UI or prompt wrapper. | Specific workflow and integrations. | Proprietary data, evaluation traces, regulated trust, or deep workflow lock-in. |
+| Retention | Novelty or occasional use. | Repeated task with clear user segment. | Habitual workflow or system-of-record adjacency. |
+| Maintenance | Generated code with ad hoc tests. | Review, tests, and basic observability. | Versioned prompts/models/tools, regression suite, runbooks, and owner rotation. |
+| Trust | Manual inspection only or blind acceptance. | Human review plus CI and sandbox. | Risk-tiered review policy, traces, evals, rollback, and security gates. |
+| Learning loop | No compounding advantage. | Some telemetry and feedback capture. | Each customer improves domain data, evals, or workflow automation. |
+
+A product idea should not advance to production pilot unless it scores at least 3 in every dimension and 4 or 5 in the dimension that is supposed to be its moat.
+
+## Pilot Instrumentation Additions
+
+Add these fields to any pilot run log before comparing frameworks:
+
+| Field | Reason |
+|---|---|
+| Defensible workflow evidence | Captures whether the task reflects a real product wedge. |
+| Substitute risk note | Records whether the feature could be bundled, cloned, or generated internally. |
+| Reviewer comprehension score | Measures whether humans can own the generated change. |
+| Rework after review | Captures hidden maintenance load. |
+| Trust gate used | Records whether the change was accepted by reading, CI, sandbox, evals, formal checks, or some combination. |
+| Provenance completeness | Confirms prompts, model versions, tool versions, traces, and diffs are available for later audit. |
+
+## Recommendation
+
+Keep using the current multi-criteria rankings for shortlist formation. Then apply this synthesis as a decision gate:
+
+1. If the goal is a product or internal platform, do not choose the fastest demo candidate unless it also passes market defense and maintenance gates.
+2. If the goal is secure autonomous coding, require trust posture and sandbox evidence before weighting productivity claims.
+3. If the market is fragmented, favor frameworks that produce evidence loops and durable workflow integration over feature velocity.
+4. If the team cannot explain generated code or maintain its tests, treat the system as a prototype regardless of how well it runs today.
+
+## Bottom Line
+
+AI changes the cost of starting software, not the burden of earning durable usage. The winning framework is the one that helps a team move from generated artifact to defended, retained, maintained, and trusted system.
+
+---
+
+<!-- Source: reports/market_entry_barriers_shift.md -->
+
+# Market Entry Barriers Under AI-Native Software Creation
+
+Date: 2026-07-06
+
+## Question
+
+How has market analysis changed when generative AI makes it easier to create a new software product?
+
+## Finding
+
+Generative AI lowers the cost of producing a plausible first version, but it does not erase market barriers. The barrier stack has shifted from "can you build it?" toward "can you distribute, differentiate, govern, and maintain it better than many other teams using similar tools?"
+
+This changes the screening question for new software. The old question was often whether the team could afford enough engineering capacity to reach product-market fit. The new question is whether faster creation expands the reachable opportunity faster than it expands the number of competitors.
+
+## Research Method
+
+This addendum uses a triangulated review rather than a single benchmark:
+
+| Evidence type | Role in this analysis | Confidence contribution |
+|---|---|---|
+| Policy and economics reviews | Identify how GenAI changes productivity, entrepreneurship, and competition. | High for direction of market-entry change; medium for app-level outcomes. |
+| Startup and entrepreneurship papers | Test whether lower creation cost changes who enters and how firms are organized. | Medium-high, because datasets increasingly include post-ChatGPT cohorts. |
+| Competition-policy papers | Separate app-layer entry from upstream concentration in compute, models, data, and distribution. | High for market-structure reasoning. |
+| Local framework evidence | Ground the analysis in this repo's crowded set of AI coding-agent alternatives. | High for the tooling layer studied here; lower for unrelated software markets. |
+
+## Barrier Movement Matrix
+
+| Barrier | Traditional market-analysis meaning | AI-native movement | New diligence question |
+|---|---|---|---|
+| Build cost | Engineering time and capital needed to ship an MVP. | Lower for prototypes and common CRUD/workflow apps. | Is the product only easier to build, or also easier to defend? |
+| Feature parity | Time required to copy incumbent features. | Lower for visible workflows, UI patterns, and integrations with common APIs. | Which features depend on proprietary workflow knowledge, data, or distribution? |
+| Market research | Surveys, interviews, desk research, and competitor mapping. | Faster synthesis and hypothesis generation, but easier to hallucinate confidence. | Which insights came from primary user evidence versus model-generated summaries? |
+| Distribution | Ability to reach users through search, marketplaces, communities, sales, or partnerships. | Harder in crowded AI-tool categories because more teams can launch. | What channel is structurally advantaged and hard for clones to copy? |
+| Trust and compliance | Security, privacy, uptime, procurement, audit, and vendor-risk review. | More important because AI-generated code and AI features create provenance, safety, and governance concerns. | What evidence lets buyers trust the system beyond demos? |
+| Switching costs | Data migration, workflow embedding, retraining, and business-process dependence. | Still high in serious B2B workflows; low in lightweight personal tools. | Does the product become part of a system of record or remain a disposable utility? |
+| Data advantage | Proprietary usage data, domain corpora, customer context, or feedback loops. | Mixed: foundation models commoditize general knowledge, but private workflow data and evaluation traces become more valuable. | What learning loop improves with each user and is unavailable to competitors? |
+| Operational durability | Support, bug fixes, monitoring, roadmap continuity, and backward compatibility. | More important because generation speed can outpace review and maintenance capacity. | Can the team support what it generated after the initial burst? |
+
+## Classic Matrix Recast
+
+For a new software product, the old market map usually weighted four blocks: customer pain, competitors, entry barriers, and go-to-market. AI changes the weight of each block.
+
+| Analysis block | Old default | AI-native default | Practical change |
+|---|---|---|---|
+| Customer pain | Validate whether the problem exists. | Validate whether the problem is painful enough to overcome abundant alternatives. | Raise the bar from "useful" to "habit-forming or budget-backed." |
+| Competitors | Count direct products and substitutes. | Count direct products, generated internal tools, platform features, and soon-to-exist clones. | Treat future competition as cheap and fast by default. |
+| Entry barriers | Estimate build difficulty, talent access, capital, and data. | Split barriers into build barriers and defense barriers. | A low build barrier is good only if defense barriers remain. |
+| Go-to-market | Choose channels to acquire users. | Prove channel advantage because product supply is expanding. | Distribution becomes a stronger moat than feature velocity. |
+
+## Strategic Implications
+
+1. AI compresses the build phase but lengthens the proof phase. More products can demonstrate a polished prototype, so buyers and users shift attention to reliability, integrations, support, security, and evidence of continued operation.
+2. The competitive field becomes bimodal. Infrastructure, model, and distribution layers can remain concentrated, while the application layer fragments into many small products with similar capabilities.
+3. Incumbents gain a new defensive lever. If they already own users, workflows, data, procurement relationships, or compliance posture, they can use AI to accelerate feature catch-up while retaining distribution advantages.
+4. Startups gain a wedge only when AI helps them attack a neglected workflow faster than incumbents can notice, prioritize, and bundle the same capability.
+
+## Countervailing Evidence
+
+The evidence does not support a simple "AI democratizes all entrepreneurship" story.
+
+| Claim | Supporting signal | Limiting signal |
+|---|---|---|
+| Lower entry barriers | OECD and entrepreneurship reviews describe GenAI lowering innovation and startup friction. | Upstream AI markets can still concentrate around compute, foundation models, distribution, and data access. |
+| More solo/small-team entry | Product Hunt and firm-registration studies show increased small or solo entry after ChatGPT-style tools. | Top-ranked or high-quality outcomes can still favor teams with complementary skills and execution capacity. |
+| Less need for large teams | AI-native firm research suggests leaner organizations. | Leaner does not mean less technical: evidence points toward more senior and technical composition, not pure democratization. |
+| Faster market research | LLMs accelerate desk research and synthesis. | Market research quality still depends on primary evidence, sampling, and domain expertise. |
+
+## Updated Market Diligence Checklist
+
+| Lens | Weak signal | Strong signal |
+|---|---|---|
+| Problem specificity | "Everyone needs this." | A narrow user segment has a painful, repeated workflow and budget. |
+| Differentiation | Better prompt, nicer UI, generic agent. | Proprietary workflow data, domain evaluation, integration depth, or regulated trust posture. |
+| Competitive durability | Competitors can copy the demo from screenshots. | Competitors need customer access, proprietary data, certification, or distribution partnerships. |
+| Evidence quality | AI-generated market map, unsourced TAM, anecdotal demand. | User interviews, paid pilots, retention, procurement signals, and switching-cost proof. |
+| Operating model | One-time generated app. | Maintained product with telemetry, support, roadmap, and security ownership. |
+
+## Scoring Addendum For This Repository
+
+When this market lens is applied to AI coding-agent frameworks, add two qualitative overlays to the existing scenario scores:
+
+| Overlay | 1-point evidence | 3-point evidence | 5-point evidence |
+|---|---|---|---|
+| Defensibility support | Helps create demos quickly. | Supports integrations, evaluation, and repeatable workflows. | Helps build a product moat through governed execution, proprietary eval traces, workflow data, or enterprise trust. |
+| Market-proof support | Mostly accelerates implementation. | Helps run pilots and gather usage evidence. | Produces durable evidence for adoption: telemetry, task success, safety traces, review artifacts, and customer-specific learning loops. |
+
+These overlays should not replace the current 14 criteria. They should act as a decision-review gate before treating a fast-to-build framework as a viable product foundation.
+
+## Evidence Base
+
+The curated source matrix for this addendum is `results/market_maintenance_source_matrix.csv`; filter `relevant_reports` by `market_entry_barriers_shift.md`.
+
+- OECD's 2025 review on generative AI, productivity, innovation, and entrepreneurship frames GenAI as a capability that can automate tasks, augment skills, and lower innovation frictions while requiring responsible adoption: https://oecd.ai/en/ai-publications/the-effects-of-generative-ai-on-productivity-innovation-and-entrepreneurship
+- OECD's 2025 downstream competition paper examines how AI adoption reshapes market dynamics beyond the model layer: https://ideas.repec.org/p/oec/dafaac/331-en.html
+- NBER's market-power paper surveys drivers of AI market power across training data, input data, and AI predictions: https://www.nber.org/papers/w32270
+- AI-Native Firms studies YC and U.S. venture-backed startups and finds AI-native firms are smaller and more technically composed than peers: https://www.hbs.edu/ris/Publication%20Files/26-090_96f92aa0-37d9-4789-beaa-5c0cb87a4032.pdf
+- A 2026 arXiv study using Product Hunt data finds GenAI increases solo entrepreneurship, while teams still lead at the top of platform rankings: https://arxiv.org/abs/2605.10291
+- A 2025 systematic review of GenAI in entrepreneurship analyzes 83 peer-reviewed articles and identifies business-model, market-trend, strategic-impact, and ethical-research gaps: https://arxiv.org/abs/2505.05523
+- An integrative review proposes an empowerment-entrapment framework for GenAI across opportunity recognition, evaluation, resource assembly, launch, and growth: https://arxiv.org/abs/2604.02567
+- Copenhagen Economics' generative AI competitive-landscape report argues that venture capital and access to inputs can reduce entry barriers for AI startups: https://copenhageneconomics.com/wp-content/uploads/2024/03/Copenhagen-Economics-Generative-Artificial-Intelligence-The-Competitive-Landscape.pdf
+- A 2025 Journal of Business Research article on startup growth strategies reports GenAI uses across product development, market entry, market research, sales, and customer engagement: https://ideas.repec.org/a/eee/jbrese/v192y2025ics0148296325001432.html
+
+## Bottom Line
+
+Treat AI-assisted creation as a change in barrier location, not as barrier removal. The product-development bottleneck moves from first implementation to defensibility, evidence, distribution, and long-term operational credibility.
+
+---
+
+<!-- Source: reports/market_fragmentation_user_share.md -->
+
+# Market Fragmentation And User-Share Pressure
+
+Date: 2026-07-06
+
+## Question
+
+If software can be created quickly, what happens when the number of users does not grow as quickly as the number of similar products?
+
+## Finding
+
+AI-native creation increases supply elasticity. The number of plausible tools can rise faster than the number of users, budgets, or workflow slots. In that environment, "I can build it in seconds" is not a market thesis. It is a supply-side observation.
+
+The central risk is user-share fragmentation: many tools fight for the same attention, trust, budget, and integration surface. The result is lower average usage per product, faster churn, higher acquisition cost, and weaker maintenance economics.
+
+## Research Method
+
+The fragmentation thesis is built from three evidence streams:
+
+| Evidence stream | What it can prove | What it cannot prove alone |
+|---|---|---|
+| Entrepreneurship-entry studies | GenAI can increase entry, especially solo or small-firm entry. | Whether those entrants retain users or become durable firms. |
+| Competition-policy analysis | Entry barriers and market power can differ by AI stack layer. | The exact number of app-layer competitors in any niche. |
+| Local tooling landscape | AI coding-agent tools already show overlapping value propositions. | End-user demand growth for every downstream app category. |
+
+## Fragmentation Model
+
+| Market condition | What AI changes | Expected outcome | Founder implication |
+|---|---|---|---|
+| User demand grows faster than app supply | AI helps teams meet unmet demand. | More viable entrants. | Speed matters, but retention and support still decide winners. |
+| App supply grows faster than user demand | Many similar tools enter the same category. | Attention fragmentation, clone pressure, and weaker pricing. | A generic product is quickly commoditized. |
+| Incumbents already own workflow entry points | AI lets incumbents add missing features quickly. | Standalone apps are absorbed or forced into narrow niches. | Compete through workflow depth or partner with platforms. |
+| Users can build internal tools themselves | External apps face a make-versus-buy challenge. | Buyers prefer templates, platforms, integrations, or managed reliability. | Sell maintained outcomes, not just generated software. |
+
+## Supply-Demand Pressure
+
+Fragmentation becomes severe when product supply accelerates while user demand, budget, or workflow capacity stays bounded.
+
+| Pressure | Observable signal | Interpretation |
+|---|---|---|
+| Product supply growth | More launches, clones, templates, wrappers, and internal tools. | Build cost is no longer filtering entrants. |
+| User demand growth | More active users, budgets, procurement approvals, or workflow seats. | Market expansion can absorb some entrants. |
+| Workflow slot scarcity | Users already have a tool for the job, or the new tool requires habit change. | Even useful products may fail to become default. |
+| Trust scarcity | Buyers require security, compliance, references, or uptime proof. | Serious usage shifts toward maintained vendors. |
+| Attention scarcity | Similar AI claims crowd search, marketplaces, newsletters, and social feeds. | CAC rises and differentiation must be visible fast. |
+
+## The New TAM Problem
+
+Traditional market sizing often assumes a product can win a stable share of a growing market. AI-native fragmentation weakens that assumption.
+
+| Metric | Traditional reading | AI-fragmented reading |
+|---|---|---|
+| TAM | Large theoretical demand. | Large demand may attract thousands of near-substitutes. |
+| SAM | Reachable segment. | Segment must be defined by workflow, channel, regulation, or data access, not broad category labels. |
+| SOM | Obtainable share. | Obtainable share depends on retention, switching cost, and channel ownership more than build speed. |
+| CAC | Cost to reach buyers. | May rise because users see many similar AI pitches. |
+| LTV | Revenue per retained customer. | Falls when tools are interchangeable or users can self-generate alternatives. |
+
+## Unit-Economics Stress Test
+
+Before treating a generated product as a business, apply a simple stress test:
+
+| Question | Failure mode |
+|---|---|
+| What percentage of users would still pay if a platform bundled 80% of the feature next quarter? | Platform absorption risk. |
+| What stops a motivated competitor from matching the visible UI and workflow in a week? | Clone risk. |
+| Does every additional customer improve the product through data, workflow traces, or integrations? | No compounding advantage. |
+| Does support cost rise linearly with fragmented users? | Maintenance margin collapse. |
+| Are users buying a maintained outcome or just trying a novelty? | Short retention half-life. |
+
+## Fragmentation Penalty
+
+For screening, apply a qualitative fragmentation penalty when a proposed product has most of these traits:
+
+- The product can be recreated from public screenshots and public APIs.
+- The target user has no hard switching cost.
+- The product does not own a proprietary dataset, workflow graph, or distribution channel.
+- The product is not embedded in a regulated, audited, or mission-critical process.
+- The product's main claim is speed of creation rather than measurable workflow advantage.
+
+The penalty should reduce confidence in revenue durability even when prototype quality is high.
+
+## Competitive Position Matrix
+
+|  | Low differentiation | High differentiation |
+|---|---|---|
+| Low user growth | Avoid unless acquisition is nearly free. This is the clone trap: many products split a flat pool of users. | Niche specialist. Viable if the product owns a painful workflow and can charge for reliability. |
+| High user growth | Short-lived opportunity. Fast launches may work, but margin compresses as supply floods in. | Best startup zone. Demand expands while differentiation protects retention. |
+
+## Market Shape Archetypes
+
+| Archetype | AI effect | Recommended response |
+|---|---|---|
+| Wrapper swarm | Many products wrap the same model APIs with similar workflows. | Compete only with distribution, proprietary data, or workflow lock-in. |
+| Internal-tool substitution | Users generate or assemble their own small tools. | Sell hosting, governance, support, templates, and integration reliability. |
+| Platform bundling | Incumbent platforms add AI features to existing workflows. | Choose a wedge platform does not prioritize or cannot credibly serve. |
+| Expert-market expansion | AI lets experts serve more customers with smaller teams. | Sell expert augmentation and evidence capture, not generic automation. |
+| Regulated workflow | AI helps build, but compliance and audit remain hard. | Treat trust and certification as the moat. |
+
+## Implications For AI Coding-Agent Framework Selection
+
+This repository evaluates frameworks that make it easier to build coding-agent products. The fragmentation analysis changes how the shortlist should be used:
+
+1. Prefer frameworks that support rapid experimentation plus long-term productization: telemetry, evals, policy control, sandboxing, and maintainable extension points.
+2. Avoid selecting a framework solely because it can create impressive demos fastest.
+3. Score "time to MVP" separately from "time to trustworthy, differentiated, supported product."
+4. Treat provider neutrality and data ownership as market defenses when the app layer is crowded.
+
+## Proposed Review Gate
+
+Add this review gate before piloting a framework for a product idea:
+
+| Gate | Pass condition |
+|---|---|
+| User-share realism | The target segment, usage frequency, and budget are narrow enough to estimate obtainable share. |
+| Substitution map | The analysis includes public competitors, internal build alternatives, platform-bundled features, and likely clones. |
+| Retention mechanism | The product has a credible habit, integration, data, compliance, or collaboration loop. |
+| Maintenance economics | Expected support and evolution costs are lower than retained gross margin or internal budget. |
+| Evidence loop | The framework can capture telemetry/evals that improve the product over time. |
+
+## Evidence Base
+
+The curated source matrix for this addendum is `results/market_maintenance_source_matrix.csv`; filter `relevant_reports` by `market_fragmentation_user_share.md`.
+
+- OECD's 2025 downstream competition paper highlights that AI adoption changes competitive dynamics in downstream markets, not just the AI-model layer: https://ideas.repec.org/p/oec/dafaac/331-en.html
+- Bruegel's competition-policy brief notes that open models can reduce AI market entry barriers and broaden user choice: https://www.bruegel.org/policy-brief/why-artificial-intelligence-creating-fundamental-challenges-competition-policy
+- The OECD 2025 productivity, innovation, and entrepreneurship review describes GenAI's role in automating tasks and accelerating innovation, which supports the supply-expansion side of the fragmentation thesis: https://oecd.ai/en/ai-publications/the-effects-of-generative-ai-on-productivity-innovation-and-entrepreneurship
+- Product Hunt launch evidence suggests GenAI can sharply increase solo entrepreneurial entry without ensuring top-tier outcomes: https://arxiv.org/abs/2605.10291
+- AI as "Co-founder" finds small-firm entry increases after the ChatGPT shock in areas with stronger pre-existing AI human capital: https://arxiv.org/abs/2512.06506
+- AI-Native Firms gives evidence that AI-native startups can be smaller and more technical, which supports the "leaner entrant, higher expert requirement" interpretation: https://www.hbs.edu/ris/Publication%20Files/26-090_96f92aa0-37d9-4789-beaa-5c0cb87a4032.pdf
+- The local evidence in `results/evidence_matrix.csv` shows a crowded set of coding-agent frameworks and CLIs with overlapping value propositions, which is the same fragmentation pattern at the tooling layer.
+
+## Bottom Line
+
+The phrase "create your own software in seconds" should be discounted unless paired with a clear answer to "why will users keep using this one?" Creation speed expands supply; retained user share is still earned through differentiation, distribution, trust, and maintenance.
+
+---
+
+<!-- Source: reports/long_term_ai_app_maintenance.md -->
+
+# Long-Term Technical Support Capacity For AI-Built Applications
+
+Date: 2026-07-06
+
+## Question
+
+How many quickly generated tools can survive once they must share users and support long-term maintenance?
+
+## Finding
+
+Generative AI is strongest at producing candidate artifacts and weakest when the task requires durable ownership across time: understanding why a system behaves as it does, preserving intent, coordinating changes, repairing tests, managing security, and handling support. AI can help with maintenance, but the current evidence does not support treating maintenance as solved.
+
+The survival question is therefore not "can the app be generated?" It is "can someone afford to operate, understand, test, secure, and evolve it after generation?"
+
+## Research Method
+
+This report weights evidence in this order:
+
+| Evidence type | Why it matters |
+|---|---|
+| Systematic and multivocal reviews | They summarize many studies and practitioner sources rather than single anecdotes. |
+| Benchmarks built around maintenance tasks | They test repair, update, and test-suite work closer to real maintenance than one-shot code generation. |
+| Empirical OSS and repository studies | They reveal rework, review burden, self-admitted debt, and lifecycle effects. |
+| Vendor surveys and security reports | They give current adoption and risk signals, but are treated as weaker than peer-reviewed evidence. |
+
+## Maintenance Burden Matrix
+
+| Product profile | User base | Maintenance obligation | Likely survival pattern |
+|---|---|---|---|
+| Disposable utility | Small or personal | Low uptime, low support, low compliance. | Survives as a script, template, or internal tool; weak as a business. |
+| Clone SaaS | Fragmented users | Continuous bug fixes, integrations, and support with weak pricing power. | High churn risk; maintenance exceeds revenue unless distribution is cheap. |
+| Workflow wedge | Narrow but painful segment | Domain correctness, integrations, and support matter. | Viable if retention and willingness to pay cover maintenance. |
+| Regulated or mission-critical app | Smaller but high-value customers | Audit, security, uptime, provenance, and change control. | Harder to enter, but stronger durability if trust is earned. |
+| Platform/infrastructure layer | Developers or teams | Compatibility, extensibility, observability, and governance. | Viable only with strong maintainer capacity and clear ownership model. |
+
+## Maintenance Economics
+
+Fast generation is beneficial only if it does not create a larger downstream obligation.
+
+| Cost bucket | AI may reduce | AI may increase |
+|---|---|---|
+| Initial implementation | Boilerplate, example integrations, UI scaffolding, simple tests. | Overproduction of code paths, libraries, and speculative abstractions. |
+| Review | Draft explanations, candidate fixes, test suggestions. | Need to inspect larger diffs and hidden assumptions. |
+| Testing | Test skeletons, fixture generation, coverage exploration. | Flaky tests, shallow assertions, and test maintenance after product change. |
+| Security | Suggested mitigations and static-analysis remediation. | Plausible but insecure patterns, dependency sprawl, and prompt/tool attack surface. |
+| Knowledge transfer | Summaries and documentation drafts. | Comprehension debt when humans accept code without owning the model of the system. |
+
+## Maintenance Risks Specific To AI-Assisted Development
+
+| Risk | Why it appears | Practical mitigation |
+|---|---|---|
+| Fast-integration debt | Generated code is accepted because it works locally, not because it fits architecture. | Require architecture review, dependency review, and small diffs. |
+| Comprehension debt | The team owns code it does not fully understand. | Require code explanations, design notes, and reviewer sign-off on intent. |
+| Intent debt | Rationale, constraints, and product decisions are not externalized. | Keep decision records, user-story evidence, and prompt/eval traces. |
+| Test maintenance gap | AI can generate tests, but realistic test-suite repair/update remains difficult. | Track mutation score, flaky tests, and test repair success separately. |
+| Security provenance gap | Generated code can look production-ready while embedding insecure patterns. | Treat AI-generated code as untrusted input until scanned and reviewed. |
+| Operational drift | Models, APIs, prompts, dependencies, and user workflows change over time. | Version prompts, models, tools, and eval suites; monitor regressions. |
+
+## Survival Scorecard
+
+Use this scorecard before letting a generated application become a product commitment:
+
+| Dimension | Red | Yellow | Green |
+|---|---|---|---|
+| Code ownership | Nobody can explain the architecture. | One person can explain most parts. | Multiple maintainers understand design, risks, and invariants. |
+| Test realism | Demo-only or happy-path tests. | Unit tests cover common paths. | Integration, regression, mutation/security checks cover material behavior. |
+| Change control | Prompts and models are undocumented. | Key prompts and versions are noted manually. | Prompts, models, tools, and evals are versioned with release artifacts. |
+| Support burden | No telemetry or issue workflow. | Basic logs and manual triage. | Error budgets, observability, runbooks, and owner rotation exist. |
+| Economic fit | Users are fragmented and low willingness-to-pay. | Budget exists but retention is unproven. | Retained usage funds maintenance and support. |
+
+## Evidence Synthesis
+
+The curated source matrix for this addendum is `results/market_maintenance_source_matrix.csv`; filter `relevant_reports` by `long_term_ai_app_maintenance.md`.
+
+The strongest evidence does not say "AI cannot maintain software." It says maintenance requires controls that are not automatically produced by generation:
+
+- A systematic literature review of 395 LLM4SE papers finds the field broad and fast-moving, but still early in understanding effects, limitations, evaluation, and task coverage: https://arxiv.org/abs/2308.10620
+- A 2026 multivocal literature review of 104 sources identifies AI-assisted fast-integration debt and other LLM-specific debt forms, including prompt, provenance, data, ethical, and governance debt: https://arxiv.org/abs/2606.14796
+- TAM-Eval evaluates LLMs on realistic unit-test creation, repair, and updating across 1,539 scenarios and reports limited capabilities in realistic test-maintenance processes: https://arxiv.org/abs/2601.18241
+- A 2024/2025 challenge paper on LLMs in software engineering identifies 26 challenges across requirements, design, coding, testing, review, maintenance, vulnerability management, data, training, and evaluation: https://arxiv.org/abs/2412.14554
+- A 2025/2026 OSS study of Copilot adoption reports increased productivity signals but also more rework, more review burden on core developers, and lower original-code productivity among experienced maintainers: https://arxiv.org/abs/2510.10165
+- Promptware Engineering argues that prompt-enabled systems need requirements, testing, debugging, evolution, deployment, and monitoring disciplines rather than ad hoc prompt iteration: https://arxiv.org/abs/2503.02400
+- PromptDebt analyzes LLM-specific self-admitted technical debt across Python LLM projects and identifies prompt design, hyperparameter tuning, and framework integration as debt sources: https://arxiv.org/abs/2509.20497
+- An empirical comparison of LLM, ML, and non-ML repositories identifies LLM-specific forms of technical debt, including model-stack workaround debt, model dependency debt, and performance optimization debt: https://arxiv.org/abs/2601.06266
+- GitLab's 2026 DevSecOps research reports concern about maintainability of AI-generated code and risk of new technical debt: https://about.gitlab.com/press/releases/2026-06-23-gitlab-research-reveals-organizations-are-generating-ai-code-faster-than-they-can-control-it/
+- Veracode's 2025 GenAI code-security report states that AI-generated code introduced risky security flaws in 45% of tested samples: https://www.veracode.com/blog/genai-code-security-report/
+
+## Viability Rule
+
+A quickly generated product is technically viable only when monthly maintenance capacity exceeds monthly change pressure.
+
+| Variable | What to estimate before shipping |
+|---|---|
+| Change pressure | Number of integrations, dependencies, model/provider changes, user workflows, compliance obligations, and support tickets. |
+| Review capacity | Human reviewers who can understand the code and business intent. |
+| Test capacity | Automated tests, mutation checks, regression suites, and realistic fixtures. |
+| Observability capacity | Logs, traces, error budgets, incident playbooks, and user-impact monitoring. |
+| Funding capacity | Revenue or internal budget available for support after the novelty of generation ends. |
+
+## Pilot Metrics To Add
+
+For any framework pilot, add maintenance metrics alongside task success:
+
+| Metric | Why it matters |
+|---|---|
+| Reviewer comprehension score | Measures whether humans can own the generated change. |
+| Rework rate after review | Detects hidden maintenance load. |
+| Generated diff size by accepted task | Large diffs can erase productivity through review bottlenecks. |
+| Test repair success | Separates new-test generation from keeping tests useful over time. |
+| Prompt/tool/version provenance completeness | Determines whether future failures can be reproduced. |
+| Post-merge defect and rollback rate | Measures whether AI speed creates downstream instability. |
+
+## Implications For This Evaluation
+
+For AI coding-agent orchestrators, long-term support capacity should be scored higher than raw generation speed in any production scenario. A candidate that supports sandboxing, repeatable evaluations, trace logging, controlled tool use, and integration testing is more valuable than one that only maximizes autonomous code volume.
+
+## Bottom Line
+
+AI increases the number of applications that can be born. It does not proportionally increase the number that can be understood, trusted, supported, and evolved. Long-term survival depends on maintenance economics, not generation speed.
+
+---
+
+<!-- Source: reports/ai_code_trust_matrix.md -->
+
+# AI Code Reading And Trust Matrix
+
+Date: 2026-07-06
+
+## Question
+
+How are mental frameworks evolving along two dimensions: whether developers read generated code, and how much they trust AI output?
+
+## Research Method
+
+This matrix synthesizes human-AI interaction research, trust studies for code generation, code-review papers, LLM-enabled compiler research, and local sandbox requirements. The goal is not to decide whether AI is "good" or "bad" at coding. The goal is to calibrate when unread generated code is acceptable, when human comprehension is mandatory, and when verification gates can substitute for manual reading.
+
+## Dimensions
+
+| Dimension | Low end | High end |
+|---|---|---|
+| Code reading | The developer treats generated code as an opaque artifact and relies on tests, demos, or tool reputation. | The developer reads code line by line, understands intent, and reviews architecture, security, and behavior. |
+| Trust in AI output | The developer assumes output is provisional and potentially wrong. | The developer assumes output is usually correct enough to merge with limited intervention. |
+
+## Matrix
+
+|  | Low trust in AI output | High trust in AI output |
+|---|---|---|
+| Low code reading | **Generator skeptic**. Uses AI for throwaway prototypes but avoids relying on generated code in production. Risk: loses productivity gains because trust never becomes operationalized. | **Compiler-abstraction optimist**. Treats LLM output like a higher-level compilation target. Risk: category error when no formal semantics or deterministic correctness guarantee exists. |
+| High code reading | **Engineering auditor**. Uses AI aggressively but requires human comprehension, tests, and review before merge. Risk: review becomes the bottleneck if generated diffs are too large. | **Guardrailed autonomist**. Trusts AI when bounded by evals, typed interfaces, tests, sandboxes, policy gates, and rollback. Risk: misplaced confidence if gates measure the wrong behavior. |
+
+## Quadrant Operating Model
+
+| Quadrant | Merge policy | Good use | Bad use |
+|---|---|---|---|
+| Generator skeptic | Do not merge AI code unless rewritten or fully reviewed. | Learning, throwaway prototypes, comparison prompts. | Production features where speed matters. |
+| Compiler-abstraction optimist | Merge only if independent verification is stronger than human reading would be. | Generated artifacts with formal specs, generated clients, schemas, or codegen-like outputs. | Business logic, security, data migrations, or architecture changes without review. |
+| Engineering auditor | Human author remains accountable for understanding. | Most current production AI-assisted development. | Huge opaque diffs that reviewers cannot realistically inspect. |
+| Guardrailed autonomist | Merge through policy gates, traceability, CI, evals, sandboxing, and owner approval. | Autonomous PR workflows in bounded repos. | Open-ended agents with broad tools and weak observability. |
+
+## How Frameworks Are Evolving
+
+| Mental framework | Direction of evolution | Practical reading |
+|---|---|---|
+| AI as autocomplete | From local suggestions to multi-file changes. | Reading remains mandatory because the user is still the author of record. |
+| AI as junior developer | From task delegation to supervised PR production. | Review focuses on intent, design fit, and hidden edge cases. |
+| AI as compiler | From metaphor to hybrid toolchains with validators. | The analogy works only when outputs are checked by formal, test, type, or differential-verification layers. |
+| AI as autonomous agent | From one-shot generation to tool-using workflows. | Trust shifts from the model alone to the whole system: prompts, tools, sandbox, evals, logs, and approval policy. |
+| AI as maintained collaborator | From code generation to lifecycle ownership. | The system must preserve rationale, provenance, and regression evidence across future changes. |
+
+## Trust Maturity Ladder
+
+| Level | Description | Typical evidence |
+|---|---|---|
+| 0. Untrusted text | Output is treated as a suggestion. | Manual inspection only. |
+| 1. Runnable artifact | Output executes in a local or sandboxed environment. | Passing smoke tests and command logs. |
+| 2. Reviewed change | A human understands and accepts the change. | Code review notes and reviewer ownership. |
+| 3. Tested behavior | Behavior is checked against representative tests. | Unit, integration, regression, mutation, or security checks. |
+| 4. Governed workflow | AI actions are constrained and traceable. | Tool permissions, sandbox, provenance, policy approvals, and rollback. |
+| 5. Verified generation class | The generated artifact belongs to a class with strong external validation. | Formal specs, type contracts, generated clients, differential tests, or certified build pipeline. |
+
+## Compiler Analogy Assessment
+
+The compiler analogy is useful only in a narrow sense: both transform higher-level intent into lower-level executable artifacts. It breaks down on the properties that make compilers trustworthy.
+
+| Property | Traditional compiler | LLM code generator |
+|---|---|---|
+| Input language | Formal grammar and semantics. | Natural language, partial code, examples, repository context, and implicit intent. |
+| Output guarantee | Designed to preserve semantics within known constraints. | Produces plausible code without inherent semantic guarantee. |
+| Failure mode | Syntax/type errors, compiler bugs, undefined behavior, or optimization bugs. | Hallucinated APIs, incomplete requirements, insecure code, inconsistent architecture, brittle tests. |
+| Validation | Compiler tests, formal methods, differential testing, reproducible builds. | Human review, unit/integration tests, static analysis, sandboxing, evals, and runtime monitoring. |
+| User obligation | Rarely read generated machine code. | Read generated source unless external verification is strong enough for the risk class. |
+
+## When Not Reading Code Is Defensible
+
+Not reading generated code is defensible only when the artifact class is constrained enough that other checks dominate human inspection.
+
+| Artifact class | Can skip line-by-line reading? | Required condition |
+|---|---|---|
+| Generated API client from stable schema | Often | Schema, generator, and compatibility tests are trusted. |
+| Migration touching production data | Rarely | Requires dry run, rollback, data invariants, and human review. |
+| UI copy or layout prototype | Sometimes | Low risk and easily reversible. |
+| Security-sensitive code | No | Requires human and automated security review. |
+| Refactor of core business logic | No | Requires behavioral equivalence evidence and review. |
+| Agent-authored PR in bounded repo | Sometimes | Requires sandboxed execution, full trace, CI, diff limits, and accountable reviewer. |
+
+## Trust Calibration Rules
+
+| Situation | Recommended trust level | Required verification |
+|---|---|---|
+| Prototype, throwaway internal utility | Medium | Run locally, inspect sensitive operations, keep scope narrow. |
+| Production feature in familiar codebase | Medium-low | Human review, tests, static analysis, dependency review, rollback path. |
+| Security-sensitive code | Low | Security review, threat modeling, SAST/DAST, adversarial tests, least privilege. |
+| Large generated refactor | Low | Smaller diffs, behavior-preserving tests, architecture review, staged rollout. |
+| Generated code behind strong formal/spec gates | Medium-high | Preserve the gates and audit their coverage. |
+| Autonomous PR workflow | Conditional | Sandbox, trace logs, policy approvals, CI, reviewer ownership, and post-merge monitoring. |
+
+## Evidence Base
+
+The curated source matrix for this addendum is `results/market_maintenance_source_matrix.csv`; filter `relevant_reports` by `ai_code_trust_matrix.md`.
+
+- A 2023/2024 study on trust in AI-powered code generation found developer trust to be situational and rooted in perceived ability, integrity, and benevolence, while current tools lack enough affordances for efficient trust evaluation: https://arxiv.org/abs/2305.11248
+- A 2025 trust-terrain review analyzes 88 papers and expert feedback to clarify trust-related concepts for LLMs in software engineering: https://arxiv.org/abs/2503.13793
+- A 2025 taxonomy of human-AI collaboration in software engineering identifies interaction types and research needs around control, trust, and usability: https://arxiv.org/abs/2501.08774
+- A 2025 empirical study on LLM-assisted code review examines how developers perceive and interact with LLM support during review tasks: https://arxiv.org/abs/2505.16339
+- A 2026 survey on LLM-enabled compilation identifies correctness and scalability as major challenges and hybrid systems as the promising path: https://arxiv.org/abs/2601.02045
+- Agentic AI Software Engineers argues that future workflows should shift from programming at scale to programming with trust: https://arxiv.org/abs/2502.13767
+- Reproducible, explainable evaluations of agentic AI for software engineering recommend exposing Thought-Action-Result trajectories and LLM interaction data for systematic comparison: https://arxiv.org/abs/2604.01437
+- Sonar's 2026 developer survey reports a verification gap: most developers do not fully trust AI-generated code, but far fewer always verify it before committing: https://www.sonarsource.com/company/press-releases/sonar-data-reveals-critical-verification-gap-in-ai-coding/
+- The local sandbox evaluation in `reports/sandbox_report.md` and `data/sandbox_evaluation.json` supports the same trust model: agent output should be bounded by execution controls, not trusted as text alone.
+
+## Bottom Line
+
+The durable position is not blind trust or blanket rejection. The strongest framework is conditional trust: read code when consequences are material, reduce generated diff size so reading is feasible, and raise trust only when independent verification gates are strong enough for the risk class.
 
 ---
 
@@ -1935,6 +2659,7 @@ Required artifacts:
 
 - `data/pilot_tasks.json`
 - `data/pilot_sample_size_model.json`
+- `reports/market_maintenance_synthesis.md`
 - `templates/pilot_run_log.csv`
 - `templates/reviewer_scorecard.md`
 - `templates/security_gate_checklist.md`
@@ -1958,6 +2683,8 @@ Required environment controls:
 ### 1. Prepare Fixtures
 
 Before preparing fixtures, use `templates/scenario_selection_workshop.md` to confirm the target workflow, hard gates, and stakeholder weights.
+
+Apply the four gates in `reports/market_maintenance_synthesis.md` before selecting candidates for a product or internal-platform pilot: market defense, user-share realism, maintenance capacity, and trust posture.
 
 Create or select a representative repository fixture with:
 
@@ -1995,6 +2722,8 @@ The task-count planning appendix is `reports/pilot_sample_size.md`, generated fr
 
 For every run, fill `templates/pilot_run_log.csv`.
 
+The run log now includes market and maintenance fields: `defensible_workflow_evidence`, `substitute_risk_note`, `reviewer_comprehension_score`, `rework_after_review`, `trust_gate_used`, and `provenance_completeness`. Leave these blank only for pure research harness runs where market viability is explicitly out of scope.
+
 If building candidate-specific runners, implement the minimal adapter shape in `examples/pilot_adapter_contract.py` so every candidate returns comparable task status, patch/log paths, safety failures, cost, latency, and human-intervention counts.
 
 ### 4. Review Diffs
@@ -2007,6 +2736,8 @@ Reviewer rules:
 - Mark broad rewrites as review friction even if tests pass.
 - Record whether the patch would be accepted after normal review.
 - Record whether human repair was required.
+- Score whether the reviewer can explain the generated change without replaying the full transcript.
+- Record which trust gate justified acceptance: reading, CI, sandbox, eval, formal check, or a combination.
 
 ### 5. Run Security Gates
 
@@ -2054,6 +2785,7 @@ Choose a candidate only if it satisfies all of the following:
 - Artifacts are complete enough to debug failures
 - Cost and latency fit the operating budget
 - The team can maintain the integration for at least one release cycle
+- For product or platform use, the market, maintenance, and trust gates in `reports/market_maintenance_synthesis.md` are satisfied
 
 If no candidate satisfies the rule, do not adopt. Narrow the requirements, improve the task harness, or defer.
 
@@ -2065,6 +2797,9 @@ Pilot results should include:
 - Task-level outcome table
 - Reviewer acceptance summary
 - Safety gate summary
+- Market-defense and substitution-risk summary
+- Maintenance and reviewer-comprehension summary
+- Trust-gate and provenance summary
 - Cost and latency distribution
 - Failure taxonomy
 - Recommended primary and fallback candidate
@@ -2128,13 +2863,13 @@ This page summarizes the current quality checks for the report repository. It is
 
 | Check | Command | Latest result |
 |---|---|---|
-| Unit tests | `python -m unittest discover -s tests` | 133 tests passed. |
+| Unit tests | `python -m unittest discover -s tests` | 141 tests passed. |
 | Full local workflow | `python scripts/run_all_checks.py` | Passed. |
 | Offline artifact validation | `python scripts/validate_artifacts.py` | Passed. |
-| Generated CSV schemas | `python scripts/validate_csv_schemas.py` | 35 CSV schemas checked, 0 failures. |
-| Local artifact references | `python scripts/check_local_artifact_references.py` | 745 local references checked, 0 missing. |
-| Markdown tables | `python scripts/validate_markdown_tables.py` | 221 tables checked, 0 failures. |
-| External source URLs | `python scripts/check_sources.py --timeout 20` | 41 URLs checked, 41 OK. |
+| Generated CSV schemas | `python scripts/validate_csv_schemas.py` | 41 CSV schemas checked, 0 failures. |
+| Local artifact references | `python scripts/check_local_artifact_references.py` | 853 local references checked, 0 missing. |
+| Markdown tables | `python scripts/validate_markdown_tables.py` | 313 tables checked, 0 failures. |
+| External source URLs | `python scripts/check_sources.py --timeout 20` | 62 URLs checked, 62 OK. |
 | GitHub metadata | `python scripts/refresh_github_metadata.py --timeout 20` | 17 repos checked, 0 failures, 0 license mismatches. |
 | Whitespace | `git diff --check` | Passed. |
 
@@ -2145,6 +2880,7 @@ This page summarizes the current quality checks for the report repository. It is
 | Data shape | Required generated result files exist and row counts match the expected number of alternatives, scenarios, operating profiles, and stress cases. |
 | License filter | `results/license_audit.csv` keeps the included set at 17 permissive MIT or Apache-2.0 alternatives and 2 excluded entries. |
 | Source availability | `results/source_check.csv` verifies that report and dataset URLs respond successfully. |
+| Sandbox sources | `results/sandbox_source_matrix.csv` records 27 official sandbox documentation or repository URLs used by the dedicated sandbox dataset. |
 | GitHub metadata | `results/github_metadata_check.csv` verifies repository reachability, live SPDX license match, archive status, stars, push date, and latest release tag. |
 | Report references | `results/local_artifact_reference_check.csv` verifies README and report references to local artifacts. |
 | Markdown tables | `results/markdown_table_check.csv` verifies table column consistency in README and report Markdown files. |
@@ -2154,6 +2890,7 @@ This page summarizes the current quality checks for the report repository. It is
 | Risk validation | `results/risk_validation_matrix.csv` verifies the risk-to-evidence pilot gate mapping. |
 | Operational model | `results/operational_cost_estimates.csv` and `results/operational_fit_rankings.csv` verify the cost/latency tie-breaker model shape. |
 | Recommendation rationale | `results/recommendation_rationale.csv` verifies that each scenario shortlist has a posture, evidence-risk band, effort estimate, and operational rank context. |
+| Sandbox evaluation | `results/sandbox_decision_matrix.csv` and `results/sandbox_threat_coverage.csv` verify scenario-specific sandbox posture and threat-control coverage. |
 | Pilot sample size | `results/pilot_sample_size_estimates.csv` verifies the task-count planning simulation shape. |
 | Artifact manifest | `results/artifact_manifest.csv` records SHA-256 hashes and byte sizes for committed report, data, script, test, and template artifacts. |
 | Simulation reproducibility | Unit tests cover deterministic scoring, Monte Carlo reproducibility, stress tests, custom weights, effort estimation, evidence-gap analysis, risk registers, decision tree, and artifact validation. |
@@ -2161,7 +2898,7 @@ This page summarizes the current quality checks for the report repository. It is
 ## Known Validation Boundaries
 
 - The unit tests and offline runner do not execute real candidate agents.
-- The live source and GitHub checks depend on network availability and should be rerun before final adoption.
+- The live source and GitHub checks depend on network availability and should be rerun before final adoption; sandbox-specific official URLs are recorded separately in `results/sandbox_source_matrix.csv`.
 - The committed CI file is under `ci/validate-workflow.example.yml` because pushing workflow files requires a token with GitHub `workflow` scope.
 - Simulation outputs are screening evidence; the pilot protocol is still required before choosing a production foundation.
 
@@ -2463,6 +3200,22 @@ Markdown table column consistency check.
 | `ok` |
 | `message` |
 
+## `market_maintenance_source_matrix.csv`
+
+Curated source matrix for the market, maintenance, and AI-code-trust addenda.
+
+| Column |
+|---|
+| `source_id` |
+| `title` |
+| `year` |
+| `evidence_type` |
+| `domain` |
+| `claim_supported` |
+| `confidence` |
+| `relevant_reports` |
+| `url` |
+
 ## `monte_carlo_summary.csv`
 
 Monte Carlo score and rank stability by scenario.
@@ -2552,6 +3305,9 @@ Example post-pilot decision score output.
 | `artifact_completeness` |
 | `cost_latency_score` |
 | `setup_maintenance_score` |
+| `market_readiness_score` |
+| `reviewer_comprehension_score` |
+| `trust_provenance_score` |
 | `notes` |
 
 ## `pilot_sample_size_estimates.csv`
@@ -2643,6 +3399,81 @@ Risk-to-evidence validation mapping for pilot gates.
 | `metric_to_capture` |
 | `pass_condition` |
 | `affected_candidates` |
+
+## `sandbox_decision_matrix.csv`
+
+Sandbox scenario shortlist with recommendation posture and caveats.
+
+| Column |
+|---|
+| `scenario` |
+| `scenario_label` |
+| `rank` |
+| `sandbox_id` |
+| `sandbox` |
+| `type` |
+| `deterministic_score` |
+| `monte_carlo_mean_rank` |
+| `win_rate` |
+| `top3_rate` |
+| `posture` |
+| `best_for` |
+| `watch_for` |
+
+## `sandbox_deterministic_rankings.csv`
+
+Weighted sandbox rankings by scenario.
+
+| Column |
+|---|
+| `scenario` |
+| `scenario_label` |
+| `rank` |
+| `sandbox_id` |
+| `sandbox` |
+| `type` |
+| `score` |
+
+## `sandbox_monte_carlo_summary.csv`
+
+Sandbox ranking stability under score and weight uncertainty.
+
+| Column |
+|---|
+| `scenario` |
+| `sandbox_id` |
+| `sandbox` |
+| `mean_score` |
+| `p10_score` |
+| `p90_score` |
+| `mean_rank` |
+| `win_rate` |
+| `top3_rate` |
+| `trials` |
+
+## `sandbox_source_matrix.csv`
+
+Official source URLs used by the sandbox evaluation dataset.
+
+| Column |
+|---|
+| `sandbox_id` |
+| `sandbox` |
+| `url` |
+
+## `sandbox_threat_coverage.csv`
+
+Threat-to-control coverage by sandbox option.
+
+| Column |
+|---|
+| `threat_id` |
+| `threat` |
+| `sandbox_id` |
+| `sandbox` |
+| `required_controls` |
+| `coverage_score` |
+| `coverage_band` |
 
 ## `scenario_playbook_summary.csv`
 
@@ -2935,6 +3766,12 @@ This document maps the original request to the repository artifacts that satisfy
 | Study the shared ChatGPT conversation and evaluate the listed alternatives. | `reports/ai_orchestrator_frameworks_report.md`, `data/alternatives.json`, `results/evidence_matrix.csv` | `python scripts/validate_artifacts.py` |
 | Review the alternatives that are not copyleft and are open source. | `results/license_audit.csv`, `scripts/license_audit.py`, `data/alternatives.json` | `python scripts/license_audit.py` |
 | Evaluate alternatives with Python simulations. | `scripts/simulate_alternatives.py`, `scripts/analyze_score_drivers.py`, `scripts/build_scenario_playbooks.py`, `scripts/build_recommendation_rationale.py`, `results/deterministic_rankings.csv`, `results/monte_carlo_summary.csv`, `results/sensitivity_summary.csv`, `results/score_driver_summary.csv`, `results/criterion_spread_summary.csv`, `results/scenario_playbook_summary.csv`, `results/recommendation_rationale.csv`, `reports/recommendation_rationale.md`, `results/all_results.json` | `python scripts/simulate_alternatives.py --trials 5000 --seed 7331 && python scripts/analyze_score_drivers.py && python scripts/build_scenario_playbooks.py && python scripts/build_recommendation_rationale.py` |
+| Produce a dedicated sandbox report. | `reports/sandbox_report.md`, `data/sandbox_evaluation.json`, `scripts/simulate_sandboxes.py`, `results/sandbox_deterministic_rankings.csv`, `results/sandbox_monte_carlo_summary.csv`, `results/sandbox_threat_coverage.csv`, `results/sandbox_decision_matrix.csv`, `results/sandbox_source_matrix.csv` | `python scripts/simulate_sandboxes.py --trials 4000 --seed 260705` |
+| Produce an integrated go/no-go synthesis across market, fragmentation, maintenance, and trust. | `reports/market_maintenance_synthesis.md`, `results/market_maintenance_source_matrix.csv` | `python scripts/validate_markdown_tables.py && python scripts/check_local_artifact_references.py` |
+| Analyze how AI-native creation changes market-entry barriers for new software. | `reports/market_entry_barriers_shift.md` | `python scripts/validate_markdown_tables.py && python scripts/check_local_artifact_references.py` |
+| Analyze market fragmentation when many similar generated applications fight for the same users. | `reports/market_fragmentation_user_share.md` | `python scripts/validate_markdown_tables.py && python scripts/check_local_artifact_references.py` |
+| Analyze long-term support and maintenance capacity for AI-built applications. | `reports/long_term_ai_app_maintenance.md` | `python scripts/validate_markdown_tables.py && python scripts/check_local_artifact_references.py` |
+| Analyze the mental-framework matrix of code reading versus trust in AI output. | `reports/ai_code_trust_matrix.md` | `python scripts/validate_markdown_tables.py && python scripts/check_local_artifact_references.py` |
 | Review everything that can affect the simulation. | `reports/simulation_assumptions.md`, `data/simulation_assumptions.json`, `reports/operational_cost_model.md`, `scripts/stress_test_simulation.py`, `scripts/estimate_operational_costs.py`, `results/stress_test_summary.csv`, `results/uncertainty_stress_summary.csv`, `results/operational_fit_rankings.csv` | `python scripts/stress_test_simulation.py --trials 1500 --seed 9011 && python scripts/estimate_operational_costs.py` |
 | Review how complicated it is to build something with the alternatives. | `reports/implementation_blueprints.md`, `reports/operational_cost_model.md`, `results/implementation_effort_estimates.csv`, `results/operational_cost_estimates.csv`, `scripts/estimate_implementation_effort.py`, `scripts/estimate_operational_costs.py` | `python scripts/estimate_implementation_effort.py && python scripts/estimate_operational_costs.py` |
 | Check factors that can make the evaluation unreliable. | `reports/evidence_gap_analysis.md`, `reports/github_metadata_check.md`, `reports/risk_validation_matrix.md`, `results/evidence_gap_analysis.csv`, `results/github_metadata_check.csv`, `results/risk_validation_matrix.csv`, `results/source_check.csv`, `scripts/analyze_evidence_gaps.py`, `scripts/build_github_metadata_report.py`, `scripts/build_risk_validation_matrix.py`, `scripts/refresh_github_metadata.py`, `scripts/check_sources.py` | `python scripts/analyze_evidence_gaps.py && python scripts/build_risk_validation_matrix.py && python scripts/build_github_metadata_report.py` |
@@ -2980,6 +3817,12 @@ Use this index to choose the right file quickly.
 | Exclusion rationale | `reports/exclusions.md` |
 | Guided shortlist selection | `reports/decision_tree.md` |
 | Full analysis | `reports/ai_orchestrator_frameworks_report.md` |
+| Dedicated sandbox evaluation | `reports/sandbox_report.md` |
+| Market, maintenance, and trust synthesis | `reports/market_maintenance_synthesis.md` |
+| AI-native market barrier shift | `reports/market_entry_barriers_shift.md` |
+| Market fragmentation and user-share pressure | `reports/market_fragmentation_user_share.md` |
+| Long-term maintenance capacity | `reports/long_term_ai_app_maintenance.md` |
+| AI code reading and trust matrix | `reports/ai_code_trust_matrix.md` |
 | One-file report bundle | `reports/final_report_bundle.md` |
 | Requirement coverage | `reports/requirements_traceability.md` |
 | Validation and QA summary | `reports/validation_summary.md` |
@@ -3015,6 +3858,7 @@ Use this index to choose the right file quickly.
 | Machine-readable decision tree | `data/decision_tree.json` |
 | Adoption risk register | `data/risk_register.json` |
 | Simulation assumption register | `data/simulation_assumptions.json` |
+| Sandbox evaluation dataset | `data/sandbox_evaluation.json` |
 | Operational cost model assumptions | `data/operational_cost_model.json` |
 | Security evaluation fixtures | `data/security_evaluation_fixtures.json` |
 | Candidate taxonomy data | `data/candidate_taxonomy.json` |
@@ -3033,6 +3877,12 @@ Use this index to choose the right file quickly.
 | Regret versus scenario winner | `results/regret_analysis.csv` |
 | Pareto dominance | `results/pareto_frontier.csv` |
 | Cross-scenario rank stability | `results/rank_stability.csv` |
+| Market, maintenance, and trust source matrix | `results/market_maintenance_source_matrix.csv` |
+| Sandbox weighted rankings | `results/sandbox_deterministic_rankings.csv` |
+| Sandbox Monte Carlo stability | `results/sandbox_monte_carlo_summary.csv` |
+| Sandbox threat coverage | `results/sandbox_threat_coverage.csv` |
+| Sandbox decision matrix | `results/sandbox_decision_matrix.csv` |
+| Sandbox official source matrix | `results/sandbox_source_matrix.csv` |
 | Deterministic assumption stress summary | `results/stress_test_summary.csv` |
 | Deterministic assumption stress rankings | `results/stress_test_rankings.csv` |
 | Monte Carlo uncertainty stress summary | `results/uncertainty_stress_summary.csv` |
@@ -3078,6 +3928,7 @@ Use this index to choose the right file quickly.
 | Need | Artifact |
 |---|---|
 | Regenerate rankings and simulations | `scripts/simulate_alternatives.py` |
+| Generate sandbox evaluation report | `scripts/simulate_sandboxes.py` |
 | Run simulation stress tests | `scripts/stress_test_simulation.py` |
 | Analyze score drivers | `scripts/analyze_score_drivers.py` |
 | Build scenario playbooks | `scripts/build_scenario_playbooks.py` |
@@ -3117,6 +3968,7 @@ Or run the core deterministic pieces manually:
 
 ```powershell
 python scripts/simulate_alternatives.py --trials 5000 --seed 7331
+python scripts/simulate_sandboxes.py --trials 4000 --seed 260705
 python scripts/stress_test_simulation.py --trials 1500 --seed 9011
 python scripts/analyze_score_drivers.py
 python scripts/build_scenario_playbooks.py

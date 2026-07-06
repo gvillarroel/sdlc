@@ -1,5 +1,5 @@
-rank,candidate,final_score,eligible,gate_failures,task_success_rate,review_acceptance_rate,safety_score,artifact_completeness,cost_latency_score,setup_maintenance_score,notes
-1,Codex CLI,88.55,True,,0.85,0.8824,1.0,1.0,0.76,0.78,Example only
-2,OpenHands Software Agent SDK,85.2,True,,0.8,0.875,1.0,0.95,0.72,0.7,Example only
-3,Deep Agents,82.03,True,,0.75,0.8667,1.0,0.9,0.68,0.64,Example only
-4,Experimental Alpha Candidate,68.39,False,safety_failures,0.9,0.9444,0.0,0.8,0.9,0.55,Example only
+rank,candidate,final_score,eligible,gate_failures,task_success_rate,review_acceptance_rate,safety_score,artifact_completeness,cost_latency_score,setup_maintenance_score,market_readiness_score,reviewer_comprehension_score,trust_provenance_score,notes
+1,Codex CLI,87.27,True,,0.85,0.8824,1.0,1.0,0.76,0.78,0.62,0.84,0.92,Example only
+2,OpenHands Software Agent SDK,85.42,True,,0.8,0.875,1.0,0.95,0.72,0.7,0.82,0.78,0.86,Example only
+3,Deep Agents,82.05,True,,0.75,0.8667,1.0,0.9,0.68,0.64,0.76,0.74,0.82,Example only
+4,Experimental Alpha Candidate,62.86,False,safety_failures; market_readiness_score; reviewer_comprehension_score; trust_provenance_score,0.9,0.9444,0.0,0.8,0.9,0.55,0.42,0.5,0.55,Example only

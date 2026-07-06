@@ -60,6 +60,62 @@
       "validation": "python scripts/stress_test_simulation.py --trials 1500 --seed 9011 && python scripts/estimate_operational_costs.py"
     },
     {
+      "id": "dedicated_sandbox_report",
+      "requirement": "Produce a dedicated sandbox report for AI-agent code execution.",
+      "primary_artifacts": [
+        "reports/sandbox_report.md",
+        "data/sandbox_evaluation.json",
+        "scripts/simulate_sandboxes.py",
+        "results/sandbox_deterministic_rankings.csv",
+        "results/sandbox_monte_carlo_summary.csv",
+        "results/sandbox_threat_coverage.csv",
+        "results/sandbox_decision_matrix.csv",
+        "results/sandbox_source_matrix.csv"
+      ],
+      "validation": "python scripts/simulate_sandboxes.py --trials 4000 --seed 260705"
+    },
+    {
+      "id": "market_maintenance_synthesis",
+      "requirement": "Produce an integrated go/no-go synthesis across market, fragmentation, maintenance, and trust.",
+      "primary_artifacts": [
+        "reports/market_maintenance_synthesis.md",
+        "results/market_maintenance_source_matrix.csv"
+      ],
+      "validation": "python scripts/validate_markdown_tables.py && python scripts/check_local_artifact_references.py"
+    },
+    {
+      "id": "market_entry_barriers_shift",
+      "requirement": "Analyze how AI-native creation changes market-entry barriers for new software products.",
+      "primary_artifacts": [
+        "reports/market_entry_barriers_shift.md"
+      ],
+      "validation": "python scripts/validate_markdown_tables.py && python scripts/check_local_artifact_references.py"
+    },
+    {
+      "id": "market_fragmentation_user_share",
+      "requirement": "Analyze market fragmentation when many similar generated applications fight for the same users.",
+      "primary_artifacts": [
+        "reports/market_fragmentation_user_share.md"
+      ],
+      "validation": "python scripts/validate_markdown_tables.py && python scripts/check_local_artifact_references.py"
+    },
+    {
+      "id": "long_term_ai_app_maintenance",
+      "requirement": "Analyze long-term support and maintenance capacity for AI-built applications.",
+      "primary_artifacts": [
+        "reports/long_term_ai_app_maintenance.md"
+      ],
+      "validation": "python scripts/validate_markdown_tables.py && python scripts/check_local_artifact_references.py"
+    },
+    {
+      "id": "ai_code_trust_matrix",
+      "requirement": "Analyze the mental-framework matrix of code reading versus trust in AI output.",
+      "primary_artifacts": [
+        "reports/ai_code_trust_matrix.md"
+      ],
+      "validation": "python scripts/validate_markdown_tables.py && python scripts/check_local_artifact_references.py"
+    },
+    {
       "id": "implementation_complexity",
       "requirement": "Review how complicated it is to build something with the alternatives.",
       "primary_artifacts": [

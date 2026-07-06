@@ -19,6 +19,12 @@ class CsvSchemasTest(unittest.TestCase):
             "evidence_gap_analysis.csv",
             "recommendation_rationale.csv",
             "risk_validation_matrix.csv",
+            "market_maintenance_source_matrix.csv",
+            "sandbox_deterministic_rankings.csv",
+            "sandbox_monte_carlo_summary.csv",
+            "sandbox_threat_coverage.csv",
+            "sandbox_decision_matrix.csv",
+            "sandbox_source_matrix.csv",
             "markdown_table_check.csv",
             "github_metadata_check.csv",
         ]:

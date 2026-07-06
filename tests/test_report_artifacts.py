@@ -150,7 +150,7 @@ class ReportArtifactsTest(unittest.TestCase):
         text = summary.read_text(encoding="utf-8")
         self.assertIn("# Validation Summary", text)
         self.assertIn("python scripts/run_all_checks.py", text)
-        self.assertIn("133 tests passed", text)
+        self.assertIn("141 tests passed", text)
 
     def test_results_data_dictionary_exists(self):
         dictionary = ROOT / "reports" / "results_data_dictionary.md"
@@ -263,6 +263,29 @@ class ReportArtifactsTest(unittest.TestCase):
         self.assertIn("OpenHands Software Agent SDK", text)
         self.assertIn("Codex CLI", text)
 
+    def test_sandbox_report_exists(self):
+        report = ROOT / "reports" / "sandbox_report.md"
+        self.assertTrue(report.exists())
+        text = report.read_text(encoding="utf-8")
+        self.assertIn("# Sandbox Evaluation Report", text)
+        self.assertIn("results/sandbox_decision_matrix.csv", text)
+        self.assertIn("Threat Coverage Highlights", text)
+
+    def test_market_and_maintenance_addenda_exist(self):
+        expected = {
+            "market_maintenance_synthesis.md": ("Four-Gate Decision Model", "Product-Readiness Rubric"),
+            "market_entry_barriers_shift.md": ("Barrier Movement Matrix", "Evidence Base"),
+            "market_fragmentation_user_share.md": ("Fragmentation Model", "Evidence Base"),
+            "long_term_ai_app_maintenance.md": ("Maintenance Burden Matrix", "Evidence Synthesis"),
+            "ai_code_trust_matrix.md": ("Trust Maturity Ladder", "Evidence Base"),
+        }
+        for filename, markers in expected.items():
+            report = ROOT / "reports" / filename
+            self.assertTrue(report.exists(), f"missing addendum: {filename}")
+            text = report.read_text(encoding="utf-8")
+            for marker in markers:
+                self.assertIn(marker, text)
+
     def test_generated_result_files_exist(self):
         expected_files = [
             "deterministic_rankings.csv",
@@ -280,6 +303,12 @@ class ReportArtifactsTest(unittest.TestCase):
             "evidence_gap_analysis.csv",
             "recommendation_rationale.csv",
             "risk_validation_matrix.csv",
+            "market_maintenance_source_matrix.csv",
+            "sandbox_deterministic_rankings.csv",
+            "sandbox_monte_carlo_summary.csv",
+            "sandbox_threat_coverage.csv",
+            "sandbox_decision_matrix.csv",
+            "sandbox_source_matrix.csv",
             "custom_weights_example_rankings.csv",
             "local_artifact_reference_check.csv",
             "markdown_table_check.csv",
@@ -307,6 +336,27 @@ class ReportArtifactsTest(unittest.TestCase):
             path = ROOT / "templates" / filename
             self.assertTrue(path.exists(), f"missing template file: {path}")
             self.assertGreater(path.stat().st_size, 0)
+
+    def test_pilot_templates_capture_market_maintenance_and_trust(self):
+        run_log = (ROOT / "templates" / "pilot_run_log.csv").read_text(encoding="utf-8")
+        for column in [
+            "defensible_workflow_evidence",
+            "substitute_risk_note",
+            "reviewer_comprehension_score",
+            "rework_after_review",
+            "trust_gate_used",
+            "provenance_completeness",
+        ]:
+            self.assertIn(column, run_log)
+
+        scorecard = (ROOT / "templates" / "reviewer_scorecard.md").read_text(encoding="utf-8")
+        self.assertIn("Market And Maintenance Notes", scorecard)
+        self.assertIn("trust gate", scorecard.lower())
+        self.assertIn("provenance", scorecard.lower())
+
+        workshop = (ROOT / "templates" / "scenario_selection_workshop.md").read_text(encoding="utf-8")
+        self.assertIn("Market, Maintenance, And Trust Gate", workshop)
+        self.assertIn("Market defense", workshop)
 
     def test_examples_exist(self):
         expected_files = [

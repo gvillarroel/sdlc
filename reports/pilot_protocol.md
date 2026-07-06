@@ -27,6 +27,7 @@ Required artifacts:
 
 - `data/pilot_tasks.json`
 - `data/pilot_sample_size_model.json`
+- `reports/market_maintenance_synthesis.md`
 - `templates/pilot_run_log.csv`
 - `templates/reviewer_scorecard.md`
 - `templates/security_gate_checklist.md`
@@ -50,6 +51,8 @@ Required environment controls:
 ### 1. Prepare Fixtures
 
 Before preparing fixtures, use `templates/scenario_selection_workshop.md` to confirm the target workflow, hard gates, and stakeholder weights.
+
+Apply the four gates in `reports/market_maintenance_synthesis.md` before selecting candidates for a product or internal-platform pilot: market defense, user-share realism, maintenance capacity, and trust posture.
 
 Create or select a representative repository fixture with:
 
@@ -87,6 +90,8 @@ The task-count planning appendix is `reports/pilot_sample_size.md`, generated fr
 
 For every run, fill `templates/pilot_run_log.csv`.
 
+The run log now includes market and maintenance fields: `defensible_workflow_evidence`, `substitute_risk_note`, `reviewer_comprehension_score`, `rework_after_review`, `trust_gate_used`, and `provenance_completeness`. Leave these blank only for pure research harness runs where market viability is explicitly out of scope.
+
 If building candidate-specific runners, implement the minimal adapter shape in `examples/pilot_adapter_contract.py` so every candidate returns comparable task status, patch/log paths, safety failures, cost, latency, and human-intervention counts.
 
 ### 4. Review Diffs
@@ -99,6 +104,8 @@ Reviewer rules:
 - Mark broad rewrites as review friction even if tests pass.
 - Record whether the patch would be accepted after normal review.
 - Record whether human repair was required.
+- Score whether the reviewer can explain the generated change without replaying the full transcript.
+- Record which trust gate justified acceptance: reading, CI, sandbox, eval, formal check, or a combination.
 
 ### 5. Run Security Gates
 
@@ -146,6 +153,7 @@ Choose a candidate only if it satisfies all of the following:
 - Artifacts are complete enough to debug failures
 - Cost and latency fit the operating budget
 - The team can maintain the integration for at least one release cycle
+- For product or platform use, the market, maintenance, and trust gates in `reports/market_maintenance_synthesis.md` are satisfied
 
 If no candidate satisfies the rule, do not adopt. Narrow the requirements, improve the task harness, or defer.
 
@@ -157,6 +165,9 @@ Pilot results should include:
 - Task-level outcome table
 - Reviewer acceptance summary
 - Safety gate summary
+- Market-defense and substitution-risk summary
+- Maintenance and reviewer-comprehension summary
+- Trust-gate and provenance summary
 - Cost and latency distribution
 - Failure taxonomy
 - Recommended primary and fallback candidate

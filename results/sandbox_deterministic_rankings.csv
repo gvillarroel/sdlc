@@ -1,0 +1,76 @@
+scenario,scenario_label,rank,sandbox_id,sandbox,type,score
+local_developer_agents,Local developer agents,1,flue_virtual_sandbox,Flue virtual sandbox,agent_virtual_workspace,3.9647
+local_developer_agents,Local developer agents,2,daytona,Daytona sandboxes,managed_agent_sandbox,3.9624
+local_developer_agents,Local developer agents,3,kubernetes_hardened_pods,Kubernetes hardened pods,orchestrated_container_policy,3.9561
+local_developer_agents,Local developer agents,4,docker_rootless,Docker rootless containers,container_runtime,3.9216
+local_developer_agents,Local developer agents,5,podman_rootless,Podman rootless containers,container_runtime,3.8964
+local_developer_agents,Local developer agents,6,firecracker_microvm,Firecracker microVMs,microvm_runtime,3.8856
+local_developer_agents,Local developer agents,7,gvisor_runsc,gVisor runsc,userspace_kernel,3.8662
+local_developer_agents,Local developer agents,8,kata_containers,Kata Containers,vm_backed_container_runtime,3.8604
+local_developer_agents,Local developer agents,9,openhands_runtime_api,OpenHands runtime API sandbox,agent_runtime_sandbox,3.8516
+local_developer_agents,Local developer agents,10,sandcastle_providers,Sandcastle provider sandboxes,agent_framework_sandbox,3.8384
+local_developer_agents,Local developer agents,11,e2b,E2B sandboxes,managed_agent_sandbox,3.831
+local_developer_agents,Local developer agents,12,codex_sandbox,Codex sandbox and approvals,agent_cli_sandbox,3.7013
+local_developer_agents,Local developer agents,13,modal_sandboxes,Modal Sandboxes,managed_cloud_sandbox,3.6586
+local_developer_agents,Local developer agents,14,nsjail_bubblewrap,nsjail or bubblewrap process sandbox,process_sandbox,3.5971
+local_developer_agents,Local developer agents,15,vercel_sandbox,Vercel Sandbox,managed_microvm_sandbox,3.5349
+autonomous_pr_security,Autonomous PR security,1,daytona,Daytona sandboxes,managed_agent_sandbox,4.1655
+autonomous_pr_security,Autonomous PR security,2,e2b,E2B sandboxes,managed_agent_sandbox,4.1138
+autonomous_pr_security,Autonomous PR security,3,kubernetes_hardened_pods,Kubernetes hardened pods,orchestrated_container_policy,4.0454
+autonomous_pr_security,Autonomous PR security,4,modal_sandboxes,Modal Sandboxes,managed_cloud_sandbox,4.0441
+autonomous_pr_security,Autonomous PR security,5,firecracker_microvm,Firecracker microVMs,microvm_runtime,3.9947
+autonomous_pr_security,Autonomous PR security,6,openhands_runtime_api,OpenHands runtime API sandbox,agent_runtime_sandbox,3.9818
+autonomous_pr_security,Autonomous PR security,7,codex_sandbox,Codex sandbox and approvals,agent_cli_sandbox,3.9692
+autonomous_pr_security,Autonomous PR security,8,vercel_sandbox,Vercel Sandbox,managed_microvm_sandbox,3.9454
+autonomous_pr_security,Autonomous PR security,9,kata_containers,Kata Containers,vm_backed_container_runtime,3.9401
+autonomous_pr_security,Autonomous PR security,10,gvisor_runsc,gVisor runsc,userspace_kernel,3.8789
+autonomous_pr_security,Autonomous PR security,11,sandcastle_providers,Sandcastle provider sandboxes,agent_framework_sandbox,3.872
+autonomous_pr_security,Autonomous PR security,12,flue_virtual_sandbox,Flue virtual sandbox,agent_virtual_workspace,3.8546
+autonomous_pr_security,Autonomous PR security,13,podman_rootless,Podman rootless containers,container_runtime,3.777
+autonomous_pr_security,Autonomous PR security,14,docker_rootless,Docker rootless containers,container_runtime,3.7743
+autonomous_pr_security,Autonomous PR security,15,nsjail_bubblewrap,nsjail or bubblewrap process sandbox,process_sandbox,3.4901
+untrusted_user_code,Untrusted user code,1,daytona,Daytona sandboxes,managed_agent_sandbox,4.1994
+untrusted_user_code,Untrusted user code,2,e2b,E2B sandboxes,managed_agent_sandbox,4.1578
+untrusted_user_code,Untrusted user code,3,modal_sandboxes,Modal Sandboxes,managed_cloud_sandbox,4.1208
+untrusted_user_code,Untrusted user code,4,kubernetes_hardened_pods,Kubernetes hardened pods,orchestrated_container_policy,4.0513
+untrusted_user_code,Untrusted user code,5,firecracker_microvm,Firecracker microVMs,microvm_runtime,4.0455
+untrusted_user_code,Untrusted user code,6,vercel_sandbox,Vercel Sandbox,managed_microvm_sandbox,4.0331
+untrusted_user_code,Untrusted user code,7,codex_sandbox,Codex sandbox and approvals,agent_cli_sandbox,4.0169
+untrusted_user_code,Untrusted user code,8,openhands_runtime_api,OpenHands runtime API sandbox,agent_runtime_sandbox,3.9857
+untrusted_user_code,Untrusted user code,9,kata_containers,Kata Containers,vm_backed_container_runtime,3.9578
+untrusted_user_code,Untrusted user code,10,gvisor_runsc,gVisor runsc,userspace_kernel,3.8929
+untrusted_user_code,Untrusted user code,11,sandcastle_providers,Sandcastle provider sandboxes,agent_framework_sandbox,3.8669
+untrusted_user_code,Untrusted user code,12,flue_virtual_sandbox,Flue virtual sandbox,agent_virtual_workspace,3.8552
+untrusted_user_code,Untrusted user code,13,podman_rootless,Podman rootless containers,container_runtime,3.7578
+untrusted_user_code,Untrusted user code,14,docker_rootless,Docker rootless containers,container_runtime,3.7461
+untrusted_user_code,Untrusted user code,15,nsjail_bubblewrap,nsjail or bubblewrap process sandbox,process_sandbox,3.5286
+evals_and_rl_scale,Evals and RL scale,1,daytona,Daytona sandboxes,managed_agent_sandbox,4.2638
+evals_and_rl_scale,Evals and RL scale,2,modal_sandboxes,Modal Sandboxes,managed_cloud_sandbox,4.1973
+evals_and_rl_scale,Evals and RL scale,3,e2b,E2B sandboxes,managed_agent_sandbox,4.1946
+evals_and_rl_scale,Evals and RL scale,4,vercel_sandbox,Vercel Sandbox,managed_microvm_sandbox,4.0315
+evals_and_rl_scale,Evals and RL scale,5,openhands_runtime_api,OpenHands runtime API sandbox,agent_runtime_sandbox,4.0121
+evals_and_rl_scale,Evals and RL scale,6,kubernetes_hardened_pods,Kubernetes hardened pods,orchestrated_container_policy,3.994
+evals_and_rl_scale,Evals and RL scale,7,codex_sandbox,Codex sandbox and approvals,agent_cli_sandbox,3.9832
+evals_and_rl_scale,Evals and RL scale,8,flue_virtual_sandbox,Flue virtual sandbox,agent_virtual_workspace,3.9812
+evals_and_rl_scale,Evals and RL scale,9,firecracker_microvm,Firecracker microVMs,microvm_runtime,3.9
+evals_and_rl_scale,Evals and RL scale,10,sandcastle_providers,Sandcastle provider sandboxes,agent_framework_sandbox,3.8966
+evals_and_rl_scale,Evals and RL scale,11,gvisor_runsc,gVisor runsc,userspace_kernel,3.8597
+evals_and_rl_scale,Evals and RL scale,12,docker_rootless,Docker rootless containers,container_runtime,3.8557
+evals_and_rl_scale,Evals and RL scale,13,kata_containers,Kata Containers,vm_backed_container_runtime,3.8376
+evals_and_rl_scale,Evals and RL scale,14,podman_rootless,Podman rootless containers,container_runtime,3.8208
+evals_and_rl_scale,Evals and RL scale,15,nsjail_bubblewrap,nsjail or bubblewrap process sandbox,process_sandbox,3.5221
+enterprise_self_hosted,Enterprise self-hosted,1,kubernetes_hardened_pods,Kubernetes hardened pods,orchestrated_container_policy,4.0816
+enterprise_self_hosted,Enterprise self-hosted,2,firecracker_microvm,Firecracker microVMs,microvm_runtime,4.0456
+enterprise_self_hosted,Enterprise self-hosted,3,kata_containers,Kata Containers,vm_backed_container_runtime,3.9842
+enterprise_self_hosted,Enterprise self-hosted,4,gvisor_runsc,gVisor runsc,userspace_kernel,3.9184
+enterprise_self_hosted,Enterprise self-hosted,5,flue_virtual_sandbox,Flue virtual sandbox,agent_virtual_workspace,3.8804
+enterprise_self_hosted,Enterprise self-hosted,6,podman_rootless,Podman rootless containers,container_runtime,3.8633
+enterprise_self_hosted,Enterprise self-hosted,7,docker_rootless,Docker rootless containers,container_runtime,3.8582
+enterprise_self_hosted,Enterprise self-hosted,8,sandcastle_providers,Sandcastle provider sandboxes,agent_framework_sandbox,3.8027
+enterprise_self_hosted,Enterprise self-hosted,9,openhands_runtime_api,OpenHands runtime API sandbox,agent_runtime_sandbox,3.7421
+enterprise_self_hosted,Enterprise self-hosted,10,daytona,Daytona sandboxes,managed_agent_sandbox,3.7224
+enterprise_self_hosted,Enterprise self-hosted,11,nsjail_bubblewrap,nsjail or bubblewrap process sandbox,process_sandbox,3.5981
+enterprise_self_hosted,Enterprise self-hosted,12,e2b,E2B sandboxes,managed_agent_sandbox,3.5777
+enterprise_self_hosted,Enterprise self-hosted,13,codex_sandbox,Codex sandbox and approvals,agent_cli_sandbox,3.4009
+enterprise_self_hosted,Enterprise self-hosted,14,modal_sandboxes,Modal Sandboxes,managed_cloud_sandbox,3.3013
+enterprise_self_hosted,Enterprise self-hosted,15,vercel_sandbox,Vercel Sandbox,managed_microvm_sandbox,3.1854

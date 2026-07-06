@@ -13,11 +13,13 @@ Included artifacts:
 - `data/decision_tree.json` - machine-readable guided selection tree.
 - `data/risk_register.json` - actionable adoption risks, mitigations, and required evidence.
 - `data/simulation_assumptions.json` - structured threats to validity and mitigation coverage for the simulation.
+- `data/sandbox_evaluation.json` - dedicated sandbox evaluation dataset, scenarios, criteria, and threat model.
 - `data/operational_cost_model.json` - operating profiles and assumptions for relative cost/latency planning.
 - `data/security_evaluation_fixtures.json` - security fixtures for sandbox, secret, network, prompt-injection, and approval testing.
 - `data/candidate_taxonomy.json` - candidate groups by adoption shape.
 - `data/traceability_matrix.json` - requirement-to-artifact traceability map.
 - `scripts/simulate_alternatives.py` - deterministic weighted ranking, Monte Carlo uncertainty simulation, and sensitivity analysis.
+- `scripts/simulate_sandboxes.py` - dedicated sandbox ranking, Monte Carlo, threat-coverage, and report generator.
 - `scripts/stress_test_simulation.py` - stress tests for scenario weights, maturity discounts, source confidence, sandbox assumptions, and uncertainty.
 - `scripts/analyze_score_drivers.py` - candidate score-driver and criterion-spread summary.
 - `scripts/build_scenario_playbooks.py` - scenario-specific decision playbook builder.
@@ -51,6 +53,12 @@ Included artifacts:
 - `examples/pilot_adapter_contract.py` - minimal Python adapter contract for comparable pilot runs.
 - `reports/ai_orchestrator_frameworks_report.md` - final English report.
 - `reports/final_report_bundle.md` - generated one-file bundle of the main report and key appendices.
+- `reports/sandbox_report.md` - dedicated sandbox evaluation report for AI-agent code execution.
+- `reports/market_entry_barriers_shift.md` - market-entry barrier shift analysis for AI-native software creation.
+- `reports/market_fragmentation_user_share.md` - fragmentation and user-share pressure analysis for generated software markets.
+- `reports/long_term_ai_app_maintenance.md` - long-term maintenance and support-capacity analysis for AI-built applications.
+- `reports/ai_code_trust_matrix.md` - code-reading versus AI-output trust matrix and operating model.
+- `reports/market_maintenance_synthesis.md` - cross-addendum go/no-go synthesis for market, maintenance, and trust.
 - `reports/adoption_decision_record.md` - proposed adoption decision record and no-go conditions.
 - `reports/executive_brief.md` - short decision brief for quick review.
 - `reports/release_notes.md` - reviewer-oriented summary of delivered artifacts and current validation status.
@@ -99,6 +107,7 @@ Or run individual steps:
 ```powershell
 python -m unittest discover -s tests
 python scripts/simulate_alternatives.py --trials 5000 --seed 7331
+python scripts/simulate_sandboxes.py --trials 4000 --seed 260705
 python scripts/stress_test_simulation.py --trials 1500 --seed 9011
 python scripts/analyze_score_drivers.py
 python scripts/build_scenario_playbooks.py
@@ -158,6 +167,12 @@ Generated result files:
 - `results/regret_analysis.csv`
 - `results/pareto_frontier.csv`
 - `results/rank_stability.csv`
+- `results/market_maintenance_source_matrix.csv`
+- `results/sandbox_deterministic_rankings.csv`
+- `results/sandbox_monte_carlo_summary.csv`
+- `results/sandbox_threat_coverage.csv`
+- `results/sandbox_decision_matrix.csv`
+- `results/sandbox_source_matrix.csv`
 - `results/stress_test_summary.csv`
 - `results/stress_test_rankings.csv`
 - `results/uncertainty_stress_summary.csv`

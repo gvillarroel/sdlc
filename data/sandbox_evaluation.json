@@ -1,0 +1,606 @@
+{
+  "metadata": {
+    "created_at": "2026-07-05",
+    "purpose": "Dedicated evaluation dataset for sandbox technologies and agent sandbox integrations used to run AI-generated or agent-written code.",
+    "score_scale": "0-5, where 5 is strongest for the named criterion."
+  },
+  "criteria": {
+    "isolation_strength": "Strength of the boundary between untrusted workload and host or other tenants.",
+    "workspace_reset": "Ability to create clean, disposable, reproducible workspaces for each task.",
+    "network_control": "Ability to default-deny, allowlist, audit, or otherwise constrain outbound and private-network access.",
+    "secret_boundary": "Ability to keep host, CI, cloud, and application credentials outside the workload by default.",
+    "filesystem_mount_control": "Ability to constrain mounts, writable paths, symlink behavior, and host filesystem exposure.",
+    "dependency_support": "Ability to install packages, run builds, use real language tooling, and execute test suites.",
+    "agent_sdk_fit": "Fit for AI coding-agent workflows, including programmatic creation, file APIs, command execution, and repo checkout.",
+    "observability": "Quality of logs, command transcripts, metrics, artifacts, and failure debugging surfaces.",
+    "startup_speed": "Expected speed to create a fresh environment for a task.",
+    "horizontal_scale": "Fit for many parallel sandboxes, evaluations, or autonomous task queues.",
+    "self_hosting_control": "Ability to self-host or run without depending on a proprietary managed service.",
+    "operational_ease": "Ease of setup, upgrades, policy management, image management, and day-2 operations.",
+    "cost_predictability": "Ability to budget runtime, storage, network, image, and queue cost.",
+    "maturity": "Production maturity, documentation depth, ecosystem support, and maintenance signal."
+  },
+  "scenarios": {
+    "local_developer_agents": {
+      "label": "Local developer agents",
+      "question": "What sandbox model should protect local AI coding agents without making normal development painful?",
+      "managed_dependency_penalty": 0.35,
+      "weights": {
+        "isolation_strength": 1.0,
+        "workspace_reset": 0.8,
+        "network_control": 1.0,
+        "secret_boundary": 1.0,
+        "filesystem_mount_control": 1.1,
+        "dependency_support": 1.1,
+        "agent_sdk_fit": 1.0,
+        "observability": 0.7,
+        "startup_speed": 1.2,
+        "horizontal_scale": 0.4,
+        "self_hosting_control": 1.2,
+        "operational_ease": 1.3,
+        "cost_predictability": 1.0,
+        "maturity": 1.1
+      }
+    },
+    "autonomous_pr_security": {
+      "label": "Autonomous PR security",
+      "question": "What sandbox model should run agent-written code that can open pull requests?",
+      "managed_dependency_penalty": 0.05,
+      "weights": {
+        "isolation_strength": 1.5,
+        "workspace_reset": 1.2,
+        "network_control": 1.5,
+        "secret_boundary": 1.5,
+        "filesystem_mount_control": 1.4,
+        "dependency_support": 1.0,
+        "agent_sdk_fit": 1.0,
+        "observability": 1.2,
+        "startup_speed": 0.6,
+        "horizontal_scale": 0.8,
+        "self_hosting_control": 0.8,
+        "operational_ease": 0.8,
+        "cost_predictability": 0.7,
+        "maturity": 1.2
+      }
+    },
+    "untrusted_user_code": {
+      "label": "Untrusted user code",
+      "question": "What sandbox model should run arbitrary user- or model-generated code from outside the organization?",
+      "managed_dependency_penalty": 0.0,
+      "weights": {
+        "isolation_strength": 1.7,
+        "workspace_reset": 1.3,
+        "network_control": 1.6,
+        "secret_boundary": 1.6,
+        "filesystem_mount_control": 1.5,
+        "dependency_support": 0.8,
+        "agent_sdk_fit": 0.8,
+        "observability": 1.1,
+        "startup_speed": 0.7,
+        "horizontal_scale": 1.0,
+        "self_hosting_control": 0.6,
+        "operational_ease": 0.7,
+        "cost_predictability": 0.8,
+        "maturity": 1.2
+      }
+    },
+    "evals_and_rl_scale": {
+      "label": "Evals and RL scale",
+      "question": "What sandbox model should run many repeatable code-execution trajectories?",
+      "managed_dependency_penalty": 0.0,
+      "weights": {
+        "isolation_strength": 1.0,
+        "workspace_reset": 1.4,
+        "network_control": 0.8,
+        "secret_boundary": 0.9,
+        "filesystem_mount_control": 0.9,
+        "dependency_support": 1.0,
+        "agent_sdk_fit": 1.1,
+        "observability": 1.1,
+        "startup_speed": 1.4,
+        "horizontal_scale": 1.6,
+        "self_hosting_control": 0.6,
+        "operational_ease": 1.0,
+        "cost_predictability": 1.1,
+        "maturity": 1.0
+      }
+    },
+    "enterprise_self_hosted": {
+      "label": "Enterprise self-hosted",
+      "question": "What sandbox model gives a security team maximum control over policy and runtime boundaries?",
+      "managed_dependency_penalty": 0.65,
+      "weights": {
+        "isolation_strength": 1.5,
+        "workspace_reset": 1.0,
+        "network_control": 1.4,
+        "secret_boundary": 1.4,
+        "filesystem_mount_control": 1.3,
+        "dependency_support": 1.0,
+        "agent_sdk_fit": 0.8,
+        "observability": 1.2,
+        "startup_speed": 0.6,
+        "horizontal_scale": 0.9,
+        "self_hosting_control": 1.6,
+        "operational_ease": 0.8,
+        "cost_predictability": 1.0,
+        "maturity": 1.3
+      }
+    }
+  },
+  "sandboxes": [
+    {
+      "id": "docker_rootless",
+      "name": "Docker rootless containers",
+      "type": "container_runtime",
+      "availability": "open_source_self_hosted",
+      "license_or_terms": "Apache-2.0 components and Docker project licensing; deployment terms depend on Docker products used.",
+      "summary": "Rootless Docker runs the daemon and containers inside a user namespace so the daemon and container processes do not require host root privileges.",
+      "best_for": "Local developer agents and CI-like workflows that need familiar container tooling.",
+      "watch_for": "Container escapes remain a kernel/runtime risk; bind mounts, Docker socket exposure, privileged flags, and rootless-in-container workarounds can erase much of the benefit.",
+      "source_urls": [
+        "https://docs.docker.com/engine/security/rootless/"
+      ],
+      "scores": {
+        "isolation_strength": 3.4,
+        "workspace_reset": 4.0,
+        "network_control": 3.4,
+        "secret_boundary": 3.1,
+        "filesystem_mount_control": 3.2,
+        "dependency_support": 4.6,
+        "agent_sdk_fit": 3.4,
+        "observability": 3.4,
+        "startup_speed": 4.1,
+        "horizontal_scale": 3.5,
+        "self_hosting_control": 4.8,
+        "operational_ease": 4.0,
+        "cost_predictability": 4.6,
+        "maturity": 4.7
+      }
+    },
+    {
+      "id": "podman_rootless",
+      "name": "Podman rootless containers",
+      "type": "container_runtime",
+      "availability": "open_source_self_hosted",
+      "license_or_terms": "Apache-2.0",
+      "summary": "Podman provides daemonless, rootless container execution with Docker-compatible workflows and strong Linux integration.",
+      "best_for": "Security-conscious local or enterprise Linux environments that want rootless containers without a long-running privileged daemon.",
+      "watch_for": "Rootless networking, storage drivers, UID/GID mapping, and enterprise desktop support need deliberate setup.",
+      "source_urls": [
+        "https://podman.io/",
+        "https://github.com/containers/podman/blob/main/docs/tutorials/rootless_tutorial.md"
+      ],
+      "scores": {
+        "isolation_strength": 3.6,
+        "workspace_reset": 4.0,
+        "network_control": 3.6,
+        "secret_boundary": 3.2,
+        "filesystem_mount_control": 3.4,
+        "dependency_support": 4.5,
+        "agent_sdk_fit": 3.3,
+        "observability": 3.3,
+        "startup_speed": 4.0,
+        "horizontal_scale": 3.4,
+        "self_hosting_control": 4.9,
+        "operational_ease": 3.6,
+        "cost_predictability": 4.7,
+        "maturity": 4.4
+      }
+    },
+    {
+      "id": "gvisor_runsc",
+      "name": "gVisor runsc",
+      "type": "userspace_kernel",
+      "availability": "open_source_self_hosted",
+      "license_or_terms": "Apache-2.0",
+      "summary": "gVisor places a userspace application kernel between containers and the host kernel while preserving much of the container workflow.",
+      "best_for": "Running untrusted containerized code when stronger isolation than normal containers is needed without moving fully to VMs.",
+      "watch_for": "Syscall compatibility, filesystem performance, and debugging differences must be tested against real build/test workloads.",
+      "source_urls": [
+        "https://gvisor.dev/docs/",
+        "https://github.com/google/gvisor"
+      ],
+      "scores": {
+        "isolation_strength": 4.4,
+        "workspace_reset": 4.0,
+        "network_control": 3.8,
+        "secret_boundary": 3.8,
+        "filesystem_mount_control": 3.8,
+        "dependency_support": 3.9,
+        "agent_sdk_fit": 3.5,
+        "observability": 3.4,
+        "startup_speed": 3.7,
+        "horizontal_scale": 4.0,
+        "self_hosting_control": 4.4,
+        "operational_ease": 3.2,
+        "cost_predictability": 4.2,
+        "maturity": 4.1
+      }
+    },
+    {
+      "id": "firecracker_microvm",
+      "name": "Firecracker microVMs",
+      "type": "microvm_runtime",
+      "availability": "open_source_self_hosted",
+      "license_or_terms": "Apache-2.0",
+      "summary": "Firecracker provides lightweight microVMs with hardware virtualization boundaries and a jailer process for additional host-side isolation.",
+      "best_for": "High-assurance multi-tenant sandbox services where the team can own the control plane.",
+      "watch_for": "It is a low-level building block: image lifecycle, networking, snapshots, storage, API service, and observability must be engineered.",
+      "source_urls": [
+        "https://firecracker-microvm.github.io/",
+        "https://github.com/firecracker-microvm/firecracker"
+      ],
+      "scores": {
+        "isolation_strength": 4.9,
+        "workspace_reset": 4.3,
+        "network_control": 4.2,
+        "secret_boundary": 4.3,
+        "filesystem_mount_control": 4.4,
+        "dependency_support": 3.7,
+        "agent_sdk_fit": 2.8,
+        "observability": 3.0,
+        "startup_speed": 3.6,
+        "horizontal_scale": 4.5,
+        "self_hosting_control": 4.8,
+        "operational_ease": 2.2,
+        "cost_predictability": 4.0,
+        "maturity": 4.2
+      }
+    },
+    {
+      "id": "kata_containers",
+      "name": "Kata Containers",
+      "type": "vm_backed_container_runtime",
+      "availability": "open_source_self_hosted",
+      "license_or_terms": "Apache-2.0",
+      "summary": "Kata Containers integrates lightweight VM isolation into the container ecosystem, giving each container a VM-style boundary.",
+      "best_for": "Enterprise Kubernetes or container-platform teams that want hardware virtualization as a second isolation layer.",
+      "watch_for": "RuntimeClass, image, networking, Kubernetes integration, performance overhead, and VMM backend choices add operational work.",
+      "source_urls": [
+        "https://katacontainers.io/",
+        "https://github.com/kata-containers/kata-containers"
+      ],
+      "scores": {
+        "isolation_strength": 4.7,
+        "workspace_reset": 4.1,
+        "network_control": 4.0,
+        "secret_boundary": 4.1,
+        "filesystem_mount_control": 4.1,
+        "dependency_support": 4.2,
+        "agent_sdk_fit": 3.2,
+        "observability": 3.3,
+        "startup_speed": 3.1,
+        "horizontal_scale": 4.1,
+        "self_hosting_control": 4.7,
+        "operational_ease": 2.8,
+        "cost_predictability": 3.9,
+        "maturity": 4.0
+      }
+    },
+    {
+      "id": "nsjail_bubblewrap",
+      "name": "nsjail or bubblewrap process sandbox",
+      "type": "process_sandbox",
+      "availability": "open_source_self_hosted",
+      "license_or_terms": "Apache-2.0 or LGPL-2.0-or-later depending on component.",
+      "summary": "Linux namespace, cgroup, chroot, and seccomp tools can isolate a single process or controlled command without full container orchestration.",
+      "best_for": "Narrow tools, parsers, compilers, or command-level tests where the allowed syscall and filesystem surface is small.",
+      "watch_for": "Not a complete coding-agent environment by itself; policy must be built and validated carefully.",
+      "source_urls": [
+        "https://github.com/google/nsjail",
+        "https://github.com/containers/bubblewrap"
+      ],
+      "scores": {
+        "isolation_strength": 3.7,
+        "workspace_reset": 3.1,
+        "network_control": 3.5,
+        "secret_boundary": 3.5,
+        "filesystem_mount_control": 4.0,
+        "dependency_support": 2.5,
+        "agent_sdk_fit": 2.4,
+        "observability": 2.7,
+        "startup_speed": 4.7,
+        "horizontal_scale": 3.4,
+        "self_hosting_control": 4.8,
+        "operational_ease": 2.8,
+        "cost_predictability": 4.8,
+        "maturity": 3.8
+      }
+    },
+    {
+      "id": "e2b",
+      "name": "E2B sandboxes",
+      "type": "managed_agent_sandbox",
+      "availability": "managed_cloud_with_open_source_components",
+      "license_or_terms": "Apache-2.0 repository plus managed service terms.",
+      "summary": "E2B provides isolated sandboxes for agents to execute code, process data, and run tools through SDKs.",
+      "best_for": "Agent products that need a ready-made cloud sandbox API and do not want to operate the sandbox control plane.",
+      "watch_for": "Managed-service dependency, data residency, cost, and secret-handling model must pass procurement and security review.",
+      "source_urls": [
+        "https://e2b.dev/docs",
+        "https://github.com/e2b-dev/e2b"
+      ],
+      "scores": {
+        "isolation_strength": 4.4,
+        "workspace_reset": 4.6,
+        "network_control": 4.0,
+        "secret_boundary": 4.0,
+        "filesystem_mount_control": 4.0,
+        "dependency_support": 4.5,
+        "agent_sdk_fit": 4.8,
+        "observability": 4.0,
+        "startup_speed": 4.1,
+        "horizontal_scale": 4.6,
+        "self_hosting_control": 2.9,
+        "operational_ease": 4.4,
+        "cost_predictability": 3.4,
+        "maturity": 4.1
+      }
+    },
+    {
+      "id": "daytona",
+      "name": "Daytona sandboxes",
+      "type": "managed_agent_sandbox",
+      "availability": "managed_cloud_with_open_source_platform",
+      "license_or_terms": "Apache-2.0 repository plus managed service terms.",
+      "summary": "Daytona targets fast, stateful, isolated infrastructure for AI-generated code with file, Git, LSP, and execution APIs.",
+      "best_for": "Agent workflows that need a developer-like machine with programmatic file and command control.",
+      "watch_for": "Validate actual isolation, tenancy, credential flow, and pricing under sustained task volume.",
+      "source_urls": [
+        "https://www.daytona.io/",
+        "https://github.com/daytonaio/daytona"
+      ],
+      "scores": {
+        "isolation_strength": 4.3,
+        "workspace_reset": 4.6,
+        "network_control": 4.0,
+        "secret_boundary": 4.1,
+        "filesystem_mount_control": 4.1,
+        "dependency_support": 4.6,
+        "agent_sdk_fit": 4.7,
+        "observability": 4.1,
+        "startup_speed": 4.8,
+        "horizontal_scale": 4.5,
+        "self_hosting_control": 3.6,
+        "operational_ease": 4.2,
+        "cost_predictability": 3.5,
+        "maturity": 3.8
+      }
+    },
+    {
+      "id": "modal_sandboxes",
+      "name": "Modal Sandboxes",
+      "type": "managed_cloud_sandbox",
+      "availability": "managed_cloud",
+      "license_or_terms": "Managed service terms.",
+      "summary": "Modal Sandboxes create isolated environments for untrusted code, repository checkout, arbitrary dependencies, and high-scale agent/eval workloads.",
+      "best_for": "High-concurrency evaluations, RL rollouts, and production agent code execution where managed scale matters.",
+      "watch_for": "Managed-service dependency and platform-specific observability/cost model must match the workload.",
+      "source_urls": [
+        "https://modal.com/docs/guide/sandboxes",
+        "https://modal.com/products/sandboxes"
+      ],
+      "scores": {
+        "isolation_strength": 4.2,
+        "workspace_reset": 4.5,
+        "network_control": 3.9,
+        "secret_boundary": 4.0,
+        "filesystem_mount_control": 4.0,
+        "dependency_support": 4.6,
+        "agent_sdk_fit": 4.6,
+        "observability": 4.2,
+        "startup_speed": 4.5,
+        "horizontal_scale": 4.9,
+        "self_hosting_control": 1.6,
+        "operational_ease": 4.4,
+        "cost_predictability": 3.4,
+        "maturity": 4.2
+      }
+    },
+    {
+      "id": "vercel_sandbox",
+      "name": "Vercel Sandbox",
+      "type": "managed_microvm_sandbox",
+      "availability": "managed_cloud",
+      "license_or_terms": "Managed service terms.",
+      "summary": "Vercel Sandbox is a compute primitive for safely running untrusted or user-generated code for AI agents and dynamic workloads.",
+      "best_for": "Web/app-generation agents already on Vercel that need ephemeral Linux sandboxes with real-time execution.",
+      "watch_for": "Platform dependency, region/control-plane constraints, and whether the product's network/secret policy is sufficient for enterprise autonomy.",
+      "source_urls": [
+        "https://vercel.com/docs/sandbox"
+      ],
+      "scores": {
+        "isolation_strength": 4.5,
+        "workspace_reset": 4.5,
+        "network_control": 4.0,
+        "secret_boundary": 4.2,
+        "filesystem_mount_control": 4.2,
+        "dependency_support": 4.5,
+        "agent_sdk_fit": 4.3,
+        "observability": 3.8,
+        "startup_speed": 4.4,
+        "horizontal_scale": 4.3,
+        "self_hosting_control": 1.4,
+        "operational_ease": 4.1,
+        "cost_predictability": 3.2,
+        "maturity": 3.6
+      }
+    },
+    {
+      "id": "openhands_runtime_api",
+      "name": "OpenHands runtime API sandbox",
+      "type": "agent_runtime_sandbox",
+      "availability": "open_source_and_hosted_runtime_options",
+      "license_or_terms": "MIT for SDK components; hosted runtime terms may apply.",
+      "summary": "OpenHands SDK can connect agent servers to remote runtime APIs that provision sandboxed environments and manage container lifecycle.",
+      "best_for": "Custom software-agent products that want an SDK-level remote workspace abstraction.",
+      "watch_for": "Runtime service availability, image control, credential handling, and the exact container isolation policy must be verified.",
+      "source_urls": [
+        "https://docs.openhands.dev/sdk/guides/agent-server/api-sandbox",
+        "https://docs.openhands.dev/sdk/arch/overview"
+      ],
+      "scores": {
+        "isolation_strength": 4.0,
+        "workspace_reset": 4.3,
+        "network_control": 3.8,
+        "secret_boundary": 3.9,
+        "filesystem_mount_control": 3.9,
+        "dependency_support": 4.3,
+        "agent_sdk_fit": 4.8,
+        "observability": 4.0,
+        "startup_speed": 3.8,
+        "horizontal_scale": 4.1,
+        "self_hosting_control": 3.8,
+        "operational_ease": 3.8,
+        "cost_predictability": 3.6,
+        "maturity": 3.8
+      }
+    },
+    {
+      "id": "codex_sandbox",
+      "name": "Codex sandbox and approvals",
+      "type": "agent_cli_sandbox",
+      "availability": "managed_model_cli_with_local_controls",
+      "license_or_terms": "OpenAI product and CLI terms; open-source CLI components may differ by package.",
+      "summary": "Codex combines sandbox modes and approval policies so agent tool calls operate within file and network boundaries and ask before crossing them.",
+      "best_for": "Teams already using Codex that need local or CI agent execution with clear approval boundaries.",
+      "watch_for": "It is an agent execution control, not a general-purpose untrusted-code platform; provider dependence and host-specific sandbox support matter.",
+      "source_urls": [
+        "https://developers.openai.com/codex/concepts/sandboxing"
+      ],
+      "scores": {
+        "isolation_strength": 4.2,
+        "workspace_reset": 3.8,
+        "network_control": 4.3,
+        "secret_boundary": 4.1,
+        "filesystem_mount_control": 4.2,
+        "dependency_support": 4.2,
+        "agent_sdk_fit": 4.4,
+        "observability": 4.0,
+        "startup_speed": 4.4,
+        "horizontal_scale": 3.5,
+        "self_hosting_control": 2.6,
+        "operational_ease": 4.2,
+        "cost_predictability": 3.6,
+        "maturity": 4.0
+      }
+    },
+    {
+      "id": "sandcastle_providers",
+      "name": "Sandcastle provider sandboxes",
+      "type": "agent_framework_sandbox",
+      "availability": "open_source_framework_with_runtime_providers",
+      "license_or_terms": "MIT",
+      "summary": "Sandcastle orchestrates coding agents in provider-backed sandboxes such as Docker, Podman, and Vercel with branch/worktree strategies.",
+      "best_for": "TypeScript teams that want a coding-agent orchestration layer over explicit sandbox providers.",
+      "watch_for": "Security depends on the chosen provider, image, mounts, branch merge policy, and network defaults.",
+      "source_urls": [
+        "https://github.com/mattpocock/sandcastle"
+      ],
+      "scores": {
+        "isolation_strength": 4.0,
+        "workspace_reset": 4.1,
+        "network_control": 3.7,
+        "secret_boundary": 3.8,
+        "filesystem_mount_control": 3.9,
+        "dependency_support": 4.2,
+        "agent_sdk_fit": 4.6,
+        "observability": 3.7,
+        "startup_speed": 3.8,
+        "horizontal_scale": 4.0,
+        "self_hosting_control": 4.0,
+        "operational_ease": 3.6,
+        "cost_predictability": 3.8,
+        "maturity": 3.2
+      }
+    },
+    {
+      "id": "flue_virtual_sandbox",
+      "name": "Flue virtual sandbox",
+      "type": "agent_virtual_workspace",
+      "availability": "open_source_framework",
+      "license_or_terms": "Apache-2.0",
+      "summary": "Flue defaults to a lightweight in-memory virtual sandbox for agent workspaces and can be paired with stronger local or remote sandbox choices.",
+      "best_for": "Document, repo-slice, or workflow tasks where the app can stage files and does not need arbitrary OS-level execution.",
+      "watch_for": "The virtual sandbox is not equivalent to hard OS isolation for arbitrary untrusted code execution.",
+      "source_urls": [
+        "https://flueframework.com/docs/guide/sandboxes/",
+        "https://github.com/withastro/flue"
+      ],
+      "scores": {
+        "isolation_strength": 2.8,
+        "workspace_reset": 4.4,
+        "network_control": 3.8,
+        "secret_boundary": 3.8,
+        "filesystem_mount_control": 4.2,
+        "dependency_support": 2.8,
+        "agent_sdk_fit": 4.5,
+        "observability": 3.6,
+        "startup_speed": 4.9,
+        "horizontal_scale": 4.0,
+        "self_hosting_control": 4.5,
+        "operational_ease": 4.2,
+        "cost_predictability": 4.5,
+        "maturity": 3.3
+      }
+    },
+    {
+      "id": "kubernetes_hardened_pods",
+      "name": "Kubernetes hardened pods",
+      "type": "orchestrated_container_policy",
+      "availability": "open_source_self_hosted_or_managed_kubernetes",
+      "license_or_terms": "Apache-2.0 for Kubernetes.",
+      "summary": "Kubernetes security contexts, Pod Security Standards, seccomp, namespaces, admission policy, and network policy can create a governed sandbox layer.",
+      "best_for": "Enterprise platform teams that already operate Kubernetes and need central policy, admission, and audit controls.",
+      "watch_for": "A hardened pod is still container isolation unless combined with gVisor, Kata, or VM-backed runtime classes; policy drift is a real risk.",
+      "source_urls": [
+        "https://kubernetes.io/docs/concepts/security/pod-security-standards/",
+        "https://kubernetes.io/docs/tasks/configure-pod-container/security-context/",
+        "https://kubernetes.io/docs/reference/node/seccomp/"
+      ],
+      "scores": {
+        "isolation_strength": 3.8,
+        "workspace_reset": 4.2,
+        "network_control": 4.4,
+        "secret_boundary": 3.9,
+        "filesystem_mount_control": 4.1,
+        "dependency_support": 4.4,
+        "agent_sdk_fit": 3.3,
+        "observability": 4.2,
+        "startup_speed": 3.4,
+        "horizontal_scale": 4.6,
+        "self_hosting_control": 4.6,
+        "operational_ease": 2.8,
+        "cost_predictability": 3.8,
+        "maturity": 4.6
+      }
+    }
+  ],
+  "threats": [
+    {
+      "id": "host_filesystem_escape",
+      "threat": "Agent-written code reads or modifies host files outside the intended workspace.",
+      "required_controls": ["filesystem_mount_control", "workspace_reset", "secret_boundary"]
+    },
+    {
+      "id": "private_network_exfiltration",
+      "threat": "Generated code scans private services or exfiltrates data through unrestricted outbound network access.",
+      "required_controls": ["network_control", "observability", "secret_boundary"]
+    },
+    {
+      "id": "credential_exposure",
+      "threat": "Agent commands access API keys, CI secrets, cloud credentials, package tokens, or SSH material.",
+      "required_controls": ["secret_boundary", "filesystem_mount_control", "observability"]
+    },
+    {
+      "id": "kernel_runtime_escape",
+      "threat": "A malicious dependency or generated program exploits the runtime boundary.",
+      "required_controls": ["isolation_strength", "maturity", "workspace_reset"]
+    },
+    {
+      "id": "cost_or_queue_runaway",
+      "threat": "Long-running agent loops consume sandbox minutes, tokens, storage, or queue slots.",
+      "required_controls": ["cost_predictability", "observability", "workspace_reset"]
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+sandbox_id,sandbox,url
+docker_rootless,Docker rootless containers,https://docs.docker.com/engine/security/rootless/
+podman_rootless,Podman rootless containers,https://podman.io/
+podman_rootless,Podman rootless containers,https://github.com/containers/podman/blob/main/docs/tutorials/rootless_tutorial.md
+gvisor_runsc,gVisor runsc,https://gvisor.dev/docs/
+gvisor_runsc,gVisor runsc,https://github.com/google/gvisor
+firecracker_microvm,Firecracker microVMs,https://firecracker-microvm.github.io/
+firecracker_microvm,Firecracker microVMs,https://github.com/firecracker-microvm/firecracker
+kata_containers,Kata Containers,https://katacontainers.io/
+kata_containers,Kata Containers,https://github.com/kata-containers/kata-containers
+nsjail_bubblewrap,nsjail or bubblewrap process sandbox,https://github.com/google/nsjail
+nsjail_bubblewrap,nsjail or bubblewrap process sandbox,https://github.com/containers/bubblewrap
+e2b,E2B sandboxes,https://e2b.dev/docs
+e2b,E2B sandboxes,https://github.com/e2b-dev/e2b
+daytona,Daytona sandboxes,https://www.daytona.io/
+daytona,Daytona sandboxes,https://github.com/daytonaio/daytona
+modal_sandboxes,Modal Sandboxes,https://modal.com/docs/guide/sandboxes
+modal_sandboxes,Modal Sandboxes,https://modal.com/products/sandboxes
+vercel_sandbox,Vercel Sandbox,https://vercel.com/docs/sandbox
+openhands_runtime_api,OpenHands runtime API sandbox,https://docs.openhands.dev/sdk/guides/agent-server/api-sandbox
+openhands_runtime_api,OpenHands runtime API sandbox,https://docs.openhands.dev/sdk/arch/overview
+codex_sandbox,Codex sandbox and approvals,https://developers.openai.com/codex/concepts/sandboxing
+sandcastle_providers,Sandcastle provider sandboxes,https://github.com/mattpocock/sandcastle
+flue_virtual_sandbox,Flue virtual sandbox,https://flueframework.com/docs/guide/sandboxes/
+flue_virtual_sandbox,Flue virtual sandbox,https://github.com/withastro/flue
+kubernetes_hardened_pods,Kubernetes hardened pods,https://kubernetes.io/docs/concepts/security/pod-security-standards/
+kubernetes_hardened_pods,Kubernetes hardened pods,https://kubernetes.io/docs/tasks/configure-pod-container/security-context/
+kubernetes_hardened_pods,Kubernetes hardened pods,https://kubernetes.io/docs/reference/node/seccomp/

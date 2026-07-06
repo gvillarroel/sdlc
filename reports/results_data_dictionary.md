@@ -233,6 +233,22 @@ Markdown table column consistency check.
 | `ok` |
 | `message` |
 
+## `market_maintenance_source_matrix.csv`
+
+Curated source matrix for the market, maintenance, and AI-code-trust addenda.
+
+| Column |
+|---|
+| `source_id` |
+| `title` |
+| `year` |
+| `evidence_type` |
+| `domain` |
+| `claim_supported` |
+| `confidence` |
+| `relevant_reports` |
+| `url` |
+
 ## `monte_carlo_summary.csv`
 
 Monte Carlo score and rank stability by scenario.
@@ -322,6 +338,9 @@ Example post-pilot decision score output.
 | `artifact_completeness` |
 | `cost_latency_score` |
 | `setup_maintenance_score` |
+| `market_readiness_score` |
+| `reviewer_comprehension_score` |
+| `trust_provenance_score` |
 | `notes` |
 
 ## `pilot_sample_size_estimates.csv`
@@ -413,6 +432,81 @@ Risk-to-evidence validation mapping for pilot gates.
 | `metric_to_capture` |
 | `pass_condition` |
 | `affected_candidates` |
+
+## `sandbox_decision_matrix.csv`
+
+Sandbox scenario shortlist with recommendation posture and caveats.
+
+| Column |
+|---|
+| `scenario` |
+| `scenario_label` |
+| `rank` |
+| `sandbox_id` |
+| `sandbox` |
+| `type` |
+| `deterministic_score` |
+| `monte_carlo_mean_rank` |
+| `win_rate` |
+| `top3_rate` |
+| `posture` |
+| `best_for` |
+| `watch_for` |
+
+## `sandbox_deterministic_rankings.csv`
+
+Weighted sandbox rankings by scenario.
+
+| Column |
+|---|
+| `scenario` |
+| `scenario_label` |
+| `rank` |
+| `sandbox_id` |
+| `sandbox` |
+| `type` |
+| `score` |
+
+## `sandbox_monte_carlo_summary.csv`
+
+Sandbox ranking stability under score and weight uncertainty.
+
+| Column |
+|---|
+| `scenario` |
+| `sandbox_id` |
+| `sandbox` |
+| `mean_score` |
+| `p10_score` |
+| `p90_score` |
+| `mean_rank` |
+| `win_rate` |
+| `top3_rate` |
+| `trials` |
+
+## `sandbox_source_matrix.csv`
+
+Official source URLs used by the sandbox evaluation dataset.
+
+| Column |
+|---|
+| `sandbox_id` |
+| `sandbox` |
+| `url` |
+
+## `sandbox_threat_coverage.csv`
+
+Threat-to-control coverage by sandbox option.
+
+| Column |
+|---|
+| `threat_id` |
+| `threat` |
+| `sandbox_id` |
+| `sandbox` |
+| `required_controls` |
+| `coverage_score` |
+| `coverage_band` |
 
 ## `scenario_playbook_summary.csv`
 

@@ -52,6 +52,9 @@ def score_row(row: dict[str, str], model: dict[str, Any]) -> dict[str, Any]:
     safety_score = 1.0 if safety_failures == 0 else 0.0
     cost_latency_score = clamp(float(row["cost_latency_score"]))
     setup_maintenance_score = clamp(float(row["setup_maintenance_score"]))
+    market_readiness_score = clamp(float(row["market_readiness_score"]))
+    reviewer_comprehension_score = clamp(float(row["reviewer_comprehension_score"]))
+    trust_provenance_score = clamp(float(row["trust_provenance_score"]))
 
     final_score = 100.0 * (
         task_success_rate * weights["task_success"]
@@ -60,6 +63,9 @@ def score_row(row: dict[str, str], model: dict[str, Any]) -> dict[str, Any]:
         + artifact_completeness * weights["observability"]
         + cost_latency_score * weights["cost_latency"]
         + setup_maintenance_score * weights["setup_maintenance"]
+        + market_readiness_score * weights["market_readiness"]
+        + reviewer_comprehension_score * weights["reviewer_comprehension"]
+        + trust_provenance_score * weights["trust_provenance"]
     )
 
     gate_failures = []
@@ -71,6 +77,12 @@ def score_row(row: dict[str, str], model: dict[str, Any]) -> dict[str, Any]:
         gate_failures.append("review_acceptance_rate")
     if artifact_completeness < gates["minimum_artifact_completeness"]:
         gate_failures.append("artifact_completeness")
+    if market_readiness_score < gates["minimum_market_readiness"]:
+        gate_failures.append("market_readiness_score")
+    if reviewer_comprehension_score < gates["minimum_reviewer_comprehension"]:
+        gate_failures.append("reviewer_comprehension_score")
+    if trust_provenance_score < gates["minimum_trust_provenance"]:
+        gate_failures.append("trust_provenance_score")
 
     return {
         "candidate": row["candidate"],
@@ -83,6 +95,9 @@ def score_row(row: dict[str, str], model: dict[str, Any]) -> dict[str, Any]:
         "artifact_completeness": round(artifact_completeness, 4),
         "cost_latency_score": round(cost_latency_score, 4),
         "setup_maintenance_score": round(setup_maintenance_score, 4),
+        "market_readiness_score": round(market_readiness_score, 4),
+        "reviewer_comprehension_score": round(reviewer_comprehension_score, 4),
+        "trust_provenance_score": round(trust_provenance_score, 4),
         "notes": row.get("notes", "")
     }
 
@@ -109,6 +124,9 @@ def write_output(path: Path, rows: list[dict[str, Any]]) -> None:
         "artifact_completeness",
         "cost_latency_score",
         "setup_maintenance_score",
+        "market_readiness_score",
+        "reviewer_comprehension_score",
+        "trust_provenance_score",
         "notes"
     ]
     with path.open("w", encoding="utf-8", newline="") as handle:

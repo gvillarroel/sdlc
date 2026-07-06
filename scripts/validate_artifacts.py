@@ -23,6 +23,10 @@ OPERATING_PROFILE_COUNT = 3
 PILOT_SAMPLE_COMPARISON_COUNT = 2
 PILOT_SAMPLE_TASK_COUNT = 5
 SCENARIO_SHORTLIST_COUNT = 5
+SANDBOX_COUNT = 15
+SANDBOX_SCENARIO_COUNT = 5
+SANDBOX_THREAT_COUNT = 5
+SANDBOX_SHORTLIST_COUNT = 5
 
 REQUIRED_RESULT_FILES = [
     "deterministic_rankings.csv",
@@ -48,6 +52,12 @@ REQUIRED_RESULT_FILES = [
     "regret_analysis.csv",
     "pareto_frontier.csv",
     "rank_stability.csv",
+    "market_maintenance_source_matrix.csv",
+    "sandbox_deterministic_rankings.csv",
+    "sandbox_monte_carlo_summary.csv",
+    "sandbox_threat_coverage.csv",
+    "sandbox_decision_matrix.csv",
+    "sandbox_source_matrix.csv",
     "stress_test_summary.csv",
     "stress_test_rankings.csv",
     "uncertainty_stress_summary.csv",
@@ -92,6 +102,35 @@ def validate_result_shapes() -> None:
     assert_true(len(read_csv(RESULTS / "score_driver_summary.csv")) == alt_count, "unexpected score driver row count")
     assert_true(len(read_csv(RESULTS / "criterion_spread_summary.csv")) == CRITERIA_COUNT, "unexpected criterion spread row count")
     assert_true(len(read_csv(RESULTS / "rank_stability.csv")) == alt_count, "unexpected rank stability row count")
+    assert_true(
+        len(read_csv(RESULTS / "market_maintenance_source_matrix.csv")) >= 20,
+        "unexpected market and maintenance source matrix row count",
+    )
+    assert_true(
+        len(read_csv(RESULTS / "sandbox_deterministic_rankings.csv")) == SANDBOX_COUNT * SANDBOX_SCENARIO_COUNT,
+        "unexpected sandbox deterministic row count",
+    )
+    sandbox_mc_rows = read_csv(RESULTS / "sandbox_monte_carlo_summary.csv")
+    assert_true(
+        len(sandbox_mc_rows) == SANDBOX_COUNT * SANDBOX_SCENARIO_COUNT,
+        "unexpected sandbox monte carlo row count",
+    )
+    assert_true(
+        all(0 <= float(row["top3_rate"]) <= 1 for row in sandbox_mc_rows),
+        "sandbox top3 rates must be between 0 and 1",
+    )
+    assert_true(
+        len(read_csv(RESULTS / "sandbox_threat_coverage.csv")) == SANDBOX_COUNT * SANDBOX_THREAT_COUNT,
+        "unexpected sandbox threat coverage row count",
+    )
+    assert_true(
+        len(read_csv(RESULTS / "sandbox_decision_matrix.csv")) == SANDBOX_SCENARIO_COUNT * SANDBOX_SHORTLIST_COUNT,
+        "unexpected sandbox decision matrix row count",
+    )
+    assert_true(
+        len(read_csv(RESULTS / "sandbox_source_matrix.csv")) >= SANDBOX_COUNT,
+        "unexpected sandbox source matrix row count",
+    )
     assert_true(len(read_csv(RESULTS / "pareto_frontier.csv")) == alt_count, "unexpected pareto row count")
     assert_true(len(read_csv(RESULTS / "implementation_effort_estimates.csv")) == alt_count, "unexpected implementation effort row count")
     operational_cost_rows = read_csv(RESULTS / "operational_cost_estimates.csv")
@@ -186,6 +225,7 @@ def validate_report_references() -> None:
         "data/operational_cost_model.json",
         "data/security_evaluation_fixtures.json",
         "data/simulation_assumptions.json",
+        "data/sandbox_evaluation.json",
         "data/traceability_matrix.json",
         "reports/adoption_decision_record.md",
         "reports/candidate_taxonomy.md",
@@ -197,6 +237,11 @@ def validate_report_references() -> None:
         "reports/final_report_bundle.md",
         "reports/glossary.md",
         "reports/github_metadata_check.md",
+        "reports/ai_code_trust_matrix.md",
+        "reports/long_term_ai_app_maintenance.md",
+        "reports/market_maintenance_synthesis.md",
+        "reports/market_entry_barriers_shift.md",
+        "reports/market_fragmentation_user_share.md",
         "reports/maintenance_guide.md",
         "reports/methodology_appendix.md",
         "reports/operational_cost_model.md",
@@ -204,6 +249,7 @@ def validate_report_references() -> None:
         "reports/presentation_outline.md",
         "reports/release_notes.md",
         "reports/recommendation_rationale.md",
+        "reports/sandbox_report.md",
         "reports/score_driver_summary.md",
         "reports/requirements_traceability.md",
         "reports/results_data_dictionary.md",

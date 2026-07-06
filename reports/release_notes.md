@@ -12,6 +12,8 @@ This page summarizes the current repository state for a reviewer opening the Git
 |---|---|
 | Final English report | `reports/ai_orchestrator_frameworks_report.md`, `reports/final_report_bundle.md`, `reports/executive_brief.md` |
 | Reproducible simulations | `scripts/simulate_alternatives.py`, `scripts/stress_test_simulation.py`, `results/all_results.json` |
+| Dedicated sandbox analysis | `reports/sandbox_report.md`, `data/sandbox_evaluation.json`, `results/sandbox_decision_matrix.csv` |
+| Market and maintenance addenda | `reports/market_maintenance_synthesis.md`, `reports/market_entry_barriers_shift.md`, `reports/market_fragmentation_user_share.md`, `reports/long_term_ai_app_maintenance.md`, `reports/ai_code_trust_matrix.md`, `results/market_maintenance_source_matrix.csv` |
 | Decision rationale | `reports/scenario_playbooks.md`, `reports/recommendation_rationale.md`, `reports/adoption_decision_record.md` |
 | Implementation complexity | `reports/implementation_blueprints.md`, `reports/operational_cost_model.md`, `results/implementation_effort_estimates.csv` |
 | Evidence and risk | `reports/evidence_gap_analysis.md`, `reports/github_metadata_check.md`, `reports/risk_validation_matrix.md` |
@@ -22,13 +24,13 @@ This page summarizes the current repository state for a reviewer opening the Git
 
 | Check | Current result |
 |---|---|
-| Unit tests | 133 tests passed |
-| Generated CSV schemas | 35 schemas checked, 0 failures |
-| Local artifact references | 745 references checked, 0 missing |
-| Markdown tables | 221 tables checked, 0 failures |
-| External source URLs | 41 URLs checked, 41 OK |
+| Unit tests | 141 tests passed |
+| Generated CSV schemas | 41 schemas checked, 0 failures |
+| Local artifact references | 853 references checked, 0 missing |
+| Markdown tables | 313 tables checked, 0 failures |
+| External source URLs | 62 URLs checked, 62 OK |
 | GitHub metadata | 17 repos checked, 0 failures, 0 license mismatches |
-| Artifact manifest | 155 report, data, result, script, test, template, and CI rows |
+| Artifact manifest | 170 report, data, result, script, test, template, and CI rows |
 
 ## Review Entry Points
 

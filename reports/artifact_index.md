@@ -18,6 +18,12 @@ Use this index to choose the right file quickly.
 | Exclusion rationale | `reports/exclusions.md` |
 | Guided shortlist selection | `reports/decision_tree.md` |
 | Full analysis | `reports/ai_orchestrator_frameworks_report.md` |
+| Dedicated sandbox evaluation | `reports/sandbox_report.md` |
+| Market, maintenance, and trust synthesis | `reports/market_maintenance_synthesis.md` |
+| AI-native market barrier shift | `reports/market_entry_barriers_shift.md` |
+| Market fragmentation and user-share pressure | `reports/market_fragmentation_user_share.md` |
+| Long-term maintenance capacity | `reports/long_term_ai_app_maintenance.md` |
+| AI code reading and trust matrix | `reports/ai_code_trust_matrix.md` |
 | One-file report bundle | `reports/final_report_bundle.md` |
 | Requirement coverage | `reports/requirements_traceability.md` |
 | Validation and QA summary | `reports/validation_summary.md` |
@@ -53,6 +59,7 @@ Use this index to choose the right file quickly.
 | Machine-readable decision tree | `data/decision_tree.json` |
 | Adoption risk register | `data/risk_register.json` |
 | Simulation assumption register | `data/simulation_assumptions.json` |
+| Sandbox evaluation dataset | `data/sandbox_evaluation.json` |
 | Operational cost model assumptions | `data/operational_cost_model.json` |
 | Security evaluation fixtures | `data/security_evaluation_fixtures.json` |
 | Candidate taxonomy data | `data/candidate_taxonomy.json` |
@@ -71,6 +78,12 @@ Use this index to choose the right file quickly.
 | Regret versus scenario winner | `results/regret_analysis.csv` |
 | Pareto dominance | `results/pareto_frontier.csv` |
 | Cross-scenario rank stability | `results/rank_stability.csv` |
+| Market, maintenance, and trust source matrix | `results/market_maintenance_source_matrix.csv` |
+| Sandbox weighted rankings | `results/sandbox_deterministic_rankings.csv` |
+| Sandbox Monte Carlo stability | `results/sandbox_monte_carlo_summary.csv` |
+| Sandbox threat coverage | `results/sandbox_threat_coverage.csv` |
+| Sandbox decision matrix | `results/sandbox_decision_matrix.csv` |
+| Sandbox official source matrix | `results/sandbox_source_matrix.csv` |
 | Deterministic assumption stress summary | `results/stress_test_summary.csv` |
 | Deterministic assumption stress rankings | `results/stress_test_rankings.csv` |
 | Monte Carlo uncertainty stress summary | `results/uncertainty_stress_summary.csv` |
@@ -116,6 +129,7 @@ Use this index to choose the right file quickly.
 | Need | Artifact |
 |---|---|
 | Regenerate rankings and simulations | `scripts/simulate_alternatives.py` |
+| Generate sandbox evaluation report | `scripts/simulate_sandboxes.py` |
 | Run simulation stress tests | `scripts/stress_test_simulation.py` |
 | Analyze score drivers | `scripts/analyze_score_drivers.py` |
 | Build scenario playbooks | `scripts/build_scenario_playbooks.py` |
@@ -155,6 +169,7 @@ Or run the core deterministic pieces manually:
 
 ```powershell
 python scripts/simulate_alternatives.py --trials 5000 --seed 7331
+python scripts/simulate_sandboxes.py --trials 4000 --seed 260705
 python scripts/stress_test_simulation.py --trials 1500 --seed 9011
 python scripts/analyze_score_drivers.py
 python scripts/build_scenario_playbooks.py

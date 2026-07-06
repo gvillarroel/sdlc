@@ -29,6 +29,18 @@ Use `data/pilot_tasks.json` and the templates in `templates/` to capture metrics
 
 The evaluation is not a live benchmark of every candidate. It is a multi-criteria decision analysis backed by GitHub metadata, source links, license filtering, scoring criteria, Monte Carlo uncertainty, and sensitivity checks. It narrows the field and exposes tradeoffs; the pilot should decide final adoption.
 
+## Market And Maintenance Addendum
+
+AI-native creation lowers prototype cost, but it shifts the burden toward distribution, defensibility, trust, and maintenance. Read the four addenda before treating a fast-to-build framework as a product foundation:
+
+| Question | Addendum |
+|---|---|
+| What is the combined go/no-go model? | `reports/market_maintenance_synthesis.md` |
+| How have entry barriers moved? | `reports/market_entry_barriers_shift.md` |
+| What happens when many generated tools fight for the same users? | `reports/market_fragmentation_user_share.md` |
+| Can generated applications be supported over time? | `reports/long_term_ai_app_maintenance.md` |
+| When should teams read AI-generated code versus trust verification gates? | `reports/ai_code_trust_matrix.md` |
+
 ## Highest Risks
 
 | Risk | Why it matters | Required mitigation |

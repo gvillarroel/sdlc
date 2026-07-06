@@ -26,8 +26,23 @@ Use this worksheet before changing weights or choosing pilot candidates.
 | CI/PR automation | | |
 | Human approval before shell commands | | |
 | Complete logs and replayable traces | | |
+| Market defense gate | | |
+| User-share realism gate | | |
+| Maintenance capacity gate | | |
+| Trust posture gate | | |
 
-## 3. Weighting Priorities
+## 3. Market, Maintenance, And Trust Gate
+
+Use `reports/market_maintenance_synthesis.md` before selecting pilot candidates.
+
+| Gate | Required evidence before pilot | Owner |
+|---|---|---|
+| Market defense | Workflow depth, proprietary data/evaluation traces, distribution, switching cost, or regulated trust. | |
+| User-share realism | Narrow target segment, usage frequency, substitute map, and budget or retention signal. | |
+| Maintenance capacity | Named maintainers, test strategy, observability plan, support budget, and ownership model. | |
+| Trust posture | Policy for when generated code must be read and which verification gates can substitute for reading. | |
+
+## 4. Weighting Priorities
 
 Score each priority from 0 to 5 before looking at candidate rankings.
 
@@ -47,21 +62,27 @@ Score each priority from 0 to 5 before looking at candidate rankings.
 | Deployment flexibility | |
 | Coding-task specialization | |
 | Research reproducibility | |
+| Market defensibility evidence | |
+| Retention or workflow integration evidence | |
+| Long-term maintenance capacity | |
+| Trust-gate strength | |
 
-## 4. Candidate Selection
+## 5. Candidate Selection
 
 | Scenario | Candidate 1 | Candidate 2 | Candidate 3 | Reason |
 |---|---|---|---|---|
 | Primary scenario | | | | |
 | Fallback scenario | | | | |
 
-## 5. Pilot Exit Decision
+## 6. Pilot Exit Decision
 
 | Decision question | Answer |
 |---|---|
 | What pass rate is acceptable? | |
 | What review acceptance rate is acceptable? | |
+| What minimum product-readiness rubric score is required? | |
 | What safety failures are tolerated? | None by default |
 | What cost and latency budget is acceptable? | |
 | What artifact completeness threshold is required? | |
+| What trust gate is required for production-impacting changes? | |
 | Who can approve adoption? | |

@@ -46,6 +46,20 @@ For one-file review, read the generated bundle at `reports/final_report_bundle.m
 
 For local prerequisites and live-check requirements, read `reports/environment_prerequisites.md`.
 
+For a dedicated sandbox evaluation across Docker, Podman, gVisor, Firecracker, Kata, managed cloud sandboxes, and agent-runtime controls, read `reports/sandbox_report.md`; the machine-readable dataset is `data/sandbox_evaluation.json`.
+
+For the combined market, maintenance, and trust decision model, read `reports/market_maintenance_synthesis.md`.
+
+For market-analysis changes caused by AI-native software creation, read `reports/market_entry_barriers_shift.md`.
+
+For user-share pressure and app-layer fragmentation, read `reports/market_fragmentation_user_share.md`.
+
+For long-term technical support capacity and AI-generated maintenance risk, read `reports/long_term_ai_app_maintenance.md`.
+
+For the code-reading versus AI-trust framework matrix, read `reports/ai_code_trust_matrix.md`.
+
+For the curated source matrix behind the market, maintenance, and trust addenda, read `results/market_maintenance_source_matrix.csv`.
+
 For excluded items and boundary cases, read `reports/exclusions.md`.
 
 For a quick guided shortlist, read `reports/decision_tree.md`.
@@ -288,6 +302,11 @@ Generated outputs:
 | `results/regret_analysis.csv` | Score gap between each candidate and the scenario winner. |
 | `results/pareto_frontier.csv` | Candidates that are not strictly dominated across all criteria. |
 | `results/rank_stability.csv` | Cross-scenario rank stability, best/worst rank, and average Monte Carlo top-3 rate. |
+| `results/sandbox_deterministic_rankings.csv` | Dedicated sandbox weighted rankings by scenario. |
+| `results/sandbox_monte_carlo_summary.csv` | Dedicated sandbox ranking stability under score and weight uncertainty. |
+| `results/sandbox_threat_coverage.csv` | Dedicated sandbox threat-to-control coverage by sandbox option. |
+| `results/sandbox_decision_matrix.csv` | Dedicated sandbox scenario shortlist with recommendation posture and caveats. |
+| `results/sandbox_source_matrix.csv` | Official source URLs used by the dedicated sandbox dataset. |
 | `results/stress_test_summary.csv` | Deterministic assumption stress-test summary. |
 | `results/stress_test_rankings.csv` | Full deterministic rankings under each stress-test case. |
 | `results/uncertainty_stress_summary.csv` | Monte Carlo ranking stability under alternate uncertainty assumptions. |

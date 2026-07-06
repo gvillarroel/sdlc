@@ -17,11 +17,16 @@ from urllib.request import Request, urlopen
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_DATA = ROOT / "data" / "alternatives.json"
 DEFAULT_REPORT = ROOT / "reports" / "ai_orchestrator_frameworks_report.md"
+DEFAULT_SOURCE_MATRIX = ROOT / "results" / "market_maintenance_source_matrix.csv"
 DEFAULT_OUTPUT = ROOT / "results" / "source_check.csv"
 URL_RE = re.compile(r"https?://[^\s)>\]]+")
 
 
-def collect_urls(data_path: Path = DEFAULT_DATA, report_path: Path = DEFAULT_REPORT) -> list[str]:
+def collect_urls(
+    data_path: Path = DEFAULT_DATA,
+    report_path: Path = DEFAULT_REPORT,
+    source_matrix_path: Path = DEFAULT_SOURCE_MATRIX,
+) -> list[str]:
     urls: set[str] = set()
     raw = json.loads(data_path.read_text(encoding="utf-8"))
     for item in raw["alternatives"]:
@@ -32,6 +37,12 @@ def collect_urls(data_path: Path = DEFAULT_DATA, report_path: Path = DEFAULT_REP
         urls.update(item.get("evidence_urls", []))
     for match in URL_RE.findall(report_path.read_text(encoding="utf-8")):
         urls.add(match.rstrip(".,"))
+    if source_matrix_path.exists():
+        with source_matrix_path.open("r", encoding="utf-8", newline="") as handle:
+            for row in csv.DictReader(handle):
+                url = row.get("url", "").strip()
+                if url:
+                    urls.add(url)
     return sorted(urls)
 
 
@@ -89,11 +100,15 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--data", type=Path, default=DEFAULT_DATA)
     parser.add_argument("--report", type=Path, default=DEFAULT_REPORT)
+    parser.add_argument("--source-matrix", type=Path, default=DEFAULT_SOURCE_MATRIX)
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
     parser.add_argument("--timeout", type=float, default=15.0)
     args = parser.parse_args()
 
-    rows = [check_url(url, args.timeout) for url in collect_urls(args.data, args.report)]
+    rows = [
+        check_url(url, args.timeout)
+        for url in collect_urls(args.data, args.report, args.source_matrix)
+    ]
     write_csv(args.output, rows)
     ok_count = sum(1 for row in rows if row["ok"])
     print(f"checked={len(rows)} ok={ok_count} failed={len(rows) - ok_count}")
