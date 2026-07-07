@@ -637,33 +637,177 @@
 
     <section id="candidates">
       <div class="wrap">
-        <h2>Candidate Readout</h2>
-        <div class="cards">
-          <article class="card">
-            <h3>OpenHands SDK</h3>
-            <p>Most stable cross-scenario candidate. Fits teams that need a platform foundation, operational artifacts, and flexibility.</p>
-          </article>
-          <article class="card">
-            <h3>Cline / Cline SDK</h3>
-            <p>Strong in human-guided workflows, local productivity, and lightweight control-plane needs. Approval burden must be measured.</p>
-          </article>
-          <article class="card">
-            <h3>Deep Agents</h3>
-            <p>Useful comparator for multi-agent patterns and programmable orchestration, without dominating the ranking.</p>
-          </article>
-          <article class="card">
-            <h3>Codex CLI</h3>
-            <p>Strong for secure autonomous PRs and low initial effort. The tradeoff is lock-in and strict policy validation.</p>
-          </article>
-          <article class="card">
-            <h3>mini-SWE-agent</h3>
-            <p>Best reproducible baseline for benchmarking and research. It does not replace internal operational evaluation.</p>
-          </article>
-          <article class="card">
-            <h3>SWE-agent</h3>
-            <p>Mature reference for issue-resolution research and comparisons against more product-oriented agents.</p>
-          </article>
-        </div>
+        <h2>All Alternatives Analyzed</h2>
+        <p>This section is aligned with <code>data/alternatives.json</code> and lists every included permissive open-source alternative, not only the shortlist. The scenario tables above explain which candidates lead under specific weighting profiles; this table explains how every candidate should be interpreted.</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Alternative</th>
+              <th>License / maturity / language</th>
+              <th>What it is</th>
+              <th>Strongest signals</th>
+              <th>Watch points</th>
+              <th>Role in the decision</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>Sandcastle</code></td>
+              <td>MIT / beta / TypeScript</td>
+              <td>TypeScript library for orchestrating coding agents in isolated sandboxes with branch and worktree strategies.</td>
+              <td>Sandbox isolation, coding fit, CI and PR workflows.</td>
+              <td>Observability and maturity.</td>
+              <td>Pilot only if isolated branch or worktree orchestration is a priority.</td>
+            </tr>
+            <tr>
+              <td><code>Flue</code></td>
+              <td>Apache-2.0 / beta / TypeScript</td>
+              <td>Programmable TypeScript agent harness with sessions, tools, skills, sandboxing, deployment targets, and observability adapters.</td>
+              <td>Provider portability, extensibility, deployment flexibility.</td>
+              <td>Maturity and human control.</td>
+              <td>Use when a product-specific TypeScript agent platform matters.</td>
+            </tr>
+            <tr>
+              <td><code>Anchor</code></td>
+              <td>MIT / alpha / JavaScript</td>
+              <td>Narrow review-harness and plugin-style project centered on Claude Code workflows.</td>
+              <td>Implementation ease, human control, coding fit.</td>
+              <td>Multi-agent capability and maturity.</td>
+              <td>Reference or watchlist item, not a primary platform candidate.</td>
+            </tr>
+            <tr>
+              <td><code>Omnigent</code></td>
+              <td>Apache-2.0 / alpha / Python</td>
+              <td>Meta-harness for orchestrating multiple coding-agent backends with policies, sandboxing, and collaboration.</td>
+              <td>Provider portability, human control, extensibility.</td>
+              <td>Maturity and implementation effort.</td>
+              <td>Alpha control-plane idea to monitor or prototype only behind clear risk gates.</td>
+            </tr>
+            <tr>
+              <td><code>OmniAgent</code></td>
+              <td>MIT / alpha / Python</td>
+              <td>Local multi-model AI coding agent CLI with ReAct, Plan-Execute, MCP, memory, and TUI concepts.</td>
+              <td>Provider portability, human control, implementation ease.</td>
+              <td>Maturity and CI or PR automation.</td>
+              <td>Experimental local CLI watchlist item.</td>
+            </tr>
+            <tr>
+              <td><code>Omni Agent</code></td>
+              <td>MIT / alpha / TypeScript</td>
+              <td>Verification-native local coding-agent runtime with eval gates, memory, subagents, and model profiles.</td>
+              <td>Security governance, provider portability, multi-agent design.</td>
+              <td>Maturity and research reproducibility.</td>
+              <td>Verification-design reference, not an adoption bet yet.</td>
+            </tr>
+            <tr>
+              <td><code>Deep Agents</code></td>
+              <td>MIT / beta / Python</td>
+              <td>Batteries-included agent harness with tools, filesystem, permissions, code execution, memory, subagents, and human-in-the-loop controls.</td>
+              <td>Provider portability, extensibility, persistence and memory.</td>
+              <td>CI or PR automation and maturity.</td>
+              <td>Strong Python orchestrator comparator for a head-to-head pilot.</td>
+            </tr>
+            <tr>
+              <td><code>Codex CLI</code></td>
+              <td>Apache-2.0 / production / Rust</td>
+              <td>OpenAI terminal coding agent with OS-level sandboxing, approvals, subagents, skills, hooks, and GitHub Action integration.</td>
+              <td>Security governance, coding fit, sandbox isolation.</td>
+              <td>Provider portability and persistence or memory.</td>
+              <td>Secure autonomous PR, local, or CI candidate if OpenAI dependence is acceptable.</td>
+            </tr>
+            <tr>
+              <td><code>OpenCode</code></td>
+              <td>MIT / production / TypeScript</td>
+              <td>Open-source coding agent for terminal, desktop, and IDE workflows with broad provider support.</td>
+              <td>Provider portability, coding fit, extensibility.</td>
+              <td>Sandbox isolation and observability.</td>
+              <td>Local provider-flexible benchmark and practical developer-experience comparator.</td>
+            </tr>
+            <tr>
+              <td><code>Cline / Cline SDK</code></td>
+              <td>Apache-2.0 / production / TypeScript</td>
+              <td>Autonomous coding agent delivered as SDK, IDE extension, CLI, and automation surface.</td>
+              <td>Human control, provider portability, extensibility.</td>
+              <td>Sandbox isolation and research reproducibility.</td>
+              <td>Primary workflow candidate for human-guided and control-plane scenarios.</td>
+            </tr>
+            <tr>
+              <td><code>OpenHands Agent Canvas</code></td>
+              <td>MIT / beta / TypeScript</td>
+              <td>Self-hosted developer control center for running coding agents and automations locally or in the cloud.</td>
+              <td>Provider portability, deployment flexibility, multi-agent operation.</td>
+              <td>Maturity and research reproducibility.</td>
+              <td>Control-center candidate when self-hosted UI and backend switching matter.</td>
+            </tr>
+            <tr>
+              <td><code>OpenHands Software Agent SDK</code></td>
+              <td>MIT / production / Python</td>
+              <td>Composable Python and REST SDK for building software-engineering agents with local or ephemeral workspaces.</td>
+              <td>Provider portability, coding fit, extensibility.</td>
+              <td>Implementation ease and observability.</td>
+              <td>Primary platform candidate and the most stable cross-scenario option.</td>
+            </tr>
+            <tr>
+              <td><code>Open SWE</code></td>
+              <td>MIT / beta / Python</td>
+              <td>Open-source asynchronous coding-agent framework built on Deep Agents and LangGraph, with cloud sandbox providers and automatic PR creation.</td>
+              <td>CI and PR automation, sandbox isolation, multi-agent operation.</td>
+              <td>Implementation ease and maturity.</td>
+              <td>Async PR platform candidate when autonomous internal coding-agent workflows are the goal.</td>
+            </tr>
+            <tr>
+              <td><code>Aider</code></td>
+              <td>Apache-2.0 / production / Python</td>
+              <td>Terminal pair-programming agent focused on Git-based code edits, repo maps, and broad model support.</td>
+              <td>Coding fit, implementation ease, provider portability.</td>
+              <td>Multi-agent capability and sandbox isolation.</td>
+              <td>Pair-programming baseline and fast trial candidate.</td>
+            </tr>
+            <tr>
+              <td><code>goose</code></td>
+              <td>Apache-2.0 / production / Rust</td>
+              <td>General-purpose local AI agent with desktop, CLI, API, MCP extensions, and broad provider support.</td>
+              <td>Provider portability, extensibility, implementation ease.</td>
+              <td>Multi-agent capability and observability.</td>
+              <td>General local automation and MCP benchmark, especially when work extends beyond code.</td>
+            </tr>
+            <tr>
+              <td><code>SWE-agent</code></td>
+              <td>MIT / production / Python</td>
+              <td>Research-grade and practical harness for solving real GitHub issues with a model of choice.</td>
+              <td>Research reproducibility, provider portability, coding fit.</td>
+              <td>Multi-agent capability and persistence or memory.</td>
+              <td>Research benchmark candidate and issue-resolution reference.</td>
+            </tr>
+            <tr>
+              <td><code>mini-SWE-agent</code></td>
+              <td>MIT / beta / Python</td>
+              <td>Minimal Python SWE agent for solving GitHub issues or command-line tasks, optimized for simplicity and benchmark reproducibility.</td>
+              <td>Research reproducibility, provider portability, implementation ease.</td>
+              <td>Multi-agent capability and persistence or memory.</td>
+              <td>Minimal reproducibility baseline for ablations and small experiments.</td>
+            </tr>
+          </tbody>
+        </table>
+        <h3>Excluded From The Permissive OSS Set</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Reason</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>Claude Agent SDK</code></td>
+              <td>Not included in the permissive open-source shortlist. The shared table marked it as an official Anthropic license and Claude-centric, so it does not meet the requested permissive OSS filter.</td>
+            </tr>
+            <tr>
+              <td><code>Codex app</code></td>
+              <td>Not included because the shared table marked it as a closed or commercial desktop application, not an open-source framework.</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </section>
 

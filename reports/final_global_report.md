@@ -134,25 +134,34 @@ The cross-scenario stability signal matters more than a single first-place resul
 
 ## Candidate Readout
 
-### OpenHands Software Agent SDK
+This section is aligned with `data/alternatives.json` and covers every included permissive open-source alternative, not only the shortlist. The scenario tables above explain which candidates lead under specific weighting profiles; this table explains how every candidate should be interpreted.
 
-The most stable cross-scenario candidate. It fits teams that want to build a platform, preserve flexibility, and capture operational artifacts. It should not be adopted without validating integration, runtime behavior, credential flow, logs, and upgrade lifecycle.
+| Alternative | License / maturity / language | What it is | Strongest signals | Watch points | Role in the decision |
+|---|---|---|---|---|---|
+| `Sandcastle` | MIT / beta / TypeScript | TypeScript library for orchestrating coding agents in isolated sandboxes with branch and worktree strategies. | Sandbox isolation, coding fit, CI and PR workflows. | Observability and maturity. | Pilot only if isolated branch or worktree orchestration is a priority. |
+| `Flue` | Apache-2.0 / beta / TypeScript | Programmable TypeScript agent harness with sessions, tools, skills, sandboxing, deployment targets, and observability adapters. | Provider portability, extensibility, deployment flexibility. | Maturity and human control. | Use when a product-specific TypeScript agent platform matters. |
+| `Anchor` | MIT / alpha / JavaScript | Narrow review-harness and plugin-style project centered on Claude Code workflows. | Implementation ease, human control, coding fit. | Multi-agent capability and maturity. | Reference or watchlist item, not a primary platform candidate. |
+| `Omnigent` | Apache-2.0 / alpha / Python | Meta-harness for orchestrating multiple coding-agent backends with policies, sandboxing, and collaboration. | Provider portability, human control, extensibility. | Maturity and implementation effort. | Alpha control-plane idea to monitor or prototype only behind clear risk gates. |
+| `OmniAgent` | MIT / alpha / Python | Local multi-model AI coding agent CLI with ReAct, Plan-Execute, MCP, memory, and TUI concepts. | Provider portability, human control, implementation ease. | Maturity and CI or PR automation. | Experimental local CLI watchlist item. |
+| `Omni Agent` | MIT / alpha / TypeScript | Verification-native local coding-agent runtime with eval gates, memory, subagents, and model profiles. | Security governance, provider portability, multi-agent design. | Maturity and research reproducibility. | Verification-design reference, not an adoption bet yet. |
+| `Deep Agents` | MIT / beta / Python | Batteries-included agent harness with tools, filesystem, permissions, code execution, memory, subagents, and human-in-the-loop controls. | Provider portability, extensibility, persistence and memory. | CI or PR automation and maturity. | Strong Python orchestrator comparator for a head-to-head pilot. |
+| `Codex CLI` | Apache-2.0 / production / Rust | OpenAI terminal coding agent with OS-level sandboxing, approvals, subagents, skills, hooks, and GitHub Action integration. | Security governance, coding fit, sandbox isolation. | Provider portability and persistence or memory. | Secure autonomous PR, local, or CI candidate if OpenAI dependence is acceptable. |
+| `OpenCode` | MIT / production / TypeScript | Open-source coding agent for terminal, desktop, and IDE workflows with broad provider support. | Provider portability, coding fit, extensibility. | Sandbox isolation and observability. | Local provider-flexible benchmark and practical developer-experience comparator. |
+| `Cline / Cline SDK` | Apache-2.0 / production / TypeScript | Autonomous coding agent delivered as SDK, IDE extension, CLI, and automation surface. | Human control, provider portability, extensibility. | Sandbox isolation and research reproducibility. | Primary workflow candidate for human-guided and control-plane scenarios. |
+| `OpenHands Agent Canvas` | MIT / beta / TypeScript | Self-hosted developer control center for running coding agents and automations locally or in the cloud. | Provider portability, deployment flexibility, multi-agent operation. | Maturity and research reproducibility. | Control-center candidate when self-hosted UI and backend switching matter. |
+| `OpenHands Software Agent SDK` | MIT / production / Python | Composable Python and REST SDK for building software-engineering agents with local or ephemeral workspaces. | Provider portability, coding fit, extensibility. | Implementation ease and observability. | Primary platform candidate and the most stable cross-scenario option. |
+| `Open SWE` | MIT / beta / Python | Open-source asynchronous coding-agent framework built on Deep Agents and LangGraph, with cloud sandbox providers and automatic PR creation. | CI and PR automation, sandbox isolation, multi-agent operation. | Implementation ease and maturity. | Async PR platform candidate when autonomous internal coding-agent workflows are the goal. |
+| `Aider` | Apache-2.0 / production / Python | Terminal pair-programming agent focused on Git-based code edits, repo maps, and broad model support. | Coding fit, implementation ease, provider portability. | Multi-agent capability and sandbox isolation. | Pair-programming baseline and fast trial candidate. |
+| `goose` | Apache-2.0 / production / Rust | General-purpose local AI agent with desktop, CLI, API, MCP extensions, and broad provider support. | Provider portability, extensibility, implementation ease. | Multi-agent capability and observability. | General local automation and MCP benchmark, especially when work extends beyond code. |
+| `SWE-agent` | MIT / production / Python | Research-grade and practical harness for solving real GitHub issues with a model of choice. | Research reproducibility, provider portability, coding fit. | Multi-agent capability and persistence or memory. | Research benchmark candidate and issue-resolution reference. |
+| `mini-SWE-agent` | MIT / beta / Python | Minimal Python SWE agent for solving GitHub issues or command-line tasks, optimized for simplicity and benchmark reproducibility. | Research reproducibility, provider portability, implementation ease. | Multi-agent capability and persistence or memory. | Minimal reproducibility baseline for ablations and small experiments. |
 
-### Cline / Cline SDK
+### Excluded From The Permissive OSS Set
 
-Strong fit for human-guided workflows, local productivity, and lightweight control-plane needs. Its strength is developer workflow and user adoption. The pilot must measure whether the required human supervision preserves productivity gains.
-
-### Deep Agents
-
-A strong candidate for orchestration and multi-agent patterns, though it does not dominate the rankings. It is a useful technical comparator when the team wants to build a programmable layer instead of operating only a CLI.
-
-### Codex CLI
-
-Strong in secure autonomous PR scenarios and low initial effort. The main tradeoff is provider dependence and the need to validate policies, approvals, secrets, network access, and real sandbox behavior before automating code changes.
-
-### mini-SWE-agent And SWE-agent
-
-Especially valuable for research, benchmarking, and reproducibility. They are not necessarily the best operational product layer for teams, but they are excellent baselines for measuring whether broader tools add real value.
+| Item | Reason |
+|---|---|
+| `Claude Agent SDK` | Not included in the permissive open-source shortlist. The shared table marked it as an official Anthropic license and Claude-centric, so it does not meet the requested permissive OSS filter. |
+| `Codex app` | Not included because the shared table marked it as a closed or commercial desktop application, not an open-source framework. |
 
 ## Security And Sandboxing
 

@@ -1,3 +1,4 @@
+import json
 from pathlib import Path
 import unittest
 
@@ -110,6 +111,23 @@ class PagesSiteTest(unittest.TestCase):
             "results/risk_validation_matrix.csv",
         ]:
             self.assertIn(f"https://raw.githubusercontent.com/gvillarroel/sdlc/main/{path}", text)
+
+    def test_final_report_lists_every_alternative(self):
+        dataset = json.loads((ROOT / "data" / "alternatives.json").read_text(encoding="utf-8"))
+        site_text = (ROOT / "docs" / "index.html").read_text(encoding="utf-8")
+        report_text = (ROOT / "reports" / "final_global_report.md").read_text(encoding="utf-8")
+
+        self.assertIn("All Alternatives Analyzed", site_text)
+
+        for alternative in dataset["alternatives"]:
+            with self.subTest(alternative=alternative["name"]):
+                self.assertIn(alternative["name"], site_text)
+                self.assertIn(alternative["name"], report_text)
+
+        for item in dataset["excluded"]:
+            with self.subTest(excluded=item["name"]):
+                self.assertIn(item["name"], site_text)
+                self.assertIn(item["name"], report_text)
 
 
 if __name__ == "__main__":
