@@ -52,8 +52,18 @@ class ReportArtifactsTest(unittest.TestCase):
         self.assertTrue(bundle.exists())
         text = bundle.read_text(encoding="utf-8")
         self.assertIn("# Final Report Bundle", text)
+        self.assertIn("reports/final_global_report.md", text)
         self.assertIn("reports/ai_orchestrator_frameworks_report.md", text)
         self.assertIn("# Executive Brief", text)
+
+    def test_final_global_report_exists(self):
+        report = ROOT / "reports" / "final_global_report.md"
+        self.assertTrue(report.exists())
+        text = report.read_text(encoding="utf-8")
+        self.assertIn("# Reporte Final Global", text)
+        self.assertIn("## Vista Global", text)
+        self.assertIn("## Seguridad Y Sandboxing", text)
+        self.assertIn("docs/index.html", text)
 
     def test_faq_exists(self):
         faq = ROOT / "reports" / "faq.md"

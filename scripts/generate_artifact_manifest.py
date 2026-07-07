@@ -17,7 +17,7 @@ if str(ROOT) not in sys.path:
 from scripts.simulate_alternatives import DEFAULT_RESULTS, write_csv  # noqa: E402
 
 
-INCLUDED_DIRS = ["data", "examples", "reports", "results", "scripts", "templates", "tests", "ci"]
+INCLUDED_DIRS = [".github", "ci", "data", "docs", "examples", "reports", "results", "scripts", "templates", "tests"]
 EXCLUDED_SUFFIXES = {".pyc"}
 EXCLUDED_PATHS = {"results/artifact_manifest.csv"}
 

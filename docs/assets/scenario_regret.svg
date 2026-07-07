@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="648" viewBox="0 0 1080 648">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="24" y="32" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#111827">Scenario top-3 regret versus winner</text>
+<text x="24" y="52" font-family="Arial, sans-serif" font-size="12" fill="#4b5563">Lower is better. Zero means the scenario winner.</text>
+<text x="24" y="74" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#111827">custom_orchestrator_platform</text>
+<text x="44" y="94" font-family="Arial, sans-serif" font-size="13" fill="#111827">1. Cline / Cline SDK</text>
+<rect x="290" y="80" width="520" height="18" rx="3" fill="#f3f4f6"/>
+<rect x="290" y="80" width="2.0" height="18" rx="3" fill="#16a34a"/>
+<text x="820" y="94" font-family="Arial, sans-serif" font-size="12" fill="#111827">0.000</text>
+<text x="44" y="124" font-family="Arial, sans-serif" font-size="13" fill="#111827">2. OpenHands Software Agent SDK</text>
+<rect x="290" y="110" width="520" height="18" rx="3" fill="#f3f4f6"/>
+<rect x="290" y="110" width="2.0" height="18" rx="3" fill="#f97316"/>
+<text x="820" y="124" font-family="Arial, sans-serif" font-size="12" fill="#111827">0.001</text>
+<text x="44" y="154" font-family="Arial, sans-serif" font-size="13" fill="#111827">3. Deep Agents</text>
+<rect x="290" y="140" width="520" height="18" rx="3" fill="#f3f4f6"/>
+<rect x="290" y="140" width="51.1" height="18" rx="3" fill="#f97316"/>
+<text x="820" y="154" font-family="Arial, sans-serif" font-size="12" fill="#111827">0.023</text>
+<text x="24" y="182" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#111827">enterprise_control_plane</text>
+<text x="44" y="202" font-family="Arial, sans-serif" font-size="13" fill="#111827">1. Cline / Cline SDK</text>
+<rect x="290" y="188" width="520" height="18" rx="3" fill="#f3f4f6"/>
+<rect x="290" y="188" width="2.0" height="18" rx="3" fill="#16a34a"/>
+<text x="820" y="202" font-family="Arial, sans-serif" font-size="12" fill="#111827">0.000</text>
+<text x="44" y="232" font-family="Arial, sans-serif" font-size="13" fill="#111827">2. OpenHands Software Agent SDK</text>
+<rect x="290" y="218" width="520" height="18" rx="3" fill="#f3f4f6"/>
+<rect x="290" y="218" width="142.8" height="18" rx="3" fill="#f97316"/>
+<text x="820" y="232" font-family="Arial, sans-serif" font-size="12" fill="#111827">0.064</text>
+<text x="44" y="262" font-family="Arial, sans-serif" font-size="13" fill="#111827">3. Deep Agents</text>
+<rect x="290" y="248" width="520" height="18" rx="3" fill="#f3f4f6"/>
+<rect x="290" y="248" width="207.3" height="18" rx="3" fill="#f97316"/>
+<text x="820" y="262" font-family="Arial, sans-serif" font-size="12" fill="#111827">0.092</text>
+<text x="24" y="290" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#111827">quick_local_coding</text>
+<text x="44" y="310" font-family="Arial, sans-serif" font-size="13" fill="#111827">1. Cline / Cline SDK</text>
+<rect x="290" y="296" width="520" height="18" rx="3" fill="#f3f4f6"/>
+<rect x="290" y="296" width="2.0" height="18" rx="3" fill="#16a34a"/>
+<text x="820" y="310" font-family="Arial, sans-serif" font-size="12" fill="#111827">0.000</text>
+<text x="44" y="340" font-family="Arial, sans-serif" font-size="13" fill="#111827">2. OpenHands Software Agent SDK</text>
+<rect x="290" y="326" width="520" height="18" rx="3" fill="#f3f4f6"/>
+<rect x="290" y="326" width="310.5" height="18" rx="3" fill="#f97316"/>
+<text x="820" y="340" font-family="Arial, sans-serif" font-size="12" fill="#111827">0.139</text>
+<text x="44" y="370" font-family="Arial, sans-serif" font-size="13" fill="#111827">3. OpenCode</text>
+<rect x="290" y="356" width="520" height="18" rx="3" fill="#f3f4f6"/>
+<rect x="290" y="356" width="520.0" height="18" rx="3" fill="#f97316"/>
+<text x="820" y="370" font-family="Arial, sans-serif" font-size="12" fill="#111827">0.232</text>
+<text x="24" y="398" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#111827">research_benchmarking</text>
+<text x="44" y="418" font-family="Arial, sans-serif" font-size="13" fill="#111827">1. mini-SWE-agent</text>
+<rect x="290" y="404" width="520" height="18" rx="3" fill="#f3f4f6"/>
+<rect x="290" y="404" width="2.0" height="18" rx="3" fill="#16a34a"/>
+<text x="820" y="418" font-family="Arial, sans-serif" font-size="12" fill="#111827">0.000</text>
+<text x="44" y="448" font-family="Arial, sans-serif" font-size="13" fill="#111827">2. SWE-agent</text>
+<rect x="290" y="434" width="520" height="18" rx="3" fill="#f3f4f6"/>
+<rect x="290" y="434" width="251.2" height="18" rx="3" fill="#f97316"/>
+<text x="820" y="448" font-family="Arial, sans-serif" font-size="12" fill="#111827">0.112</text>
+<text x="44" y="478" font-family="Arial, sans-serif" font-size="13" fill="#111827">3. OpenHands Software Agent SDK</text>
+<rect x="290" y="464" width="520" height="18" rx="3" fill="#f3f4f6"/>
+<rect x="290" y="464" width="380.7" height="18" rx="3" fill="#f97316"/>
+<text x="820" y="478" font-family="Arial, sans-serif" font-size="12" fill="#111827">0.170</text>
+<text x="24" y="506" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#111827">secure_autonomous_prs</text>
+<text x="44" y="526" font-family="Arial, sans-serif" font-size="13" fill="#111827">1. Codex CLI</text>
+<rect x="290" y="512" width="520" height="18" rx="3" fill="#f3f4f6"/>
+<rect x="290" y="512" width="2.0" height="18" rx="3" fill="#16a34a"/>
+<text x="820" y="526" font-family="Arial, sans-serif" font-size="12" fill="#111827">0.000</text>
+<text x="44" y="556" font-family="Arial, sans-serif" font-size="13" fill="#111827">2. OpenHands Software Agent SDK</text>
+<rect x="290" y="542" width="520" height="18" rx="3" fill="#f3f4f6"/>
+<rect x="290" y="542" width="48.7" height="18" rx="3" fill="#f97316"/>
+<text x="820" y="556" font-family="Arial, sans-serif" font-size="12" fill="#111827">0.022</text>
+<text x="44" y="586" font-family="Arial, sans-serif" font-size="13" fill="#111827">3. Cline / Cline SDK</text>
+<rect x="290" y="572" width="520" height="18" rx="3" fill="#f3f4f6"/>
+<rect x="290" y="572" width="50.4" height="18" rx="3" fill="#f97316"/>
+<text x="820" y="586" font-family="Arial, sans-serif" font-size="12" fill="#111827">0.022</text>
+</svg>

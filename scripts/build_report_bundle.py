@@ -12,6 +12,7 @@ REPORTS = ROOT / "reports"
 DEFAULT_OUTPUT = REPORTS / "final_report_bundle.md"
 
 SOURCE_REPORTS = [
+    "final_global_report.md",
     "executive_brief.md",
     "release_notes.md",
     "ai_orchestrator_frameworks_report.md",
@@ -44,6 +45,7 @@ SOURCE_REPORTS = [
     "maintenance_guide.md",
     "requirements_traceability.md",
     "artifact_index.md",
+    "system_diagrams.md",
 ]
 
 
@@ -51,7 +53,7 @@ def bundle_markdown(source_reports: list[str] = SOURCE_REPORTS) -> str:
     lines = [
         "# Final Report Bundle",
         "",
-        "Date: 2026-07-05",
+        "Date: 2026-07-07",
         "",
         "This generated bundle concatenates the main report and key appendices for one-file review. Source files remain authoritative for editing.",
         "",

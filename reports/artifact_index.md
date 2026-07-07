@@ -25,6 +25,7 @@ Use this index to choose the right file quickly.
 | Long-term maintenance capacity | `reports/long_term_ai_app_maintenance.md` |
 | AI code reading and trust matrix | `reports/ai_code_trust_matrix.md` |
 | One-file report bundle | `reports/final_report_bundle.md` |
+| Narrative global final report | `reports/final_global_report.md` |
 | Requirement coverage | `reports/requirements_traceability.md` |
 | Validation and QA summary | `reports/validation_summary.md` |
 | Results data dictionary | `reports/results_data_dictionary.md` |
@@ -35,6 +36,7 @@ Use this index to choose the right file quickly.
 | Scoring formula and assumptions | `reports/methodology_appendix.md` |
 | Simulation assumptions and stress tests | `reports/simulation_assumptions.md` |
 | Score driver explanation | `reports/score_driver_summary.md` |
+| Connected system diagrams | `reports/system_diagrams.md` |
 | Operational cost and latency model | `reports/operational_cost_model.md` |
 | Evidence-gap findings | `reports/evidence_gap_analysis.md` |
 | Scenario recommendation rationale | `reports/recommendation_rationale.md` |
@@ -45,6 +47,7 @@ Use this index to choose the right file quickly.
 | Candidate implementation notes | `reports/implementation_blueprints.md` |
 | Stakeholder presentation outline | `reports/presentation_outline.md` |
 | Report charts | `reports/assets/rank_stability.svg`, `reports/assets/scenario_regret.svg`, `reports/assets/operational_hours.svg`, `reports/assets/criterion_spread.svg` |
+| GitHub Pages site | `docs/index.html` |
 
 ## Data Inputs
 

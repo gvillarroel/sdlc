@@ -59,6 +59,7 @@ Included artifacts:
 - `reports/long_term_ai_app_maintenance.md` - long-term maintenance and support-capacity analysis for AI-built applications.
 - `reports/ai_code_trust_matrix.md` - code-reading versus AI-output trust matrix and operating model.
 - `reports/market_maintenance_synthesis.md` - cross-addendum go/no-go synthesis for market, maintenance, and trust.
+- `reports/final_global_report.md` - narrative global final report for the collected material.
 - `reports/adoption_decision_record.md` - proposed adoption decision record and no-go conditions.
 - `reports/executive_brief.md` - short decision brief for quick review.
 - `reports/release_notes.md` - reviewer-oriented summary of delivered artifacts and current validation status.
@@ -81,6 +82,7 @@ Included artifacts:
 - `reports/methodology_appendix.md` - scoring formulas, Monte Carlo assumptions, and customization notes.
 - `reports/simulation_assumptions.md` - assumptions, stress tests, and interpretation of ranking fragility.
 - `reports/score_driver_summary.md` - generated explanation of candidate strengths, weaknesses, and high-spread criteria.
+- `reports/system_diagrams.md` - connected Mermaid diagrams for the tools, concepts, data flow, result families, decision flow, and validation loop.
 - `reports/artifact_index.md` - navigation guide for all report, data, result, template, and script artifacts.
 - `reports/scenario_playbooks.md` - generated per-scenario execution playbooks.
 - `reports/pilot_protocol.md` - step-by-step protocol for executing the recommended pilot.
@@ -89,6 +91,7 @@ Included artifacts:
 - `reports/decision_tree.md` - guided shortlist selection tree.
 - `reports/presentation_outline.md` - stakeholder presentation outline.
 - `ci/validate-workflow.example.yml` - GitHub Actions workflow template for the full local check workflow and committed-output validation.
+- `docs/index.html` - GitHub Pages source for the published final report site.
 
 Run the checks and simulations:
 
