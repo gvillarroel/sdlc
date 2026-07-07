@@ -1,181 +1,202 @@
-# Reporte Final Global: Evaluacion De Orquestadores AI Para SDLC
+# Final Global Report: AI Orchestrators For SDLC
 
 Date: 2026-07-07
 
-Este reporte consolida el material recopilado en el repositorio y lo convierte en una lectura ejecutiva y tecnica unica. La evidencia fuente sigue en `data/`, `results/`, `reports/`, `templates/` y `scripts/`; este documento explica como encaja todo y que decision practica habilita.
+This report consolidates the material collected in the repository into one coherent executive and technical narrative. The source evidence remains in `data/`, `results/`, `reports/`, `templates/`, and `scripts/`; this document explains how those pieces connect and what practical adoption decision they support.
 
-## Vista Global
+## Global View
 
-La conclusion principal es que no existe un ganador universal. La eleccion depende del escenario de adopcion, del nivel de autonomia deseado, del control humano requerido, de la tolerancia al lock-in de proveedor, del modelo de sandbox y de la capacidad operativa del equipo.
+The main conclusion is that there is no universal winner. The right tool depends on the adoption scenario, the desired level of autonomy, the required human-control model, the tolerance for provider lock-in, the sandbox strategy, and the operating capacity of the team.
 
-El analisis filtra alternativas open source permisivas, las puntua con 14 criterios, ejecuta rankings deterministas y simulaciones Monte Carlo, revisa sensibilidad a pesos, estima esfuerzo y costo operativo, agrega un reporte dedicado de sandboxing, y termina en un plan de piloto con gates de seguridad y no-go conditions.
+The analysis filters permissive open-source alternatives, scores them across 14 criteria, runs deterministic rankings and Monte Carlo simulations, checks sensitivity to weights, estimates implementation effort and operational cost, adds a dedicated sandboxing report, and ends with a pilot plan with security gates and no-go conditions.
 
-La recomendacion practica es hacer un piloto controlado de dos semanas con:
+The practical recommendation is to run a controlled two-week pilot with:
 
 1. `OpenHands Software Agent SDK`
 2. `Cline / Cline SDK`
 3. `Deep Agents`
-4. `Codex CLI` para PRs autonomos seguros, o `mini-SWE-agent` si el objetivo principal es benchmarking reproducible
+4. `Codex CLI` for secure autonomous PR work, or `mini-SWE-agent` if the main goal is reproducible benchmarking
 
-La decision final debe depender de evidencia de piloto, no solo del ranking simulado.
+The final adoption decision should depend on pilot evidence, not only on the simulated ranking.
 
-## Que Se Evaluo
+## What Was Evaluated
 
-El universo inicial proviene de una conversacion compartida sobre frameworks y herramientas de orquestacion para agentes de codigo. El repositorio conserva solo alternativas open source permisivas bajo MIT o Apache-2.0, y excluye opciones cerradas o no compatibles con ese filtro.
+The initial universe comes from a shared conversation about frameworks and tools for code-agent orchestration. The repository keeps only permissive open-source alternatives under MIT or Apache-2.0 and excludes closed or incompatible entries.
 
-La evaluacion cubre:
+The evaluation covers:
 
-- 17 alternativas incluidas y 2 excluidas por licencia o modelo cerrado.
-- 14 criterios de scoring con escala 0 a 5.
-- 5 escenarios de decision.
-- 5,000 trials Monte Carlo para rankings de alternativas.
-- 4,000 trials Monte Carlo para sandboxing.
-- Stress tests de supuestos deterministas e incertidumbre.
-- Analisis de riesgos, evidencia, mantenimiento, mercado y confianza.
-- Plantillas para ejecutar pilotos y capturar resultados comparables.
+- 17 included alternatives and 2 excluded alternatives.
+- 14 scoring criteria on a 0-5 scale.
+- 5 decision scenarios.
+- 5,000 Monte Carlo trials for alternative rankings.
+- 4,000 Monte Carlo trials for sandboxing.
+- Stress tests for deterministic assumptions and uncertainty.
+- Risk, evidence, maintenance, market, and trust analysis.
+- Templates for running comparable pilots.
 
-## Modelo Conceptual
+## Conceptual Model
 
-El sistema se puede leer como una cadena de evidencia:
+The system is a chain of evidence:
 
-`data/*.json` define candidatos, criterios, escenarios, riesgos, tareas piloto y supuestos.
-`scripts/*.py` transforma esos datos en resultados reproducibles.
-`results/*.csv` conserva rankings, estabilidad, costos, gaps, riesgos y matrices de decision.
-`reports/*.md` interpreta esos resultados para audiencias ejecutivas, tecnicas y de seguridad.
-`templates/` y `examples/` convierten la simulacion en evidencia de piloto real.
-`tests/` y `ci/` validan que los artefactos sigan consistentes.
+`data/*.json` defines candidates, criteria, scenarios, risks, pilot tasks, and assumptions.
+`scripts/*.py` transforms those inputs into reproducible outputs.
+`results/*.csv` stores rankings, stability, costs, gaps, risks, and decision matrices.
+`reports/*.md` interprets those results for executive, technical, and security audiences.
+`templates/` and `examples/` turn the simulation into real pilot evidence.
+`tests/` and `ci/` validate that the artifacts remain consistent.
 
-Para una vista visual completa, ver `reports/system_diagrams.md`.
+For a complete visual map, see `reports/system_diagrams.md`.
 
-## Metodologia
+## Methodology
 
-La metodologia combina decision multicriterio y validacion reproducible:
+The methodology combines multi-criteria decision analysis with reproducible validation:
 
-1. Filtrar por licencia permisiva.
-2. Puntuar alternativas contra 14 criterios.
-3. Aplicar pesos por escenario.
-4. Calcular ranking determinista.
-5. Perturbar scores y pesos con Monte Carlo para medir estabilidad.
-6. Revisar sensibilidad, regret, Pareto frontier y estabilidad cross-scenario.
-7. Ajustar interpretacion con esfuerzo de implementacion, costo operativo, evidencia y riesgo.
-8. Separar el problema de sandboxing en una evaluacion dedicada.
-9. Traducir la shortlist a un protocolo de piloto y gates de seguridad.
+1. Filter alternatives by permissive license.
+2. Score alternatives against 14 criteria.
+3. Apply scenario-specific weights.
+4. Calculate deterministic rankings.
+5. Perturb scores and weights with Monte Carlo to measure stability.
+6. Review sensitivity, regret, Pareto frontier, and cross-scenario stability.
+7. Adjust interpretation with implementation effort, operational cost, evidence, and risk.
+8. Evaluate sandboxing as a separate decision layer.
+9. Translate the shortlist into a pilot protocol and security gates.
 
-Los resultados son utiles para reducir incertidumbre antes del piloto, pero no sustituyen pruebas con repositorios internos.
+The outputs are useful for reducing uncertainty before a pilot, but they do not replace tests on internal repositories.
 
-## Hallazgos Por Escenario
+## Scenario Findings
 
-| Escenario | Lider simulado | Lectura practica |
+| Scenario | Simulated leader | Practical read |
 |---|---|---|
-| Custom orchestrator platform | `Cline / Cline SDK` por margen minimo sobre `OpenHands SDK` | Es una carrera cerrada; pilotear ambos contra `Deep Agents` antes de decidir. |
-| Secure autonomous PRs | `Codex CLI` | Buena opcion si se acepta dependencia OpenAI y se prioriza sandboxing/PR automation; comparar con `OpenHands SDK` y `Cline`. |
-| Quick local coding | `Cline / Cline SDK` | Es el candidato mas estable para productividad local; `OpenCode` y `Aider` sirven como benchmarks ligeros. |
-| Research benchmarking | `mini-SWE-agent` | Es el mejor baseline reproducible; comparar con `SWE-agent` y `OpenHands SDK` si se necesitan flujos mas completos. |
-| Enterprise control plane | `Cline / Cline SDK` | Lidera la simulacion, pero la decision depende de gobernanza multi-equipo, observabilidad y carga operacional. |
+| Custom orchestrator platform | `Cline / Cline SDK` by a minimal margin over `OpenHands SDK` | This is a close race; pilot both against `Deep Agents` before deciding. |
+| Secure autonomous PRs | `Codex CLI` | Strong if OpenAI dependence is acceptable and sandboxing plus PR automation are priorities; compare with `OpenHands SDK` and `Cline`. |
+| Quick local coding | `Cline / Cline SDK` | The most stable candidate for local developer productivity; `OpenCode` and `Aider` are useful lightweight benchmarks. |
+| Research benchmarking | `mini-SWE-agent` | The best reproducible baseline; compare with `SWE-agent` and `OpenHands SDK` when fuller workflows are needed. |
+| Enterprise control plane | `Cline / Cline SDK` | Leads the simulation, but the decision depends on multi-team governance, observability, and operational load. |
 
-La estabilidad global muestra que `OpenHands Software Agent SDK` aparece top 3 en todos los escenarios, mientras que `Cline / Cline SDK` aparece top 3 en cuatro de cinco. Esa combinacion sugiere que el piloto principal debe comparar ambos.
+The cross-scenario stability signal matters more than a single first-place result. `OpenHands Software Agent SDK` appears in the top three across all scenarios, while `Cline / Cline SDK` appears in the top three in four of five scenarios. That combination suggests the main pilot should compare both.
 
-## Lectura De Candidatos
+## Candidate Readout
 
 ### OpenHands Software Agent SDK
 
-Es el candidato mas estable cross-scenario. Encaja bien si el objetivo es construir una plataforma propia, mantener flexibilidad y capturar artefactos operativos. No debe adoptarse sin validar integracion, runtime, credenciales, logs y ciclo de upgrades.
+The most stable cross-scenario candidate. It fits teams that want to build a platform, preserve flexibility, and capture operational artifacts. It should not be adopted without validating integration, runtime behavior, credential flow, logs, and upgrade lifecycle.
 
 ### Cline / Cline SDK
 
-Tiene fuerte ajuste en flujos humanos, productividad local y control-plane ligero. Su fortaleza es el workflow de desarrollo y la adopcion por usuarios. El piloto debe medir si la supervision humana necesaria preserva la ganancia de productividad.
+Strong fit for human-guided workflows, local productivity, and lightweight control-plane needs. Its strength is developer workflow and user adoption. The pilot must measure whether the required human supervision preserves productivity gains.
 
 ### Deep Agents
 
-Funciona como candidato fuerte para orquestacion y multi-agent patterns, pero no lidera de forma dominante. Conviene como comparador tecnico cuando el equipo quiere construir una capa programable y no solo operar una CLI.
+A strong candidate for orchestration and multi-agent patterns, though it does not dominate the rankings. It is a useful technical comparator when the team wants to build a programmable layer instead of operating only a CLI.
 
 ### Codex CLI
 
-Destaca en PRs autonomos seguros y menor esfuerzo inicial. El tradeoff principal es la dependencia de proveedor y la necesidad de validar politicas, aprobaciones, secretos, red y sandbox real antes de automatizar cambios de codigo.
+Strong in secure autonomous PR scenarios and low initial effort. The main tradeoff is provider dependence and the need to validate policies, approvals, secrets, network access, and real sandbox behavior before automating code changes.
 
-### mini-SWE-agent y SWE-agent
+### mini-SWE-agent And SWE-agent
 
-Son especialmente valiosos para investigacion, benchmarking y reproducibilidad. No son necesariamente el mejor producto operativo para equipos, pero son excelentes como baseline para medir si herramientas mas complejas realmente aportan valor.
+Especially valuable for research, benchmarking, and reproducibility. They are not necessarily the best operational product layer for teams, but they are excellent baselines for measuring whether broader tools add real value.
 
-## Seguridad Y Sandboxing
+## Security And Sandboxing
 
-El reporte dedicado de sandboxing separa una pregunta critica: que aislamiento es adecuado para agentes que ejecutan codigo. La respuesta depende de si el trabajo es local, PR autonomo, codigo de usuarios no confiables, evaluaciones a escala o self-hosting enterprise.
+The dedicated sandboxing report separates a critical question: what isolation model is appropriate for agents that execute code? The answer depends on whether the work is local development, autonomous PR work, untrusted user code, large-scale evaluations, or enterprise self-hosting.
 
-| Escenario sandbox | Candidato lider | Implicacion |
+| Sandbox scenario | Leading candidate | Implication |
 |---|---|---|
-| Local developer agents | `Flue virtual sandbox`, `Daytona`, `Kubernetes hardened pods` casi empatados | Para tareas locales, el contexto y la ergonomia pesan tanto como el aislamiento duro. |
-| Autonomous PR security | `Daytona` | Los sandboxes administrados son fuertes si pasan revision de aislamiento, tenancy, secretos y costo. |
-| Untrusted user code | `Daytona`, seguido por `E2B` y `Modal` | No ejecutar codigo no confiable sin una revision explicita de boundaries, red y secretos. |
-| Evals and RL scale | `Daytona`, `Modal`, `E2B` | La escala administrada importa mas que la comodidad local. |
-| Enterprise self-hosted | `Kubernetes hardened pods`, `Firecracker microVMs`, `Kata Containers` | Self-hosting exige capacidad de plataforma y observabilidad seria. |
+| Local developer agents | `Flue virtual sandbox`, `Daytona`, and `Kubernetes hardened pods` are close | For local tasks, context and ergonomics can matter as much as hard isolation. |
+| Autonomous PR security | `Daytona` | Managed sandboxes are strong if isolation, tenancy, secrets, and cost pass review. |
+| Untrusted user code | `Daytona`, followed by `E2B` and `Modal` | Do not execute untrusted code without explicit boundary, network, and secret validation. |
+| Evals and RL scale | `Daytona`, `Modal`, `E2B` | Managed scale matters more than local convenience. |
+| Enterprise self-hosted | `Kubernetes hardened pods`, `Firecracker microVMs`, `Kata Containers` | Self-hosting requires platform capability and serious observability. |
 
-La regla operativa: no confundir approvals o convenciones de workflow con aislamiento duro. Los gates de seguridad deben probar prompt injection, workspace boundary, secretos, red y calidad de diffs.
+Operational rule: do not confuse approvals or workflow conventions with hard isolation. Security gates must test prompt injection, workspace boundaries, secrets, network policy, and diff quality.
 
-## Riesgos Principales
+## Main Risks
 
-Los riesgos mas importantes no son solo tecnicos:
+The most important risks are not only technical:
 
-- Prompt injection desde issues, docs, paginas web o tool output.
-- Escapes de sandbox o escritura fuera del workspace.
-- Exposicion de secretos en logs, prompts o resultados.
-- Politicas de red demasiado amplias.
-- Benchmarks publicos que no transfieren a repositorios internos.
-- Churn de APIs alpha/beta.
-- Observabilidad insuficiente para reconstruir fallos.
-- PRs autonomos con diffs grandes o de baja calidad.
-- Lock-in de modelo o proveedor.
-- Costos y latencia fuera del perfil operativo.
+- Prompt injection from issues, documentation, web pages, or tool output.
+- Sandbox escapes or writes outside the workspace.
+- Secret exposure through logs, prompts, or outputs.
+- Network policies that are too broad.
+- Public benchmark success that does not transfer to internal repositories.
+- Alpha or beta API churn.
+- Observability that is insufficient to reconstruct failures.
+- Autonomous PRs that produce large or low-quality diffs.
+- Model or provider lock-in.
+- Cost and latency outside the operating envelope.
 
-Cada riesgo tiene evidencia requerida y pass condition en `results/risk_validation_matrix.csv`.
+Each risk has required evidence and a pass condition in `results/risk_validation_matrix.csv`.
 
-## Mercado, Mantenimiento Y Confianza
+## Market, Maintenance, And Trust
 
-Los addenda del repositorio muestran que AI-native creation reduce el costo de prototipado, pero desplaza la dificultad hacia distribucion, diferenciacion, soporte y confianza. Construir rapido no garantiza producto defendible.
+The repository addenda show that AI-native creation lowers prototype cost, but shifts difficulty toward distribution, differentiation, support, security, and trust. Building fast does not guarantee a defensible product or a maintainable workflow.
 
-La decision de adopcion debe pasar cuatro gates:
+The adoption decision should pass four gates:
 
-1. El framework mejora resultados frente a baselines simples.
-2. El equipo puede operar y mantener el stack.
-3. El modelo de seguridad soporta el nivel de autonomia deseado.
-4. El producto o flujo resultante es defendible y revisable.
+1. The framework improves outcomes versus simple baselines.
+2. The team can operate and maintain the stack.
+3. The security model supports the desired autonomy level.
+4. The resulting product or workflow is defensible and reviewable.
 
-La matriz de confianza tambien advierte que leer codigo generado no escala si no hay provenance, tests, diffs enfocados y reconstruccion de decisiones.
+The trust matrix also warns that reading generated code does not scale without provenance, tests, focused diffs, and reconstructable decisions.
 
-## Plan De Piloto Recomendado
+## Recommended Pilot Plan
 
-Ejecutar un piloto de dos semanas con tareas representativas y comparables:
+Run a two-week pilot with representative and comparable tasks:
 
-1. Seleccionar 3 o 4 candidatos segun escenario.
-2. Ejecutar tareas de `data/pilot_tasks.json`.
-3. Registrar cada run en `templates/pilot_run_log.csv`.
-4. Evaluar diffs con `templates/reviewer_scorecard.md`.
-5. Aplicar gates de `templates/security_gate_checklist.md`.
-6. Calcular decision post-piloto con `scripts/score_pilot_results.py`.
-7. Documentar no-go conditions en `reports/adoption_decision_record.md`.
+1. Select 3 or 4 candidates for the target scenario.
+2. Execute tasks from `data/pilot_tasks.json`.
+3. Log every run in `templates/pilot_run_log.csv`.
+4. Review diffs with `templates/reviewer_scorecard.md`.
+5. Apply gates from `templates/security_gate_checklist.md`.
+6. Calculate the post-pilot decision with `scripts/score_pilot_results.py`.
+7. Document no-go conditions in `reports/adoption_decision_record.md`.
 
-El criterio de exito no debe ser solo "la tarea paso". Debe incluir tiempo humano, calidad del diff, trazabilidad, seguridad, costo, latencia, reproducibilidad y facilidad de mantenimiento.
+The success criterion should not be only "the task passed." It should include human time, diff quality, traceability, security, cost, latency, reproducibility, and maintenance burden.
 
-## Recomendacion Ejecutiva
+## Executive Recommendation
 
-Si el objetivo es elegir una base general para evolucionar un sistema de agentes de codigo, empezar con un piloto `OpenHands SDK` vs `Cline SDK` vs `Deep Agents`.
-Si el objetivo inmediato es PR autonomo seguro, incluir `Codex CLI` y priorizar gates de sandbox, secretos, red y approvals.
-Si el objetivo es investigacion reproducible, usar `mini-SWE-agent` y `SWE-agent` como baseline antes de adoptar herramientas mas amplias.
-Si el objetivo es enterprise control plane, no adoptar por ranking: validar primero operacion multi-equipo, observabilidad, governance y costo de mantenimiento.
+If the goal is to choose a general foundation for evolving a code-agent system, start with an `OpenHands SDK` vs `Cline SDK` vs `Deep Agents` pilot.
+If the immediate goal is secure autonomous PR work, include `Codex CLI` and prioritize sandbox, secret, network, and approval gates.
+If the goal is reproducible research, use `mini-SWE-agent` and `SWE-agent` as baselines before adopting broader tools.
+If the goal is an enterprise control plane, do not adopt by ranking alone: first validate multi-team operation, observability, governance, and maintenance cost.
 
-## Trazabilidad
+## Download The Data
 
-| Necesidad | Artefacto fuente |
+Use these direct links to download the source datasets and generated result files:
+
+| Dataset | Format | Direct download |
+|---|---|---|
+| Candidate dataset | JSON | [data/alternatives.json](https://raw.githubusercontent.com/gvillarroel/sdlc/main/data/alternatives.json) |
+| Scoring rubric | JSON | [data/scoring_rubric.json](https://raw.githubusercontent.com/gvillarroel/sdlc/main/data/scoring_rubric.json) |
+| Scenario profiles | JSON | [data/scenario_profiles.json](https://raw.githubusercontent.com/gvillarroel/sdlc/main/data/scenario_profiles.json) |
+| Sandbox evaluation dataset | JSON | [data/sandbox_evaluation.json](https://raw.githubusercontent.com/gvillarroel/sdlc/main/data/sandbox_evaluation.json) |
+| Pilot tasks | JSON | [data/pilot_tasks.json](https://raw.githubusercontent.com/gvillarroel/sdlc/main/data/pilot_tasks.json) |
+| Risk register | JSON | [data/risk_register.json](https://raw.githubusercontent.com/gvillarroel/sdlc/main/data/risk_register.json) |
+| Requirement traceability matrix | JSON | [data/traceability_matrix.json](https://raw.githubusercontent.com/gvillarroel/sdlc/main/data/traceability_matrix.json) |
+| Complete generated output | JSON | [results/all_results.json](https://raw.githubusercontent.com/gvillarroel/sdlc/main/results/all_results.json) |
+| Scenario shortlist | CSV | [results/decision_shortlist.csv](https://raw.githubusercontent.com/gvillarroel/sdlc/main/results/decision_shortlist.csv) |
+| Deterministic rankings | CSV | [results/deterministic_rankings.csv](https://raw.githubusercontent.com/gvillarroel/sdlc/main/results/deterministic_rankings.csv) |
+| Monte Carlo summary | CSV | [results/monte_carlo_summary.csv](https://raw.githubusercontent.com/gvillarroel/sdlc/main/results/monte_carlo_summary.csv) |
+| Sandbox decision matrix | CSV | [results/sandbox_decision_matrix.csv](https://raw.githubusercontent.com/gvillarroel/sdlc/main/results/sandbox_decision_matrix.csv) |
+| Risk validation matrix | CSV | [results/risk_validation_matrix.csv](https://raw.githubusercontent.com/gvillarroel/sdlc/main/results/risk_validation_matrix.csv) |
+| Artifact manifest | CSV | [results/artifact_manifest.csv](https://raw.githubusercontent.com/gvillarroel/sdlc/main/results/artifact_manifest.csv) |
+
+## Traceability
+
+| Need | Source artifact |
 |---|---|
-| Navegar todos los entregables | `reports/artifact_index.md` |
-| Entender conexiones entre tools y conceptos | `reports/system_diagrams.md` |
-| Revisar metodologia | `reports/methodology_appendix.md` |
-| Revisar reporte principal | `reports/ai_orchestrator_frameworks_report.md` |
-| Revisar sandboxing | `reports/sandbox_report.md` |
-| Revisar market/maintenance/trust | `reports/market_maintenance_synthesis.md` |
-| Revisar riesgos residuales | `reports/residual_risks.md` |
-| Ejecutar mantenimiento | `reports/maintenance_guide.md` |
-| Validar todo localmente | `python scripts/run_all_checks.py` |
+| Navigate all deliverables | `reports/artifact_index.md` |
+| Understand connections between tools and concepts | `reports/system_diagrams.md` |
+| Review methodology | `reports/methodology_appendix.md` |
+| Review the main report | `reports/ai_orchestrator_frameworks_report.md` |
+| Review sandboxing | `reports/sandbox_report.md` |
+| Review market, maintenance, and trust | `reports/market_maintenance_synthesis.md` |
+| Review residual risks | `reports/residual_risks.md` |
+| Run maintenance | `reports/maintenance_guide.md` |
+| Validate everything locally | `python scripts/run_all_checks.py` |
 
-## Estado De Publicacion
+## Publication Status
 
-La version web de este reporte se publica desde `docs/index.html` mediante GitHub Pages con la fuente `main` / `docs`.
+The web version of this report is published from `docs/index.html` via GitHub Pages using the `main` / `docs` source.

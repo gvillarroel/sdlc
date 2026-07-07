@@ -404,7 +404,13 @@ reports/faq.md,scripts/rank_with_custom_weights.py,scripts/rank_with_custom_weig
 reports/faq.md,scripts/refresh_github_metadata.py,scripts/refresh_github_metadata.py,True
 reports/faq.md,scripts/run_all_checks.py,scripts/run_all_checks.py,True
 reports/faq.md,scripts/score_pilot_results.py,scripts/score_pilot_results.py,True
+reports/final_global_report.md,data/alternatives.json,data/alternatives.json,True
 reports/final_global_report.md,data/pilot_tasks.json,data/pilot_tasks.json,True
+reports/final_global_report.md,data/risk_register.json,data/risk_register.json,True
+reports/final_global_report.md,data/sandbox_evaluation.json,data/sandbox_evaluation.json,True
+reports/final_global_report.md,data/scenario_profiles.json,data/scenario_profiles.json,True
+reports/final_global_report.md,data/scoring_rubric.json,data/scoring_rubric.json,True
+reports/final_global_report.md,data/traceability_matrix.json,data/traceability_matrix.json,True
 reports/final_global_report.md,reports/adoption_decision_record.md,reports/adoption_decision_record.md,True
 reports/final_global_report.md,reports/ai_orchestrator_frameworks_report.md,reports/ai_orchestrator_frameworks_report.md,True
 reports/final_global_report.md,reports/artifact_index.md,reports/artifact_index.md,True
@@ -414,7 +420,13 @@ reports/final_global_report.md,reports/methodology_appendix.md,reports/methodolo
 reports/final_global_report.md,reports/residual_risks.md,reports/residual_risks.md,True
 reports/final_global_report.md,reports/sandbox_report.md,reports/sandbox_report.md,True
 reports/final_global_report.md,reports/system_diagrams.md,reports/system_diagrams.md,True
+reports/final_global_report.md,results/all_results.json,results/all_results.json,True
+reports/final_global_report.md,results/artifact_manifest.csv,results/artifact_manifest.csv,True
+reports/final_global_report.md,results/decision_shortlist.csv,results/decision_shortlist.csv,True
+reports/final_global_report.md,results/deterministic_rankings.csv,results/deterministic_rankings.csv,True
+reports/final_global_report.md,results/monte_carlo_summary.csv,results/monte_carlo_summary.csv,True
 reports/final_global_report.md,results/risk_validation_matrix.csv,results/risk_validation_matrix.csv,True
+reports/final_global_report.md,results/sandbox_decision_matrix.csv,results/sandbox_decision_matrix.csv,True
 reports/final_global_report.md,scripts/run_all_checks.py,scripts/run_all_checks.py,True
 reports/final_global_report.md,scripts/score_pilot_results.py,scripts/score_pilot_results.py,True
 reports/final_global_report.md,templates/pilot_run_log.csv,templates/pilot_run_log.csv,True

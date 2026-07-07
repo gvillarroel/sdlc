@@ -60,9 +60,10 @@ class ReportArtifactsTest(unittest.TestCase):
         report = ROOT / "reports" / "final_global_report.md"
         self.assertTrue(report.exists())
         text = report.read_text(encoding="utf-8")
-        self.assertIn("# Reporte Final Global", text)
-        self.assertIn("## Vista Global", text)
-        self.assertIn("## Seguridad Y Sandboxing", text)
+        self.assertIn("# Final Global Report", text)
+        self.assertIn("## Global View", text)
+        self.assertIn("## Security And Sandboxing", text)
+        self.assertIn("## Download The Data", text)
         self.assertIn("docs/index.html", text)
 
     def test_faq_exists(self):

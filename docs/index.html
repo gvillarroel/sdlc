@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Reporte Final Global | AI Orchestrator SDLC</title>
-  <meta name="description" content="Reporte final global de la evaluacion reproducible de orquestadores AI para SDLC, con vista ejecutiva, metodologia, hallazgos, riesgos y plan de piloto.">
+  <title>Final Global Report | AI Orchestrator SDLC</title>
+  <meta name="description" content="Final global report for a reproducible evaluation of AI orchestrators for SDLC, with executive view, methodology, findings, risks, pilot plan, and data downloads.">
   <style>
     :root {
       color-scheme: light;
@@ -211,12 +211,6 @@
       display: block;
     }
 
-    thead,
-    tbody,
-    tr {
-      width: 100%;
-    }
-
     th,
     td {
       padding: 11px 12px;
@@ -256,6 +250,34 @@
     .card p {
       color: var(--muted);
       margin-bottom: 0;
+    }
+
+    .download-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .download {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px;
+    }
+
+    .download span {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .download a {
+      font-weight: 750;
+      flex: none;
     }
 
     .chart-grid {
@@ -320,12 +342,18 @@
       .hero-grid,
       .two-col,
       .cards,
-      .chart-grid {
+      .chart-grid,
+      .download-grid {
         grid-template-columns: 1fr;
       }
 
       .source-list {
         columns: 1;
+      }
+
+      .download {
+        align-items: flex-start;
+        flex-direction: column;
       }
     }
   </style>
@@ -333,247 +361,269 @@
 <body>
   <header>
     <div class="wrap hero">
-      <p class="eyebrow">Reporte final global | SDLC AI Orchestrators</p>
-      <h1>Evaluacion conectada de herramientas, conceptos, riesgos y decision de adopcion</h1>
-      <p class="lede">Este sitio consolida el material recopilado en el repositorio <strong>gvillarroel/sdlc</strong>: candidatos open source permisivos, simulaciones, sandboxing, costos, evidencia, riesgos, plan de piloto y trazabilidad para una decision real de adopcion.</p>
-      <div class="hero-grid" aria-label="Metricas principales">
-        <div class="metric"><strong>17</strong><span>alternativas incluidas bajo MIT o Apache-2.0</span></div>
-        <div class="metric"><strong>14</strong><span>criterios de scoring para capacidad tecnica y operativa</span></div>
-        <div class="metric"><strong>5</strong><span>escenarios de decision con pesos distintos</span></div>
-        <div class="metric"><strong>9,000</strong><span>trials Monte Carlo entre ranking general y sandboxing</span></div>
+      <p class="eyebrow">Final global report | SDLC AI Orchestrators</p>
+      <h1>Connected evaluation of tools, concepts, risks, and adoption decisions</h1>
+      <p class="lede">This site consolidates the material collected in <strong>gvillarroel/sdlc</strong>: permissive open-source candidates, simulations, sandboxing, costs, evidence, risks, pilot plan, traceability, and direct data downloads for a real adoption decision.</p>
+      <div class="hero-grid" aria-label="Key metrics">
+        <div class="metric"><strong>17</strong><span>included alternatives under MIT or Apache-2.0</span></div>
+        <div class="metric"><strong>14</strong><span>scoring criteria for technical and operational capability</span></div>
+        <div class="metric"><strong>5</strong><span>decision scenarios with different weighting profiles</span></div>
+        <div class="metric"><strong>9,000</strong><span>Monte Carlo trials across ranking and sandboxing</span></div>
       </div>
     </div>
   </header>
 
-  <nav aria-label="Secciones">
+  <nav aria-label="Sections">
     <div class="wrap">
-      <a href="#vista-global">Vista global</a>
-      <a href="#metodologia">Metodologia</a>
-      <a href="#escenarios">Escenarios</a>
-      <a href="#candidatos">Candidatos</a>
-      <a href="#seguridad">Seguridad</a>
-      <a href="#riesgos">Riesgos</a>
-      <a href="#piloto">Piloto</a>
-      <a href="#artefactos">Artefactos</a>
+      <a href="#global-view">Global view</a>
+      <a href="#methodology">Methodology</a>
+      <a href="#scenarios">Scenarios</a>
+      <a href="#candidates">Candidates</a>
+      <a href="#security">Security</a>
+      <a href="#risks">Risks</a>
+      <a href="#pilot">Pilot</a>
+      <a href="#downloads">Download data</a>
+      <a href="#artifacts">Artifacts</a>
     </div>
   </nav>
 
   <main>
-    <section id="vista-global">
+    <section id="global-view">
       <div class="wrap two-col">
         <div>
-          <h2>Vista global</h2>
-          <p>La conclusion central es que no existe un ganador universal. La herramienta correcta depende de si el equipo necesita una plataforma programable, PRs autonomos con sandboxing, productividad local, benchmarking reproducible o un control plane enterprise.</p>
-          <p>El repositorio convierte una conversacion inicial sobre alternativas de orquestacion en una evaluacion reproducible: filtra licencias, puntua capacidades, genera rankings por escenario, mide estabilidad, revisa costos y riesgos, separa el problema de sandboxing y aterriza todo en un protocolo de piloto.</p>
+          <h2>Global View</h2>
+          <p>There is no universal winner. The right tool depends on whether the team needs a programmable platform, autonomous PRs with sandboxing, local developer productivity, reproducible benchmarking, or an enterprise control plane.</p>
+          <p>The repository turns an initial conversation about orchestration alternatives into a reproducible evaluation: it filters licenses, scores capabilities, generates scenario rankings, measures stability, reviews costs and risks, separates the sandboxing problem, and lands on a pilot protocol.</p>
         </div>
         <aside class="callout">
-          <p><strong>Recomendacion practica.</strong> Pilotear <code>OpenHands Software Agent SDK</code>, <code>Cline / Cline SDK</code> y <code>Deep Agents</code>. Agregar <code>Codex CLI</code> si el escenario es PR autonomo seguro; agregar <code>mini-SWE-agent</code> si el objetivo es investigacion reproducible.</p>
+          <p><strong>Practical recommendation.</strong> Pilot <code>OpenHands Software Agent SDK</code>, <code>Cline / Cline SDK</code>, and <code>Deep Agents</code>. Add <code>Codex CLI</code> for secure autonomous PR work; add <code>mini-SWE-agent</code> for reproducible research.</p>
         </aside>
       </div>
     </section>
 
-    <section id="metodologia">
+    <section id="methodology">
       <div class="wrap">
-        <h2>Metodologia</h2>
-        <p>El sistema funciona como una cadena de evidencia. Los archivos <code>data/*.json</code> definen candidatos, criterios, escenarios, riesgos, tareas piloto y supuestos. Los scripts en <code>scripts/</code> transforman esos datos en <code>results/*.csv</code>. Los reportes interpretan los resultados y las plantillas convierten la simulacion en evidencia de piloto.</p>
+        <h2>Methodology</h2>
+        <p>The system works as a chain of evidence. Files in <code>data/*.json</code> define candidates, criteria, scenarios, risks, pilot tasks, and assumptions. Scripts in <code>scripts/</code> transform those inputs into <code>results/*.csv</code>. Reports interpret the results, and templates turn the simulation into real pilot evidence.</p>
         <ol>
-          <li>Filtrar alternativas por licencia permisiva.</li>
-          <li>Puntuar contra 14 criterios con escala 0 a 5.</li>
-          <li>Aplicar pesos por escenario.</li>
-          <li>Calcular rankings deterministas y Monte Carlo.</li>
-          <li>Revisar sensibilidad, regret, Pareto frontier y estabilidad cross-scenario.</li>
-          <li>Contrastar con esfuerzo, costo, evidencia, riesgos y sandboxing.</li>
-          <li>Definir piloto, gates de seguridad y no-go conditions.</li>
+          <li>Filter alternatives by permissive license.</li>
+          <li>Score against 14 criteria on a 0-5 scale.</li>
+          <li>Apply scenario-specific weights.</li>
+          <li>Calculate deterministic and Monte Carlo rankings.</li>
+          <li>Review sensitivity, regret, Pareto frontier, and cross-scenario stability.</li>
+          <li>Contrast results with effort, cost, evidence, risks, and sandboxing.</li>
+          <li>Define pilot tasks, security gates, and no-go conditions.</li>
         </ol>
         <div class="chart-grid">
           <figure>
-            <img src="assets/rank_stability.svg" alt="Grafico de estabilidad de ranking por candidato">
-            <figcaption>Estabilidad cross-scenario: muestra que OpenHands SDK y Cline son los candidatos mas consistentes para pilotear.</figcaption>
+            <img src="assets/rank_stability.svg" alt="Rank stability chart by candidate">
+            <figcaption>Cross-scenario stability shows that OpenHands SDK and Cline are the most consistent candidates to pilot.</figcaption>
           </figure>
           <figure>
-            <img src="assets/scenario_regret.svg" alt="Grafico de regret por escenario">
-            <figcaption>Regret por escenario: ayuda a identificar cuando un lider es fragil o cuando varios candidatos estan empatados.</figcaption>
+            <img src="assets/scenario_regret.svg" alt="Scenario regret chart">
+            <figcaption>Scenario regret helps identify when a leader is fragile or when several candidates are effectively tied.</figcaption>
           </figure>
         </div>
       </div>
     </section>
 
-    <section id="escenarios">
+    <section id="scenarios">
       <div class="wrap">
-        <h2>Hallazgos por escenario</h2>
+        <h2>Scenario Findings</h2>
         <table>
           <thead>
             <tr>
-              <th>Escenario</th>
-              <th>Lider simulado</th>
-              <th>Lectura practica</th>
+              <th>Scenario</th>
+              <th>Simulated leader</th>
+              <th>Practical read</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>Custom orchestrator platform</td>
-              <td><code>Cline / Cline SDK</code>, casi empatado con <code>OpenHands SDK</code></td>
-              <td>La diferencia es demasiado estrecha para decidir sin piloto; comparar ambos con Deep Agents.</td>
+              <td><code>Cline / Cline SDK</code>, nearly tied with <code>OpenHands SDK</code></td>
+              <td>The gap is too narrow for a paper decision; compare both with Deep Agents in a pilot.</td>
             </tr>
             <tr>
               <td>Secure autonomous PRs</td>
               <td><code>Codex CLI</code></td>
-              <td>Fuerte si la dependencia OpenAI es aceptable y el foco es sandboxing, approvals y PR workflow.</td>
+              <td>Strong if OpenAI dependence is acceptable and the focus is sandboxing, approvals, and PR workflow.</td>
             </tr>
             <tr>
               <td>Quick local coding</td>
               <td><code>Cline / Cline SDK</code></td>
-              <td>Mejor opcion inicial para productividad local; OpenCode y Aider sirven como benchmarks ligeros.</td>
+              <td>Best first option for local productivity; OpenCode and Aider are useful lightweight benchmarks.</td>
             </tr>
             <tr>
               <td>Research benchmarking</td>
               <td><code>mini-SWE-agent</code></td>
-              <td>Baseline reproducible para ablations; comparar con SWE-agent cuando se requiera mas flujo operativo.</td>
+              <td>Reproducible baseline for ablations; compare with SWE-agent when fuller workflows are required.</td>
             </tr>
             <tr>
               <td>Enterprise control plane</td>
               <td><code>Cline / Cline SDK</code></td>
-              <td>Validar gobernanza, multi-equipo, observabilidad y costo antes de convertirlo en plataforma.</td>
+              <td>Validate governance, multi-team operations, observability, and cost before turning it into a platform.</td>
             </tr>
           </tbody>
         </table>
-        <p>La senal mas importante no es el primer lugar aislado. <code>OpenHands Software Agent SDK</code> aparece top 3 en todos los escenarios; <code>Cline / Cline SDK</code> aparece top 3 en cuatro de cinco y gana escenarios centrados en workflow. Esa combinacion justifica un piloto head-to-head.</p>
+        <p>The most important signal is not a single first-place result. <code>OpenHands Software Agent SDK</code> appears in the top three in every scenario; <code>Cline / Cline SDK</code> appears in the top three in four of five and wins workflow-centered scenarios. That combination justifies a head-to-head pilot.</p>
       </div>
     </section>
 
-    <section id="candidatos">
+    <section id="candidates">
       <div class="wrap">
-        <h2>Lectura de candidatos</h2>
+        <h2>Candidate Readout</h2>
         <div class="cards">
           <article class="card">
             <h3>OpenHands SDK</h3>
-            <p>Candidato mas estable cross-scenario. Encaja cuando se necesita una plataforma propia, artefactos operativos y flexibilidad.</p>
+            <p>Most stable cross-scenario candidate. Fits teams that need a platform foundation, operational artifacts, and flexibility.</p>
           </article>
           <article class="card">
             <h3>Cline / Cline SDK</h3>
-            <p>Fuerte en workflow humano, productividad local y control-plane ligero. Requiere medir carga de aprobaciones.</p>
+            <p>Strong in human-guided workflows, local productivity, and lightweight control-plane needs. Approval burden must be measured.</p>
           </article>
           <article class="card">
             <h3>Deep Agents</h3>
-            <p>Buen comparador para patrones multi-agent y orquestacion programable, sin liderar de forma dominante.</p>
+            <p>Useful comparator for multi-agent patterns and programmable orchestration, without dominating the ranking.</p>
           </article>
           <article class="card">
             <h3>Codex CLI</h3>
-            <p>Destaca en PRs autonomos seguros y bajo esfuerzo inicial. El tradeoff es lock-in y validacion estricta de politica.</p>
+            <p>Strong for secure autonomous PRs and low initial effort. The tradeoff is lock-in and strict policy validation.</p>
           </article>
           <article class="card">
             <h3>mini-SWE-agent</h3>
-            <p>Mejor baseline reproducible para benchmarking e investigacion. No sustituye la evaluacion operativa interna.</p>
+            <p>Best reproducible baseline for benchmarking and research. It does not replace internal operational evaluation.</p>
           </article>
           <article class="card">
             <h3>SWE-agent</h3>
-            <p>Referencia madura para issue-resolution research y comparaciones contra agentes mas orientados a producto.</p>
+            <p>Mature reference for issue-resolution research and comparisons against more product-oriented agents.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="seguridad">
+    <section id="security">
       <div class="wrap two-col">
         <div>
-          <h2>Seguridad y sandboxing</h2>
-          <p>El reporte dedicado de sandboxing separa el runtime de agente de la frontera de ejecucion. La evaluacion distingue entre virtual workspaces, contenedores, managed sandboxes, microVMs y opciones self-hosted enterprise.</p>
-          <p>La regla operativa es simple: approvals, prompts y convenciones reducen riesgo, pero no equivalen a aislamiento duro. Para codigo no confiable se deben validar boundaries, secretos, red, tenancy, observabilidad y costo bajo carga sostenida.</p>
+          <h2>Security And Sandboxing</h2>
+          <p>The dedicated sandboxing report separates the agent runtime from the execution boundary. The evaluation distinguishes virtual workspaces, containers, managed sandboxes, microVMs, and enterprise self-hosted options.</p>
+          <p>The operating rule is simple: approvals, prompts, and conventions reduce risk, but they are not hard isolation. For untrusted code, teams must validate boundaries, secrets, network access, tenancy, observability, and cost under sustained load.</p>
         </div>
         <aside class="callout warning">
-          <p><strong>No-go tecnico.</strong> No habilitar autonomia sobre repositorios o codigo de usuarios si el piloto no prueba prompt injection, workspace boundary, secret traps, network deny y calidad de diffs.</p>
+          <p><strong>Technical no-go.</strong> Do not enable autonomy over repositories or user code if the pilot does not test prompt injection, workspace boundaries, secret traps, network denial, and diff quality.</p>
         </aside>
       </div>
       <div class="wrap">
         <table>
           <thead>
             <tr>
-              <th>Escenario sandbox</th>
-              <th>Lider o grupo lider</th>
-              <th>Implicacion</th>
+              <th>Sandbox scenario</th>
+              <th>Leader or leading group</th>
+              <th>Implication</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>Local developer agents</td>
               <td>Flue virtual sandbox, Daytona, Kubernetes hardened pods</td>
-              <td>Para tareas locales, ergonomia y staging pueden pesar tanto como aislamiento duro.</td>
+              <td>For local tasks, ergonomics and staging can matter as much as hard isolation.</td>
             </tr>
             <tr>
               <td>Autonomous PR security</td>
               <td>Daytona</td>
-              <td>Fuerte si pasa revision de aislamiento, tenancy, credenciales y costos.</td>
+              <td>Strong if isolation, tenancy, credentials, and cost pass review.</td>
             </tr>
             <tr>
               <td>Untrusted user code</td>
               <td>Daytona, E2B, Modal</td>
-              <td>Managed sandboxes son atractivos, pero requieren procurement y security review.</td>
+              <td>Managed sandboxes are attractive, but require procurement and security review.</td>
             </tr>
             <tr>
               <td>Enterprise self-hosted</td>
               <td>Kubernetes hardened pods, Firecracker, Kata</td>
-              <td>Requiere capacidad real de plataforma, RuntimeClass, observabilidad e imagenes controladas.</td>
+              <td>Requires real platform capability, RuntimeClass governance, observability, and controlled images.</td>
             </tr>
           </tbody>
         </table>
       </div>
     </section>
 
-    <section id="riesgos">
+    <section id="risks">
       <div class="wrap">
-        <h2>Riesgos, mantenimiento y confianza</h2>
-        <p>La evidencia recopilada muestra que AI-native creation baja el costo de prototipo, pero desplaza la dificultad hacia distribucion, diferenciacion, soporte, seguridad y confianza. Construir rapido no garantiza producto defendible ni mantenible.</p>
+        <h2>Risks, Maintenance, And Trust</h2>
+        <p>The evidence shows that AI-native creation lowers prototype cost, but shifts difficulty toward distribution, differentiation, support, security, and trust. Building quickly does not guarantee a defensible or maintainable product.</p>
         <div class="cards">
           <article class="card">
-            <h3>Riesgo de seguridad</h3>
-            <p>Prompt injection, secretos, red amplia y escapes de workspace deben tener fixtures de prueba y pass conditions.</p>
+            <h3>Security risk</h3>
+            <p>Prompt injection, secrets, broad network access, and workspace escapes need test fixtures and pass conditions.</p>
           </article>
           <article class="card">
-            <h3>Riesgo operativo</h3>
-            <p>Churn de APIs, observabilidad insuficiente y costos de control plane pueden borrar la ganancia inicial.</p>
+            <h3>Operational risk</h3>
+            <p>API churn, weak observability, and control-plane cost can erase the initial productivity gain.</p>
           </article>
           <article class="card">
-            <h3>Riesgo de confianza</h3>
-            <p>Sin provenance, tests y diffs enfocados, la revision humana se vuelve cuello de botella y no control real.</p>
+            <h3>Trust risk</h3>
+            <p>Without provenance, tests, and focused diffs, human review becomes a bottleneck rather than a control.</p>
           </article>
         </div>
         <div class="chart-grid">
           <figure>
-            <img src="assets/operational_hours.svg" alt="Grafico de horas operativas estimadas">
-            <figcaption>El ajuste operativo evita elegir una herramienta solo por score tecnico.</figcaption>
+            <img src="assets/operational_hours.svg" alt="Estimated operational hours chart">
+            <figcaption>The operational adjustment prevents choosing a tool by technical score alone.</figcaption>
           </figure>
           <figure>
-            <img src="assets/criterion_spread.svg" alt="Grafico de dispersion por criterio">
-            <figcaption>Los criterios de mayor dispersion explican por que la shortlist cambia segun escenario.</figcaption>
+            <img src="assets/criterion_spread.svg" alt="Criterion spread chart">
+            <figcaption>High-spread criteria explain why the shortlist changes by scenario.</figcaption>
           </figure>
         </div>
       </div>
     </section>
 
-    <section id="piloto">
+    <section id="pilot">
       <div class="wrap two-col">
         <div>
-          <h2>Plan de piloto recomendado</h2>
-          <p>El piloto debe durar dos semanas y comparar candidatos sobre las mismas tareas. La decision post-piloto debe capturar exito funcional, calidad del diff, costo, latencia, intervenciones humanas, reproduccion de fallos, seguridad y facilidad de mantenimiento.</p>
+          <h2>Recommended Pilot Plan</h2>
+          <p>The pilot should run for two weeks and compare candidates on the same tasks. The post-pilot decision should capture functional success, diff quality, cost, latency, human interventions, failure reconstruction, security, and maintainability.</p>
           <ol>
-            <li>Seleccionar 3 o 4 candidatos segun escenario.</li>
-            <li>Ejecutar tareas de <code>data/pilot_tasks.json</code>.</li>
-            <li>Registrar runs en <code>templates/pilot_run_log.csv</code>.</li>
-            <li>Evaluar diffs con <code>templates/reviewer_scorecard.md</code>.</li>
-            <li>Aplicar gates de <code>templates/security_gate_checklist.md</code>.</li>
-            <li>Calcular decision con <code>scripts/score_pilot_results.py</code>.</li>
+            <li>Select 3 or 4 candidates for the target scenario.</li>
+            <li>Run tasks from <code>data/pilot_tasks.json</code>.</li>
+            <li>Log runs in <code>templates/pilot_run_log.csv</code>.</li>
+            <li>Review diffs with <code>templates/reviewer_scorecard.md</code>.</li>
+            <li>Apply gates from <code>templates/security_gate_checklist.md</code>.</li>
+            <li>Calculate the decision with <code>scripts/score_pilot_results.py</code>.</li>
           </ol>
         </div>
         <aside class="callout info">
-          <p><strong>Criterio de decision.</strong> Adoptar solo si el candidato supera baselines simples, conserva trazabilidad, respeta gates de seguridad y reduce trabajo humano total sin degradar calidad.</p>
+          <p><strong>Decision criterion.</strong> Adopt only if the candidate beats simple baselines, preserves traceability, passes security gates, and reduces total human work without degrading quality.</p>
         </aside>
       </div>
     </section>
 
-    <section id="artefactos">
+    <section id="downloads">
       <div class="wrap">
-        <h2>Artefactos fuente</h2>
-        <p>El reporte publicado resume los hallazgos, pero la auditoria real vive en los artefactos versionados del repositorio.</p>
+        <h2>Download The Data</h2>
+        <p>These links point directly to raw repository files so they can be downloaded, loaded into notebooks, or used by another evaluation pipeline.</p>
+        <div class="download-grid">
+          <div class="download"><div><strong>Candidate dataset</strong><br><span>data/alternatives.json</span></div><a href="https://raw.githubusercontent.com/gvillarroel/sdlc/main/data/alternatives.json" download>Download JSON</a></div>
+          <div class="download"><div><strong>Scoring rubric</strong><br><span>data/scoring_rubric.json</span></div><a href="https://raw.githubusercontent.com/gvillarroel/sdlc/main/data/scoring_rubric.json" download>Download JSON</a></div>
+          <div class="download"><div><strong>Scenario profiles</strong><br><span>data/scenario_profiles.json</span></div><a href="https://raw.githubusercontent.com/gvillarroel/sdlc/main/data/scenario_profiles.json" download>Download JSON</a></div>
+          <div class="download"><div><strong>Sandbox evaluation</strong><br><span>data/sandbox_evaluation.json</span></div><a href="https://raw.githubusercontent.com/gvillarroel/sdlc/main/data/sandbox_evaluation.json" download>Download JSON</a></div>
+          <div class="download"><div><strong>Pilot tasks</strong><br><span>data/pilot_tasks.json</span></div><a href="https://raw.githubusercontent.com/gvillarroel/sdlc/main/data/pilot_tasks.json" download>Download JSON</a></div>
+          <div class="download"><div><strong>Risk register</strong><br><span>data/risk_register.json</span></div><a href="https://raw.githubusercontent.com/gvillarroel/sdlc/main/data/risk_register.json" download>Download JSON</a></div>
+          <div class="download"><div><strong>Complete generated output</strong><br><span>results/all_results.json</span></div><a href="https://raw.githubusercontent.com/gvillarroel/sdlc/main/results/all_results.json" download>Download JSON</a></div>
+          <div class="download"><div><strong>Scenario shortlist</strong><br><span>results/decision_shortlist.csv</span></div><a href="https://raw.githubusercontent.com/gvillarroel/sdlc/main/results/decision_shortlist.csv" download>Download CSV</a></div>
+          <div class="download"><div><strong>Deterministic rankings</strong><br><span>results/deterministic_rankings.csv</span></div><a href="https://raw.githubusercontent.com/gvillarroel/sdlc/main/results/deterministic_rankings.csv" download>Download CSV</a></div>
+          <div class="download"><div><strong>Monte Carlo summary</strong><br><span>results/monte_carlo_summary.csv</span></div><a href="https://raw.githubusercontent.com/gvillarroel/sdlc/main/results/monte_carlo_summary.csv" download>Download CSV</a></div>
+          <div class="download"><div><strong>Sandbox decision matrix</strong><br><span>results/sandbox_decision_matrix.csv</span></div><a href="https://raw.githubusercontent.com/gvillarroel/sdlc/main/results/sandbox_decision_matrix.csv" download>Download CSV</a></div>
+          <div class="download"><div><strong>Risk validation matrix</strong><br><span>results/risk_validation_matrix.csv</span></div><a href="https://raw.githubusercontent.com/gvillarroel/sdlc/main/results/risk_validation_matrix.csv" download>Download CSV</a></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="artifacts">
+      <div class="wrap">
+        <h2>Source Artifacts</h2>
+        <p>The published report summarizes the findings, but the audit trail lives in the versioned repository artifacts.</p>
         <ul class="source-list">
           <li><a href="https://github.com/gvillarroel/sdlc/blob/main/reports/final_global_report.md">reports/final_global_report.md</a></li>
           <li><a href="https://github.com/gvillarroel/sdlc/blob/main/reports/system_diagrams.md">reports/system_diagrams.md</a></li>
@@ -594,7 +644,7 @@
 
   <footer>
     <div class="wrap">
-      <p>Publicado via GitHub Pages desde la fuente <code>main</code> / <code>docs</code>. Ultima actualizacion: 2026-07-07. Validacion local esperada: <code>python scripts/run_all_checks.py</code>.</p>
+      <p>Published with GitHub Pages from the <code>main</code> / <code>docs</code> source. Last updated: 2026-07-07. Expected local validation: <code>python scripts/run_all_checks.py</code>.</p>
     </div>
   </footer>
 </body>
