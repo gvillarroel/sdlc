@@ -280,6 +280,102 @@
       flex: none;
     }
 
+    .visual-map {
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .flow-row {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 10px;
+      align-items: stretch;
+    }
+
+    .flow-card {
+      position: relative;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-top: 4px solid var(--accent);
+      border-radius: 8px;
+      padding: 14px;
+      min-height: 132px;
+    }
+
+    .flow-card strong {
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .flow-card span {
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .flow-card::after {
+      content: "->";
+      position: absolute;
+      top: 50%;
+      right: -13px;
+      transform: translateY(-50%);
+      color: var(--muted);
+      font-weight: 800;
+    }
+
+    .flow-card:last-child::after {
+      content: "";
+    }
+
+    .coverage-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .coverage {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px;
+    }
+
+    .coverage strong {
+      display: block;
+      font-size: 1.4rem;
+      line-height: 1.1;
+    }
+
+    .coverage span {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    details {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      margin-top: 12px;
+      padding: 12px 14px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 750;
+    }
+
+    .link-columns {
+      columns: 2;
+      column-gap: 26px;
+      margin-top: 12px;
+    }
+
+    .link-columns li {
+      break-inside: avoid;
+      margin-bottom: 6px;
+    }
+
     .chart-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -343,12 +439,22 @@
       .two-col,
       .cards,
       .chart-grid,
-      .download-grid {
+      .download-grid,
+      .flow-row,
+      .coverage-grid {
         grid-template-columns: 1fr;
       }
 
       .source-list {
         columns: 1;
+      }
+
+      .link-columns {
+        columns: 1;
+      }
+
+      .flow-card::after {
+        content: "";
       }
 
       .download {
@@ -376,6 +482,7 @@
   <nav aria-label="Sections">
     <div class="wrap">
       <a href="#global-view">Global view</a>
+      <a href="#visual-map">Visual map</a>
       <a href="#methodology">Methodology</a>
       <a href="#scenarios">Scenarios</a>
       <a href="#candidates">Candidates</a>
@@ -398,6 +505,28 @@
         <aside class="callout">
           <p><strong>Practical recommendation.</strong> Pilot <code>OpenHands Software Agent SDK</code>, <code>Cline / Cline SDK</code>, and <code>Deep Agents</code>. Add <code>Codex CLI</code> for secure autonomous PR work; add <code>mini-SWE-agent</code> for reproducible research.</p>
         </aside>
+      </div>
+    </section>
+
+    <section id="visual-map">
+      <div class="wrap">
+        <h2>Visual Evidence Map</h2>
+        <p>The report is organized as a visual processing pipeline. Every artifact belongs to one of these stages, and the final decision is only credible when the chain remains connected from raw inputs to pilot evidence.</p>
+        <div class="visual-map" aria-label="Evidence pipeline diagram">
+          <div class="flow-row">
+            <div class="flow-card"><strong>Inputs</strong><span>Candidate data, criteria, scenarios, risks, sandbox data, pilot tasks, assumptions, and traceability matrices.</span></div>
+            <div class="flow-card"><strong>Simulation</strong><span>Deterministic rankings, Monte Carlo stability, sensitivity, stress tests, and sandbox rankings.</span></div>
+            <div class="flow-card"><strong>Interpretation</strong><span>Score drivers, evidence gaps, cost estimates, operational fit, recommendation rationale, and risk matrices.</span></div>
+            <div class="flow-card"><strong>Decision</strong><span>Scenario shortlist, adoption decision record, pilot protocol, no-go conditions, and security gates.</span></div>
+            <div class="flow-card"><strong>Maintenance</strong><span>Validation summary, data dictionary, artifact manifest, source checks, schema checks, and refresh workflow.</span></div>
+          </div>
+        </div>
+        <div class="coverage-grid" aria-label="Artifact coverage summary">
+          <div class="coverage"><strong>14</strong><span>source JSON datasets in <code>data/</code></span></div>
+          <div class="coverage"><strong>41</strong><span>generated result files in <code>results/</code></span></div>
+          <div class="coverage"><strong>40</strong><span>Markdown reports and appendices in <code>reports/</code></span></div>
+          <div class="coverage"><strong>5</strong><span>pilot templates plus examples for real evaluation</span></div>
+        </div>
       </div>
     </section>
 
@@ -617,6 +746,74 @@
           <div class="download"><div><strong>Sandbox decision matrix</strong><br><span>results/sandbox_decision_matrix.csv</span></div><a href="https://raw.githubusercontent.com/gvillarroel/sdlc/main/results/sandbox_decision_matrix.csv" download>Download CSV</a></div>
           <div class="download"><div><strong>Risk validation matrix</strong><br><span>results/risk_validation_matrix.csv</span></div><a href="https://raw.githubusercontent.com/gvillarroel/sdlc/main/results/risk_validation_matrix.csv" download>Download CSV</a></div>
         </div>
+        <h3>Complete Data And Results Index</h3>
+        <p>The compact download cards above cover the most common files. The complete machine-readable library is indexed below so the report can be processed as a dataset, not only read as prose.</p>
+        <details open>
+          <summary>All source datasets in data/</summary>
+          <ul class="link-columns">
+            <li><a href="https://raw.githubusercontent.com/gvillarroel/sdlc/main/data/alternatives.json">alternatives.json</a></li>
+            <li><a href="https://raw.githubusercontent.com/gvillarroel/sdlc/main/data/candidate_taxonomy.json">candidate_taxonomy.json</a></li>
+            <li><a href="https://raw.githubusercontent.com/gvillarroel/sdlc/main/data/decision_tree.json">decision_tree.json</a></li>
+            <li><a href="https://raw.githubusercontent.com/gvillarroel/sdlc/main/data/operational_cost_model.json">operational_cost_model.json</a></li>
+            <li><a href="https://raw.githubusercontent.com/gvillarroel/sdlc/main/data/pilot_decision_model.json">pilot_decision_model.json</a></li>
+            <li><a href="https://raw.githubusercontent.com/gvillarroel/sdlc/main/data/pilot_sample_size_model.json">pilot_sample_size_model.json</a></li>
+            <li><a href="https://raw.githubusercontent.com/gvillarroel/sdlc/main/data/pilot_tasks.json">pilot_tasks.json</a></li>
+            <li><a href="https://raw.githubusercontent.com/gvillarroel/sdlc/main/data/risk_register.json">risk_register.json</a></li>
+            <li><a href="https://raw.githubusercontent.com/gvillarroel/sdlc/main/data/sandbox_evaluation.json">sandbox_evaluation.json</a></li>
+            <li><a href="https://raw.githubusercontent.com/gvillarroel/sdlc/main/data/scenario_profiles.json">scenario_profiles.json</a></li>
+            <li><a href="https://raw.githubusercontent.com/gvillarroel/sdlc/main/data/scoring_rubric.json">scoring_rubric.json</a></li>
+            <li><a href="https://raw.githubusercontent.com/gvillarroel/sdlc/main/data/security_evaluation_fixtures.json">security_evaluation_fixtures.json</a></li>
+            <li><a href="https://raw.githubusercontent.com/gvillarroel/sdlc/main/data/simulation_assumptions.json">simulation_assumptions.json</a></li>
+            <li><a href="https://raw.githubusercontent.com/gvillarroel/sdlc/main/data/traceability_matrix.json">traceability_matrix.json</a></li>
+          </ul>
+        </details>
+        <details>
+          <summary>All generated results in results/</summary>
+          <ul class="link-columns">
+            <li><a href="https://raw.githubusercontent.com/gvillarroel/sdlc/main/results/all_results.json">all_results.json</a></li>
+            <li><a href="https://raw.githubusercontent.com/gvillarroel/sdlc/main/results/alternative_scorecards.csv">alternative_scorecards.csv</a></li>
+            <li><a href="https://raw.githubusercontent.com/gvillarroel/sdlc/main/results/artifact_manifest.csv">artifact_manifest.csv</a></li>
+            <li><a href="https://raw.githubusercontent.com/gvillarroel/sdlc/main/results/category_scores.csv">category_scores.csv</a></li>
+            <li><a href="https://raw.githubusercontent.com/gvillarroel/sdlc/main/results/criteria_definitions.csv">criteria_definitions.csv</a></li>
+            <li><a href="https://raw.githubusercontent.com/gvillarroel/sdlc/main/results/criterion_spread_summary.csv">criterion_spread_summary.csv</a></li>
+            <li><a href="https://raw.githubusercontent.com/gvillarroel/sdlc/main/results/csv_schema_check.csv">csv_schema_check.csv</a></li>
+            <li><a href="https://raw.githubusercontent.com/gvillarroel/sdlc/main/results/custom_weights_example_rankings.csv">custom_weights_example_rankings.csv</a></li>
+            <li><a href="https://raw.githubusercontent.com/gvillarroel/sdlc/main/results/decision_shortlist.csv">decision_shortlist.csv</a></li>
+            <li><a href="https://raw.githubusercontent.com/gvillarroel/sdlc/main/results/deterministic_rankings.csv">deterministic_rankings.csv</a></li>
+            <li><a href="https://raw.githubusercontent.com/gvillarroel/sdlc/main/results/evidence_gap_analysis.csv">evidence_gap_analysis.csv</a></li>
+            <li><a href="https://raw.githubusercontent.com/gvillarroel/sdlc/main/results/evidence_matrix.csv">evidence_matrix.csv</a></li>
+            <li><a href="https://raw.githubusercontent.com/gvillarroel/sdlc/main/results/github_metadata_check.csv">github_metadata_check.csv</a></li>
+            <li><a href="https://raw.githubusercontent.com/gvillarroel/sdlc/main/results/implementation_effort_estimates.csv">implementation_effort_estimates.csv</a></li>
+            <li><a href="https://raw.githubusercontent.com/gvillarroel/sdlc/main/results/license_audit.csv">license_audit.csv</a></li>
+            <li><a href="https://raw.githubusercontent.com/gvillarroel/sdlc/main/results/local_artifact_reference_check.csv">local_artifact_reference_check.csv</a></li>
+            <li><a href="https://raw.githubusercontent.com/gvillarroel/sdlc/main/results/markdown_table_check.csv">markdown_table_check.csv</a></li>
+            <li><a href="https://raw.githubusercontent.com/gvillarroel/sdlc/main/results/market_maintenance_source_matrix.csv">market_maintenance_source_matrix.csv</a></li>
+            <li><a href="https://raw.githubusercontent.com/gvillarroel/sdlc/main/results/monte_carlo_summary.csv">monte_carlo_summary.csv</a></li>
+            <li><a href="https://raw.githubusercontent.com/gvillarroel/sdlc/main/results/operational_cost_estimates.csv">operational_cost_estimates.csv</a></li>
+            <li><a href="https://raw.githubusercontent.com/gvillarroel/sdlc/main/results/operational_fit_rankings.csv">operational_fit_rankings.csv</a></li>
+            <li><a href="https://raw.githubusercontent.com/gvillarroel/sdlc/main/results/pareto_frontier.csv">pareto_frontier.csv</a></li>
+            <li><a href="https://raw.githubusercontent.com/gvillarroel/sdlc/main/results/pilot_decision_scores.example.csv">pilot_decision_scores.example.csv</a></li>
+            <li><a href="https://raw.githubusercontent.com/gvillarroel/sdlc/main/results/pilot_sample_size_estimates.csv">pilot_sample_size_estimates.csv</a></li>
+            <li><a href="https://raw.githubusercontent.com/gvillarroel/sdlc/main/results/rank_stability.csv">rank_stability.csv</a></li>
+            <li><a href="https://raw.githubusercontent.com/gvillarroel/sdlc/main/results/recommendation_rationale.csv">recommendation_rationale.csv</a></li>
+            <li><a href="https://raw.githubusercontent.com/gvillarroel/sdlc/main/results/regret_analysis.csv">regret_analysis.csv</a></li>
+            <li><a href="https://raw.githubusercontent.com/gvillarroel/sdlc/main/results/risk_validation_matrix.csv">risk_validation_matrix.csv</a></li>
+            <li><a href="https://raw.githubusercontent.com/gvillarroel/sdlc/main/results/sandbox_decision_matrix.csv">sandbox_decision_matrix.csv</a></li>
+            <li><a href="https://raw.githubusercontent.com/gvillarroel/sdlc/main/results/sandbox_deterministic_rankings.csv">sandbox_deterministic_rankings.csv</a></li>
+            <li><a href="https://raw.githubusercontent.com/gvillarroel/sdlc/main/results/sandbox_monte_carlo_summary.csv">sandbox_monte_carlo_summary.csv</a></li>
+            <li><a href="https://raw.githubusercontent.com/gvillarroel/sdlc/main/results/sandbox_source_matrix.csv">sandbox_source_matrix.csv</a></li>
+            <li><a href="https://raw.githubusercontent.com/gvillarroel/sdlc/main/results/sandbox_threat_coverage.csv">sandbox_threat_coverage.csv</a></li>
+            <li><a href="https://raw.githubusercontent.com/gvillarroel/sdlc/main/results/scenario_playbook_summary.csv">scenario_playbook_summary.csv</a></li>
+            <li><a href="https://raw.githubusercontent.com/gvillarroel/sdlc/main/results/scenario_weights.csv">scenario_weights.csv</a></li>
+            <li><a href="https://raw.githubusercontent.com/gvillarroel/sdlc/main/results/score_driver_summary.csv">score_driver_summary.csv</a></li>
+            <li><a href="https://raw.githubusercontent.com/gvillarroel/sdlc/main/results/sensitivity_summary.csv">sensitivity_summary.csv</a></li>
+            <li><a href="https://raw.githubusercontent.com/gvillarroel/sdlc/main/results/source_check.csv">source_check.csv</a></li>
+            <li><a href="https://raw.githubusercontent.com/gvillarroel/sdlc/main/results/stress_test_rankings.csv">stress_test_rankings.csv</a></li>
+            <li><a href="https://raw.githubusercontent.com/gvillarroel/sdlc/main/results/stress_test_summary.csv">stress_test_summary.csv</a></li>
+            <li><a href="https://raw.githubusercontent.com/gvillarroel/sdlc/main/results/uncertainty_stress_details.csv">uncertainty_stress_details.csv</a></li>
+            <li><a href="https://raw.githubusercontent.com/gvillarroel/sdlc/main/results/uncertainty_stress_summary.csv">uncertainty_stress_summary.csv</a></li>
+          </ul>
+        </details>
       </div>
     </section>
 
@@ -624,6 +821,50 @@
       <div class="wrap">
         <h2>Source Artifacts</h2>
         <p>The published report summarizes the findings, but the audit trail lives in the versioned repository artifacts.</p>
+        <details open>
+          <summary>Complete report library</summary>
+          <ul class="link-columns">
+            <li><a href="https://github.com/gvillarroel/sdlc/blob/main/reports/adoption_decision_record.md">adoption_decision_record.md</a></li>
+            <li><a href="https://github.com/gvillarroel/sdlc/blob/main/reports/ai_code_trust_matrix.md">ai_code_trust_matrix.md</a></li>
+            <li><a href="https://github.com/gvillarroel/sdlc/blob/main/reports/ai_orchestrator_frameworks_report.md">ai_orchestrator_frameworks_report.md</a></li>
+            <li><a href="https://github.com/gvillarroel/sdlc/blob/main/reports/artifact_index.md">artifact_index.md</a></li>
+            <li><a href="https://github.com/gvillarroel/sdlc/blob/main/reports/candidate_taxonomy.md">candidate_taxonomy.md</a></li>
+            <li><a href="https://github.com/gvillarroel/sdlc/blob/main/reports/decision_tree.md">decision_tree.md</a></li>
+            <li><a href="https://github.com/gvillarroel/sdlc/blob/main/reports/environment_prerequisites.md">environment_prerequisites.md</a></li>
+            <li><a href="https://github.com/gvillarroel/sdlc/blob/main/reports/evidence_gap_analysis.md">evidence_gap_analysis.md</a></li>
+            <li><a href="https://github.com/gvillarroel/sdlc/blob/main/reports/exclusions.md">exclusions.md</a></li>
+            <li><a href="https://github.com/gvillarroel/sdlc/blob/main/reports/executive_brief.md">executive_brief.md</a></li>
+            <li><a href="https://github.com/gvillarroel/sdlc/blob/main/reports/faq.md">faq.md</a></li>
+            <li><a href="https://github.com/gvillarroel/sdlc/blob/main/reports/final_global_report.md">final_global_report.md</a></li>
+            <li><a href="https://github.com/gvillarroel/sdlc/blob/main/reports/final_report_bundle.md">final_report_bundle.md</a></li>
+            <li><a href="https://github.com/gvillarroel/sdlc/blob/main/reports/github_metadata_check.md">github_metadata_check.md</a></li>
+            <li><a href="https://github.com/gvillarroel/sdlc/blob/main/reports/glossary.md">glossary.md</a></li>
+            <li><a href="https://github.com/gvillarroel/sdlc/blob/main/reports/implementation_blueprints.md">implementation_blueprints.md</a></li>
+            <li><a href="https://github.com/gvillarroel/sdlc/blob/main/reports/long_term_ai_app_maintenance.md">long_term_ai_app_maintenance.md</a></li>
+            <li><a href="https://github.com/gvillarroel/sdlc/blob/main/reports/maintenance_guide.md">maintenance_guide.md</a></li>
+            <li><a href="https://github.com/gvillarroel/sdlc/blob/main/reports/market_entry_barriers_shift.md">market_entry_barriers_shift.md</a></li>
+            <li><a href="https://github.com/gvillarroel/sdlc/blob/main/reports/market_fragmentation_user_share.md">market_fragmentation_user_share.md</a></li>
+            <li><a href="https://github.com/gvillarroel/sdlc/blob/main/reports/market_maintenance_synthesis.md">market_maintenance_synthesis.md</a></li>
+            <li><a href="https://github.com/gvillarroel/sdlc/blob/main/reports/methodology_appendix.md">methodology_appendix.md</a></li>
+            <li><a href="https://github.com/gvillarroel/sdlc/blob/main/reports/operational_cost_model.md">operational_cost_model.md</a></li>
+            <li><a href="https://github.com/gvillarroel/sdlc/blob/main/reports/pilot_protocol.md">pilot_protocol.md</a></li>
+            <li><a href="https://github.com/gvillarroel/sdlc/blob/main/reports/pilot_sample_size.md">pilot_sample_size.md</a></li>
+            <li><a href="https://github.com/gvillarroel/sdlc/blob/main/reports/presentation_outline.md">presentation_outline.md</a></li>
+            <li><a href="https://github.com/gvillarroel/sdlc/blob/main/reports/recommendation_rationale.md">recommendation_rationale.md</a></li>
+            <li><a href="https://github.com/gvillarroel/sdlc/blob/main/reports/release_notes.md">release_notes.md</a></li>
+            <li><a href="https://github.com/gvillarroel/sdlc/blob/main/reports/requirements_traceability.md">requirements_traceability.md</a></li>
+            <li><a href="https://github.com/gvillarroel/sdlc/blob/main/reports/residual_risks.md">residual_risks.md</a></li>
+            <li><a href="https://github.com/gvillarroel/sdlc/blob/main/reports/results_data_dictionary.md">results_data_dictionary.md</a></li>
+            <li><a href="https://github.com/gvillarroel/sdlc/blob/main/reports/risk_validation_matrix.md">risk_validation_matrix.md</a></li>
+            <li><a href="https://github.com/gvillarroel/sdlc/blob/main/reports/sandbox_report.md">sandbox_report.md</a></li>
+            <li><a href="https://github.com/gvillarroel/sdlc/blob/main/reports/scenario_playbooks.md">scenario_playbooks.md</a></li>
+            <li><a href="https://github.com/gvillarroel/sdlc/blob/main/reports/score_driver_summary.md">score_driver_summary.md</a></li>
+            <li><a href="https://github.com/gvillarroel/sdlc/blob/main/reports/security_evaluation_fixtures.md">security_evaluation_fixtures.md</a></li>
+            <li><a href="https://github.com/gvillarroel/sdlc/blob/main/reports/simulation_assumptions.md">simulation_assumptions.md</a></li>
+            <li><a href="https://github.com/gvillarroel/sdlc/blob/main/reports/system_diagrams.md">system_diagrams.md</a></li>
+            <li><a href="https://github.com/gvillarroel/sdlc/blob/main/reports/validation_summary.md">validation_summary.md</a></li>
+          </ul>
+        </details>
         <ul class="source-list">
           <li><a href="https://github.com/gvillarroel/sdlc/blob/main/reports/final_global_report.md">reports/final_global_report.md</a></li>
           <li><a href="https://github.com/gvillarroel/sdlc/blob/main/reports/system_diagrams.md">reports/system_diagrams.md</a></li>

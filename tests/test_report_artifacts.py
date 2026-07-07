@@ -62,8 +62,11 @@ class ReportArtifactsTest(unittest.TestCase):
         text = report.read_text(encoding="utf-8")
         self.assertIn("# Final Global Report", text)
         self.assertIn("## Global View", text)
+        self.assertIn("## Visual Processing Map", text)
         self.assertIn("## Security And Sandboxing", text)
         self.assertIn("## Download The Data", text)
+        self.assertIn("## Complete Data And Results Index", text)
+        self.assertIn("## Complete Report Library", text)
         self.assertIn("docs/index.html", text)
 
     def test_faq_exists(self):

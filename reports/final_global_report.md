@@ -47,6 +47,57 @@ The system is a chain of evidence:
 
 For a complete visual map, see `reports/system_diagrams.md`.
 
+## Visual Processing Map
+
+The final report is organized for visual processing. The complete evidence path is:
+
+```mermaid
+flowchart LR
+    Inputs["Source datasets<br/>data/*.json"]
+    Simulation["Simulation and analysis<br/>scripts/*.py"]
+    Results["Generated evidence<br/>results/*.csv/json"]
+    Reports["Narrative interpretation<br/>reports/*.md"]
+    Visuals["Charts and diagrams<br/>reports/assets + docs"]
+    Pilot["Pilot execution<br/>templates + examples"]
+    Decision["Adoption decision<br/>shortlist + no-go gates"]
+
+    Inputs --> Simulation --> Results --> Reports --> Visuals --> Decision
+    Results --> Pilot --> Decision
+    Reports --> Pilot
+```
+
+The information is also grouped into decision lanes:
+
+```mermaid
+flowchart TD
+    Ranking["Ranking lane<br/>deterministic, Monte Carlo, sensitivity, regret, Pareto"]
+    Sandbox["Sandbox lane<br/>runtime isolation, threat coverage, decision matrix"]
+    Operations["Operations lane<br/>implementation effort, operating cost, latency risk"]
+    Evidence["Evidence lane<br/>source confidence, metadata, license audit, gaps"]
+    Risk["Risk lane<br/>security fixtures, residual risks, validation matrix"]
+    Market["Market and trust lane<br/>maintenance, fragmentation, trust model"]
+    Pilot["Pilot lane<br/>tasks, logs, review scorecards, security gates"]
+    Adoption["Adoption decision"]
+
+    Ranking --> Adoption
+    Sandbox --> Adoption
+    Operations --> Adoption
+    Evidence --> Adoption
+    Risk --> Adoption
+    Market --> Adoption
+    Pilot --> Adoption
+```
+
+Coverage summary:
+
+| Artifact group | Count | Role in the final report |
+|---|---:|---|
+| Source JSON datasets in `data/` | 14 | Define candidates, criteria, scenarios, risks, sandboxes, assumptions, and traceability. |
+| Generated result files in `results/` | 41 | Preserve every quantitative output, validation check, matrix, and generated decision signal. |
+| Markdown reports and appendices in `reports/` | 40 | Provide narrative interpretation, methodology, operational guidance, risk analysis, and maintenance guidance. |
+| Pilot templates and examples | 8 | Turn the simulated recommendation into comparable real-world evidence. |
+| Validation scripts and tests | 60+ files | Keep the report reproducible and check generated artifacts before publication. |
+
 ## Methodology
 
 The methodology combines multi-criteria decision analysis with reproducible validation:
@@ -182,6 +233,63 @@ Use these direct links to download the source datasets and generated result file
 | Sandbox decision matrix | CSV | [results/sandbox_decision_matrix.csv](https://raw.githubusercontent.com/gvillarroel/sdlc/main/results/sandbox_decision_matrix.csv) |
 | Risk validation matrix | CSV | [results/risk_validation_matrix.csv](https://raw.githubusercontent.com/gvillarroel/sdlc/main/results/risk_validation_matrix.csv) |
 | Artifact manifest | CSV | [results/artifact_manifest.csv](https://raw.githubusercontent.com/gvillarroel/sdlc/main/results/artifact_manifest.csv) |
+
+## Complete Data And Results Index
+
+The final report uses all structured inputs and all generated result families. The complete machine-readable index is below.
+
+### Source Datasets
+
+| File | Direct download |
+|---|---|
+| `data/alternatives.json` | [download](https://raw.githubusercontent.com/gvillarroel/sdlc/main/data/alternatives.json) |
+| `data/candidate_taxonomy.json` | [download](https://raw.githubusercontent.com/gvillarroel/sdlc/main/data/candidate_taxonomy.json) |
+| `data/decision_tree.json` | [download](https://raw.githubusercontent.com/gvillarroel/sdlc/main/data/decision_tree.json) |
+| `data/operational_cost_model.json` | [download](https://raw.githubusercontent.com/gvillarroel/sdlc/main/data/operational_cost_model.json) |
+| `data/pilot_decision_model.json` | [download](https://raw.githubusercontent.com/gvillarroel/sdlc/main/data/pilot_decision_model.json) |
+| `data/pilot_sample_size_model.json` | [download](https://raw.githubusercontent.com/gvillarroel/sdlc/main/data/pilot_sample_size_model.json) |
+| `data/pilot_tasks.json` | [download](https://raw.githubusercontent.com/gvillarroel/sdlc/main/data/pilot_tasks.json) |
+| `data/risk_register.json` | [download](https://raw.githubusercontent.com/gvillarroel/sdlc/main/data/risk_register.json) |
+| `data/sandbox_evaluation.json` | [download](https://raw.githubusercontent.com/gvillarroel/sdlc/main/data/sandbox_evaluation.json) |
+| `data/scenario_profiles.json` | [download](https://raw.githubusercontent.com/gvillarroel/sdlc/main/data/scenario_profiles.json) |
+| `data/scoring_rubric.json` | [download](https://raw.githubusercontent.com/gvillarroel/sdlc/main/data/scoring_rubric.json) |
+| `data/security_evaluation_fixtures.json` | [download](https://raw.githubusercontent.com/gvillarroel/sdlc/main/data/security_evaluation_fixtures.json) |
+| `data/simulation_assumptions.json` | [download](https://raw.githubusercontent.com/gvillarroel/sdlc/main/data/simulation_assumptions.json) |
+| `data/traceability_matrix.json` | [download](https://raw.githubusercontent.com/gvillarroel/sdlc/main/data/traceability_matrix.json) |
+
+### Generated Results
+
+| Result family | Files |
+|---|---|
+| Full machine output and manifest | `results/all_results.json`, `results/artifact_manifest.csv` |
+| Base ranking and scenario fit | `results/deterministic_rankings.csv`, `results/monte_carlo_summary.csv`, `results/sensitivity_summary.csv`, `results/category_scores.csv`, `results/decision_shortlist.csv`, `results/scenario_weights.csv` |
+| Stability and stress testing | `results/regret_analysis.csv`, `results/pareto_frontier.csv`, `results/rank_stability.csv`, `results/stress_test_summary.csv`, `results/stress_test_rankings.csv`, `results/uncertainty_stress_summary.csv`, `results/uncertainty_stress_details.csv` |
+| Candidate explanation | `results/criteria_definitions.csv`, `results/evidence_matrix.csv`, `results/alternative_scorecards.csv`, `results/score_driver_summary.csv`, `results/criterion_spread_summary.csv` |
+| Operational planning | `results/implementation_effort_estimates.csv`, `results/operational_cost_estimates.csv`, `results/operational_fit_rankings.csv` |
+| Pilot planning | `results/scenario_playbook_summary.csv`, `results/pilot_sample_size_estimates.csv`, `results/pilot_decision_scores.example.csv`, `results/recommendation_rationale.csv` |
+| Risk, evidence, and source checks | `results/evidence_gap_analysis.csv`, `results/risk_validation_matrix.csv`, `results/license_audit.csv`, `results/source_check.csv`, `results/github_metadata_check.csv`, `results/market_maintenance_source_matrix.csv` |
+| Sandbox evaluation | `results/sandbox_deterministic_rankings.csv`, `results/sandbox_monte_carlo_summary.csv`, `results/sandbox_threat_coverage.csv`, `results/sandbox_decision_matrix.csv`, `results/sandbox_source_matrix.csv` |
+| Repository QA | `results/local_artifact_reference_check.csv`, `results/markdown_table_check.csv`, `results/csv_schema_check.csv`, `results/custom_weights_example_rankings.csv` |
+
+For direct download of any result file, use:
+
+```text
+https://raw.githubusercontent.com/gvillarroel/sdlc/main/results/<filename>
+```
+
+## Complete Report Library
+
+The final report also incorporates the narrative and validation material from the report library:
+
+| Report family | Files |
+|---|---|
+| Executive and final review | `reports/final_global_report.md`, `reports/executive_brief.md`, `reports/final_report_bundle.md`, `reports/release_notes.md`, `reports/artifact_index.md`, `reports/presentation_outline.md` |
+| Core analysis | `reports/ai_orchestrator_frameworks_report.md`, `reports/methodology_appendix.md`, `reports/recommendation_rationale.md`, `reports/scenario_playbooks.md`, `reports/decision_tree.md`, `reports/candidate_taxonomy.md` |
+| Visual and navigation support | `reports/system_diagrams.md`, `reports/results_data_dictionary.md`, `reports/glossary.md`, `reports/faq.md` |
+| Security, sandbox, and risks | `reports/sandbox_report.md`, `reports/security_evaluation_fixtures.md`, `reports/risk_validation_matrix.md`, `reports/residual_risks.md`, `reports/evidence_gap_analysis.md`, `reports/github_metadata_check.md` |
+| Market, maintenance, and trust | `reports/market_maintenance_synthesis.md`, `reports/market_entry_barriers_shift.md`, `reports/market_fragmentation_user_share.md`, `reports/long_term_ai_app_maintenance.md`, `reports/ai_code_trust_matrix.md`, `reports/maintenance_guide.md` |
+| Pilot and operations | `reports/pilot_protocol.md`, `reports/pilot_sample_size.md`, `reports/implementation_blueprints.md`, `reports/operational_cost_model.md`, `reports/adoption_decision_record.md` |
+| Scope and validation | `reports/exclusions.md`, `reports/environment_prerequisites.md`, `reports/requirements_traceability.md`, `reports/validation_summary.md`, `reports/simulation_assumptions.md`, `reports/score_driver_summary.md` |
 
 ## Traceability
 
