@@ -383,6 +383,20 @@
       margin-top: 20px;
     }
 
+    .diagram-grid {
+      display: grid;
+      gap: 18px;
+      margin-top: 20px;
+    }
+
+    .diagram-grid figure {
+      overflow-x: auto;
+    }
+
+    .diagram-grid img {
+      min-width: 760px;
+    }
+
     figure {
       margin: 0;
       background: var(--panel);
@@ -483,6 +497,7 @@
     <div class="wrap">
       <a href="#global-view">Global view</a>
       <a href="#visual-map">Visual map</a>
+      <a href="#rendered-diagrams">Diagrams</a>
       <a href="#methodology">Methodology</a>
       <a href="#scenarios">Scenarios</a>
       <a href="#candidates">Candidates</a>
@@ -526,6 +541,27 @@
           <div class="coverage"><strong>41</strong><span>generated result files in <code>results/</code></span></div>
           <div class="coverage"><strong>40</strong><span>Markdown reports and appendices in <code>reports/</code></span></div>
           <div class="coverage"><strong>5</strong><span>pilot templates plus examples for real evaluation</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="rendered-diagrams">
+      <div class="wrap">
+        <h2>Rendered Diagrams</h2>
+        <p>These SVG diagrams are rendered from versioned Mermaid sources in <code>reports/diagrams/</code>, so they are visible directly in GitHub Pages and still remain reproducible from source.</p>
+        <div class="diagram-grid">
+          <figure>
+            <img src="assets/final-report-evidence-pipeline.svg" alt="Evidence pipeline diagram connecting source data, scripts, results, reports, visuals, pilot evidence, and adoption decision">
+            <figcaption>Evidence pipeline: how raw repository material becomes decision evidence.</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/final-report-decision-lanes.svg" alt="Decision lanes diagram connecting ranking, sandbox, operations, evidence, risk, market, trust, and pilot lanes into adoption decision">
+            <figcaption>Decision lanes: every recommendation is assembled from multiple evidence lanes, not a single ranking.</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/final-report-artifact-coverage.svg" alt="Artifact coverage diagram connecting data, results, reports, templates, validation, and published GitHub Pages report">
+            <figcaption>Artifact coverage: how all major repository areas feed the published final report.</figcaption>
+          </figure>
         </div>
       </div>
     </section>

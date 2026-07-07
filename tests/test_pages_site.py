@@ -15,6 +15,7 @@ class PagesSiteTest(unittest.TestCase):
             "Final global report",
             "Global View",
             "Visual Evidence Map",
+            "Rendered Diagrams",
             "Methodology",
             "Scenario Findings",
             "Security And Sandboxing",
@@ -27,13 +28,18 @@ class PagesSiteTest(unittest.TestCase):
             self.assertIn(marker, text)
 
         for asset in [
+            "final-report-evidence-pipeline.svg",
+            "final-report-decision-lanes.svg",
+            "final-report-artifact-coverage.svg",
             "rank_stability.svg",
             "scenario_regret.svg",
             "operational_hours.svg",
             "criterion_spread.svg",
         ]:
             self.assertIn(f"assets/{asset}", text)
-            self.assertTrue((ROOT / "docs" / "assets" / asset).exists())
+            asset_path = ROOT / "docs" / "assets" / asset
+            self.assertTrue(asset_path.exists())
+            self.assertIn("<svg", asset_path.read_text(encoding="utf-8"))
 
     def test_pages_source_has_nojekyll_marker(self):
         self.assertTrue((ROOT / "docs" / ".nojekyll").exists())

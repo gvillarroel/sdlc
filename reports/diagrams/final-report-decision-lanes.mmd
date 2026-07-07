@@ -1,0 +1,17 @@
+flowchart TD
+    Ranking["Ranking lane<br/>deterministic, Monte Carlo, sensitivity, regret, Pareto"]
+    Sandbox["Sandbox lane<br/>runtime isolation, threat coverage, decision matrix"]
+    Operations["Operations lane<br/>implementation effort, operating cost, latency risk"]
+    Evidence["Evidence lane<br/>source confidence, metadata, license audit, gaps"]
+    Risk["Risk lane<br/>security fixtures, residual risks, validation matrix"]
+    Market["Market and trust lane<br/>maintenance, fragmentation, trust model"]
+    Pilot["Pilot lane<br/>tasks, logs, review scorecards, security gates"]
+    Adoption["Adoption decision<br/>pilot shortlist, no-go gates, maintenance path"]
+
+    Ranking --> Adoption
+    Sandbox --> Adoption
+    Operations --> Adoption
+    Evidence --> Adoption
+    Risk --> Adoption
+    Market --> Adoption
+    Pilot --> Adoption

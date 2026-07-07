@@ -100,13 +100,13 @@ The final report is organized for visual processing. The complete evidence path 
 
 ```mermaid
 flowchart LR
-    Inputs["Source datasets<br/>data/*.json"]
-    Simulation["Simulation and analysis<br/>scripts/*.py"]
-    Results["Generated evidence<br/>results/*.csv/json"]
-    Reports["Narrative interpretation<br/>reports/*.md"]
-    Visuals["Charts and diagrams<br/>reports/assets + docs"]
-    Pilot["Pilot execution<br/>templates + examples"]
-    Decision["Adoption decision<br/>shortlist + no-go gates"]
+    Inputs["Source datasets<br/>data/*.json<br/>candidates, criteria, scenarios, risks"]
+    Simulation["Simulation and analysis<br/>scripts/*.py<br/>rankings, stress tests, sandbox model"]
+    Results["Generated evidence<br/>results/*.csv/json<br/>scores, matrices, validation outputs"]
+    Reports["Narrative interpretation<br/>reports/*.md<br/>methodology, risks, recommendations"]
+    Visuals["Visual report<br/>docs/index.html<br/>charts, diagrams, download index"]
+    Pilot["Pilot execution<br/>templates + examples<br/>run logs, review scorecards, gates"]
+    Decision["Adoption decision<br/>shortlist + no-go gates<br/>evidence-backed next step"]
 
     Inputs --> Simulation --> Results --> Reports --> Visuals --> Decision
     Results --> Pilot --> Decision
@@ -134,6 +134,12 @@ flowchart TD
     Market --> Adoption
     Pilot --> Adoption
 ```
+
+The same diagrams are rendered as SVG assets in the published GitHub Pages report:
+
+- `docs/assets/final-report-evidence-pipeline.svg`
+- `docs/assets/final-report-decision-lanes.svg`
+- `docs/assets/final-report-artifact-coverage.svg`
 
 Coverage summary:
 

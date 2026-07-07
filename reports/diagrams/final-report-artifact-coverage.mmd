@@ -1,0 +1,15 @@
+flowchart LR
+    Data["14 source datasets<br/>data/"]
+    Results["41 generated outputs<br/>results/"]
+    Reports["40 report files<br/>reports/"]
+    Templates["Pilot templates<br/>templates/ + examples/"]
+    Validation["Validation suite<br/>tests/ + scripts/run_all_checks.py"]
+    Pages["Published report<br/>GitHub Pages"]
+
+    Data --> Results
+    Results --> Reports
+    Reports --> Pages
+    Templates --> Pages
+    Validation --> Pages
+    Results --> Validation
+    Reports --> Validation

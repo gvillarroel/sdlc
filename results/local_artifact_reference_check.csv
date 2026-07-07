@@ -404,6 +404,9 @@ reports/faq.md,scripts/rank_with_custom_weights.py,scripts/rank_with_custom_weig
 reports/faq.md,scripts/refresh_github_metadata.py,scripts/refresh_github_metadata.py,True
 reports/faq.md,scripts/run_all_checks.py,scripts/run_all_checks.py,True
 reports/faq.md,scripts/score_pilot_results.py,scripts/score_pilot_results.py,True
+reports/final_global_report.md,assets/final-report-artifact-coverage.svg,reports/assets/final-report-artifact-coverage.svg,True
+reports/final_global_report.md,assets/final-report-decision-lanes.svg,reports/assets/final-report-decision-lanes.svg,True
+reports/final_global_report.md,assets/final-report-evidence-pipeline.svg,reports/assets/final-report-evidence-pipeline.svg,True
 reports/final_global_report.md,data/alternatives.json,data/alternatives.json,True
 reports/final_global_report.md,data/candidate_taxonomy.json,data/candidate_taxonomy.json,True
 reports/final_global_report.md,data/decision_tree.json,data/decision_tree.json,True
@@ -422,7 +425,6 @@ reports/final_global_report.md,reports/adoption_decision_record.md,reports/adopt
 reports/final_global_report.md,reports/ai_code_trust_matrix.md,reports/ai_code_trust_matrix.md,True
 reports/final_global_report.md,reports/ai_orchestrator_frameworks_report.md,reports/ai_orchestrator_frameworks_report.md,True
 reports/final_global_report.md,reports/artifact_index.md,reports/artifact_index.md,True
-reports/final_global_report.md,reports/assets,reports/assets,True
 reports/final_global_report.md,reports/candidate_taxonomy.md,reports/candidate_taxonomy.md,True
 reports/final_global_report.md,reports/decision_tree.md,reports/decision_tree.md,True
 reports/final_global_report.md,reports/environment_prerequisites.md,reports/environment_prerequisites.md,True
@@ -505,6 +507,9 @@ reports/final_global_report.md,scripts/score_pilot_results.py,scripts/score_pilo
 reports/final_global_report.md,templates/pilot_run_log.csv,templates/pilot_run_log.csv,True
 reports/final_global_report.md,templates/reviewer_scorecard.md,templates/reviewer_scorecard.md,True
 reports/final_global_report.md,templates/security_gate_checklist.md,templates/security_gate_checklist.md,True
+reports/final_report_bundle.md,assets/final-report-artifact-coverage.svg,reports/assets/final-report-artifact-coverage.svg,True
+reports/final_report_bundle.md,assets/final-report-decision-lanes.svg,reports/assets/final-report-decision-lanes.svg,True
+reports/final_report_bundle.md,assets/final-report-evidence-pipeline.svg,reports/assets/final-report-evidence-pipeline.svg,True
 reports/final_report_bundle.md,assets/rank_stability.svg,reports/assets/rank_stability.svg,True
 reports/final_report_bundle.md,assets/scenario_regret.svg,reports/assets/scenario_regret.svg,True
 reports/final_report_bundle.md,ci/validate-workflow.example.yml,ci/validate-workflow.example.yml,True
@@ -529,7 +534,6 @@ reports/final_report_bundle.md,reports/adoption_decision_record.md,reports/adopt
 reports/final_report_bundle.md,reports/ai_code_trust_matrix.md,reports/ai_code_trust_matrix.md,True
 reports/final_report_bundle.md,reports/ai_orchestrator_frameworks_report.md,reports/ai_orchestrator_frameworks_report.md,True
 reports/final_report_bundle.md,reports/artifact_index.md,reports/artifact_index.md,True
-reports/final_report_bundle.md,reports/assets,reports/assets,True
 reports/final_report_bundle.md,reports/assets/,reports/assets,True
 reports/final_report_bundle.md,reports/assets/criterion_spread.svg,reports/assets/criterion_spread.svg,True
 reports/final_report_bundle.md,reports/assets/operational_hours.svg,reports/assets/operational_hours.svg,True
