@@ -86,6 +86,8 @@ Included artifacts:
 - `reports/artifact_index.md` - navigation guide for all report, data, result, template, and script artifacts.
 - `reports/scenario_playbooks.md` - generated per-scenario execution playbooks.
 - `reports/pilot_protocol.md` - step-by-step protocol for executing the recommended pilot.
+- `reports/internal_benchmark_harnesses.md` - organizational guide for generating private internal benchmarks for agent harnesses.
+- `reports/internal_benchmark_papers.md` - annotated paper bibliography for internal agent-harness benchmark design.
 - `reports/pilot_sample_size.md` - generated task-count planning appendix for the pilot.
 - `reports/implementation_blueprints.md` - implementation notes for the main pilot candidates.
 - `reports/decision_tree.md` - guided shortlist selection tree.

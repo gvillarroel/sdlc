@@ -33,6 +33,8 @@ README.md,reports/final_report_bundle.md,reports/final_report_bundle.md,True
 README.md,reports/github_metadata_check.md,reports/github_metadata_check.md,True
 README.md,reports/glossary.md,reports/glossary.md,True
 README.md,reports/implementation_blueprints.md,reports/implementation_blueprints.md,True
+README.md,reports/internal_benchmark_harnesses.md,reports/internal_benchmark_harnesses.md,True
+README.md,reports/internal_benchmark_papers.md,reports/internal_benchmark_papers.md,True
 README.md,reports/long_term_ai_app_maintenance.md,reports/long_term_ai_app_maintenance.md,True
 README.md,reports/maintenance_guide.md,reports/maintenance_guide.md,True
 README.md,reports/market_entry_barriers_shift.md,reports/market_entry_barriers_shift.md,True
@@ -274,6 +276,8 @@ reports/artifact_index.md,reports/final_report_bundle.md,reports/final_report_bu
 reports/artifact_index.md,reports/github_metadata_check.md,reports/github_metadata_check.md,True
 reports/artifact_index.md,reports/glossary.md,reports/glossary.md,True
 reports/artifact_index.md,reports/implementation_blueprints.md,reports/implementation_blueprints.md,True
+reports/artifact_index.md,reports/internal_benchmark_harnesses.md,reports/internal_benchmark_harnesses.md,True
+reports/artifact_index.md,reports/internal_benchmark_papers.md,reports/internal_benchmark_papers.md,True
 reports/artifact_index.md,reports/long_term_ai_app_maintenance.md,reports/long_term_ai_app_maintenance.md,True
 reports/artifact_index.md,reports/maintenance_guide.md,reports/maintenance_guide.md,True
 reports/artifact_index.md,reports/market_entry_barriers_shift.md,reports/market_entry_barriers_shift.md,True
@@ -551,6 +555,8 @@ reports/final_report_bundle.md,reports/final_report_bundle.md,reports/final_repo
 reports/final_report_bundle.md,reports/github_metadata_check.md,reports/github_metadata_check.md,True
 reports/final_report_bundle.md,reports/glossary.md,reports/glossary.md,True
 reports/final_report_bundle.md,reports/implementation_blueprints.md,reports/implementation_blueprints.md,True
+reports/final_report_bundle.md,reports/internal_benchmark_harnesses.md,reports/internal_benchmark_harnesses.md,True
+reports/final_report_bundle.md,reports/internal_benchmark_papers.md,reports/internal_benchmark_papers.md,True
 reports/final_report_bundle.md,reports/long_term_ai_app_maintenance.md,reports/long_term_ai_app_maintenance.md,True
 reports/final_report_bundle.md,reports/maintenance_guide.md,reports/maintenance_guide.md,True
 reports/final_report_bundle.md,reports/market_entry_barriers_shift.md,reports/market_entry_barriers_shift.md,True
@@ -653,6 +659,18 @@ reports/github_metadata_check.md,results/github_metadata_check.csv,results/githu
 reports/github_metadata_check.md,scripts/build_github_metadata_report.py,scripts/build_github_metadata_report.py,True
 reports/github_metadata_check.md,scripts/refresh_github_metadata.py,scripts/refresh_github_metadata.py,True
 reports/implementation_blueprints.md,results/implementation_effort_estimates.csv,results/implementation_effort_estimates.csv,True
+reports/internal_benchmark_harnesses.md,data/pilot_decision_model.json,data/pilot_decision_model.json,True
+reports/internal_benchmark_harnesses.md,data/pilot_tasks.json,data/pilot_tasks.json,True
+reports/internal_benchmark_harnesses.md,data/risk_register.json,data/risk_register.json,True
+reports/internal_benchmark_harnesses.md,data/security_evaluation_fixtures.json,data/security_evaluation_fixtures.json,True
+reports/internal_benchmark_harnesses.md,examples/pilot_adapter_contract.py,examples/pilot_adapter_contract.py,True
+reports/internal_benchmark_harnesses.md,reports/pilot_protocol.md,reports/pilot_protocol.md,True
+reports/internal_benchmark_harnesses.md,reports/pilot_sample_size.md,reports/pilot_sample_size.md,True
+reports/internal_benchmark_harnesses.md,reports/risk_validation_matrix.md,reports/risk_validation_matrix.md,True
+reports/internal_benchmark_harnesses.md,templates/pilot_run_log.csv,templates/pilot_run_log.csv,True
+reports/internal_benchmark_harnesses.md,templates/reviewer_scorecard.md,templates/reviewer_scorecard.md,True
+reports/internal_benchmark_harnesses.md,templates/security_gate_checklist.md,templates/security_gate_checklist.md,True
+reports/internal_benchmark_papers.md,reports/internal_benchmark_harnesses.md,reports/internal_benchmark_harnesses.md,True
 reports/long_term_ai_app_maintenance.md,results/market_maintenance_source_matrix.csv,results/market_maintenance_source_matrix.csv,True
 reports/maintenance_guide.md,data/alternatives.json,data/alternatives.json,True
 reports/maintenance_guide.md,data/operational_cost_model.json,data/operational_cost_model.json,True

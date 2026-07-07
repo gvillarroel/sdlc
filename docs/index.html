@@ -207,7 +207,7 @@
       background: var(--panel);
       border: 1px solid var(--line);
       border-radius: 8px;
-      overflow: hidden;
+      overflow-x: auto;
       display: block;
     }
 
@@ -501,6 +501,7 @@
       <a href="#methodology">Methodology</a>
       <a href="#scenarios">Scenarios</a>
       <a href="#candidates">Candidates</a>
+      <a href="#extensions">Extensibility</a>
       <a href="#security">Security</a>
       <a href="#risks">Risks</a>
       <a href="#pilot">Pilot</a>
@@ -538,8 +539,8 @@
         </div>
         <div class="coverage-grid" aria-label="Artifact coverage summary">
           <div class="coverage"><strong>14</strong><span>source JSON datasets in <code>data/</code></span></div>
-          <div class="coverage"><strong>41</strong><span>generated result files in <code>results/</code></span></div>
-          <div class="coverage"><strong>40</strong><span>Markdown reports and appendices in <code>reports/</code></span></div>
+          <div class="coverage"><strong>42</strong><span>generated result files in <code>results/</code></span></div>
+          <div class="coverage"><strong>41</strong><span>Markdown reports and appendices in <code>reports/</code></span></div>
           <div class="coverage"><strong>5</strong><span>pilot templates plus examples for real evaluation</span></div>
         </div>
       </div>
@@ -811,6 +812,183 @@
       </div>
     </section>
 
+    <section id="extensions">
+      <div class="wrap">
+        <h2>Extension Surface Comparison</h2>
+        <p>This table separates extensibility mechanics from the broader score. It was checked against official project documentation, official GitHub READMEs, or official product pages on 2026-07-07.</p>
+        <p><strong>Legend.</strong> Yes means native or clearly documented. Partial means supported through configuration, SDK glue, backend choice, middleware, or adjacent framework features. External means normally supplied by the surrounding runtime, CI system, or sandbox. No means the official evidence reviewed indicates the feature is not native or is outside the documented product surface.</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Alternative</th>
+              <th>Hooks / callbacks</th>
+              <th>Plugins / extensions / MCP</th>
+              <th>Custom tools / skills</th>
+              <th>SDK / API surface</th>
+              <th>Subagents / multi-agent</th>
+              <th>Official evidence checked</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>Aider</code></td>
+              <td>Partial</td>
+              <td>External</td>
+              <td>Partial</td>
+              <td>Partial</td>
+              <td>External</td>
+              <td><a href="https://aider.chat/docs/usage/lint-test.html">lint/test hooks</a>, <a href="https://aider.chat/docs/scripting.html">scripting</a>, <a href="https://aider.chat/docs/usage/commands.html">commands</a>, <a href="https://aider.chat/docs/usage/watch.html">IDE watch mode</a></td>
+            </tr>
+            <tr>
+              <td><code>Anchor</code></td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td>Partial</td>
+              <td>No</td>
+              <td><a href="https://github.com/mjenkinsx9/anchor/blob/main/docs/01-overview.md">overview</a>, <a href="https://github.com/mjenkinsx9/anchor/blob/main/docs/02-installation.md">installation matrix</a></td>
+            </tr>
+            <tr>
+              <td><code>Cline / Cline SDK</code></td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td><a href="https://github.com/cline/cline">official repo</a>, <a href="https://docs.cline.bot/mcp/mcp-overview">MCP docs</a></td>
+            </tr>
+            <tr>
+              <td><code>Codex CLI</code></td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td><a href="https://developers.openai.com/codex/hooks">hooks</a>, <a href="https://developers.openai.com/codex/skills">skills</a>, <a href="https://developers.openai.com/codex/mcp">MCP</a>, <a href="https://developers.openai.com/codex/subagents">subagents</a></td>
+            </tr>
+            <tr>
+              <td><code>Deep Agents</code></td>
+              <td>Partial</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td><a href="https://docs.langchain.com/oss/python/deepagents/overview">overview</a>, <a href="https://docs.langchain.com/oss/python/deepagents/subagents">subagents</a>, <a href="https://docs.langchain.com/oss/python/deepagents/tools">tools</a></td>
+            </tr>
+            <tr>
+              <td><code>Flue</code></td>
+              <td>Partial</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td><a href="https://flueframework.com/">official site</a>, <a href="https://github.com/withastro/flue">official repo</a></td>
+            </tr>
+            <tr>
+              <td><code>goose</code></td>
+              <td>Partial</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td>Partial</td>
+              <td>Yes</td>
+              <td><a href="https://goose-docs.ai/docs/getting-started/using-extensions/">extensions</a>, <a href="https://goose-docs.ai/docs/tutorials/custom-extensions/">custom extensions</a></td>
+            </tr>
+            <tr>
+              <td><code>mini-SWE-agent</code></td>
+              <td>External</td>
+              <td>No</td>
+              <td>External</td>
+              <td>Partial</td>
+              <td>No</td>
+              <td><a href="https://github.com/SWE-agent/mini-swe-agent">official repo</a>, <a href="https://mini-swe-agent.com/latest/faq/">FAQ</a></td>
+            </tr>
+            <tr>
+              <td><code>Omni Agent</code></td>
+              <td>Partial</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td><a href="https://github.com/2830500285/omni-agent">official repo</a>, <a href="https://github.com/2830500285/omni-agent/blob/main/CAPABILITY_COMPARISON.md">capability comparison</a></td>
+            </tr>
+            <tr>
+              <td><code>OmniAgent</code></td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td>Partial</td>
+              <td>Partial</td>
+              <td>Yes</td>
+              <td><a href="https://github.com/xianyu-sheng/omniagent/blob/main/omniagent/engine/callbacks.py">callbacks</a>, <a href="https://github.com/xianyu-sheng/omniagent/blob/main/agent.yaml">agent manifest</a></td>
+            </tr>
+            <tr>
+              <td><code>Omnigent</code></td>
+              <td>Partial</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td><a href="https://github.com/omnigent-ai/omnigent">official repo</a></td>
+            </tr>
+            <tr>
+              <td><code>Open SWE</code></td>
+              <td>Yes</td>
+              <td>Partial</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td><a href="https://github.com/langchain-ai/open-swe">official repo</a>, <a href="https://www.langchain.com/blog/open-swe-an-open-source-framework-for-internal-coding-agents">LangChain announcement</a></td>
+            </tr>
+            <tr>
+              <td><code>OpenCode</code></td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td><a href="https://opencode.ai/docs/plugins/">plugins</a>, <a href="https://opencode.ai/docs/agents/">agents</a>, <a href="https://opencode.ai/docs/mcp-servers/">MCP</a>, <a href="https://opencode.ai/docs/sdk/">SDK</a></td>
+            </tr>
+            <tr>
+              <td><code>OpenHands Agent Canvas</code></td>
+              <td>External</td>
+              <td>Partial</td>
+              <td>Partial</td>
+              <td>Partial</td>
+              <td>Partial</td>
+              <td><a href="https://docs.openhands.dev/openhands/usage/agent-canvas/acp-agents">ACP agents</a>, <a href="https://docs.openhands.dev/openhands/usage/agent-canvas/first-time-setup">first-time setup</a>, <a href="https://github.com/OpenHands/agent-canvas">official repo</a></td>
+            </tr>
+            <tr>
+              <td><code>OpenHands Software Agent SDK</code></td>
+              <td>Partial</td>
+              <td>Partial</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td><a href="https://docs.openhands.dev/sdk">SDK docs</a>, <a href="https://docs.openhands.dev/sdk/getting-started">getting started</a>, <a href="https://github.com/OpenHands/software-agent-sdk">official repo</a></td>
+            </tr>
+            <tr>
+              <td><code>Sandcastle</code></td>
+              <td>External</td>
+              <td>Partial</td>
+              <td>Partial</td>
+              <td>Yes</td>
+              <td>Partial</td>
+              <td><a href="https://github.com/mattpocock/sandcastle">official repo</a></td>
+            </tr>
+            <tr>
+              <td><code>SWE-agent</code></td>
+              <td>External</td>
+              <td>Partial</td>
+              <td>Yes</td>
+              <td>Partial</td>
+              <td>No</td>
+              <td><a href="https://swe-agent.com/latest/background/architecture/">architecture</a>, <a href="https://swe-agent.com/latest/usage/adding_custom_tools/">custom tools</a>, <a href="https://github.com/SWE-agent/SWE-agent">official repo</a></td>
+            </tr>
+          </tbody>
+        </table>
+        <p>The full Markdown version remains in <a href="https://github.com/gvillarroel/sdlc/blob/main/reports/ai_orchestrator_frameworks_report.md">reports/ai_orchestrator_frameworks_report.md</a> and is included in the generated one-file bundle.</p>
+      </div>
+    </section>
+
     <section id="security">
       <div class="wrap two-col">
         <div>
@@ -1020,6 +1198,8 @@
             <li><a href="https://github.com/gvillarroel/sdlc/blob/main/reports/github_metadata_check.md">github_metadata_check.md</a></li>
             <li><a href="https://github.com/gvillarroel/sdlc/blob/main/reports/glossary.md">glossary.md</a></li>
             <li><a href="https://github.com/gvillarroel/sdlc/blob/main/reports/implementation_blueprints.md">implementation_blueprints.md</a></li>
+            <li><a href="https://github.com/gvillarroel/sdlc/blob/main/reports/internal_benchmark_harnesses.md">internal_benchmark_harnesses.md</a></li>
+            <li><a href="https://github.com/gvillarroel/sdlc/blob/main/reports/internal_benchmark_papers.md">internal_benchmark_papers.md</a></li>
             <li><a href="https://github.com/gvillarroel/sdlc/blob/main/reports/long_term_ai_app_maintenance.md">long_term_ai_app_maintenance.md</a></li>
             <li><a href="https://github.com/gvillarroel/sdlc/blob/main/reports/maintenance_guide.md">maintenance_guide.md</a></li>
             <li><a href="https://github.com/gvillarroel/sdlc/blob/main/reports/market_entry_barriers_shift.md">market_entry_barriers_shift.md</a></li>

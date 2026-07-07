@@ -183,6 +183,30 @@ The generated effort model makes that split explicit:
 | First slice | The smallest useful implementation slice that should be built before deeper integration. |
 | Adoption note | A generated caution on whether the candidate is a low-friction smoke test, a policy-heavy pilot, provider-dependent, or reference-only. |
 
+## Extension Surface Comparison
+
+This table separates the type of extension surface from the general extensibility score. It was checked against official project documentation, official GitHub READMEs, or official product pages on 2026-07-07. "Yes" means the feature is native or clearly documented by the project. "Partial" means the project supports the pattern through configuration, SDK glue, backend choice, middleware, or adjacent framework features, but it is not presented as the primary mechanism. "External" means the pattern is normally supplied by the surrounding runtime, CI system, or sandbox. "No" means the official pages or repo evidence reviewed indicate the feature is not native to the project or is outside the documented product surface.
+
+| Alternative | Hooks / callbacks | Plugins / extensions / MCP | Custom tools / skills | SDK / API surface | Subagents / multi-agent | Official evidence checked |
+|---|---|---|---|---|---|---|
+| Aider | Partial | External | Partial | Partial | External | [lint/test hooks](https://aider.chat/docs/usage/lint-test.html), [scripting](https://aider.chat/docs/scripting.html), [commands](https://aider.chat/docs/usage/commands.html), [IDE watch mode](https://aider.chat/docs/usage/watch.html) |
+| Anchor | Yes | Yes | Yes | Partial | No | [overview](https://github.com/mjenkinsx9/anchor/blob/main/docs/01-overview.md), [installation matrix](https://github.com/mjenkinsx9/anchor/blob/main/docs/02-installation.md) |
+| Cline / Cline SDK | Yes | Yes | Yes | Yes | Yes | [official repo](https://github.com/cline/cline), [MCP docs](https://docs.cline.bot/mcp/mcp-overview) |
+| Codex CLI | Yes | Yes | Yes | Yes | Yes | [hooks](https://developers.openai.com/codex/hooks), [skills](https://developers.openai.com/codex/skills), [MCP](https://developers.openai.com/codex/mcp), [subagents](https://developers.openai.com/codex/subagents) |
+| Deep Agents | Partial | Yes | Yes | Yes | Yes | [overview](https://docs.langchain.com/oss/python/deepagents/overview), [subagents](https://docs.langchain.com/oss/python/deepagents/subagents), [tools](https://docs.langchain.com/oss/python/deepagents/tools) |
+| Flue | Partial | Yes | Yes | Yes | Yes | [official site](https://flueframework.com/), [official repo](https://github.com/withastro/flue) |
+| goose | Partial | Yes | Yes | Partial | Yes | [extensions](https://goose-docs.ai/docs/getting-started/using-extensions/), [custom extensions](https://goose-docs.ai/docs/tutorials/custom-extensions/) |
+| mini-SWE-agent | External | No | External | Partial | No | [official repo](https://github.com/SWE-agent/mini-swe-agent), [FAQ](https://mini-swe-agent.com/latest/faq/) |
+| Omni Agent | Partial | Yes | Yes | Yes | Yes | [official repo](https://github.com/2830500285/omni-agent), [capability comparison](https://github.com/2830500285/omni-agent/blob/main/CAPABILITY_COMPARISON.md) |
+| OmniAgent | Yes | Yes | Partial | Partial | Yes | [callbacks](https://github.com/xianyu-sheng/omniagent/blob/main/omniagent/engine/callbacks.py), [agent manifest](https://github.com/xianyu-sheng/omniagent/blob/main/agent.yaml) |
+| Omnigent | Partial | Yes | Yes | Yes | Yes | [official repo](https://github.com/omnigent-ai/omnigent) |
+| Open SWE | Yes | Partial | Yes | Yes | Yes | [official repo](https://github.com/langchain-ai/open-swe), [LangChain announcement](https://www.langchain.com/blog/open-swe-an-open-source-framework-for-internal-coding-agents) |
+| OpenCode | Yes | Yes | Yes | Yes | Yes | [plugins](https://opencode.ai/docs/plugins/), [agents](https://opencode.ai/docs/agents/), [MCP](https://opencode.ai/docs/mcp-servers/), [SDK](https://opencode.ai/docs/sdk/) |
+| OpenHands Agent Canvas | External | Partial | Partial | Partial | Partial | [ACP agents](https://docs.openhands.dev/openhands/usage/agent-canvas/acp-agents), [first-time setup](https://docs.openhands.dev/openhands/usage/agent-canvas/first-time-setup), [official repo](https://github.com/OpenHands/agent-canvas) |
+| OpenHands Software Agent SDK | Partial | Partial | Yes | Yes | Yes | [SDK docs](https://docs.openhands.dev/sdk), [getting started](https://docs.openhands.dev/sdk/getting-started), [official repo](https://github.com/OpenHands/software-agent-sdk) |
+| Sandcastle | External | Partial | Partial | Yes | Partial | [official repo](https://github.com/mattpocock/sandcastle) |
+| SWE-agent | External | Partial | Yes | Partial | No | [architecture](https://swe-agent.com/latest/background/architecture/), [custom tools](https://swe-agent.com/latest/usage/adding_custom_tools/), [official repo](https://github.com/SWE-agent/SWE-agent) |
+
 ## Operational Cost Model
 
 The generated operating-cost appendix is `reports/operational_cost_model.md`. It uses `data/operational_cost_model.json` and `scripts/estimate_operational_costs.py` to estimate relative monthly operating hours, hours per task, token-pressure index, latency-risk score, and operation-adjusted rankings.

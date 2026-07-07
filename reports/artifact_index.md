@@ -43,6 +43,8 @@ Use this index to choose the right file quickly.
 | GitHub metadata verification | `reports/github_metadata_check.md` |
 | Security fixture catalog | `reports/security_evaluation_fixtures.md` |
 | Pilot execution protocol | `reports/pilot_protocol.md` |
+| Internal benchmark generation | `reports/internal_benchmark_harnesses.md` |
+| Internal benchmark paper bibliography | `reports/internal_benchmark_papers.md` |
 | Pilot sample-size planning | `reports/pilot_sample_size.md` |
 | Candidate implementation notes | `reports/implementation_blueprints.md` |
 | Stakeholder presentation outline | `reports/presentation_outline.md` |
