@@ -14,6 +14,9 @@ README.md,data/scoring_rubric.json,data/scoring_rubric.json,True
 README.md,data/security_evaluation_fixtures.json,data/security_evaluation_fixtures.json,True
 README.md,data/simulation_assumptions.json,data/simulation_assumptions.json,True
 README.md,data/traceability_matrix.json,data/traceability_matrix.json,True
+README.md,examples/copilot-sdk-dynamic-agents/,examples/copilot-sdk-dynamic-agents,True
+README.md,examples/copilot-sdk-dynamic-agents/README.md,examples/copilot-sdk-dynamic-agents/README.md,True
+README.md,examples/copilot-sdk-dynamic-agents/results/copilot-skill-demo.latest.json,examples/copilot-sdk-dynamic-agents/results/copilot-skill-demo.latest.json,True
 README.md,examples/custom_weights.example.json,examples/custom_weights.example.json,True
 README.md,examples/pilot_adapter_contract.py,examples/pilot_adapter_contract.py,True
 README.md,examples/pilot_candidate_summary.example.csv,examples/pilot_candidate_summary.example.csv,True

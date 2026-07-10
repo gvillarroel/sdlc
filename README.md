@@ -51,6 +51,7 @@ Included artifacts:
 - `examples/pilot_candidate_summary.example.csv` - example input for post-pilot scoring.
 - `examples/custom_weights.example.json` - example custom scenario weights.
 - `examples/pilot_adapter_contract.py` - minimal Python adapter contract for comparable pilot runs.
+- `examples/copilot-sdk-dynamic-agents/` - executable POC for generating and chaining on-demand agents with GitHub Copilot SDK skills and a Copilot CLI extension.
 - `reports/ai_orchestrator_frameworks_report.md` - final English report.
 - `reports/final_report_bundle.md` - generated one-file bundle of the main report and key appendices.
 - `reports/sandbox_report.md` - dedicated sandbox evaluation report for AI-agent code execution.
@@ -106,6 +107,17 @@ PowerShell wrapper:
 ```powershell
 .\scripts\run_all_checks.ps1
 ```
+
+GitHub Copilot dynamic-agent POC:
+
+```powershell
+cd examples\copilot-sdk-dynamic-agents
+npm ci
+npm test
+.\scripts\smoke-in-copilot.ps1
+```
+
+The smoke test creates three fresh agents, runs their different skills in sequence inside Copilot CLI, and writes sanitized runtime evidence to `examples/copilot-sdk-dynamic-agents/results/copilot-skill-demo.latest.json`. See the [POC guide](examples/copilot-sdk-dynamic-agents/README.md).
 
 Or run individual steps:
 

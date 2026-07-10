@@ -20,6 +20,7 @@ from scripts.simulate_alternatives import DEFAULT_RESULTS, write_csv  # noqa: E4
 INCLUDED_DIRS = [".github", "ci", "data", "docs", "examples", "reports", "results", "scripts", "templates", "tests"]
 EXCLUDED_SUFFIXES = {".pyc"}
 EXCLUDED_PATHS = {"results/artifact_manifest.csv"}
+EXCLUDED_DIR_NAMES = {"__pycache__", "coverage", "dist", "node_modules"}
 
 
 def sha256_file(path: Path) -> str:
@@ -37,8 +38,14 @@ def artifact_paths() -> list[Path]:
         if not directory.exists():
             continue
         for path in directory.rglob("*"):
-            relative = str(path.relative_to(ROOT)).replace("\\", "/")
-            if path.is_file() and path.suffix not in EXCLUDED_SUFFIXES and relative not in EXCLUDED_PATHS:
+            relative_path = path.relative_to(ROOT)
+            relative = str(relative_path).replace("\\", "/")
+            if (
+                path.is_file()
+                and not EXCLUDED_DIR_NAMES.intersection(relative_path.parts)
+                and path.suffix not in EXCLUDED_SUFFIXES
+                and relative not in EXCLUDED_PATHS
+            ):
                 paths.append(path)
     return sorted(set(paths), key=lambda path: str(path.relative_to(ROOT)).replace("\\", "/"))
 

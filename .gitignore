@@ -6,3 +6,9 @@ __pycache__/
 .venv/
 venv/
 *.tmp
+node_modules/
+coverage/
+dist/
+.env
+.env.*
+!.env.example

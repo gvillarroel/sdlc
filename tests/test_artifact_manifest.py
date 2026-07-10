@@ -20,6 +20,7 @@ class ArtifactManifestTest(unittest.TestCase):
         self.assertIn("results/deterministic_rankings.csv", paths)
         self.assertNotIn("results/artifact_manifest.csv", paths)
         self.assertIn("results/artifact_manifest.csv", EXCLUDED_PATHS)
+        self.assertFalse(any("node_modules" in path.split("/") for path in paths))
 
     def test_generated_manifest_has_valid_hashes(self):
         with (ROOT / "results" / "artifact_manifest.csv").open(
