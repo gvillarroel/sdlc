@@ -4,7 +4,9 @@
 from __future__ import annotations
 
 import argparse
+import os
 import re
+import subprocess
 import sys
 from pathlib import Path
 from typing import Any
@@ -22,7 +24,26 @@ TABLE_SEPARATOR_RE = re.compile(r"^:?-{3,}:?$")
 
 
 def markdown_sources() -> list[Path]:
-    return [ROOT / "README.md", *sorted((ROOT / "reports").glob("*.md"))]
+    completed = subprocess.run(
+        [
+            "git",
+            "-C",
+            str(ROOT),
+            "ls-files",
+            "--cached",
+            "--others",
+            "--exclude-standard",
+            "-z",
+            "*.md",
+        ],
+        check=True,
+        capture_output=True,
+    )
+    relative_paths = [os.fsdecode(item) for item in completed.stdout.split(b"\0") if item]
+    return sorted(
+        (ROOT / relative for relative in relative_paths if (ROOT / relative).is_file()),
+        key=lambda path: path.as_posix(),
+    )
 
 
 def table_cells(line: str) -> list[str]:

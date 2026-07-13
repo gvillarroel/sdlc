@@ -1,6 +1,6 @@
 # GitHub Metadata Check
 
-Date: 2026-07-05
+Date: 2026-07-13
 
 ## Objective
 
@@ -28,14 +28,14 @@ Largest star deltas in the latest run:
 
 | Candidate | Dataset stars | Live stars | Delta |
 |---|---:|---:|---:|
-| OpenCode | 182,587 | 182,610 | +23 |
-| Omnigent | 6,304 | 6,314 | +10 |
-| Deep Agents | 25,715 | 25,721 | +6 |
-| Codex CLI | 95,651 | 95,656 | +5 |
-| Sandcastle | 6,638 | 6,641 | +3 |
-| Cline / Cline SDK | 64,315 | 64,318 | +3 |
-| Aider | 47,082 | 47,084 | +2 |
-| mini-SWE-agent | 5,578 | 5,579 | +1 |
+| OpenCode | 182,587 | 185,282 | +2695 |
+| Codex CLI | 95,651 | 97,578 | +1927 |
+| Omnigent | 6,304 | 7,174 | +870 |
+| goose | 50,679 | 51,143 | +464 |
+| Deep Agents | 25,715 | 26,170 | +455 |
+| Cline / Cline SDK | 64,315 | 64,598 | +283 |
+| Aider | 47,082 | 47,333 | +251 |
+| Open SWE | 10,107 | 10,283 | +176 |
 
 ## Interpretation
 

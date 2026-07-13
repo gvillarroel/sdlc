@@ -44,7 +44,7 @@ SOURCE_REPORTS = [
     "results_data_dictionary.md",
     "maintenance_guide.md",
     "requirements_traceability.md",
-    "artifact_index.md",
+    "README.md",
     "system_diagrams.md",
 ]
 
@@ -53,7 +53,7 @@ def bundle_markdown(source_reports: list[str] = SOURCE_REPORTS) -> str:
     lines = [
         "# Final Report Bundle",
         "",
-        "Date: 2026-07-07",
+        "Date: 2026-07-13",
         "",
         "This generated bundle concatenates the main report and key appendices for one-file review. Source files remain authoritative for editing.",
         "",

@@ -23,11 +23,11 @@ class SystemDiagramsTest(unittest.TestCase):
             "data/sandbox_evaluation.json",
             "data/risk_register.json",
             "results/all_results.json",
-            "reports/artifact_index.md",
+            "reports/README.md",
             "reports/final_report_bundle.md",
             "templates/pilot_run_log.csv",
-            "examples/custom_weights.example.json",
-            "ci/validate-workflow.example.yml",
+            "examples/pilot/custom_weights.example.json",
+            ".github/workflows/validate.yml",
         ]:
             self.assertIn(path, text)
 

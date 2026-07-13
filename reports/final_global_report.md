@@ -241,6 +241,7 @@ Use these direct links to download the source datasets and generated result file
 | Pilot tasks | JSON | [data/pilot_tasks.json](https://raw.githubusercontent.com/gvillarroel/sdlc/main/data/pilot_tasks.json) |
 | Risk register | JSON | [data/risk_register.json](https://raw.githubusercontent.com/gvillarroel/sdlc/main/data/risk_register.json) |
 | Requirement traceability matrix | JSON | [data/traceability_matrix.json](https://raw.githubusercontent.com/gvillarroel/sdlc/main/data/traceability_matrix.json) |
+| Market, maintenance, and trust sources | CSV | [data/sources/market_maintenance_source_matrix.csv](https://raw.githubusercontent.com/gvillarroel/sdlc/main/data/sources/market_maintenance_source_matrix.csv) |
 | Complete generated output | JSON | [results/all_results.json](https://raw.githubusercontent.com/gvillarroel/sdlc/main/results/all_results.json) |
 | Scenario shortlist | CSV | [results/decision_shortlist.csv](https://raw.githubusercontent.com/gvillarroel/sdlc/main/results/decision_shortlist.csv) |
 | Deterministic rankings | CSV | [results/deterministic_rankings.csv](https://raw.githubusercontent.com/gvillarroel/sdlc/main/results/deterministic_rankings.csv) |
@@ -271,6 +272,7 @@ The final report uses all structured inputs and all generated result families. T
 | `data/security_evaluation_fixtures.json` | [download](https://raw.githubusercontent.com/gvillarroel/sdlc/main/data/security_evaluation_fixtures.json) |
 | `data/simulation_assumptions.json` | [download](https://raw.githubusercontent.com/gvillarroel/sdlc/main/data/simulation_assumptions.json) |
 | `data/traceability_matrix.json` | [download](https://raw.githubusercontent.com/gvillarroel/sdlc/main/data/traceability_matrix.json) |
+| `data/sources/market_maintenance_source_matrix.csv` | [download](https://raw.githubusercontent.com/gvillarroel/sdlc/main/data/sources/market_maintenance_source_matrix.csv) |
 
 ### Generated Results
 
@@ -282,7 +284,7 @@ The final report uses all structured inputs and all generated result families. T
 | Candidate explanation | `results/criteria_definitions.csv`, `results/evidence_matrix.csv`, `results/alternative_scorecards.csv`, `results/score_driver_summary.csv`, `results/criterion_spread_summary.csv` |
 | Operational planning | `results/implementation_effort_estimates.csv`, `results/operational_cost_estimates.csv`, `results/operational_fit_rankings.csv` |
 | Pilot planning | `results/scenario_playbook_summary.csv`, `results/pilot_sample_size_estimates.csv`, `results/pilot_decision_scores.example.csv`, `results/recommendation_rationale.csv` |
-| Risk, evidence, and source checks | `results/evidence_gap_analysis.csv`, `results/risk_validation_matrix.csv`, `results/license_audit.csv`, `results/source_check.csv`, `results/github_metadata_check.csv`, `results/market_maintenance_source_matrix.csv` |
+| Risk, evidence, and source checks | `results/evidence_gap_analysis.csv`, `results/risk_validation_matrix.csv`, `results/license_audit.csv`, `results/source_check.csv`, `results/github_metadata_check.csv` |
 | Sandbox evaluation | `results/sandbox_deterministic_rankings.csv`, `results/sandbox_monte_carlo_summary.csv`, `results/sandbox_threat_coverage.csv`, `results/sandbox_decision_matrix.csv`, `results/sandbox_source_matrix.csv` |
 | Repository QA | `results/local_artifact_reference_check.csv`, `results/markdown_table_check.csv`, `results/csv_schema_check.csv`, `results/custom_weights_example_rankings.csv` |
 
@@ -298,7 +300,7 @@ The final report also incorporates the narrative and validation material from th
 
 | Report family | Files |
 |---|---|
-| Executive and final review | `reports/final_global_report.md`, `reports/executive_brief.md`, `reports/final_report_bundle.md`, `reports/release_notes.md`, `reports/artifact_index.md`, `reports/presentation_outline.md` |
+| Executive and final review | `reports/final_global_report.md`, `reports/executive_brief.md`, `reports/final_report_bundle.md`, `reports/release_notes.md`, `reports/README.md`, `reports/presentation_outline.md` |
 | Core analysis | `reports/ai_orchestrator_frameworks_report.md`, `reports/methodology_appendix.md`, `reports/recommendation_rationale.md`, `reports/scenario_playbooks.md`, `reports/decision_tree.md`, `reports/candidate_taxonomy.md` |
 | Visual and navigation support | `reports/system_diagrams.md`, `reports/results_data_dictionary.md`, `reports/glossary.md`, `reports/faq.md` |
 | Security, sandbox, and risks | `reports/sandbox_report.md`, `reports/security_evaluation_fixtures.md`, `reports/risk_validation_matrix.md`, `reports/residual_risks.md`, `reports/evidence_gap_analysis.md`, `reports/github_metadata_check.md` |
@@ -310,7 +312,7 @@ The final report also incorporates the narrative and validation material from th
 
 | Need | Source artifact |
 |---|---|
-| Navigate all deliverables | `reports/artifact_index.md` |
+| Navigate all deliverables | `reports/README.md` |
 | Understand connections between tools and concepts | `reports/system_diagrams.md` |
 | Review methodology | `reports/methodology_appendix.md` |
 | Review the main report | `reports/ai_orchestrator_frameworks_report.md` |

@@ -16,11 +16,11 @@ flowchart LR
     Inputs["data/*.json"]
     Tools["scripts/*.py and scripts/*.ps1"]
     Results["results/*.csv and results/all_results.json"]
-    Reports["reports/*.md and reports/assets/*.svg"]
+    Reports["reports/*.md and docs/assets/*.svg"]
     Templates["templates/*.md and templates/*.csv"]
     Examples["examples/*.json, *.csv, *.py"]
     Tests["tests/*.py"]
-    CI["ci/validate-workflow.example.yml"]
+    CI[".github/workflows/validate.yml"]
     Decision["Adoption decision, shortlist, pilot plan, no-go gates"]
     Maintenance["Maintenance refresh workflow"]
 
@@ -102,7 +102,7 @@ flowchart LR
     Sim["Simulation tools<br/>simulate_alternatives.py<br/>simulate_sandboxes.py<br/>stress_test_simulation.py<br/>rank_with_custom_weights.py"]
     Analysis["Analysis tools<br/>analyze_score_drivers.py<br/>analyze_evidence_gaps.py<br/>estimate_implementation_effort.py<br/>estimate_operational_costs.py<br/>estimate_pilot_sample_sizes.py"]
     Builders["Report builders<br/>build_scenario_playbooks.py<br/>build_recommendation_rationale.py<br/>build_risk_validation_matrix.py<br/>build_results_data_dictionary.py<br/>build_github_metadata_report.py<br/>build_report_bundle.py"]
-    QA["Quality tools<br/>license_audit.py<br/>check_sources.py<br/>refresh_github_metadata.py<br/>check_local_artifact_references.py<br/>validate_markdown_tables.py<br/>validate_csv_schemas.py<br/>validate_artifacts.py<br/>generate_artifact_manifest.py"]
+    QA["Quality tools<br/>license_audit.py<br/>check_sources.py<br/>check_english_content.py<br/>refresh_github_metadata.py<br/>check_local_artifact_references.py<br/>validate_markdown_tables.py<br/>validate_csv_schemas.py<br/>validate_artifacts.py<br/>generate_artifact_manifest.py"]
     Assets["Asset tool<br/>generate_charts.py"]
     Pilot["Pilot tool<br/>score_pilot_results.py"]
     Runner["run_all_checks.py<br/>run_all_checks.ps1"]
@@ -113,7 +113,7 @@ flowchart LR
     QAResults["QA results<br/>license, sources, metadata, schemas, references, manifest"]
     PilotResults["Pilot score results<br/>pilot_decision_scores.example.csv"]
     Reports["Markdown reports<br/>decision, methodology, pilot, risk, validation"]
-    Charts["SVG charts<br/>reports/assets/*.svg"]
+    Charts["SVG charts<br/>docs/assets/*.svg"]
 
     Data --> Sim --> RankingResults
     Data --> Sim --> SandboxResults
@@ -242,7 +242,7 @@ flowchart LR
     SchemaCheck["validate_csv_schemas.py"]
     ArtifactCheck["validate_artifacts.py"]
     Manifest["generate_artifact_manifest.py"]
-    CI["ci/validate-workflow.example.yml"]
+    CI[".github/workflows/validate.yml"]
     Summary["reports/validation_summary.md"]
     MaintenanceGuide["reports/maintenance_guide.md"]
 
@@ -278,9 +278,10 @@ flowchart LR
 | `scripts/analyze_evidence_gaps.py` | Candidate metadata and evidence confidence | Evidence gap CSV/report |
 | `scripts/build_recommendation_rationale.py` | Rankings, risks, effort, cost, stability | Scenario recommendation rationale CSV/report |
 | `scripts/build_risk_validation_matrix.py` | `data/risk_register.json` and security fixtures | Risk validation matrix CSV/report |
-| `scripts/rank_with_custom_weights.py` | `examples/custom_weights.example.json` | Custom-weight ranking CSV |
+| `scripts/rank_with_custom_weights.py` | `examples/pilot/custom_weights.example.json` | Custom-weight ranking CSV |
 | `scripts/license_audit.py` | Candidate license data | License audit CSV |
 | `scripts/check_sources.py` | Evidence URLs | Source health CSV |
+| `scripts/check_english_content.py` | Repository-authored text | Non-English prose validation |
 | `scripts/refresh_github_metadata.py` | GitHub repository metadata | GitHub metadata CSV |
 | `scripts/build_github_metadata_report.py` | `results/github_metadata_check.csv` | GitHub metadata Markdown report |
 | `scripts/check_local_artifact_references.py` | README and reports | Local artifact reference CSV |
@@ -288,7 +289,7 @@ flowchart LR
 | `scripts/validate_csv_schemas.py` | Generated CSVs | CSV schema check CSV |
 | `scripts/generate_artifact_manifest.py` | Repository artifacts | SHA-256 artifact manifest |
 | `scripts/validate_artifacts.py` | Generated results, reports, local QA CSVs | Offline artifact validation |
-| `scripts/generate_charts.py` | Ranking and operational CSVs | SVG charts in `reports/assets/` |
+| `scripts/generate_charts.py` | Ranking and operational CSVs | SVG charts in `docs/assets/` |
 | `scripts/build_results_data_dictionary.py` | Generated CSV schemas | Results data dictionary report |
 | `scripts/build_report_bundle.py` | Main reports and appendices | One-file final report bundle |
 | `scripts/score_pilot_results.py` | Pilot candidate summary CSV | Post-pilot decision scores |
@@ -299,7 +300,7 @@ flowchart LR
 
 | Need | Start here | Then follow |
 |---|---|---|
-| Understand the whole system | This file | `reports/artifact_index.md`, then `reports/final_report_bundle.md` |
+| Understand the whole system | This file | `reports/README.md`, then `reports/final_report_bundle.md` |
 | Decide what to pilot | `reports/executive_brief.md` | `reports/recommendation_rationale.md`, `reports/scenario_playbooks.md`, `reports/pilot_protocol.md` |
 | Audit methodology | `reports/methodology_appendix.md` | `reports/simulation_assumptions.md`, `reports/score_driver_summary.md` |
 | Review safety | `reports/sandbox_report.md` | `reports/security_evaluation_fixtures.md`, `reports/risk_validation_matrix.md` |

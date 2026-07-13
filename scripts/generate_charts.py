@@ -10,7 +10,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 RESULTS = ROOT / "results"
-DEFAULT_OUTPUT = ROOT / "reports" / "assets"
+DEFAULT_OUTPUT = ROOT / "docs" / "assets"
 
 
 def read_csv(path: Path) -> list[dict[str, str]]:

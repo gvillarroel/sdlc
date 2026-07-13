@@ -15,7 +15,7 @@ The right benchmark is a controlled production simulator:
 5. Human review scoring for diff quality, maintainability, minimality, and whether a normal reviewer would accept the change.
 6. A private holdout set and governance process that prevents benchmark overfitting and leakage.
 
-The existing repository already contains most of the decision scaffolding needed to start: `data/pilot_tasks.json`, `data/pilot_decision_model.json`, `data/security_evaluation_fixtures.json`, `templates/pilot_run_log.csv`, `templates/reviewer_scorecard.md`, `templates/security_gate_checklist.md`, and `examples/pilot_adapter_contract.py`. The missing layer is a real internal benchmark pack: repository fixtures, task manifests, harness runners, automatic graders, and a governance process around task selection and refresh.
+The existing repository already contains most of the decision scaffolding needed to start: `data/pilot_tasks.json`, `data/pilot_decision_model.json`, `data/security_evaluation_fixtures.json`, `templates/pilot_run_log.csv`, `templates/reviewer_scorecard.md`, `templates/security_gate_checklist.md`, and `examples/pilot/adapter.py`. The missing layer is a real internal benchmark pack: repository fixtures, task manifests, harness runners, automatic graders, and a governance process around task selection and refresh.
 
 ## What The Benchmark Should Decide
 
@@ -205,7 +205,7 @@ Tasks that cannot pass this validation become training or exploratory tasks, not
 
 ## Harness Adapter Contract
 
-The benchmark should not call each candidate with custom logic. It should call a common adapter inspired by `examples/pilot_adapter_contract.py`.
+The benchmark should not call each candidate with custom logic. It should call a common adapter inspired by `examples/pilot/adapter.py`.
 
 Required adapter lifecycle:
 
@@ -469,7 +469,7 @@ Every suite version should have release notes: added tasks, retired tasks, chang
 
 ### First 10 Hours: Produce The Design And Inventory
 
-1. Inventory existing artifacts: `data/pilot_tasks.json`, `data/pilot_decision_model.json`, `data/security_evaluation_fixtures.json`, `templates/pilot_run_log.csv`, `templates/reviewer_scorecard.md`, `templates/security_gate_checklist.md`, and `examples/pilot_adapter_contract.py`.
+1. Inventory existing artifacts: `data/pilot_tasks.json`, `data/pilot_decision_model.json`, `data/security_evaluation_fixtures.json`, `templates/pilot_run_log.csv`, `templates/reviewer_scorecard.md`, `templates/security_gate_checklist.md`, and `examples/pilot/adapter.py`.
 2. Define benchmark goals and target scenarios.
 3. Select first task families and target repositories.
 4. Draft suite object model and required result schema.
@@ -597,7 +597,7 @@ The current repository can become the benchmark control plane with these mapping
 | `templates/pilot_run_log.csv` | Run logging template |
 | `templates/reviewer_scorecard.md` | Human review rubric baseline |
 | `templates/security_gate_checklist.md` | Safety gate checklist |
-| `examples/pilot_adapter_contract.py` | First adapter interface draft |
+| `examples/pilot/adapter.py` | First adapter interface draft |
 
 The next engineering step is to add runnable benchmark fixtures and a runner, not to add more abstract scoring criteria.
 

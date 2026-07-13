@@ -137,7 +137,7 @@ These outputs intentionally test model fragility, not live coding performance. T
 Custom deterministic rankings can be generated without editing the base simulation script:
 
 ```powershell
-python scripts/rank_with_custom_weights.py --weights examples/custom_weights.example.json --output results/custom_weights_example_rankings.csv
+python scripts/rank_with_custom_weights.py --weights examples/pilot/custom_weights.example.json --output results/custom_weights_example_rankings.csv
 ```
 
 The weights file must contain one or more named scenarios, each with every criterion from the scoring model. This is the fastest way to test stakeholder-specific priorities before changing the canonical scenario set.

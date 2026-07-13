@@ -11,7 +11,7 @@ This synthesis converts the four market and technical addenda into one decision 
 - `reports/long_term_ai_app_maintenance.md`
 - `reports/ai_code_trust_matrix.md`
 
-The source evidence behind those reports is traceable in `results/market_maintenance_source_matrix.csv`.
+The source evidence behind those reports is traceable in `data/sources/market_maintenance_source_matrix.csv`.
 
 ## Integrated Finding
 

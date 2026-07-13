@@ -119,7 +119,7 @@ Add this review gate before piloting a framework for a product idea:
 
 ## Evidence Base
 
-The curated source matrix for this addendum is `results/market_maintenance_source_matrix.csv`; filter `relevant_reports` by `market_fragmentation_user_share.md`.
+The curated source matrix for this addendum is `data/sources/market_maintenance_source_matrix.csv`; filter `relevant_reports` by `market_fragmentation_user_share.md`.
 
 - OECD's 2025 downstream competition paper highlights that AI adoption changes competitive dynamics in downstream markets, not just the AI-model layer: https://ideas.repec.org/p/oec/dafaac/331-en.html
 - Bruegel's competition-policy brief notes that open models can reduce AI market entry barriers and broaden user choice: https://www.bruegel.org/policy-brief/why-artificial-intelligence-creating-fundamental-challenges-competition-policy

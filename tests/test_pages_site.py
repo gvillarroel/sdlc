@@ -45,12 +45,37 @@ class PagesSiteTest(unittest.TestCase):
     def test_pages_source_has_nojekyll_marker(self):
         self.assertTrue((ROOT / "docs" / ".nojekyll").exists())
 
+    def test_pages_site_uses_external_stylesheet_and_versioned_diagrams(self):
+        site = ROOT / "docs" / "index.html"
+        text = site.read_text(encoding="utf-8")
+        stylesheet = ROOT / "docs" / "assets" / "site.css"
+        favicon = ROOT / "docs" / "favicon.svg"
+
+        self.assertIn('<link rel="stylesheet" href="assets/site.css">', text)
+        self.assertIn('<link rel="icon" type="image/svg+xml" href="favicon.svg">', text)
+        self.assertNotIn("<style>", text)
+        self.assertTrue(stylesheet.exists())
+        self.assertTrue(favicon.exists())
+        self.assertIn(":root", stylesheet.read_text(encoding="utf-8"))
+        self.assertIn("<svg", favicon.read_text(encoding="utf-8"))
+
+        for filename in [
+            "final-report-evidence-pipeline.mmd",
+            "final-report-decision-lanes.mmd",
+            "final-report-artifact-coverage.mmd",
+        ]:
+            source = ROOT / "docs" / "diagrams" / filename
+            self.assertTrue(source.exists(), f"missing Mermaid source: {source}")
+            self.assertIn("flowchart", source.read_text(encoding="utf-8"))
+
+        self.assertFalse((ROOT / "reports" / "diagrams").exists())
+
     def test_pages_site_links_to_raw_downloads(self):
         text = (ROOT / "docs" / "index.html").read_text(encoding="utf-8")
 
-        self.assertIn('lang="en"', text)
-        self.assertNotIn("Reporte final global", text)
-        self.assertNotIn("Vista global", text)
+        self.assertIn('<html lang="en">', text)
+        self.assertIn("<title>Final Global Report | AI Orchestrator SDLC</title>", text)
+        self.assertIn("<h2>Global View</h2>", text)
 
         for path in [
             "data/alternatives.json",
@@ -84,7 +109,7 @@ class PagesSiteTest(unittest.TestCase):
             "results/license_audit.csv",
             "results/local_artifact_reference_check.csv",
             "results/markdown_table_check.csv",
-            "results/market_maintenance_source_matrix.csv",
+            "data/sources/market_maintenance_source_matrix.csv",
             "results/monte_carlo_summary.csv",
             "results/operational_cost_estimates.csv",
             "results/operational_fit_rankings.csv",

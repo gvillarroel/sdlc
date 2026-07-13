@@ -12,10 +12,15 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from scripts.validate_csv_schemas import SCHEMAS  # noqa: E402
+from scripts.validate_csv_schemas import SCHEMAS, SOURCE_CSV_PATHS  # noqa: E402
 
 
 DEFAULT_OUTPUT = ROOT / "reports" / "results_data_dictionary.md"
+RESULT_SCHEMAS = {
+    filename: columns
+    for filename, columns in SCHEMAS.items()
+    if filename not in SOURCE_CSV_PATHS
+}
 
 FILE_DESCRIPTIONS = {
     "deterministic_rankings.csv": "Base weighted rankings by scenario.",
@@ -41,7 +46,6 @@ FILE_DESCRIPTIONS = {
     "regret_analysis.csv": "Score gaps versus scenario winners.",
     "pareto_frontier.csv": "Raw-criteria Pareto dominance analysis.",
     "rank_stability.csv": "Cross-scenario deterministic and Monte Carlo rank stability.",
-    "market_maintenance_source_matrix.csv": "Curated source matrix for the market, maintenance, and AI-code-trust addenda.",
     "sandbox_decision_matrix.csv": "Sandbox scenario shortlist with recommendation posture and caveats.",
     "sandbox_deterministic_rankings.csv": "Weighted sandbox rankings by scenario.",
     "sandbox_monte_carlo_summary.csv": "Sandbox ranking stability under score and weight uncertainty.",
@@ -65,12 +69,12 @@ def build_dictionary() -> str:
     lines = [
         "# Results Data Dictionary",
         "",
-        "Date: 2026-07-05",
+        "Date: 2026-07-13",
         "",
         "This generated dictionary summarizes the CSV outputs in `results/`. Expected columns come from `scripts/validate_csv_schemas.py`.",
         "",
     ]
-    for filename in sorted(SCHEMAS):
+    for filename in sorted(RESULT_SCHEMAS):
         lines.extend([
             f"## `{filename}`",
             "",
@@ -79,7 +83,7 @@ def build_dictionary() -> str:
             "| Column |",
             "|---|",
         ])
-        for column in SCHEMAS[filename]:
+        for column in RESULT_SCHEMAS[filename]:
             lines.append(f"| `{column}` |")
         lines.append("")
     return "\n".join(lines).rstrip() + "\n"

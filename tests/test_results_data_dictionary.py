@@ -1,8 +1,7 @@
 from pathlib import Path
 import unittest
 
-from scripts.build_results_data_dictionary import build_dictionary
-from scripts.validate_csv_schemas import SCHEMAS
+from scripts.build_results_data_dictionary import RESULT_SCHEMAS, build_dictionary
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -11,8 +10,9 @@ ROOT = Path(__file__).resolve().parents[1]
 class ResultsDataDictionaryTest(unittest.TestCase):
     def test_dictionary_includes_all_schema_files(self):
         text = build_dictionary()
-        for filename in SCHEMAS:
+        for filename in RESULT_SCHEMAS:
             self.assertIn(f"## `{filename}`", text)
+        self.assertNotIn("market_maintenance_source_matrix.csv", text)
         self.assertIn("Expected columns come from", text)
 
     def test_generated_dictionary_exists(self):

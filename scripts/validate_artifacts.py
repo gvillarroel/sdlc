@@ -12,6 +12,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 RESULTS = ROOT / "results"
 DATA = ROOT / "data"
+SOURCE_DATA = DATA / "sources"
 REPORTS = ROOT / "reports"
 SCENARIO_COUNT = 5
 CRITERIA_COUNT = 14
@@ -52,7 +53,6 @@ REQUIRED_RESULT_FILES = [
     "regret_analysis.csv",
     "pareto_frontier.csv",
     "rank_stability.csv",
-    "market_maintenance_source_matrix.csv",
     "sandbox_deterministic_rankings.csv",
     "sandbox_monte_carlo_summary.csv",
     "sandbox_threat_coverage.csv",
@@ -103,7 +103,7 @@ def validate_result_shapes() -> None:
     assert_true(len(read_csv(RESULTS / "criterion_spread_summary.csv")) == CRITERIA_COUNT, "unexpected criterion spread row count")
     assert_true(len(read_csv(RESULTS / "rank_stability.csv")) == alt_count, "unexpected rank stability row count")
     assert_true(
-        len(read_csv(RESULTS / "market_maintenance_source_matrix.csv")) >= 20,
+        len(read_csv(SOURCE_DATA / "market_maintenance_source_matrix.csv")) >= 20,
         "unexpected market and maintenance source matrix row count",
     )
     assert_true(

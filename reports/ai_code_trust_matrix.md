@@ -92,7 +92,7 @@ Not reading generated code is defensible only when the artifact class is constra
 
 ## Evidence Base
 
-The curated source matrix for this addendum is `results/market_maintenance_source_matrix.csv`; filter `relevant_reports` by `ai_code_trust_matrix.md`.
+The curated source matrix for this addendum is `data/sources/market_maintenance_source_matrix.csv`; filter `relevant_reports` by `ai_code_trust_matrix.md`.
 
 - A 2023/2024 study on trust in AI-powered code generation found developer trust to be situational and rooted in perceived ability, integrity, and benevolence, while current tools lack enough affordances for efficient trust evaluation: https://arxiv.org/abs/2305.11248
 - A 2025 trust-terrain review analyzes 88 papers and expert feedback to clarify trust-related concepts for LLMs in software engineering: https://arxiv.org/abs/2503.13793

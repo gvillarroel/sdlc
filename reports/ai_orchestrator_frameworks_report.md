@@ -40,7 +40,7 @@ For the proposed adoption decision record, read `reports/adoption_decision_recor
 
 For scenario-specific execution guidance, read `reports/scenario_playbooks.md`.
 
-For a navigation guide to every generated artifact, read `reports/artifact_index.md`.
+For a navigation guide to every generated artifact, read `reports/README.md`.
 
 For one-file review, read the generated bundle at `reports/final_report_bundle.md`.
 
@@ -58,7 +58,7 @@ For long-term technical support capacity and AI-generated maintenance risk, read
 
 For the code-reading versus AI-trust framework matrix, read `reports/ai_code_trust_matrix.md`.
 
-For the curated source matrix behind the market, maintenance, and trust addenda, read `results/market_maintenance_source_matrix.csv`.
+For the curated source matrix behind the market, maintenance, and trust addenda, read `data/sources/market_maintenance_source_matrix.csv`.
 
 For excluded items and boundary cases, read `reports/exclusions.md`.
 
@@ -335,7 +335,7 @@ Generated outputs:
 | `results/stress_test_rankings.csv` | Full deterministic rankings under each stress-test case. |
 | `results/uncertainty_stress_summary.csv` | Monte Carlo ranking stability under alternate uncertainty assumptions. |
 | `results/uncertainty_stress_details.csv` | Full Monte Carlo rows for every candidate under each uncertainty stress case. |
-| `results/custom_weights_example_rankings.csv` | Deterministic ranking generated from `examples/custom_weights.example.json`. |
+| `results/custom_weights_example_rankings.csv` | Deterministic ranking generated from `examples/pilot/custom_weights.example.json`. |
 | `results/pilot_decision_scores.example.csv` | Example post-pilot scoring output generated from the example candidate summary. |
 | `results/all_results.json` | Complete machine-readable output. |
 
@@ -373,9 +373,9 @@ The research scenario is stable around mini-SWE-agent and SWE-agent; halving imp
 
 The additional robustness outputs change how the ranking should be read:
 
-![Rank stability](assets/rank_stability.svg)
+![Rank stability](../docs/assets/rank_stability.svg)
 
-![Scenario regret](assets/scenario_regret.svg)
+![Scenario regret](../docs/assets/scenario_regret.svg)
 
 | Finding | Evidence | Interpretation |
 |---|---|---|
@@ -478,9 +478,9 @@ Security fixture definitions are in `data/security_evaluation_fixtures.json` and
 
 Candidate-specific implementation blueprints are in `reports/implementation_blueprints.md`.
 
-After a pilot, use `data/pilot_decision_model.json` and `scripts/score_pilot_results.py` to convert candidate-level pilot results into a ranked post-pilot decision table. An example input/output pair is included at `examples/pilot_candidate_summary.example.csv` and `results/pilot_decision_scores.example.csv`.
+After a pilot, use `data/pilot_decision_model.json` and `scripts/score_pilot_results.py` to convert candidate-level pilot results into a ranked post-pilot decision table. An example input/output pair is included at `examples/pilot/candidate_summary.example.csv` and `results/pilot_decision_scores.example.csv`.
 
-For implementation, `examples/pilot_adapter_contract.py` defines a minimal adapter shape so each candidate can return comparable status, patch path, log path, safety failures, cost, latency, and intervention counts.
+For implementation, `examples/pilot/adapter.py` defines a minimal adapter shape so each candidate can return comparable status, patch path, log path, safety failures, cost, latency, and intervention counts.
 
 | Phase | Duration | Work | Exit criteria |
 |---|---:|---|---|
@@ -575,7 +575,7 @@ The deterministic stress tests changed the rank-1 candidate in 9 of 40 scenario/
 
 These findings reinforce the recommended pilot set rather than replacing it: OpenHands SDK, Deep Agents, Cline, Codex CLI, SWE-agent, and mini-SWE-agent remain the important candidates for the relevant scenarios.
 
-For custom stakeholder priorities, edit `examples/custom_weights.example.json` and run:
+For custom stakeholder priorities, edit `examples/pilot/custom_weights.example.json` and run:
 
 ```powershell
 python scripts/rank_with_custom_weights.py
@@ -639,7 +639,7 @@ The full local regeneration and validation path is:
 python scripts/run_all_checks.py
 ```
 
-The same non-network validation path is available as `ci/validate-workflow.example.yml`, a GitHub Actions workflow template that runs the full local check workflow and fails if generated outputs are not committed. It can be copied into `.github/workflows/` when the pushing token has GitHub `workflow` scope.
+The same non-network validation path runs in GitHub Actions through `.github/workflows/validate.yml`. The workflow executes the full Python regeneration and validation pipeline, fails when generated outputs are not committed, and separately validates the Node.js Copilot SDK proof of concept.
 
 ## Final Recommendation
 

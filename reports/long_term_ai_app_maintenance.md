@@ -70,7 +70,7 @@ Use this scorecard before letting a generated application become a product commi
 
 ## Evidence Synthesis
 
-The curated source matrix for this addendum is `results/market_maintenance_source_matrix.csv`; filter `relevant_reports` by `long_term_ai_app_maintenance.md`.
+The curated source matrix for this addendum is `data/sources/market_maintenance_source_matrix.csv`; filter `relevant_reports` by `long_term_ai_app_maintenance.md`.
 
 The strongest evidence does not say "AI cannot maintain software." It says maintenance requires controls that are not automatically produced by generation:
 

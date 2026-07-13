@@ -1,6 +1,8 @@
 from pathlib import Path
 import unittest
 
+from scripts.generate_charts import DEFAULT_OUTPUT
+
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -167,7 +169,7 @@ class ReportArtifactsTest(unittest.TestCase):
         text = summary.read_text(encoding="utf-8")
         self.assertIn("# Validation Summary", text)
         self.assertIn("python scripts/run_all_checks.py", text)
-        self.assertIn("141 tests passed", text)
+        self.assertIn("162 tests passed", text)
 
     def test_results_data_dictionary_exists(self):
         dictionary = ROOT / "reports" / "results_data_dictionary.md"
@@ -249,13 +251,16 @@ class ReportArtifactsTest(unittest.TestCase):
         self.assertIn("No-Go Conditions", text)
         self.assertIn("Ask From Stakeholders", text)
 
-    def test_artifact_index_exists(self):
-        index = ROOT / "reports" / "artifact_index.md"
+    def test_report_index_exists(self):
+        index = ROOT / "reports" / "README.md"
         self.assertTrue(index.exists())
         text = index.read_text(encoding="utf-8")
-        self.assertIn("# Artifact Index", text)
+        self.assertIn("# Report Library", text)
         self.assertIn("Generated Results", text)
-        self.assertIn("Pilot Execution", text)
+        self.assertIn("Pilot Resources", text)
+        for report in (ROOT / "reports").glob("*.md"):
+            if report.name != "README.md":
+                self.assertIn(report.name, text)
 
     def test_pilot_protocol_exists(self):
         protocol = ROOT / "reports" / "pilot_protocol.md"
@@ -320,7 +325,6 @@ class ReportArtifactsTest(unittest.TestCase):
             "evidence_gap_analysis.csv",
             "recommendation_rationale.csv",
             "risk_validation_matrix.csv",
-            "market_maintenance_source_matrix.csv",
             "sandbox_deterministic_rankings.csv",
             "sandbox_monte_carlo_summary.csv",
             "sandbox_threat_coverage.csv",
@@ -376,17 +380,24 @@ class ReportArtifactsTest(unittest.TestCase):
         self.assertIn("Market defense", workshop)
 
     def test_examples_exist(self):
-        expected_files = [
-            "pilot_candidate_summary.example.csv",
+        expected_files = {
+            "candidate_summary.example.csv",
             "custom_weights.example.json",
-            "pilot_adapter_contract.py",
-        ]
+            "adapter.py",
+        }
         for filename in expected_files:
-            example = ROOT / "examples" / filename
+            example = ROOT / "examples" / "pilot" / filename
             self.assertTrue(example.exists())
             self.assertGreater(example.stat().st_size, 0)
 
+    def test_curated_source_matrix_is_kept_with_source_data(self):
+        matrix = ROOT / "data" / "sources" / "market_maintenance_source_matrix.csv"
+        self.assertTrue(matrix.exists())
+        self.assertGreater(matrix.stat().st_size, 0)
+
     def test_generated_svg_assets_exist(self):
+        self.assertEqual(DEFAULT_OUTPUT, ROOT / "docs" / "assets")
+
         expected_files = [
             "rank_stability.svg",
             "scenario_regret.svg",
@@ -394,11 +405,16 @@ class ReportArtifactsTest(unittest.TestCase):
             "criterion_spread.svg"
         ]
         for filename in expected_files:
-            path = ROOT / "reports" / "assets" / filename
+            path = ROOT / "docs" / "assets" / filename
             self.assertTrue(path.exists(), f"missing SVG asset: {path}")
             text = path.read_text(encoding="utf-8")
             self.assertIn("<svg", text)
             self.assertIn("</svg>", text)
+
+        self.assertFalse(
+            (ROOT / "reports" / "assets").exists(),
+            "SVG assets must have a single canonical location under docs/assets",
+        )
 
     def test_powershell_runner_exists(self):
         runner = ROOT / "scripts" / "run_all_checks.ps1"

@@ -1,6 +1,6 @@
 # Results Data Dictionary
 
-Date: 2026-07-05
+Date: 2026-07-13
 
 This generated dictionary summarizes the CSV outputs in `results/`. Expected columns come from `scripts/validate_csv_schemas.py`.
 
@@ -232,22 +232,6 @@ Markdown table column consistency check.
 | `expected_columns` |
 | `ok` |
 | `message` |
-
-## `market_maintenance_source_matrix.csv`
-
-Curated source matrix for the market, maintenance, and AI-code-trust addenda.
-
-| Column |
-|---|
-| `source_id` |
-| `title` |
-| `year` |
-| `evidence_type` |
-| `domain` |
-| `claim_supported` |
-| `confidence` |
-| `relevant_reports` |
-| `url` |
 
 ## `monte_carlo_summary.csv`
 

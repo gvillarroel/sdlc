@@ -61,6 +61,12 @@ SCHEMAS: dict[str, list[str]] = {
     "artifact_manifest.csv": ["path", "size_bytes", "sha256"],
 }
 
+SOURCE_CSV_PATHS = {
+    "market_maintenance_source_matrix.csv": (
+        ROOT / "data" / "sources" / "market_maintenance_source_matrix.csv"
+    ),
+}
+
 
 def csv_header(path: Path) -> list[str]:
     with path.open("r", encoding="utf-8", newline="") as handle:
@@ -71,7 +77,7 @@ def csv_header(path: Path) -> list[str]:
 def schema_rows(results_dir: Path = DEFAULT_RESULTS) -> list[dict[str, Any]]:
     rows = []
     for filename, required_columns in sorted(SCHEMAS.items()):
-        path = results_dir / filename
+        path = SOURCE_CSV_PATHS.get(filename, results_dir / filename)
         if not path.exists():
             rows.append({
                 "filename": filename,

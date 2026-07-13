@@ -25,7 +25,7 @@ from scripts.simulate_alternatives import (  # noqa: E402
 )
 
 
-DEFAULT_WEIGHTS = ROOT / "examples" / "custom_weights.example.json"
+DEFAULT_WEIGHTS = ROOT / "examples" / "pilot" / "custom_weights.example.json"
 
 
 def load_custom_scenarios(path: Path) -> dict[str, dict[str, float]]:

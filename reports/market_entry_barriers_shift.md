@@ -88,7 +88,7 @@ These overlays should not replace the current 14 criteria. They should act as a 
 
 ## Evidence Base
 
-The curated source matrix for this addendum is `results/market_maintenance_source_matrix.csv`; filter `relevant_reports` by `market_entry_barriers_shift.md`.
+The curated source matrix for this addendum is `data/sources/market_maintenance_source_matrix.csv`; filter `relevant_reports` by `market_entry_barriers_shift.md`.
 
 - OECD's 2025 review on generative AI, productivity, innovation, and entrepreneurship frames GenAI as a capability that can automate tasks, augment skills, and lower innovation frictions while requiring responsible adoption: https://oecd.ai/en/ai-publications/the-effects-of-generative-ai-on-productivity-innovation-and-entrepreneurship
 - OECD's 2025 downstream competition paper examines how AI adoption reshapes market dynamics beyond the model layer: https://ideas.repec.org/p/oec/dafaac/331-en.html

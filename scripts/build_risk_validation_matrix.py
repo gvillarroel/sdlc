@@ -28,7 +28,7 @@ VALIDATION_BY_RISK_ID = {
     "R-005": ("templates/pilot_run_log.csv", "task_result by model_provider", "Provider-specific behavior is separated from framework behavior."),
     "R-006": ("data/pilot_tasks.json", "internal task pass rate; reviewer_acceptance", "Representative internal tasks meet the adoption decision rule."),
     "R-007": ("reports/maintenance_guide.md", "pinned version; upgrade test result", "Prototype can be recreated and upgraded from pinned versions."),
-    "R-008": ("examples/pilot_adapter_contract.py", "log_path; patch_path; replay notes", "At least one failed task can be reconstructed from stored artifacts."),
+    "R-008": ("examples/pilot/adapter.py", "log_path; patch_path; replay notes", "At least one failed task can be reconstructed from stored artifacts."),
     "R-009": ("templates/pilot_run_log.csv", "human_intervention_count; reviewer_acceptance", "Intervention burden stays within the intended workflow envelope."),
     "R-010": ("templates/reviewer_scorecard.md", "review acceptance; diff size; convention score", "Accepted diffs are focused, test-backed, and convention-compatible."),
     "R-011": ("reports/operational_cost_model.md", "estimated_model_cost_usd; wall_clock_seconds; token counts", "Cost and latency fit the target operating profile."),

@@ -1,7 +1,7 @@
 from pathlib import Path
 import unittest
 
-from examples.pilot_adapter_contract import PilotResult, result_is_gate_eligible
+from examples.pilot.adapter import PilotResult, result_is_gate_eligible
 
 
 class PilotAdapterContractTest(unittest.TestCase):

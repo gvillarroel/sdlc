@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img">
+  <title>AI Orchestrator Evaluation</title>
+  <rect width="64" height="64" rx="14" fill="#0f766e"/>
+  <path d="M15 47 27 16h8l12 31h-8l-2.5-7H25L22.5 47Zm12.5-14h6.5l-3.25-9.5Z" fill="#fff"/>
+  <rect x="49" y="16" width="7" height="31" rx="3.5" fill="#fed7aa"/>
+</svg>

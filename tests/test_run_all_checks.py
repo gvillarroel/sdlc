@@ -8,6 +8,7 @@ class RunAllChecksTest(unittest.TestCase):
         joined = [" ".join(command) for command in COMMANDS]
         required_fragments = [
             "unittest discover",
+            "check_english_content.py",
             "simulate_alternatives.py",
             "simulate_sandboxes.py",
             "stress_test_simulation.py",

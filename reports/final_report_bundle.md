@@ -1,6 +1,6 @@
 # Final Report Bundle
 
-Date: 2026-07-07
+Date: 2026-07-13
 
 This generated bundle concatenates the main report and key appendices for one-file review. Source files remain authoritative for editing.
 
@@ -38,7 +38,7 @@ This generated bundle concatenates the main report and key appendices for one-fi
 - `reports/results_data_dictionary.md`
 - `reports/maintenance_guide.md`
 - `reports/requirements_traceability.md`
-- `reports/artifact_index.md`
+- `reports/README.md`
 - `reports/system_diagrams.md`
 
 ---
@@ -288,6 +288,7 @@ Use these direct links to download the source datasets and generated result file
 | Pilot tasks | JSON | [data/pilot_tasks.json](https://raw.githubusercontent.com/gvillarroel/sdlc/main/data/pilot_tasks.json) |
 | Risk register | JSON | [data/risk_register.json](https://raw.githubusercontent.com/gvillarroel/sdlc/main/data/risk_register.json) |
 | Requirement traceability matrix | JSON | [data/traceability_matrix.json](https://raw.githubusercontent.com/gvillarroel/sdlc/main/data/traceability_matrix.json) |
+| Market, maintenance, and trust sources | CSV | [data/sources/market_maintenance_source_matrix.csv](https://raw.githubusercontent.com/gvillarroel/sdlc/main/data/sources/market_maintenance_source_matrix.csv) |
 | Complete generated output | JSON | [results/all_results.json](https://raw.githubusercontent.com/gvillarroel/sdlc/main/results/all_results.json) |
 | Scenario shortlist | CSV | [results/decision_shortlist.csv](https://raw.githubusercontent.com/gvillarroel/sdlc/main/results/decision_shortlist.csv) |
 | Deterministic rankings | CSV | [results/deterministic_rankings.csv](https://raw.githubusercontent.com/gvillarroel/sdlc/main/results/deterministic_rankings.csv) |
@@ -318,6 +319,7 @@ The final report uses all structured inputs and all generated result families. T
 | `data/security_evaluation_fixtures.json` | [download](https://raw.githubusercontent.com/gvillarroel/sdlc/main/data/security_evaluation_fixtures.json) |
 | `data/simulation_assumptions.json` | [download](https://raw.githubusercontent.com/gvillarroel/sdlc/main/data/simulation_assumptions.json) |
 | `data/traceability_matrix.json` | [download](https://raw.githubusercontent.com/gvillarroel/sdlc/main/data/traceability_matrix.json) |
+| `data/sources/market_maintenance_source_matrix.csv` | [download](https://raw.githubusercontent.com/gvillarroel/sdlc/main/data/sources/market_maintenance_source_matrix.csv) |
 
 ### Generated Results
 
@@ -329,7 +331,7 @@ The final report uses all structured inputs and all generated result families. T
 | Candidate explanation | `results/criteria_definitions.csv`, `results/evidence_matrix.csv`, `results/alternative_scorecards.csv`, `results/score_driver_summary.csv`, `results/criterion_spread_summary.csv` |
 | Operational planning | `results/implementation_effort_estimates.csv`, `results/operational_cost_estimates.csv`, `results/operational_fit_rankings.csv` |
 | Pilot planning | `results/scenario_playbook_summary.csv`, `results/pilot_sample_size_estimates.csv`, `results/pilot_decision_scores.example.csv`, `results/recommendation_rationale.csv` |
-| Risk, evidence, and source checks | `results/evidence_gap_analysis.csv`, `results/risk_validation_matrix.csv`, `results/license_audit.csv`, `results/source_check.csv`, `results/github_metadata_check.csv`, `results/market_maintenance_source_matrix.csv` |
+| Risk, evidence, and source checks | `results/evidence_gap_analysis.csv`, `results/risk_validation_matrix.csv`, `results/license_audit.csv`, `results/source_check.csv`, `results/github_metadata_check.csv` |
 | Sandbox evaluation | `results/sandbox_deterministic_rankings.csv`, `results/sandbox_monte_carlo_summary.csv`, `results/sandbox_threat_coverage.csv`, `results/sandbox_decision_matrix.csv`, `results/sandbox_source_matrix.csv` |
 | Repository QA | `results/local_artifact_reference_check.csv`, `results/markdown_table_check.csv`, `results/csv_schema_check.csv`, `results/custom_weights_example_rankings.csv` |
 
@@ -345,7 +347,7 @@ The final report also incorporates the narrative and validation material from th
 
 | Report family | Files |
 |---|---|
-| Executive and final review | `reports/final_global_report.md`, `reports/executive_brief.md`, `reports/final_report_bundle.md`, `reports/release_notes.md`, `reports/artifact_index.md`, `reports/presentation_outline.md` |
+| Executive and final review | `reports/final_global_report.md`, `reports/executive_brief.md`, `reports/final_report_bundle.md`, `reports/release_notes.md`, `reports/README.md`, `reports/presentation_outline.md` |
 | Core analysis | `reports/ai_orchestrator_frameworks_report.md`, `reports/methodology_appendix.md`, `reports/recommendation_rationale.md`, `reports/scenario_playbooks.md`, `reports/decision_tree.md`, `reports/candidate_taxonomy.md` |
 | Visual and navigation support | `reports/system_diagrams.md`, `reports/results_data_dictionary.md`, `reports/glossary.md`, `reports/faq.md` |
 | Security, sandbox, and risks | `reports/sandbox_report.md`, `reports/security_evaluation_fixtures.md`, `reports/risk_validation_matrix.md`, `reports/residual_risks.md`, `reports/evidence_gap_analysis.md`, `reports/github_metadata_check.md` |
@@ -357,7 +359,7 @@ The final report also incorporates the narrative and validation material from th
 
 | Need | Source artifact |
 |---|---|
-| Navigate all deliverables | `reports/artifact_index.md` |
+| Navigate all deliverables | `reports/README.md` |
 | Understand connections between tools and concepts | `reports/system_diagrams.md` |
 | Review methodology | `reports/methodology_appendix.md` |
 | Review the main report | `reports/ai_orchestrator_frameworks_report.md` |
@@ -451,7 +453,7 @@ AI-native creation lowers prototype cost, but it shifts the burden toward distri
 
 # Release Notes
 
-Date: 2026-07-05
+Date: 2026-07-13
 
 ## Purpose
 
@@ -461,27 +463,31 @@ This page summarizes the current repository state for a reviewer opening the Git
 
 | Area | Delivered artifacts |
 |---|---|
+| Repository organization | Active CI under `.github/workflows/`, curated sources under `data/sources/`, pilot examples under `examples/pilot/`, canonical site assets under `docs/assets/`, and report navigation in `reports/README.md` |
 | Final English report | `reports/ai_orchestrator_frameworks_report.md`, `reports/final_report_bundle.md`, `reports/executive_brief.md` |
 | Reproducible simulations | `scripts/simulate_alternatives.py`, `scripts/stress_test_simulation.py`, `results/all_results.json` |
 | Dedicated sandbox analysis | `reports/sandbox_report.md`, `data/sandbox_evaluation.json`, `results/sandbox_decision_matrix.csv` |
-| Market and maintenance addenda | `reports/market_maintenance_synthesis.md`, `reports/market_entry_barriers_shift.md`, `reports/market_fragmentation_user_share.md`, `reports/long_term_ai_app_maintenance.md`, `reports/ai_code_trust_matrix.md`, `results/market_maintenance_source_matrix.csv` |
+| Market and maintenance addenda | `reports/market_maintenance_synthesis.md`, `reports/market_entry_barriers_shift.md`, `reports/market_fragmentation_user_share.md`, `reports/long_term_ai_app_maintenance.md`, `reports/ai_code_trust_matrix.md`, `data/sources/market_maintenance_source_matrix.csv` |
 | Decision rationale | `reports/scenario_playbooks.md`, `reports/recommendation_rationale.md`, `reports/adoption_decision_record.md` |
 | Implementation complexity | `reports/implementation_blueprints.md`, `reports/operational_cost_model.md`, `results/implementation_effort_estimates.csv` |
 | Evidence and risk | `reports/evidence_gap_analysis.md`, `reports/github_metadata_check.md`, `reports/risk_validation_matrix.md` |
 | Pilot path | `reports/pilot_protocol.md`, `reports/pilot_sample_size.md`, `templates/pilot_run_log.csv`, `templates/security_gate_checklist.md` |
 | Reproducibility and QA | `reports/validation_summary.md`, `reports/results_data_dictionary.md`, `results/artifact_manifest.csv` |
+| English-content policy | `scripts/check_english_content.py`, `tests/test_english_content.py` |
 
 ## Current Validation Snapshot
 
 | Check | Current result |
 |---|---|
-| Unit tests | 141 tests passed |
+| Unit tests | 162 tests passed |
+| English-only content | 211 repository text files scanned, 0 findings |
+| Copilot SDK POC | 24 tests passed; 3 registry agents validated |
 | Generated CSV schemas | 41 schemas checked, 0 failures |
-| Local artifact references | 853 references checked, 0 missing |
-| Markdown tables | 313 tables checked, 0 failures |
-| External source URLs | 62 URLs checked, 62 OK |
+| Local artifact references | 889 references checked, 0 missing |
+| Markdown tables | 386 tables checked, 0 failures |
+| External source URLs | 89 URLs checked, 89 OK |
 | GitHub metadata | 17 repos checked, 0 failures, 0 license mismatches |
-| Artifact manifest | 170 report, data, result, script, test, template, and CI rows |
+| Artifact manifest | 218 report, data, result, script, test, template, site, and CI rows |
 
 ## Review Entry Points
 
@@ -537,7 +543,7 @@ For the proposed adoption decision record, read `reports/adoption_decision_recor
 
 For scenario-specific execution guidance, read `reports/scenario_playbooks.md`.
 
-For a navigation guide to every generated artifact, read `reports/artifact_index.md`.
+For a navigation guide to every generated artifact, read `reports/README.md`.
 
 For one-file review, read the generated bundle at `reports/final_report_bundle.md`.
 
@@ -555,7 +561,7 @@ For long-term technical support capacity and AI-generated maintenance risk, read
 
 For the code-reading versus AI-trust framework matrix, read `reports/ai_code_trust_matrix.md`.
 
-For the curated source matrix behind the market, maintenance, and trust addenda, read `results/market_maintenance_source_matrix.csv`.
+For the curated source matrix behind the market, maintenance, and trust addenda, read `data/sources/market_maintenance_source_matrix.csv`.
 
 For excluded items and boundary cases, read `reports/exclusions.md`.
 
@@ -832,7 +838,7 @@ Generated outputs:
 | `results/stress_test_rankings.csv` | Full deterministic rankings under each stress-test case. |
 | `results/uncertainty_stress_summary.csv` | Monte Carlo ranking stability under alternate uncertainty assumptions. |
 | `results/uncertainty_stress_details.csv` | Full Monte Carlo rows for every candidate under each uncertainty stress case. |
-| `results/custom_weights_example_rankings.csv` | Deterministic ranking generated from `examples/custom_weights.example.json`. |
+| `results/custom_weights_example_rankings.csv` | Deterministic ranking generated from `examples/pilot/custom_weights.example.json`. |
 | `results/pilot_decision_scores.example.csv` | Example post-pilot scoring output generated from the example candidate summary. |
 | `results/all_results.json` | Complete machine-readable output. |
 
@@ -870,9 +876,9 @@ The research scenario is stable around mini-SWE-agent and SWE-agent; halving imp
 
 The additional robustness outputs change how the ranking should be read:
 
-![Rank stability](assets/rank_stability.svg)
+![Rank stability](../docs/assets/rank_stability.svg)
 
-![Scenario regret](assets/scenario_regret.svg)
+![Scenario regret](../docs/assets/scenario_regret.svg)
 
 | Finding | Evidence | Interpretation |
 |---|---|---|
@@ -975,9 +981,9 @@ Security fixture definitions are in `data/security_evaluation_fixtures.json` and
 
 Candidate-specific implementation blueprints are in `reports/implementation_blueprints.md`.
 
-After a pilot, use `data/pilot_decision_model.json` and `scripts/score_pilot_results.py` to convert candidate-level pilot results into a ranked post-pilot decision table. An example input/output pair is included at `examples/pilot_candidate_summary.example.csv` and `results/pilot_decision_scores.example.csv`.
+After a pilot, use `data/pilot_decision_model.json` and `scripts/score_pilot_results.py` to convert candidate-level pilot results into a ranked post-pilot decision table. An example input/output pair is included at `examples/pilot/candidate_summary.example.csv` and `results/pilot_decision_scores.example.csv`.
 
-For implementation, `examples/pilot_adapter_contract.py` defines a minimal adapter shape so each candidate can return comparable status, patch path, log path, safety failures, cost, latency, and intervention counts.
+For implementation, `examples/pilot/adapter.py` defines a minimal adapter shape so each candidate can return comparable status, patch path, log path, safety failures, cost, latency, and intervention counts.
 
 | Phase | Duration | Work | Exit criteria |
 |---|---:|---|---|
@@ -1072,7 +1078,7 @@ The deterministic stress tests changed the rank-1 candidate in 9 of 40 scenario/
 
 These findings reinforce the recommended pilot set rather than replacing it: OpenHands SDK, Deep Agents, Cline, Codex CLI, SWE-agent, and mini-SWE-agent remain the important candidates for the relevant scenarios.
 
-For custom stakeholder priorities, edit `examples/custom_weights.example.json` and run:
+For custom stakeholder priorities, edit `examples/pilot/custom_weights.example.json` and run:
 
 ```powershell
 python scripts/rank_with_custom_weights.py
@@ -1136,7 +1142,7 @@ The full local regeneration and validation path is:
 python scripts/run_all_checks.py
 ```
 
-The same non-network validation path is available as `ci/validate-workflow.example.yml`, a GitHub Actions workflow template that runs the full local check workflow and fails if generated outputs are not committed. It can be copied into `.github/workflows/` when the pushing token has GitHub `workflow` scope.
+The same non-network validation path runs in GitHub Actions through `.github/workflows/validate.yml`. The workflow executes the full Python regeneration and validation pipeline, fails when generated outputs are not committed, and separately validates the Node.js Copilot SDK proof of concept.
 
 ## Final Recommendation
 
@@ -1290,7 +1296,7 @@ This synthesis converts the four market and technical addenda into one decision 
 - `reports/long_term_ai_app_maintenance.md`
 - `reports/ai_code_trust_matrix.md`
 
-The source evidence behind those reports is traceable in `results/market_maintenance_source_matrix.csv`.
+The source evidence behind those reports is traceable in `data/sources/market_maintenance_source_matrix.csv`.
 
 ## Integrated Finding
 
@@ -1462,7 +1468,7 @@ These overlays should not replace the current 14 criteria. They should act as a 
 
 ## Evidence Base
 
-The curated source matrix for this addendum is `results/market_maintenance_source_matrix.csv`; filter `relevant_reports` by `market_entry_barriers_shift.md`.
+The curated source matrix for this addendum is `data/sources/market_maintenance_source_matrix.csv`; filter `relevant_reports` by `market_entry_barriers_shift.md`.
 
 - OECD's 2025 review on generative AI, productivity, innovation, and entrepreneurship frames GenAI as a capability that can automate tasks, augment skills, and lower innovation frictions while requiring responsible adoption: https://oecd.ai/en/ai-publications/the-effects-of-generative-ai-on-productivity-innovation-and-entrepreneurship
 - OECD's 2025 downstream competition paper examines how AI adoption reshapes market dynamics beyond the model layer: https://ideas.repec.org/p/oec/dafaac/331-en.html
@@ -1603,7 +1609,7 @@ Add this review gate before piloting a framework for a product idea:
 
 ## Evidence Base
 
-The curated source matrix for this addendum is `results/market_maintenance_source_matrix.csv`; filter `relevant_reports` by `market_fragmentation_user_share.md`.
+The curated source matrix for this addendum is `data/sources/market_maintenance_source_matrix.csv`; filter `relevant_reports` by `market_fragmentation_user_share.md`.
 
 - OECD's 2025 downstream competition paper highlights that AI adoption changes competitive dynamics in downstream markets, not just the AI-model layer: https://ideas.repec.org/p/oec/dafaac/331-en.html
 - Bruegel's competition-policy brief notes that open models can reduce AI market entry barriers and broaden user choice: https://www.bruegel.org/policy-brief/why-artificial-intelligence-creating-fundamental-challenges-competition-policy
@@ -1693,7 +1699,7 @@ Use this scorecard before letting a generated application become a product commi
 
 ## Evidence Synthesis
 
-The curated source matrix for this addendum is `results/market_maintenance_source_matrix.csv`; filter `relevant_reports` by `long_term_ai_app_maintenance.md`.
+The curated source matrix for this addendum is `data/sources/market_maintenance_source_matrix.csv`; filter `relevant_reports` by `long_term_ai_app_maintenance.md`.
 
 The strongest evidence does not say "AI cannot maintain software." It says maintenance requires controls that are not automatically produced by generation:
 
@@ -1839,7 +1845,7 @@ Not reading generated code is defensible only when the artifact class is constra
 
 ## Evidence Base
 
-The curated source matrix for this addendum is `results/market_maintenance_source_matrix.csv`; filter `relevant_reports` by `ai_code_trust_matrix.md`.
+The curated source matrix for this addendum is `data/sources/market_maintenance_source_matrix.csv`; filter `relevant_reports` by `ai_code_trust_matrix.md`.
 
 - A 2023/2024 study on trust in AI-powered code generation found developer trust to be situational and rooted in perceived ability, integrity, and benevolence, while current tools lack enough affordances for efficient trust evaluation: https://arxiv.org/abs/2305.11248
 - A 2025 trust-terrain review analyzes 88 papers and expert feedback to clarify trust-related concepts for LLMs in software engineering: https://arxiv.org/abs/2503.13793
@@ -2148,7 +2154,7 @@ These outputs intentionally test model fragility, not live coding performance. T
 Custom deterministic rankings can be generated without editing the base simulation script:
 
 ```powershell
-python scripts/rank_with_custom_weights.py --weights examples/custom_weights.example.json --output results/custom_weights_example_rankings.csv
+python scripts/rank_with_custom_weights.py --weights examples/pilot/custom_weights.example.json --output results/custom_weights_example_rankings.csv
 ```
 
 The weights file must contain one or more named scenarios, each with every criterion from the scoring model. This is the fastest way to test stakeholder-specific priorities before changing the canonical scenario set.
@@ -2653,7 +2659,7 @@ Operational ranks are shown as `pilot / team rollout / autonomous PR` ranks afte
 
 # GitHub Metadata Check
 
-Date: 2026-07-05
+Date: 2026-07-13
 
 ## Objective
 
@@ -2681,14 +2687,14 @@ Largest star deltas in the latest run:
 
 | Candidate | Dataset stars | Live stars | Delta |
 |---|---:|---:|---:|
-| OpenCode | 182,587 | 182,610 | +23 |
-| Omnigent | 6,304 | 6,314 | +10 |
-| Deep Agents | 25,715 | 25,721 | +6 |
-| Codex CLI | 95,651 | 95,656 | +5 |
-| Sandcastle | 6,638 | 6,641 | +3 |
-| Cline / Cline SDK | 64,315 | 64,318 | +3 |
-| Aider | 47,082 | 47,084 | +2 |
-| mini-SWE-agent | 5,578 | 5,579 | +1 |
+| OpenCode | 182,587 | 185,282 | +2695 |
+| Codex CLI | 95,651 | 97,578 | +1927 |
+| Omnigent | 6,304 | 7,174 | +870 |
+| goose | 50,679 | 51,143 | +464 |
+| Deep Agents | 25,715 | 26,170 | +455 |
+| Cline / Cline SDK | 64,315 | 64,598 | +283 |
+| Aider | 47,082 | 47,333 | +251 |
+| Open SWE | 10,107 | 10,283 | +176 |
 
 ## Interpretation
 
@@ -2815,7 +2821,7 @@ Generated output: `results/risk_validation_matrix.csv`.
 | R-004: Network policy too broad for autonomous execution | security | 6 | templates/security_gate_checklist.md | network deny result; requested host log | Non-allowlisted network access is blocked or explicitly approved. |
 | R-006: Benchmark success does not transfer to internal repositories | evaluation | 6 | data/pilot_tasks.json | internal task pass rate; reviewer_acceptance | Representative internal tasks meet the adoption decision rule. |
 | R-007: Alpha or beta API churn increases maintenance cost | operational | 6 | reports/maintenance_guide.md | pinned version; upgrade test result | Prototype can be recreated and upgraded from pinned versions. |
-| R-008: Observability is insufficient for production failures | operational | 6 | examples/pilot_adapter_contract.py | log_path; patch_path; replay notes | At least one failed task can be reconstructed from stored artifacts. |
+| R-008: Observability is insufficient for production failures | operational | 6 | examples/pilot/adapter.py | log_path; patch_path; replay notes | At least one failed task can be reconstructed from stored artifacts. |
 | R-010: Autonomous PRs create large or low-quality diffs | quality | 6 | templates/reviewer_scorecard.md | review acceptance; diff size; convention score | Accepted diffs are focused, test-backed, and convention-compatible. |
 | R-005: Model lock-in hides framework portability risk | strategy | 4 | templates/pilot_run_log.csv | task_result by model_provider | Provider-specific behavior is separated from framework behavior. |
 | R-009: Human approval burden removes productivity gains | workflow | 4 | templates/pilot_run_log.csv | human_intervention_count; reviewer_acceptance | Intervention burden stays within the intended workflow envelope. |
@@ -3022,7 +3028,7 @@ Required artifacts:
 - `templates/scenario_selection_workshop.md`
 - `data/risk_register.json`
 - `data/security_evaluation_fixtures.json`
-- `examples/pilot_adapter_contract.py`
+- `examples/pilot/adapter.py`
 
 Required environment controls:
 
@@ -3080,7 +3086,7 @@ For every run, fill `templates/pilot_run_log.csv`.
 
 The run log now includes market and maintenance fields: `defensible_workflow_evidence`, `substitute_risk_note`, `reviewer_comprehension_score`, `rework_after_review`, `trust_gate_used`, and `provenance_completeness`. Leave these blank only for pure research harness runs where market viability is explicitly out of scope.
 
-If building candidate-specific runners, implement the minimal adapter shape in `examples/pilot_adapter_contract.py` so every candidate returns comparable task status, patch/log paths, safety failures, cost, latency, and human-intervention counts.
+If building candidate-specific runners, implement the minimal adapter shape in `examples/pilot/adapter.py` so every candidate returns comparable task status, patch/log paths, safety failures, cost, latency, and human-intervention counts.
 
 ### 4. Review Diffs
 
@@ -3128,7 +3134,7 @@ Do not let benchmark pass rate override a failed safety gate.
 The scoring model is captured in `data/pilot_decision_model.json`. Use `scripts/score_pilot_results.py` after filling a candidate summary CSV:
 
 ```powershell
-python scripts/score_pilot_results.py --input examples/pilot_candidate_summary.example.csv --output results/pilot_decision_scores.example.csv
+python scripts/score_pilot_results.py --input examples/pilot/candidate_summary.example.csv --output results/pilot_decision_scores.example.csv
 ```
 
 ## Decision Rule
@@ -3209,7 +3215,7 @@ Inputs: `data/pilot_sample_size_model.json` and `data/alternatives.json`. Genera
 
 # Validation Summary
 
-Date: 2026-07-05
+Date: 2026-07-13
 
 ## Purpose
 
@@ -3219,14 +3225,18 @@ This page summarizes the current quality checks for the report repository. It is
 
 | Check | Command | Latest result |
 |---|---|---|
-| Unit tests | `python -m unittest discover -s tests` | 141 tests passed. |
+| Unit tests | `python -m unittest discover -s tests` | 162 tests passed. |
+| English-only content | `python scripts/check_english_content.py` | 211 repository text files scanned, 0 findings. |
 | Full local workflow | `python scripts/run_all_checks.py` | Passed. |
+| Copilot SDK POC | `npm test` and `npm run validate` in `examples/copilot-sdk-dynamic-agents/` | 24 tests passed; 3 registry agents validated. |
 | Offline artifact validation | `python scripts/validate_artifacts.py` | Passed. |
 | Generated CSV schemas | `python scripts/validate_csv_schemas.py` | 41 CSV schemas checked, 0 failures. |
-| Local artifact references | `python scripts/check_local_artifact_references.py` | 853 local references checked, 0 missing. |
-| Markdown tables | `python scripts/validate_markdown_tables.py` | 313 tables checked, 0 failures. |
-| External source URLs | `python scripts/check_sources.py --timeout 20` | 62 URLs checked, 62 OK. |
+| Local artifact references | `python scripts/check_local_artifact_references.py` | 889 local references checked, 0 missing. |
+| Markdown tables | `python scripts/validate_markdown_tables.py` | 386 tables checked, 0 failures. |
+| External source URLs | `python scripts/check_sources.py --timeout 20` | 89 URLs checked, 89 OK. |
 | GitHub metadata | `python scripts/refresh_github_metadata.py --timeout 20` | 17 repos checked, 0 failures, 0 license mismatches. |
+| Artifact manifest | `python scripts/generate_artifact_manifest.py` | 218 repository artifacts hashed. |
+| Static site rendering | Browser comparison at 1280 px | Layout preserved after CSS and asset consolidation; a local favicon prevents request errors. |
 | Whitespace | `git diff --check` | Passed. |
 
 ## What The Validation Covers
@@ -3234,12 +3244,13 @@ This page summarizes the current quality checks for the report repository. It is
 | Area | Coverage |
 |---|---|
 | Data shape | Required generated result files exist and row counts match the expected number of alternatives, scenarios, operating profiles, and stress cases. |
+| Language policy | `scripts/check_english_content.py` scans repository-authored text and rejects likely non-English prose while excluding locks, vendor trees, and binary assets. |
 | License filter | `results/license_audit.csv` keeps the included set at 17 permissive MIT or Apache-2.0 alternatives and 2 excluded entries. |
 | Source availability | `results/source_check.csv` verifies that report and dataset URLs respond successfully. |
 | Sandbox sources | `results/sandbox_source_matrix.csv` records 27 official sandbox documentation or repository URLs used by the dedicated sandbox dataset. |
 | GitHub metadata | `results/github_metadata_check.csv` verifies repository reachability, live SPDX license match, archive status, stars, push date, and latest release tag. |
-| Report references | `results/local_artifact_reference_check.csv` verifies README and report references to local artifacts. |
-| Markdown tables | `results/markdown_table_check.csv` verifies table column consistency in README and report Markdown files. |
+| Repository references | `results/local_artifact_reference_check.csv` verifies local artifact references across repository Markdown files. |
+| Markdown tables | `results/markdown_table_check.csv` verifies table column consistency across repository Markdown files. |
 | CSV contracts | `results/csv_schema_check.csv` verifies expected headers for generated CSV artifacts. |
 | Score drivers | `results/score_driver_summary.csv` and `results/criterion_spread_summary.csv` verify candidate and criterion explanation outputs. |
 | Scenario playbooks | `results/scenario_playbook_summary.csv` verifies the per-scenario execution guidance output. |
@@ -3250,12 +3261,14 @@ This page summarizes the current quality checks for the report repository. It is
 | Pilot sample size | `results/pilot_sample_size_estimates.csv` verifies the task-count planning simulation shape. |
 | Artifact manifest | `results/artifact_manifest.csv` records SHA-256 hashes and byte sizes for committed report, data, script, test, and template artifacts. |
 | Simulation reproducibility | Unit tests cover deterministic scoring, Monte Carlo reproducibility, stress tests, custom weights, effort estimation, evidence-gap analysis, risk registers, decision tree, and artifact validation. |
+| Copilot SDK POC | Node.js tests cover registry mutations, parsing, permission isolation, runtime skill invocation, result sanitization, and chain ordering. |
 
 ## Known Validation Boundaries
 
 - The unit tests and offline runner do not execute real candidate agents.
+- The Copilot SDK unit tests and registry validation are offline; authenticated smoke tests still require GitHub Copilot access.
 - The live source and GitHub checks depend on network availability and should be rerun before final adoption; sandbox-specific official URLs are recorded separately in `results/sandbox_source_matrix.csv`.
-- The committed CI file is under `ci/validate-workflow.example.yml` because pushing workflow files requires a token with GitHub `workflow` scope.
+- `.github/workflows/validate.yml` is the active CI definition for both the Python evaluation workflow and the offline Node.js proof-of-concept checks.
 - Simulation outputs are screening evidence; the pilot protocol is still required before choosing a production foundation.
 
 ---
@@ -3271,16 +3284,19 @@ Date: 2026-07-05
 | Requirement | Notes |
 |---|---|
 | Python 3.12 or newer | The scripts use only the Python standard library. |
-| PowerShell | Used by the documented Windows commands and `scripts/run_all_checks.ps1`. |
-| Git | Required for reviewing diffs, committing, and pushing report updates. |
+| Git | Used to review regenerated artifacts and required by the English-content checker to enumerate repository files. |
 
-## Optional Live Checks
+## Optional Capabilities
 
 | Capability | Used by |
 |---|---|
+| PowerShell | Convenience wrapper at `scripts/run_all_checks.ps1`; the Python entry point is cross-platform. |
 | Internet access | `scripts/check_sources.py` and `scripts/refresh_github_metadata.py` |
 | GitHub API access | `scripts/refresh_github_metadata.py`; unauthenticated public API access is usually enough for the current 17 repos, but a valid `GITHUB_TOKEN` or `GH_TOKEN` helps avoid rate-limit `403` responses. |
-| GitHub token with `workflow` scope | Only needed if copying `ci/validate-workflow.example.yml` into `.github/workflows/`. |
+| Node.js `^20.19.0` or `>=22.12.0` | Offline tests and registry validation for `examples/copilot-sdk-dynamic-agents/` |
+| GitHub Copilot access | Authenticated smoke tests for the dynamic-agent proof of concept |
+
+The active CI definition is `.github/workflows/validate.yml`. It runs the Python workflow and the offline Node.js proof-of-concept checks.
 
 ## Standard Commands
 
@@ -3323,7 +3339,7 @@ The repository intentionally avoids third-party Python dependencies for the repo
 
 # Results Data Dictionary
 
-Date: 2026-07-05
+Date: 2026-07-13
 
 This generated dictionary summarizes the CSV outputs in `results/`. Expected columns come from `scripts/validate_csv_schemas.py`.
 
@@ -3555,22 +3571,6 @@ Markdown table column consistency check.
 | `expected_columns` |
 | `ok` |
 | `message` |
-
-## `market_maintenance_source_matrix.csv`
-
-Curated source matrix for the market, maintenance, and AI-code-trust addenda.
-
-| Column |
-|---|
-| `source_id` |
-| `title` |
-| `year` |
-| `evidence_type` |
-| `domain` |
-| `claim_supported` |
-| `confidence` |
-| `relevant_reports` |
-| `url` |
 
 ## `monte_carlo_summary.csv`
 
@@ -4070,7 +4070,7 @@ Minimum required work:
 For exploratory changes, use:
 
 ```powershell
-python scripts/rank_with_custom_weights.py --weights examples/custom_weights.example.json
+python scripts/rank_with_custom_weights.py --weights examples/pilot/custom_weights.example.json
 ```
 
 For canonical scenario changes, edit the `SCENARIOS` map in `scripts/simulate_alternatives.py`, then rerun the full workflow.
@@ -4080,11 +4080,11 @@ For canonical scenario changes, edit the `SCENARIOS` map in `scripts/simulate_al
 After a real pilot:
 
 1. Fill `templates/pilot_run_log.csv`.
-2. Summarize candidate-level metrics in a file shaped like `examples/pilot_candidate_summary.example.csv`.
+2. Summarize candidate-level metrics in a file shaped like `examples/pilot/candidate_summary.example.csv`.
 3. Run:
 
 ```powershell
-python scripts/score_pilot_results.py --input examples/pilot_candidate_summary.example.csv --output results/pilot_decision_scores.example.csv
+python scripts/score_pilot_results.py --input examples/pilot/candidate_summary.example.csv --output results/pilot_decision_scores.example.csv
 ```
 
 4. Update `reports/adoption_decision_record.md` from Proposed to Accepted, Rejected, or Deferred.
@@ -4123,7 +4123,7 @@ This document maps the original request to the repository artifacts that satisfy
 | Review the alternatives that are not copyleft and are open source. | `results/license_audit.csv`, `scripts/license_audit.py`, `data/alternatives.json` | `python scripts/license_audit.py` |
 | Evaluate alternatives with Python simulations. | `scripts/simulate_alternatives.py`, `scripts/analyze_score_drivers.py`, `scripts/build_scenario_playbooks.py`, `scripts/build_recommendation_rationale.py`, `results/deterministic_rankings.csv`, `results/monte_carlo_summary.csv`, `results/sensitivity_summary.csv`, `results/score_driver_summary.csv`, `results/criterion_spread_summary.csv`, `results/scenario_playbook_summary.csv`, `results/recommendation_rationale.csv`, `reports/recommendation_rationale.md`, `results/all_results.json` | `python scripts/simulate_alternatives.py --trials 5000 --seed 7331 && python scripts/analyze_score_drivers.py && python scripts/build_scenario_playbooks.py && python scripts/build_recommendation_rationale.py` |
 | Produce a dedicated sandbox report. | `reports/sandbox_report.md`, `data/sandbox_evaluation.json`, `scripts/simulate_sandboxes.py`, `results/sandbox_deterministic_rankings.csv`, `results/sandbox_monte_carlo_summary.csv`, `results/sandbox_threat_coverage.csv`, `results/sandbox_decision_matrix.csv`, `results/sandbox_source_matrix.csv` | `python scripts/simulate_sandboxes.py --trials 4000 --seed 260705` |
-| Produce an integrated go/no-go synthesis across market, fragmentation, maintenance, and trust. | `reports/market_maintenance_synthesis.md`, `results/market_maintenance_source_matrix.csv` | `python scripts/validate_markdown_tables.py && python scripts/check_local_artifact_references.py` |
+| Produce an integrated go/no-go synthesis across market, fragmentation, maintenance, and trust. | `reports/market_maintenance_synthesis.md`, `data/sources/market_maintenance_source_matrix.csv` | `python scripts/validate_markdown_tables.py && python scripts/check_local_artifact_references.py` |
 | Analyze how AI-native creation changes market-entry barriers for new software. | `reports/market_entry_barriers_shift.md` | `python scripts/validate_markdown_tables.py && python scripts/check_local_artifact_references.py` |
 | Analyze market fragmentation when many similar generated applications fight for the same users. | `reports/market_fragmentation_user_share.md` | `python scripts/validate_markdown_tables.py && python scripts/check_local_artifact_references.py` |
 | Analyze long-term support and maintenance capacity for AI-built applications. | `reports/long_term_ai_app_maintenance.md` | `python scripts/validate_markdown_tables.py && python scripts/check_local_artifact_references.py` |
@@ -4131,9 +4131,9 @@ This document maps the original request to the repository artifacts that satisfy
 | Review everything that can affect the simulation. | `reports/simulation_assumptions.md`, `data/simulation_assumptions.json`, `reports/operational_cost_model.md`, `scripts/stress_test_simulation.py`, `scripts/estimate_operational_costs.py`, `results/stress_test_summary.csv`, `results/uncertainty_stress_summary.csv`, `results/operational_fit_rankings.csv` | `python scripts/stress_test_simulation.py --trials 1500 --seed 9011 && python scripts/estimate_operational_costs.py` |
 | Review how complicated it is to build something with the alternatives. | `reports/implementation_blueprints.md`, `reports/operational_cost_model.md`, `results/implementation_effort_estimates.csv`, `results/operational_cost_estimates.csv`, `scripts/estimate_implementation_effort.py`, `scripts/estimate_operational_costs.py` | `python scripts/estimate_implementation_effort.py && python scripts/estimate_operational_costs.py` |
 | Check factors that can make the evaluation unreliable. | `reports/evidence_gap_analysis.md`, `reports/github_metadata_check.md`, `reports/risk_validation_matrix.md`, `results/evidence_gap_analysis.csv`, `results/github_metadata_check.csv`, `results/risk_validation_matrix.csv`, `results/source_check.csv`, `scripts/analyze_evidence_gaps.py`, `scripts/build_github_metadata_report.py`, `scripts/build_risk_validation_matrix.py`, `scripts/refresh_github_metadata.py`, `scripts/check_sources.py` | `python scripts/analyze_evidence_gaps.py && python scripts/build_risk_validation_matrix.py && python scripts/build_github_metadata_report.py` |
-| Provide a way to move from simulated ranking to real evidence. | `reports/pilot_protocol.md`, `reports/pilot_sample_size.md`, `data/pilot_tasks.json`, `data/pilot_sample_size_model.json`, `data/security_evaluation_fixtures.json`, `templates/pilot_run_log.csv`, `templates/reviewer_scorecard.md`, `templates/security_gate_checklist.md`, `examples/pilot_adapter_contract.py`, `scripts/estimate_pilot_sample_sizes.py`, `scripts/score_pilot_results.py` | `python scripts/estimate_pilot_sample_sizes.py && python scripts/score_pilot_results.py --input examples/pilot_candidate_summary.example.csv --output results/pilot_decision_scores.example.csv` |
-| Generate the final report in English. | `reports/ai_orchestrator_frameworks_report.md`, `reports/final_report_bundle.md`, `reports/executive_brief.md`, `reports/release_notes.md`, `reports/artifact_index.md` | `python scripts/validate_artifacts.py` |
-| Upload the tests and final report to GitHub. | `tests/`, `scripts/run_all_checks.py`, `results/artifact_manifest.csv`, `ci/validate-workflow.example.yml` | `python scripts/run_all_checks.py` |
+| Provide a way to move from simulated ranking to real evidence. | `reports/pilot_protocol.md`, `reports/pilot_sample_size.md`, `data/pilot_tasks.json`, `data/pilot_sample_size_model.json`, `data/security_evaluation_fixtures.json`, `templates/pilot_run_log.csv`, `templates/reviewer_scorecard.md`, `templates/security_gate_checklist.md`, `examples/pilot/adapter.py`, `scripts/estimate_pilot_sample_sizes.py`, `scripts/score_pilot_results.py` | `python scripts/estimate_pilot_sample_sizes.py && python scripts/score_pilot_results.py --input examples/pilot/candidate_summary.example.csv --output results/pilot_decision_scores.example.csv` |
+| Generate the final report in English. | `reports/ai_orchestrator_frameworks_report.md`, `reports/final_report_bundle.md`, `reports/executive_brief.md`, `reports/release_notes.md`, `reports/README.md` | `python scripts/validate_artifacts.py` |
+| Upload the tests and final report to GitHub. | `tests/`, `scripts/run_all_checks.py`, `results/artifact_manifest.csv`, `.github/workflows/validate.yml` | `python scripts/run_all_checks.py` |
 
 ## Reproducibility Command
 
@@ -4147,216 +4147,161 @@ The workflow runs unit tests, regenerates simulation outputs, stress tests, impl
 
 ## GitHub Status
 
-The repository includes the final report, generated result files, scripts, tests, templates, and CI workflow example. The generated `.github/workflows/` file is intentionally provided under `ci/validate-workflow.example.yml` because the current GitHub token cannot push workflow files without `workflow` scope.
+The repository includes the final report, generated result files, scripts, tests, templates, and CI workflow example. The generated `.github/workflows/` file is intentionally provided under `.github/workflows/validate.yml` because the current GitHub token cannot push workflow files without `workflow` scope.
 
 ---
 
-<!-- Source: reports/artifact_index.md -->
+<!-- Source: reports/README.md -->
 
-# Artifact Index
+# Report Library
 
-Date: 2026-07-05
+This directory contains the decision narratives, technical analysis, methodology, pilot guidance, and validation records for the AI coding-agent orchestrator evaluation.
 
-Use this index to choose the right file quickly.
+## Primary Reading Path
 
-## Read First
+| Order | Report | Purpose | Status |
+|---:|---|---|---|
+| 1 | [`executive_brief.md`](executive_brief.md) | Fast decision summary and recommended next step | Authored |
+| 2 | [`final_global_report.md`](final_global_report.md) | Primary narrative across candidates, security, market, maintenance, and pilot planning | Authored |
+| 3 | [`ai_orchestrator_frameworks_report.md`](ai_orchestrator_frameworks_report.md) | Detailed candidate evaluation, scoring evidence, scenario results, and caveats | Authored |
+| 4 | [`methodology_appendix.md`](methodology_appendix.md) | Scoring formulas, uncertainty model, and customization guidance | Authored |
+| 5 | [`pilot_protocol.md`](pilot_protocol.md) | Controlled process for replacing screening assumptions with execution evidence | Authored |
 
-| Need | Artifact |
+For a single offline document, use [`final_report_bundle.md`](final_report_bundle.md). It is generated from the source reports and should not be edited directly.
+
+## Report Types
+
+### Decision and Executive Reports
+
+| Report | Question answered | Status |
+|---|---|---|
+| [`executive_brief.md`](executive_brief.md) | What should decision-makers know first? | Authored |
+| [`adoption_decision_record.md`](adoption_decision_record.md) | What decision and no-go conditions are proposed? | Authored |
+| [`candidate_taxonomy.md`](candidate_taxonomy.md) | Which adoption shape does each candidate represent? | Authored |
+| [`decision_tree.md`](decision_tree.md) | Which shortlist fits a stated operating need? | Authored |
+| [`recommendation_rationale.md`](recommendation_rationale.md) | Why does each scenario shortlist have its current order? | Generated |
+| [`scenario_playbooks.md`](scenario_playbooks.md) | How should each scenario move from shortlist to pilot? | Generated |
+| [`presentation_outline.md`](presentation_outline.md) | How can the findings be presented to stakeholders? | Authored |
+| [`exclusions.md`](exclusions.md) | Why were boundary cases excluded or retained? | Authored |
+
+### Methodology and Quantitative Analysis
+
+| Report | Focus | Status |
+|---|---|---|
+| [`methodology_appendix.md`](methodology_appendix.md) | Scoring, normalization, Monte Carlo, sensitivity, and custom weights | Authored |
+| [`simulation_assumptions.md`](simulation_assumptions.md) | Threats to validity and deterministic/uncertainty stress tests | Authored |
+| [`score_driver_summary.md`](score_driver_summary.md) | Candidate strengths, weaknesses, and high-spread criteria | Generated |
+| [`evidence_gap_analysis.md`](evidence_gap_analysis.md) | Low-confidence, immature, or stale evidence risks | Generated |
+| [`operational_cost_model.md`](operational_cost_model.md) | Relative operating hours, token pressure, latency risk, and adjusted fit | Generated |
+
+### Security, Sandboxing, and Risk
+
+| Report | Focus | Status |
+|---|---|---|
+| [`sandbox_report.md`](sandbox_report.md) | Isolation options, threat coverage, and scenario-specific sandbox posture | Generated |
+| [`security_evaluation_fixtures.md`](security_evaluation_fixtures.md) | Reusable prompt-injection, secret, network, and boundary fixtures | Authored |
+| [`risk_validation_matrix.md`](risk_validation_matrix.md) | Required pilot evidence and pass conditions for each adoption risk | Generated |
+| [`residual_risks.md`](residual_risks.md) | Risks that remain after repository-level screening | Authored |
+| [`ai_code_trust_matrix.md`](ai_code_trust_matrix.md) | When code must be read and when verification gates may carry trust | Authored |
+
+### Pilot and Implementation
+
+| Report | Focus | Status |
+|---|---|---|
+| [`pilot_protocol.md`](pilot_protocol.md) | Task execution, evidence capture, gates, and decision rules | Authored |
+| [`pilot_sample_size.md`](pilot_sample_size.md) | Task-count estimates for close-candidate comparisons | Generated |
+| [`implementation_blueprints.md`](implementation_blueprints.md) | Initial integration slices for leading candidates | Authored |
+| [`environment_prerequisites.md`](environment_prerequisites.md) | Local, CI, live-check, and optional POC requirements | Authored |
+
+### Market, Maintenance, and Product Strategy
+
+| Report | Focus | Status |
+|---|---|---|
+| [`market_maintenance_synthesis.md`](market_maintenance_synthesis.md) | Integrated go/no-go model across market, maintenance, and trust | Authored |
+| [`market_entry_barriers_shift.md`](market_entry_barriers_shift.md) | How AI-native creation changes entry barriers and defensibility | Authored |
+| [`market_fragmentation_user_share.md`](market_fragmentation_user_share.md) | Fragmentation, retention, and competition for workflow share | Authored |
+| [`long_term_ai_app_maintenance.md`](long_term_ai_app_maintenance.md) | Support capacity and technical-debt risk for AI-built applications | Authored |
+
+### Internal Benchmark Research
+
+| Report | Focus | Status |
+|---|---|---|
+| [`internal_benchmark_harnesses.md`](internal_benchmark_harnesses.md) | Architecture and governance for private agent-harness benchmarks | Authored |
+| [`internal_benchmark_papers.md`](internal_benchmark_papers.md) | Prioritized, annotated research bibliography | Authored |
+
+### Reference, Traceability, and Maintenance
+
+| Report | Purpose | Status |
+|---|---|---|
+| [`faq.md`](faq.md) | Scope, weighting, exclusion, and pilot answers | Authored |
+| [`glossary.md`](glossary.md) | Common scoring, security, simulation, and orchestration terms | Authored |
+| [`system_diagrams.md`](system_diagrams.md) | System, data-flow, decision-flow, and validation diagrams | Authored |
+| [`requirements_traceability.md`](requirements_traceability.md) | Requirement-to-artifact coverage | Authored |
+| [`validation_summary.md`](validation_summary.md) | Latest human-readable validation status | Authored snapshot |
+| [`results_data_dictionary.md`](results_data_dictionary.md) | Column definitions for generated CSV outputs | Generated |
+| [`github_metadata_check.md`](github_metadata_check.md) | Latest repository metadata verification summary | Generated |
+| [`maintenance_guide.md`](maintenance_guide.md) | Refresh order, dependencies, and review procedure | Authored |
+| [`release_notes.md`](release_notes.md) | Reviewer-oriented delivery summary | Authored snapshot |
+
+## Structured Inputs
+
+All authoritative machine-readable inputs live under `data/`.
+
+| Input family | Files |
 |---|---|
-| Quick decision summary | `reports/executive_brief.md` |
-| Delivery summary | `reports/release_notes.md` |
-| Common questions | `reports/faq.md` |
-| Proposed adoption decision record | `reports/adoption_decision_record.md` |
-| Scenario execution playbooks | `reports/scenario_playbooks.md` |
-| Candidate taxonomy | `reports/candidate_taxonomy.md` |
-| Environment prerequisites | `reports/environment_prerequisites.md` |
-| Exclusion rationale | `reports/exclusions.md` |
-| Guided shortlist selection | `reports/decision_tree.md` |
-| Full analysis | `reports/ai_orchestrator_frameworks_report.md` |
-| Dedicated sandbox evaluation | `reports/sandbox_report.md` |
-| Market, maintenance, and trust synthesis | `reports/market_maintenance_synthesis.md` |
-| AI-native market barrier shift | `reports/market_entry_barriers_shift.md` |
-| Market fragmentation and user-share pressure | `reports/market_fragmentation_user_share.md` |
-| Long-term maintenance capacity | `reports/long_term_ai_app_maintenance.md` |
-| AI code reading and trust matrix | `reports/ai_code_trust_matrix.md` |
-| One-file report bundle | `reports/final_report_bundle.md` |
-| Narrative global final report | `reports/final_global_report.md` |
-| Requirement coverage | `reports/requirements_traceability.md` |
-| Validation and QA summary | `reports/validation_summary.md` |
-| Results data dictionary | `reports/results_data_dictionary.md` |
-| Residual risks | `reports/residual_risks.md` |
-| Risk-to-evidence matrix | `reports/risk_validation_matrix.md` |
-| Maintenance procedure | `reports/maintenance_guide.md` |
-| Glossary | `reports/glossary.md` |
-| Scoring formula and assumptions | `reports/methodology_appendix.md` |
-| Simulation assumptions and stress tests | `reports/simulation_assumptions.md` |
-| Score driver explanation | `reports/score_driver_summary.md` |
-| Connected system diagrams | `reports/system_diagrams.md` |
-| Operational cost and latency model | `reports/operational_cost_model.md` |
-| Evidence-gap findings | `reports/evidence_gap_analysis.md` |
-| Scenario recommendation rationale | `reports/recommendation_rationale.md` |
-| GitHub metadata verification | `reports/github_metadata_check.md` |
-| Security fixture catalog | `reports/security_evaluation_fixtures.md` |
-| Pilot execution protocol | `reports/pilot_protocol.md` |
-| Internal benchmark generation | `reports/internal_benchmark_harnesses.md` |
-| Internal benchmark paper bibliography | `reports/internal_benchmark_papers.md` |
-| Pilot sample-size planning | `reports/pilot_sample_size.md` |
-| Candidate implementation notes | `reports/implementation_blueprints.md` |
-| Stakeholder presentation outline | `reports/presentation_outline.md` |
-| Report charts | `reports/assets/rank_stability.svg`, `reports/assets/scenario_regret.svg`, `reports/assets/operational_hours.svg`, `reports/assets/criterion_spread.svg` |
-| GitHub Pages site | `docs/index.html` |
-
-## Data Inputs
-
-| Need | Artifact |
-|---|---|
-| Candidate list, scores, source links, and notes | `data/alternatives.json` |
-| Score calibration anchors | `data/scoring_rubric.json` |
-| Scenario definitions and shortlists | `data/scenario_profiles.json` |
-| Pilot task suite | `data/pilot_tasks.json` |
-| Post-pilot decision model | `data/pilot_decision_model.json` |
-| Pilot sample-size assumptions | `data/pilot_sample_size_model.json` |
-| Machine-readable decision tree | `data/decision_tree.json` |
-| Adoption risk register | `data/risk_register.json` |
-| Simulation assumption register | `data/simulation_assumptions.json` |
-| Sandbox evaluation dataset | `data/sandbox_evaluation.json` |
-| Operational cost model assumptions | `data/operational_cost_model.json` |
-| Security evaluation fixtures | `data/security_evaluation_fixtures.json` |
-| Candidate taxonomy data | `data/candidate_taxonomy.json` |
-| Requirement traceability matrix | `data/traceability_matrix.json` |
+| Candidate catalog and taxonomy | `data/alternatives.json`, `data/candidate_taxonomy.json` |
+| Scoring and scenario selection | `data/scoring_rubric.json`, `data/scenario_profiles.json`, `data/decision_tree.json` |
+| Simulation and operating assumptions | `data/simulation_assumptions.json`, `data/operational_cost_model.json` |
+| Pilot planning | `data/pilot_tasks.json`, `data/pilot_decision_model.json`, `data/pilot_sample_size_model.json` |
+| Security and risk | `data/risk_register.json`, `data/security_evaluation_fixtures.json`, `data/sandbox_evaluation.json` |
+| Traceability | `data/traceability_matrix.json` |
+| Market, maintenance, and trust bibliography | `data/sources/market_maintenance_source_matrix.csv` |
 
 ## Generated Results
 
-| Need | Artifact |
-|---|---|
-| Scenario rankings | `results/deterministic_rankings.csv` |
-| Monte Carlo stability | `results/monte_carlo_summary.csv` |
-| Sensitivity to criterion weights | `results/sensitivity_summary.csv` |
-| Category strengths | `results/category_scores.csv` |
-| Practical shortlist | `results/decision_shortlist.csv` |
-| Scenario playbook summary | `results/scenario_playbook_summary.csv` |
-| Regret versus scenario winner | `results/regret_analysis.csv` |
-| Pareto dominance | `results/pareto_frontier.csv` |
-| Cross-scenario rank stability | `results/rank_stability.csv` |
-| Market, maintenance, and trust source matrix | `results/market_maintenance_source_matrix.csv` |
-| Sandbox weighted rankings | `results/sandbox_deterministic_rankings.csv` |
-| Sandbox Monte Carlo stability | `results/sandbox_monte_carlo_summary.csv` |
-| Sandbox threat coverage | `results/sandbox_threat_coverage.csv` |
-| Sandbox decision matrix | `results/sandbox_decision_matrix.csv` |
-| Sandbox official source matrix | `results/sandbox_source_matrix.csv` |
-| Deterministic assumption stress summary | `results/stress_test_summary.csv` |
-| Deterministic assumption stress rankings | `results/stress_test_rankings.csv` |
-| Monte Carlo uncertainty stress summary | `results/uncertainty_stress_summary.csv` |
-| Monte Carlo uncertainty stress details | `results/uncertainty_stress_details.csv` |
-| Example post-pilot decision scores | `results/pilot_decision_scores.example.csv` |
-| Example custom-weight rankings | `results/custom_weights_example_rankings.csv` |
-| Model weights | `results/scenario_weights.csv` |
-| Criteria definitions | `results/criteria_definitions.csv` |
-| Source/evidence table | `results/evidence_matrix.csv` |
-| Alternative scorecards | `results/alternative_scorecards.csv` |
-| Candidate score drivers | `results/score_driver_summary.csv` |
-| Criterion score spread | `results/criterion_spread_summary.csv` |
-| Prototype and hardening effort estimates | `results/implementation_effort_estimates.csv` |
-| Relative operating-cost estimates | `results/operational_cost_estimates.csv` |
-| Operation-adjusted scenario rankings | `results/operational_fit_rankings.csv` |
-| Pilot sample-size estimates | `results/pilot_sample_size_estimates.csv` |
-| Evidence-gap risk analysis | `results/evidence_gap_analysis.csv` |
-| Scenario recommendation rationale | `results/recommendation_rationale.csv` |
-| Risk validation matrix | `results/risk_validation_matrix.csv` |
-| License audit | `results/license_audit.csv` |
-| URL health check | `results/source_check.csv` |
-| GitHub metadata check | `results/github_metadata_check.csv` |
-| Local artifact reference check | `results/local_artifact_reference_check.csv` |
-| Markdown table consistency check | `results/markdown_table_check.csv` |
-| Generated CSV schema check | `results/csv_schema_check.csv` |
-| Artifact SHA-256 manifest | `results/artifact_manifest.csv` |
-| Complete machine-readable output | `results/all_results.json` |
+Everything under `results/` is reproducible output. Do not edit these files manually.
 
-## Pilot Execution
+| Result family | Files |
+|---|---|
+| Complete machine output | `results/all_results.json` |
+| Base rankings and scenario fit | `results/deterministic_rankings.csv`, `results/monte_carlo_summary.csv`, `results/sensitivity_summary.csv`, `results/category_scores.csv`, `results/decision_shortlist.csv`, `results/scenario_weights.csv` |
+| Robustness and stability | `results/regret_analysis.csv`, `results/pareto_frontier.csv`, `results/rank_stability.csv`, `results/stress_test_summary.csv`, `results/stress_test_rankings.csv`, `results/uncertainty_stress_summary.csv`, `results/uncertainty_stress_details.csv` |
+| Candidate evidence and explanation | `results/criteria_definitions.csv`, `results/evidence_matrix.csv`, `results/alternative_scorecards.csv`, `results/score_driver_summary.csv`, `results/criterion_spread_summary.csv`, `results/evidence_gap_analysis.csv` |
+| Operations and implementation | `results/implementation_effort_estimates.csv`, `results/operational_cost_estimates.csv`, `results/operational_fit_rankings.csv` |
+| Pilot and recommendation outputs | `results/scenario_playbook_summary.csv`, `results/pilot_sample_size_estimates.csv`, `results/pilot_decision_scores.example.csv`, `results/recommendation_rationale.csv`, `results/risk_validation_matrix.csv`, `results/custom_weights_example_rankings.csv` |
+| Sandbox evaluation | `results/sandbox_deterministic_rankings.csv`, `results/sandbox_monte_carlo_summary.csv`, `results/sandbox_threat_coverage.csv`, `results/sandbox_decision_matrix.csv`, `results/sandbox_source_matrix.csv` |
+| Source and license checks | `results/source_check.csv`, `results/github_metadata_check.csv`, `results/license_audit.csv` |
+| Repository QA | `results/local_artifact_reference_check.csv`, `results/markdown_table_check.csv`, `results/csv_schema_check.csv`, `results/artifact_manifest.csv` |
+
+## Pilot Resources
 
 | Need | Artifact |
 |---|---|
-| Capture candidate/task metrics | `templates/pilot_run_log.csv` |
-| Human code-review assessment | `templates/reviewer_scorecard.md` |
-| Security gate assessment | `templates/security_gate_checklist.md` |
-| Select scenario and weights | `templates/scenario_selection_workshop.md` |
-| Example post-pilot candidate summary | `examples/pilot_candidate_summary.example.csv` |
-| Example custom scenario weights | `examples/custom_weights.example.json` |
-| Minimal pilot adapter contract | `examples/pilot_adapter_contract.py` |
+| Select a scenario and priorities | `templates/scenario_selection_workshop.md` |
+| Record task-level execution | `templates/pilot_run_log.csv` |
+| Review generated patches | `templates/reviewer_scorecard.md` |
+| Apply security gates | `templates/security_gate_checklist.md` |
+| Prepare candidate-level scoring input | `templates/pilot_candidate_summary.csv` |
+| Start from a completed example | `examples/pilot/candidate_summary.example.csv` |
+| Implement a common adapter | `examples/pilot/adapter.py` |
+| Test stakeholder-specific weights | `examples/pilot/custom_weights.example.json` |
 
-## Scripts
+## Regeneration and Validation
 
-| Need | Artifact |
-|---|---|
-| Regenerate rankings and simulations | `scripts/simulate_alternatives.py` |
-| Generate sandbox evaluation report | `scripts/simulate_sandboxes.py` |
-| Run simulation stress tests | `scripts/stress_test_simulation.py` |
-| Analyze score drivers | `scripts/analyze_score_drivers.py` |
-| Build scenario playbooks | `scripts/build_scenario_playbooks.py` |
-| Estimate implementation effort | `scripts/estimate_implementation_effort.py` |
-| Estimate operational cost and latency risk | `scripts/estimate_operational_costs.py` |
-| Estimate pilot sample sizes | `scripts/estimate_pilot_sample_sizes.py` |
-| Analyze evidence gaps | `scripts/analyze_evidence_gaps.py` |
-| Build recommendation rationale | `scripts/build_recommendation_rationale.py` |
-| Build risk validation matrix | `scripts/build_risk_validation_matrix.py` |
-| Rank with custom weights | `scripts/rank_with_custom_weights.py` |
-| Regenerate license audit | `scripts/license_audit.py` |
-| Check external source URLs | `scripts/check_sources.py` |
-| Refresh GitHub metadata check | `scripts/refresh_github_metadata.py` |
-| Build GitHub metadata report | `scripts/build_github_metadata_report.py` |
-| Check local artifact references | `scripts/check_local_artifact_references.py` |
-| Validate Markdown tables | `scripts/validate_markdown_tables.py` |
-| Validate generated CSV schemas | `scripts/validate_csv_schemas.py` |
-| Generate artifact SHA-256 manifest | `scripts/generate_artifact_manifest.py` |
-| Validate generated artifacts offline | `scripts/validate_artifacts.py` |
-| Generate report SVG charts | `scripts/generate_charts.py` |
-| Build results data dictionary | `scripts/build_results_data_dictionary.py` |
-| Build one-file report bundle | `scripts/build_report_bundle.py` |
-| Score pilot results | `scripts/score_pilot_results.py` |
-| Run all local checks | `scripts/run_all_checks.py` |
-| Run all local checks from PowerShell | `scripts/run_all_checks.ps1` |
-
-## Maintenance
-
-Run the core validation set:
+Run the complete offline workflow from the repository root:
 
 ```powershell
-python -m unittest discover -s tests
 python scripts/run_all_checks.py
 ```
 
-Or run the core deterministic pieces manually:
-
-```powershell
-python scripts/simulate_alternatives.py --trials 5000 --seed 7331
-python scripts/simulate_sandboxes.py --trials 4000 --seed 260705
-python scripts/stress_test_simulation.py --trials 1500 --seed 9011
-python scripts/analyze_score_drivers.py
-python scripts/build_scenario_playbooks.py
-python scripts/estimate_implementation_effort.py
-python scripts/estimate_operational_costs.py
-python scripts/estimate_pilot_sample_sizes.py
-python scripts/analyze_evidence_gaps.py
-python scripts/build_recommendation_rationale.py
-python scripts/build_risk_validation_matrix.py
-python scripts/rank_with_custom_weights.py
-python scripts/license_audit.py
-python scripts/check_local_artifact_references.py
-python scripts/validate_markdown_tables.py
-python scripts/validate_csv_schemas.py
-python scripts/generate_artifact_manifest.py
-python scripts/build_results_data_dictionary.py
-python scripts/build_github_metadata_report.py
-python scripts/build_report_bundle.py
-python scripts/validate_artifacts.py
-```
-
-Run live source verification when network access is available:
+The workflow regenerates results, generated reports, SVG charts, validation CSVs, and the artifact manifest. Optional live freshness checks are:
 
 ```powershell
 python scripts/check_sources.py --timeout 20
 python scripts/refresh_github_metadata.py --timeout 20
 ```
+
+For dependency order and maintenance rules, see [`maintenance_guide.md`](maintenance_guide.md).
 
 ---
 
@@ -4380,11 +4325,11 @@ flowchart LR
     Inputs["data/*.json"]
     Tools["scripts/*.py and scripts/*.ps1"]
     Results["results/*.csv and results/all_results.json"]
-    Reports["reports/*.md and reports/assets/*.svg"]
+    Reports["reports/*.md and docs/assets/*.svg"]
     Templates["templates/*.md and templates/*.csv"]
     Examples["examples/*.json, *.csv, *.py"]
     Tests["tests/*.py"]
-    CI["ci/validate-workflow.example.yml"]
+    CI[".github/workflows/validate.yml"]
     Decision["Adoption decision, shortlist, pilot plan, no-go gates"]
     Maintenance["Maintenance refresh workflow"]
 
@@ -4466,7 +4411,7 @@ flowchart LR
     Sim["Simulation tools<br/>simulate_alternatives.py<br/>simulate_sandboxes.py<br/>stress_test_simulation.py<br/>rank_with_custom_weights.py"]
     Analysis["Analysis tools<br/>analyze_score_drivers.py<br/>analyze_evidence_gaps.py<br/>estimate_implementation_effort.py<br/>estimate_operational_costs.py<br/>estimate_pilot_sample_sizes.py"]
     Builders["Report builders<br/>build_scenario_playbooks.py<br/>build_recommendation_rationale.py<br/>build_risk_validation_matrix.py<br/>build_results_data_dictionary.py<br/>build_github_metadata_report.py<br/>build_report_bundle.py"]
-    QA["Quality tools<br/>license_audit.py<br/>check_sources.py<br/>refresh_github_metadata.py<br/>check_local_artifact_references.py<br/>validate_markdown_tables.py<br/>validate_csv_schemas.py<br/>validate_artifacts.py<br/>generate_artifact_manifest.py"]
+    QA["Quality tools<br/>license_audit.py<br/>check_sources.py<br/>check_english_content.py<br/>refresh_github_metadata.py<br/>check_local_artifact_references.py<br/>validate_markdown_tables.py<br/>validate_csv_schemas.py<br/>validate_artifacts.py<br/>generate_artifact_manifest.py"]
     Assets["Asset tool<br/>generate_charts.py"]
     Pilot["Pilot tool<br/>score_pilot_results.py"]
     Runner["run_all_checks.py<br/>run_all_checks.ps1"]
@@ -4477,7 +4422,7 @@ flowchart LR
     QAResults["QA results<br/>license, sources, metadata, schemas, references, manifest"]
     PilotResults["Pilot score results<br/>pilot_decision_scores.example.csv"]
     Reports["Markdown reports<br/>decision, methodology, pilot, risk, validation"]
-    Charts["SVG charts<br/>reports/assets/*.svg"]
+    Charts["SVG charts<br/>docs/assets/*.svg"]
 
     Data --> Sim --> RankingResults
     Data --> Sim --> SandboxResults
@@ -4606,7 +4551,7 @@ flowchart LR
     SchemaCheck["validate_csv_schemas.py"]
     ArtifactCheck["validate_artifacts.py"]
     Manifest["generate_artifact_manifest.py"]
-    CI["ci/validate-workflow.example.yml"]
+    CI[".github/workflows/validate.yml"]
     Summary["reports/validation_summary.md"]
     MaintenanceGuide["reports/maintenance_guide.md"]
 
@@ -4642,9 +4587,10 @@ flowchart LR
 | `scripts/analyze_evidence_gaps.py` | Candidate metadata and evidence confidence | Evidence gap CSV/report |
 | `scripts/build_recommendation_rationale.py` | Rankings, risks, effort, cost, stability | Scenario recommendation rationale CSV/report |
 | `scripts/build_risk_validation_matrix.py` | `data/risk_register.json` and security fixtures | Risk validation matrix CSV/report |
-| `scripts/rank_with_custom_weights.py` | `examples/custom_weights.example.json` | Custom-weight ranking CSV |
+| `scripts/rank_with_custom_weights.py` | `examples/pilot/custom_weights.example.json` | Custom-weight ranking CSV |
 | `scripts/license_audit.py` | Candidate license data | License audit CSV |
 | `scripts/check_sources.py` | Evidence URLs | Source health CSV |
+| `scripts/check_english_content.py` | Repository-authored text | Non-English prose validation |
 | `scripts/refresh_github_metadata.py` | GitHub repository metadata | GitHub metadata CSV |
 | `scripts/build_github_metadata_report.py` | `results/github_metadata_check.csv` | GitHub metadata Markdown report |
 | `scripts/check_local_artifact_references.py` | README and reports | Local artifact reference CSV |
@@ -4652,7 +4598,7 @@ flowchart LR
 | `scripts/validate_csv_schemas.py` | Generated CSVs | CSV schema check CSV |
 | `scripts/generate_artifact_manifest.py` | Repository artifacts | SHA-256 artifact manifest |
 | `scripts/validate_artifacts.py` | Generated results, reports, local QA CSVs | Offline artifact validation |
-| `scripts/generate_charts.py` | Ranking and operational CSVs | SVG charts in `reports/assets/` |
+| `scripts/generate_charts.py` | Ranking and operational CSVs | SVG charts in `docs/assets/` |
 | `scripts/build_results_data_dictionary.py` | Generated CSV schemas | Results data dictionary report |
 | `scripts/build_report_bundle.py` | Main reports and appendices | One-file final report bundle |
 | `scripts/score_pilot_results.py` | Pilot candidate summary CSV | Post-pilot decision scores |
@@ -4663,7 +4609,7 @@ flowchart LR
 
 | Need | Start here | Then follow |
 |---|---|---|
-| Understand the whole system | This file | `reports/artifact_index.md`, then `reports/final_report_bundle.md` |
+| Understand the whole system | This file | `reports/README.md`, then `reports/final_report_bundle.md` |
 | Decide what to pilot | `reports/executive_brief.md` | `reports/recommendation_rationale.md`, `reports/scenario_playbooks.md`, `reports/pilot_protocol.md` |
 | Audit methodology | `reports/methodology_appendix.md` | `reports/simulation_assumptions.md`, `reports/score_driver_summary.md` |
 | Review safety | `reports/sandbox_report.md` | `reports/security_evaluation_fixtures.md`, `reports/risk_validation_matrix.md` |

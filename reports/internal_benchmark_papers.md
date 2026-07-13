@@ -1,89 +1,89 @@
-# Papers Para Benchmarks Internos De Harnesses
+# Research Papers for Internal Agent-Harness Benchmarks
 
-Fecha: 2026-07-07
+Date: 2026-07-07
 
-## Lectura Prioritaria
+## Priority Reading
 
-Si el objetivo es construir benchmarks internos organizacionales para harnesses de agentes, estos son los papers que conviene leer primero:
+If the goal is to build internal organizational benchmarks for agent harnesses, these are the papers to read first:
 
-| Prioridad | Paper | Por que importa |
+| Priority | Paper | Why It Matters |
 |---:|---|---|
-| 1 | [SWE-bench: Can Language Models Resolve Real-World GitHub Issues?](https://arxiv.org/abs/2310.06770) | Define el patron issue-to-patch con repos reales, tests y evaluacion por parche. Es el punto de partida natural para tareas internas de software. |
-| 2 | [SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering](https://arxiv.org/abs/2405.15793) | Muestra que el harness/interfaz cambia el rendimiento, no solo el modelo. Directamente relevante para comparar harnesses. |
-| 3 | [OpenHands: An Open Platform for AI Software Developers as Generalist Agents](https://arxiv.org/abs/2407.16741) | Describe una plataforma con sandbox, herramientas, agentes y benchmarks integrados. Util para disenar arquitectura de harness. |
-| 4 | [Terminal-Bench: Benchmarking Agents on Hard, Realistic Tasks in Command Line Interfaces](https://arxiv.org/abs/2601.11868) | Buen modelo para tareas realistas en terminal, con entorno unico, solucion humana y tests amplios. |
-| 5 | [TheAgentCompany: Benchmarking LLM Agents on Consequential Real World Tasks](https://arxiv.org/abs/2412.14161) | Muy cercano a benchmarks organizacionales: simula una empresa de software con sitios internos, datos y tareas de trabajo. |
-| 6 | [WorkArena: How Capable are Web Agents at Solving Common Knowledge Work Tasks?](https://arxiv.org/abs/2403.07718) | Sirve para pensar tareas internas sobre software empresarial, workflows web y entornos de knowledge work. |
-| 7 | [WebArena: A Realistic Web Environment for Building Autonomous Agents](https://arxiv.org/abs/2307.13854) | Buen ejemplo de entorno reproducible, self-hosted, realista y funcional para agentes web. |
-| 8 | [AgentBench: Evaluating LLMs as Agents](https://arxiv.org/abs/2308.03688) | Marco general para evaluar agentes en varios entornos interactivos; util para taxonomia y comparabilidad. |
-| 9 | [Holistic Evaluation of Language Models](https://arxiv.org/abs/2211.09110) | Aporta el enfoque de escenarios + multiples metricas, no un unico score. Muy aplicable a benchmarks internos. |
-| 10 | [Reproducible, Explainable, and Effective Evaluations of Agentic AI for Software Engineering](https://arxiv.org/abs/2604.01437) | Enfatiza trazas Thought-Action-Result, datos de interaccion y reproducibilidad en evaluaciones de agentic SE. |
-| 11 | [The SWE-Bench Illusion: When State-of-the-Art LLMs Remember](https://arxiv.org/abs/2506.12286) | Relevante para leakage/contaminacion: refuerza la necesidad de benchmarks privados y holdouts internos. |
-| 12 | [Benchmark Data Contamination of Large Language Models: A Survey](https://arxiv.org/abs/2406.04244) | Survey para disenar controles contra contaminacion, leakage y sobreajuste a benchmarks publicos. |
+| 1 | [SWE-bench: Can Language Models Resolve Real-World GitHub Issues?](https://arxiv.org/abs/2310.06770) | Defines the issue-to-patch pattern with real repositories, tests, and patch-based evaluation. It is the natural starting point for internal software tasks. |
+| 2 | [SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering](https://arxiv.org/abs/2405.15793) | Shows that the harness and interface affect performance, not only the model. It is directly relevant to harness comparisons. |
+| 3 | [OpenHands: An Open Platform for AI Software Developers as Generalist Agents](https://arxiv.org/abs/2407.16741) | Describes a platform with an integrated sandbox, tools, agents, and benchmarks. It is useful for designing harness architecture. |
+| 4 | [Terminal-Bench: Benchmarking Agents on Hard, Realistic Tasks in Command Line Interfaces](https://arxiv.org/abs/2601.11868) | Provides a strong model for realistic terminal tasks with a unique environment, a human solution, and broad tests. |
+| 5 | [TheAgentCompany: Benchmarking LLM Agents on Consequential Real World Tasks](https://arxiv.org/abs/2412.14161) | Closely resembles an organizational benchmark: it simulates a software company with internal sites, data, and workplace tasks. |
+| 6 | [WorkArena: How Capable are Web Agents at Solving Common Knowledge Work Tasks?](https://arxiv.org/abs/2403.07718) | Helps frame internal tasks involving enterprise software, web workflows, and knowledge-work environments. |
+| 7 | [WebArena: A Realistic Web Environment for Building Autonomous Agents](https://arxiv.org/abs/2307.13854) | Provides a strong example of a reproducible, self-hosted, realistic, and functional environment for web agents. |
+| 8 | [AgentBench: Evaluating LLMs as Agents](https://arxiv.org/abs/2308.03688) | Provides a general framework for evaluating agents across several interactive environments; it is useful for taxonomy and comparability. |
+| 9 | [Holistic Evaluation of Language Models](https://arxiv.org/abs/2211.09110) | Introduces a scenarios-plus-multiple-metrics approach instead of a single score. It is highly applicable to internal benchmarks. |
+| 10 | [Reproducible, Explainable, and Effective Evaluations of Agentic AI for Software Engineering](https://arxiv.org/abs/2604.01437) | Emphasizes Thought-Action-Result traces, interaction data, and reproducibility in agentic software-engineering evaluations. |
+| 11 | [The SWE-Bench Illusion: When State-of-the-Art LLMs Remember](https://arxiv.org/abs/2506.12286) | Addresses leakage and contamination, reinforcing the need for private benchmarks and internal holdouts. |
+| 12 | [Benchmark Data Contamination of Large Language Models: A Survey](https://arxiv.org/abs/2406.04244) | Surveys controls for contamination, leakage, and overfitting to public benchmarks. |
 
-## Coding Agents Y Software Engineering
+## Coding Agents and Software Engineering
 
-| Paper | Ano | Idea reutilizable | Aplicacion para benchmark interno |
+| Paper | Year | Reusable Idea | Application to an Internal Benchmark |
 |---|---:|---|---|
-| [Evaluating Large Language Models Trained on Code](https://arxiv.org/abs/2107.03374) | 2021 | HumanEval populariza evaluacion por tests funcionales y pass@k. | Usar tests ejecutables como minimo, pero no quedarse en problemas toy ni single-file. |
-| [RepoBench: Benchmarking Repository-Level Code Auto-Completion Systems](https://arxiv.org/abs/2306.03091) | 2023 | Evalua capacidades repository-level: retrieval, completion y pipeline. | Incluir tareas que obliguen a navegar multiples archivos y convenciones internas. |
-| [SWE-bench: Can Language Models Resolve Real-World GitHub Issues?](https://arxiv.org/abs/2310.06770) | 2023 | Tareas desde issues y PRs reales; scoring por tests. | Convertir tickets/PRs internos en casos reproducibles con start commit, prompt y grader. |
-| [SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering](https://arxiv.org/abs/2405.15793) | 2024 | La agent-computer interface afecta navegacion, edicion y test execution. | Evaluar harness + modelo + herramientas como sistema, no solo el modelo. |
-| [OpenHands: An Open Platform for AI Software Developers as Generalist Agents](https://arxiv.org/abs/2407.16741) | 2024 | Plataforma abierta con agentes, CLI, web, sandbox y benchmarks. | Inspirar adapter lifecycle, sandboxing, logs y comparacion multi-harness. |
-| [The OpenHands Software Agent SDK: A Composable and ...](https://arxiv.org/html/2511.03690v1) | 2025 | SDK para agentes de software con flexibilidad, ejecucion segura e interfaces. | Referencia para contratos de harness y componentes reutilizables. |
-| [Benchmarking AI Coding Agents on End-to-End Project Development](https://arxiv.org/html/2602.01655v1) | 2026 | Propone evaluacion end-to-end con feedback diagnostico y code review. | Agregar revision de mantenibilidad y calidad de PR, no solo tests. |
-| [Code Review Agent Benchmark](https://arxiv.org/html/2603.23448v3) | 2026 | Evalua agentes de code review comerciales y open-source. | Crear sub-suite para revisar PRs internos, detectar bugs y medir falsos positivos. |
-| [Reproducible, Explainable, and Effective Evaluations of Agentic AI for Software Engineering](https://arxiv.org/abs/2604.01437) | 2026 | Recomienda publicar o conservar trayectorias Thought-Action-Result e interacciones LLM. | Exigir trazas, comandos, tool calls, prompts, parches y resultados como artefactos. |
+| [Evaluating Large Language Models Trained on Code](https://arxiv.org/abs/2107.03374) | 2021 | HumanEval popularized evaluation through functional tests and pass@k. | Use executable tests as a minimum, but do not stop at toy or single-file problems. |
+| [RepoBench: Benchmarking Repository-Level Code Auto-Completion Systems](https://arxiv.org/abs/2306.03091) | 2023 | Evaluates repository-level retrieval, completion, and pipeline capabilities. | Include tasks that require navigating multiple files and internal conventions. |
+| [SWE-bench: Can Language Models Resolve Real-World GitHub Issues?](https://arxiv.org/abs/2310.06770) | 2023 | Builds tasks from real issues and pull requests, with test-based scoring. | Convert internal tickets and pull requests into reproducible cases with a starting commit, prompt, and grader. |
+| [SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering](https://arxiv.org/abs/2405.15793) | 2024 | Shows that the agent-computer interface affects navigation, editing, and test execution. | Evaluate the harness, model, and tools as a system, not only the model. |
+| [OpenHands: An Open Platform for AI Software Developers as Generalist Agents](https://arxiv.org/abs/2407.16741) | 2024 | Presents an open platform with agents, a CLI, web interface, sandbox, and benchmarks. | Draw on its adapter lifecycle, sandboxing, logs, and multi-harness comparisons. |
+| [The OpenHands Software Agent SDK: A Composable and ...](https://arxiv.org/html/2511.03690v1) | 2025 | Provides a software-agent SDK with flexibility, secure execution, and interfaces. | Use it as a reference for harness contracts and reusable components. |
+| [Benchmarking AI Coding Agents on End-to-End Project Development](https://arxiv.org/html/2602.01655v1) | 2026 | Proposes end-to-end evaluation with diagnostic feedback and code review. | Add maintainability and pull-request quality review, not only tests. |
+| [Code Review Agent Benchmark](https://arxiv.org/html/2603.23448v3) | 2026 | Evaluates commercial and open-source code-review agents. | Create a sub-suite for reviewing internal pull requests, detecting bugs, and measuring false positives. |
+| [Reproducible, Explainable, and Effective Evaluations of Agentic AI for Software Engineering](https://arxiv.org/abs/2604.01437) | 2026 | Recommends publishing or retaining Thought-Action-Result trajectories and LLM interactions. | Require traces, commands, tool calls, prompts, patches, and results as artifacts. |
 
-## Benchmarks De Agentes En Entornos Realistas
+## Agent Benchmarks in Realistic Environments
 
-| Paper | Ano | Idea reutilizable | Aplicacion para benchmark interno |
+| Paper | Year | Reusable Idea | Application to an Internal Benchmark |
 |---|---:|---|---|
-| [WebArena: A Realistic Web Environment for Building Autonomous Agents](https://arxiv.org/abs/2307.13854) | 2023 | Entorno web reproducible con sitios funcionales y datos realistas. | Crear entornos internos self-hosted que imiten herramientas corporativas. |
-| [AgentBench: Evaluating LLMs as Agents](https://arxiv.org/abs/2308.03688) | 2023 | Ocho entornos interactivos para evaluar razonamiento y decision multi-turn. | Clasificar benchmarks internos por entorno: repo, CLI, web, API, ticketing, CI. |
-| [GAIA: a benchmark for General AI Assistants](https://arxiv.org/abs/2311.12983) | 2023 | Preguntas simples para humanos pero dificiles para asistentes con herramientas. | Disenar tareas que midan robustez practica, no dificultad artificial. |
-| [WorkArena: How Capable are Web Agents at Solving Common Knowledge Work Tasks?](https://arxiv.org/abs/2403.07718) | 2024 | Tareas de enterprise software sobre ServiceNow y BrowserGym. | Modelar workflows organizacionales reales: tickets, aprobaciones, listas, formularios. |
-| [OSWorld: Benchmarking Multimodal Agents for Open-Ended Tasks in Real Computer Environments](https://arxiv.org/abs/2404.07972) | 2024 | Tasks de escritorio reales con setup y evaluation scripts. | Si el harness controla GUI/desktop, usar inicializacion y verificacion por estado del sistema. |
-| [AndroidWorld: A Dynamic Benchmarking Environment for Autonomous Agents](https://arxiv.org/abs/2405.14573) | 2024 | Tareas dinamicas parametrizadas con init, success check y teardown. | Parametrizar tareas internas para reducir memorizacion y medir robustez por variaciones. |
-| [$\\tau$-bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains](https://arxiv.org/abs/2406.12045) | 2024 | Simula usuario + herramientas + politicas de dominio; mide estado final de DB. | Para agentes con usuarios, evaluar consistencia, policy-following y efectos en base de datos. |
-| [TheAgentCompany: Benchmarking LLM Agents on Consequential Real World Tasks](https://arxiv.org/abs/2412.14161) | 2024 | Empresa simulada con web, codigo, programas y comunicacion entre coworkers. | Plantilla conceptual para un benchmark organizacional privado. |
-| [Terminal-Bench: Benchmarking Agents on Hard, Realistic Tasks in Command Line Interfaces](https://arxiv.org/abs/2601.11868) | 2026 | Tareas CLI realistas con entornos unicos, solucion humana y tests. | Excelente referencia para harnesses que operan en shell, CI y repos. |
+| [WebArena: A Realistic Web Environment for Building Autonomous Agents](https://arxiv.org/abs/2307.13854) | 2023 | Provides a reproducible web environment with functional sites and realistic data. | Create self-hosted internal environments that emulate corporate tools. |
+| [AgentBench: Evaluating LLMs as Agents](https://arxiv.org/abs/2308.03688) | 2023 | Provides eight interactive environments for evaluating reasoning and multi-turn decisions. | Classify internal benchmarks by environment: repository, CLI, web, API, ticketing, or CI. |
+| [GAIA: a benchmark for General AI Assistants](https://arxiv.org/abs/2311.12983) | 2023 | Uses questions that are simple for humans but difficult for assistants with tools. | Design tasks that measure practical robustness instead of artificial difficulty. |
+| [WorkArena: How Capable are Web Agents at Solving Common Knowledge Work Tasks?](https://arxiv.org/abs/2403.07718) | 2024 | Defines enterprise-software tasks using ServiceNow and BrowserGym. | Model real organizational workflows such as tickets, approvals, lists, and forms. |
+| [OSWorld: Benchmarking Multimodal Agents for Open-Ended Tasks in Real Computer Environments](https://arxiv.org/abs/2404.07972) | 2024 | Uses real desktop tasks with setup and evaluation scripts. | If the harness controls a GUI or desktop, use initialization and system-state verification. |
+| [AndroidWorld: A Dynamic Benchmarking Environment for Autonomous Agents](https://arxiv.org/abs/2405.14573) | 2024 | Uses dynamic, parameterized tasks with initialization, success checks, and teardown. | Parameterize internal tasks to reduce memorization and measure robustness across variations. |
+| [$\\tau$-bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains](https://arxiv.org/abs/2406.12045) | 2024 | Simulates users, tools, and domain policies, and measures the final database state. | For user-facing agents, evaluate consistency, policy compliance, and database effects. |
+| [TheAgentCompany: Benchmarking LLM Agents on Consequential Real World Tasks](https://arxiv.org/abs/2412.14161) | 2024 | Simulates a company with websites, code, programs, and communication among coworkers. | Use it as a conceptual template for a private organizational benchmark. |
+| [Terminal-Bench: Benchmarking Agents on Hard, Realistic Tasks in Command Line Interfaces](https://arxiv.org/abs/2601.11868) | 2026 | Uses realistic CLI tasks with unique environments, human solutions, and broad tests. | Use it as a primary reference for harnesses that operate in shells, CI systems, and repositories. |
 
-## Tool Use, Function Calling Y API Harnesses
+## Tool Use, Function Calling, and API Harnesses
 
-| Paper/Recurso | Ano | Idea reutilizable | Aplicacion para benchmark interno |
+| Paper or Resource | Year | Reusable Idea | Application to an Internal Benchmark |
 |---|---:|---|---|
-| [ToolBench](https://arxiv.org/abs/2305.16504) | 2023 | Evalua manipulacion de herramientas/API en tareas reales. | Medir seleccion de herramientas, argumentos correctos y composicion multi-tool. |
-| [The Berkeley Function Calling Leaderboard: From Tool Use to Agentic Evaluation](https://openreview.net/forum?id=2GmDdhBdDk) | 2024 | Evalua AST accuracy, executable accuracy y relevancia de function calls. | Agregar metricas separadas para schema, seleccion, ejecucion y respuesta final. |
-| [Benchmarking MCP Tool Invocation In Computer-Use Agents](https://arxiv.org/html/2510.24563v2) | 2025 | Evalua invocacion MCP + GUI en escenarios de computer use. | Si la organizacion usa MCP, crear tareas con herramientas internas, distractores y logs de invocation. |
-| [MCPWorld: A Unified Benchmarking Testbed for API, GUI ...](https://arxiv.org/html/2506.07672v1) | 2025 | Testbed MCP para API, GUI e interacciones hibridas. | Relevante para benchmarks que mezclan APIs internas y UI. |
-| [MCP-Atlas: A Large-Scale Benchmark for Tool-Use Competency](https://arxiv.org/html/2602.00933v1) | 2026 | Evalua coordinacion multi-tool y grounding en outputs de herramientas. | Separar score de tool selection, parameterization, sequencing y final answer. |
+| [ToolBench](https://arxiv.org/abs/2305.16504) | 2023 | Evaluates tool and API use in real tasks. | Measure tool selection, correct arguments, and multi-tool composition. |
+| [The Berkeley Function Calling Leaderboard: From Tool Use to Agentic Evaluation](https://openreview.net/forum?id=2GmDdhBdDk) | 2024 | Evaluates AST accuracy, executable accuracy, and function-call relevance. | Add separate metrics for schemas, selection, execution, and final answers. |
+| [Benchmarking MCP Tool Invocation In Computer-Use Agents](https://arxiv.org/html/2510.24563v2) | 2025 | Evaluates MCP invocation and GUI use in computer-use scenarios. | If the organization uses MCP, create tasks with internal tools, distractors, and invocation logs. |
+| [MCPWorld: A Unified Benchmarking Testbed for API, GUI ...](https://arxiv.org/html/2506.07672v1) | 2025 | Provides an MCP testbed for API, GUI, and hybrid interactions. | Use it for benchmarks that combine internal APIs and user interfaces. |
+| [MCP-Atlas: A Large-Scale Benchmark for Tool-Use Competency](https://arxiv.org/html/2602.00933v1) | 2026 | Evaluates multi-tool coordination and grounding in tool output. | Score tool selection, parameterization, sequencing, and final answers separately. |
 
-## Metodologia, Contaminacion Y Validez
+## Methodology, Contamination, and Validity
 
-| Paper/Recurso | Ano | Idea reutilizable | Aplicacion para benchmark interno |
+| Paper or Resource | Year | Reusable Idea | Application to an Internal Benchmark |
 |---|---:|---|---|
-| [Holistic Evaluation of Language Models](https://arxiv.org/abs/2211.09110) | 2022 | Escenarios + multiples metricas + transparencia de prompts/completions. | Reportar por escenario, familia de tarea, costo, seguridad, robustez y eficiencia. |
-| [Benchmark Data Contamination of Large Language Models: A Survey](https://arxiv.org/abs/2406.04244) | 2024 | Revisa contaminacion de benchmarks y mitigaciones. | Mantener holdout privado, canaries, rotacion de tareas y control de acceso. |
-| [On Leakage of Code Generation Evaluation Datasets](https://arxiv.org/html/2407.07565v1) | 2024 | Discute leakage en datasets de code generation. | No exponer soluciones, hidden tests ni prompts de holdout a sistemas externos. |
-| [Benchmarking Large Language Models Under Data Contamination](https://arxiv.org/html/2502.17521v2) | 2025 | Analiza benchmarks estaticos vs dinamicos bajo contaminacion. | Usar variantes parametrizadas y generacion controlada de tareas nuevas. |
-| [The SWE-Bench Illusion: When State-of-the-Art LLMs Remember](https://arxiv.org/abs/2506.12286) | 2025 | Evidencia de memorizacion/contaminacion en SWE-bench Verified. | Justifica benchmarks privados y no depender de leaderboards publicos para compra/adopcion. |
-| [Towards More Standardized AI Evaluation: From Models to Agents](https://arxiv.org/html/2602.18029v1) | 2026 | Plantea evals como funcion de control para sistemas agenticos. | Convertir benchmarks en gates continuos de operacion, no evaluacion one-shot. |
-| [LLM Benchmark Datasets Should Be Contamination-Resistant](https://arxiv.org/html/2605.19999v1) | 2026 | Argumenta por benchmarks resistentes a contaminacion. | Diseñar datos privados que sean utiles para inferencia pero dificiles de memorizar. |
+| [Holistic Evaluation of Language Models](https://arxiv.org/abs/2211.09110) | 2022 | Combines scenarios, multiple metrics, and prompt-and-completion transparency. | Report by scenario, task family, cost, safety, robustness, and efficiency. |
+| [Benchmark Data Contamination of Large Language Models: A Survey](https://arxiv.org/abs/2406.04244) | 2024 | Reviews benchmark contamination and mitigation techniques. | Maintain a private holdout, canaries, task rotation, and access controls. |
+| [On Leakage of Code Generation Evaluation Datasets](https://arxiv.org/html/2407.07565v1) | 2024 | Examines leakage in code-generation datasets. | Do not expose solutions, hidden tests, or holdout prompts to external systems. |
+| [Benchmarking Large Language Models Under Data Contamination](https://arxiv.org/html/2502.17521v2) | 2025 | Analyzes static and dynamic benchmarks under contamination. | Use parameterized variants and controlled generation of new tasks. |
+| [The SWE-Bench Illusion: When State-of-the-Art LLMs Remember](https://arxiv.org/abs/2506.12286) | 2025 | Provides evidence of memorization and contamination in SWE-bench Verified. | Use private benchmarks instead of relying on public leaderboards for purchasing or adoption decisions. |
+| [Towards More Standardized AI Evaluation: From Models to Agents](https://arxiv.org/html/2602.18029v1) | 2026 | Frames evaluations as a control function for agentic systems. | Turn benchmarks into continuous operational gates rather than one-time evaluations. |
+| [LLM Benchmark Datasets Should Be Contamination-Resistant](https://arxiv.org/html/2605.19999v1) | 2026 | Argues for contamination-resistant benchmarks. | Design private data that is useful for inference but difficult to memorize. |
 
-## Seguridad, Confianza Y Revision Humana
+## Safety, Trust, and Human Review
 
-| Paper/Recurso | Ano | Idea reutilizable | Aplicacion para benchmark interno |
+| Paper or Resource | Year | Reusable Idea | Application to an Internal Benchmark |
 |---|---:|---|---|
-| [SecureAgentBench: Benchmarking Secure Code Generation ...](https://arxiv.org/html/2509.22097v1) | 2025 | Evalua codigo correcto y seguro, no solo funcional. | Agregar fixtures donde seguridad y correctness son requisitos simultaneos. |
-| [Agentic AI Software Engineers: Programming with Trust](https://arxiv.org/abs/2502.13767) | 2025 | Enfatiza que el foco cambia de programar a establecer confianza. | Medir reviewer comprehension, provenance, trazas y capacidad de auditoria. |
-| [Trustworthy AI Software Engineers](https://arxiv.org/html/2602.06310v1) | 2026 | Vision sobre que hace confiable a un agente de software. | Definir gates de confianza antes de permitir autonomia en PRs. |
+| [SecureAgentBench: Benchmarking Secure Code Generation ...](https://arxiv.org/html/2509.22097v1) | 2025 | Evaluates code that is both correct and secure, not merely functional. | Add fixtures in which safety and correctness are simultaneous requirements. |
+| [Agentic AI Software Engineers: Programming with Trust](https://arxiv.org/abs/2502.13767) | 2025 | Emphasizes the shift from programming to establishing trust. | Measure reviewer comprehension, provenance, traces, and auditability. |
+| [Trustworthy AI Software Engineers](https://arxiv.org/html/2602.06310v1) | 2026 | Presents a vision of what makes a software agent trustworthy. | Define trust gates before allowing autonomy in pull requests. |
 
-## Como Usarlos En El Informe Principal
+## Applying the Research to the Main Report
 
-Mapeo directo a `reports/internal_benchmark_harnesses.md`:
+Direct mapping to `reports/internal_benchmark_harnesses.md`:
 
-| Seccion del informe | Papers mas utiles |
+| Report Section | Most Useful Papers |
 |---|---|
 | Task selection | SWE-bench, Terminal-Bench, TheAgentCompany, WorkArena |
 | Harness adapter contract | SWE-agent, OpenHands, OpenHands SDK, Terminal-Bench |
@@ -94,15 +94,15 @@ Mapeo directo a `reports/internal_benchmark_harnesses.md`:
 | Leakage and holdout governance | SWE-Bench Illusion, Benchmark Data Contamination survey, OpenAI SWE-bench Verified analysis |
 | Enterprise workflow simulation | TheAgentCompany, WorkArena, tau-bench |
 
-## Recomendacion Practica
+## Practical Recommendation
 
-Para el benchmark interno organizacional, no copiaria un solo paper. Usaria una mezcla:
+For an internal organizational benchmark, do not copy a single paper. Combine the strongest patterns:
 
-1. **SWE-bench** para el formato issue-to-patch.
-2. **Terminal-Bench** para entornos CLI hermeticos y tests duros.
-3. **TheAgentCompany/WorkArena** para simular organizacion, herramientas internas y workflows de knowledge work.
-4. **SWE-agent/OpenHands** para disenar el harness y los adapters.
-5. **HELM** para reportar escenarios y multiples metricas.
-6. **SWE-Bench Illusion + contamination surveys** para gobernanza de holdout, rotacion y leakage.
+1. **SWE-bench** for the issue-to-patch format.
+2. **Terminal-Bench** for hermetic CLI environments and rigorous tests.
+3. **TheAgentCompany/WorkArena** for simulating an organization, internal tools, and knowledge-work workflows.
+4. **SWE-agent/OpenHands** for designing the harness and adapters.
+5. **HELM** for reporting scenarios and multiple metrics.
+6. **SWE-Bench Illusion + contamination surveys** for holdout governance, task rotation, and leakage controls.
 
-La conclusion mas importante de la literatura es consistente: un benchmark interno util debe evaluar el sistema completo, no solo el modelo. El objeto evaluado real es `modelo + harness + herramientas + sandbox + prompts + politica + entorno + reviewer workflow`.
+The literature supports one consistent conclusion: a useful internal benchmark must evaluate the complete system, not only the model. The true object of evaluation is `model + harness + tools + sandbox + prompts + policy + environment + reviewer workflow`.

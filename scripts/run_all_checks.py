@@ -14,6 +14,7 @@ PYTHON = sys.executable
 
 COMMANDS = [
     [PYTHON, "-m", "unittest", "discover", "-s", "tests"],
+    [PYTHON, "scripts/check_english_content.py"],
     [PYTHON, "scripts/simulate_alternatives.py", "--trials", "5000", "--seed", "7331"],
     [PYTHON, "scripts/simulate_sandboxes.py", "--trials", "4000", "--seed", "260705"],
     [PYTHON, "scripts/stress_test_simulation.py", "--trials", "1500", "--seed", "9011"],
@@ -38,7 +39,7 @@ COMMANDS = [
         PYTHON,
         "scripts/score_pilot_results.py",
         "--input",
-        "examples/pilot_candidate_summary.example.csv",
+        "examples/pilot/candidate_summary.example.csv",
         "--output",
         "results/pilot_decision_scores.example.csv",
     ],

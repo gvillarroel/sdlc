@@ -22,7 +22,28 @@ class LocalArtifactReferencesTest(unittest.TestCase):
         }
         self.assertIn("README.md", sources)
         self.assertIn("reports/ai_orchestrator_frameworks_report.md", sources)
-        self.assertIn("reports/artifact_index.md", sources)
+        self.assertIn("reports/README.md", sources)
+        self.assertIn("examples/copilot-sdk-dynamic-agents/README.md", sources)
+
+    def test_docs_assets_are_validated(self):
+        rows = reference_rows()
+        self.assertTrue(
+            any(
+                row["reference"] == "docs/assets/rank_stability.svg"
+                and row["exists"]
+                for row in rows
+            )
+        )
+
+    def test_active_workflow_is_validated(self):
+        rows = reference_rows()
+        self.assertTrue(
+            any(
+                row["reference"] == ".github/workflows/validate.yml"
+                and row["exists"]
+                for row in rows
+            )
+        )
 
 
 if __name__ == "__main__":

@@ -17,7 +17,7 @@ from urllib.request import Request, urlopen
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_DATA = ROOT / "data" / "alternatives.json"
 DEFAULT_REPORT = ROOT / "reports" / "ai_orchestrator_frameworks_report.md"
-DEFAULT_SOURCE_MATRIX = ROOT / "results" / "market_maintenance_source_matrix.csv"
+DEFAULT_SOURCE_MATRIX = ROOT / "data" / "sources" / "market_maintenance_source_matrix.csv"
 DEFAULT_OUTPUT = ROOT / "results" / "source_check.csv"
 URL_RE = re.compile(r"https?://[^\s)>\]]+")
 

@@ -15,18 +15,20 @@ class ReleaseNotesTest(unittest.TestCase):
         )
 
         for fragment in [
-            "141 tests passed",
+            "162 tests passed",
+            "211 repository text files scanned",
             "41 schemas checked",
-            "853 references checked",
-            "313 tables checked",
+            "889 references checked",
+            "386 tables checked",
         ]:
             self.assertIn(fragment, release_notes)
 
         for fragment in [
-            "141 tests passed",
+            "162 tests passed",
+            "211 repository text files scanned",
             "41 CSV schemas checked",
-            "853 local references checked",
-            "313 tables checked",
+            "889 local references checked",
+            "386 tables checked",
         ]:
             self.assertIn(fragment, validation_summary)
 

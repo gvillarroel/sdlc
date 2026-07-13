@@ -95,7 +95,7 @@ Minimum required work:
 For exploratory changes, use:
 
 ```powershell
-python scripts/rank_with_custom_weights.py --weights examples/custom_weights.example.json
+python scripts/rank_with_custom_weights.py --weights examples/pilot/custom_weights.example.json
 ```
 
 For canonical scenario changes, edit the `SCENARIOS` map in `scripts/simulate_alternatives.py`, then rerun the full workflow.
@@ -105,11 +105,11 @@ For canonical scenario changes, edit the `SCENARIOS` map in `scripts/simulate_al
 After a real pilot:
 
 1. Fill `templates/pilot_run_log.csv`.
-2. Summarize candidate-level metrics in a file shaped like `examples/pilot_candidate_summary.example.csv`.
+2. Summarize candidate-level metrics in a file shaped like `examples/pilot/candidate_summary.example.csv`.
 3. Run:
 
 ```powershell
-python scripts/score_pilot_results.py --input examples/pilot_candidate_summary.example.csv --output results/pilot_decision_scores.example.csv
+python scripts/score_pilot_results.py --input examples/pilot/candidate_summary.example.csv --output results/pilot_decision_scores.example.csv
 ```
 
 4. Update `reports/adoption_decision_record.md` from Proposed to Accepted, Rejected, or Deferred.

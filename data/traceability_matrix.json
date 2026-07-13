@@ -79,7 +79,7 @@
       "requirement": "Produce an integrated go/no-go synthesis across market, fragmentation, maintenance, and trust.",
       "primary_artifacts": [
         "reports/market_maintenance_synthesis.md",
-        "results/market_maintenance_source_matrix.csv"
+        "data/sources/market_maintenance_source_matrix.csv"
       ],
       "validation": "python scripts/validate_markdown_tables.py && python scripts/check_local_artifact_references.py"
     },
@@ -159,11 +159,11 @@
         "templates/pilot_run_log.csv",
         "templates/reviewer_scorecard.md",
         "templates/security_gate_checklist.md",
-        "examples/pilot_adapter_contract.py",
+        "examples/pilot/adapter.py",
         "scripts/estimate_pilot_sample_sizes.py",
         "scripts/score_pilot_results.py"
       ],
-      "validation": "python scripts/estimate_pilot_sample_sizes.py && python scripts/score_pilot_results.py --input examples/pilot_candidate_summary.example.csv --output results/pilot_decision_scores.example.csv"
+      "validation": "python scripts/estimate_pilot_sample_sizes.py && python scripts/score_pilot_results.py --input examples/pilot/candidate_summary.example.csv --output results/pilot_decision_scores.example.csv"
     },
     {
       "id": "english_final_report",
@@ -173,7 +173,7 @@
         "reports/final_report_bundle.md",
         "reports/executive_brief.md",
         "reports/release_notes.md",
-        "reports/artifact_index.md"
+        "reports/README.md"
       ],
       "validation": "python scripts/validate_artifacts.py"
     },
@@ -184,7 +184,7 @@
         "tests/",
         "scripts/run_all_checks.py",
         "results/artifact_manifest.csv",
-        "ci/validate-workflow.example.yml"
+        ".github/workflows/validate.yml"
       ],
       "validation": "python scripts/run_all_checks.py"
     }

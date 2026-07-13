@@ -45,7 +45,7 @@ def build_report(rows: list[dict[str, str]]) -> str:
     lines = [
         "# GitHub Metadata Check",
         "",
-        "Date: 2026-07-05",
+        "Date: 2026-07-13",
         "",
         "## Objective",
         "",

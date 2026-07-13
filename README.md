@@ -1,198 +1,201 @@
-# Permissive Open-Source AI Orchestrator Alternatives
+# AI Coding-Agent Orchestrator Evaluation
 
-This repository contains a reproducible evaluation of permissive open-source alternatives from the shared ChatGPT discussion about AI coding-agent orchestrators.
+A reproducible decision-support repository for comparing permissively licensed AI coding-agent orchestrators. It combines source-backed scoring, uncertainty analysis, sandbox and security evaluation, operational modeling, and a controlled pilot protocol so teams can move from a broad market scan to an evidence-based adoption decision.
 
-Included artifacts:
+> [!IMPORTANT]
+> This repository is a screening and decision framework, not a live head-to-head benchmark of every candidate. Use it to build a shortlist, then validate that shortlist with representative pilot tasks before production adoption.
 
-- `data/alternatives.json` - curated dataset, source links, license filter, and 0-5 criterion scores.
-- `data/scoring_rubric.json` - calibration guide for the 0-5 scoring model.
-- `data/scenario_profiles.json` - plain-English scenario definitions and intended shortlists.
-- `data/pilot_tasks.json` - 20-task pilot suite for moving from simulated ranking to execution evidence.
-- `data/pilot_decision_model.json` - post-pilot scoring weights and gates.
-- `data/pilot_sample_size_model.json` - pilot task-count planning assumptions for close-candidate comparisons.
-- `data/decision_tree.json` - machine-readable guided selection tree.
-- `data/risk_register.json` - actionable adoption risks, mitigations, and required evidence.
-- `data/simulation_assumptions.json` - structured threats to validity and mitigation coverage for the simulation.
-- `data/sandbox_evaluation.json` - dedicated sandbox evaluation dataset, scenarios, criteria, and threat model.
-- `data/operational_cost_model.json` - operating profiles and assumptions for relative cost/latency planning.
-- `data/security_evaluation_fixtures.json` - security fixtures for sandbox, secret, network, prompt-injection, and approval testing.
-- `data/candidate_taxonomy.json` - candidate groups by adoption shape.
-- `data/traceability_matrix.json` - requirement-to-artifact traceability map.
-- `scripts/simulate_alternatives.py` - deterministic weighted ranking, Monte Carlo uncertainty simulation, and sensitivity analysis.
-- `scripts/simulate_sandboxes.py` - dedicated sandbox ranking, Monte Carlo, threat-coverage, and report generator.
-- `scripts/stress_test_simulation.py` - stress tests for scenario weights, maturity discounts, source confidence, sandbox assumptions, and uncertainty.
-- `scripts/analyze_score_drivers.py` - candidate score-driver and criterion-spread summary.
-- `scripts/build_scenario_playbooks.py` - scenario-specific decision playbook builder.
-- `scripts/estimate_implementation_effort.py` - reproducible prototype and hardening effort estimates from the scoring dataset.
-- `scripts/estimate_operational_costs.py` - relative operating-cost, token-pressure, latency-risk, and operation-adjusted ranking model.
-- `scripts/estimate_pilot_sample_sizes.py` - pilot task-count simulation for distinguishing close shortlist candidates.
-- `scripts/analyze_evidence_gaps.py` - evidence-gap review for maturity, confidence, release, traction, and freshness risks.
-- `scripts/build_recommendation_rationale.py` - generated scenario recommendation rationale from ranking, stability, risk, effort, and operational signals.
-- `scripts/build_risk_validation_matrix.py` - risk-to-evidence pilot validation matrix builder.
-- `scripts/rank_with_custom_weights.py` - deterministic ranking for user-provided scenario weights.
-- `scripts/check_local_artifact_references.py` - offline check for local artifact references in README and reports.
-- `scripts/validate_markdown_tables.py` - Markdown table column consistency check for README and reports.
-- `scripts/validate_csv_schemas.py` - generated CSV header/schema validation.
-- `scripts/generate_artifact_manifest.py` - SHA-256 manifest generator for repository artifacts.
-- `scripts/refresh_github_metadata.py` - optional live GitHub metadata checker for repository, license, star, push, and release signals.
-- `scripts/build_github_metadata_report.py` - generated Markdown summary for the latest GitHub metadata CSV.
-- `scripts/check_sources.py` - optional live source URL checker for the report and dataset.
-- `scripts/license_audit.py` - permissive-license audit for included and excluded alternatives.
-- `scripts/validate_artifacts.py` - offline consistency validation for generated artifacts and report references.
-- `scripts/generate_charts.py` - SVG chart generator for report visualizations.
-- `scripts/build_results_data_dictionary.py` - generated CSV results data dictionary builder.
-- `scripts/build_report_bundle.py` - generated one-file final report bundle builder.
-- `scripts/score_pilot_results.py` - post-pilot candidate scoring calculator.
-- `scripts/run_all_checks.py` - one-command local regeneration and validation workflow.
-- `scripts/run_all_checks.ps1` - PowerShell wrapper for the full local workflow.
-- `tests/test_simulation_model.py` - validation tests for the scoring model and dataset.
-- `results/` - generated CSV and JSON simulation outputs, including category scorecards and a scenario shortlist.
-- `templates/` - pilot run log, reviewer scorecard, security gate checklist, and scenario workshop templates.
-- `examples/pilot_candidate_summary.example.csv` - example input for post-pilot scoring.
-- `examples/custom_weights.example.json` - example custom scenario weights.
-- `examples/pilot_adapter_contract.py` - minimal Python adapter contract for comparable pilot runs.
-- `examples/copilot-sdk-dynamic-agents/` - executable POC for generating and chaining on-demand agents with GitHub Copilot SDK skills and a Copilot CLI extension.
-- `reports/ai_orchestrator_frameworks_report.md` - final English report.
-- `reports/final_report_bundle.md` - generated one-file bundle of the main report and key appendices.
-- `reports/sandbox_report.md` - dedicated sandbox evaluation report for AI-agent code execution.
-- `reports/market_entry_barriers_shift.md` - market-entry barrier shift analysis for AI-native software creation.
-- `reports/market_fragmentation_user_share.md` - fragmentation and user-share pressure analysis for generated software markets.
-- `reports/long_term_ai_app_maintenance.md` - long-term maintenance and support-capacity analysis for AI-built applications.
-- `reports/ai_code_trust_matrix.md` - code-reading versus AI-output trust matrix and operating model.
-- `reports/market_maintenance_synthesis.md` - cross-addendum go/no-go synthesis for market, maintenance, and trust.
-- `reports/final_global_report.md` - narrative global final report for the collected material.
-- `reports/adoption_decision_record.md` - proposed adoption decision record and no-go conditions.
-- `reports/executive_brief.md` - short decision brief for quick review.
-- `reports/release_notes.md` - reviewer-oriented summary of delivered artifacts and current validation status.
-- `reports/candidate_taxonomy.md` - grouping of candidates by adoption shape and workflow fit.
-- `reports/environment_prerequisites.md` - local environment requirements for reproducing checks.
-- `reports/exclusions.md` - rationale for excluded non-matching items from the shared discussion.
-- `reports/faq.md` - answers to common scope, weighting, exclusion, and pilot questions.
-- `reports/evidence_gap_analysis.md` - evidence-gap findings for low-confidence or immature candidates.
-- `reports/recommendation_rationale.md` - generated scenario-by-scenario recommendation rationale.
-- `reports/operational_cost_model.md` - generated operating-cost and operation-adjusted ranking appendix.
-- `reports/github_metadata_check.md` - live GitHub metadata verification summary.
-- `reports/glossary.md` - definitions for scoring, simulation, security, and orchestration terms.
-- `reports/security_evaluation_fixtures.md` - reusable security fixture catalog for pilot gates.
-- `reports/requirements_traceability.md` - coverage map from the original request to artifacts and validation commands.
-- `reports/validation_summary.md` - latest validation and QA summary for generated artifacts and tests.
-- `reports/results_data_dictionary.md` - generated data dictionary for CSV outputs.
-- `reports/residual_risks.md` - residual risks that require pilot or legal/security evidence.
-- `reports/risk_validation_matrix.md` - generated mapping from adoption risks to pilot evidence.
-- `reports/maintenance_guide.md` - procedure for refreshing sources, scores, candidates, and generated artifacts.
-- `reports/methodology_appendix.md` - scoring formulas, Monte Carlo assumptions, and customization notes.
-- `reports/simulation_assumptions.md` - assumptions, stress tests, and interpretation of ranking fragility.
-- `reports/score_driver_summary.md` - generated explanation of candidate strengths, weaknesses, and high-spread criteria.
-- `reports/system_diagrams.md` - connected Mermaid diagrams for the tools, concepts, data flow, result families, decision flow, and validation loop.
-- `reports/artifact_index.md` - navigation guide for all report, data, result, template, and script artifacts.
-- `reports/scenario_playbooks.md` - generated per-scenario execution playbooks.
-- `reports/pilot_protocol.md` - step-by-step protocol for executing the recommended pilot.
-- `reports/internal_benchmark_harnesses.md` - organizational guide for generating private internal benchmarks for agent harnesses.
-- `reports/internal_benchmark_papers.md` - annotated paper bibliography for internal agent-harness benchmark design.
-- `reports/pilot_sample_size.md` - generated task-count planning appendix for the pilot.
-- `reports/implementation_blueprints.md` - implementation notes for the main pilot candidates.
-- `reports/decision_tree.md` - guided shortlist selection tree.
-- `reports/presentation_outline.md` - stakeholder presentation outline.
-- `ci/validate-workflow.example.yml` - GitHub Actions workflow template for the full local check workflow and committed-output validation.
-- `docs/index.html` - GitHub Pages source for the published final report site.
+## Start Here
 
-Run the checks and simulations:
+| Goal | Recommended entry point |
+|---|---|
+| Understand the conclusion quickly | [Executive brief](reports/executive_brief.md) |
+| Read the primary narrative | [Final global report](reports/final_global_report.md) |
+| Audit the detailed evaluation | [Technical evaluation](reports/ai_orchestrator_frameworks_report.md) |
+| Navigate every report and artifact | [Report library](reports/README.md) |
+| Review quality and reproducibility | [Validation summary](reports/validation_summary.md) |
+| Open the static web version | [GitHub Pages source](docs/index.html) |
+
+The three main reports have distinct roles:
+
+- `reports/final_global_report.md` is the primary overview and decision narrative.
+- `reports/ai_orchestrator_frameworks_report.md` is the detailed technical evaluation.
+- `reports/final_report_bundle.md` is a generated, single-file compilation for offline review.
+
+## Evaluation at a Glance
+
+| Dimension | Coverage |
+|---|---|
+| Candidate set | 17 permissively licensed alternatives and 2 documented exclusions |
+| Decision scenarios | Custom orchestrator, secure autonomous pull requests, local coding, research benchmarking, and enterprise control plane |
+| Scoring model | 14 calibrated criteria on a 0–5 scale |
+| Quantitative analysis | Deterministic ranking, Monte Carlo simulation, sensitivity analysis, regret, Pareto, and stress testing |
+| Operational analysis | Implementation effort, operating cost, latency risk, and operation-adjusted fit |
+| Security analysis | Sandbox comparison, threat coverage, risk register, and reusable security fixtures |
+| Adoption evidence | 20-task pilot suite, reviewer scorecard, security gates, and post-pilot scoring model |
+
+## Key Finding
+
+There is no universal winner. The appropriate shortlist changes with the operating scenario and the level of autonomy, governance, and integration required.
+
+| Scenario | Primary shortlist | Decision emphasis |
+|---|---|---|
+| Custom orchestrator | OpenHands SDK, Deep Agents, Cline SDK | Programmability, provider flexibility, and platform ownership |
+| Secure autonomous pull requests | Codex CLI, OpenHands SDK, Cline SDK | Isolation, approvals, secrets, and traceability |
+| Quick local coding | Cline, OpenCode, Aider, Codex CLI | Adoption speed, developer control, and provider choice |
+| Research benchmarking | mini-SWE-agent, SWE-agent, OpenHands SDK | Reproducibility, ablations, and issue-resolution rigor |
+| Enterprise control plane | Cline, OpenHands SDK, OpenHands Agent Canvas, Open SWE | Multi-team governance, observability, and operating burden |
+
+Across scenarios, OpenHands SDK is the most stable general platform candidate, while Cline is especially strong in workflow-centered scenarios. The authoritative rationale and caveats are in the [recommendation report](reports/recommendation_rationale.md).
+
+## How the Repository Works
+
+```mermaid
+flowchart LR
+    Inputs["Curated inputs<br/>data/"] --> Models["Models and generators<br/>scripts/"]
+    Models --> Results["Machine-readable evidence<br/>results/"]
+    Results --> Reports["Decision narratives<br/>reports/"]
+    Reports --> Site["Published presentation<br/>docs/"]
+    Inputs --> Pilot["Pilot execution<br/>templates/ + examples/pilot/"]
+    Models --> QA["Automated validation<br/>tests/ + CI"]
+    Results --> QA
+    Reports --> QA
+```
+
+The repository separates source material from generated evidence:
+
+- Curated inputs live in `data/`, including the source bibliography in `data/sources/`.
+- Reproducible scripts transform those inputs into CSV, JSON, Markdown, and SVG artifacts.
+- Generated machine-readable outputs live in `results/` and should not be edited manually.
+- Authored and generated reports live in `reports/`; the [report library](reports/README.md) labels their roles.
+- `docs/assets/` is the single canonical location for rendered charts and diagram assets used by the site and Markdown reports.
+
+## Repository Structure
+
+| Path | Responsibility |
+|---|---|
+| `.github/` | Active GitHub Actions validation plus Copilot agent and extension configuration |
+| `data/` | Versioned candidate data, scoring models, risk inputs, pilot definitions, and curated sources |
+| `docs/` | Static GitHub Pages site, canonical SVG/CSS assets, and Mermaid diagram sources |
+| `examples/pilot/` | Custom-weight input, pilot summary input, and the minimal Python adapter contract |
+| `examples/copilot-sdk-dynamic-agents/` | Executable Node.js proof of concept for runtime-created GitHub Copilot agents and skills |
+| `reports/` | Decision documents, methodology, appendices, generated reports, and the report index |
+| `results/` | Reproducible generated CSV and JSON outputs |
+| `scripts/` | Simulation, analysis, generation, live-source checks, and validation entry points |
+| `templates/` | Pilot logs, scorecards, security gates, and scenario-selection worksheets |
+| `tests/` | Python unit and artifact-contract tests |
+
+## Quick Start
+
+### Requirements
+
+- Python 3.12 or newer for the core evaluation workflow.
+- Git for reviewing generated changes.
+- PowerShell only if you want to use the optional Windows wrapper.
+- Node.js `^20.19.0` or `>=22.12.0` only for the Copilot SDK proof of concept.
+
+The Python workflow uses only the standard library; no package installation is required.
+
+### Run the Complete Offline Workflow
 
 ```powershell
 python scripts/run_all_checks.py
 ```
 
-PowerShell wrapper:
+The command runs the unit tests, English-content check, simulations, report generators, schema checks, reference checks, Markdown checks, artifact manifest, and final offline validation. It intentionally regenerates committed artifacts, so review the resulting Git diff.
+
+On Windows, the equivalent wrapper is:
 
 ```powershell
 .\scripts\run_all_checks.ps1
 ```
 
-GitHub Copilot dynamic-agent POC:
-
-```powershell
-cd examples\copilot-sdk-dynamic-agents
-npm ci
-npm test
-.\scripts\smoke-in-copilot.ps1
-```
-
-The smoke test creates three fresh agents, runs their different skills in sequence inside Copilot CLI, and writes sanitized runtime evidence to `examples/copilot-sdk-dynamic-agents/results/copilot-skill-demo.latest.json`. See the [POC guide](examples/copilot-sdk-dynamic-agents/README.md).
-
-Or run individual steps:
+### Run Read-Only Checks First
 
 ```powershell
 python -m unittest discover -s tests
-python scripts/simulate_alternatives.py --trials 5000 --seed 7331
-python scripts/simulate_sandboxes.py --trials 4000 --seed 260705
-python scripts/stress_test_simulation.py --trials 1500 --seed 9011
-python scripts/analyze_score_drivers.py
-python scripts/build_scenario_playbooks.py
-python scripts/estimate_implementation_effort.py
-python scripts/estimate_operational_costs.py
-python scripts/estimate_pilot_sample_sizes.py
-python scripts/analyze_evidence_gaps.py
-python scripts/build_recommendation_rationale.py
-python scripts/build_risk_validation_matrix.py
-python scripts/rank_with_custom_weights.py
-python scripts/license_audit.py
-python scripts/check_local_artifact_references.py
-python scripts/validate_markdown_tables.py
-python scripts/validate_csv_schemas.py
-python scripts/generate_artifact_manifest.py
-python scripts/generate_charts.py
-python scripts/build_results_data_dictionary.py
-python scripts/build_github_metadata_report.py
-python scripts/build_report_bundle.py
-python scripts/score_pilot_results.py --input examples/pilot_candidate_summary.example.csv --output results/pilot_decision_scores.example.csv
-python scripts/check_sources.py --timeout 20
-python scripts/refresh_github_metadata.py --timeout 20
-python scripts/validate_artifacts.py
+python scripts/check_english_content.py
+git diff --check
 ```
 
-The shortlist excludes non-permissive or closed entries from the source conversation, including Claude Agent SDK and Codex app.
+## Validation and CI
 
-Generated result files:
+| Validation layer | Command or location | Network required |
+|---|---|---:|
+| Unit and contract tests | `python -m unittest discover -s tests` | No |
+| English-only repository content | `python scripts/check_english_content.py` | No |
+| Full regeneration and validation | `python scripts/run_all_checks.py` | No |
+| Local artifact references | `python scripts/check_local_artifact_references.py` | No |
+| Markdown table consistency | `python scripts/validate_markdown_tables.py` | No |
+| Generated CSV contracts | `python scripts/validate_csv_schemas.py` | No |
+| Offline artifact integrity | `python scripts/validate_artifacts.py` | No |
+| External source availability | `python scripts/check_sources.py --timeout 20` | Yes |
+| Current GitHub metadata | `python scripts/refresh_github_metadata.py --timeout 20` | Yes |
+| Continuous integration | `.github/workflows/validate.yml` | Managed by GitHub Actions |
 
-- `results/deterministic_rankings.csv`
-- `results/monte_carlo_summary.csv`
-- `results/sensitivity_summary.csv`
-- `results/category_scores.csv`
-- `results/decision_shortlist.csv`
-- `results/scenario_playbook_summary.csv`
-- `results/scenario_weights.csv`
-- `results/criteria_definitions.csv`
-- `results/evidence_matrix.csv`
-- `results/alternative_scorecards.csv`
-- `results/score_driver_summary.csv`
-- `results/criterion_spread_summary.csv`
-- `results/implementation_effort_estimates.csv`
-- `results/operational_cost_estimates.csv`
-- `results/operational_fit_rankings.csv`
-- `results/pilot_sample_size_estimates.csv`
-- `results/evidence_gap_analysis.csv`
-- `results/recommendation_rationale.csv`
-- `results/risk_validation_matrix.csv`
-- `results/custom_weights_example_rankings.csv`
-- `results/local_artifact_reference_check.csv`
-- `results/markdown_table_check.csv`
-- `results/github_metadata_check.csv`
-- `results/csv_schema_check.csv`
-- `results/artifact_manifest.csv`
-- `results/source_check.csv`
-- `results/license_audit.csv`
-- `results/regret_analysis.csv`
-- `results/pareto_frontier.csv`
-- `results/rank_stability.csv`
-- `results/market_maintenance_source_matrix.csv`
-- `results/sandbox_deterministic_rankings.csv`
-- `results/sandbox_monte_carlo_summary.csv`
-- `results/sandbox_threat_coverage.csv`
-- `results/sandbox_decision_matrix.csv`
-- `results/sandbox_source_matrix.csv`
-- `results/stress_test_summary.csv`
-- `results/stress_test_rankings.csv`
-- `results/uncertainty_stress_summary.csv`
-- `results/uncertainty_stress_details.csv`
-- `results/pilot_decision_scores.example.csv`
-- `results/all_results.json`
+CI runs the complete Python workflow, verifies that generated artifacts are committed, and separately tests the Copilot SDK proof of concept.
+
+## Customize the Decision Model
+
+### Use Custom Scenario Weights
+
+Edit `examples/pilot/custom_weights.example.json`, then run:
+
+```powershell
+python scripts/rank_with_custom_weights.py --weights examples/pilot/custom_weights.example.json --output results/custom_weights_example_rankings.csv
+```
+
+The input must define every criterion used by the scoring model. See the [methodology appendix](reports/methodology_appendix.md) for normalization and scoring details.
+
+### Move from Screening to Pilot Evidence
+
+1. Select the target scenario with `templates/scenario_selection_workshop.md`.
+2. Choose a comparable shortlist from `reports/recommendation_rationale.md`.
+3. Run representative tasks from `data/pilot_tasks.json` through adapters shaped like `examples/pilot/adapter.py`.
+4. Capture execution metrics in `templates/pilot_run_log.csv`.
+5. Review patches with `templates/reviewer_scorecard.md` and `templates/security_gate_checklist.md`.
+6. Summarize each candidate using `examples/pilot/candidate_summary.example.csv`.
+7. Produce the post-pilot ranking:
+
+```powershell
+python scripts/score_pilot_results.py --input examples/pilot/candidate_summary.example.csv --output results/pilot_decision_scores.example.csv
+```
+
+The detailed execution and decision rules are in the [pilot protocol](reports/pilot_protocol.md).
+
+## Copilot SDK Dynamic-Agent Proof of Concept
+
+The repository includes a separate Node.js example that creates agents dynamically, assigns different skills, enforces per-step permission boundaries, chains the agents, and records sanitized acceptance evidence.
+
+```powershell
+cd examples/copilot-sdk-dynamic-agents
+npm ci
+npm test
+npm run validate
+```
+
+Authenticated smoke tests are documented in the [POC guide](examples/copilot-sdk-dynamic-agents/README.md). They are intentionally separate from the offline repository workflow because they require GitHub Copilot access.
+
+## Maintenance
+
+When source data, criteria, scenarios, or report content changes:
+
+1. Update the authoritative input or authored report.
+2. Run `python scripts/run_all_checks.py`.
+3. Inspect generated changes for unexpected ranking, schema, or narrative drift.
+4. Run the live source and GitHub metadata checks when freshness matters.
+5. Commit source and generated artifacts together.
+
+See the [maintenance guide](reports/maintenance_guide.md) for the artifact dependency map and refresh procedures.
+
+## Limitations
+
+- Scores are curated screening evidence, not observed task performance for every project.
+- GitHub popularity and release signals are contextual evidence, not quality guarantees.
+- Monte Carlo and stress tests measure model sensitivity; they do not remove input uncertainty.
+- Sandbox claims must be verified against the exact deployment, network, secret, and tenancy configuration.
+- The final adoption decision requires representative internal tasks, human review, security approval, and operating-cost evidence.
+
+## Repository License
+
+This repository currently does not declare a project license. The permissive-license filter applies to the evaluated candidates and does not grant a license for this repository's own contents.

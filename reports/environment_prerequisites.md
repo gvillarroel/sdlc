@@ -7,16 +7,19 @@ Date: 2026-07-05
 | Requirement | Notes |
 |---|---|
 | Python 3.12 or newer | The scripts use only the Python standard library. |
-| PowerShell | Used by the documented Windows commands and `scripts/run_all_checks.ps1`. |
-| Git | Required for reviewing diffs, committing, and pushing report updates. |
+| Git | Used to review regenerated artifacts and required by the English-content checker to enumerate repository files. |
 
-## Optional Live Checks
+## Optional Capabilities
 
 | Capability | Used by |
 |---|---|
+| PowerShell | Convenience wrapper at `scripts/run_all_checks.ps1`; the Python entry point is cross-platform. |
 | Internet access | `scripts/check_sources.py` and `scripts/refresh_github_metadata.py` |
 | GitHub API access | `scripts/refresh_github_metadata.py`; unauthenticated public API access is usually enough for the current 17 repos, but a valid `GITHUB_TOKEN` or `GH_TOKEN` helps avoid rate-limit `403` responses. |
-| GitHub token with `workflow` scope | Only needed if copying `ci/validate-workflow.example.yml` into `.github/workflows/`. |
+| Node.js `^20.19.0` or `>=22.12.0` | Offline tests and registry validation for `examples/copilot-sdk-dynamic-agents/` |
+| GitHub Copilot access | Authenticated smoke tests for the dynamic-agent proof of concept |
+
+The active CI definition is `.github/workflows/validate.yml`. It runs the Python workflow and the offline Node.js proof-of-concept checks.
 
 ## Standard Commands
 

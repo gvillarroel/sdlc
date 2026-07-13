@@ -4,7 +4,9 @@
 from __future__ import annotations
 
 import argparse
+import os
 import re
+import subprocess
 import sys
 from pathlib import Path
 from typing import Any
@@ -18,12 +20,40 @@ from scripts.simulate_alternatives import write_csv  # noqa: E402
 
 DEFAULT_RESULTS = ROOT / "results"
 REFERENCE_RE = re.compile(
-    r"\b(?:data|results|scripts|reports|templates|examples|ci|tests|assets)/[A-Za-z0-9_./:-]+"
+    r"(?:"
+    r"\.github/[A-Za-z0-9_./:-]+\.[A-Za-z0-9_-]+"
+    r"|\b(?:data|results|scripts|reports|templates|examples|tests|assets)/"
+    r"[A-Za-z0-9_./:-]+\.[A-Za-z0-9_-]+"
+    r"|docs/(?:assets|diagrams)/[A-Za-z0-9_./:-]+\.[A-Za-z0-9_-]+"
+    r"|docs/(?:index\.html|\.nojekyll)"
+    r")"
 )
-MARKDOWN_SOURCES = [
-    ROOT / "README.md",
-    *sorted((ROOT / "reports").glob("*.md")),
-]
+
+
+def markdown_sources(root: Path = ROOT) -> list[Path]:
+    completed = subprocess.run(
+        [
+            "git",
+            "-C",
+            str(root),
+            "ls-files",
+            "--cached",
+            "--others",
+            "--exclude-standard",
+            "-z",
+            "*.md",
+        ],
+        check=True,
+        capture_output=True,
+    )
+    relative_paths = [os.fsdecode(item) for item in completed.stdout.split(b"\0") if item]
+    return sorted(
+        (root / relative for relative in relative_paths if (root / relative).is_file()),
+        key=lambda path: path.as_posix(),
+    )
+
+
+MARKDOWN_SOURCES = markdown_sources()
 
 
 def normalize_reference(reference: str) -> str:
@@ -33,6 +63,9 @@ def normalize_reference(reference: str) -> str:
 def resolve_reference(source: Path, reference: str) -> Path:
     if reference.startswith("assets/"):
         return source.parent / reference
+    relative_candidate = source.parent / reference
+    if source.parent != ROOT and relative_candidate.exists():
+        return relative_candidate
     return ROOT / reference
 
 

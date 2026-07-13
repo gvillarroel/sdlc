@@ -19,6 +19,10 @@ class MarkdownTableValidationTest(unittest.TestCase):
         ]
         self.assertEqual(failures, [])
 
+    def test_nested_documentation_is_scanned(self):
+        sources = {row["source_file"] for row in self.rows}
+        self.assertIn("examples/copilot-sdk-dynamic-agents/README.md", sources)
+
     def test_rows_include_source_and_line(self):
         for row in self.rows:
             self.assertTrue(row["source_file"])

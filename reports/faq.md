@@ -16,7 +16,7 @@ Adoption decisions often mix both. A team deciding how to build or operate AI co
 
 ## Can the weights be changed?
 
-Yes. Edit `examples/custom_weights.example.json` and run:
+Yes. Edit `examples/pilot/custom_weights.example.json` and run:
 
 ```powershell
 python scripts/rank_with_custom_weights.py

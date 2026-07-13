@@ -34,7 +34,7 @@ Required artifacts:
 - `templates/scenario_selection_workshop.md`
 - `data/risk_register.json`
 - `data/security_evaluation_fixtures.json`
-- `examples/pilot_adapter_contract.py`
+- `examples/pilot/adapter.py`
 
 Required environment controls:
 
@@ -92,7 +92,7 @@ For every run, fill `templates/pilot_run_log.csv`.
 
 The run log now includes market and maintenance fields: `defensible_workflow_evidence`, `substitute_risk_note`, `reviewer_comprehension_score`, `rework_after_review`, `trust_gate_used`, and `provenance_completeness`. Leave these blank only for pure research harness runs where market viability is explicitly out of scope.
 
-If building candidate-specific runners, implement the minimal adapter shape in `examples/pilot_adapter_contract.py` so every candidate returns comparable task status, patch/log paths, safety failures, cost, latency, and human-intervention counts.
+If building candidate-specific runners, implement the minimal adapter shape in `examples/pilot/adapter.py` so every candidate returns comparable task status, patch/log paths, safety failures, cost, latency, and human-intervention counts.
 
 ### 4. Review Diffs
 
@@ -140,7 +140,7 @@ Do not let benchmark pass rate override a failed safety gate.
 The scoring model is captured in `data/pilot_decision_model.json`. Use `scripts/score_pilot_results.py` after filling a candidate summary CSV:
 
 ```powershell
-python scripts/score_pilot_results.py --input examples/pilot_candidate_summary.example.csv --output results/pilot_decision_scores.example.csv
+python scripts/score_pilot_results.py --input examples/pilot/candidate_summary.example.csv --output results/pilot_decision_scores.example.csv
 ```
 
 ## Decision Rule
