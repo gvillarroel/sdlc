@@ -1,0 +1,161 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-07-10T23:28:51.147Z",
+  "runId": "87cdd5ba-fd3a-429a-8f81-eed25e67571a",
+  "source": "copilot-extension-tool",
+  "status": "passed",
+  "generationProved": true,
+  "generatedAgents": [
+    {
+      "name": "requirements-specialist",
+      "skills": [
+        "extract-requirements"
+      ],
+      "action": "created"
+    },
+    {
+      "name": "risk-challenger",
+      "skills": [
+        "challenge-assumptions"
+      ],
+      "action": "created"
+    },
+    {
+      "name": "delivery-planner",
+      "skills": [
+        "build-delivery-plan"
+      ],
+      "action": "created"
+    }
+  ],
+  "expectedOrder": [
+    "requirements-specialist",
+    "risk-challenger",
+    "delivery-planner"
+  ],
+  "executionOrder": [
+    "requirements-specialist",
+    "risk-challenger",
+    "delivery-planner"
+  ],
+  "orderMatches": true,
+  "runtimeChecks": [
+    {
+      "agent": "requirements-specialist",
+      "skill": "extract-requirements",
+      "marker": "SKILL_REQUIREMENTS_OK",
+      "selectedAgentMatches": true,
+      "runtimeSkillAssigned": true,
+      "skillInvoked": true,
+      "skillEventObserved": true,
+      "trigger": "agent-invoked",
+      "markerFound": true
+    },
+    {
+      "agent": "risk-challenger",
+      "skill": "challenge-assumptions",
+      "marker": "SKILL_RISK_OK",
+      "selectedAgentMatches": true,
+      "runtimeSkillAssigned": true,
+      "skillInvoked": true,
+      "skillEventObserved": true,
+      "trigger": "agent-invoked",
+      "markerFound": true
+    },
+    {
+      "agent": "delivery-planner",
+      "skill": "build-delivery-plan",
+      "marker": "SKILL_PLAN_OK",
+      "selectedAgentMatches": true,
+      "runtimeSkillAssigned": true,
+      "skillInvoked": true,
+      "skillEventObserved": true,
+      "trigger": "agent-invoked",
+      "markerFound": true
+    }
+  ],
+  "durationMs": 68387,
+  "steps": [
+    {
+      "index": 1,
+      "agent": "requirements-specialist",
+      "selectedAgent": "requirements-specialist",
+      "configuredSkills": [
+        "extract-requirements"
+      ],
+      "runtimeSkills": [
+        "extract-requirements"
+      ],
+      "invokedSkills": [
+        "extract-requirements"
+      ],
+      "invocationEvidence": [
+        {
+          "name": "extract-requirements",
+          "trigger": "agent-invoked",
+          "invokedAtTurn": 3,
+          "contentSha256": "3ff62742652988c1983dcbab292e998556b979e72d6ce7a1adbf60235c66af3c"
+        }
+      ],
+      "marker": "SKILL_REQUIREMENTS_OK",
+      "markerFound": true,
+      "outputLength": 1692,
+      "outputSha256": "ba658685bab1c99cdb91fa1c616762587a7e5781b4c0cba3711d8b95d50a4450",
+      "durationMs": 12657
+    },
+    {
+      "index": 2,
+      "agent": "risk-challenger",
+      "selectedAgent": "risk-challenger",
+      "configuredSkills": [
+        "challenge-assumptions"
+      ],
+      "runtimeSkills": [
+        "challenge-assumptions"
+      ],
+      "invokedSkills": [
+        "challenge-assumptions"
+      ],
+      "invocationEvidence": [
+        {
+          "name": "challenge-assumptions",
+          "trigger": "agent-invoked",
+          "invokedAtTurn": 3,
+          "contentSha256": "1dac3d33b1caeba4039df876166a83db443946897f0da9307301b494a62983ea"
+        }
+      ],
+      "marker": "SKILL_RISK_OK",
+      "markerFound": true,
+      "outputLength": 5747,
+      "outputSha256": "3e9866513d32150dcda8712d89415d217dba5fc70ec516c02bddd53502859d1e",
+      "durationMs": 29007
+    },
+    {
+      "index": 3,
+      "agent": "delivery-planner",
+      "selectedAgent": "delivery-planner",
+      "configuredSkills": [
+        "build-delivery-plan"
+      ],
+      "runtimeSkills": [
+        "build-delivery-plan"
+      ],
+      "invokedSkills": [
+        "build-delivery-plan"
+      ],
+      "invocationEvidence": [
+        {
+          "name": "build-delivery-plan",
+          "trigger": "agent-invoked",
+          "invokedAtTurn": 3,
+          "contentSha256": "88f75c2b92560e9cc4fa7ad8c9ab89f2c66cd5df4818c8af9a88b461a821c63b"
+        }
+      ],
+      "marker": "SKILL_PLAN_OK",
+      "markerFound": true,
+      "outputLength": 7733,
+      "outputSha256": "d329c6281bf012a471abf3c209706a571a47872e61513ab8094dcb19cfc16ff0",
+      "durationMs": 26142
+    }
+  ]
+}
